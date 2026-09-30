@@ -1,0 +1,23 @@
+{
+ "doc_id": "EMP-TECH-CA-03",
+ "path": "documents/employment/signed-agreements/farah-abernathy_technician-employment-agreement_ca_2020-06-15.md",
+ "chars": 30845,
+ "area": "employment",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "employment_agreement",
+ "parent_id": "EMP-TPL-TECH-CA",
+ "effective_date": "2020-06-15",
+ "roles": [
+  "confidentiality",
+  "ca"
+ ],
+ "planted_features": [
+  "template_instance",
+  "annualized_earnings:91520",
+  "signed:2020-06-15",
+  "state:CA"
+ ],
+ "employee": "Farah Abernathy",
+ "status": "active"
+}

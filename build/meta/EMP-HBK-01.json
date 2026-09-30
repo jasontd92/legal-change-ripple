@@ -1,0 +1,29 @@
+{
+ "doc_id": "EMP-HBK-01",
+ "path": "documents/employment/employee-handbook_2025-edition/01_employee-handbook_core_2025-01-01.md",
+ "chars": 55474,
+ "area": "employment",
+ "cluster": "employee-handbook_2025-edition",
+ "doc_type": "employee_handbook",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2025-01-01",
+ "status": "active",
+ "roles": [
+  "noncompete",
+  "training_repayment",
+  "confidentiality"
+ ],
+ "source_class": "generated_llm",
+ "template": false,
+ "placeholders": [],
+ "planted_features": [
+  "HANDBOOK_RCA",
+  "HANDBOOK_TRAINING"
+ ],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

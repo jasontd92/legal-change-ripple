@@ -1,0 +1,32 @@
+{
+ "doc_id": "CUS-SPS-MSA",
+ "path": "documents/customers/sunpoint-public-schools-cooperative_mechanical-services-contract/01_mechanical-services-contract_2021-07-01.md",
+ "chars": 34690,
+ "area": "customers",
+ "cluster": "sunpoint-public-schools-cooperative_mechanical-services-contract",
+ "doc_type": "customer_master_agreement",
+ "parent_id": null,
+ "counterparty": "CUS-SPS",
+ "effective_date": "2021-07-01",
+ "status": "active",
+ "roles": [
+  "tariff",
+  "mfn",
+  "public_entity",
+  "l2_link"
+ ],
+ "source_class": "generated_llm",
+ "template": false,
+ "placeholders": [],
+ "planted_features": [
+  "MFN_SUNPOINT"
+ ],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ },
+ "post_fixes": [
+  "removed narrated renewals (old 5.3-5.5), renumbered 5.6-5.8 to 5.3-5.5, moved into cluster folder"
+ ]
+}

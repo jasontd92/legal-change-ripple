@@ -1,0 +1,18 @@
+{
+ "doc_id": "VEN-NDA-great-plains-copper-",
+ "path": "documents/vendors/great-plains-copper-tube-inc_mutual-nondisclosure-agreement_2019-08-05.md",
+ "chars": 16069,
+ "area": "vendors",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "nda",
+ "parent_id": "VEN-NDA-FORM",
+ "effective_date": "2019-08-05",
+ "roles": [
+  "distractor"
+ ],
+ "planted_features": [
+  "template_instance"
+ ],
+ "status": "active"
+}

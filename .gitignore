@@ -1,0 +1,23 @@
+# Dependencies and build output
+node_modules/
+dist/
+ui/node_modules/
+ui/dist/
+__pycache__/
+*.pyc
+
+# Secrets: real env files are never committed; .env.example is the template
+.env
+.env.*
+!.env.example
+
+# Local run state and tool caches
+runs/
+.harness/
+.eve/
+.playwright-mcp/
+*.log
+.DS_Store
+
+# Raw corpus sources (~160 MB); rebuilt by build/fetch/fetch.py
+build/raw/

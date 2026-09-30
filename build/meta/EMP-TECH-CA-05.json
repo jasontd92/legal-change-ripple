@@ -1,0 +1,23 @@
+{
+ "doc_id": "EMP-TECH-CA-05",
+ "path": "documents/employment/signed-agreements/gemma-tallis_technician-employment-agreement_ca_2023-01-04.md",
+ "chars": 30859,
+ "area": "employment",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "employment_agreement",
+ "parent_id": "EMP-TPL-TECH-CA",
+ "effective_date": "2023-01-04",
+ "roles": [
+  "confidentiality",
+  "ca"
+ ],
+ "planted_features": [
+  "template_instance",
+  "annualized_earnings:62400",
+  "signed:2023-01-04",
+  "state:CA"
+ ],
+ "employee": "Gemma Tallis",
+ "status": "active"
+}

@@ -1,0 +1,28 @@
+{
+ "doc_id": "CUS-WADES-04",
+ "path": "documents/customers/wa-des-04224_hvac-services-contract/04_contract-summary-and-ordering-instructions_as-published.md",
+ "chars": 9632,
+ "area": "customers",
+ "cluster": "wa-des-04224_hvac-services-contract",
+ "doc_type": "incorporated_web_terms",
+ "parent_id": "CUS-WADES-01",
+ "counterparty": "CUS-WADES",
+ "effective_date": "2025-09-10",
+ "status": "active",
+ "roles": [
+  "tariff",
+  "surcharge_prohibition"
+ ],
+ "source_class": "public_agency",
+ "source_ref": "https://apps.des.wa.gov/DESContracts/Home/ContractSummary/04224",
+ "year_shift": 0,
+ "governing_law_remap": null,
+ "name_map_size": 32,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

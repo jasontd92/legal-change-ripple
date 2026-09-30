@@ -1,0 +1,16 @@
+{
+ "doc_id": "CUS-HRP-WO-HRP-2025-01",
+ "path": "documents/customers/work-orders/WO-HRP-2025-01_hrp_2025-02-10.md",
+ "chars": 535,
+ "area": "customers",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "work_order",
+ "parent_id": "CUS-HRP-MSA",
+ "counterparty": "CUS-HRP",
+ "effective_date": "2025-02-10",
+ "roles": [
+  "tariff"
+ ],
+ "status": "active"
+}

@@ -1,0 +1,28 @@
+group: TR-14-ca-noncompete-sb699-ab1076
+domain: noncompete
+summary: California codifies and extends the Section 16600 ban on noncompetes (SB 699, private right of action; AB 1076, voids
+  noncompete clauses and requires notice by 2024-02-14).
+versions:
+- id: 2023-09-01_ca-sb-699
+  status: effective
+  effective: 2024-01-01
+  file: 2023-09-01_ca-sb-699.txt
+  source_url: https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240SB699
+  fetched_url: https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240SB699
+  sha256_16: 6b98095dbbb0ae81
+  chars: 6212
+  title: California SB 699 (2023)
+- id: 2023-10-13_ca-ab-1076
+  status: effective
+  effective: 2024-01-01
+  file: 2023-10-13_ca-ab-1076.txt
+  source_url: https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB1076
+  fetched_url: https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB1076
+  sha256_16: 35a80d54d1552d55
+  chars: 5032
+  title: California AB 1076 (2023)
+expected_relevance: 'POSITIVE (reclassified from control 2026-09-29). SB 699: void post-employment restrictive clauses entered
+  into or enforced after 2024-01-01 are unlawful, including employee non-solicits (Castellano offer letter section 12; CA
+  technician template section 6.1 and its signed instances). AB 1076: notice due 2024-02-14 for pre-existing void noncompete
+  clauses; whether employee non-solicits count is unsettled, so the five pre-deadline technician instances are needs review.
+  In-term and trade-secret-limited clauses are decoys.'

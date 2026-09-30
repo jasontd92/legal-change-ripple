@@ -1,0 +1,24 @@
+{
+ "doc_id": "EMP-TRAIN-CA-2025-09-15",
+ "path": "documents/employment/signed-agreements/sabrina-haverford_training-repayment-agreement_ca_2025-09-15.md",
+ "chars": 13552,
+ "area": "employment",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "training_repayment_agreement",
+ "parent_id": "EMP-TPL-TRAINING",
+ "effective_date": "2025-09-15",
+ "roles": [
+  "training_repayment",
+  "stay_or_pay",
+  "ca"
+ ],
+ "planted_features": [
+  "template_instance",
+  "signed:2025-09-15",
+  "state:CA",
+  "ca_ab692_before_cutoff"
+ ],
+ "employee": "Sabrina Haverford",
+ "status": "active"
+}

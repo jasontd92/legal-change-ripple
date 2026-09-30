@@ -1,0 +1,24 @@
+{
+ "doc_id": "EMP-TECH-IL-08",
+ "path": "documents/employment/signed-agreements/sabrina-dunmore_technician-employment-agreement_il_2025-05-23.md",
+ "chars": 25632,
+ "area": "employment",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "employment_agreement",
+ "parent_id": "EMP-TPL-TECH-IL",
+ "effective_date": "2025-05-23",
+ "roles": [
+  "noncompete",
+  "il"
+ ],
+ "planted_features": [
+  "template_instance",
+  "annualized_earnings:101920",
+  "signed:2025-05-23",
+  "state:IL",
+  "il_construction_ban_in_effect_at_signing"
+ ],
+ "employee": "Sabrina Dunmore",
+ "status": "active"
+}

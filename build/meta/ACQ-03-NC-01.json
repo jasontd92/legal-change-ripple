@@ -1,0 +1,29 @@
+{
+ "doc_id": "ACQ-03-NC-01",
+ "path": "documents/acquisitions/ACQ-03_kessler-seller-noncompetition-agreement/01_noncompetition-and-nonsolicitation-agreement_2022-10-03.md",
+ "chars": 20162,
+ "area": "acquisitions",
+ "cluster": "ACQ-03_kessler-seller-noncompetition-agreement",
+ "doc_type": "seller_noncompete",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2022-10-03",
+ "status": "active",
+ "roles": [
+  "noncompete",
+  "sale_of_business",
+  "il"
+ ],
+ "source_class": "cuad_llm_adapted",
+ "source_ref": "CUAD v1: Quaker Chemical Corporation - NON COMPETITION AND NON SOLICITATION AGREEMENT",
+ "year_shift": 3,
+ "governing_law_remap": null,
+ "name_map_size": 69,
+ "filled_fields": [],
+ "adapt_length_ratio": 0.88,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "doc_id": "CORP-COI-harborview-realty-partne",
+ "path": "documents/corporate/certificates-of-insurance/coi_harborview-realty-partners_2026-07-01.md",
+ "chars": 1575,
+ "area": "corporate",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "certificate_of_insurance",
+ "effective_date": "2026-07-01",
+ "roles": [
+  "insurance",
+  "l2_link"
+ ],
+ "status": "active"
+}

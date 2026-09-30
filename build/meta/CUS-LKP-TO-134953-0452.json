@@ -1,0 +1,17 @@
+{
+ "doc_id": "CUS-LKP-TO-134953-0452",
+ "path": "documents/customers/work-orders/TO-134953-0452_city-of-lakeport-task-order_2026-02-09.md",
+ "chars": 609,
+ "area": "customers",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "work_order",
+ "parent_id": "CUS-LKP-01",
+ "counterparty": "CUS-LKP",
+ "effective_date": "2026-02-09",
+ "roles": [
+  "tariff",
+  "fixed_price"
+ ],
+ "status": "active"
+}

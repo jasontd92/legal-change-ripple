@@ -1,0 +1,28 @@
+{
+ "doc_id": "SUP-NCS-DEALER",
+ "path": "documents/supply/northaire-comfort-systems_authorized-dealer-agreement_2020-01-15.md",
+ "chars": 37756,
+ "area": "supply",
+ "cluster": null,
+ "doc_type": "dealer_agreement",
+ "parent_id": null,
+ "counterparty": "SUP-NCS",
+ "effective_date": "2020-01-15",
+ "status": "active",
+ "roles": [
+  "supply_master",
+  "exclusivity"
+ ],
+ "source_class": "cuad_llm_adapted",
+ "source_ref": "CUAD v1: LIMEENERGYCO_09_09_1999-EX-10-DISTRIBUTOR AGREEMENT",
+ "year_shift": 0,
+ "governing_law_remap": null,
+ "name_map_size": 6,
+ "filled_fields": [],
+ "adapt_length_ratio": 0.98,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

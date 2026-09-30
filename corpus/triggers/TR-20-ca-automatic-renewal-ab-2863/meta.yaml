@@ -1,0 +1,14 @@
+group: TR-20-ca-automatic-renewal-ab-2863
+domain: consumer
+summary: California Automatic Renewal Law amendments (express consent, click-to-cancel, annual reminder) for contracts entered,
+  amended or extended on or after 2025-07-01.
+versions:
+- id: 2024-09-24_ab-2863-chaptered
+  status: effective
+  effective: 2025-07-01
+  file: 2024-09-24_ab-2863-chaptered.txt
+  source_url: https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB2863
+  fetched_url: https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB2863
+  sha256_16: bd88662703b26f74
+  chars: 22653
+  title: California AB 2863 (Ch. 515, Stats. 2024) Automatic Renewal Law

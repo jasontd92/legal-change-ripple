@@ -1,0 +1,50 @@
+[
+ {
+  "name": "crlf_to_lf",
+  "raw": "Sec. 1\r\nPrice\r\n",
+  "normalized": "Sec. 1\nPrice\n",
+  "start": 7,
+  "end": 12,
+  "slice": "Price"
+ },
+ {
+  "name": "lone_cr",
+  "raw": "a\rb",
+  "normalized": "a\nb",
+  "start": 2,
+  "end": 3,
+  "slice": "b"
+ },
+ {
+  "name": "bom_removed",
+  "raw": "﻿§3.2 Renewal",
+  "normalized": "§3.2 Renewal",
+  "start": 0,
+  "end": 4,
+  "slice": "§3.2"
+ },
+ {
+  "name": "nfc_composes",
+  "raw": "Montoya Ruiz-Montóya",
+  "normalized": "Montoya Ruiz-Montóya",
+  "start": 8,
+  "end": 20,
+  "slice": "Ruiz-Montóya"
+ },
+ {
+  "name": "whitespace_preserved",
+  "raw": "shall  not\tbe",
+  "normalized": "shall  not\tbe",
+  "start": 7,
+  "end": 10,
+  "slice": "not"
+ },
+ {
+  "name": "code_point_offsets",
+  "raw": "😀 duty",
+  "normalized": "😀 duty",
+  "start": 2,
+  "end": 6,
+  "slice": "duty"
+ }
+]

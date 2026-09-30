@@ -1,0 +1,58 @@
+id: S4-KPS-03
+contract_version: 0.1.0
+offsets: computed_pre_G0
+scenario_ids:
+- S4-KPS-03
+eval_ids:
+- S4
+- V5
+set: sentinel
+inputs:
+  trigger: null
+  versions: []
+  as_of: '2026-10-01'
+  profile: default
+  custom_prompt: null
+provenance:
+  author: non-attorney reference
+  sources:
+  - corpus documents cited on each span
+  - eval-scenarios/priority-tiers-draft.md
+  - eval-scenarios/legal-questions.md
+  - Washington State Register 25-20-099 (2026 RCW 49.62 threshold $126,858.83), https://lawfilesext.leg.wa.gov/law/wsr/2025/20/25-20-099.htm
+  verified_on: '2026-09-29'
+findings:
+- id: F1
+  scenario_id: S4-KPS-03
+  aliases: []
+  stack_id: supply/purchase-orders/PO-2025-0231_keystone-plumbing-supply_2025-02-24
+  change_ref: null
+  required_spans:
+  - file: corpus/documents/supply/purchase-orders/PO-2025-0231_keystone-plumbing-supply_2025-02-24.md
+    section_label: '2150 Harbor Point Drive, Suite 400, Sacramento, CA 95833 | Purchasing: (916) 555'
+    quote: 'TERMS: Seller''s Terms and Conditions of Sale published at https://www.keystoneplumbingsupply.com/terms-of-sale (as published October 2019) apply to this order.'
+    start: 1095
+    end: 1254
+  - file: corpus/documents/supply/supplier-terms/keystone-plumbing-supply_terms-and-conditions-of-sale_2019-10-22.md
+    section_label: '3. PRICE:'
+    quote: All prices are subject to change unless otherwise specified on Seller's quotation. Buyer will be invoiced at prices in effect at the time of shipment. All taxes, transportation costs, duties and other charges are in addition to quoted prices. Any applicable sales, excise, or other taxes shall be added to the purchase price and paid by Buyer, unless Buyer furnishes Seller with a valid tax exemption certificate.
+    start: 1419
+    end: 1832
+  decoy_spans:
+  - file: corpus/documents/supply/supplier-terms/keystone-plumbing-supply_terms-and-conditions-of-sale_2025-06-08.md
+    section_label: '3. PRICE:'
+    quote: All quoted prices are subject to adjustment absent contrary indication on Seller's quote. Buyer shall be billed at prices in effect at the time of shipment. All taxes, transportation costs, duties and other charges are in addition to quoted prices. Buyer shall pay all applicable sales, excise, and other taxes added to the invoice price, unless Buyer furnishes Seller with a valid tax exemption certificate.
+    start: 1462
+    end: 1870
+  - file: corpus/documents/supply/purchase-orders/PO-2025-0914_keystone-plumbing-supply_2025-09-15.md
+    section_label: '2150 Harbor Point Drive, Suite 400, Sacramento, CA 95833 | Purchasing: (916) 555'
+    quote: 'TERMS: Seller''s Terms and Conditions of Sale published at https://www.keystoneplumbingsupply.com/terms-of-sale (as published June 2025) apply to this order.'
+    start: 1105
+    end: 1261
+  absence: null
+  labels: null
+  facts: {}
+  confidence: high
+  pass_rule: affected
+  rationale: PO-2025-0231 incorporates Keystone's terms as published October 2019. The operative price clause is the 2019 section 3, which begins 'All prices are subject to change unless otherwise specified on Seller's quotation.' The June 2025 section 3 begins 'All quoted prices are subject to adjustment absent contrary indication on Seller's quote.' Citing the 2025 text for this PO is the wrong version. PO-2025-0914 correctly pins June 2025; that pin is not a license to use the 2025 text on the earlier PO.
+notes: Version pin. No trigger. Both versions pass duties through; the words of section 3 differ.

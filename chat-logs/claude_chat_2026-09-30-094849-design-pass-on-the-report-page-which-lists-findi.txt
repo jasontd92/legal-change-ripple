@@ -1,0 +1,2564 @@
+ ▐▛███▛█   Claude Code v2.1.285
+▝▜██████▀  Opus 5.5 · Claude Pro
+ ▝▝   ▝▝   ~/Documents/gc-ai-take-home-research
+
+  Get to finished work sooner with Opus 5.5. Switch anytime with /model.
+
+❯ design pass on the report page, which lists findings, imaterial docs,         
+  reviewed docs, etc. Current design propblem is that as a general counsler     
+  opening the page for my morning report, I have no qucik scan of what is       
+  impactful or needs attention. Related, I have scroll past a potentially large 
+  list of findings, just to discover everyhting on the page. One solution that  
+  comes to mind is a "Table of Conetents" (section/page links) off to the side  
+  of the page - though that can feel blog-y. What design soltuioon do you       
+  reccomend to making the page much more friendly, inturitve, and discverable   
+  to users on first load? Always aiming to simplify - geenrally speaking, its   
+  easy to add in text and bloat the page, drainign user atention span on the    
+  wrong areas.                                                                  
+
+  Listed 1 directory, ran 5 shell commands (ctrl+o to expand)
+
+⏺ I've read the report page code; now I'm checking how groups and urgency are
+  labeled so the recommendation fits your data.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ I'd skip the sidebar table of contents. The page only has 3–4 sections, so a
+  sidebar takes width away from the finding rows and still doesn't tell you what
+  needs attention. I'd put one summary line at the top that also works as 
+  navigation, and limit how many rows each section shows so the whole page fits
+  in a couple of screens.
+
+  What I'm seeing in ReportView.tsx
+
+  - Grouping: findings are grouped by direction (exposure / recovery / both /
+    neutral) in GROUP_ORDER. At 7am, though, a GC's first question is "what
+    needs me before it's too late?" That's the deadline, which today only shows
+    up as a chip or a colored row edge inside each group.
+  - Filters come first: the category and date filters sit above everything else.
+    That puts controls in front of content before you know if you need them.
+  - Hidden sections: "Not material" and "What was reviewed" are folded away at
+    the bottom of a list with no length limit. You can only find them by
+    scrolling.
+
+  Recommendation
+
+  1. A summary line at the top. One line of text, not a row of dashboard tiles:
+
+  Daily review · Oct 1
+  2 need action  ·  5 to watch  ·  12 set aside  ·  40 changes reviewed
+
+  Each count is a link that jumps to or filters that section. The line does two
+  jobs at once:
+  - It answers "is today bad?" in about a second.
+  - It shows everything on the page, including the two folded sections, so you
+    don't have to scroll to find out they exist.
+
+  "40 changes reviewed" also reassures you that nothing was skipped, which
+  matters to a GC.
+
+  2. Group by what you need to do, and show direction as a label.
+  - Needs action: the deadline is running (clock.hot / tone act). These rows
+    show open.
+  - Watch: the finding matters but has no deadline or an unclear one.
+  - Set aside / Reviewed: these stay folded, as they are now.
+
+  Exposure vs. recovery becomes a small label on each row. This mostly reuses
+  fields you already compute (clockChip, materiality). It's a change to how rows
+  are grouped, not a new data model.
+
+  3. Limit each section. Show the top 5 by rank, then a "Show 12 more" row. That
+  keeps the page short enough to reach the bottom sections, and rank order
+  already puts the right rows at the top.
+
+  4. Hide the filters until they're needed. Clicking a count in the summary line
+  already filters. Put category and date behind a small "Filter" control, or
+  only show them once a section has more than about 10 rows.
+
+  5. Make the empty state the headline. On a quiet day, show "Nothing needs you
+  today. 40 changes reviewed, 12 set aside." That's the best possible morning
+  report, so say it plainly and don't show empty sections.
+
+  This approach removes things rather than adding them. The new pieces are one
+  line of text and a "show more" row. The filter bar moves out of view, and the
+  empty direction sections go away.
+
+  I can build this into ReportView.tsx and check it against #/preview. Should
+  the summary counts filter the list in place or scroll to the section? I'd go
+  with scrolling because it's simpler.
+
+✻ Sautéed for 46s · done 2:47 AM
+
+❯ I ,ike #4 for a different reason - the page is still dense in terms of        
+  labels, options, and sections. Looking to deeply simplify/make context        
+  "progressive" - meaning, the only thing suyrfaced to a user is what they need 
+  to know in that very moment. And guiding them to what they need to know       
+  next. How else can this principle be incorporated to this page? I like the    
+  premise of a top line "status" bar - but the page feels filled with           
+  catgeories and badges and ways to filter already. Thoughts on how to improve  
+  the page layout hilsitically?                                                 
+
+⏺ The page is dense because every layer of information shows up at once. Each
+  row currently has a rank, document name, headline, deadline label,
+  legal-status label, action verb, dollar amount and urgent marker. Above the
+  rows sit two filter groups, and section headers carry counts. To make the page
+  progressive, give each layer one question to answer. Each layer then ends by
+  pointing to the next one, instead of using headers and badges.
+
+  Four layers, one question each
+
+  Layer 0: "Is today bad?" Replace the status bar with one plain sentence:
+
+  ▎ Two things need you this week.
+
+  A sentence reads faster than four counters, and it doesn't add any badges.
+
+  Layer 1: "What do I do?" Each row is one line saying the action and the
+  deadline:
+
+  ▎ Send non-renewal notice to Valley Medical · by Nov 1
+  ▎ Claim the $2,400 duty refund from Keystone
+
+  The only styled element is the deadline, and it appears only when there is
+  one. The other signals either move into the sentence or go away:
+  - Rank number: the order of the list already shows rank.
+  - Category and direction: these become the verb. "Claim a refund" already
+    tells you it's a recovery.
+  - Document name: it goes inside the sentence.
+  - Dollar amount: it moves to layer 2, unless the amount is the reason for the
+    action.
+
+  Layer 2: "Why?" Clicking a row shows 1–2 sentences explaining why (the
+  agentNote you already have) and nothing else. That's enough to decide whether
+  you agree.
+
+  Layer 3: "Show me." A "See the language" link below the explanation opens the
+  side-by-side comparison of your clause against the change, plus the diff. The
+  top-level "See what changed" button moves down here too, since the diff is
+  evidence and not something you need first.
+
+  Point to the next thing instead of adding more sections
+
+  Take out the section headers. Each part ends with a sentence that leads into
+  the next one:
+
+  Two things need you this week.
+
+    Send non-renewal notice to Valley Medical        by Nov 1
+    Claim the $2,400 duty refund from Keystone
+
+  That's everything urgent. 5 more are worth watching  →
+
+  Reviewed 40 changes. 12 didn't affect you  →  see why
+
+  The watch list and the set-aside items stay folded until you ask for them. The
+  last line gives you confidence that nothing was missed, with the details one
+  click away.
+
+  Take the filters out
+
+  If the page opens with filters, you're doing the sorting that the report
+  should have done for you. For a morning report, the ranking is the filter. If
+  a day produces so many items that you'd want to filter them, fix the ranking
+  and grouping rather than asking you to sort. I'd remove both filter groups
+  completely rather than hide them.
+
+  One cost to plan for
+
+  Layer 1 needs a short action sentence per finding. Today what holds the
+  finding itself, not the action to take. You can either have the agent write a
+  headline field (the verb, the counterparty and the object), or build it from
+  response_type + the document + when. Having the agent write it will read much
+  better, and it's one extra field in the output schema.
+
+  What goes away
+
+  - Filter bar and the section headers with counts
+  - Rank numbers
+  - Category, direction and legal-status labels (legal status shows up only when
+    a change isn't in force yet, written into the sentence)
+  - The top-level diff button
+
+  What gets added is three connecting sentences.
+
+  Want me to build this in ReportView.tsx against the #/preview sample? I'd
+  start by building the action sentence from fields you already have, so we can
+  see the layout before changing the agent's output.
+
+✻ Cogitated for 24s · done 2:53 AM
+
+❯ I like it. Use Header/subheader/body text wehre aplicable - the current       
+  approach makes me think if a "welcome" chat page with a hero line - confident 
+  assurance. Have the agent write the headline field is fine.                   
+
+⏺ Building it now. First I'm finding where the agent's report item schema is
+  defined so I can add headline.
+
+  Searched for 1 pattern, ran 5 shell commands (ctrl+o to expand)
+
+⏺ Now I'm adding the headline field through the agent schema, pipeline and
+  types. Then I'll rebuild ReportView.
+
+  Searched for 1 pattern, ran 3 shell commands (ctrl+o to expand)
+
+⏺ Backend is done. Now I'm rewriting ReportView.tsx.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Write(ui/src/ReportView.tsx)
+  ⎿  Added 178 lines, removed 193 lines
+       1  import { useState } from "react";
+       2  import { excerptRows, hunkForRange, type DiffRow, type ReviewDi
+          ff } from "../../src/diff";
+       3  import {
+       4 -  GROUP_ORDER,                                                 
+       5 -  categoryLabel,                                               
+       4    changeLabel,
+       5    clockChip,
+       8 -  closureLabel,                                                
+       6    companyDocumentLabel,
+       7    documentIdentity,
+       8    agentNote,
+      12 -  categoriesPresent,                                           
+      13 -  changeDate,                                                  
+       9    fileName,
+      15 -  groupLabel,                                                  
+      10    legalLabel,
+      17 -  matchesRecency,                                              
+      18 -  moneyMark,                                                   
+      11    quoteExcerpt,
+      20 -  RECENCY_OPTIONS,                                             
+      21 -  responseLabel,                                               
+      12    splitWhat,
+      13    whenDetail,
+      24 -  type Recency,                                                
+      14  } from "../../src/report-display";
+      15  import { DiffExcerpt, DiffViewer } from "./DiffView";
+      16  
+     ...
+      22    change_ref: string;
+      23    category?: string;
+      24    group?: string;
+      25 +  headline?: string;                                           
+      26    what?: string;
+      27    why?: string;
+      28    when?: string;
+     ...
+      37  };
+      38  export type ChangeBrief = { id: string; summary?: string; start
+          ?: number; end?: number };
+      39  
+      40 +type Deadline = { text: string; hot: boolean; date: string | nu
+         +ll };                                                          
+      41 +                                                               
+      42 +const PASSIVE = new Set(["monitor", "no_action"]);             
+      43 +const WORDS = ["No", "One", "Two", "Three", "Four", "Five", "Si
+         +x", "Seven", "Eight", "Nine", "Ten"];                          
+      44 +                                                               
+      45 +/**                                                            
+      46 + * The morning report, read top down: a verdict, the things to 
+         +do, then what to                                               
+      47 + * watch and what was set aside. Each layer stays folded until 
+         +it is asked for.                                               
+      48 + */                                                            
+      49  export function ReportView({
+      50    report,
+      51    legalStatus,
+     ...
+       61  }) {
+       62    const [openId, setOpenId] = useState<string | null>(null);
+       63    const [viewer, setViewer] = useState<{ line: number | null }
+            | null>(null);
+       65 -  const [picked, setPicked] = useState<Set<string>>(new Set())
+          -;                                                             
+       66 -  const [recency, setRecency] = useState<Recency | null>(null)
+          -;                                                             
+       67 -  const present = categoriesPresent(report.items);            
+       68 -  const shown = report.items.filter((item) => {               
+       69 -    if (picked.size > 0 && !picked.has(item.category ?? "")) r
+          -eturn false;                                                  
+       70 -    if (recency && !matchesRecency(changeDate(item.citations?.
+          -trigger?.file), asOf, recency)) return false;                 
+       71 -    return true;                                              
+       72 -  });                                                         
+       73 -  const groups = new Map<string, ReportItem[]>();             
+       74 -  const ranked = [...shown].sort((a, b) => a.rank - b.rank);  
+       75 -  for (const item of ranked) {                                
+       76 -    const key = item.group || item.labels?.direction || "ungro
+          -uped";                                                        
+       77 -    groups.set(key, [...(groups.get(key) ?? []), item]);      
+       78 -  }                                                           
+       79 -  const keys = [...groups.keys()].sort((a, b) => groupRank(a) 
+          -- groupRank(b));                                              
+       64 +  const ranked = [...report.items].sort((a, b) => a.rank - b.r
+          +ank);                                                         
+       65 +  const act = ranked.filter(needsAction);                     
+       66 +  const watch = ranked.filter((item) => !needsAction(item));  
+       67 +  const [watchOpen, setWatchOpen] = useState(act.length === 0)
+          +;                                                             
+       68 +  const [asideOpen, setAsideOpen] = useState(false);          
+       69 +  const setAside = report.change_item_closure.filter((row) => 
+          +row.status !== "addressed");                                  
+       70 +  const asideCount = setAside.length + report.not_material.len
+          +gth;                                                          
+       71 +  const reviewed = report.change_item_closure.length;         
+       72 +  const year = asOf.slice(0, 4);                              
+       73 +  const earliest = act.map((item) => deadlineOf(item, year)).f
+          +ind((d) => d?.date)?.date ?? null;                            
+       74  
+       75    function toggle(id: string) {
+       76      setOpenId((current) => (current === id ? null : id));
+       77    }
+       78  
+       85 -  function toggleCategory(category: string) {                 
+       86 -    setOpenId(null);                                          
+       87 -    setPicked((current) => {                                  
+       88 -      const next = new Set(current);                          
+       89 -      if (next.has(category)) next.delete(category);          
+       90 -      else next.add(category);                                
+       91 -      return next;                                            
+       92 -    });                                                       
+       93 -  }                                                           
+       94 -                                                              
+       95 -  function toggleRecency(next: Recency) {                     
+       96 -    setOpenId(null);                                          
+       97 -    setRecency((current) => (current === next ? null : next));
+       98 -  }                                                           
+       99 -                                                              
+       79    function openViewer(line: number | null) {
+       80 +    setAsideOpen(true);                                       
+       81      setViewer({ line });
+       82    }
+       83  
+       84 +  function list(items: ReportItem[]) {                        
+       85 +    return (                                                  
+       86 +      <div className="findings">                              
+       87 +        {items.map((item) => {                                
+       88 +          const id = `${item.stack_id}:${item.finding_id}`;   
+       89 +          return (                                            
+       90 +            <FindingRow                                       
+       91 +              key={id}                                        
+       92 +              item={item}                                     
+       93 +              year={year}                                     
+       94 +              expanded={openId === id}                        
+       95 +              legal={legalFor(item, legalStatus)}             
+       96 +              diff={diff}                                     
+       97 +              onToggle={() => toggle(id)}                     
+       98 +              onOpenDiff={openViewer}                         
+       99 +            />                                                
+      100 +          );                                                  
+      101 +        })}                                                   
+      102 +      </div>                                                  
+      103 +    );                                                        
+      104 +  }                                                           
+      105 +                                                              
+      106    return (
+      107      <div className="report">
+      106 -      {diff?.kind === "first" && <p className="first-read">Fir
+          -st reading of this source. There is no earlier version to comp
+          -are.</p>}                                                     
+      107 -      {diff?.kind === "compared" && diff.hunks.length > 0 && (
+      108 -        <div className="viewer">                              
+      109 -          <button                                             
+      110 -            className="quiet"                                 
+      111 -            type="button"                                     
+      112 -            aria-expanded={viewer !== null}                   
+      113 -            onClick={() => setViewer((current) => (current ===
+          - null ? { line: null } : null))}                              
+      114 -          >                                                   
+      115 -            {viewer === null ? "See what changed" : "Hide the 
+          -change"}                                                      
+      116 -          </button>                                           
+      117 -          {viewer !== null && <DiffViewer diff={diff} focusLin
+          -e={viewer.line} />}                                           
+      118 -        </div>                                                
+      108 +      <header className="hero">                               
+      109 +        <h1>{verdict(act.length)}</h1>                        
+      110 +        <p className="subhead">{subhead(act.length, watch.leng
+          +th, reviewed, earliest)}</p>                                  
+      111 +      </header>                                               
+      112 +                                                              
+      113 +      {act.length > 0 && list(act)}                           
+      114 +                                                              
+      115 +      {watch.length > 0 && (                                  
+      116 +        <section className="next">                            
+      117 +          <h2>                                                
+      118 +            <button className="handoff" type="button" aria-exp
+          +anded={watchOpen} onClick={() => setWatchOpen((open) => !open)
+          +}>                                                            
+      119 +              {act.length > 0 ? "That's everything that needs 
+          +you. " : ""}                                                  
+      120 +              {count(watch.length, "more", "worth watching", a
+          +ct.length === 0)}                                             
+      121 +              <span className="arrow" aria-hidden="true">{watc
+          +hOpen ? "↑" : "→"}</span>                                     
+      122 +            </button>                                         
+      123 +          </h2>                                               
+      124 +          {watchOpen && list(watch)}                          
+      125 +        </section>                                            
+      126        )}
+      120 -      {report.items.length > 0 && (                           
+      121 -        <div className="filters">                             
+      122 -          <div className="filter" role="group" aria-label="Cat
+          -egory">                                                       
+      123 -            <span className="filter-name">Category</span>     
+      124 -            {present.map((category) => (                      
+      125 -              <button                                         
+      126 -                key={category}                                
+      127 -                className="pick"                              
+      128 -                type="button"                                 
+      129 -                aria-pressed={picked.has(category)}           
+      130 -                onClick={() => toggleCategory(category)}      
+      131 -              >                                               
+      132 -                {categoryLabel(category)}                     
+      133 -              </button>                                       
+      134 -            ))}                                               
+      135 -          </div>                                              
+      136 -          <div className="filter" role="group" aria-label="Whe
+          -n it changed">                                                
+      137 -            <span className="filter-name">Changed</span>      
+      138 -            {RECENCY_OPTIONS.map((option) => (                
+      139 -              <button                                         
+      140 -                key={option.id}                               
+      141 -                className="pick"                              
+      142 -                type="button"                                 
+      143 -                aria-pressed={recency === option.id}          
+      144 -                onClick={() => toggleRecency(option.id)}      
+      145 -              >                                               
+      146 -                {option.label}                                
+      147 -              </button>                                       
+      148 -            ))}                                               
+      149 -          </div>                                              
+      150 -        </div>                                                
+      151 -      )}                                                      
+      152 -      {keys.map((key) => {                                    
+      153 -        const items = groups.get(key) ?? [];                  
+      154 -        return (                                              
+      155 -          <section className="band" key={key}>                
+      156 -            <h2>{groupLabel(key)} <span className="count">{ite
+          -ms.length}</span></h2>                                        
+      157 -            <div className="findings">                        
+      158 -              {items.map((item) => {                          
+      159 -                const id = `${item.stack_id}:${item.finding_id
+          -}`;                                                           
+      160 -                return (                                      
+      161 -                  <FindingRow                                 
+      162 -                    key={id}                                  
+      163 -                    item={item}                               
+      164 -                    expanded={openId === id}                  
+      165 -                    legal={legalFor(item, legalStatus)}       
+      166 -                    diff={diff}                               
+      167 -                    onToggle={() => toggle(id)}               
+      168 -                    onOpenDiff={openViewer}                   
+      169 -                  />                                          
+      170 -                );                                            
+      171 -              })}                                             
+      127 +                                                              
+      128 +      {(reviewed > 0 || asideCount > 0 || diff?.kind === "firs
+          +t") && (                                                      
+      129 +        <section className="next quiet-end">                  
+      130 +          <h2>                                                
+      131 +            <button className="handoff" type="button" aria-exp
+          +anded={asideOpen} onClick={() => setAsideOpen((open) => !open)
+          +}>                                                            
+      132 +              {reviewed > 0 ? `Reviewed ${reviewed} ${reviewed
+          + === 1 ? "change" : "changes"}. ` : ""}                       
+      133 +              {asideCount > 0 ? `${WORDS[asideCount] ?? asideC
+          +ount} didn't affect you.` : "Nothing was set aside."}         
+      134 +              <span className="arrow" aria-hidden="true">{asid
+          +eOpen ? "↑" : "→"}</span>                                     
+      135 +            </button>                                         
+      136 +          </h2>                                               
+      137 +          {asideOpen && (                                     
+      138 +            <div className="aside">                           
+      139 +              {diff?.kind === "first" && <p className="body">T
+          +his is the first reading of this source, so there is no earlie
+          +r version to compare.</p>}                                    
+      140 +              {asideCount > 0 && (                            
+      141 +                <ul className="plain">                        
+      142 +                  {report.not_material.map((row) => (         
+      143 +                    <li key={`${row.stack_id}:${row.finding_id
+          +}`}>                                                          
+      144 +                      <span className="lead">{documentIdentity
+          +(row.stack_id).line}</span>                                   
+      145 +                      <span className="meta">{row.reason}</spa
+          +n>                                                            
+      146 +                    </li>                                     
+      147 +                  ))}                                         
+      148 +                  {setAside.map((row) => {                    
+      149 +                    const brief = changes.find((change) => cha
+          +nge.id === row.change_ref);                                   
+      150 +                    return (                                  
+      151 +                      <li key={row.change_ref}>               
+      152 +                        <span className="lead">{brief?.summary
+          +?.trim() || "Change"}</span>                                  
+      153 +                        {row.reason && <span className="meta">
+          +{row.reason}</span>}                                          
+      154 +                      </li>                                   
+      155 +                    );                                        
+      156 +                  })}                                         
+      157 +                </ul>                                         
+      158 +              )}                                              
+      159 +              {diff?.kind === "compared" && diff.hunks.length 
+          +> 0 && (                                                      
+      160 +                <>                                            
+      161 +                  <button                                     
+      162 +                    className="more"                          
+      163 +                    type="button"                             
+      164 +                    aria-expanded={viewer !== null}           
+      165 +                    onClick={() => setViewer((current) => (cur
+          +rent === null ? { line: null } : null))}                      
+      166 +                  >                                           
+      167 +                    {viewer === null ? "See the whole change" 
+          +: "Hide the whole change"}                                    
+      168 +                  </button>                                   
+      169 +                  {viewer !== null && <DiffViewer diff={diff} 
+          +focusLine={viewer.line} />}                                   
+      170 +                </>                                           
+      171 +              )}                                              
+      172              </div>
+      173 -          </section>                                          
+      174 -        );                                                    
+      175 -      })}                                                     
+      176 -      {report.items.length === 0 && <p className="empty">Nothi
+          -ng ranked. Items that were reviewed and set aside are below.</
+          -p>}                                                           
+      177 -      {report.items.length > 0 && shown.length === 0 && <p cla
+          -ssName="empty">Nothing in this set.</p>}                      
+      178 -      {report.not_material.length > 0 && (                    
+      179 -        <details className="fold">                            
+      180 -          <summary>Not material <span className="count">{repor
+          -t.not_material.length}</span></summary>                       
+      181 -          <ul>                                                
+      182 -            {report.not_material.map((row) => (               
+      183 -              <li key={`${row.stack_id}:${row.finding_id}`}>  
+      184 -                <span className="doc">{documentIdentity(row.st
+          -ack_id).line}</span>                                          
+      185 -                <span className="meta"> · {row.reason}</span> 
+      186 -              </li>                                           
+      187 -            ))}                                               
+      188 -          </ul>                                               
+      189 -        </details>                                            
+      173 +          )}                                                  
+      174 +        </section>                                            
+      175        )}
+      191 -      {report.change_item_closure.length > 0 && (             
+      192 -        <details className="fold">                            
+      193 -          <summary>What was reviewed <span className="count">{
+          -report.change_item_closure.length}</span></summary>           
+      194 -          <ul>                                                
+      195 -            {report.change_item_closure.map((row) => {        
+      196 -              const brief = changes.find((change) => change.id
+          - === row.change_ref);                                         
+      197 -              const located = brief && diff && brief.start != 
+          -null && brief.end != null                                     
+      198 -                ? locatedChange(diff, brief.start, brief.end) 
+      199 -                : null;                                       
+      200 -              return (                                        
+      201 -                <li key={row.change_ref}>                     
+      202 -                  <span className="doc">{brief?.summary?.trim(
+          -) || "Change"}</span>                                         
+      203 -                  <span className="chip"> · {closureLabel(row.
+          -status)}</span>                                               
+      204 -                  {row.reason && <span className="meta"> · {ro
+          -w.reason}</span>}                                             
+      205 -                  {located && (                               
+      206 -                    <button className="more" type="button" onC
+          -lick={() => openViewer(located.line)}>                        
+      207 -                      see the change                          
+      208 -                    </button>                                 
+      209 -                  )}                                          
+      210 -                </li>                                         
+      211 -              );                                              
+      212 -            })}                                               
+      213 -          </ul>                                               
+      214 -        </details>                                            
+      215 -      )}                                                      
+      176      </div>
+      177    );
+      178  }
+      179  
+      180  function FindingRow({
+      181    item,
+      182 +  year,                                                       
+      183    expanded,
+      184    legal,
+      185    diff,
+     ...
+      187    onOpenDiff,
+      188  }: {
+      189    item: ReportItem;
+      190 +  year: string;                                               
+      191    expanded: boolean;
+      192    legal: string | null;
+      193    diff: ReviewDiff | null;
+      194    onToggle: () => void;
+      195    onOpenDiff: (line: number | null) => void;
+      196  }) {
+      197 +  const [evidence, setEvidence] = useState(false);            
+      198    const id = `${item.stack_id}:${item.finding_id}`;
+      199    const panelId = `finding-${id.replace(/[^a-zA-Z0-9_-]/g, "-"
+           )}`;
+      200    const doc = documentIdentity(item.stack_id);
+      238 -  const clock = clockChip(item.labels?.urgency, item.when);   
+      239 -  const verb = responseLabel(item.labels?.response_type);     
+      240 -  const money = moneyMark(item.why);                          
+      201    const split = splitWhat(item.what);
+      202 +  const headline = item.headline?.trim() || split.lead;       
+      203 +  const deadline = deadlineOf(item, year);                    
+      204 +  const clock = clockChip(item.labels?.urgency, item.when);   
+      205    const timing = whenDetail(item.labels?.urgency, item.when, c
+           lock.label);
+      206 +  const lead = item.headline?.trim() ? item.what?.trim() ?? ""
+          + : "";                                                        
+      207 +  const note = agentNote(headline, item.why, [lead, split.rest
+          +].filter(Boolean).join(" "), timing);                         
+      208    const trigger = item.citations?.trigger;
+      209    const clause = item.citations?.clause;
+      245 -  const note = agentNote(split.lead, item.why, split.rest, tim
+          -ing);                                                         
+      210    const located = diff && trigger ? locatedChange(diff, trigge
+           r.start, trigger.end) : null;
+      211 +  const context = [doc.line, legal].filter(Boolean).join(" · "
+          +);                                                            
+      212  
+      213    return (
+      249 -    <article className={`finding${expanded ? " open" : ""}${cl
+          -ock.tone === "none" ? "" : ` ${clock.tone}`}`}>               
+      214 +    <article className={`finding${expanded ? " open" : ""}`}> 
+      215        <button className="row" type="button" aria-expanded={exp
+           anded} aria-controls={panelId} onClick={onToggle}>
+      251 -        <span className="rank"><span aria-hidden="true">{expan
+          -ded ? "▾" : "▸"}</span> {item.rank}</span>                    
+      252 -        <span className="identity">                           
+      253 -          <span className="doc">{doc.line}</span>             
+      254 -        </span>                                               
+      255 -        <span className="headline">{split.lead}</span>        
+      256 -        {(clock.hot ? null : clock.label) || legal ? (        
+      257 -          <span className="chips">                            
+      258 -            {!clock.hot && <span className="chip">{clock.label
+          -}</span>}                                                     
+      259 -            {legal && <span className="chip">{legal}</span>}  
+      260 -          </span>                                             
+      261 -        ) : <span className="chips" />}                       
+      262 -        <span className="side">                               
+      263 -          {verb && <span className="verb">{verb}</span>}      
+      264 -          {money && <span className="money">{money}</span>}   
+      265 -          {clock.hot && <span className="hot">{clock.label}</s
+          -pan>}                                                         
+      266 -        </span>                                               
+      216 +        <span className="headline">{headline}</span>          
+      217 +        {deadline && <span className={deadline.hot ? "due hot"
+          + : "due"}>{deadline.text}</span>}                             
+      218        </button>
+      219        {expanded && (
+      220          <div className="detail" id={panelId}>
+      270 -          <div className="sources">                           
+      271 -            <Source                                           
+      272 -              tone="yours"                                    
+      273 -              eyebrow="Your document · Review"                
+      274 -              title={clause ? companyDocumentLabel(clause.file
+          -, clause.section_label) : doc.line}                           
+      275 -              quote={clause?.quote}                           
+      276 -              file={clause?.file}                             
+      277 -            />                                                
+      278 -            <Source                                           
+      279 -              tone="change"                                   
+      280 -              eyebrow="Change · Governs"                      
+      281 -              title={trigger ? changeLabel(trigger.file) : "Ch
+          -ange"}                                                        
+      282 -              quote={trigger?.quote}                          
+      283 -              file={trigger?.file}                            
+      284 -              excerpt={located ?? undefined}                  
+      285 -              onOpenDiff={located?.truncated ? () => onOpenDif
+          -f(located.line) : undefined}                                  
+      286 -            />                                                
+      287 -          </div>                                              
+      288 -          {note && <p className="note">{note}</p>}            
+      221 +          {note && <p className="body">{note}</p>}            
+      222 +          <p className="meta">{context}</p>                   
+      223 +          <button className="more" type="button" aria-expanded
+          +={evidence} onClick={() => setEvidence((open) => !open)}>     
+      224 +            {evidence ? "Hide the language" : "See the languag
+          +e"}                                                           
+      225 +          </button>                                           
+      226 +          {evidence && (                                      
+      227 +            <div className="sources">                         
+      228 +              <Source                                         
+      229 +                tone="yours"                                  
+      230 +                eyebrow="Your document"                       
+      231 +                title={clause ? companyDocumentLabel(clause.fi
+          +le, clause.section_label) : doc.line}                         
+      232 +                quote={clause?.quote}                         
+      233 +                file={clause?.file}                           
+      234 +              />                                              
+      235 +              <Source                                         
+      236 +                tone="change"                                 
+      237 +                eyebrow="The change"                          
+      238 +                title={trigger ? changeLabel(trigger.file) : "
+          +Change"}                                                      
+      239 +                quote={trigger?.quote}                        
+      240 +                file={trigger?.file}                          
+      241 +                excerpt={located ?? undefined}                
+      242 +                onOpenDiff={located?.truncated ? () => onOpenD
+          +iff(located.line) : undefined}                                
+      243 +              />                                              
+      244 +            </div>                                            
+      245 +          )}                                                  
+      246          </div>
+      247        )}
+      248      </article>
+     ...
+      296    );
+      297  }
+      298  
+      299 +/** An item needs the GC when a clock is running or the respon
+          +se is something to do, not to watch. */                       
+      300 +function needsAction(item: ReportItem): boolean {             
+      301 +  if (clockChip(item.labels?.urgency, item.when).tone === "act
+          +") return true;                                               
+      302 +  const response = item.labels?.response_type;                
+      303 +  return Boolean(response) && !PASSIVE.has(response ?? "");   
+      304 +}                                                             
+      305 +                                                              
+      306 +function deadlineOf(item: ReportItem, year: string): Deadline 
+          +| null {                                                      
+      307 +  const clock = clockChip(item.labels?.urgency, item.when);   
+      308 +  if (clock.tone === "none") return null;                     
+      309 +  const date = /[A-Z][a-z]{2} \d{1,2}, \d{4}/.exec(clock.label
+          +)?.[0].replace(`, ${year}`, "") ?? null;                      
+      310 +  if (!date) return { text: clock.tone === "act" ? "Deadline r
+          +unning" : "Deadline ahead", hot: clock.tone === "act", date: n
+          +ull };                                                        
+      311 +  return { text: clock.tone === "act" ? `by ${date}` : `due ${
+          +date}`, hot: clock.tone === "act", date };                    
+      312 +}                                                             
+      313 +                                                              
+      314 +function verdict(act: number): string {                       
+      315 +  if (act === 0) return "Nothing needs you today.";           
+      316 +  if (act === 1) return "One thing needs you.";               
+      317 +  return `${WORDS[act] ?? act} things need you.`;             
+      318 +}                                                             
+      319 +                                                              
+      320 +function subhead(act: number, watch: number, reviewed: number,
+          + earliest: string | null): string {                           
+      321 +  if (act > 0) return earliest ? `The earliest deadline is ${e
+          +arliest}.` : "No deadline is running yet.";                   
+      322 +  if (watch > 0) return `${WORDS[watch] ?? watch} ${watch === 
+          +1 ? "change is" : "changes are"} worth watching. None needs ac
+          +tion yet.`;                                                   
+      323 +  if (reviewed > 0) return `Reviewed ${reviewed} ${reviewed ==
+          += 1 ? "change" : "changes"}. None affects your documents.`;   
+      324 +  return "The review found nothing that affects your documents
+          +.";                                                           
+      325 +}                                                             
+      326 +                                                              
+      327 +function count(n: number, more: string, rest: string, first: b
+          +oolean): string {                                             
+      328 +  const word = WORDS[n] ?? String(n);                         
+      329 +  return first ? `${word} ${n === 1 ? "is" : "are"} ${rest}.` 
+          +: `${word} ${more} ${n === 1 ? "is" : "are"} ${rest}.`;       
+      330 +}                                                             
+      331 +                                                              
+      332  function locatedChange(diff: ReviewDiff, start: number, end: n
+           umber) {
+      333    const hunk = hunkForRange(diff.hunks, start, end);
+      334    if (!hunk) return null;
+     ...
+      341    if (!raw || raw === "in_force") return null;
+      342    return legalLabel(raw);
+      343  }
+      354 -                                                              
+      355 -function groupRank(key: string): number {                     
+      356 -  const at = GROUP_ORDER.indexOf(key);                        
+      357 -  return at === -1 ? GROUP_ORDER.length + 1 : at;             
+      358 -}                                                             
+
+⏺ Tightening the copy helpers, then the CSS and the page headers.
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ Now the page wrappers (so the verdict is the only h1) and sample headlines.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Build, typecheck and all 34 tests pass. Next I'm taking a screenshot of
+  #/preview to check the layout.
+
+  Read 2 files, ran 2 shell commands (ctrl+o to expand)
+
+⏺ Collapsed state and desktop view look good; the mobile edge cutoff is just
+  headless Chrome's minimum window width, consistent with the header's "New
+  review" being cut off too. Now I'll check the expanded layers by clicking
+  through them via the Chrome DevTools protocol.
+
+  Read 1 file, ran 2 shell commands (ctrl+o to expand)
+
+⏺ The redesign is built. I checked it with screenshots of #/preview both
+  collapsed and fully expanded. The build, both typechecks and all 34 tests
+  pass.
+
+  What you see on load:
+  DAILY REVIEW
+  Two things need you.                          ← h1, the verdict
+  The earliest deadline is Nov 1.               ← subheader
+
+  Send non-renewal notice to Valley Medical                by Nov 1
+  Claim the duty refund from Keystone
+
+  That's everything that needs you. One more is worth watching. →
+  Reviewed four changes. Two didn't affect you. →
+
+  How the layers unfold:
+  - Row: the agent's action line, plus a deadline only when there is one. The
+    deadline is rust-colored if the clock is already running.
+  - Clicking a row: shows the "why" in normal body text, one small line naming
+    the document, and a "See the language" link.
+  - "See the language": opens the side-by-side comparison of your clause against
+    the change, with the diff.
+  - The two lines at the bottom: each one expands its section in place. The
+    whole-change diff now sits inside the "Reviewed…" section instead of at the
+    top of the page.
+  - Quiet days: when nothing needs action, the page says "Nothing needs you
+    today." and opens the watch list directly.
+
+  What's gone: the category and date filters, the direction group headers, rank
+  numbers, the labels, the verb and money badges, and the top-level diff button.
+
+  "Needs you" vs. "worth watching": an item counts as needing you if its
+  deadline is running, or if its response is something to do (anything except
+  monitor / no_action). That's why the Keystone refund counts as needing you
+  even though it has no deadline. This rule is a judgment call, so tell me if
+  you'd split it differently.
+
+  Headline field: it's now part of the agent's output. It goes through
+  commit_report in src/agents.ts, then src/pipeline.ts, src/ranking.ts,
+  src/types.ts and the report JSON schema. The stage-5 prompt in src/prompts.ts
+  asks for one imperative line under 70 characters with no date, starting with
+  "Watch" for monitor items. I haven't run it against a live agent yet, so I
+  haven't seen real headlines. Older runs without a headline fall back to the
+  first sentence of what.
+
+  Page headers: once a report is loaded, the session and run pages shrink their
+  own title to a small label, so the verdict is the only h1.
+
+  Two things I didn't change:
+  - The Coverage footer on live runs still sits below the report. Most of it
+    repeats the "Reviewed…" line, so it's the obvious next thing to fold in.
+  - On session pages, the step-by-step progress log stays visible above the
+    report after the run finishes.
+
+  Nothing is committed. Git sees the whole project folder as untracked in the
+  parent repo, so tell me where you want it committed.
+
+✻ Crunched for 4m 15s · done 3:00 AM
+
+❯ great - looks much cleaner. a bit of devils advocate - will a gc user miss    
+  the konetray impact and categorization label? For scanning biggest ticket     
+  items - as a design "fallabck" for when the model mis-ranks?                  
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ I'd bring back the dollar amount but not the categories.
+
+  Dollar amount: bring it back. The dollar amount is the one label that lets you
+  check the ranking yourself. In src/ranking.ts:126, the sort goes: legal
+  status, then materiality, then urgency, then days left, and dollar amount
+  comes last, only as a tiebreaker. So a $2M finding with no deadline will sit
+  below a $2k finding whose deadline is running. Usually that order is right,
+  since a missed deadline can't be undone. But when the model gets urgency or
+  materiality wrong, the dollar figure is how you notice. Without it, the
+  ranking can't be checked.
+
+  I'd show it the same way as the deadline: quiet, right-aligned text, and only
+  when there's a number.
+
+  Send non-renewal notice to Valley Medical          $480k · by Nov 1
+  Claim the duty refund from Keystone                $2.4k
+
+  Take the number from the finding's structured facts.exposure, the same value
+  exposureAmount already sorts on. Don't use the old moneyMark regex over the
+  why text. That regex was fragile: in the copper example, the text mentions a
+  $31M company-wide material spend (38% copper) alongside the $16k on the PO,
+  and the regex can easily grab the wrong one. Reading the number from the data
+  means the dollar figure you see is the same one the sort used.
+
+  Categories: leave them out. A label like "Deadline you owe" or "Cost exposure"
+  doesn't help you catch a bad ranking. It restates what the row already says:
+  the verb in the headline gives the type of action, and the deadline and dollar
+  amount give the stakes. Categories help you browse a collection ("show me all
+  billing discrepancies"). That's a different job from a morning briefing, and
+  it belongs on a separate "all findings" view if you ever need one. On this
+  page, they'd bring back the clutter we just removed.
+
+  One more guard against a bad ranking, if you want it: when a lower row has a
+  much bigger dollar amount than the rows above it, the page could say so, e.g.
+  "Ranked below Valley Medical because it has no deadline." I'd wait on this
+  until real runs show it's needed. Showing the dollar amount alone gets most of
+  the benefit.
+
+  Want me to add the amount from facts.exposure? I'll also check how
+  consistently the agent fills that field, because blank amounts on some rows
+  would make the page look inconsistent.
+
+✻ Baked for 20s · done 3:02 AM
+
+❯ just add back in the dollar amount.                                           
+
+  Ran 2 shell commands (ctrl+o to expand)
+⏺ The prompt never tells the analyst what shape facts.exposure should have, so
+  live runs would rarely fill amount. I'm adding one sentence to the prompt,
+  then rebuilding.
+
+  Read 1 file, ran 1 shell command (ctrl+o to expand)
+
+⏺ The dollar amount is back on each row, to the left of the deadline and in the
+  same quiet style. It only appears when there's a number. Typecheck, the 34
+  tests and the build all pass, and I checked the sample page in a screenshot.
+
+  Send non-renewal notice to Valley Medical          $480k  by Nov 1
+  Claim the duty refund from Keystone                       $2,400
+
+  The amount is the same number the ranking uses as its tiebreaker, so what you
+  see matches what the sort used. In src/ranking.ts each report item now gets an
+  amount from the finding's facts.exposure.amount, and I added the field to
+  ReportItem and the report JSON schema. The row formats it with a new
+  formatAmount in src/report-display.ts, which reuses the existing compact
+  format ($480k, $2,400). It doesn't read the why text, so it can't pick up a
+  company-wide total.
+
+  Prompt change: the analyst prompt in src/prompts.ts never said what shape
+  facts.exposure should take. So on live runs the ranking has probably been
+  missing the dollar tiebreaker as well as the display. I added one sentence
+  asking for the item's own dollar exposure in facts.exposure.amount as a plain
+  number. That also fixes the tiebreaker for new runs. Older runs will show no
+  amounts. I haven't checked this against a live run yet.
+
+✻ Cogitated for 43s · done 3:04 AM
+
+❯ On the root page, for a new run: whats the signifigance/translation of        
+  "Authority"? (I'm not a gc). Also, for the live url - i dont believe we've    
+  implmented the fucntionality to actually montior/doff - i'm wondering if we   
+  should leave that hardcoded disabled - in terms of feature demo, showing it   
+  as a clear future placeholder, but protecting anyone from exprimenting with   
+  it. thoguhts?                                                                 
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The code suggests a live-URL path exists, so I'm checking it before answering.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ "Authority" is a legal term for a source of binding law: a statute,
+  regulation, executive order, agency rule or court decision. In this app it
+  means the external source being monitored, such as the copper Section 232
+  executive order. The form picks one authority plus two snapshots of its text,
+  and the review asks what the difference between them means for the company's
+  contracts.
+
+  A GC would read "Authority" correctly, but it's jargon to anyone else, and the
+  dropdown shows raw group IDs. I'd rename the field to "Law or rule to watch"
+  and have the options show each trigger's summary instead of its ID. That's a
+  small change.
+
+  Live URL: part of this already works, so it's not a pure placeholder.
+  src/tick.ts beginLive fetches the URL and hashes the text. It compares against
+  the last stored snapshot in .harness/watches.json. If nothing changed it
+  stops with "unchanged"; otherwise it starts a real review of the diff. What's
+  missing is the monitoring: nothing re-checks the URL on a schedule. Today it's
+  a one-off "check this URL now."
+
+  I'd still disable it for the demo, for reasons that have nothing to do with
+  whether it works:
+  - Cost and noise on the first run. The first fetch of any URL has no baseline,
+    so the whole page counts as new. You'd get a full, expensive review of an
+    entire web page.
+  - Unpredictable pages. Pages that are built by JavaScript, very large, or
+    behind a login will give text that's empty or full of junk.
+  - Security. The server fetches whatever URL someone types in. That's fine
+    locally, but it's a request-forgery risk on anything shared.
+  - Leftover state. Each run writes to the watch state, so someone experimenting
+    leaves state behind that affects the next demo.
+
+  What I'd do: keep the field visible but disabled, with one line underneath:
+
+  ▎ Live monitoring — checks a source on a schedule and reviews only when it 
+  ▎ changes. Not enabled in this demo.
+
+  That shows the product direction without claiming it's finished. I'd also
+  reject source_url in the server's review endpoint (src/server.ts:84) behind a
+  flag, so the protection doesn't depend only on the disabled field. Don't
+  delete the code path; it's the base for scheduled monitoring later.
+
+  Want me to make both changes: rename Authority and disable the live URL behind
+  a server flag?
+
+✻ Crunched for 25s · done 3:05 AM
+
+❯ just disbale the field with the concies subtext below. thats it.              
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ The live URL field is now disabled, with this line underneath it:
+
+  ▎ Live monitoring checks a source on a schedule and reviews only when it 
+  ▎ changes. Not enabled in this demo.
+
+  The field is dimmed and shows a "not allowed" cursor. The change is one edit
+  in ui/src/App.tsx plus one CSS rule. The UI typechecks and builds.
+
+✻ Cooked for 18s · done 3:07 AM
+
+❯ adjust to smaller font, parthensis to the right of "Fetch URL" so its         
+  immediately viisble before questioning the diabled input.                     
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The note now sits in smaller muted text, in parentheses, right after the field
+  label, so you see it before reaching the disabled input:
+
+  ▎ Or fetch a live URL <sub>(scheduled monitoring, reviews only on change. Not 
+  ▎ enabled in this demo.)</sub>
+
+  I removed the separate line below the input. The input still points screen
+  readers to the note, since it keeps the same id. The UI typechecks and builds.
+
+✻ Sautéed for 13s · done 3:08 AM
+
+※ recap: We simplified the morning report page and added back dollar amounts; most recently, the live URL field is disabled with an inline "not enabled" note. Next, decide where to commit, since nothing is committed yet. (disable recaps in /config)
+
+❯ question - it would appear that for every option i'm choosing, there are only 
+  two snapshot options available: First and current. I do notice there are two  
+  source urls, which look different by date. Are there any scenarios i can run  
+  live that would run off the diff - NOT first run chnages? [Image #1]          
+  ⎿  [Image #1]
+
+⏺ The dropdown filters snapshots by the selected Source URL. I suspect each
+  version in the corpus has its own URL, so filtering leaves only one. Checking
+  the trigger metadata:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Confirmed — filtering by URL leaves one snapshot per version since nearly all
+  have unique URLs. I'll also check the TR-13 (noncompete) pairing with
+  "Negative Option" snapshots shown in your screenshot.
+
+  Searched for 1 pattern (ctrl+o to expand)
+
+⏺ Yes, diff scenarios will run. The form is hiding them.
+
+  Why you only see two snapshots: the snapshot dropdowns only list versions
+  whose source_url matches the Source URL you picked (ui/src/App.tsx, the
+  snapshots filter). In this corpus nearly every version is a separate Federal
+  Register document with its own URL. So each URL has exactly one version, and
+  the only choices left are "First observation" and that one document. I checked
+  every trigger group: 9 versions across 8 URLs in TR-01, 5 across 5 in TR-02,
+  2 across 2 in TR-13, and so on. The same pattern holds everywhere.
+
+  The TR-13 titles in your screenshot are correct, even though they look
+  mismatched. That single Federal Register notice covers the Negative Option
+  revision, the CARS withdrawal and the noncompete rule removal together.
+
+  What a diff means here: there are no before-and-after versions of the same
+  page in this corpus. Each authority is a series of documents over time. TR-01,
+  for example, goes from the EO 14220 investigation to Proclamation 10962's
+  tariff, then to later amendments. Comparing two snapshots means comparing two
+  different documents. The review still makes sense ("the regime went from an
+  investigation to a tariff in force"). But the line-by-line "See the whole
+  change" view will show nearly everything as replaced, not a neat redline. The
+  sample preview's renewal-notice fixture is the only true redline.
+
+  Good diff runs once the filter is gone:
+  - TR-01 copper: EO 14220 investigation, then Proclamation 10962. This is the
+    strongest story: a tariff that was only being studied becomes real and hits
+    the Keystone POs.
+  - TR-13 FTC: the rule removal, then the Rollins consent order. It's a
+    mostly-noise control that should come out as "nothing needs you."
+  - TR-10, TR-11 and TR-14 noncompete: each has 2–3 documents in sequence.
+
+  Fix: remove the URL filter so both dropdowns list every version of the chosen
+  authority in date order, and default to the last two. The Source URL dropdown
+  then does nothing for stored runs, so I'd remove it too. It's a small edit in
+  Setup. Want me to make it?
+
+✻ Cooked for 31s · done 3:18 AM
+
+❯ yes - though before any chnages - in a future world where someione can paste  
+  in their target url - what would hypothetically be persisted to moinotr for   
+  changes? i relaize its a whole seperate architecture discussion - but i'm     
+  wondering if the source url dropdown should still be represented as long as   
+  the custom one is - even if only a formalilty for the moment. thoguths?       
+
+⏺ What would be saved for a pasted URL. beginLive in src/tick.ts already
+  sketches this. Each URL gets a record in .harness/watches.json holding:
+  - the content hash,
+  - the version id,
+  - the path to the last snapshot.
+
+  The snapshot text itself is saved under .harness/live/<slug>/. Each new fetch
+  is compared against the stored hash. If it's unchanged the run stops; if it
+  changed, the old and new snapshots are diffed and reviewed.
+
+  A production version would add a few fields to that same record:
+  - a schedule,
+  - a rule for extracting the relevant part of the page (a selector, or
+    stripping navigation and boilerplate),
+  - a human-readable label or authority name,
+  - the full snapshot history instead of only the last one.
+
+  Watching one URL only catches edits to that page. That works for sources that
+  are updated in place, such as a state statute page, agency guidance or a
+  supplier's posted terms. It won't catch what makes up most of this corpus. The
+  Federal Register publishes each new action as a new document at a new URL.
+  Watching the EO 14220 URL would never surface Proclamation 10962. Catching
+  those means watching a feed or a saved search (for example, the Federal
+  Register API queried for "copper section 232"). So a future "watch" is a
+  source, which could be a page or a query. An authority is the series of
+  documents that source produces.
+
+  Should the Source URL dropdown stay? No. In the stored corpus, each URL is
+  where one document came from, not a source someone is watching. The dropdown
+  presents that record-keeping as something to choose, and that confusion is
+  what's hiding your snapshots. Keeping it next to the live URL field also
+  suggests there are two ways to watch a URL, when only one of them is the
+  future feature. The disabled live field already stands in for monitoring.
+
+  What I'd do instead:
+  - Remove the dropdown and the filter it drives.
+  - Show where the document came from as a read-only link under the snapshot
+    pickers: Source: federalregister.gov/…/2025-14893 for the selected current
+    snapshot. It's honest, useful to a GC checking a citation, and takes no
+    decision from the user.
+
+  The change, then:
+  1. Snapshot dropdowns list every version of the authority, defaulting to the
+     last two.
+  2. The Source URL dropdown is removed.
+  3. A small read-only source link appears under the snapshot pickers.
+
+  Should I go ahead?
+
+✻ Crunched for 15s · done 3:20 AM
+
+※ recap: We're simplifying the review app, currently fixing the new-run form so snapshot dropdowns show every version of an authority. Next, once you approve, I'll remove the Source URL dropdown and add a read-only source link. (disable recaps in /config)
+
+❯ yes                                                                           
+
+  Ran 3 shell commands (ctrl+o to expand)
+
+⏺ Typecheck and build pass. The setup page needs the API server for its data, so
+  I'm starting it briefly to check the form.
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ Your server on 8787 is already running and serves the build, so I'll
+  screenshot the setup page there.
+
+  Read 1 file, ran 1 shell command (ctrl+o to expand)
+
+⏺ The change is in and working. I checked it against your running server on
+  8787, which serves the new build.
+
+  - Snapshot dropdowns now list every version of the chosen authority. TR-01
+    shows all 9 and TR-13 shows both. They default to the last two.
+  - The Source URL dropdown is gone. Authority now takes the full width of its
+    row.
+  - A read-only link under the snapshot pickers shows where the selected current
+    snapshot came from. It's hidden for the two derived scope notes in TR-01,
+    which have no URL.
+
+  UI typecheck and build pass.
+
+  The TR-01 defaults aren't useful: its last two versions are the aluminum and
+  critical-minerals distractors. For the copper demo, set Previous to EO 14220
+  and Current to Proclamation 10962. I left the defaults alone because you
+  didn't ask me to change them. The simplest fix would be to skip entries tagged
+  "distractor" when choosing defaults.
+
+✻ Cogitated for 50s · done 3:24 AM
+
+※ recap: We've been simplifying the report page and the new-review form for the demo, and the snapshot pickers now list every version. Next, run a TR-01 review from EO 14220 to Proclamation 10962 to check the new report with real headlines. (disable recaps in /config)
+
+❯ two updates: ensure that there is validation in the two dropdowns, where a    
+  user can not accidently pick a later version marked as the previous one.      
+  Also, lets show the chnages as soon as they're vaiable on the review page,    
+  rather than waiting for the final report.                                     
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ The server already returns the diff and change record as soon as they're
+  written, so the second change only touches the UI. Making both edits now.
+
+  Searched for 1 pattern, read 1 file, ran 4 shell commands (ctrl+o to expand)
+
+⏺ Both changes are in. UI typecheck and build pass.
+
+  1. Snapshot validation. Versions are now sorted oldest first by effective
+  date. Versions without a date go at the end in their listed order. In the
+  dropdowns:
+  - Previous snapshot disables every version at or after the selected Current
+    one.
+  - Current snapshot disables every version at or before the selected Previous
+    one.
+
+  That makes a reversed pair impossible to pick. Defaults are still the two
+  newest. Sorting by date changes one group: TR-90's two control versions were
+  listed newest first in the metadata, so they now appear in the opposite order.
+
+  2. Changes appear before the report. The server already saved the change list
+  and the diff early in the run and returned them on every poll; the page just
+  wasn't showing them. Session and run pages now show them in a new ChangesSoFar
+  section in ReportView.tsx while the review is still running:
+  - Heading: e.g. "One change found." with the line "Checking your documents
+    against it now."
+  - List: each substantive change, with "see it in the text" jumping to that
+    spot in the diff.
+  - Noise: a count of formatting or noise edits that were set aside.
+  - "See the whole change": the full diff, when there's an earlier version to
+    compare.
+
+  When the report arrives, this section disappears. The report's "Reviewed N
+  changes" line then covers the same content.
+
+  I checked it on your running server using an earlier TR-01 run that stopped
+  partway through with no report. The section rendered above the activity log.
+  That run was a first reading from the offline stub, so there was no diff to
+  show.
+
+  That same screenshot showed a wording problem: a run that stopped partway
+  still says "Checking your documents against it now." The page's existing "The
+  review is still running" line has the same problem. Both could be tied to the
+  actual run status if you want.
+
+✻ Crunched for 1m 32s · done 3:39 AM
+
+❯ why generic "test A" "test B" labels here? [Image #2] . -are these the        
+  itemized portions of the diff?                                                
+  ⎿  [Image #2]
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The model wrote those summaries itself. The run's change_record.json has
+  "summary": "test A". Checking whether a prompt or example put that text in
+  front of it:
+
+  Ran 4 shell commands (ctrl+o to expand)
+
+⏺ Those labels didn't come from the UI. They're a probe the model sent during
+  this run, and the harness accepted it as the real change record.
+
+  What happened (from runs/TR-13-…-1790760987525/transcript.json and
+  trace.jsonl):
+  1. The orchestrator (glm-5.3-flash) tried to call commit_change_record with
+     its full list of changes. By its own reasoning notes, those calls kept
+     failing to parse, and the failures never registered as tool calls in the
+     trace.
+  2. It started debugging by sending cut-down test calls. The first used file: 
+     "test.txt" and was rejected because the citation didn't match.
+  3. The next test had real quotes from the Rollins order but placeholder
+     summaries: "test A", "test B". It passed validation.
+  4. commit_change_record in src/agents.ts treats the first valid commit as
+     final. So the probe became the run's change record, and every stack analyst
+     after that worked from summaries saying "test A" and "test B".
+
+  This run's results shouldn't be trusted. The quotes are real, but the change
+  descriptions the analysts reasoned from are placeholders.
+
+  Are these the itemized parts of the diff? Close, but not exactly. They're the
+  change items: the model's list of substantive changes, each tied to a verbatim
+  quote in the new snapshot. "See it in the text" jumps to that quote in the
+  diff. The diff hunks are the raw line differences. The change items are the
+  model's reading of what those differences mean. Normally each summary would be
+  a sentence like "Rollins may not enforce non-competes against covered
+  technicians."
+
+  Suggested fixes, in order of value:
+  1. Tell the model the call is final. Add to the tool description and the
+     stage-1 prompt: "This call is final and persists. Do not use it to test."
+  2. Reject placeholder summaries. Send the model back once if a summary is
+     under a few words or looks like test…, TODO, placeholder or similar. It's
+     the same retry the tool already does for bad quotes.
+  3. Find out why the full calls didn't parse. This looks like a problem with
+     how glm-5.3-flash formats large tool-call arguments. Logging failed parses
+     to the trace would have made this visible right away. For demo runs, a
+     different model config might avoid it entirely.
+
+  Want me to do 1 and 2, and add logging for failed parses? I'd re-run TR-13
+  afterward to confirm the fix.
+
+✻ Sautéed for 48s · done 3:41 AM
+
+❯ yes - on all counts. invesitagte first and understand the root cause, to lead 
+  you to the holsitic fix. Ideally, there is minimal work required of the llm   
+  as its calling its tool. An example fo a common failure mode is requireing    
+  the llm to re-scribe large amount of text - this is neither efficent for      
+  output tokens, latency, nor accuracy. And might be related to this failure    
+  mode we just witnessed.                                                       
+
+⏺ Starting with the transcript to see exactly what the failed calls looked like.
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ The saved transcript only keeps the last step: the earlier failed attempts are
+  missing. Looking at how the agent loop runs and records steps:
+
+  Searched for 1 pattern, ran 2 shell commands (ctrl+o to expand)
+
+⏺ The transcript write uses result.response.messages. I'm checking in the
+  installed ai version whether that holds every step or only the last one:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+❯ then, consider adding to the eval set, if this failure mode/"unit test" is    
+  not represented already - to catch future or remaining regressions.           
+
+⏺ Noted. I'll add an eval case for this failure once the fix is in. Continuing
+  with the SDK check.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Found two issues: models.ts uses result.response.messages, which only captures
+  the final step instead of all steps via responseMessages, and parse/schema
+  failures on tool calls bypass our execute-based telemetry entirely. Next I'll
+  check what stage 1 asks the model to write out.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Found the likely bug: footnote markers like \23\ in Federal Register text
+  create invalid JSON escapes (\2) when embedded in quoted tool arguments,
+  breaking the call. I'll now check how quotes are handled and matched across
+  the tools.
+
+  Searched for 1 pattern, ran 1 shell command (ctrl+o to expand)
+
+⏺ Before redesigning anything I want direct evidence of what failed, so I'm
+  checking whether the CLI can run stage 1 alone.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ I'll first fix the instrumentation so failed calls appear in the trace, then
+  reproduce stage 1 on TR-13 with the o1-glm config to capture the real failure
+  before designing a fix.
+
+  Ran 2 shell commands (ctrl+o to expand)
+⏺ Instrumentation typechecks. Now reproducing: stage 1 on the same TR-13 pair
+  with o1-glm, three runs in parallel, since the failure may not happen every
+  time.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ While those run, I'm checking the backslash hypothesis against the passages
+  the model was quoting:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Three trigger files have these markers: TR-13 Rollins (76 lines), TR-21
+  negative option (113) and TR-03 ADCVD (26). Waiting for the stage 1 runs to
+  finish:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The failure reproduced in all three runs. Each first call was rejected by
+  schema validation (AI_TypeValidationError), not a JSON parse error. Pulling
+  the full error to see which field fails:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The validation errors show two failure modes: runs 1 and 3 sent items as a
+  JSON string instead of an array, while run 2 had items missing summary and a
+  non-verbatim quote. I'll inspect the stringified items from runs 1 and 3 next.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Quotes are only about 15% of each ~10k-character call, so rewriting quoted
+  text isn't the main cost. Checking what fills the rest, and what broke at
+  character 528:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Found the root cause: the model struggles with the large nested-array call
+  because it repeats redundant data (long summaries, duplicated file
+  paths/quotes), leading to serialization errors, dropped fields, and a retry
+  rule that let invalid probe calls slip through unnoticed. Next I'll check
+  whether the stage-4 finding tool has the same pattern before designing a fix.
+
+  Searched for 1 pattern, ran 1 shell command (ctrl+o to expand)
+
+⏺ I'll check past runs to see how often the verbatim quote requirement in
+  commit_finding actually causes failures.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Stage 1 fails outright (3/3 repro runs) while Stage 4 leaks unverified quotes
+  more subtly (11/364 findings, 2/26 traced calls, likely undercounted). I'll
+  fix both by having citations reference line numbers instead of transcribing
+  text, so first checking how read and grep currently present output.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Neither read nor grep shows line numbers today, so I'll add them. Checking
+  span offset units, the diff-preview format, and how the eval set is organized:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The output spans still match the contracts/ schemas, so only the tool inputs
+  change. Now I'll check existing eval invariants and unit evals to see if this
+  failure case is already covered.
+
+  Listed 3 directories, ran 1 shell command (ctrl+o to expand)
+
+⏺ The current eval layers (invariants, answer keys, unit tests) don't catch this
+  failure since none verify change-item validity or tool-call success. I'll add
+  that coverage after fixing the issue, starting now with the shared
+  line-reference helpers.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Writing the line-reference helpers now (src/citations.ts, plus line numbers in
+  read/grep output), then the stage 1 and stage 4 tool changes.
+
+  Searched for 1 pattern, ran 1 shell command (ctrl+o to expand)
+
+⏺ Now the helpers:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Page text now carries line-number prefixes, which lengthens chars_returned.
+  The V6 coverage check compares that against file size, so I'm checking that it
+  still behaves:
+
+  Searched for 1 pattern (ctrl+o to expand)
+
+⏺ I didn't find any code computing chars_returned as a share of file size, but
+  V6 defines it that way. I'll keep the pages as raw text and only inject the
+  numbers into what the model sees, so the count stays accurate.
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ Now stage 1. Reading the current function and the orchestrator prompt:
+
+  Searched for 1 pattern, ran 1 shell command (ctrl+o to expand)
+
+❯ yes - line numbers is exaclty an example of a more efficient pattern for an   
+  llm - such as a line number range - OR - detemrinsitcally feeding the diff    
+  in, with the ability for the llm to expilcity"black list" (opt out)of         
+  pure-noise diffs. Any line with ANY relevant chnage would be kept by default  
+
+⏺ I'll combine both ideas into a stage-1 design where diff hunks are
+  deterministic default items unless the model opts them out with a reason, the
+  model cites line ranges rather than copying text, uncovered hunks get surfaced
+  back to the model before being auto-kept, and very large hunks (like a first
+  reading) rely solely on line citations. Now checking the hunk structure and
+  where stage 1 is called.
+
+  Ran 3 shell commands (ctrl+o to expand)
+
+⏺ Stage 0 diffs the same normalized text that stage 1 sees, so hunk line numbers
+  match the numbered snapshot. Writing the new stage 1:
+
+  Searched for 1 pattern (ctrl+o to expand)
+
+⏺ I'm putting the deterministic parts in their own module, src/change-items.ts:
+  hunk candidates, the summary check and the coverage check. That way they can
+  be unit-tested without calling a model.
+  Searched for 1 pattern (ctrl+o to expand)
+
+⏺ Write(src/change-items.ts)
+  ⎿  Wrote 41 lines to src/change-items.ts
+      1 import type { Hunk } from "./diff.js";
+      2 
+      3 /**
+        ems; the model
+      5  * describes them or opts them out as noise. Nothing here calls a
+         model.
+      6  */
+      8 /** A hunk longer than this is a rewrite (or two different docume
+        nts), not an item. The model cites lines inside it instead. */
+      9 export const MAX_KEPT_HUNK_LINES = 30;
+     … +48 lines (ctrl+o to expand)
+
+⏺ Now replacing modelStage1 and the old changeTool / materialiseChange in
+  src/agents.ts:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Now the stage-1 prompt:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Now stage 4. The analyst stops copying the trigger quote, since change_ref
+  already identifies it, and cites clauses, hops and cross-references by line
+  range. Reading the finding schema:
+
+  Searched for 1 pattern, ran 3 shell commands (ctrl+o to expand)
+
+⏺ Now the analyst prompt and the note the trigger-snapshot tool returns:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Typecheck and all 38 tests pass — I noticed another edit landed in
+  src/prompts.ts (a new date_shift instruction, bringing test count from 34 to
+  38), but my changes build on top of it without conflict. Now I'll check which
+  trigger pairs exercise the keep-by-default rule for diff hunks.
+
+  Ran 3 shell commands (ctrl+o to expand)
+
+⏺ I've identified hunk candidates for TR-01, TR-11, and TR-14, while TR-13
+  remains a full rewrite relying on line citations. Now re-running stage 1 with
+  o1-glm, prioritizing TR-13 (3x, since it previously failed), TR-01 and TR-11
+  (1x each), and TR-21's snapshot (1x) as an initial check on its heavily
+  backslash-laden text.
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ All six runs completed with no invalid tool calls, while the old shape failed
+  on its first call every time—the only rejections were citations over 30 lines,
+  which the model self-corrected. Next I'll verify summaries and cited text,
+  then compare output tokens and time against the old runs.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Output tokens dropped about 60% on TR-13 (to ~2.5k) with stage 1 running in
+  ~12s instead of 28-40s, though fix-tr13-1 had 19 finer-grained items. I
+  noticed a possibly duplicated quote in fix-tr13-2, so I'm checking the source
+  lines.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The duplication turns out to be in the original Federal Register text, so the
+  citation is accurate. Now I'll verify the stage 4 change by running three
+  copper stacks against the new TR-01 change record.
+
+  Ran 3 shell commands (ctrl+o to expand)
+
+⏺ Running stage 4 on three copper-relevant stacks, injecting the new TR-01
+  change record:
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ All three stacks committed successfully on the first try, with 14 findings and
+  no unverified quotes. Now I'll check the test file and eval-design sections
+  to extend regression coverage.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ I'll add unit tests in test/tool-inputs.test.ts for line references,
+  placeholder checks, and hunk coverage, plus two new eval invariants (V15, V16)
+  with a scorer and a stage-1 sentinel that reruns the problem triggers three
+  times.
+
+⏺ Write(test/tool-inputs.test.ts)
+  ⎿  Wrote 73 lines to test/tool-inputs.test.ts
+       1 import assert from "node:assert/strict";
+       2 import { test } from "node:test";
+       3 import { hunkCandidates, summaryProblem, uncovered } from "../sr
+       4 import { MAX_CITED_LINES, parseLines, resolveLines } from "../sr
+         c/citations.js";
+       5 import { loadCorpus, readNormalized } from "../src/corpus.js";
+       6 import { diffLines } from "../src/diff.js";
+       8 import { findRepo } from "../src/paths.js";
+       9 
+      10 const repo = findRepo();
+     … +89 lines (ctrl+o to expand)
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ The unit tests pass (6/6). Next is the eval scorer for V15 and V16,
+  scripts/score-tool-health.ts, which reads any run directories you give it.
+
+⏺ Write(scripts/score-tool-health.ts)
+  ⎿  Wrote 96 lines to scripts/score-tool-health.ts
+       1 /**
+       2  * V15 change items are real, V16 tool-call health. No model cal
+       3  *   npx tsx scripts/score-tool-health.ts runs/<id> [runs/<id> .
+         ..]
+       4  * Exit code 1 when any run fails.
+       6 import { existsSync, readFileSync } from "node:fs";
+       7 import path from "node:path";
+       8 import { hunkCandidates, summaryProblem, uncovered } from "../sr
+       9 import { loadCorpus, readNormalized } from "../src/corpus.js";
+      10 import { diffLines } from "../src/diff.js";
+     … +117 lines (ctrl+o to expand)
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The scorer correctly separates the runs, and it also revealed that the live
+  TR-13 run recorded 16 invalid commit_finding calls in stage 4—meaning the old
+  schema was silently failing there too, not just in stage 1. Since the file
+  changed on disk since I last wrote it, I'll re-read it before making any
+  changes.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The on-disk change was just my own sed edit. I'll adjust V15 to only fail on
+  placeholder or empty summaries (treating overly long ones as a warning
+  instead), then investigate why those 16 old commit_finding calls failed.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ That diff is my own edit too. Pulling the full error text of one of the 16
+  failed commit_finding calls:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The 600-character log cap was hiding the actual schema error, so I'm updating
+  the formatting to surface the issue list first. Then I'll re-run the failed
+  stacks with the new schema to check if they pass.
+  Ran 1 shell command (ctrl+o to expand)
+
+❯ great - continue until completion - just wanted to say, makes ure to not      
+  trigger a full new compelte run - that costs a few dolalrs in spend every     
+  time.                                                                         
+
+⏺ Understood: no full runs. Everything so far has used single-stage runs (stage
+  1 alone, or stage 4 on one stack), and the rest will too. Fixing the test's
+  type error:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Running stage 4 on the four stacks with the most invalid calls from the
+  previous run—Gemma Northcott, the mutual-arbitration template, the RSU form,
+  and the handbook—each with the new TR-13 change record injected.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Stage 4 shows the same failure pattern as stage 1: the model mishandles nested
+  arrays of objects. I'll restructure it the same way—separate record_finding
+  and record_cross_reference calls with flat fields, plus a final finish_stack
+  call—and I'm reading through the rest of the stage-4 code before making the
+  change.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ I'm adding a small hop parser next to the line-reference helpers, then
+  replacing the stage-4 commit tool:
+
+  Searched for 1 pattern, ran 1 shell command (ctrl+o to expand)
+
+⏺ Replacing commit_finding with the three flat tools:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ My slice accidentally removed reportTool and duplicated a region. Since
+  there's no git here to revert, I'll fix it manually, starting by mapping out
+  the duplicate.
+
+  Searched for 1 pattern (ctrl+o to expand)
+
+⏺ Lines 779 to the end repeat compactFinding through cpCount, followed by the
+  old materialiseFinding. Checking what comes after it before cutting:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Lines 779–855 duplicate 688–764 exactly, and 856 to the end is the old
+  materialiseFinding, which is being replaced. Deleting 779 onward and restoring
+  reportTool:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ It typechecks. Checking that nothing else was lost: every stage's tool is
+  still present and all tests pass.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ All tools are in place, and all 44 tests pass (38 before, plus my 6). Updating
+  the analyst prompt and brief for the new tools:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Now re-running stage 4 alone on all seven stacks: the four employment stacks
+  with the TR-13 record and the three supply stacks with the TR-01 record.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ All seven stacks had clean call validity, but s4-1 ran out of steps before
+  recording anything and no hops were captured anywhere. I'll add step headroom,
+  salvage partial findings as needs_review, loosen the hop parser (moved to
+  citations.ts for testability), and log dropped hops to the trace.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Adding parseHop tests for the formats a model is likely to write:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The parser handles all four formats. Re-running three stacks: s4-1 (the one
+  that didn't finish), s4-2, and e4-4 (the largest), checking for finishes, hops
+  and dropped-hop notes.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ All three stopped after reading, with nothing recorded and no findings file.
+  That looks like a crash, not model behavior. Checking the logs:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ "Delay was aborted" comes from the AI SDK's retry wait. Checking whether all
+  three failed at the same moment, which would point to the provider rather than
+  my change:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The timeouts trace back to provider slowness, not the schema change, but they
+  reveal that a timeout currently discards all completed work. I'll extend the
+  existing salvage logic to also cover timeouts, since that's a small addition.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ All 45 tests pass. While waiting on the slow provider, I'll add V15/V16 to
+  eval-design.md, a stage-1 tool-robustness entry to the sentinel set, and a
+  cheap stage-1-only sentinel runner at scripts/sentinel-stage1.ts.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Now the sentinel runner:
+
+⏺ Write(scripts/sentinel-stage1.ts)  ⎿  Wrote 71 lines to scripts/sentinel-stage1.ts
+       1 /**
+       2  * Tool-call robustness sentinel (V15/V16). Stage 1 only, plus o
+         ptional single-stack
+       4  *   npx tsx scripts/sentinel-stage1.ts --config configs/o1-glm.
+         json [--k 3] [--stacks]
+       5  * Exit code 1 unless every repeat passes (pass^k).
+       6  */
+       8 import { mkdirSync, writeFileSync } from "node:fs";
+       9 import path from "node:path";
+      10 import { parseArgs } from "node:util";
+     … +83 lines (ctrl+o to expand)
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ Both scripts typecheck. Retrying the three stage-4 stacks to see whether the
+  provider has recovered:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The provider's still slow—one stack finished in 4 minutes, two hit the
+  5-minute cap and fell back to partial needs_review. I'll fix the model's hop
+  omission by describing the field directly in the schema, and check if the SDK
+  can cap individual steps instead of the whole agent loop.
+
+  Searched for 1 pattern (ctrl+o to expand)
+
+⏺ I'll update the timeout config to 3 minutes per step and 15 minutes total to
+  accommodate the one-call-per-item design, and add a field description for
+  hops.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Retrying the three stacks with the new timeout:
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ All three stacks completed with Great Plains logging 10 findings, but several
+  record_finding calls were rejected (1 for Great Plains, 2 for Hai Phong, 7 for
+  the handbook stack) — I'll investigate why.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Found enum mismatches where the model sent invalid response_type or urgency
+  values, but the trace doesn't show the actual value since I trimmed that from
+  the log. I'll add logging for those offending fields, then re-run the handbook
+  stack to capture what's actually being sent.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ This run recorded 5 findings cleanly with no rejections, confirming the enum
+  misses stem from V16 calibration rather than the tools themselves—structural
+  failures remain hard errors, single bad enums now just trigger a recoverable
+  retry, and unfinished stages still count as failures. I'm also adding enum
+  input normalization (case, spaces, hyphens) so format-only misses get accepted
+  outright.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ I'm checking whether z.preprocess strips the enum values from the JSON Schema
+  sent to the model, which could hide the allowed options.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The enum lists remain fully visible to the model, so loose parsing only
+  affects validation. Next I'll run the sentinel itself once with k=1 and
+  stacks, completing four stage-1 runs and four single-stack runs without a full
+  run.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ All eight pass, with no invalid calls. Two rejected calls were a line range
+  and a summary, each fixed by the model on retry. Last, checking whether the
+  design docs still describe the old tools:
+
+  Searched for 1 pattern (ctrl+o to expand)
+
+⏺ I've fixed the root cause of the "test A / test B" change items and the
+  tool-call failures behind it. The fix is verified on stage-level runs only; I
+  never started a full pipeline run.
+
+  Root cause, reproduced in 3 of 3 runs
+  - Oversized tool calls. Stage 1 asked the model to write about 10k characters
+    in a single commit_change_record call: an array of nested objects, each
+    holding a long summary, a repeated file path, and a quote copied
+    word-for-word from the source text.
+  - The model mangled that shape. Some of the models we run (GLM is the one
+    observed) sometimes send the whole array as a string, with broken escaping,
+    or drop required fields partway through the list.
+  - The failures were invisible. The SDK rejected these calls before our code
+    saw them, so they never reached the trace, and the saved transcript kept
+    only the final step.
+  - The harness trusted the first valid call. So when the model sent a debugging
+    probe to find out what was wrong, that probe became the run's change
+    record.
+
+  Stage 4 (commit_finding) had the same pattern. The TR-13 run logged 16 invalid
+  calls, and the same stacks failed again when I re-ran them before the fix.
+
+  The fix: the model points at text, and the code does the rest
+  - Line numbers instead of copied text. The snapshot and every read result are
+    shown with line numbers. The model cites "lines": "209-214" and the harness
+    reads the text itself, so there's nothing to escape and nothing to retype.
+  - One small, flat call per item. Stage 1 uses record_change for each item,
+    then finish_change_record. Stage 4 uses record_finding and
+    record_cross_reference for each item, then finish_stack. A bad call now
+    costs one item, not the whole record.
+  - Diff hunks are kept by default, as you suggested. Each short changed region
+    counts as a change unless the model records it as noise with a reason. If a
+    region is left unrecorded, the model is told once, and after that the
+    harness keeps it.
+  - No retyping the trigger quote. A finding's trigger passage now comes from
+    its change_ref.
+  - Placeholder summaries are refused. "test A", "TODO" and similar are
+    rejected, and the tool descriptions say "every call is real; there is no
+    test mode."
+  - Supporting changes:
+    - Invalid calls are now traced with the reason and the value the model sent.
+    - Transcripts keep every step.
+    - The timeout is now 3 minutes per step and 15 minutes in total, instead of
+      5 minutes for the whole agent.
+    - A stack that times out or never finishes keeps the findings it already
+      recorded, marked needs_review.
+    - Allowed values like "Send Notice" now match send_notice.
+
+  Results (GLM, the same o1-glm config)
+
+  ┌─────────────────────────┬───────────────┬──────────────────────────────┐
+  │                         │    Before     │            After             │
+  ├─────────────────────────┼───────────────┼──────────────────────────────┤
+  │ Stage 1 on TR-13, first │ 3 of 3 runs   │ 0 of 3                       │
+  │  call invalid           │               │                              │
+  ├─────────────────────────┼───────────────┼──────────────────────────────┤
+  │ Stage 1 output tokens / │ 5.8–8.9k /    │ ~2.5k / ~12 s (two of three  │
+  │  time                   │ 28–40 s       │ runs)                        │
+  ├─────────────────────────┼───────────────┼──────────────────────────────┤
+  │ Stage 4 stacks with     │ 3 of 4        │ 0 on the latest re-runs, all │
+  │ invalid calls           │               │  stacks finished             │
+  └─────────────────────────┴───────────────┴──────────────────────────────┘
+
+  Eval coverage added
+  - 7 offline tests in test/tool-inputs.test.ts, including the backslash-heavy
+    Federal Register text, the "test A" case, hunk coverage and hop parsing. All
+    45 tests pass.
+  - V15 (change items are real) and V16 (tool-call health), added to
+    eval-design.md §4 and checked by scripts/score-tool-health.ts. The scorer
+    fails the original run on "test A", fails the old-code repro runs on
+    structural invalid calls, and passes every run with the fix.
+  - A stage-1 sentinel, added to §13: npx tsx scripts/sentinel-stage1.ts 
+    --config configs/o1-glm.json --k 3 [--stacks]. It runs stage 1, plus single
+    stacks with --stacks, and never a full run. I ran it once at k=1 and all 8
+    runs passed.
+
+  Worth watching
+  - Hops are rarer. Findings still sometimes skip hop chains (the flat format is
+    optional). I've described the field in the schema; the sentinel's
+    hop-complete stacks will show whether that's enough.
+  - Later stages see more context. Transcripts now carry the full stage-1
+    history into stages 3 and 5, which adds input tokens there. Most of it
+    should be served from the cache.
+  - scripts/score-step1.ts still counts commit_finding. It only scores two
+    historical runs, so I left it alone.
+  - Someone else was editing this repo while I worked (for example, the
+    date_shift tool). I built on their changes and didn't overwrite anything.
+
+  Nothing is committed.
+
+✻ Sautéed for 44m 49s · done 4:29 AM
+
+※ recap: The tool-call failures behind the "test A" change items are fixed, verified only on cheap stage-level runs, with new eval checks and a sentinel added, and nothing is committed yet. Next is for you to review the changes and decide whether to commit and run the sentinel at k=3.
+
+❯ great. how parallleized are the subagent/stage 4 steps? Checking for any low  
+  hanging imporvments on speed                                                  
+
+  Searched for 1 pattern, ran 1 shell command (ctrl+o to expand)
+
+⏺ Stage 4 runs a worker pool capped at concurrency: 4 in every config, handing
+  out stacks in scope order. Measuring how that plays out on a real run's trace:
+
+  Ran 3 shell commands (ctrl+o to expand)
+
+⏺ Found it: stage 4 in the last TR-13 run took 25.5 minutes for 25 minutes of
+  stack work — effective parallelism of 1.0 despite a concurrency setting of 4,
+  meaning stacks ran sequentially. Since that run came through the UI, I'll
+  check whether that path uses advanceReview instead of fanOut.
+
+  Searched for 1 pattern, ran 1 shell command (ctrl+o to expand)
+
+⏺ I've confirmed the UI session path calls advanceReview once per unit, with
+  nextUnit processing only one stack per call — the parallel fanOut pool is used
+  only by the CLI, never by UI reviews. Now I'll check how the session tool
+  loops over these calls, since any fix needs to keep its step-by-step
+  durability intact.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ I've identified two cost drivers in the session path: 44 sequential agent runs
+  (one per durable step) and a fresh Node/tsx process spun up each time. Now
+  I'll measure the per-step overhead using the gaps between stacks in the TR-13
+  trace.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Process overhead is negligible—the real cost is fully serial stack processing.
+  I'll fix this by batching stacks through the same 4-worker pool fanOut uses
+  (up to 2x concurrency per batch), writing findings to disk per stack so
+  crashes resume cleanly, while keeping per-stack progress output intact.
+
+  Searched for 1 pattern, ran 1 shell command (ctrl+o to expand)
+
+⏺ Pipeline typechecks. Now the session tool, so it shows every stack in a batch:
+
+  Ran 1 shell command (ctrl+o to expand)
+⏺ All 45 tests pass. Now I'll run a scenario using the offline stub model with
+  concurrency: 4 to confirm batching works correctly through the session path.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Batching works through the session path: each call finished 8 stacks with 4
+  workers, and the run completed normally with a report. The first 13 calls were
+  cut from the output above by tail.
+
+  Stage 4 wasn't parallelized in UI reviews at all. That was the bottleneck, and
+  it's fixed now.
+
+  What I found
+  - Two stage-4 paths:
+    - The CLI's harness run goes through fanOut, which uses a 4-worker pool
+      (concurrency: 4 in every config).
+    - Reviews started from the UI go through advanceReview, which ran exactly
+      one stack per durable step. That path never used the pool.
+  - The measurement (last TR-13 run from the UI): stage 4 took 25.5 minutes of
+    wall time for 25 minutes of total stack time, an effective parallelism of
+    1.0. There were 44 stacks, with a median of 35 s and a maximum of 77 s each.
+    Stage 4 was about 90% of the run's 28.4 minutes.
+  - Startup overhead isn't the problem. Starting a new process for each step
+    costs about 0.8 s, 0.6 minutes over the whole run.
+
+  What I changed
+  - Batched session steps. Each step now runs a batch of stacks through the same
+    pool as fanOut (analysePool in src/pipeline.ts). A batch holds twice
+    concurrency (8 stacks), so one slow stack doesn't leave the other workers
+    idle.
+  - Crash-safe resume. Each finding is still written as its stack finishes, so a
+    crash mid-batch resumes from disk as before.
+  - UI progress per stack. AdvanceResult now carries every stack a step
+    finished, so the UI still shows one line per stack. It updates in bursts,
+    about every minute, instead of one line at a time.
+  - Verified by driving a stub scenario through the session path: 8 stacks per
+    step, and the run completed. All 45 tests pass.
+
+  Expected effect: stage 4 on a TR-13-sized run should drop from about 25
+  minutes to about 7, so the whole review goes from about 28 minutes to about
+  10. That's an estimate from the measured per-stack times. I didn't run a full
+  session to confirm it, as you asked.
+
+  Other easy wins, not done yet:
+  - Raise concurrency to 8 in configs/o1-glm.json. That would bring stage 4 to
+    about 4 minutes, as long as the gateway's rate limits for GLM allow it. It's
+    a one-line change, and worth a single run to check for 429 errors before
+    keeping it.
+  - Start the largest stacks first. This shortens the wait for the slowest stack
+    at the end of a batch. It's a small gain at this pool size.
+  - Caching is already set up well. Each stack's brief puts the shared material
+    (profile and change record) before the stack-specific part, so provider
+    prompt caching can reuse that prefix across stacks.
+
+✻ Crunched for 2m 21s · done 8:01 AM
+
+※ recap: We're making the review faster; UI reviews now run stage-4 stacks four at a time, which should cut a full review from about 28 minutes to about 10. Next: decide whether to raise concurrency to 8 and test with one run.
+
+❯ okay. from the main page - remove "jev" and "stubbed" model options - neither 
+  of these will run successfully as an orchestraor. then - observe the two      
+  most recent runs, inlcuding                                                   
+  http://localhost:8787/#/sessions/wrun_01M3SA9H23HGF7820A7CZS16AJ - appears to 
+  be hung/stalled?                                                              
+
+  Searched for 1 pattern, ran 1 shell command (ctrl+o to expand)
+
+⏺ The model dropdown now hides the stub and Jev configs. The default is still
+  o1-glm, and the UI is rebuilt. Now the two most recent runs, both TR-02:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Both runs are still active — DeepSeek is 9/63 through stage 4, while GLM is in
+  stage 1 and hasn't made a tool call in over 2 minutes. Now I'll check which
+  run your session URL corresponds to.
+
+  Listed 2 directories, ran 1 shell command (ctrl+o to expand)
+
+⏺ The session was created at 14:07:59, so it's the GLM run …279539 (started
+  14:08:01). Checking its review workflow steps and the latest trace activity:
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ Stage 1 of …279539 has made a single model call that has run for about 2
+  minutes 45 seconds, with no tool call yet. Checking how large this snapshot
+  is, since stage 1 sends the whole thing:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The snapshot is normal-sized (~39k chars), so GLM is just being slow again on
+  TR-02 stage 1 — the new 3-minute timeout should cut it off around 14:11. I'll
+  also check whether DeepSeek's stage 4 is actually running in parallel, since 9
+  of 63 stacks in ~11 minutes suggests it's serial.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Both runs are explained: the …279539 GLM run wasn't hung, it timed out at
+  14:11:02 after the provider stopped responding to the first stage-1 call for 3
+  minutes, triggering the new per-step abort. Now checking if GLM responds to a
+  tiny test request.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The ping didn't pick up the key. The harness loads .env itself, so I'm
+  retrying with Node's --env-file:
+
+  Listed 1 directory, ran 3 shell commands (ctrl+o to expand)
+
+⏺ Small requests respond fine, so this is a recurring stall on occasional large
+  requests (twice today) that kills the run once the step limit hits. I'll fix
+  this by retrying just the stalled model request via middleware rather than the
+  whole agent step—checking the AI SDK's middleware API now.
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ Adding the stall retry in src/models.ts. It wraps the model so that each
+  request gets its own 2-minute limit and up to two retries. The per-step limit
+  rises to cover three attempts.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Typechecks. To test the retry offline, I'm making the timeout configurable and
+  adding a unit test where a fake model hangs on its first request and answers
+  on the second:
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ All 46 tests pass, including the stall test. A last look at the DeepSeek run
+  that's still going:
+
+  Searched for 1 pattern, ran 1 shell command (ctrl+o to expand)
+
+⏺ The DeepSeek run stalled three times, on Lakeport, Crestline, and Harborview,
+  each hitting the 3-minute step limit, but the salvage change let it continue.
+  I'll check what those three stacks saved.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ I removed the two model options, and both recent runs are explained: provider
+  requests that stall with no answer. Your GLM session failed outright on one,
+  and the DeepSeek run lost three stacks to them. I've added a retry for this.
+
+  Model dropdown: the offline stub and the Jev config are no longer listed.
+  o1-glm is still the default, and the UI is rebuilt.
+
+  Your session (wrun_01M3SA9H…, run TR-02-…279539, GLM): it failed.
+  - The first model request in stage 1 got no response. The run did nothing for
+    3 minutes, which is why it looked hung.
+  - At 14:11:02 the 3-minute step limit I added earlier cut it off, and the run
+    ended as failed with the SDK's unhelpful message, "Delay was aborted".
+  - The provider itself was up. A one-line ping to both GLM and DeepSeek came
+    back in about a second. The same TR-02 pair finished stage 1 in 31 s on
+    DeepSeek, and GLM did the same thing at 10:10 today. Occasionally, a single
+    large request just never gets an answer.
+
+  The other run (TR-02-…721124, DeepSeek): still running, 16 of 63 stacks at 
+  14:13.
+  - Parallel stage 4 is working. From 14:04 on, it runs 4 stacks at a time. The
+    first two stacks ran one at a time, probably because those steps started
+    before the batching change took effect.
+  - It hit the same stall three times. Lakeport, Crestline and Harborview each
+    lost a request to the time limit. The salvage change kept the run alive, but
+    those three stacks were saved as needs_review with no findings, since they
+    stalled before recording anything.
+  - DeepSeek is slow even without stalls: 1.5–4 minutes per stack, against about
+    35 s for GLM.
+
+  The fix: retry just the stalled request (src/models.ts).
+  - A wrapper on the model gives each request its own 2-minute limit and retries
+    it up to twice. Only the request is repeated; tools that already ran aren't
+    re-run, so no items get recorded twice.
+  - The step limit rises to cover three attempts.
+  - If all three attempts get no answer, the error now says so plainly instead
+    of "Delay was aborted".
+  - Each retry is logged to the trace as a stalled event.
+  - A new offline test covers a model that hangs and then answers, and one that
+    never answers. All 46 tests pass.
+
+  The DeepSeek run picks this up from its next step onward, since each step
+  starts a fresh process. I can re-run the three stalled stacks alone, which is
+  cheap. Say the word and I'll do it.
+
+✻ Worked for 3m 29s · done 8:13 AM
+
+❯ "new per step abort" - why was this introduced?                               
+
+⏺ It wasn't new from nothing. I replaced an existing limit during the stage-4
+  tool change, and that replacement affected your runs.
+
+  Before: runAgent had timeout: 300_000, a single 5-minute cap on the whole
+  agent call (every step of a stack, or all of stage 1).
+
+  Why I changed it: moving stage 4 to one call per finding meant a stack takes
+  more model steps (reads, then N record_finding calls, then finish_stack).
+  While I was verifying that, GLM was slow, and the Great Plains and handbook
+  stacks hit the 5-minute whole-loop cap before recording anything. Their work
+  was lost. So I switched to { stepMs: 180_000, totalMs: 900_000 }: up to 3
+  minutes per model step and 15 minutes for the whole call. The intent was to
+  loosen the overall budget, not to add a new way to fail.
+
+  How it affected today's runs:
+  - Your GLM session: under the old cap it would have failed as well, just 2
+    minutes later at 5 minutes. Neither setting retried a request that got no
+    answer, so the outcome is the same.
+  - The three DeepSeek stacks: my change may have made these worse. Lakeport was
+    cut off 204 s into the stack, and under the old whole-loop cap it would
+    have had another ~96 s. I can't tell from the trace whether that request
+    would ever have answered. But a 3-minute step limit is tighter than the old
+    budget for a single slow step, and earlier today GLM had steps that did
+    finish after about 200 s.
+
+  Current setting, and one adjustment I'd make: each request now gets 120 s and
+  up to 3 attempts, and the step limit covers all of them. The ~200 s responses
+  we saw earlier would get cut off at 120 s and retried, wasting that time. I'd
+  raise the per-request limit to 240 s. That still catches a genuinely dead
+  request, stops cutting off slow but working ones, and puts the step limit at
+  about 12.5 minutes. Want me to make that change?
+
+✻ Cooked for 17s · done 8:14 AM
+
+❯ at waht pint did stage 4 move to one call per finding (diff component, right) 
+  - i'm weighing if this is the best approach, given the intent i listed in     
+  @system-design.md . The goal here is NOT hyper optimization of                
+  sppeed/parallelization, if it fragments context and suffers quality issues.     ⎿  Read system-design.md (728 lines)
+
+⏺ There are two separate changes here, and the diff part belongs only to stage
+  1:
+
+  - Stage 1, diff-driven items (your idea): diff hunks are the default change
+    items and the model opts out the noise.
+  - Stage 4, one call per finding (my change): I made it during the tool-failure
+    fix. After switching to line references, I re-ran the four employment
+    stacks, and three of four still failed the same way: the model sent the
+    whole findings array as a string. So I split commit_finding into
+    record_finding (once per finding), record_cross_reference, and finish_stack.
+    The trigger fired on a real, reproduced failure. But I made the change
+    without checking it against the design intent or measuring quality.
+
+  What it does and doesn't change, against system-design.md:
+  - Context isn't fragmented. It's still one subagent per stack, with a fresh
+    context and its own lane (§3, §7). The same agent reads the same documents
+    in one conversation. Only the output is emitted piece by piece instead of as
+    one StackFinding.
+  - Parallelism didn't come from this. The speed-up came from batching stacks in
+    the session path, which is separate and matches "fan out one subagent per
+    in-scope stack" in §8.
+
+  Where it can hurt quality, and there are early signs:
+  1. Findings are no longer composed as a set. With one commit, the model writes
+     all its findings at once, so it can merge duplicates, keep labels
+     consistent across findings, and choose the governing clause for each
+     change. Recording one at a time lets it commit early and split one issue
+     into several. Early signals: Great Plains went from 4 findings to 10, and
+     one stage-1 run recorded 19 items where others recorded 6–7. That could be
+     better coverage or could be fragmentation. I haven't checked it against
+     gold.
+  2. Hop chains mostly disappeared. In the latest seven stack runs, one hop
+     appeared in total, where old runs had 2–3 per finding. §4 makes the hop
+     chain first-class ("the hop chain cites the naming clause"), and the
+     sentinel set has hop-complete chain items. That's a real regression, most
+     likely because hops are an optional string field now instead of a
+     structured list the old schema put first.
+  3. More model steps per stack. That made stacks longer, and it's what pushed
+     me into the timeout changes.
+
+  What I'd do instead: go back to one commit per stack, and keep the changes
+  that actually fixed the failure.
+  - Keep line-number citations, the trigger taken from change_ref, flat labels,
+    and the placeholder check.
+  - Restore hop_chain as a structured list.
+  - If findings arrives as a string, parse it before validating. The earlier
+    strings didn't parse because of escaping trouble in copied quotes
+    (backslashes, quote marks). With nothing copied anymore, they should parse.
+    That's an assumption I'd verify.
+
+  This keeps the whole finding composed in one place, as §5 intends, and handles
+  the specific failure we saw. The same reasoning applies to stage 1 if you
+  want the change record composed as one piece too. The diff-driven default-keep
+  works with either shape.
+
+  How to decide with evidence (stage 4 only, cheap): run both versions k=3 on
+  the sentinel stacks that have gold, such as the Great Plains hop-complete
+  chain (A S4-GPC-01), Hai Phong (A S4-HPB-01), and the handbook. Compare
+  findings against gold, hop completeness, duplicate findings, invalid-call rate
+  (V16) and time.
+
+  Should I build the one-commit version and run that comparison?
+
+✻ Cooked for 31s · done 8:19 AM
+
+❯ yeah run that comparison. report depth/correctness is the priority.           
+
+⏺ I'll start with the existing stage-4 scorer and the gold keys, so the
+  comparison uses the eval set's own matching rules:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ That scorer covers stages 1 and 3, not stage 4. Looking for the stage-4 gold
+  items (S4-GPC-01 and similar):
+
+  Listed 1 directory, ran 2 shell commands (ctrl+o to expand)
+
+⏺ Gold exists for TR-01 (e2e/T1) and TR-14 (e2e/T5). Hai Phong (TR-02) and TR-13
+  haven't been written yet, so I'll compare on stacks that have gold. Reading
+  T1's structure:
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ T1 provides solid per-stack gold data for the 9 TR-01 stacks, covering clause
+  spans, hop/decoy spans, labels, and pass rules—good basis for measuring depth
+  and correctness. Now checking T5 (TR-14 noncompete) for a second domain
+  comparison.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ I've outlined the comparison plan: 12 stacks total (9 TR-01 with T1 gold, 3
+  TR-14 with T5 gold), each run k=3 with stage 4 alone, scored against gold on
+  recall, depth, decoy hits, label accuracy, duplication, invalid calls, and
+  time. Now I'll add a config switch so both variants run from the same code,
+  starting by checking how configs are typed and validated.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Configs aren't schema-validated, so a new optional field is safe. Reading the
+  current stage-4 tool code before refactoring:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Consolidating finding-building logic into one shared function so both variants
+  handle citations, labels, and facts consistently, with only emission format
+  and hop structure differing. Moving per-variant instructions into a small
+  appended block outside the shared analyst prompt.
+
+  Searched for 1 pattern, ran 1 shell command (ctrl+o to expand)
+
+⏺ Cutting the last paragraph also removed the template's closing backtick.
+  Restoring it, tidying the blank lines, and adding the two per-variant
+  instruction blocks:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Now the per-variant instruction function, placed after the analyst prompt:
+
+  Searched for 1 pattern, ran 2 shell commands (ctrl+o to expand)
+
+⏺ Now src/agents.ts: the config switch, the shared finding builder, and the
+  single-commit tool.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Now the commit_finding tool for the single variant, and choosing the tool set
+  from config:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Typechecks. Checking that the JSON-string repair doesn't hide the list
+  structure in the schema the model sees, then running the tests:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The repair works as intended—list types are preserved and stringified (even
+  nested) lists are parsed, with all 46 tests passing. Now I'll check the
+  comparison runner and what fields its gold change record inputs carry.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Gold data spans 12 stacks with 13 findings across four pass rule types
+  (affected, affected_or_needs_review, abstain_only, not_affected). Now I'll
+  write the runner and scorer.
+
+⏺ Write(scripts/compare-stack-commit.ts)
+  ⎿  Wrote 237 lines to scripts/compare-stack-commit.ts
+       1 /**
+         ecord_finding per finding ("per_item").
+       3  * Teacher-forced: every run gets the gold change record, so cha
+       4  *   npx tsx scripts/compare-stack-commit.ts --config configs/o1
+         -glm.json [--k 3] [--parallel 8]
+         e-stack-commit/<stamp>
+       6  */
+       8 import { existsSync, mkdirSync, readdirSync, readFileSync, write
+         FileSync } from "node:fs";
+      10 import { parseArgs, promisify } from "node:util";
+     … +313 lines (ctrl+o to expand)
+
+⏺ The job sort and the failure log use the wrong argument index; fixing both,
+  then a small wiring check before the real matrix. The check is one stack, k=1,
+  both variants.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The per-item run finished, but the single-commit run exited with an empty log.
+  Checking what happened:
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ It's still running. My wait loop's pattern didn't match it and exited early.
+  The single variant is probably writing its whole commit in one long response.
+  Waiting for it:
+
+  Ran 1 shell command (ctrl+o to expand)
+⏺ I found that my 2-minute timeout was cutting off a legitimate long GLM
+  response since non-streaming calls can't distinguish a stall from slow
+  writing. I'm bumping the per-request limit to 5 minutes with one retry to
+  prioritize quality over faster stall recovery.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Both variants work on the Great Plains test — single-commit found 4 findings
+  with hop depths, per-item found 5 with none. Now launching the full matrix: 72
+  single-stack runs (12 stacks × 2 variants × k=3) in batches of 8,
+  interleaved, expected to take 45–60 minutes and cost $1–2 on GLM.
+
+  Ran 3 shell commands (ctrl+o to expand)
+
+⏺ All 72 runs are queued with 8 running at once. I'll wait for them to finish:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+❯ add a link to past reviews from the main home page, as a simple list to visit 
+  old runs. can be a non-primary link next to New review. use a clock icon for  
+  past reviews, and a plus icon next to new review. With new review being a     
+  button following the house style.                                             
+
+❯ sorry ignore last message - meant for another chat - continu your orginal     
+  task                                                                          
+
+⏺ Understood. I'll ignore the past-reviews request and keep waiting on the
+  comparison.
+
+  Read 1 file, ran 1 shell command (ctrl+o to expand)
+
+⏺ Seven of 72 finished in 10 minutes, so the full matrix will take about 1.5
+  hours at this pace. Waiting:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The comparison is still running, so I don't have results yet: 7 of 72 runs had
+  finished at 14:55. At this pace it needs about 1.5 more hours, and I'll be
+  notified when it's done.
+
+  What's being compared: one commit_finding per stack ("single") against one
+  record_finding per finding ("per_item"). Both share the same citation and
+  label code, and both get the gold change record as input. It covers 12 stacks
+  with gold answers (9 from TR-01, 3 from TR-14), three runs per variant per
+  stack. The results table in results.json will show, for each variant:
+  - Correctness: pass rate against each gold finding's rule, whether the right
+    clause was found, and depth (the share of gold's required clause and hop
+    citations the model cited).
+  - Mistakes: decoy hits and label accuracy.
+  - Shape: findings per stack, duplicate findings, and hops per finding.
+  - Reliability and cost: invalid calls, stacks that never finished, time and
+    output tokens.
+
+  Early signals from the wiring check (Great Plains, one run each, not
+  conclusive):
+  - Single commit: 4 findings with 4, 2, 1 and 2 hops.
+  - Per item: 5 findings with no hops.
+  - Cost: single-commit took about 7 minutes, because writing everything in one
+    response is slow on GLM.
+
+  A fix made along the way: my 2-minute stall limit would have cut off
+  single-commit's long response, since without streaming the SDK can't tell
+  "silent" from "still writing". I raised it to 5 minutes with one retry, which
+  matches the old whole-call budget.
+
+✻ Churned for 33m 12s · done 8:55 AM
+
+❯ okay kill it - make a read based on the finsihed runs so far.                 
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Background command "Run the stage 4 single vs per-item comparison" failed with
+exit code 144
+
+⏺ Background command "Wait for comparison to finish" failed with exit code 144
+
+⏺ Background command "Wait for comparison to finish" failed with exit code 144
+
+⏺ Stopped. Nine runs had finished: 4 single-commit and 5 per-item. I'm setting
+  aside the runs cut off by the kill so they aren't scored as failures, then
+  scoring the rest against gold:
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ Adding the two Great Plains wiring runs from earlier. They used the same gold
+  change record and the same two variants, and Great Plains is the hop-heavy
+  stack, so it's the most informative case:
+
+  Listed 1 directory, ran 1 shell command (ctrl+o to expand)
+
+⏺ Here's my read from the 11 runs that finished. It's a small sample, so it's a
+  direction to weigh, not a verdict:
+  - By variant: 5 single-commit runs and 6 per-item runs.
+  - By stack: 4 gold stacks in all. Three are trivial lease runs, and only Great
+    Plains exercises hop chains.
+  - Setup: both variants got the gold change record and scored against the same
+    keys.
+
+  ┌──────────────────────────────────────────┬─────────────────┬───────────┐
+  │                                          │  Single commit  │ Per item  │
+  ├──────────────────────────────────────────┼─────────────────┼───────────┤
+  │ Gold findings passed                     │ 4/6 (5/6, see   │ 6/7       │
+  │                                          │ note)           │           │
+  ├──────────────────────────────────────────┼─────────────────┼───────────┤
+  │ Right clause found                       │ 100%            │ 100%      │
+  ├──────────────────────────────────────────┼─────────────────┼───────────┤
+  │ Depth: gold required spans cited         │ 0.72            │ 0.71      │
+  ├──────────────────────────────────────────┼─────────────────┼───────────┤
+  │ Great Plains depth (F4, the hop-complete │ 0.67            │ 0.33      │
+  │  sentinel)                               │                 │           │
+  ├──────────────────────────────────────────┼─────────────────┼───────────┤
+  │ Hops per finding                         │ 0.90            │ 0.00      │
+  ├──────────────────────────────────────────┼─────────────────┼───────────┤
+  │ Label accuracy                           │ 53%             │ 45%       │
+  ├──────────────────────────────────────────┼─────────────────┼───────────┤
+  │ Invalid tool calls                       │ 0               │ 0         │
+  ├──────────────────────────────────────────┼─────────────────┼───────────┤
+  │ Median time / output tokens per stack    │ 257 s / 8.6k    │ 228 s /   │
+  │                                          │                 │ 6.0k      │
+  └──────────────────────────────────────────┴─────────────────┴───────────┘
+
+  What stands out:
+  1. Hop chains are the real difference. Per-item produced no hops in any run,
+     and the model even left the hop field empty. Single-commit wrote chains of
+     1–4 hops on Great Plains, and that's where its depth advantage on F4 comes
+     from. The design treats the hop chain as first-class (§4, §5), so per-item
+     is dropping part of the analysis, not just changing how it's formatted.
+  2. Single-commit wasn't less reliable. No invalid calls, no stacks left
+     unfinished, and the JSON-string repair was never needed. The earlier
+     failure was with the old schema, which was deeply nested and made the model
+     copy quotes. The flatter single-commit shape hasn't reproduced it here,
+     although 5 runs is a small sample.
+  3. Where the two tie: they found the same clauses, and on the trivial stacks
+     they're equivalent.
+  4. The single-commit "decoy hit" is my scorer being too strict. On the San
+     Jose lease, it cited the utilities/operating-expense clause but labeled it
+     watch/not_material. The design says a decoy should be handled exactly that
+     way, as a logged not-material finding. Counted correctly, it's 5/6 against
+     6/7.
+  5. Both variants fail the same way:
+     - Labels were right only about half the time. On Great Plains, both said
+       clock_pending where gold says no_clock/monitor.
+     - Both missed F9, where gold wants "needs review" and both said "affected".
+       The weak spot is labeling and abstaining, not the commit shape.
+  6. Cost: single-commit is about 15% slower and uses about 45% more output
+     tokens, mostly because it writes the hops.
+
+  My recommendation:
+  - Make single-commit the default for stage 4. It fits the design (one composed
+    StackFinding, hop chains intact), it matches or beats per-item on depth,
+    and it showed no reliability cost here.
+  - Treat per-item as a fallback, not the main path. I'd keep it behind
+    stack_commit: "per_item" in case a model has trouble with the bigger call.
+    Or delete it if you'd rather have one path.
+  - If you want more confidence, spend the next runs on the hop-heavy stacks:
+    Great Plains, Valley Medical, Sunpoint, Cascade Ridge and Bridgewell, k=3
+    each. That's about 30 runs at roughly 4 minutes each, 8 at a time. The lease
+    and bank stacks don't separate the two variants.
+  - Labels are the bigger quality lever. Accuracy is around 50% in both
+    variants, so that's where depth and correctness work would pay off most.
+
+  Say the word and I'll switch the default to single-commit and fix the scorer's
+  decoy rule. The finished runs and results.json are in
+  runs/compare-stack-commit/2026-09-30T14-44-57-953Z/. The runs cut off by the
+  kill are set aside in runs/compare-stack-commit/killed/.
+
+✻ Cogitated for 1m 11s · done 8:57 AM
+
+❯ make single commit the default, delete the fallback path.                     
+
+⏺ Removing the per-item path. That covers record_finding,
+  record_cross_reference, finish_stack, the string hop format and its parser,
+  the salvage for recorded findings, the stack_commit switch, and the comparison
+  script, which only existed to flip that switch. Looking at the current code
+  first:
+
+  Searched for 1 pattern, ran 2 shell commands (ctrl+o to expand)
+
+⏺ Now dropping the leftover wrapper brace, the salvage path and the mode
+  switches, and folding the single-commit instructions back into the analyst
+  prompt:
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ My cut stopped at an inner }); and left two stray lines. Removing them:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ 45 tests pass, one less due to the removed hop-parser test. I'll update
+  eval-design.md's V16 wording and the scorer's never-finished rule to match the
+  remaining path, also fixing the "warning" language since the scorer actually
+  fails.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Last check: one real stage-4 run on the default path (Great Plains, since it
+  exercises hops), scored by the V16 scorer:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Single-commit is now the only stage-4 path; the per-item code is deleted.
+
+  What changed
+  - Stage 4 has one tool. The analyst hands in its whole StackFinding with a
+    single commit_finding: applicability, determination, every finding with its
+    hop chain as a structured list, and cross-references.
+  - What carries over from the tool-failure fix: line-number citations, the
+    trigger taken from change_ref, flat labels, parsing a list that arrives as a
+    JSON string, lenient enum matching, and one retry when a citation doesn't
+    resolve.
+  - Deleted:
+    - record_finding, record_cross_reference and finish_stack;
+    - the string hop format and its parser, along with that parser's test;
+    - the salvage of findings recorded before a stack stopped;
+    - the stack_commit config option;
+    - scripts/compare-stack-commit.ts, whose results stay in
+      runs/compare-stack-commit/.
+  - One analyst prompt again. The hand-in instructions are back inside
+    STACK_ANALYST_PROMPT, and the brief no longer names specific tools.
+  - Eval text updated. V16 in eval-design.md and score-tool-health.ts now
+    describe only this path. V16 said a stage that never finished was a warning,
+    but the scorer fails it, so the text now says fail.
+
+  Verified
+  - Typecheck passes, and all 45 tests pass.
+  - One real stage-4 run on Great Plains, using the default config: 4 findings
+    with 3, 3, 2 and 2 hops, determination affected, and V16 passed. The model's
+    first commit used an urgency value that isn't allowed; it was rejected and
+    fixed on retry, so it's logged as a warning.
+
+  One side effect: a stack that times out or stops before committing now ends as
+  a partial needs_review with no findings. The per-item path could keep
+  findings recorded before the stall, but single-commit has nothing recorded
+  until it commits. The 5-minute request limit is sized so a long commit can
+  finish.
+✻ Baked for 10m 31s · done 9:11 AM
+
+※ recap: You're making the impact review produce deeper, more correct reports, and stage 4 now uses single-commit only, tested on one stack. Next I'd tackle label accuracy, which was only about 50% in both variants.

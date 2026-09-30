@@ -1,0 +1,32 @@
+group: TR-10-wa-noncompete-eshb-1155
+domain: noncompete
+summary: Washington voids all noncompetition covenants (effective 2027-06-30), requires notice by 2027-10-01, treats forfeiture
+  and repayment as noncompetes, and keeps a 1%-ownership sale-of-business exception.
+versions:
+- id: 2024-03-_sb-5935-session-law
+  status: effective
+  effective: 2024-06-06
+  file: 2024-03-_sb-5935-session-law.txt
+  source_url: https://lawfilesext.leg.wa.gov/biennium/2023-24/Pdf/Bills/Session%20Laws/Senate/5935-S.SL.pdf
+  fetched_url: https://lawfilesext.leg.wa.gov/biennium/2023-24/Pdf/Bills/Session%20Laws/Senate/5935-S.SL.pdf
+  sha256_16: ceb1e95b67d3232f
+  chars: 8877
+  title: WA SB 5935 (2024) amending RCW 49.62
+- id: 2026-09-_rcw-49-62-current-text
+  status: in_force_until_2027-06-30
+  effective: 2024-06-06
+  file: 2026-09-_rcw-49-62-current-text.txt
+  source_url: https://app.leg.wa.gov/RCW/default.aspx?cite=49.62&full=true
+  fetched_url: https://app.leg.wa.gov/RCW/default.aspx?cite=49.62&full=true
+  sha256_16: a8221b3ab59db0a5
+  chars: 20672
+  title: RCW 49.62 (text in force before ESHB 1155 takes effect)
+- id: 2026-03-23_eshb-1155-session-law
+  status: enacted_not_yet_effective
+  effective: 2027-06-30
+  file: 2026-03-23_eshb-1155-session-law.txt
+  source_url: https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Session%20Laws/House/1155-S.SL.pdf
+  fetched_url: https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Session%20Laws/House/1155-S.SL.pdf
+  sha256_16: e19d71025be549c8
+  chars: 15055
+  title: WA ESHB 1155, Chapter 149, Laws of 2026

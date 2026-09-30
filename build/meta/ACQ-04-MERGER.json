@@ -1,0 +1,34 @@
+{
+ "doc_id": "ACQ-04-MERGER",
+ "path": "documents/acquisitions/ACQ-04_lone-oak-mechanical_agreement-and-plan-of-merger_2023-08-15.md",
+ "chars": 133190,
+ "area": "acquisitions",
+ "cluster": null,
+ "doc_type": "merger_agreement",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2023-08-15",
+ "status": "active",
+ "roles": [
+  "noncompete",
+  "sale_of_business",
+  "tx"
+ ],
+ "source_class": "edgar",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1005502/000101968708000961/energyking_8k-ex1001.htm",
+ "year_shift": 15,
+ "governing_law_remap": {
+  "from": [
+   "California"
+  ],
+  "to": "Texas"
+ },
+ "name_map_size": 31,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

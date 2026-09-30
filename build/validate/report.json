@@ -1,0 +1,411 @@
+{
+ "summary": {
+  "documents": 243,
+  "trigger_files": 29,
+  "clusters": 14,
+  "by_area": {
+   "acquisitions": 18,
+   "corporate": 25,
+   "customers": 52,
+   "employment": 63,
+   "subcontracts": 11,
+   "supply": 59,
+   "vendors": 15
+  },
+  "by_source_class": {
+   "edgar": 38,
+   "cuad": 7,
+   "court": 5,
+   "generated_structured": 122,
+   "generated_llm": 44,
+   "public_agency": 9,
+   "web_rewritten": 18
+  },
+  "checks_total": 34,
+  "checks_failed_hard": [],
+  "checks_failed_soft": []
+ },
+ "checks": [
+  {
+   "check": "count:real_adapted",
+   "ok": true,
+   "detail": "expected 59, present 59; missing: []",
+   "severity": "hard"
+  },
+  {
+   "check": "count:web_rewritten",
+   "ok": true,
+   "detail": "expected 18, present 18; missing: []",
+   "severity": "hard"
+  },
+  {
+   "check": "count:generated_prose",
+   "ok": true,
+   "detail": "expected 44, present 44; missing: []",
+   "severity": "hard"
+  },
+  {
+   "check": "count:generated_structured",
+   "ok": true,
+   "detail": "expected 122, present 122; missing: []",
+   "severity": "hard"
+  },
+  {
+   "check": "count:no_unexpected_documents",
+   "ok": true,
+   "detail": "unexpected: []",
+   "severity": "hard"
+  },
+  {
+   "check": "files:every_file_has_metadata",
+   "ok": true,
+   "detail": "orphans: []",
+   "severity": "hard"
+  },
+  {
+   "check": "files:every_metadata_has_file",
+   "ok": true,
+   "detail": "missing: []",
+   "severity": "hard"
+  },
+  {
+   "check": "files:minimum_length_400_chars",
+   "ok": true,
+   "detail": "too small: []",
+   "severity": "hard"
+  },
+  {
+   "check": "structure:parents_exist",
+   "ok": true,
+   "detail": [],
+   "severity": "hard"
+  },
+  {
+   "check": "structure:dependent_documents_dated_after_parent",
+   "ok": true,
+   "detail": [],
+   "severity": "hard"
+  },
+  {
+   "check": "structure:clusters_have_one_root_and_2plus_docs",
+   "ok": true,
+   "detail": [],
+   "severity": "hard"
+  },
+  {
+   "check": "structure:no_document_dated_after_as_of",
+   "ok": true,
+   "detail": [],
+   "severity": "hard"
+  },
+  {
+   "check": "anonymization:no_original_private_names_anywhere",
+   "ok": true,
+   "detail": {},
+   "severity": "hard"
+  },
+  {
+   "check": "anonymization:scan_scope",
+   "ok": true,
+   "detail": {
+    "names_scanned": 1212,
+    "excluded_as_generic_or_fictional": [
+     "(212) 849-5914",
+     "(215) 988-2757",
+     "(305) 675-2619",
+     "(508) 539-8887",
+     "(508) 543-6612",
+     "(508) 588-9025",
+     "(508) 880-7721",
+     "(608) 787-2000",
+     "(610) 832-4496",
+     "(713) 937-0303",
+     "(713) 937-1746",
+     "(781) 263-0020",
+     "(781) 356-0909",
+     "(781) 575-6776",
+     "(781) 582-1186",
+     "(781) 982-9940",
+     "(800) 479-4822",
+     "(800) 574-1502",
+     "1-206-572-6828",
+     "206-572-6828",
+     "206-832-8511",
+     "212-345-2794",
+     "212-345-6000",
+     "253-539-0141",
+     "312-744-7002",
+     "360-489-0717",
+     "360-789-0453",
+     "4 SEASONS HOME HEATING AND AIR CONDITIONING, INC.",
+     "4 Seasons Home Heating and Air Conditioning, Inc.",
+     "414.271.6560",
+     "414.277.0656",
+     "425-292-2508",
+     "509-440-2348",
+     "512.320.0601",
+     "512.640.3170",
+     "630-734-6019",
+     "704-564-0320",
+     "800-574-1502",
+     "803-547-5361",
+     "AMANA",
+     "ARIZONA",
+     "BARNETT",
+     "BARNETT HEATING AND AIR",
+     "BOWMAN",
+     "BUCKEYE",
+     "Barnett Heating and Air",
+     "CARRIER",
+     "CENTERPOINT",
+     "CHICAGO",
+     "CLASS A COMMON STOCK",
+     "COMFORT SYSTEMS",
+     "COMPANY GROUP",
+     "Carrier",
+     "City of Chicago",
+     "City of San Antonio",
+     "Class A Common Stock",
+     "Comfort Systems",
+     "Company Group",
+     "DAIGGER",
+     "DAIKIN",
+     "ENCOMPASS",
+     "ENTERPRISE",
+     "FEDERAL",
+     "FERGUSON",
+     "FRONTDOOR",
+     "GALLAGHER",
+     "GOODMAN",
+     "Guardian",
+     "HAJOCA",
+     "HARDWICK",
+     "HEALTHCARE",
+     "HEATING AND AIR CONDITIONING",
+     "HEATING AND AIR CONDITIONING SERVICES, INC.",
+     "HOUSECALL",
+     "HOUSTON, TX 77041",
+     "HULTMAN",
+     "Heating and Air Conditioning Services, Inc.",
+     "Houston, TX 77041",
+     "Houston, Texas 77041",
+     "ILLUMINA",
+     "IRVINE",
+     "K & N PLUMBING, HEATING AND AIR CONDITIONING, INC.",
+     "K&N PLUMBING, HEATING AND AIR CONDITIONING, INC.",
+     "KEYCORP",
+     "KUBIENT",
+     "LARSON",
+     "LEGENCE",
+     "LEHEYUAN",
+     "LEONARD",
+     "LIMBACH",
+     "LOOMIS",
+     "MASSACHUSETTS",
+     "MCKINSTRY",
+     "NATERA",
+     "NORFOXX",
+     "NORTHSTAR",
+     "PACTIV",
+     "PLYMOUTH",
+     "REMITLY",
+     "REYNOLDS",
+     "SAMSARA",
+     "SAN ANTONIO",
+     "SERVICEMASTER",
+     "SHARES OF COMMON STOCK",
+     "STRIPE",
+     "SUFFOLK",
+     "TECH HEATING AND AIR CONDITIONING, INC.",
+     "TERMINIX",
+     "THOMAS",
+     "THUMBTACK",
+     "Tech Heating and Air Conditioning, Inc.",
+     "VIVINT",
+     "WALNUT CREEK, CA 94597",
+     "WHEELING, WV 26003",
+     "WILDFORM",
+     "Walnut Creek, CA 94597",
+     "Wheeling, WV 26003",
+     "YICHANGTAI",
+     "abdulruhman kahlout",
+     "accla.im",
+     "brandportal",
+     "coreandmain",
+     "customerservice@onvia.com",
+     "dbr.com",
+     "ehrumbaugh@michaelbest.com",
+     "fourseasons",
+     "frontdoor",
+     "frontdoor, inc.",
+     "heating and air conditioning",
+     "housecallpro",
+     "http://www.uscommunities.org",
+     "jmcgrath@pactiv.com",
+     "lahevizy@michaelbest.com",
+     "marsh.com",
+     "mayerbrown.com",
+     "michaelbest.com",
+     "mpelfrey@uscommunities.org",
+     "pactiv.com",
+     "parkerandsons",
+     "quakerchem.com",
+     "rwheeler@mayerbrown.com",
+     "shares of Common Stock",
+     "skarl@pactiv.com",
+     "tranetechnologies.com",
+     "traubr@quakerchem.com",
+     "uscommunities.org",
+     "valery.ridgway@tranetechnologies.com",
+     "vjallen@michaelbest.com",
+     "www.uscommunities.org",
+     "www.wildform.com",
+     "www.wildform.com/demos",
+     "www.wildform.com/flix",
+     "www.wildform.com/products"
+    ]
+   },
+   "severity": "info"
+  },
+  {
+   "check": "anonymization:per_document_leak_checks",
+   "ok": true,
+   "detail": [],
+   "severity": "hard"
+  },
+  {
+   "check": "content:no_redaction_markers",
+   "ok": true,
+   "detail": {},
+   "severity": "hard"
+  },
+  {
+   "check": "content:planted_clauses_verbatim",
+   "ok": true,
+   "detail": [],
+   "severity": "hard"
+  },
+  {
+   "check": "content:template_placeholders_present",
+   "ok": true,
+   "detail": [],
+   "severity": "hard"
+  },
+  {
+   "check": "content:instances_fully_filled",
+   "ok": true,
+   "detail": [],
+   "severity": "hard"
+  },
+  {
+   "check": "content:generator_self_checks",
+   "ok": true,
+   "detail": {},
+   "severity": "soft"
+  },
+  {
+   "check": "content:adapted_documents_not_truncated",
+   "ok": true,
+   "detail": {},
+   "severity": "soft"
+  },
+  {
+   "check": "triggers:expectations",
+   "ok": true,
+   "detail": "29 files, 29 checks, failed []",
+   "severity": "hard"
+  },
+  {
+   "check": "terms:all_term_entries_match_documents",
+   "ok": true,
+   "detail": [],
+   "severity": "hard"
+  },
+  {
+   "check": "status:expired_documents_exist_at_as_of",
+   "ok": true,
+   "detail": {
+    "active": 144,
+    "terminated_on_acquisition": 1,
+    "superseded": 8,
+    "record": 78,
+    "expired": 12
+   },
+   "severity": "hard"
+  },
+  {
+   "check": "status:superseded_versions_exist_at_as_of",
+   "ok": true,
+   "detail": {
+    "active": 144,
+    "terminated_on_acquisition": 1,
+    "superseded": 8,
+    "record": 78,
+    "expired": 12
+   },
+   "severity": "hard"
+  },
+  {
+   "check": "status:changes_when_as_of_shifts",
+   "ok": true,
+   "detail": {
+    "2027-07-01": {
+     "active": 139,
+     "terminated_on_acquisition": 1,
+     "superseded": 8,
+     "record": 78,
+     "expired": 17
+    }
+   },
+   "severity": "hard"
+  },
+  {
+   "check": "counterparties:every_profile_counterparty_has_documents",
+   "ok": true,
+   "detail": [],
+   "severity": "hard"
+  },
+  {
+   "check": "counterparties:every_document_counterparty_in_profile",
+   "ok": true,
+   "detail": [],
+   "severity": "hard"
+  },
+  {
+   "check": "fix:ca_terms_2024_has_auto_renewal_phone_cancel",
+   "ok": true,
+   "detail": "",
+   "severity": "hard"
+  },
+  {
+   "check": "fix:ca_terms_2026_has_ab2863_terms",
+   "ok": true,
+   "detail": "",
+   "severity": "hard"
+  },
+  {
+   "check": "fix:clean_section122_invoice_is_tube_only",
+   "ok": true,
+   "detail": "",
+   "severity": "hard"
+  },
+  {
+   "check": "fix:ambiguous_fittings_invoice_exists",
+   "ok": true,
+   "detail": "",
+   "severity": "hard"
+  },
+  {
+   "check": "fix:tr03_declared_control_with_no_mexican_origin_goods",
+   "ok": true,
+   "detail": [],
+   "severity": "hard"
+  },
+  {
+   "check": "fix:machine_readable_scope_notes_present",
+   "ok": true,
+   "detail": "",
+   "severity": "hard"
+  }
+ ]
+}

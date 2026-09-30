@@ -1,0 +1,3139 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2870
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Cursor Agent\
+  v2026.09.28-64d2043\
+  Tip: Type ? in the prompt bar to show in-app hints.\
+\
+\
+  read eval-scenarios/RUN-PLAN.md. You will iterate through each step, one by\
+  one, with the follwoing loop:\
+\
+  1) Observe the next, not yet run eval step and understand the intended\
+  measurment and what quality dimensions or fialure modes it is surfacing.\
+  Estimate the cost for the run. 2)Provide all of this is in a single 1-2\
+  sentence brief, asking for my approval to triger the eval. 3) On approval\
+  trigger the eval and montior for completion 4) interpret the results - see\
+  if the suggested experiments still align or if a higher ROI possibility\
+  surfaxced from the findings. 5) Implment the change(s) and re-run - a cheap,\
+  tight champion/chellenger loop. Generally, keeping experiments isolated, to\
+  avoid confounding effects with each other. Preserve non-rgressive changes. I\
+  undertand that in k=3 cases, evals can be noisy. We'll take it case by case\
+  on which expeirments to keep when its close. Loop on this step until all\
+  highest ROI experiments have been run - generally 1-3 per eval step. 6)\
+  annotate a single line, concise, comprehensive log into the doc regarding\
+  experiment results + attempted changes and which ones, if any, were kept. 7)\
+  repeat step 1\
+\
+\
+  I'll start by reading the take-home skill and eval-scenarios/RUN-PLAN.md so the\
+  first eval step is grounded in the intended measurement before I ask you to\
+  approve a run.\
+\
+    Read, globbed 2 files, 1 glob\
+    Used gc-ai-take-home\
+    Globbed "**/eval-scenarios/RUN-PLAN.md" in .\
+    Read eval-scenarios/RUN-PLAN.md\
+\
+  The plan\'92s first unpaid step is scoring the two existing corpus runs. I\'92ll check\
+  what\'92s already logged and what those runs actually show before I ask you to\
+  approve it.\
+\
+    Globbed, grepped, read 4 globs, 4 greps, 3 files\
+    \'85 8 earlier items hidden\
+    Read src/cli.ts\
+    Grepped "V1|V8|V10|V11|invariant|score" in src\
+    Globbed "src/**/*.ts" in .\
+\
+  $ ls -la runs 2>/dev/null | head -50; echo "---"; ls\
+    runs/TR-01-copper-section-232-1790748586041 2>/dev/null | head -30; echo "---";\
+    ls runs/smoke-t5 2>/dev/null | head -30 871ms\
+    \'85 39 output lines hidden \'b7 ctrl+o to expand\
+    trace.jsonl\
+    transcript.json\
+\
+  The two corpus runs are on disk and nothing in the plan is logged as scored yet.\
+  I\'92ll check how invariants are checked and what the trigger-file confirmation\
+  actually costs before I ask you to approve it.\
+\
+    Grepped, read 2 greps, 1 file\
+    Grepped "...igger.file|commit_finding|only_stacks" in src\
+    Read configs/o1-glm.json\
+    Grepped "score|invariant|V1" in .\
+\
+  Step 1 is a zero-dollar score of the two existing runs, plus a small\
+  confirmation that the trigger-file fix holds. I\'92ll pull the failure pattern from\
+  those traces so the brief names the actual measurement.\
+\
+    Grepped, read 4 greps, 4 files\
+    \'85 5 earlier items hidden\
+    Grepped "...it_finding|change_ref|not in this run" in\
+    runs/TR-01-copper-section-232-1790748586041\
+    Grepped "tool:" in src/agents.ts\
+    Read ...01-copper-section-232-1790748586041/trace.jsonl\
+\
+  Step 1 scores the two finished GLM corpus runs at $0 \'97 schema, verbatim surfaced\
+  quotes, finding conservation, change-item closure, and scope completeness \'97 to\
+  catch silent artifact failures (malformed output, quotes that are not in the\
+  cited file, findings dropped from the report, change items left open, stacks\
+  missing from the scope trace), then confirms the already-landed trigger-file fix\
+  on one stack that previously re-read the trigger and failed commit_finding, at\
+  k=3, about $0.06. Approve that run?\
+\
+\
+  yes\
+\
+\
+  Approval is in. I\'92ll score the two existing runs on those invariants, then pick\
+  the one stack that re-read the trigger and failed commit_finding for the k=3\
+  confirmation.\
+\
+    Grepped, read, globbed 3 greps, 6 files, 1 glob\
+    \'85 7 earlier items hidden\
+    Grepped "...ion materialiseFinding|surfaced|quote" in src\
+    Read src/types.ts lines 140-229\
+    Read contracts/schemas/impact-report.schema.json\
+\
+  The two runs are complete artifacts, so I\'92ll score them in place and find the\
+  stack that re-read the trigger before spending the confirmation calls.\
+\
+    Read, globbed, grepped 15 files, 1 glob, 1 grep\
+    \'85 14 earlier items hidden\
+    Read src/ranking.ts\
+    Read src/ranking.ts lines 40-119\
+    Read contracts/schemas/impact-report.schema.json lines 80-119\
+\
+  The artifacts are in place. I\'92ll score schema, quotes, conservation, closure,\
+  and scope on both runs, and pick the stack that actually hit the trigger-file\
+  failures.\
+\
+    Read 2 files\
+    Read src/corpus.ts lines 80-119\
+    Read src/paths.ts\
+\
+    Edited score-step1.ts +182\
+\
+    \uc0\u9614 + /**\
+    \uc0\u9614 +  * Step-1 invariant score on already-written runs. No model calls.\
+    \uc0\u9614 +  * V1 schema, V2 surfaced quotes, V8 conservation, V10 change-item closure,\
+    \uc0\u9614   V11 scope completeness.\
+    \uc0\u9614 +  * Also tallies trigger-file tool calls and failed commit_finding attempts.\
+    \uc0\u9614 +  */\
+    \uc0\u9614 + import \{ readdirSync, readFileSync \} from "node:fs";\
+    \uc0\u9614 + import path from "node:path";\
+    \uc0\u9614 + import \{ loadCorpus, readNormalized \} from "../src/corpus.js";\
+    \uc0\u9614 + import \{ findRepo \} from "../src/paths.js";\
+    \uc0\u9614 + import \{ validateArtifact \} from "../src/schema.js";\
+    \uc0\u9614 + import \{ buildStacks \} from "../src/stacks.js";\
+    \uc0\u9614 + import \{ locateQuote, quoteInSpan \} from "../src/text.js";\
+    \uc0\u9614  \'85 truncated (170 more lines) \'b7 ctrl+r to review\
+\
+  $ npx tsx scripts/score-step1.ts 2.3s\
+    \'85 154 output lines hidden \'b7 ctrl+o to expand\
+      "problem_count": 0\
+    \}\
+\
+    Grepped, read, globbed 1 grep, 3 files, 1 glob\
+    \'85 2 earlier items hidden\
+    Read runs/t5-input.json\
+    Globbed "**/*input*.json" in .\
+    Read ...-01-copper-section-232-1790748586041/input.json\
+\
+  $ test -f .env.local && echo "env.local yes" || echo "env.local no"; test -f .env\
+    && echo "env yes" || echo "env no" 417ms\
+    env.local yes\
+    env no\
+\
+    Read bin/harness\
+\
+  Invariants on both runs are clean. The confirmation is Great Plains: it re-read\
+  the trigger and commit_finding rejected a made-up change_ref. Starting that\
+  stack at k=3 with the gold change record injected.\
+\
+  $ ./bin/harness stage --stage 4 --input\
+    runs/TR-01-copper-section-232-1790748586041/input.json --config\
+    configs/o1-glm.json --inject\
+    runs/TR-01-copper-section-232-1790748586041/change_record.json --stack\
+    supply/great-plains-copper-tube_master-supply-agreement --out runs/step1-gp-k1\
+    1m 44s (background)\
+\
+  $ ./bin/harness stage --stage 4 --input\
+    runs/TR-01-copper-section-232-1790748586041/input.json --config\
+    configs/o1-glm.json --inject\
+    runs/TR-01-copper-section-232-1790748586041/change_record.json --stack\
+    supply/great-plains-copper-tube_master-supply-agreement --out runs/step1-gp-k2\
+    2m 17s (background)\
+\
+  $ ./bin/harness stage --stage 4 --input\
+    runs/TR-01-copper-section-232-1790748586041/input.json --config\
+    configs/o1-glm.json --inject\
+    runs/TR-01-copper-section-232-1790748586041/change_record.json --stack\
+    supply/great-plains-copper-tube_master-supply-agreement --out runs/step1-gp-k3\
+    1m 26s (background)\
+\
+    Read 3 files\
+    Read ...ects/Users-jason-Documents/terminals/446512.txt\
+    Read ...ects/Users-jason-Documents/terminals/446513.txt\
+    Read ...ects/Users-jason-Documents/terminals/446514.txt\
+\
+    Monitored background tasks, 2 complete, 1 active\
+    \'85 3 earlier items hidden\
+    Read ...ects/Users-jason-Documents/terminals/446512.txt\
+    Read ...ects/Users-jason-Documents/terminals/446513.txt\
+    Read ...ects/Users-jason-Documents/terminals/446514.txt\
+\
+  All three draws finished. I\'92ll compare trigger reads and commit_finding outcomes\
+  against the original Great Plains failure.\
+\
+  $ npx tsx -e '\
+    import \{ readFileSync, readdirSync \} from "node:fs"; 624ms\
+    \'85 28 input + 433 output lines hidden \'b7 ctrl+o to expand\
+      "reason": "Copper is this supplier family's entire subject matter and Meridia\'85\
+    \}\
+\
+    Grepped, read 3 greps, 3 files\
+    \'85 3 earlier items hidden\
+    Read src/prompts.ts\
+    Grepped "stack:" in eval-scenarios/answer-keys\
+    Read ...enarios/answer-keys/e2e/T1_TR01_2026-10-01.yaml\
+\
+    Edited RUN-PLAN.md +1\
+\
+    \uc0\u9614      `change_ref` values and citations outside the stack. The trigger-file\
+    \uc0\u9614   fix\
+    \uc0\u9614      is in the harness. Confirm it with one stack that made those calls, at\
+    \uc0\u9614      k=3, not with another corpus run.\
+    \uc0\u9614 +    Log 2026-09-30: V1/V2/V8/V10/V11 pass on both corpus runs (TR-01 63\
+    \uc0\u9614   in-scope, 146 findings conserved, 5/5 closed ...\
+    \uc0\u9614 \
+    \uc0\u9614   2. **Stage 4, GLM, teacher-forced, k=3. About $0.75.** Inject the gold\
+    \uc0\u9614   change\
+    \uc0\u9614      record. `only_stacks` is the table above. This is the map: a hop miss, a\
+\
+  The trigger-file fix holds, and nothing else from this step was worth changing.\
+\
+  Both finished corpus runs pass schema, verbatim surfaced quotes, finding\
+  conservation, change-item closure, and scope completeness: TR-01 kept 63 stacks\
+  and all 146 findings; the California run kept 44 stacks and all 107. Great\
+  Plains, the stack that had been re-reading the trigger and inventing change_ref\
+  values, was re-run at k=3 for $0.10. It opened the trigger file 0 times out of\
+  3, and the final commit_finding succeeded on every draw. A mashed id (C1+C2+C3 /\
+  SUP-GPC-01) showed up once and was fixed by the existing retry. Two draws also\
+  exhausted the 16-call tool budget and came back needs_review. That is a stage-4\
+  cost, not a reason to edit the prompt before the gold map. The log line is on\
+  step 1 in eval-scenarios/RUN-PLAN.md.\
+\
+  Step 2 is the stage-4 map on GLM, teacher-forced at k=3, about $0.75: gold\
+  change records injected and fan-out limited to the gold stacks, so a missed hop,\
+  a decoy cited as the hit, and a wrong clock stay separate failures. Approve\
+  that run?\
+\
+  Finished Confirm Great Plains stack draw 2\
+\
+  Great Plains draw 2 finished successfully and was already included in the k=3\
+  confirmation: no trigger reads, a first commit that failed on a non-verbatim\
+  quote, then a successful retry that came back needs_review after the tool budget\
+  ran out. The step-1 log stands, and step 2 is still waiting on your approval.\
+\
+\
+  step 2 eval approved\
+\
+\
+  Step 2 is approved. I\'92ll pull the gold stacks and change records, then start the\
+  teacher-forced GLM stage-4 runs at k=3.\
+\
+    Grepped, read 7 greps, 17 files\
+    \'85 21 earlier items hidden\
+    Grepped "export async function executeRun" in src/pipeline.ts\
+    Read ...enarios/answer-keys/e2e/T1_TR01_2026-10-01.yaml lines 110-189\
+    Read ...enarios/answer-keys/e2e/T1_TR01_2026-10-01.yaml lines 310-359\
+\
+  $ npx tsx -e '\
+    import \{ loadCorpus \} from "./src/corpus.js"; exit 1 \'95 822ms\
+    \'85 21 input + 20 output lines hidden \'b7 ctrl+o to expand\
+    Node.js v26.8.1\
+\
+    Grepped "export function buildIncorporates" in src/incorporates.ts\
+    Found 1 matches\
+\
+    Edited step2-prep.ts +108\
+\
+    \uc0\u9614 + import \{ mkdirSync, writeFileSync \} from "node:fs";\
+    \uc0\u9614 + import path from "node:path";\
+    \uc0\u9614 + import \{ parse as parseYaml \} from "yaml";\
+    \uc0\u9614 + import \{ readFileSync \} from "node:fs";\
+    \uc0\u9614 + import \{ loadCorpus \} from "../src/corpus.js";\
+    \uc0\u9614 + import \{ buildIncorporates \} from "../src/incorporates.js";\
+    \uc0\u9614 + import \{ findRepo \} from "../src/paths.js";\
+    \uc0\u9614 + import \{ validateArtifact \} from "../src/schema.js";\
+    \uc0\u9614 + import \{ buildStacks, readingSet \} from "../src/stacks.js";\
+    \uc0\u9614 +\
+    \uc0\u9614 + const repo = findRepo();\
+    \uc0\u9614 + const corpus = loadCorpus(repo, "corpus");\
+    \uc0\u9614  \'85 truncated (96 more lines) \'b7 ctrl+r to review\
+\
+  $ npx tsx scripts/step2-prep.ts 1.1s\
+    \'85 14 output lines hidden \'b7 ctrl+o to expand\
+    t1-change.json schema ok\
+    t5-change.json schema ok\
+\
+  Marchetti and Ellison sit in the California template\'92s reading set, so that\
+  family is one run. I\'92m starting the eight gold stacks at k=3, with the gold\
+  change records injected.\
+\
+  $ mkdir -p runs/step2/logs\
+    cat > runs/step2/jobs.txt << 'EOF' 2m 31s (background)\
+    \'85 36 input lines hidden \'b7 ctrl+o to expand\
+\
+    Monitored background task, 1 active\
+    \'85 4 earlier items hidden\
+    Waited for "DONE|FAIL" in shell\
+    Read ...ects/Users-jason-Documents/terminals/446515.txt lines 1-15\
+    Read ...ects/Users-jason-Documents/terminals/446515.txt line 30\
+\
+  All 24 draws finished. I\'92ll score hop completeness, decoy hits, clocks, and\
+  abstention against the gold findings.\
+\
+    Read 2 files\
+    Read ...enarios/answer-keys/e2e/T1_TR01_2026-10-01.yaml lines 230-279\
+    Read ...enarios/answer-keys/e2e/T1_TR01_2026-10-01.yaml lines 360-399\
+\
+    Edited score-step2.ts +121\
+\
+    \uc0\u9614 + import \{ readdirSync, readFileSync \} from "node:fs";\
+    \uc0\u9614 + import path from "node:path";\
+    \uc0\u9614 + import \{ parse as parseYaml \} from "yaml";\
+    \uc0\u9614 + import \{ normWs \} from "../src/text.js";\
+    \uc0\u9614 +\
+    \uc0\u9614 + type Span = \{ file?: string; quote?: string \};\
+    \uc0\u9614 + type Finding = \{\
+    \uc0\u9614 +   id?: string;\
+    \uc0\u9614 +   change_ref?: string;\
+    \uc0\u9614 +   citations?: \{ trigger?: Span; clause?: Span \};\
+    \uc0\u9614 +   hop_chain?: \{ span?: Span \}[];\
+    \uc0\u9614 +   labels?: \{ urgency?: string; materiality?: string; finding_type?: string\
+    \uc0\u9614   \};\
+    \uc0\u9614  \'85 truncated (109 more lines) \'b7 ctrl+r to review\
+\
+  $ npx tsx scripts/score-step2.ts 928ms\
+    \'85 40 output lines hidden \'b7 ctrl+o to expand\
+    TOTAL $0.405\
+\
+  $ npx tsx -e '\
+    import \{ readdirSync, readFileSync \} from "node:fs"; 594ms\
+    \'85 14 input + 78 output lines hidden \'b7 ctrl+o to expand\
+        2026-04-02_proclamation-11021.txt | on or after 12:01 a.m. eastern daylight\'85\
+        02_request-for-equitable-adjustment_2025-05-12.md | Our supplier Lakeshore \'85\
+\
+    Read, grepped 2 files, 1 grep\
+    Read ...enarios/answer-keys/e2e/T1_TR01_2026-10-01.yaml lines 280-319\
+    Read src/prompts.ts\
+    Grepped "...6-0204|5\\.6 Continuation|alan-ellison" in runs/step2\
+\
+  The map is in. Great Plains reads the purchase order and still never quotes it,\
+  3 times out of 3, so the hop stops at the surcharge clause. I\'92ll add one\
+  sentence that requires that supporting line, and re-run only the stacks that\
+  failed the same way.\
+\
+    Edited prompts.ts +1 -1\
+\
+    \uc0\u9614 \
+    \uc0\u9614   Decide applicability for this stack after you have the company profile from\
+    \uc0\u9614   the brief. When the profile leaves a re ...\
+    \uc0\u9614 \
+    \uc0\u9614 - When the change can bear on the stack, follow hops inside the family\
+    \uc0\u9614   (parent and cluster members) and follow each i ...\
+    \uc0\u9614 + When the change can bear on the stack, follow hops inside the family\
+    \uc0\u9614   (parent and cluster members) and follow each i ...\
+    \uc0\u9614 \
+    \uc0\u9614   Frame the work as the rights, obligations, and exposures this change\
+    \uc0\u9614   creates under this stack. Include opportunitie ...\
+    \uc0\u9614 \
+\
+  $ python3 << 'PY'\
+    import subprocess 2m 52s (background)\
+    \'85 46 input lines hidden \'b7 ctrl+o to expand\
+\
+    Waited for shell\
+\
+    Edited score-step2.ts +1 -1\
+\
+    \uc0\u9614     const gold = loadGold(row.goldFile).filter((item) =>\
+    \uc0\u9614   row.ids.includes(item.id));\
+    \uc0\u9614     process.stdout.write(`\\n== $\{row.slug\}\\n`);\
+    \uc0\u9614     for (const k of [1, 2, 3]) \{\
+    \uc0\u9614 -     const dir = path.join("runs/step2", `$\{row.slug\}-k$\{k\}`);\
+    \uc0\u9614 +     const dir = path.join(process.argv[2] ?? "runs/step2",\
+    \uc0\u9614   `$\{row.slug\}-k$\{k\}`);\
+    \uc0\u9614       const \{ finding, cost \} = loadRun(dir);\
+    \uc0\u9614       total += cost;\
+    \uc0\u9614       const preds = finding.findings ?? [];\
+\
+    Edited score-step2.ts +1 -1\
+\
+    \uc0\u9614 - import \{ readdirSync, readFileSync \} from "node:fs";\
+    \uc0\u9614 + import \{ existsSync, readdirSync, readFileSync \} from "node:fs";\
+    \uc0\u9614   import path from "node:path";\
+    \uc0\u9614   import \{ parse as parseYaml \} from "yaml";\
+    \uc0\u9614   import \{ normWs \} from "../src/text.js";\
+\
+    Edited score-step2.ts +1\
+\
+    \uc0\u9614     process.stdout.write(`\\n== $\{row.slug\}\\n`);\
+    \uc0\u9614     for (const k of [1, 2, 3]) \{\
+    \uc0\u9614       const dir = path.join(process.argv[2] ?? "runs/step2",\
+    \uc0\u9614   `$\{row.slug\}-k$\{k\}`);\
+    \uc0\u9614 +     if (!existsSync(dir)) continue;\
+    \uc0\u9614       const \{ finding, cost \} = loadRun(dir);\
+    \uc0\u9614       total += cost;\
+    \uc0\u9614       const preds = finding.findings ?? [];\
+\
+  $ npx tsx scripts/score-step2.ts runs/step2b 914ms\
+    \'85 28 output lines hidden \'b7 ctrl+o to expand\
+    TOTAL $0.165\
+\
+    Read src/agents.ts lines 80-159\
+\
+    Edited prompts.ts +1 -1\
+\
+    \uc0\u9614 \
+    \uc0\u9614   Decide applicability for this stack after you have the company profile from\
+    \uc0\u9614   the brief. When the profile leaves a re ...\
+    \uc0\u9614 \
+    \uc0\u9614 - When the change can bear on the stack, follow hops inside the family\
+    \uc0\u9614   (parent and cluster members) and follow each i ...\
+    \uc0\u9614 + When the change can bear on the stack, follow hops inside the family\
+    \uc0\u9614   (parent and cluster members) and follow each i ...\
+    \uc0\u9614 \
+    \uc0\u9614   Frame the work as the rights, obligations, and exposures this change\
+    \uc0\u9614   creates under this stack. Include opportunitie ...\
+    \uc0\u9614 \
+\
+    Edited RUN-PLAN.md +6\
+\
+    \uc0\u9614   2. **Stage 4, GLM, teacher-forced, k=3. About $0.75.** Inject the gold\
+    \uc0\u9614   change\
+    \uc0\u9614      record. `only_stacks` is the table above. This is the map: a hop miss, a\
+    \uc0\u9614      decoy hit, and a wrong clock are three different next changes.\
+    \uc0\u9614 +    Log 2026-09-30: eight stacks \'d7 k=3, gold change records, $0.41. Lease\
+    \uc0\u9614   utility decoy not_affected 3/3. Keystone 2 ...\
+    \uc0\u9614 \
+    \uc0\u9614   3. **One analyst-prompt change.** Only if step 2 has an item at 2/3 or 3/3\
+    \uc0\u9614      on the same failure. Re-run those items at k=3, then the whole stage-4\
+    \uc0\u9614      slice once at k=3.\
+    \uc0\u9614 +    Log 2026-09-30: added one hop sentence (quote the PO, invoice, notice,\
+    \uc0\u9614   or signed copy that identifies the goods, ...\
+    \uc0\u9614 \
+    \uc0\u9614 + 3. **One analyst-prompt change.** Only if step 2 has an item at 2/3 or 3/3\
+    \uc0\u9614 +    on the same failure. Re-run those items at k=3, then the whole stage-4\
+    \uc0\u9614  \'85 truncated (5 more lines) \'b7 ctrl+r to review\
+\
+    Read eval-scenarios/RUN-PLAN.md lines 100-139\
+\
+    Edited RUN-PLAN.md -4\
+\
+    \uc0\u9614      slice once at k=3.\
+    \uc0\u9614      Log 2026-09-30: added one hop sentence (quote the PO, invoice, notice,\
+    \uc0\u9614   or signed copy that identifies the goods, ...\
+    \uc0\u9614 \
+    \uc0\u9614 - 3. **One analyst-prompt change.** Only if step 2 has an item at 2/3 or 3/3\
+    \uc0\u9614 -    on the same failure. Re-run those items at k=3, then the whole stage-4\
+    \uc0\u9614 -    slice once at k=3.\
+    \uc0\u9614 -\
+    \uc0\u9614   4. **Stage 1 and stage 3, GLM, k=3.** Gold triggers: Proclamation 11021,\
+    \uc0\u9614   the\
+    \uc0\u9614      T3 pair, T5 with both California instruments, TR-03, TR-90. Stage 0 is\
+    \uc0\u9614   the\
+    \uc0\u9614      unit test on `D-S0-05` and costs nothing. Tighten the scope prompt only\
+\
+  The stage-4 map cost $0.41, and the one prompt change that followed did not move\
+  the miss, so it was reverted.\
+\
+  Eight gold stacks at k=3, with the gold change records injected: the lease\
+  utility decoy was dismissed 3/3, and the Keystone 2019 pin was hop-complete 3/3.\
+  Cascade quoted the right clauses 3/3 and still treated the already-waived price\
+  adjustment as a live clock. Great Plains read the purchase order every time and\
+  never quoted the copper-tube line, 0/3; the metals-adjustment exhibit was not\
+  used as the surcharge. Valley named the right non-renewal date once in three\
+  draws. Sunpoint found the most-favored clause and stayed affected, and missed\
+  the survival sentence. The California template cited section 6.1 on 2/3 draws,\
+  never quoted Marchetti's dates, and settled Ellison as a violation instead of\
+  abstaining on 2/3. Section 6.2 was not cited as the hit.\
+\
+  A single hop sentence, re-run on the four stacks that missed the same way\
+  ($0.17), left the purchase-order line at 0/3. That sentence is reverted. Both\
+  results are logged on steps 2 and 3 in eval-scenarios/RUN-PLAN.md.\
+\
+  Step 4 is stages 1 and 3 on GLM at k=3, under $0.50, plus the free stage-0 diff\
+  test: whether the gold change is found, distractors are dismissed, legal status\
+  is exact, SB 699 stays separate from AB 1076, the company gate does not\
+  false-exit, and scope neither drops a gold stack nor keeps a pruned one for a\
+  bad reason. Approve that run?\
+\
+\
+  Appended note - I need to see all prompt chnages in full - it will be easy,\
+  without a proiper holdout eval set, to game/overfit the prompts by accident\
+\
+\
+  The hop sentence was reverted, so the live prompt is unchanged. I\'92ll confirm\
+  that, then put the full before-and-after in the run plan and add your rule that\
+  every prompt edit has to be shown in full.\
+\
+    Read, grepped 13 files, 2 greps\
+    \'85 12 earlier items hidden\
+    Read eval-scenarios/answer-keys/INDEX.yaml lines 298-312\
+    Read eval-scenarios/answer-keys/INDEX.yaml lines 340-351\
+    Read eval-scenarios/answer-keys/INDEX.yaml lines 550-599\
+\
+    Edited RUN-PLAN.md +7\
+\
+    \uc0\u9614      ids, after the slice has a before and after. The two runs already done\
+    \uc0\u9614      were a wiring check. Their triggers were EO 14220 and SB 699 alone, not\
+    \uc0\u9614      the gold inputs.\
+    \uc0\u9614 + 7. Every prompt change is pasted in full in the log for that step: the\
+    \uc0\u9614 +    exact sentences inserted or deleted, in place, not a summary. Wording is\
+    \uc0\u9614 +    drafted from dev misses only. Holdout findings are not read while\
+    \uc0\u9614 +    drafting, and are scored only after a change is kept. Without that split\
+    \uc0\u9614 +    it is easy to write the gold answer into the prompt. The stage-4 map\
+    \uc0\u9614 +    already mixed the two: S4-GPC-02 and B11 are holdout and were scored on\
+    \uc0\u9614 +    the same draws as the dev items.\
+    \uc0\u9614 \
+    \uc0\u9614   ## The slice\
+    \uc0\u9614  \'85 truncated (1 more line) \'b7 ctrl+r to review\
+\
+    Edited RUN-PLAN.md +1 -1\
+\
+    \uc0\u9614   3. **One analyst-prompt change.** Only if step 2 has an item at 2/3 or 3/3\
+    \uc0\u9614      on the same failure. Re-run those items at k=3, then the whole stage-4\
+    \uc0\u9614      slice once at k=3.\
+    \uc0\u9614 -    Log 2026-09-30: added one hop sentence (quote the PO, invoice, notice,\
+    \uc0\u9614   or signed copy that identifies the goods, ...\
+    \uc0\u9614 +    Log 2026-09-30: one sentence inserted into the analyst hop paragraph,\
+    \uc0\u9614   after "The hop chain cites the clause that ...\
+    \uc0\u9614 \
+    \uc0\u9614   4. **Stage 1 and stage 3, GLM, k=3.** Gold triggers: Proclamation 11021,\
+    \uc0\u9614   the\
+    \uc0\u9614      T3 pair, T5 with both California instruments, TR-03, TR-90. Stage 0 is\
+    \uc0\u9614   the\
+\
+  The only prompt edit in this loop was one sentence in the analyst hop paragraph.\
+  It is reverted. The live paragraph is:\
+\
+  \uc0\u9474  When the change can bear on the stack, follow hops inside the family (parent\
+    and cluster members) and follow each incorporates row one hop to that target.\
+    Do not open the target's other documents. Do not open a second family. The\
+    hop chain cites the clause that names the target. Version pins are binding:\
+    "as published October 2019" is that version, not the current page.\
+\
+\
+  While it was in, that paragraph had this sentence between the hop-chain sentence\
+  and the version-pin sentence:\
+\
+  \uc0\u9474  Do not stop at the operative clause. If this family also has the purchase\
+    order, invoice, notice, or signed copy that identifies the goods, the\
+    person, the date, or the charge, quote that line in the hop chain too.\
+\
+  Nothing else in src/prompts.ts changed. That sentence was written after reading\
+  the whole stage-4 slice, including two holdout items that share those draws: the\
+  Metals Adjustment decoy (S4-GPC-02) and the Cascade clock (B11). The\
+  purchase-order miss it was aimed at is dev (S4-GPC-01). The re-run did not move\
+  it, and the sentence is out.\
+\
+  Rule 7 in eval-scenarios/RUN-PLAN.md now requires every later prompt edit to be\
+  pasted in full, drafted from dev misses only, with holdout scored after a change\
+  is kept rather than read while the wording is written. Step 4 is still waiting\
+  on your approval.\
+\
+  Finished Run stage-4 gold stacks at k=3\
+\
+  The stage-4 gold run finished successfully, all 24 draws, and those results are\
+  already in the map logged on step 2 of eval-scenarios/RUN-PLAN.md. Step 4 is\
+  still waiting on your approval.\
+\
+\
+  any other experimetns worth running in eval step 3? seems like we only ran\
+  one experiemtn and reverted - curious if you see any other clear\
+  opportunities\
+\
+\
+  The hop sentence was the one clear 3-for-3 miss, and it didn\'92t move. I\'92ll check\
+  whether the purchase-order line was actually rejected by the commit tool before\
+  calling any other prompt edit worth the spend.\
+\
+    Grepped, read 2 greps, 2 files\
+    Grepped "PO-2026-0204|commit_finding" in runs/step2b\
+    Grepped ""tool": "commit_finding"" in runs/step2/gp-k2/run.json\
+    Read runs/step2b/gp-k3/run.json lines 160-199\
+    Read runs/step2b/gp-k1/run.json lines 190-219\
+\
+  No. Another prompt on this slice would either repeat the lever that just failed\
+  or write a gold answer into the instruction.\
+\
+  The purchase-order miss is still the only 3-for-3 failure, and it is not a\
+  wording problem. On the re-run the analyst opened PO-2026-0204 and committed\
+  successfully without quoting the tube line. The sentence that told it to quote\
+  the purchase order did not change that, so a second sentence about hops, tables,\
+  or \'93the line that identifies the goods\'94 is the same experiment.\
+\
+  The other repeated issues are the ones that look tempting and are the\
+  overfitting risk:\
+\
+  \'95 Cascade\'92s clock is a label on spans that were already right, and that item\
+    is holdout (B11). It belongs to the label step, not another analyst\
+    sentence.\
+  \'95 Ellison was settled as a violation on 2 of 3 draws. The reverted sentence\
+    already said to quote the date on the signed copy, and the dates still were\
+    not quoted.\
+  \'95 Valley\'92s 2026-12-02 shows up often, and sometimes the date is 2026-11-01 or\
+    blank. A sentence that explains \'9360 days before December 31\'94 is the gold\
+    answer.\
+  \'95 Sunpoint already stays affected. The missing survival sentence is one dev\
+    item, and the Northbrook letter is the stage-5 link.\
+  \'95 Bridgewell\'92s absence miss was 1 of 3. That is variance. Lease and Keystone\
+    passed 3 for 3.\
+\
+  I would not spend the next run on a prompt.\
+\
+\
+  okay - go with steo 4\
+\
+\
+  Step 4 is on. I\'92ll run the free stage-0 diff test first, then stages 1 and 3 on\
+  the gold triggers at k=3.\
+\
+    Read, grepped, globbed 17 files, 8 greps, 2 globs\
+    \'85 24 earlier items hidden\
+    Grepped "^  id:" in corpus/triggers\
+    Read ...narios/answer-keys/e2e/T3b_TR10_2027-07-01.yaml\
+    Read src/normalize.ts\
+\
+    Edited step4-prep.ts +139\
+\
+    \uc0\u9614 + import \{ mkdirSync, readFileSync, writeFileSync \} from "node:fs";\
+    \uc0\u9614 + import path from "node:path";\
+    \uc0\u9614 + import \{ parse as parseYaml \} from "yaml";\
+    \uc0\u9614 + import \{ diffSnapshots \} from "../src/stage0.js";\
+    \uc0\u9614 + import \{ normalize \} from "../src/normalize.js";\
+    \uc0\u9614 + import \{ validateArtifact \} from "../src/schema.js";\
+    \uc0\u9614 +\
+    \uc0\u9614 + const root = process.cwd();\
+    \uc0\u9614 +\
+    \uc0\u9614 + function text(rel: string): string \{\
+    \uc0\u9614 +   return normalize(readFileSync(path.join(root, rel)));\
+    \uc0\u9614 + \}\
+    \uc0\u9614  \'85 truncated (127 more lines) \'b7 ctrl+r to review\
+\
+  $ npx tsx scripts/step4-prep.ts exit 1 \'95 1.0s\
+    \'85 6 output lines hidden \'b7 ctrl+o to expand\
+    inject t5.json ok\
+    inject c1.json ok\
+\
+    Read src/normalize.ts lines 20-59\
+\
+  $ python3 - << 'PY'\
+    from pathlib import Path 212ms\
+    \'85 7 input + 55 output lines hidden \'b7 ctrl+o to expand\
+    +3. Consequential Damages Waiver. MERIDIAN WILL NOT BE LIABLE FOR ANY INDIRECT,\'85\
+    --- 56 diff lines\
+\
+    Grepped "cosmetic\\(" in test\
+    Found 0 matches\
+\
+  $ python3 << 'PY'\
+    import subprocess, os 7m 2s (background)\
+    \'85 42 input lines hidden \'b7 ctrl+o to expand\
+\
+    Edited normalize.ts +4 -1\
+\
+    \uc0\u9614    * Offsets are never computed on this form.\
+    \uc0\u9614    */\
+    \uc0\u9614   export function cosmetic(text: string): string \{\
+    \uc0\u9614 -   return normalize(text).replace(/<[^>]+>/g, " ").replace(/\\s+/g, "\
+    \uc0\u9614   ").trim();\
+    \uc0\u9614 +   // Line-leading "a)" / "1." markers are outline labels. Renumbering them\
+    \uc0\u9614   is\
+    \uc0\u9614 +   // not a change to the sentence that follows.\
+    \uc0\u9614 +   const marked = normalize(text).replace(/(^|\\n)\\s*(?:[a-z]\\)|\\d+\\.)\\s+/g,\
+    \uc0\u9614   "$1");\
+    \uc0\u9614 +   return marked.replace(/<[^>]+>/g, " ").replace(/\\s+/g, " ").trim();\
+    \uc0\u9614   \}\
+\
+    Read /Users/jason/.cursor/projects/Users-jason-Documents/terminals/446517.txt\
+\
+  $ npx tsx scripts/step4-prep.ts 1.0s\
+    \'85 6 output lines hidden \'b7 ctrl+o to expand\
+    inject t5.json ok\
+    inject c1.json ok\
+\
+  $ npm test 1.4s\
+    \'85 36 output lines hidden \'b7 ctrl+o to expand\
+    \uc0\u8505  todo 0\
+    \uc0\u8505  duration_ms 903.0055\
+\
+    Monitored background task, 1 active\
+    \'85 2 earlier items hidden\
+    Waited 5m\
+    Read ...ects/Users-jason-Documents/terminals/446517.txt line 8\
+    Ran for f in t3a-s1-k3 t3b-s1-k1 tr03-s1-k1 tr03-s1-k2 tr03-s1-k3; do echo\
+    "===== $f"; tail -c 800 "runs/step4/logs/$f.txt"; echo; done\
+\
+    Globbed, grepped 1 glob, 1 grep\
+    Globbed "runs/step4/t1-s1-k1/**/*" in .\
+    Grepped "did not commit a change record" in src\
+\
+  $ ls -la runs/step4 | head -80 245ms\
+    \'85 31 output lines hidden \'b7 ctrl+o to expand\
+    drwxr-xr-x@  9 jason  staff   288 Sep 30 02:09 tr90-wy-s1-k2\
+    drwxr-xr-x@  9 jason  staff   288 Sep 30 02:09 tr90-wy-s1-k3\
+\
+    Read src/agents.ts lines 150-229\
+\
+  $ echo '--- t1-s1-k1'; ls runs/step4/t1-s1-k1; echo '--- t3a fail'; ls\
+    runs/step4/t3a-s1-k3; echo '--- tr03'; ls runs/step4/tr03-s1-k1; echo '--- t1\
+    s3'; ls runs/step4/t1-s3-k1 378ms\
+    \'85 27 output lines hidden \'b7 ctrl+o to expand\
+    trace.jsonl\
+    transcript.json\
+\
+    Read, grepped, globbed 16 files, 7 greps, 1 glob\
+    \'85 21 earlier items hidden\
+    Read ...enarios/answer-keys/e2e/T5_TR14_2026-10-01.yaml lines 70-109\
+    Grepped "stack_id" in src\
+    Read src/pipeline.ts lines 250-289\
+\
+  Stage 0 is clean after the list-marker fold. Stage 1 already shows a consistent\
+  TR-03 filename miss; I'll score the rest as the scope runs finish.\
+\
+    Read, grepped 1 file, 1 grep\
+    Read src/text.ts\
+    Grepped "company_gate|legal_status" in src/types.ts\
+\
+    Edited score-step4.ts +184\
+\
+    \uc0\u9614 + /**\
+    \uc0\u9614 +  * Score step-4 stage-1 change records and stage-3 scope traces.\
+    \uc0\u9614 +  * A missing change_record.json is a failed commit, not a silent skip.\
+    \uc0\u9614 +  */\
+    \uc0\u9614 + import \{ existsSync, readFileSync, readdirSync \} from "node:fs";\
+    \uc0\u9614 + import path from "node:path";\
+    \uc0\u9614 + import \{ parse as parseYaml \} from "yaml";\
+    \uc0\u9614 + import \{ normWs \} from "../src/text.js";\
+    \uc0\u9614 +\
+    \uc0\u9614 + const root = path.resolve(import.meta.dirname, "..");\
+    \uc0\u9614 + const runRoot = path.join(root, "runs/step4");\
+    \uc0\u9614 +\
+    \uc0\u9614  \'85 truncated (172 more lines) \'b7 ctrl+r to review\
+\
+    Grepped 2 greps\
+    Grepped "cost" in runs/step4/logs/t1-s1-k1.txt\
+    Grepped "cost|usd" in runs/step4/t1-s1-k1/run.json\
+\
+    Edited score-step4.ts +8 -6\
+\
+    \uc0\u9614   scope("T5", ["t5-scope-s3-k1", "t5-scope-s3-k2", "t5-scope-s3-k3"], t5);\
+    \uc0\u9614   scope("C1", ["tr03-s3-k1", "tr03-s3-k2", "tr03-s3-k3"], c1);\
+    \uc0\u9614 \
+    \uc0\u9614 - const logs = existsSync(path.join(runRoot, "logs")) ?\
+    \uc0\u9614   readdirSync(path.join(runRoot, "logs")) : [];\
+    \uc0\u9614   let spend = 0;\
+    \uc0\u9614 - for (const name of logs) \{\
+    \uc0\u9614 -   const text = readFileSync(path.join(runRoot, "logs", name), "utf8");\
+    \uc0\u9614 -   const match = text.match(/"cost_usd":\\s*([0-9.]+)/);\
+    \uc0\u9614 -   if (match) spend += Number(match[1]);\
+    \uc0\u9614 + let runs = 0;\
+    \uc0\u9614 + for (const name of readdirSync(runRoot)) \{\
+    \uc0\u9614 +   const file = path.join(runRoot, name, "run.json");\
+    \uc0\u9614  \'85 truncated (7 more lines) \'b7 ctrl+r to review\
+\
+  $ npx tsx scripts/score-step4.ts 896ms\
+    \'85 71 output lines hidden \'b7 ctrl+o to expand\
+    cost_usd sum 0.133 across 30 run.json files\
+\
+    Read \'85jason/.cursor/projects/Users-jason-Documents/terminals/446517.txt line 8\
+\
+  $ python3 << 'PY'\
+    import json, pathlib 237ms\
+    \'85 10 input + 96 output lines hidden \'b7 ctrl+o to expand\
+      TR10-18 sub=False in_force eff=None\
+        ENGROSSED SUBSTITUTE HOUSE BILL 1155 Chapter 149, Laws of 2026\
+\
+    Grepped "Citation file is not available" in src\
+    Found 1 matches\
+\
+    Monitored background task, 1 complete\
+    Waited for "DONE" in shell\
+    Read ...ects/Users-jason-Documents/terminals/446517.txt line 35\
+    Read src/citations.ts\
+    Ran npx tsx scripts/score-step4.ts\
+\
+    Grepped, read 3 greps, 3 files\
+    \'85 3 earlier items hidden\
+    Read eval-scenarios/answer-keys/INDEX.yaml lines 650-689\
+    Read eval-scenarios/answer-keys/INDEX.yaml lines 682-706\
+    Grepped "Default in|commit_scope" in test\
+\
+    Edited prompts.ts +1 -1\
+\
+    \uc0\u9614       `Custom instructions, read again for blacklist and per-stack\
+    \uc0\u9614   extras:\\n$\{input.custom?.trim() || "(none)"\}`,\
+    \uc0\u9614       `Stack index ($\{input.stackCount\} stacks, one line each). clause_types\
+    \uc0\u9614   are keyword hits for orientation, not co ...\
+    \uc0\u9614       input.lines.join("\\n"),\
+    \uc0\u9614 -     `Call commit_scope. List stacks you exclude, with the reason, and\
+    \uc0\u9614   stacks you include for a specific reason. Omi ...\
+    \uc0\u9614 +     `Call commit_scope. List stacks you exclude, with the reason, and\
+    \uc0\u9614   stacks you include for a specific reason. Omi ...\
+    \uc0\u9614     ].join("\\n\\n");\
+    \uc0\u9614   \}\
+    \uc0\u9614 \
+\
+    Read src/prompts.ts lines 62-71\
+\
+  $ python3 << 'PY'\
+    import subprocess, os 3m 26s (background)\
+    \'85 32 input lines hidden \'b7 ctrl+o to expand\
+\
+    Edited score-step4.ts +1 -1\
+\
+    \uc0\u9614   import \{ normWs \} from "../src/text.js";\
+    \uc0\u9614 \
+    \uc0\u9614   const root = path.resolve(import.meta.dirname, "..");\
+    \uc0\u9614 - const runRoot = path.join(root, "runs/step4");\
+    \uc0\u9614 + const runRoot = path.join(root, process.argv[2] ?? "runs/step4");\
+    \uc0\u9614 \
+    \uc0\u9614   type GoldItem = \{\
+    \uc0\u9614     id: string;\
+\
+    Monitored background task, 1 complete\
+    Waited for "DONE" in shell\
+    Ran npx tsx scripts/score-step4.ts runs/step4b\
+\
+    Edited prompts.ts +1 -1\
+\
+    \uc0\u9614       `Custom instructions, read again for blacklist and per-stack\
+    \uc0\u9614   extras:\\n$\{input.custom?.trim() || "(none)"\}`,\
+    \uc0\u9614       `Stack index ($\{input.stackCount\} stacks, one line each). clause_types\
+    \uc0\u9614   are keyword hits for orientation, not co ...\
+    \uc0\u9614       input.lines.join("\\n"),\
+    \uc0\u9614 -     `Call commit_scope. List stacks you exclude, with the reason, and\
+    \uc0\u9614   stacks you include for a specific reason. Omi ...\
+    \uc0\u9614 +     `Call commit_scope. List stacks you exclude, with the reason, and\
+    \uc0\u9614   stacks you include for a specific reason. Omi ...\
+    \uc0\u9614     ].join("\\n\\n");\
+    \uc0\u9614   \}\
+    \uc0\u9614 \
+\
+  $ python3 << 'PY'\
+    import json, pathlib 312ms\
+    \'85 11 input lines hidden \'b7 ctrl+o to expand\
+    step4 (34, 0.20666273000000002)\
+    step4b (12, 0.10730302)\
+\
+    Read 2 files\
+    Read eval-scenarios/RUN-PLAN.md lines 123-130\
+    Read src/prompts.ts lines 64-71\
+\
+    Edited RUN-PLAN.md +1\
+\
+    \uc0\u9614      unit test on `D-S0-05` and costs nothing. Tighten the scope prompt only\
+    \uc0\u9614      if a gold stack was dropped or a pruned stack was kept for a bad reason.\
+    \uc0\u9614      Default-in stays until a real miss says otherwise.\
+    \uc0\u9614 +    Log 2026-09-30: stage 0, then stage 1 and stage 3 at k=3, $0.21.\
+    \uc0\u9614   Membership cosmetic pair did not exit (only `a) ...\
+    \uc0\u9614 \
+    \uc0\u9614   5. **Labels on the step-2 evidence.** No new reading pass. If the spans\
+    \uc0\u9614   were\
+    \uc0\u9614      right and the labels were wrong, the next run is Jev: same findings,\
+\
+  Step 4 is logged. The list-marker fold in stage 0 stays. The scope-prompt\
+  sentence does not.\
+\
+  Stage 0 missed only the membership renumber (a)/b)/c) to 1./2./3.). Folding\
+  those line-leading markers makes that pair exit, and the substantive membership\
+  pair still survives. Stage 1 got the gates and statuses that could be committed:\
+  Proclamation 11021 proceeds and is in_force 3/3; the Washington bill flips from\
+  enacted_future_effective to in_force across the two as-of dates on every commit\
+  that landed; SB 699 and AB 1076 stay apart and in_force; Wyoming and the Texas\
+  physician statute both exit 3/3. TR-03 never committed (0/3), because every draw\
+  cited preliminary_results instead of preliminary-results, so its legal status\
+  was not scored. The Washington profile-drop never committed either (0/3,\
+  non-verbatim quotes), so that gate was not measured.\
+\
+  No gold stack was dropped. The real scope miss is TR-03: Great Plains was kept\
+  on purpose 3/3 because the product is copper, and Hai Phong was kept on purpose\
+  3/3, with about 63 stacks still in. The San Jose lease was an explicit keep on\
+  1/3 only, so that stays as variance. One sentence was added to the scope prompt,\
+  after the empty-reason sentence and before the custom-instruction sentence:\
+\
+  When the change is limited to one origin, profession, or jurisdiction, a\
+  matching product word, an import role, or a tariff clause is not enough: exclude\
+  the stack unless it shows that origin, profession, or jurisdiction, and say\
+  what is missing.\
+\
+  Re-ran T1, T3a, T5, and TR-03 scope at k=3 ($0.11 on top of $0.21). Great Plains\
+  was still in 3/3. Hai Phong fell to 1/3. Gold stacks on the other three stayed\
+  in, and T3a/T5 got narrower, but the keyword trap did not move, so the sentence\
+  is reverted. The live scope paragraph is the original one again.\
+\
+  Step 5 is labels on the step-2 evidence, with no new reading pass. The one\
+  spans-right, labels-wrong item is Cascade: the waived REA was still called a\
+  live clock, so the spend would be Jev on that finding only (configs/j-jev.json),\
+  and no abstention-threshold sweep unless that run leaves a dangerous swap.\
+  Approve that?\
+\
+\
+  yes - since jev is the only cost here, lets run a more statisically\
+  signifigsant sample, like k=30 (or more). JEV_API_KEY is added to the env\
+  and should be all set.\
+\
+\
+  Jev is the only spend, so I'll run the Cascade clock labels at k=30 and score\
+  whether the waived REA stays a live clock.\
+\
+    Read, grepped 5 files, 2 greps\
+    \'85 4 earlier items hidden\
+    Read eval-scenarios/RUN-PLAN.md lines 1-50\
+    Read src/classify.ts\
+    Read src/agents.ts lines 380-499\
+\
+ \uc0\u10264 \u10275  Thinking  6.74k tokens\
+    Tip: Use /run-everything to skip all approvals.\
+     \uc0\u9614   row.ids.includes(item.id));\
+    \uc0\u9614     process.stdout.write(`\\n== $\{row.slug\}\\n`);\
+    \uc0\u9614     for (const k of [1, 2, 3]) \{\
+    \uc0\u9614 -     const dir = path.join("runs/step2", `$\{row.slug\}-k$\{k\}`);\
+    \uc0\u9614 +     const dir = path.join(process.argv[2] ?? "runs/step2",\
+    \uc0\u9614   `$\{row.slug\}-k$\{k\}`);\
+    \uc0\u9614       const \{ finding, cost \} = loadRun(dir);\
+    \uc0\u9614       total += cost;\
+    \uc0\u9614       const preds = finding.findings ?? [];\
+\
+    Edited score-step2.ts +1 -1\
+\
+    \uc0\u9614 - import \{ readdirSync, readFileSync \} from "node:fs";\
+    \uc0\u9614 + import \{ existsSync, readdirSync, readFileSync \} from "node:fs";\
+    \uc0\u9614   import path from "node:path";\
+    \uc0\u9614   import \{ parse as parseYaml \} from "yaml";\
+    \uc0\u9614   import \{ normWs \} from "../src/text.js";\
+\
+    Edited score-step2.ts +1\
+\
+    \uc0\u9614     process.stdout.write(`\\n== $\{row.slug\}\\n`);\
+    \uc0\u9614     for (const k of [1, 2, 3]) \{\
+    \uc0\u9614       const dir = path.join(process.argv[2] ?? "runs/step2",\
+    \uc0\u9614   `$\{row.slug\}-k$\{k\}`);\
+    \uc0\u9614 +     if (!existsSync(dir)) continue;\
+    \uc0\u9614       const \{ finding, cost \} = loadRun(dir);\
+    \uc0\u9614       total += cost;\
+    \uc0\u9614       const preds = finding.findings ?? [];\
+\
+  $ npx tsx scripts/score-step2.ts runs/step2b 914ms\
+    \'85 28 output lines hidden \'b7 ctrl+o to expand\
+    TOTAL $0.165\
+\
+    Read src/agents.ts lines 80-159\
+\
+    Edited prompts.ts +1 -1\
+\
+    \uc0\u9614 \
+    \uc0\u9614   Decide applicability for this stack after you have the company profile from\
+    \uc0\u9614   the brief. When the profile leaves a re ...\
+    \uc0\u9614 \
+    \uc0\u9614 - When the change can bear on the stack, follow hops inside the family\
+    \uc0\u9614   (parent and cluster members) and follow each i ...\
+    \uc0\u9614 + When the change can bear on the stack, follow hops inside the family\
+    \uc0\u9614   (parent and cluster members) and follow each i ...\
+    \uc0\u9614 \
+    \uc0\u9614   Frame the work as the rights, obligations, and exposures this change\
+    \uc0\u9614   creates under this stack. Include opportunitie ...\
+    \uc0\u9614 \
+\
+    Edited RUN-PLAN.md +6\
+\
+    \uc0\u9614   2. **Stage 4, GLM, teacher-forced, k=3. About $0.75.** Inject the gold\
+    \uc0\u9614   change\
+    \uc0\u9614      record. `only_stacks` is the table above. This is the map: a hop miss, a\
+    \uc0\u9614      decoy hit, and a wrong clock are three different next changes.\
+    \uc0\u9614 +    Log 2026-09-30: eight stacks \'d7 k=3, gold change records, $0.41. Lease\
+    \uc0\u9614   utility decoy not_affected 3/3. Keystone 2 ...\
+    \uc0\u9614 \
+    \uc0\u9614   3. **One analyst-prompt change.** Only if step 2 has an item at 2/3 or 3/3\
+    \uc0\u9614      on the same failure. Re-run those items at k=3, then the whole stage-4\
+    \uc0\u9614      slice once at k=3.\
+    \uc0\u9614 +    Log 2026-09-30: added one hop sentence (quote the PO, invoice, notice,\
+    \uc0\u9614   or signed copy that identifies the goods, ...\
+    \uc0\u9614 \
+    \uc0\u9614 + 3. **One analyst-prompt change.** Only if step 2 has an item at 2/3 or 3/3\
+    \uc0\u9614 +    on the same failure. Re-run those items at k=3, then the whole stage-4\
+    \uc0\u9614  \'85 truncated (5 more lines) \'b7 ctrl+r to review\
+\
+    Read eval-scenarios/RUN-PLAN.md lines 100-139\
+\
+    Edited RUN-PLAN.md -4\
+\
+    \uc0\u9614      slice once at k=3.\
+    \uc0\u9614      Log 2026-09-30: added one hop sentence (quote the PO, invoice, notice,\
+    \uc0\u9614   or signed copy that identifies the goods, ...\
+    \uc0\u9614 \
+    \uc0\u9614 - 3. **One analyst-prompt change.** Only if step 2 has an item at 2/3 or 3/3\
+    \uc0\u9614 -    on the same failure. Re-run those items at k=3, then the whole stage-4\
+    \uc0\u9614 -    slice once at k=3.\
+    \uc0\u9614 -\
+    \uc0\u9614   4. **Stage 1 and stage 3, GLM, k=3.** Gold triggers: Proclamation 11021,\
+    \uc0\u9614   the\
+    \uc0\u9614      T3 pair, T5 with both California instruments, TR-03, TR-90. Stage 0 is\
+    \uc0\u9614   the\
+    \uc0\u9614      unit test on `D-S0-05` and costs nothing. Tighten the scope prompt only\
+\
+  The stage-4 map cost $0.41, and the one prompt change that followed did not move\
+  the miss, so it was reverted.\
+\
+  Eight gold stacks at k=3, with the gold change records injected: the lease\
+  utility decoy was dismissed 3/3, and the Keystone 2019 pin was hop-complete 3/3.\
+  Cascade quoted the right clauses 3/3 and still treated the already-waived price\
+  adjustment as a live clock. Great Plains read the purchase order every time and\
+  never quoted the copper-tube line, 0/3; the metals-adjustment exhibit was not\
+  used as the surcharge. Valley named the right non-renewal date once in three\
+  draws. Sunpoint found the most-favored clause and stayed affected, and missed\
+  the survival sentence. The California template cited section 6.1 on 2/3 draws,\
+  never quoted Marchetti's dates, and settled Ellison as a violation instead of\
+  abstaining on 2/3. Section 6.2 was not cited as the hit.\
+\
+  A single hop sentence, re-run on the four stacks that missed the same way\
+  ($0.17), left the purchase-order line at 0/3. That sentence is reverted. Both\
+  results are logged on steps 2 and 3 in eval-scenarios/RUN-PLAN.md.\
+\
+  Step 4 is stages 1 and 3 on GLM at k=3, under $0.50, plus the free stage-0 diff\
+  test: whether the gold change is found, distractors are dismissed, legal status\
+  is exact, SB 699 stays separate from AB 1076, the company gate does not\
+  false-exit, and scope neither drops a gold stack nor keeps a pruned one for a\
+  bad reason. Approve that run?\
+\
+\
+  Appended note - I need to see all prompt chnages in full - it will be easy,\
+  without a proiper holdout eval set, to game/overfit the prompts by accident\
+\
+\
+  The hop sentence was reverted, so the live prompt is unchanged. I\'92ll confirm\
+  that, then put the full before-and-after in the run plan and add your rule that\
+  every prompt edit has to be shown in full.\
+\
+    Read, grepped 13 files, 2 greps\
+    \'85 12 earlier items hidden\
+    Read eval-scenarios/answer-keys/INDEX.yaml lines 298-312\
+    Read eval-scenarios/answer-keys/INDEX.yaml lines 340-351\
+    Read eval-scenarios/answer-keys/INDEX.yaml lines 550-599\
+\
+    Edited RUN-PLAN.md +7\
+\
+    \uc0\u9614      ids, after the slice has a before and after. The two runs already done\
+    \uc0\u9614      were a wiring check. Their triggers were EO 14220 and SB 699 alone, not\
+    \uc0\u9614      the gold inputs.\
+    \uc0\u9614 + 7. Every prompt change is pasted in full in the log for that step: the\
+    \uc0\u9614 +    exact sentences inserted or deleted, in place, not a summary. Wording is\
+    \uc0\u9614 +    drafted from dev misses only. Holdout findings are not read while\
+    \uc0\u9614 +    drafting, and are scored only after a change is kept. Without that split\
+    \uc0\u9614 +    it is easy to write the gold answer into the prompt. The stage-4 map\
+    \uc0\u9614 +    already mixed the two: S4-GPC-02 and B11 are holdout and were scored on\
+    \uc0\u9614 +    the same draws as the dev items.\
+    \uc0\u9614 \
+    \uc0\u9614   ## The slice\
+    \uc0\u9614  \'85 truncated (1 more line) \'b7 ctrl+r to review\
+\
+    Edited RUN-PLAN.md +1 -1\
+\
+    \uc0\u9614   3. **One analyst-prompt change.** Only if step 2 has an item at 2/3 or 3/3\
+    \uc0\u9614      on the same failure. Re-run those items at k=3, then the whole stage-4\
+    \uc0\u9614      slice once at k=3.\
+    \uc0\u9614 -    Log 2026-09-30: added one hop sentence (quote the PO, invoice, notice,\
+    \uc0\u9614   or signed copy that identifies the goods, ...\
+    \uc0\u9614 +    Log 2026-09-30: one sentence inserted into the analyst hop paragraph,\
+    \uc0\u9614   after "The hop chain cites the clause that ...\
+    \uc0\u9614 \
+    \uc0\u9614   4. **Stage 1 and stage 3, GLM, k=3.** Gold triggers: Proclamation 11021,\
+    \uc0\u9614   the\
+    \uc0\u9614      T3 pair, T5 with both California instruments, TR-03, TR-90. Stage 0 is\
+    \uc0\u9614   the\
+\
+  The only prompt edit in this loop was one sentence in the analyst hop paragraph.\
+  It is reverted. The live paragraph is:\
+\
+  \uc0\u9474  When the change can bear on the stack, follow hops inside the family (parent\
+    and cluster members) and follow each incorporates row one hop to that target.\
+    Do not open the target's other documents. Do not open a second family. The\
+    hop chain cites the clause that names the target. Version pins are binding:\
+    "as published October 2019" is that version, not the current page.\
+\
+\
+  While it was in, that paragraph had this sentence between the hop-chain sentence\
+  and the version-pin sentence:\
+\
+  \uc0\u9474  Do not stop at the operative clause. If this family also has the purchase\
+    order, invoice, notice, or signed copy that identifies the goods, the\
+    person, the date, or the charge, quote that line in the hop chain too.\
+\
+  Nothing else in src/prompts.ts changed. That sentence was written after reading\
+  the whole stage-4 slice, including two holdout items that share those draws: the\
+  Metals Adjustment decoy (S4-GPC-02) and the Cascade clock (B11). The\
+  purchase-order miss it was aimed at is dev (S4-GPC-01). The re-run did not move\
+  it, and the sentence is out.\
+\
+  Rule 7 in eval-scenarios/RUN-PLAN.md now requires every later prompt edit to be\
+  pasted in full, drafted from dev misses only, with holdout scored after a change\
+  is kept rather than read while the wording is written. Step 4 is still waiting\
+  on your approval.\
+\
+  Finished Run stage-4 gold stacks at k=3\
+\
+  The stage-4 gold run finished successfully, all 24 draws, and those results are\
+  already in the map logged on step 2 of eval-scenarios/RUN-PLAN.md. Step 4 is\
+  still waiting on your approval.\
+\
+\
+  any other experimetns worth running in eval step 3? seems like we only ran\
+  one experiemtn and reverted - curious if you see any other clear\
+  opportunities\
+\
+\
+  The hop sentence was the one clear 3-for-3 miss, and it didn\'92t move. I\'92ll check\
+  whether the purchase-order line was actually rejected by the commit tool before\
+  calling any other prompt edit worth the spend.\
+\
+    Grepped, read 2 greps, 2 files\
+    Grepped "PO-2026-0204|commit_finding" in runs/step2b\
+    Grepped ""tool": "commit_finding"" in runs/step2/gp-k2/run.json\
+    Read runs/step2b/gp-k3/run.json lines 160-199\
+    Read runs/step2b/gp-k1/run.json lines 190-219\
+\
+  No. Another prompt on this slice would either repeat the lever that just failed\
+  or write a gold answer into the instruction.\
+\
+  The purchase-order miss is still the only 3-for-3 failure, and it is not a\
+  wording problem. On the re-run the analyst opened PO-2026-0204 and committed\
+  successfully without quoting the tube line. The sentence that told it to quote\
+  the purchase order did not change that, so a second sentence about hops, tables,\
+  or \'93the line that identifies the goods\'94 is the same experiment.\
+\
+  The other repeated issues are the ones that look tempting and are the\
+  overfitting risk:\
+\
+  \'95 Cascade\'92s clock is a label on spans that were already right, and that item\
+    is holdout (B11). It belongs to the label step, not another analyst\
+    sentence.\
+  \'95 Ellison was settled as a violation on 2 of 3 draws. The reverted sentence\
+    already said to quote the date on the signed copy, and the dates still were\
+    not quoted.\
+  \'95 Valley\'92s 2026-12-02 shows up often, and sometimes the date is 2026-11-01 or\
+    blank. A sentence that explains \'9360 days before December 31\'94 is the gold\
+    answer.\
+  \'95 Sunpoint already stays affected. The missing survival sentence is one dev\
+    item, and the Northbrook letter is the stage-5 link.\
+  \'95 Bridgewell\'92s absence miss was 1 of 3. That is variance. Lease and Keystone\
+    passed 3 for 3.\
+\
+  I would not spend the next run on a prompt.\
+\
+\
+  okay - go with steo 4\
+\
+\
+  Step 4 is on. I\'92ll run the free stage-0 diff test first, then stages 1 and 3 on\
+  the gold triggers at k=3.\
+\
+    Read, grepped, globbed 17 files, 8 greps, 2 globs\
+    \'85 24 earlier items hidden\
+    Grepped "^  id:" in corpus/triggers\
+    Read ...narios/answer-keys/e2e/T3b_TR10_2027-07-01.yaml\
+    Read src/normalize.ts\
+\
+    Edited step4-prep.ts +139\
+\
+    \uc0\u9614 + import \{ mkdirSync, readFileSync, writeFileSync \} from "node:fs";\
+    \uc0\u9614 + import path from "node:path";\
+    \uc0\u9614 + import \{ parse as parseYaml \} from "yaml";\
+    \uc0\u9614 + import \{ diffSnapshots \} from "../src/stage0.js";\
+    \uc0\u9614 + import \{ normalize \} from "../src/normalize.js";\
+    \uc0\u9614 + import \{ validateArtifact \} from "../src/schema.js";\
+    \uc0\u9614 +\
+    \uc0\u9614 + const root = process.cwd();\
+    \uc0\u9614 +\
+    \uc0\u9614 + function text(rel: string): string \{\
+    \uc0\u9614 +   return normalize(readFileSync(path.join(root, rel)));\
+    \uc0\u9614 + \}\
+    \uc0\u9614  \'85 truncated (127 more lines) \'b7 ctrl+r to review\
+\
+  $ npx tsx scripts/step4-prep.ts exit 1 \'95 1.0s\
+    \'85 6 output lines hidden \'b7 ctrl+o to expand\
+    inject t5.json ok\
+    inject c1.json ok\
+\
+    Read src/normalize.ts lines 20-59\
+\
+  $ python3 - << 'PY'\
+    from pathlib import Path 212ms\
+    \'85 7 input + 55 output lines hidden \'b7 ctrl+o to expand\
+    +3. Consequential Damages Waiver. MERIDIAN WILL NOT BE LIABLE FOR ANY INDIRECT,\'85\
+    --- 56 diff lines\
+\
+    Grepped "cosmetic\\(" in test\
+    Found 0 matches\
+\
+  $ python3 << 'PY'\
+    import subprocess, os 7m 2s (background)\
+    \'85 42 input lines hidden \'b7 ctrl+o to expand\
+\
+    Edited normalize.ts +4 -1\
+\
+    \uc0\u9614    * Offsets are never computed on this form.\
+    \uc0\u9614    */\
+    \uc0\u9614   export function cosmetic(text: string): string \{\
+    \uc0\u9614 -   return normalize(text).replace(/<[^>]+>/g, " ").replace(/\\s+/g, "\
+    \uc0\u9614   ").trim();\
+    \uc0\u9614 +   // Line-leading "a)" / "1." markers are outline labels. Renumbering them\
+    \uc0\u9614   is\
+    \uc0\u9614 +   // not a change to the sentence that follows.\
+    \uc0\u9614 +   const marked = normalize(text).replace(/(^|\\n)\\s*(?:[a-z]\\)|\\d+\\.)\\s+/g,\
+    \uc0\u9614   "$1");\
+    \uc0\u9614 +   return marked.replace(/<[^>]+>/g, " ").replace(/\\s+/g, " ").trim();\
+    \uc0\u9614   \}\
+\
+    Read /Users/jason/.cursor/projects/Users-jason-Documents/terminals/446517.txt\
+\
+  $ npx tsx scripts/step4-prep.ts 1.0s\
+    \'85 6 output lines hidden \'b7 ctrl+o to expand\
+    inject t5.json ok\
+    inject c1.json ok\
+\
+  $ npm test 1.4s\
+    \'85 36 output lines hidden \'b7 ctrl+o to expand\
+    \uc0\u8505  todo 0\
+    \uc0\u8505  duration_ms 903.0055\
+\
+    Monitored background task, 1 active\
+    \'85 2 earlier items hidden\
+    Waited 5m\
+    Read ...ects/Users-jason-Documents/terminals/446517.txt line 8\
+    Ran for f in t3a-s1-k3 t3b-s1-k1 tr03-s1-k1 tr03-s1-k2 tr03-s1-k3; do echo\
+    "===== $f"; tail -c 800 "runs/step4/logs/$f.txt"; echo; done\
+\
+    Globbed, grepped 1 glob, 1 grep\
+    Globbed "runs/step4/t1-s1-k1/**/*" in .\
+    Grepped "did not commit a change record" in src\
+\
+  $ ls -la runs/step4 | head -80 245ms\
+    \'85 31 output lines hidden \'b7 ctrl+o to expand\
+    drwxr-xr-x@  9 jason  staff   288 Sep 30 02:09 tr90-wy-s1-k2\
+    drwxr-xr-x@  9 jason  staff   288 Sep 30 02:09 tr90-wy-s1-k3\
+\
+    Read src/agents.ts lines 150-229\
+\
+  $ echo '--- t1-s1-k1'; ls runs/step4/t1-s1-k1; echo '--- t3a fail'; ls\
+    runs/step4/t3a-s1-k3; echo '--- tr03'; ls runs/step4/tr03-s1-k1; echo '--- t1\
+    s3'; ls runs/step4/t1-s3-k1 378ms\
+    \'85 27 output lines hidden \'b7 ctrl+o to expand\
+    trace.jsonl\
+    transcript.json\
+\
+    Read, grepped, globbed 16 files, 7 greps, 1 glob\
+    \'85 21 earlier items hidden\
+    Read ...enarios/answer-keys/e2e/T5_TR14_2026-10-01.yaml lines 70-109\
+    Grepped "stack_id" in src\
+    Read src/pipeline.ts lines 250-289\
+\
+  Stage 0 is clean after the list-marker fold. Stage 1 already shows a consistent\
+  TR-03 filename miss; I'll score the rest as the scope runs finish.\
+\
+    Read, grepped 1 file, 1 grep\
+    Read src/text.ts\
+    Grepped "company_gate|legal_status" in src/types.ts\
+\
+    Edited score-step4.ts +184\
+\
+    \uc0\u9614 + /**\
+    \uc0\u9614 +  * Score step-4 stage-1 change records and stage-3 scope traces.\
+    \uc0\u9614 +  * A missing change_record.json is a failed commit, not a silent skip.\
+    \uc0\u9614 +  */\
+    \uc0\u9614 + import \{ existsSync, readFileSync, readdirSync \} from "node:fs";\
+    \uc0\u9614 + import path from "node:path";\
+    \uc0\u9614 + import \{ parse as parseYaml \} from "yaml";\
+    \uc0\u9614 + import \{ normWs \} from "../src/text.js";\
+    \uc0\u9614 +\
+    \uc0\u9614 + const root = path.resolve(import.meta.dirname, "..");\
+    \uc0\u9614 + const runRoot = path.join(root, "runs/step4");\
+    \uc0\u9614 +\
+    \uc0\u9614  \'85 truncated (172 more lines) \'b7 ctrl+r to review\
+\
+    Grepped 2 greps\
+    Grepped "cost" in runs/step4/logs/t1-s1-k1.txt\
+    Grepped "cost|usd" in runs/step4/t1-s1-k1/run.json\
+\
+    Edited score-step4.ts +8 -6\
+\
+    \uc0\u9614   scope("T5", ["t5-scope-s3-k1", "t5-scope-s3-k2", "t5-scope-s3-k3"], t5);\
+    \uc0\u9614   scope("C1", ["tr03-s3-k1", "tr03-s3-k2", "tr03-s3-k3"], c1);\
+    \uc0\u9614 \
+    \uc0\u9614 - const logs = existsSync(path.join(runRoot, "logs")) ?\
+    \uc0\u9614   readdirSync(path.join(runRoot, "logs")) : [];\
+    \uc0\u9614   let spend = 0;\
+    \uc0\u9614 - for (const name of logs) \{\
+    \uc0\u9614 -   const text = readFileSync(path.join(runRoot, "logs", name), "utf8");\
+    \uc0\u9614 -   const match = text.match(/"cost_usd":\\s*([0-9.]+)/);\
+    \uc0\u9614 -   if (match) spend += Number(match[1]);\
+    \uc0\u9614 + let runs = 0;\
+    \uc0\u9614 + for (const name of readdirSync(runRoot)) \{\
+    \uc0\u9614 +   const file = path.join(runRoot, name, "run.json");\
+    \uc0\u9614  \'85 truncated (7 more lines) \'b7 ctrl+r to review\
+\
+  $ npx tsx scripts/score-step4.ts 896ms\
+    \'85 71 output lines hidden \'b7 ctrl+o to expand\
+    cost_usd sum 0.133 across 30 run.json files\
+\
+    Read \'85jason/.cursor/projects/Users-jason-Documents/terminals/446517.txt line 8\
+\
+  $ python3 << 'PY'\
+    import json, pathlib 237ms\
+    \'85 10 input + 96 output lines hidden \'b7 ctrl+o to expand\
+      TR10-18 sub=False in_force eff=None\
+        ENGROSSED SUBSTITUTE HOUSE BILL 1155 Chapter 149, Laws of 2026\
+\
+    Grepped "Citation file is not available" in src\
+    Found 1 matches\
+\
+    Monitored background task, 1 complete\
+    Waited for "DONE" in shell\
+    Read ...ects/Users-jason-Documents/terminals/446517.txt line 35\
+    Read src/citations.ts\
+    Ran npx tsx scripts/score-step4.ts\
+\
+    Grepped, read 3 greps, 3 files\
+    \'85 3 earlier items hidden\
+    Read eval-scenarios/answer-keys/INDEX.yaml lines 650-689\
+    Read eval-scenarios/answer-keys/INDEX.yaml lines 682-706\
+    Grepped "Default in|commit_scope" in test\
+\
+    Edited prompts.ts +1 -1\
+\
+    \uc0\u9614       `Custom instructions, read again for blacklist and per-stack\
+    \uc0\u9614   extras:\\n$\{input.custom?.trim() || "(none)"\}`,\
+    \uc0\u9614       `Stack index ($\{input.stackCount\} stacks, one line each). clause_types\
+    \uc0\u9614   are keyword hits for orientation, not co ...\
+    \uc0\u9614       input.lines.join("\\n"),\
+    \uc0\u9614 -     `Call commit_scope. List stacks you exclude, with the reason, and\
+    \uc0\u9614   stacks you include for a specific reason. Omi ...\
+    \uc0\u9614 +     `Call commit_scope. List stacks you exclude, with the reason, and\
+    \uc0\u9614   stacks you include for a specific reason. Omi ...\
+    \uc0\u9614     ].join("\\n\\n");\
+    \uc0\u9614   \}\
+    \uc0\u9614 \
+\
+    Read src/prompts.ts lines 62-71\
+\
+  $ python3 << 'PY'\
+    import subprocess, os 3m 26s (background)\
+    \'85 32 input lines hidden \'b7 ctrl+o to expand\
+\
+    Edited score-step4.ts +1 -1\
+\
+    \uc0\u9614   import \{ normWs \} from "../src/text.js";\
+    \uc0\u9614 \
+    \uc0\u9614   const root = path.resolve(import.meta.dirname, "..");\
+    \uc0\u9614 - const runRoot = path.join(root, "runs/step4");\
+    \uc0\u9614 + const runRoot = path.join(root, process.argv[2] ?? "runs/step4");\
+    \uc0\u9614 \
+    \uc0\u9614   type GoldItem = \{\
+    \uc0\u9614     id: string;\
+\
+    Monitored background task, 1 complete\
+    Waited for "DONE" in shell\
+    Ran npx tsx scripts/score-step4.ts runs/step4b\
+\
+    Edited prompts.ts +1 -1\
+\
+    \uc0\u9614       `Custom instructions, read again for blacklist and per-stack\
+    \uc0\u9614   extras:\\n$\{input.custom?.trim() || "(none)"\}`,\
+    \uc0\u9614       `Stack index ($\{input.stackCount\} stacks, one line each). clause_types\
+    \uc0\u9614   are keyword hits for orientation, not co ...\
+    \uc0\u9614       input.lines.join("\\n"),\
+    \uc0\u9614 -     `Call commit_scope. List stacks you exclude, with the reason, and\
+    \uc0\u9614   stacks you include for a specific reason. Omi ...\
+    \uc0\u9614 +     `Call commit_scope. List stacks you exclude, with the reason, and\
+    \uc0\u9614   stacks you include for a specific reason. Omi ...\
+    \uc0\u9614     ].join("\\n\\n");\
+    \uc0\u9614   \}\
+    \uc0\u9614 \
+\
+  $ python3 << 'PY'\
+    import json, pathlib 312ms\
+    \'85 11 input lines hidden \'b7 ctrl+o to expand\
+    step4 (34, 0.20666273000000002)\
+    step4b (12, 0.10730302)\
+\
+    Read 2 files\
+    Read eval-scenarios/RUN-PLAN.md lines 123-130\
+    Read src/prompts.ts lines 64-71\
+\
+    Edited RUN-PLAN.md +1\
+\
+    \uc0\u9614      unit test on `D-S0-05` and costs nothing. Tighten the scope prompt only\
+    \uc0\u9614      if a gold stack was dropped or a pruned stack was kept for a bad reason.\
+    \uc0\u9614      Default-in stays until a real miss says otherwise.\
+    \uc0\u9614 +    Log 2026-09-30: stage 0, then stage 1 and stage 3 at k=3, $0.21.\
+    \uc0\u9614   Membership cosmetic pair did not exit (only `a) ...\
+    \uc0\u9614 \
+    \uc0\u9614   5. **Labels on the step-2 evidence.** No new reading pass. If the spans\
+    \uc0\u9614   were\
+    \uc0\u9614      right and the labels were wrong, the next run is Jev: same findings,\
+\
+  Step 4 is logged. The list-marker fold in stage 0 stays. The scope-prompt\
+  sentence does not.\
+\
+  Stage 0 missed only the membership renumber (a)/b)/c) to 1./2./3.). Folding\
+  those line-leading markers makes that pair exit, and the substantive membership\
+  pair still survives. Stage 1 got the gates and statuses that could be committed:\
+  Proclamation 11021 proceeds and is in_force 3/3; the Washington bill flips from\
+  enacted_future_effective to in_force across the two as-of dates on every commit\
+  that landed; SB 699 and AB 1076 stay apart and in_force; Wyoming and the Texas\
+  physician statute both exit 3/3. TR-03 never committed (0/3), because every draw\
+  cited preliminary_results instead of preliminary-results, so its legal status\
+  was not scored. The Washington profile-drop never committed either (0/3,\
+  non-verbatim quotes), so that gate was not measured.\
+\
+  No gold stack was dropped. The real scope miss is TR-03: Great Plains was kept\
+  on purpose 3/3 because the product is copper, and Hai Phong was kept on purpose\
+  3/3, with about 63 stacks still in. The San Jose lease was an explicit keep on\
+  1/3 only, so that stays as variance. One sentence was added to the scope prompt,\
+  after the empty-reason sentence and before the custom-instruction sentence:\
+\
+  When the change is limited to one origin, profession, or jurisdiction, a\
+  matching product word, an import role, or a tariff clause is not enough: exclude\
+  the stack unless it shows that origin, profession, or jurisdiction, and say\
+  what is missing.\
+\
+  Re-ran T1, T3a, T5, and TR-03 scope at k=3 ($0.11 on top of $0.21). Great Plains\
+  was still in 3/3. Hai Phong fell to 1/3. Gold stacks on the other three stayed\
+  in, and T3a/T5 got narrower, but the keyword trap did not move, so the sentence\
+  is reverted. The live scope paragraph is the original one again.\
+\
+  Step 5 is labels on the step-2 evidence, with no new reading pass. The one\
+  spans-right, labels-wrong item is Cascade: the waived REA was still called a\
+  live clock, so the spend would be Jev on that finding only (configs/j-jev.json),\
+  and no abstention-threshold sweep unless that run leaves a dangerous swap.\
+  Approve that?\
+\
+\
+  yes - since jev is the only cost here, lets run a more statisically\
+  signifigsant sample, like k=30 (or more). JEV_API_KEY is added to the env\
+  and should be all set.\
+\
+\
+  Jev is the only spend, so I'll run the Cascade clock labels at k=30 and score\
+  whether the waived REA stays a live clock.\
+\
+    Read, grepped, globbed 7 files, 6 greps, 2 globs\
+    \'85 12 earlier items hidden\
+    Globbed "runs/step2/cascade-k*/**/*finding*" in .\
+    Globbed "runs/step2/cascade*/**/*" in .\
+    Grepped "inject-findings|injectFindings" in src\
+\
+  $ ls runs/step2 | head -40; echo '---'; find runs/step2/cascade-k1 -type f | head\
+    -30 212ms\
+    \'85 31 output lines hidden \'b7 ctrl+o to expand\
+    runs/step2/cascade-k1/run.json\
+    runs/step2/cascade-k1/change_record.json\
+\
+  $ python3 << 'PY'\
+    import json, pathlib 226ms\
+    \'85 18 input + 34 output lines hidden \'b7 ctrl+o to expand\
+      trigger: on or after 12:01 a.m. eastern daylight time on April               \'85\
+      clause: Our supplier Lakeshore Waterworks & PVF notified us of a 9% price inc\'85\
+\
+    Grepped, read, globbed 3 greps, 1 file, 1 glob\
+    \'85 2 earlier items hidden\
+    Read node_modules/@typesafe-ai/sdk/README.md\
+    Grepped "TYPESAFE_API_KEY|apiKey|constructor" in\
+    node_modules/@typesafe-ai/sdk/dist\
+    Globbed "**/*client*" in node_modules/@typesafe-ai/sdk\
+\
+  $ ls node_modules/@typesafe-ai/sdk; echo '---'; rg -l "TYPESAFE_API_KEY"\
+    node_modules/@typesafe-ai/sdk | head 140ms\
+    \'85 4 output lines hidden \'b7 ctrl+o to expand\
+    ---\
+    node_modules/@typesafe-ai/sdk/README.md\
+\
+  $ ls node_modules/@typesafe-ai/sdk/dist | head -30; echo '---'; grep -n\
+    "API_KEY\\|apiKey" node_modules/@typesafe-ai/sdk/dist/*.js | head -40 179ms\
+    \'85 6 output lines hidden \'b7 ctrl+o to expand\
+    ---\
+    (eval):1: no matches found: node_modules/@typesafe-ai/sdk/dist/*.js\
+\
+    Grepped, read 1 grep, 2 files\
+    Grepped "API_KEY|apiKey" in node_modules/@typesafe-ai/sdk/dist/index.mjs\
+    Read ...actors_subcontract-puyallup-medical-office.json\
+    Read src/types.ts lines 70-109\
+\
+  The three Cascade writeups are already on disk, so this is thirty Jev labels on\
+  each of those findings and no new reading pass.\
+\
+    Read \'85e-ridge-contractors_subcontract-puyallup-medical-office.json lines 40-69\
+\
+    Edited step5-jev.ts +90\
+\
+    \uc0\u9614 + /**\
+    \uc0\u9614 +  * Jev labels on the frozen Cascade step-2 findings. No analyst pass.\
+    \uc0\u9614 +  * Thirty draws on each mislabeled clock finding (self urgency was a live\
+    \uc0\u9614 +  * clock or undeterminable).\
+    \uc0\u9614 +  */\
+    \uc0\u9614 + import \{ appendFileSync, mkdirSync, readFileSync \} from "node:fs";\
+    \uc0\u9614 + import path from "node:path";\
+    \uc0\u9614 + import \{ classifyFinding \} from "../src/classify.js";\
+    \uc0\u9614 + import type \{ Finding \} from "../src/types.js";\
+    \uc0\u9614 +\
+    \uc0\u9614 + const root = path.resolve(import.meta.dirname, "..");\
+    \uc0\u9614 + process.loadEnvFile(path.join(root, ".env.local"));\
+    \uc0\u9614  \'85 truncated (78 more lines) \'b7 ctrl+r to review\
+\
+  $ npx tsx scripts/step5-jev.ts 4.7s (background)\
+\
+    Monitored background task, 1 active\
+    Waited for "ok |FAIL|Error|DONE" in shell\
+    Read ...ects/Users-jason-Documents/terminals/446519.txt\
+    Ran python3 << 'PY'\
+    import json, collections, pathlib\
+    rows = [json.loads(l) for l in\
+    pathlib.Path("runs/step5/cascade-jev.jsonl").read_text().splitlines() if\
+    l.strip()]\
+    print("rows", len(rows), "errors", sum(1 for r in rows if "error" in r))\
+    keys = ["forfeitable_clock_running","obligation_clock_running","clock_pending",\
+    "no_clock","undeterminable"]\
+    for source in ["cascade-k1","cascade-k2","cascade-k3"]:\
+        group = [r for r in rows if r.get("source")==source and "error" not in r]\
+        print(f"\\n== \{source\} n=\{len(group)\} self=\{group[0]['self_urgency']\}")\
+        urg = collections.Counter(r["urgency"] for r in group)\
+        mat = collections.Counter(r["materiality"] for r in group)\
+        direc = collections.Counter(r["direction"] for r in group)\
+        ft = collections.Counter(r["finding_type"] for r in group)\
+        resp = collections.Counter(r["response_type"] for r in group)\
+        print(" urgency", dict(urg))\
+        print(" materiality", dict(mat))\
+        print(" direction", dict(direc))\
+        print(" finding_type", dict(ft))\
+        print(" response", dict(resp))\
+        # mean urgency probs and how often abstain note fired\
+        acc = \{k:0.0 for k in keys\}\
+        abstain = 0\
+        top = collections.Counter()\
+        for r in group:\
+            probs = r["probabilities"]["urgency"]\
+            for k in keys:\
+                acc[k] += probs.get(k, 0)\
+            winner = max(probs, key=probs.get)\
+            top[winner]+=1\
+            if r.get("missing_fact") and "urgency confidence" in r["missing_fact"]:\
+                abstain += 1\
+        n=len(group)\
+        print(" mean probs", \{k: round(acc[k]/n, 3) for k in keys\})\
+        print(" argmax", dict(top), "abstain_fired", abstain)\
+        # confidence proxy: top prob\
+        tops = []\
+        for r in group:\
+            probs = r["probabilities"]["urgency"]\
+            tops.append(max(probs.values()))\
+        tops.sort()\
+        print(" top-prob min/med/max", round(tops[0],3),\
+    round(tops[len(tops)//2],3), round(tops[-1],3))\
+        print(" sample missing", (group[0].get("missing_fact") or "")[:240])\
+    # usage\
+    inp=sum(r.get("usage",\{\}).get("input",0) for r in rows if "usage" in r)\
+    out=sum(r.get("usage",\{\}).get("output",0) for r in rows if "usage" in r)\
+    models=collections.Counter(r.get("model") for r in rows if "model" in r)\
+    print("\\nusage input", inp, "output", out, "models", dict(models))\
+    PY\
+    Read eval-scenarios/RUN-PLAN.md lines 129-140\
+\
+    Edited RUN-PLAN.md +1\
+\
+    \uc0\u9614      `configs/j-jev.json`, those items only. Sweep the abstention threshold\
+    \uc0\u9614      only if a dangerous swap remains. If the spans were wrong, stay on the\
+    \uc0\u9614      analyst prompt.\
+    \uc0\u9614 +    Log 2026-09-30: Jev on the three frozen Cascade `deadline_bound_right`\
+    \uc0\u9614   findings, 30 draws each, no analyst pass. ...\
+    \uc0\u9614 \
+    \uc0\u9614   6. **Stage 5 on injected gold findings, ranking approach A, k=3.** T1 once\
+    \uc0\u9614      and the T3 pair once per repeat. Approach A is the deterministic sort.\
+\
+  Jev does not fix the Cascade clock. Ninety draws, thirty on each frozen finding,\
+  and no_clock came back with probability 0 every time.\
+\
+  \uc0\u9484 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9516 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9516 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9516 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9488 \
+  \uc0\u9474  Frozen        \u9474  Analyst label              \u9474  Jev, 30/30    \u9474  Mean            \u9474 \
+  \uc0\u9474  finding       \u9474                             \u9474                \u9474  probability     \u9474 \
+  \uc0\u9500 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9508 \
+  \uc0\u9474  k1            \u9474  undeterminable             \u9474  undeterminabl \u9474  0.97            \u9474 \
+  \uc0\u9474                \u9474                             \u9474  e             \u9474                  \u9474 \
+  \uc0\u9500 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9508 \
+  \uc0\u9474  k2            \u9474  clock_pending              \u9474  clock_pending \u9474  0.97            \u9474 \
+  \uc0\u9500 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9508 \
+  \uc0\u9474  k3            \u9474  forfeitable_clock_running  \u9474  undeterminabl \u9474  0.96            \u9474 \
+  \uc0\u9474                \u9474                             \u9474  e             \u9474                  \u9474 \
+  \uc0\u9492 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9524 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9524 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9524 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9496 \
+\
+  The only movement is k3, off a live forfeitable clock and onto abstention. Gold\
+  is no_clock. Because that class has no probability mass, moving the 0.45\
+  abstention threshold cannot select it, so the threshold stays. Materiality was\
+  undeterminable on all 90, direction both, response monitor. Model was\
+  jev-1.13.0; the calls are unpriced. Logged on step 5.\
+\
+  Step 6 is stage 5 on injected gold findings, ranking approach A, GLM, k=3: T1\
+  and the T3 pair, nine orchestrator calls. B and C run only if A fails the\
+  ranking checks. Approve that?\
+\
+  Finished Classify Cascade findings with Jev k=30\
+\
+  The Jev run finished cleanly: 90 of 90 Cascade labels returned, and no_clock had\
+  probability 0 on every draw. The abstention threshold was left as it is, and\
+  that result is already logged on step 5.\
+\
+\
+  take a second look at the eval case - is forzen finding k3 defensibly\
+  fireitable_clocok_runnign? to ensure proper a/b, perhaps we should\
+  understand the consistency of the non jev route (llm categorization)?\
+\
+\
+  The Jev sample was thirty labels of a frozen writeup. I'll read k3's own\
+  reasoning against the clock definition, then see whether the LLM labeler is\
+  consistent on that same text.\
+\
+    Read, grepped 5 files, 2 greps\
+    \'85 4 earlier items hidden\
+    Read src/prompts.ts lines 1-40\
+    Read src/models.ts\
+    Read configs/o1-glm.json\
+\
+  k3's own writeup says the 21-day clock has not started. I'll hold that text\
+  fixed and have GLM label it thirty times, the same way Jev did, so the\
+  comparison is the categorizer and not a new reading.\
+\
+    Read src/models.ts lines 120-159\
+\
+    Edited step5-glm-label.ts +122\
+\
+    \uc0\u9614 + /**\
+    \uc0\u9614 +  * GLM labels on the same frozen Cascade findings Jev saw. No tools, no\
+    \uc0\u9614 +  * re-read. The existing self-label is not shown.\
+    \uc0\u9614 +  */\
+    \uc0\u9614 + import \{ appendFileSync, mkdirSync, readFileSync \} from "node:fs";\
+    \uc0\u9614 + import path from "node:path";\
+    \uc0\u9614 + import \{ generateText \} from "ai";\
+    \uc0\u9614 + import \{ languageModel \} from "../src/models.js";\
+    \uc0\u9614 + import type \{ Finding \} from "../src/types.js";\
+    \uc0\u9614 +\
+    \uc0\u9614 + const root = path.resolve(import.meta.dirname, "..");\
+    \uc0\u9614 + process.loadEnvFile(path.join(root, ".env.local"));\
+    \uc0\u9614  \'85 truncated (110 more lines) \'b7 ctrl+r to review\
+\
+  $ npx tsx scripts/step5-glm-label.ts 1m 14s (background)\
+\
+    Monitored background task, 1 complete\
+    Waited for "ok |FAIL|Error|DONE" in shell\
+    Read ...ects/Users-jason-Documents/terminals/446520.txt\
+    Waited for "DONE" in shell\
+    Ran python3 << 'PY'\
+    import json, collections, pathlib\
+    rows = [json.loads(l) for l in\
+    pathlib.Path("runs/step5/cascade-glm-label.jsonl").read_text().splitlines() if\
+    l.strip()]\
+    print("rows", len(rows), "errors", sum(1 for r in rows if r.get("error")))\
+    inp=cache=out=0\
+    for r in rows:\
+        u=r.get("usage") or \{\}\
+        inp += u.get("input",0); cache += u.get("cached_input",0); out +=\
+    u.get("output",0)\
+    # glm prices input 0.15 cached 0.03 output 0.50 per 1M\
+    # cached is part of input typically; bill uncached at 0.15 and cached at 0.03\
+    uncached = max(0, inp-cache)\
+    cost = uncached*0.15/1e6 + cache*0.03/1e6 + out*0.50/1e6\
+    print(f"tokens in \{inp\} cached \{cache\} out \{out\} cost $\{cost:.4f\}")\
+    for source in ["cascade-k1","cascade-k2","cascade-k3"]:\
+        group=[r for r in rows if r.get("source")==source and not r.get("error")]\
+        print(f"\\n== \{source\} n=\{len(group)\}\
+    original_self=\{group[0]['self_urgency']\}")\
+        for key in\
+    ["urgency","materiality","direction","finding_type","response_type"]:\
+            c=collections.Counter(r[key] for r in group)\
+            print(f"  \{key\}: \{dict(c)\}")\
+    PY\
+\
+    Edited RUN-PLAN.md +1 -1\
+\
+    \uc0\u9614      `configs/j-jev.json`, those items only. Sweep the abstention threshold\
+    \uc0\u9614      only if a dangerous swap remains. If the spans were wrong, stay on the\
+    \uc0\u9614      analyst prompt.\
+    \uc0\u9614 -    Log 2026-09-30: Jev on the three frozen Cascade `deadline_bound_right`\
+    \uc0\u9614   findings, 30 draws each, no analyst pass. ...\
+    \uc0\u9614 +    Log 2026-09-30: Jev on the three frozen Cascade `deadline_bound_right`\
+    \uc0\u9614   findings, 30 draws each, no analyst pass. ...\
+    \uc0\u9614 \
+    \uc0\u9614   6. **Stage 5 on injected gold findings, ranking approach A, k=3.** T1 once\
+    \uc0\u9614      and the T3 pair once per repeat. Approach A is the deterministic sort.\
+\
+  k3's forfeitable_clock_running label is not a defensible reading of that\
+  writeup. The category means a deadline is already running and the right is lost\
+  if it passes. Finding F1 says the opposite: deadline_date is null, the right is\
+  live only if purchases continue after April 6, 2026, and the 21-day clock starts\
+  when a supplier notice arrives. That notice is an open question. The same\
+  commit's F2 quotes the May 12, 2025 request, says the 2025 window has already\
+  closed, and labels that item no_clock.\
+\
+  What F1 does support is a waiver clause whose trigger has not been shown. That\
+  is clock_pending or undeterminable.\
+\
+  The original three self-labels were one label each, written during the reading\
+  pass, on three different texts. Jev's 30/30 was the categorizer on a frozen\
+  text. GLM, same three texts, same inputs, label hidden, k=30 ($0.04):\
+\
+  \uc0\u9484 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9516 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9516 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9516 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9488 \
+  \uc0\u9474  Frozen \u9474  Original       \u9474  GLM, 30 draws                          \u9474  Jev, 30   \u9474 \
+  \uc0\u9474  text   \u9474  self-label     \u9474                                         \u9474  draws     \u9474 \
+  \uc0\u9500 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9508 \
+  \uc0\u9474  k1     \u9474  undeterminable \u9474  undeterminable 21, clock_pending 8,    \u9474  undetermi \u9474 \
+  \uc0\u9474         \u9474                 \u9474  forfeitable_clock_running 1            \u9474  nable     \u9474 \
+  \uc0\u9474         \u9474                 \u9474                                         \u9474  30        \u9474 \
+  \uc0\u9500 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9508 \
+  \uc0\u9474  k2     \u9474  clock_pending  \u9474  clock_pending 29, undeterminable 1     \u9474  clock_pen \u9474 \
+  \uc0\u9474         \u9474                 \u9474                                         \u9474  ding      \u9474 \
+  \uc0\u9474         \u9474                 \u9474                                         \u9474  30        \u9474 \
+  \uc0\u9500 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9508 \
+  \uc0\u9474  k3     \u9474  forfeitable_cl \u9474  clock_pending 22, undeterminable 7,    \u9474  undetermi \u9474 \
+  \uc0\u9474         \u9474  ock_running    \u9474  forfeitable_clock_running 1            \u9474  nable     \u9474 \
+  \uc0\u9474         \u9474                 \u9474                                         \u9474  30        \u9474 \
+  \uc0\u9492 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9524 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9524 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9524 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9496 \
+\
+  GLM repeats forfeitable_clock_running on k3 once in thirty draws. Both\
+  categorizers give no_clock on 0/90. They are labeling F1's theory, which is a\
+  clock that might start later. The gold no_clock is the waived 2025 request,\
+  which this commit put on F2 and did not hand to either categorizer. Logged on\
+  step 5.\
+\
+\
+  so - all said: jev is clealry more cionsistent, and would win on cost/letncy\
+  (secondary considerations). What is the directionaly correct way to score\
+  this eval? I'm not a gc - offer your framework for your reasoing. delegate a\
+  composer 2.5 exporation of the document cluster if it helps.\
+\
+\
+  Jev's consistency is a property of the labeler. Whether that counts as a win\
+  depends on which claim the label is attached to. I'll have Composer 2.5 read the\
+  Cascade cluster, and I'll check how this item is actually scored.\
+\
+    1 agent completed\
+    Cascade document cluster\
+    \uc0\u10003  Done\
+\
+    Read 2 files\
+    Read scripts/score-step2.ts\
+    Read ...enarios/answer-keys/e2e/T1_TR01_2026-10-01.yaml lines 323-367\
+\
+  Score the $61,380 request, not whichever urgency happens to sit on the first\
+  finding. Jev's consistency is real, and it is the wrong axis for a win or a loss\
+  on this item.\
+\
+  Composer 2.5 read the cluster. It is two files. Section 4 says a request\
+  submitted more than 21 days after notice of the price increase is waived. The\
+  May 12, 2025 letter asks for $61,380 and says the Lakeshore notice was received\
+  March 12, 2025. Nothing in either file says that request was approved, denied,\
+  or paid. Nothing shows a later supplier notice, or a purchase after the November\
+  15, 2025 completion date. The answer key's as-of date is October 1, 2026.\
+\
+  The checkable part, without being a GC: 21 days after March 12, 2025 is April 2,\
+  2025. The request is dated May 12, 2025. Both dates are before October 1, 2026.\
+  A running clock is a deadline still open on the as-of date. This window is\
+  closed on the dates the letter itself prints. Whether Cascade Ridge ever paid\
+  the $61,380 is not in the file. That unknown does not move April 2.\
+\
+  The gold miss is one sentence: treating that $61,380 as a live claim. The gold\
+  label on that claim is no_clock, and the stack still counts as affected. A\
+  second, hypothetical claim is also available from Section 4's words: a new\
+  21-day window would start if a new supplier notice arrived. The cluster contains\
+  no such notice.\
+\
+  So the score has two slots.\
+\
+  Slot A, the gold object. A finding that cites the $61,380 letter (the March 12\
+  receipt and the May 12 request). Its urgency should be no_clock.\
+  forfeitable_clock_running, obligation_clock_running, or clock_pending on that\
+  finding is the miss. undeterminable is a softer miss: the dates that close the\
+  window are in the letter the finding already cited. Calling the stack not\
+  affected also fails. The gold still wants the item surfaced, as a recovery whose\
+  deadline has passed (deadline_bound_right together with no_clock).\
+\
+  Slot B, a future notice. A finding that talks only about a post-April 2026\
+  supplier notice, and does not attach the $61,380 to it. clock_pending or\
+  undeterminable fits that text, because the start event is not in the file.\
+  forfeitable_clock_running does not: nothing has started. This slot does not\
+  decide the item. Gold never asked it.\
+\
+  Jev and GLM were both scored on slot B. The frozen F1 writeups are about a\
+  notice that has not arrived. Both labelers refusing no_clock there is the\
+  directionally correct read of that text. k3's original forfeitable_clock_running\
+  was the bad read of slot B, and neither labeler kept it. The gold object on\
+  that same commit was F2, which the analyst had already marked no_clock, and\
+  which neither labeler was shown.\
+\
+  Jev wins the comparison you named: same text in, same label out, and it is the\
+  cheaper, faster call. That comparison does not grade this eval item. The item is\
+  won or lost on slot A.\
+\
+\
+  okay - sounds like jev is a kept chnage\
+\
+\
+  Jev stays as the labeler. I'll record that on the step 5 log and check that the\
+  live config is the one later runs will use.\
+\
+    Read, grepped 3 files, 1 grep\
+    Read configs/j-jev.json\
+    Read eval-scenarios/RUN-PLAN.md lines 128-147\
+    Grepped "o1-glm|j-jev|classifier" in .\
+    Read eval-scenarios/RUN-PLAN.md lines 47-54\
+\
+    Edited RUN-PLAN.md +1 -1\
+\
+    \uc0\u9614   one orchestrator call each. All of them, on the gold triggers, at k=3, stay\
+    \uc0\u9614   under $0.50.\
+    \uc0\u9614 \
+    \uc0\u9614 - Start on `configs/o1-glm.json`. DeepSeek V4.1 Flash costs the same per full\
+    \uc0\u9614 + Start on `configs/o1-glm.json` for the reading models. From step 5 the live\
+    \uc0\u9614   labeler is `configs/j-jev.json`: GLM st ...\
+    \uc0\u9614   run and is the comparison rung, not a cheaper start. Older DeepSeek V4\
+    \uc0\u9614   Flash\
+    \uc0\u9614   is cheaper on the price page and is aimed at short classification, so a\
+    \uc0\u9614   miss\
+    \uc0\u9614   there would not say whether this pipeline or this eval is wrong.\
+\
+    Edited RUN-PLAN.md +1 -1\
+\
+    \uc0\u9614      `configs/j-jev.json`, those items only. Sweep the abstention threshold\
+    \uc0\u9614      only if a dangerous swap remains. If the spans were wrong, stay on the\
+    \uc0\u9614      analyst prompt.\
+    \uc0\u9614 -    Log 2026-09-30: Jev on the three frozen Cascade `deadline_bound_right`\
+    \uc0\u9614   findings, 30 draws each, no analyst pass. ...\
+    \uc0\u9614 +    Log 2026-09-30: Jev on the three frozen Cascade `deadline_bound_right`\
+    \uc0\u9614   findings, 30 draws each, no analyst pass. ...\
+    \uc0\u9614 \
+    \uc0\u9614   6. **Stage 5 on injected gold findings, ranking approach A, k=3.** T1 once\
+    \uc0\u9614      and the T3 pair once per repeat. Approach A is the deterministic sort.\
+\
+  Jev is the live labeler. configs/j-jev.json still uses GLM to read and write the\
+  finding, then Jev replaces the categorical labels. The 0.45 abstention\
+  threshold is unchanged. configs/o1-glm.json remains the self-label arm, so the\
+  comparison is still there, and it is not what later label runs use.\
+\
+  Step 6 is still unrun: stage 5 on injected gold findings, ranking approach A,\
+  GLM, k=3, T1 and the T3 pair. Approve that?\
+\
+\
+  yes\
+\
+\
+  Step 6 is the ranking check: approach A on injected gold findings, T1 and the T3\
+  pair, k=3. I'll confirm how the harness sorts and what R1\'96R3 require before\
+  spending.\
+\
+    Grepped, read 18 greps, 23 files\
+    \'85 38 earlier items hidden\
+    Grepped "...n (loadCorpus|buildStacks|stacksFrom)" in .\
+    Read src/stacks.ts\
+    Grepped "type DocRecord|path:" in src/corpus.ts\
+\
+  Stage 5 will rank injected gold findings with the deterministic sort. I'll build\
+  those findings, then run T1 and the T3 pair at k=3.\
+\
+    Read 2 files\
+    Read src/corpus.ts\
+    Read src/corpus.ts lines 80-119\
+\
+    Edited step6-prep.ts +128\
+\
+    \uc0\u9614 + /**\
+    \uc0\u9614 +  * Gold findings as stack-finding files for a stage-5 inject.\
+    \uc0\u9614 +  * A gold stack id that is only a cluster member is filed under the harness\
+    \uc0\u9614   stack.\
+    \uc0\u9614 +  */\
+    \uc0\u9614 + import \{ mkdirSync, writeFileSync \} from "node:fs";\
+    \uc0\u9614 + import path from "node:path";\
+    \uc0\u9614 + import \{ parse as parseYaml \} from "yaml";\
+    \uc0\u9614 + import \{ readFileSync \} from "node:fs";\
+    \uc0\u9614 + import \{ docFile, loadCorpus \} from "../src/corpus.js";\
+    \uc0\u9614 + import \{ assertArtifact \} from "../src/schema.js";\
+    \uc0\u9614 + import \{ buildStacks \} from "../src/stacks.js";\
+    \uc0\u9614 +\
+    \uc0\u9614  \'85 truncated (116 more lines) \'b7 ctrl+r to review\
+\
+  $ npx tsx scripts/step6-prep.ts 1.1s\
+    \'85 13 output lines hidden \'b7 ctrl+o to expand\
+    t3b employment/templates/form_technician-employment-agreement_washington_rev-20\'85\
+    t3b acquisitions/ACQ-02_northgate-heating-and-air_asset-purchase-agreement_2021\'85\
+\
+    Grepped "target_stack_id in ...s-cooperative_mechanical-services-contract.json\
+            "\
+    Found 1 matches\
+\
+  $ python3 << 'PY'\
+    import subprocess, os 1m 18s (background)\
+    \'85 29 input lines hidden \'b7 ctrl+o to expand\
+\
+    Monitored background task, 1 active\
+    Waited for "DONE" in shell\
+    Read ...ects/Users-jason-Documents/terminals/446521.txt line 8\
+\
+    Edited score-step6.ts +76\
+\
+    \uc0\u9614 + /**\
+    \uc0\u9614 +  * R1\'96R3, the T3 pair, the Sunpoint\'96Northbrook link, and the T3\
+    \uc0\u9614   credit-agreement absence.\
+    \uc0\u9614 +  * Rank numbers are 1-based. R2 margin is tier-1 count + 2.\
+    \uc0\u9614 +  */\
+    \uc0\u9614 + import \{ existsSync, readFileSync, readdirSync \} from "node:fs";\
+    \uc0\u9614 + import path from "node:path";\
+    \uc0\u9614 + import \{ parse as parseYaml \} from "yaml";\
+    \uc0\u9614 +\
+    \uc0\u9614 + const root = path.resolve(import.meta.dirname, "..");\
+    \uc0\u9614 + const runRoot = path.join(root, "runs/step6");\
+    \uc0\u9614 +\
+    \uc0\u9614 + type Gold = \{\
+    \uc0\u9614  \'85 truncated (64 more lines) \'b7 ctrl+r to review\
+\
+  $ npx tsx scripts/score-step6.ts 812ms\
+    \'85 24 output lines hidden \'b7 ctrl+o to expand\
+    spend $0.051\
+\
+  $ python3 << 'PY'\
+    import json 195ms\
+    \'85 4 input + 1 output lines hidden \'b7 ctrl+o to expand\
+    k2 [('sunpoint-public-schools-cooperative_mechanical-services-contract::F5', 'm\'85\
+    k3 [('harborview-realty-partners_facilities-maintenance-msa_2022-03-01:F2', 'gr\'85\
+\
+    Edited RUN-PLAN.md +1\
+\
+    \uc0\u9614      B (the model ranks freely) and C (reorder only inside ties) run only if\
+    \uc0\u9614      A fails R1\'96R3. The summary-plus-`fetch_stack` handoff is the tool change\
+    \uc0\u9614      if the Sunpoint\'96Northbrook link is what fails.\
+    \uc0\u9614 +    Log 2026-09-30: injected gold findings, approach A (deterministic sort),\
+    \uc0\u9614   GLM orchestrator, k=3, $0.05. T1, T3a,  ...\
+    \uc0\u9614 \
+    \uc0\u9614   7. **The same stage-4 slice on DeepSeek V4.1 Flash, k=3.** Same gold\
+    \uc0\u9614   inputs.\
+    \uc0\u9614      A mixed config, one model for the orchestrator and another for the\
+    \uc0\u9614   stacks,\
+\
+  Approach A passes. R1, R2, and R3 hold on all nine draws, so B and C stay unrun.\
+\
+  T1 puts the tier-1 findings (Valley, the credit agreement, Harborview) above the\
+  tier-3 findings. The T3 pair moves together: F1\'96F3 are clock_pending on\
+  2026-10-01 and obligation_clock_running on 2027-07-01, three draws each. The\
+  credit agreement is on the T1 report and absent from both T3 dates. The\
+  Sunpoint\'96Northbrook link is present on two draws and missing on the third, so\
+  that is variance and the handoff stays as it is. One redispatch on T1's second\
+  draw did not change the order. Cost was $0.05. Logged on step 6.\
+\
+  Step 7 is the same stage-4 slice on DeepSeek V4.1 Flash, k=3, with the gold\
+  change records already injected. About the same cost as the GLM slice, which was\
+  $0.41. Approve that?\
+\
+  Finished Run stage 5 approach A on gold findings k=3\
+\
+\
+  so - all said: jev is clealry more cionsistent, and would win on cost/letncy\
+  (secondary considerations). What is the directionaly correct way to score\
+  this eval? I'm not a gc - offer your framework for your reasoing. delegate a\
+  composer 2.5 exporation of the document cluster if it helps.\
+\
+\
+  Jev's consistency is a property of the labeler. Whether that counts as a win\
+  depends on which claim the label is attached to. I'll have Composer 2.5 read the\
+  Cascade cluster, and I'll check how this item is actually scored.\
+\
+    1 agent completed\
+    Cascade document cluster\
+    \uc0\u10003  Done\
+\
+    Read 2 files\
+    Read scripts/score-step2.ts\
+    Read ...enarios/answer-keys/e2e/T1_TR01_2026-10-01.yaml lines 323-367\
+\
+  Score the $61,380 request, not whichever urgency happens to sit on the first\
+  finding. Jev's consistency is real, and it is the wrong axis for a win or a loss\
+  on this item.\
+\
+  Composer 2.5 read the cluster. It is two files. Section 4 says a request\
+  submitted more than 21 days after notice of the price increase is waived. The\
+  May 12, 2025 letter asks for $61,380 and says the Lakeshore notice was received\
+  March 12, 2025. Nothing in either file says that request was approved, denied,\
+  or paid. Nothing shows a later supplier notice, or a purchase after the November\
+  15, 2025 completion date. The answer key's as-of date is October 1, 2026.\
+\
+  The checkable part, without being a GC: 21 days after March 12, 2025 is April 2,\
+  2025. The request is dated May 12, 2025. Both dates are before October 1, 2026.\
+  A running clock is a deadline still open on the as-of date. This window is\
+  closed on the dates the letter itself prints. Whether Cascade Ridge ever paid\
+  the $61,380 is not in the file. That unknown does not move April 2.\
+\
+  The gold miss is one sentence: treating that $61,380 as a live claim. The gold\
+  label on that claim is no_clock, and the stack still counts as affected. A\
+  second, hypothetical claim is also available from Section 4's words: a new\
+  21-day window would start if a new supplier notice arrived. The cluster contains\
+  no such notice.\
+\
+  So the score has two slots.\
+\
+  Slot A, the gold object. A finding that cites the $61,380 letter (the March 12\
+  receipt and the May 12 request). Its urgency should be no_clock.\
+  forfeitable_clock_running, obligation_clock_running, or clock_pending on that\
+  finding is the miss. undeterminable is a softer miss: the dates that close the\
+  window are in the letter the finding already cited. Calling the stack not\
+  affected also fails. The gold still wants the item surfaced, as a recovery whose\
+  deadline has passed (deadline_bound_right together with no_clock).\
+\
+  Slot B, a future notice. A finding that talks only about a post-April 2026\
+  supplier notice, and does not attach the $61,380 to it. clock_pending or\
+  undeterminable fits that text, because the start event is not in the file.\
+  forfeitable_clock_running does not: nothing has started. This slot does not\
+  decide the item. Gold never asked it.\
+\
+  Jev and GLM were both scored on slot B. The frozen F1 writeups are about a\
+  notice that has not arrived. Both labelers refusing no_clock there is the\
+  directionally correct read of that text. k3's original forfeitable_clock_running\
+  was the bad read of slot B, and neither labeler kept it. The gold object on\
+  that same commit was F2, which the analyst had already marked no_clock, and\
+  which neither labeler was shown.\
+\
+  Jev wins the comparison you named: same text in, same label out, and it is the\
+  cheaper, faster call. That comparison does not grade this eval item. The item is\
+  won or lost on slot A.\
+\
+\
+  okay - sounds like jev is a kept chnage\
+\
+\
+  Jev stays as the labeler. I'll record that on the step 5 log and check that the\
+  live config is the one later runs will use.\
+\
+    Read, grepped 3 files, 1 grep\
+    Read configs/j-jev.json\
+    Read eval-scenarios/RUN-PLAN.md lines 128-147\
+    Grepped "o1-glm|j-jev|classifier" in .\
+    Read eval-scenarios/RUN-PLAN.md lines 47-54\
+\
+    Edited RUN-PLAN.md +1 -1\
+\
+    \uc0\u9614   one orchestrator call each. All of them, on the gold triggers, at k=3, stay\
+    \uc0\u9614   under $0.50.\
+    \uc0\u9614 \
+    \uc0\u9614 - Start on `configs/o1-glm.json`. DeepSeek V4.1 Flash costs the same per full\
+    \uc0\u9614 + Start on `configs/o1-glm.json` for the reading models. From step 5 the live\
+    \uc0\u9614   labeler is `configs/j-jev.json`: GLM st ...\
+    \uc0\u9614   run and is the comparison rung, not a cheaper start. Older DeepSeek V4\
+    \uc0\u9614   Flash\
+    \uc0\u9614   is cheaper on the price page and is aimed at short classification, so a\
+    \uc0\u9614   miss\
+    \uc0\u9614   there would not say whether this pipeline or this eval is wrong.\
+\
+    Edited RUN-PLAN.md +1 -1\
+\
+    \uc0\u9614      `configs/j-jev.json`, those items only. Sweep the abstention threshold\
+    \uc0\u9614      only if a dangerous swap remains. If the spans were wrong, stay on the\
+    \uc0\u9614      analyst prompt.\
+    \uc0\u9614 -    Log 2026-09-30: Jev on the three frozen Cascade `deadline_bound_right`\
+    \uc0\u9614   findings, 30 draws each, no analyst pass. ...\
+    \uc0\u9614 +    Log 2026-09-30: Jev on the three frozen Cascade `deadline_bound_right`\
+    \uc0\u9614   findings, 30 draws each, no analyst pass. ...\
+    \uc0\u9614 \
+    \uc0\u9614   6. **Stage 5 on injected gold findings, ranking approach A, k=3.** T1 once\
+    \uc0\u9614      and the T3 pair once per repeat. Approach A is the deterministic sort.\
+\
+  Jev is the live labeler. configs/j-jev.json still uses GLM to read and write the\
+  finding, then Jev replaces the categorical labels. The 0.45 abstention\
+  threshold is unchanged. configs/o1-glm.json remains the self-label arm, so the\
+  comparison is still there, and it is not what later label runs use.\
+\
+  Step 6 is still unrun: stage 5 on injected gold findings, ranking approach A,\
+  GLM, k=3, T1 and the T3 pair. Approve that?\
+\
+\
+  yes\
+\
+\
+  Step 6 is the ranking check: approach A on injected gold findings, T1 and the T3\
+  pair, k=3. I'll confirm how the harness sorts and what R1\'96R3 require before\
+  spending.\
+\
+    Grepped, read 18 greps, 23 files\
+    \'85 38 earlier items hidden\
+    Grepped "...n (loadCorpus|buildStacks|stacksFrom)" in .\
+    Read src/stacks.ts\
+    Grepped "type DocRecord|path:" in src/corpus.ts\
+\
+  Stage 5 will rank injected gold findings with the deterministic sort. I'll build\
+  those findings, then run T1 and the T3 pair at k=3.\
+\
+    Read 2 files\
+    Read src/corpus.ts\
+    Read src/corpus.ts lines 80-119\
+\
+    Edited step6-prep.ts +128\
+\
+    \uc0\u9614 + /**\
+    \uc0\u9614 +  * Gold findings as stack-finding files for a stage-5 inject.\
+    \uc0\u9614 +  * A gold stack id that is only a cluster member is filed under the harness\
+    \uc0\u9614   stack.\
+    \uc0\u9614 +  */\
+    \uc0\u9614 + import \{ mkdirSync, writeFileSync \} from "node:fs";\
+    \uc0\u9614 + import path from "node:path";\
+    \uc0\u9614 + import \{ parse as parseYaml \} from "yaml";\
+    \uc0\u9614 + import \{ readFileSync \} from "node:fs";\
+    \uc0\u9614 + import \{ docFile, loadCorpus \} from "../src/corpus.js";\
+    \uc0\u9614 + import \{ assertArtifact \} from "../src/schema.js";\
+    \uc0\u9614 + import \{ buildStacks \} from "../src/stacks.js";\
+    \uc0\u9614 +\
+    \uc0\u9614  \'85 truncated (116 more lines) \'b7 ctrl+r to review\
+\
+  $ npx tsx scripts/step6-prep.ts 1.1s\
+    \'85 13 output lines hidden \'b7 ctrl+o to expand\
+    t3b employment/templates/form_technician-employment-agreement_washington_rev-20\'85\
+    t3b acquisitions/ACQ-02_northgate-heating-and-air_asset-purchase-agreement_2021\'85\
+\
+    Grepped "target_stack_id in ...s-cooperative_mechanical-services-contract.json\
+            "\
+    Found 1 matches\
+\
+  $ python3 << 'PY'\
+    import subprocess, os 1m 18s (background)\
+    \'85 29 input lines hidden \'b7 ctrl+o to expand\
+\
+    Monitored background task, 1 active\
+    Waited for "DONE" in shell\
+    Read ...ects/Users-jason-Documents/terminals/446521.txt line 8\
+\
+    Edited score-step6.ts +76\
+\
+    \uc0\u9614 + /**\
+    \uc0\u9614 +  * R1\'96R3, the T3 pair, the Sunpoint\'96Northbrook link, and the T3\
+    \uc0\u9614   credit-agreement absence.\
+    \uc0\u9614 +  * Rank numbers are 1-based. R2 margin is tier-1 count + 2.\
+    \uc0\u9614 +  */\
+    \uc0\u9614 + import \{ existsSync, readFileSync, readdirSync \} from "node:fs";\
+    \uc0\u9614 + import path from "node:path";\
+    \uc0\u9614 + import \{ parse as parseYaml \} from "yaml";\
+    \uc0\u9614 +\
+    \uc0\u9614 + const root = path.resolve(import.meta.dirname, "..");\
+    \uc0\u9614 + const runRoot = path.join(root, "runs/step6");\
+    \uc0\u9614 +\
+    \uc0\u9614 + type Gold = \{\
+    \uc0\u9614  \'85 truncated (64 more lines) \'b7 ctrl+r to review\
+\
+  $ npx tsx scripts/score-step6.ts 812ms\
+    \'85 24 output lines hidden \'b7 ctrl+o to expand\
+    spend $0.051\
+\
+  $ python3 << 'PY'\
+    import json 195ms\
+    \'85 4 input + 1 output lines hidden \'b7 ctrl+o to expand\
+    k2 [('sunpoint-public-schools-cooperative_mechanical-services-contract::F5', 'm\'85\
+    k3 [('harborview-realty-partners_facilities-maintenance-msa_2022-03-01:F2', 'gr\'85\
+\
+    Edited RUN-PLAN.md +1\
+\
+    \uc0\u9614      B (the model ranks freely) and C (reorder only inside ties) run only if\
+    \uc0\u9614      A fails R1\'96R3. The summary-plus-`fetch_stack` handoff is the tool change\
+    \uc0\u9614      if the Sunpoint\'96Northbrook link is what fails.\
+    \uc0\u9614 +    Log 2026-09-30: injected gold findings, approach A (deterministic sort),\
+    \uc0\u9614   GLM orchestrator, k=3, $0.05. T1, T3a,  ...\
+    \uc0\u9614 \
+    \uc0\u9614   7. **The same stage-4 slice on DeepSeek V4.1 Flash, k=3.** Same gold\
+    \uc0\u9614   inputs.\
+    \uc0\u9614      A mixed config, one model for the orchestrator and another for the\
+    \uc0\u9614   stacks,\
+\
+  Approach A passes. R1, R2, and R3 hold on all nine draws, so B and C stay unrun.\
+\
+  T1 puts the tier-1 findings (Valley, the credit agreement, Harborview) above the\
+  tier-3 findings. The T3 pair moves together: F1\'96F3 are clock_pending on\
+  2026-10-01 and obligation_clock_running on 2027-07-01, three draws each. The\
+  credit agreement is on the T1 report and absent from both T3 dates. The\
+  Sunpoint\'96Northbrook link is present on two draws and missing on the third, so\
+  that is variance and the handoff stays as it is. One redispatch on T1's second\
+  draw did not change the order. Cost was $0.05. Logged on step 6.\
+\
+  Step 7 is the same stage-4 slice on DeepSeek V4.1 Flash, k=3, with the gold\
+  change records already injected. About the same cost as the GLM slice, which was\
+  $0.41. Approve that?\
+\
+  Finished Run stage 5 approach A on gold findings k=3\
+\
+  The stage 5 runs finished successfully: all nine draws completed, and approach A\
+  passed R1\'96R3 on each of them. That result is already logged on step 6.\
+\
+\
+  What was the fonal scroe on approach A? did it score perfectly or merely\
+  pass? if the latter - would B & C be wroth checking for imporvments?\
+\
+\
+  R1\'96R3 only check tier 1 against tier 3. I\'92ll measure the full cross-tier order\
+  so we can see whether A was perfect or just inside that bar.\
+\
+    Grepped, read 5 greps, 3 files\
+    \'85 5 earlier items hidden\
+    Grepped "^## 6|Approach A|approach B|within ties" in system-design.md\
+    Read system-design.md lines 320-374\
+    Grepped "ranking|applyModelOrder" in src\
+\
+  Approach A passed the bar that was decided. It did not reproduce the gold bands.\
+\
+  R1, R2, and R3 passed on all nine draws. R1 only requires every tier-1 finding\
+  above every tier-3 finding. R2 only requires the tier-1 findings inside the top\
+  tier-1-count plus 2. R3 only requires that none of them be hidden as not\
+  material.\
+\
+  The fuller cross-tier order, which the design records but does not use as the\
+  pass line, is short of perfect. On T1 the same order appeared all three times:\
+  23 of 26 cross-tier pairs are right. The three misses are:\
+\
+  \'95 F6 (tier 2) sits above F2 (tier 1). Both are no_clock. F6 has a deadline of\
+    2025-04-02, so the sort treats it as more urgent than F2, which has no date.\
+  \'95 F8 (tier 3) sits above F7 and F4 (tier 2). Those three share urgency,\
+    materiality, and no date, so their order is just the order they were written\
+    in.\
+\
+  On T3a there is no tier 1, so R1 passes while F3 (tier 3) is still ranked above\
+  F1 (tier 2). That is 1 of 2 cross-tier pairs. On T3b, F1\'96F3 are all tier 1 and\
+  all flipped to obligation_clock_running. There is no cross-tier pair left to get\
+  wrong.\
+\
+  B and C are not worth a run for this gap. B lets the model throw out the sort.\
+  The only inversion that puts a lower tier above a tier-1 item is F6 over F2, and\
+  that comes from a date the model was not asked to override. B can also put a\
+  tier-3 item above a tier-1 item, which A currently does not do. C only\
+  reshuffles ties, so it cannot move F6 past F2 at all. It could reshuffle F8, F7,\
+  and F4, and the T3a tie, but the model never sees the gold tiers, so there is\
+  no reason to expect it to put the tier-2 items first inside that tie.\
+\
+\
+  agreed. Go on step 7\
+\
+\
+  Step 7 is the same stage-4 slice on DeepSeek, k=3, with the gold change records\
+  already used for GLM. I'll match that setup so the only change is the model.\
+\
+    Read, grepped 6 files, 1 grep\
+    \'85 4 earlier items hidden\
+    Read runs/step2/keystone-k1/input.json\
+    Read runs/step2/ca-tech-k1/input.json\
+    Grepped "--stack" in runs/step2/logs\
+\
+  $ python3 << 'PY'\
+    import os 258ms\
+    \'85 5 input + 6 output lines hidden \'b7 ctrl+o to expand\
+    keystone supply__purchase-orders__PO-2025-0231_keystone-plumbing-supply_2025-02\'85\
+    ca-tech employment__templates__form_technician-employment-agreement_california_\'85\
+\
+    Read, grepped 3 files, 1 grep\
+    Read runs/step2/keystone-k1/change_record.json\
+    Grepped "triggerFiles|change_record" in src/pipeline.ts\
+    Read src/pipeline.ts lines 580-609\
+    Read src/pipeline.ts lines 530-569\
+\
+  $ ls runs/step2-inject 262ms\
+    t1-change.json\
+    t5-change.json\
+\
+  $ python3 << 'PY'\
+    import subprocess, os 16m 45s (background)\
+    \'85 40 input lines hidden \'b7 ctrl+o to expand\
+\
+    Monitored background task, 1 complete\
+    \'85 5 earlier items hidden\
+    Waited for "DONE" in shell\
+    Read ...ects/Users-jason-Documents/terminals/446522.txt line 28\
+    Ran npx tsx scripts/score-step2.ts runs/step7\
+\
+    Edited score-step2.ts +1 -1\
+\
+    \uc0\u9614     process.stdout.write(`\\n== $\{row.slug\}\\n`);\
+    \uc0\u9614     for (const k of [1, 2, 3]) \{\
+    \uc0\u9614       const dir = path.join(process.argv[2] ?? "runs/step2",\
+    \uc0\u9614   `$\{row.slug\}-k$\{k\}`);\
+    \uc0\u9614 -     if (!existsSync(dir)) continue;\
+    \uc0\u9614 +     if (!existsSync(dir) || !existsSync(path.join(dir, "findings")))\
+    \uc0\u9614   continue;\
+    \uc0\u9614       const \{ finding, cost \} = loadRun(dir);\
+    \uc0\u9614       total += cost;\
+    \uc0\u9614       const preds = finding.findings ?? [];\
+\
+  $ rm -rf runs/step7/cascade-k1 && ./bin/harness stage --stage 4 --stack\
+    subcontracts/cascade-ridge-contractors_subcontract-puyallup-medical-office\
+    --input runs/step2/gp-k1/input.json --config configs/o2-deepseek.json --inject\
+    runs/step2-inject/t1-change.json --out runs/step7/cascade-k1 37s (background)\
+\
+  $ npx tsx scripts/score-step2.ts runs/step7 835ms\
+    \'85 39 output lines hidden \'b7 ctrl+o to expand\
+    TOTAL $0.320\
+\
+  $ python3 << 'PY'\
+    import json 490ms\
+    \'85 10 input + 13 output lines hidden \'b7 ctrl+o to expand\
+    The change (C1) increases the Section 232 duty on copper articles / copper deri\'85\
+      F1 clock_pending and any successor, replacement, and/or additional duties i\
+\
+yes - step 8 & 9 are approved - once the step 8 loop/experimentation is\
+  compelte continue statight into step 9. for equal comaprison, run luna at\
+  k=5.\
+\
+  At the end of all steps, synthesize btoh informed by the evals and entirely\
+  from first principles - what would be the next 10 experimetns to run/levers\
+  to pull? then rank by hypothesized impact/ROI. Perhaps, the answer will also\
+  be informed by higher k runs, and building out a few more eval cases - the\
+  k=30 case when comapring jev made it clear that variability is a real\
+  factor, which is no surprise. It was a known tradeoff in the firs tloop of\
+  evals in the interest of cost.\
+\
+  Okay - proceed with steps 8, then 9, then the anlaysis.\
+\
+\
+  Step 8 holds GLM at k=5, then Luna at k=5 on the same slice. Step 9 runs after\
+  that. I'll start the extra GLM draws and the Luna runs together.\
+\
+    Read 4 files\
+    Read configs/r1-luna.json\
+    Read configs/s-sonnet.json\
+    Read scripts/score-step2.ts lines 100-139\
+    Read eval-scenarios/RUN-PLAN.md lines 148-167\
+\
+    Edited score-step2.ts +2 -1\
+\
+    \uc0\u9614   for (const row of runs) \{\
+    \uc0\u9614     const gold = loadGold(row.goldFile).filter((item) =>\
+    \uc0\u9614   row.ids.includes(item.id));\
+    \uc0\u9614     process.stdout.write(`\\n== $\{row.slug\}\\n`);\
+    \uc0\u9614 -   for (const k of [1, 2, 3]) \{\
+    \uc0\u9614 +   const maxK = Number(process.argv[3] ?? 3);\
+    \uc0\u9614 +   for (let k = 1; k <= maxK; k++) \{\
+    \uc0\u9614       const dir = path.join(process.argv[2] ?? "runs/step2",\
+    \uc0\u9614   `$\{row.slug\}-k$\{k\}`);\
+    \uc0\u9614       if (!existsSync(dir) || !existsSync(path.join(dir, "findings")))\
+    \uc0\u9614   continue;\
+    \uc0\u9614       const \{ finding, cost \} = loadRun(dir);\
+\
+  $ du -sh corpus | awk '\{print $1\}' 154ms\
+    7.2M\
+\
+  $ python3 << 'PY'\
+    import subprocess, os 3m 53s (background)\
+    \'85 42 input lines hidden \'b7 ctrl+o to expand\
+\
+  $ python3 << 'PY'\
+    import subprocess, os, time 14s (background)\
+    \'85 45 input lines hidden \'b7 ctrl+o to expand\
+\
+    Grepped, read 3 greps, 4 files\
+    \'85 4 earlier items hidden\
+    Read runs/step8/logs/luna-gp-k1.txt\
+    Grepped "not signed in|CHATGPT|subscription" in node_modules/eve\
+    Grepped "not signed in" in node_modules/eve/dist\
+\
+  $ command -v codex; command -v eve; ls ~/.codex 2>/dev/null | head -20; ls ~/.eve\
+    2>/dev/null | head -20 183ms\
+\
+    Globbed, grepped 1 glob, 1 grep\
+    Globbed "eve/dist/**/cli*" in node_modules\
+    Grepped "device code|CHATGPT_LOGIN_HINT" in\
+    .../dist/src/public/models/openai/chatgpt/oauth.js\
+\
+  $ rm -rf runs/step9-corpus && cp -a corpus runs/step9-corpus && python3 << 'PY'\
+    from pathlib import Path 422ms\
+    \'85 8 input lines hidden \'b7 ctrl+o to expand\
+    removed 60-day notice sentence\
+\
+    Read 2 files\
+    Read runs/step4-inputs/s1b.json\
+    Read runs/step2/gp-k1/input.json\
+\
+    Edited valley-deleted.json +13\
+\
+    \uc0\u9614 + \{\
+    \uc0\u9614 +   "scenario_id": "M7_valley_notice_deleted",\
+    \uc0\u9614 +   "trigger": \{\
+    \uc0\u9614 +     "group": "TR-01-copper-section-232",\
+    \uc0\u9614 +     "versions": [\
+    \uc0\u9614 +       "2026-04-02_proclamation-11021"\
+    \uc0\u9614 +     ]\
+    \uc0\u9614 +   \},\
+    \uc0\u9614 +   "as_of": "2026-10-01",\
+    \uc0\u9614 +   "profile": "default",\
+    \uc0\u9614 +   "custom_prompt": null,\
+    \uc0\u9614 +   "corpus_root": "runs/step9-corpus"\
+    \uc0\u9614  \'85 truncated (1 more line) \'b7 ctrl+r to review\
+\
+  $ python3 << 'PY'\
+    import subprocess, os 2m 43s (background)\
+    \'85 25 input lines hidden \'b7 ctrl+o to expand\
+\
+    Monitored background tasks, 2 complete\
+    \'85 7 earlier items hidden\
+    Read scripts/score-step2.ts line 90\
+    Ran npx tsx scripts/score-step2.ts runs/step2 3 > /tmp/score-glm-k3.txt && npx\
+    tsx scripts/score-step2.ts runs/step8/glm 5 > /tmp/score-glm-k45.txt && echo\
+    '--- k3 ---' && cat /tmp/score-glm-k3.txt && echo '--- k4-5 ---' && cat\
+    /tmp/score-glm-k45.txt\
+    Read configs/r1-luna.json\
+\
+    Grepped "chatgpt|model_config|provider" in src\
+    Found 29 matches\
+\
+  $ python3 - << 'PY'\
+    import json, os 201ms\
+    \'85 27 input + 16 output lines hidden \'b7 ctrl+o to expand\
+        Any fee adjustment shall be documented in a written amendment executed by b\'85\
+        Any Equipment replacement costs that exceed the annual allowance of Sixty T\'85\
+\
+    Grepped, read 1 grep, 4 files\
+    \'85 2 earlier items hidden\
+    Read eval-scenarios/RUN-PLAN.md lines 140-179\
+    Read eval-scenarios/answer-keys/unit/D-S1B-01.yaml\
+    Read runs/step4-profiles/drop-wa.yaml line 80\
+\
+  $ python3 - << 'PY'\
+    import json 197ms\
+    \'85 11 input + 5 output lines hidden \'b7 ctrl+o to expand\
+    s1b-k2 $0.0120\
+    n 6 total $0.0544\
+\
+    Grepped, read 3 greps, 1 file\
+    Grepped "PO-2026-0204" in runs/step8/glm/gp-k4\
+    Grepped "tool_calls|opened|read_file" in src\
+    Read ...plains-copper-tube_master-supply-agreement.json lines 160-199\
+    Grepped "PO-2026-0204" in ...enarios/answer-keys/e2e/T1_TR01_2026-10-01.yaml\
+\
+  The extra GLM draws are in, and the two metamorphic checks finished. Luna never\
+  started: the ChatGPT subscription is not signed in. I'll log both steps, then\
+  rank the next experiments from those results.\
+\
+    Edited RUN-PLAN.md +2\
+\
+    \uc0\u9614   8. **Hold the winner.** k=5 on the open-weight model that won, slice only.\
+    \uc0\u9614      Then Luna at k=3 on that slice (subscription, marginal cost about zero).\
+    \uc0\u9614      Then Sonnet, one pass, only if Luna also scores low.\
+    \uc0\u9614 +    Log 2026-09-30: GLM self-label, same eight stacks and gold change\
+    \uc0\u9614   records, two more draws (k4, k5) on top of ste ...\
+    \uc0\u9614 \
+    \uc0\u9614   9. **Cheap metamorphics, reusing artifacts.** The T3 date pair (the same\
+    \uc0\u9614      findings move together). The Washington profile swap (the gate flips).\
+    \uc0\u9614      One clause deletion on a single stack (the finding flips). Corpus scale\
+    \uc0\u9614      and file rename stay off this list.\
+    \uc0\u9614 +    Log 2026-09-30: $0.05, no prompt change. T3 date pair reused from step 6\
+    \uc0\u9614   ($0): the same three findings are clock ...\
+    \uc0\u9614 \
+    \uc0\u9614   ## Later\
+    \uc0\u9614  \'85 truncated (1 more line) \'b7 ctrl+r to review\
+\
+  Step 8 and step 9 are done. GLM at k=5 cost $0.19 on top of the earlier three\
+  draws. The metamorphic checks cost $0.05. Luna never ran: eve reports the\
+  ChatGPT subscription is not signed in, and there is no local Codex or eve\
+  session, so the Sonnet pass stayed gated.\
+\
+  What held up at k=5. The lease stays out 5/5. Keystone\'92s pin hop is complete\
+  4/5. Cascade\'92s spans are complete 5/5, and a no_clock finding dated 2025-04-02\
+  shows up on 2/5, beside a live-clock finding. The Great Plains HTS line is\
+  missed 5/5, and on k4 the PO file is opened \'97 the quoted line is \'93Pricing per\
+  Exhibit A; Metals Adjustment per Exhibit B,\'94 not the HTS row. Valley\'92s\
+  2026-11-01 date lands 2/5. The California form is cited 3/5; Marchetti\'92s dates\
+  and Ellison\'92s spans are 0/5, and the stack stays affected 5/5. Sunpoint\'92s\
+  survival clause and the Northbrook file are 0/5.\
+\
+  What the metamorphics showed. The T3 pair, reused from step 6, still moves\
+  together: the same three findings are clock_pending before the effective date\
+  and obligation_clock_running after it. The Washington profile swap does not flip\
+  the gate. Both commits that landed say proceed, and both reasons name\
+  Washington facts the drop_wa profile still contains (the Northgate and Pinecrest\
+  acquisitions, the Washington DES customer, Cascade Ridge). Gold says exit.\
+  Deleting Valley\'92s sixty-day non-renewal sentence, on a corpus copy, removes\
+  2026-11-01 on 3/3. The model still emits forfeitable_clock_running 3/3, twice\
+  with no date and once as 2026-12-02 from the thirty-day fee-amendment sentence.\
+\
+  Next ten, ranked by hypothesized impact per dollar\
+\
+  1. Enforce the clock rubric in code. forfeitable_clock_running and\
+     obligation_clock_running require a deadline_date; a missing date becomes\
+     undeterminable. Score it on the findings already on disk (Cascade k3,\
+     Valley k2, the three deletion draws). A running clock with no date is the\
+     rubric\'92s own definition of undeterminable, and this run showed the model\
+     emits it anyway. Zero new model spend. It will not invent the right date,\
+     and it leaves every correctly dated clock alone.\
+\
+  2. Bind the Great Plains quote to the duty change. The PO is opened and the\
+     wrong line is quoted, on GLM 5/5 and DeepSeek 3/3, so this is the hop, not\
+     the reader. One structural check: the clause quote has to be about the\
+     changed term in the change record. Run it on the Great Plains stack and the\
+     Keystone stack (the pin hop has to stay complete), k=5, self-label. Draft\
+     the check from \'93the cited line is a pre-existing price mechanism,\'94 and leave\
+     Exhibit B and the HTS code out of the prompt. This is the flagship miss,\
+     and it is the one failure that did not move when the sample grew.\
+\
+  3. Make citation resolution tolerate equivalent filenames, then one verbatim\
+     retry. TR-03 is 0/3 on proposed because preliminary_results is rejected\
+     before the quote is scored. The Washington gate lost 1 of 3 draws the same\
+     way, to a paraphrase. Fold hyphen and underscore on a unique basename, and\
+     on a quote miss return the real path and ask once for a verbatim substring.\
+     Re-run only the known stage-1 failures. This is a local function plus a\
+     handful of calls, and it is what makes the gate and legal_status measurable.\
+\
+\
+  4. Rebuild the Washington profile so the gold\'92s premise is true, then\
+     remeasure the gate. Gold says removing WA from states, subsidiaries, and\
+     branches TAC and SPO flips proceed to exit. The file used here still lists\
+     two Washington acquisitions, a Washington customer, and a Washington\
+     contractor, and the model cited those and proceeded 2/2. Build a profile\
+     with those facts removed, change nothing in the prompt, and run stage 1 at\
+     k=5. If it exits, the current miss is the fixture. If it still proceeds,\
+     the gate prompt is the lever, and you will finally be measuring it.\
+\
+  5. A date tool, with the deletion run as the negative control. Valley\'92s\
+     correct date is 2/5. After the sixty-day sentence was removed, the model\
+     computed a date from the other day-count in the contract. Give the analyst\
+     a tool that takes as-of, a term end, and a number of days, and returns the\
+     date. Score Valley at k=5 against 2026-11-01, and score the deleted-clause\
+     corpus, where a 2026-11-01 result is a failure. Keep the day count out of\
+     the prompt.\
+\
+  6. Fix the sort key on the reports you already have. Approach A passes R1\'96R3.\
+     The secondary miss is mechanical: a past date sorts ahead of a tier-1 item\
+     with no date, so T1 F6 (tier 2, deadline 2025-04-02) sits above F2 (tier 1,\
+     no date). Rescore the saved step 6 reports with a null deadline treated as\
+     unknown, alongside undeterminable, rather than as positive infinity. No\
+     model call. This is the known inversion, and it sits below the false clocks\
+     and the missed hop because the decided bar already passes.\
+\
+  7. Sign in and finish Luna at k=5 before any Sonnet spend. The equal comparison\
+     is unfinished, and Sonnet stays behind it. Same eight stacks, same gold\
+     change records, classifier self. If Luna also quotes the Exhibit B line\
+     instead of the HTS row, stop swapping readers. The Great Plains miss is\
+     already shared by GLM and DeepSeek, so a third model is unlikely to be the\
+     fix, and this run is what settles that cheaply.\
+\
+  8. Run Jev on the Cascade findings that already describe the closed window. The\
+     k=30 study classified the future-notice text (slot B). k4 and k5 each\
+     contain a no_clock finding dated 2025-04-02, which is the $61,380 request.\
+     Classify those frozen texts, 30 draws, no analyst pass. If Jev says\
+     no_clock, the labeler is doing this job and the remaining miss is the extra\
+     live-clock finding. If it still will not, the rubric is the lever. This is\
+     the measurement the earlier Jev comparison did not take.\
+\
+  9. k=10 on four stacks, plus two new cases, before the next prompt sentence.\
+     k=5 moved things that k=3 had frozen: Keystone fell to 4/5, Valley\'92s correct\
+     date rose to 2/5, and Cascade\'92s closed-window finding appeared 2/5. Run\
+     k=10 on Great Plains, Valley, the California template, and Cascade only. Add\
+     one more duty-versus-price-index contract, and one more notice-period date,\
+     so a later prompt change has a second item to fail on. The California dates\
+     are 0/5 on a single template, so a second agreement belongs in that set\
+     before anyone writes a sentence about Marchetti.\
+\
+  10. The cross-stack hop, after the in-stack one. Sunpoint\'92s survival clause and\
+      the Northbrook file are 0/5 at stage 4; the stage-5 link was 2/3. That is\
+      the same class of miss as Great Plains, one document further away, and it\
+      is the easier one to overfit by naming the counterparty. Run it once the\
+      duty-binding check has a result. The lever is \'93open the document named by\
+      the clause you already quoted,\'94 tested on Sunpoint with the lease still\
+      required to stay out.\
+\
+  Finished Luna k=5 on the same stage-4 slice\
+\
+  Luna's k=5 run exited before any stack finished. eve rejected every call because\
+  the ChatGPT subscription is not signed in, so that comparison is still open and\
+  Sonnet stays behind it.\
+\
+\
+  what are the steps/commands to auth with codex?\
+\
+\
+  The Luna run failed because Codex has no ChatGPT session. I'll pull the exact\
+  login commands from the eve docs and the Codex CLI.\
+\
+    Read node_modules/eve/docs/reference/typescript-api.md lines 160-209\
+\
+    WebSearch OpenAI Codex CLI codex login ChatGPT subscription 2026\
+    Found 2 references\
+\
+    WebFetch https://developers.openai.com/codex/auth\
+\
+  codex is not on your PATH, so install it, then sign in with ChatGPT. An API-key\
+  login bills the API and will not satisfy eve\'92s ChatGPT-subscription check.\
+\
+  npm install -g @openai/codex\
+  codex login\
+  codex login status\
+\
+  codex login opens a browser. Choose Sign in with ChatGPT and finish the flow.\
+  codex login status should exit 0 and report ChatGPT.\
+\
+  If the browser callback fails, use a device code instead. Device-code login has\
+  to be enabled under ChatGPT Settings \uc0\u8594  Security first.\
+\
+  codex login --device-auth\
+\
+  eve uses that Codex session automatically when codex is on PATH. After codex\
+  login status succeeds, the Luna k=5 run can be started again.\
+\
+\
+  codex loging shows success - run a smoke test through eve. I agree with your\
+  proposed next evals - append the new cases to the run plan.\
+\
+\
+  Codex login is in place. I'll run a one-call Luna smoke test through the same\
+  eve path the harness uses, then append the agreed experiments to the run plan.\
+\
+    Read, globbed, grepped 3 files, 1 glob, 1 grep\
+    \'85 2 earlier items hidden\
+    Globbed "package.json" in .\
+    Read package.json\
+    Grepped "generateText\\(" in src\
+\
+  $ command -v codex && codex login status 291ms\
+    /opt/homebrew/bin/codex\
+    Logged in using ChatGPT\
+\
+    Read src/models.ts lines 90-129\
+\
+    Edited smoke-luna.ts +11\
+\
+    \uc0\u9614 + import \{ generateText \} from "ai";\
+    \uc0\u9614 + import \{ languageModel \} from "../src/models.js";\
+    \uc0\u9614 +\
+    \uc0\u9614 + const result = await generateText(\{\
+    \uc0\u9614 +   model: languageModel("gpt-5.6-luna"),\
+    \uc0\u9614 +   prompt: "Reply with the single word pong.",\
+    \uc0\u9614 +   maxRetries: 0,\
+    \uc0\u9614 +   timeout: 60_000,\
+    \uc0\u9614 + \});\
+    \uc0\u9614 + const usage = result.totalUsage ?? result.usage;\
+    \uc0\u9614 + console.log(JSON.stringify(\{ text: result.text.trim(), usage \}));\
+\
+    Edited RUN-PLAN.md +73\
+\
+    \uc0\u9614      and file rename stay off this list.\
+    \uc0\u9614      Log 2026-09-30: $0.05, no prompt change. T3 date pair reused from step 6\
+    \uc0\u9614   ($0): the same three findings are clock ...\
+    \uc0\u9614 \
+    \uc0\u9614 + ## Next\
+    \uc0\u9614 +\
+    \uc0\u9614 + Ranked by hypothesized impact per dollar, from the k=5 reader comparison\
+    \uc0\u9614   and\
+    \uc0\u9614 + the step 9 metamorphics. One lever per run. Do not write a gold answer into\
+    \uc0\u9614   a\
+    \uc0\u9614 + prompt. Sonnet stays behind Luna.\
+    \uc0\u9614 +\
+    \uc0\u9614 + 10. **Enforce the clock rubric in code.** `forfeitable_clock_running` and\
+    \uc0\u9614 +     `obligation_clock_running` require a `deadline_date`; a missing date\
+    \uc0\u9614 +     becomes `undeterminable`. Score the findings already on disk (Cascade\
+    \uc0\u9614   k3,\
+    \uc0\u9614  \'85 truncated (67 more lines) \'b7 ctrl+r to review\
+\
+  $ npx tsx scripts/smoke-luna.ts exit 13 \'95 955ms\
+    \'85 4 output lines hidden \'b7 ctrl+o to expand\
+\
+    Grepped 2 greps\
+    Grepped "...\\.exit\\(13\\)|exitCode = 13|exit\\(13\\)" in node_modules/eve/dist\
+    Grepped "...port \\\{ chatgpt|ChatGptSignedOutError" in\
+    node_modules/eve/dist/src/public/models/openai\
+\
+    Edited smoke-luna.ts +14 -7\
+\
+    \uc0\u9614   import \{ generateText \} from "ai";\
+    \uc0\u9614   import \{ languageModel \} from "../src/models.js";\
+    \uc0\u9614 \
+    \uc0\u9614 - const result = await generateText(\{\
+    \uc0\u9614 -   model: languageModel("gpt-5.6-luna"),\
+    \uc0\u9614 -   prompt: "Reply with the single word pong.",\
+    \uc0\u9614 -   maxRetries: 0,\
+    \uc0\u9614 -   timeout: 60_000,\
+    \uc0\u9614 + async function main(): Promise<void> \{\
+    \uc0\u9614 +   const result = await generateText(\{\
+    \uc0\u9614 +     model: languageModel("gpt-5.6-luna"),\
+    \uc0\u9614 +     prompt: "Reply with the single word pong.",\
+    \uc0\u9614  \'85 truncated (13 more lines) \'b7 ctrl+r to review\
+\
+  $ npx tsx scripts/smoke-luna.ts 839ms\
+\
+    Read, globbed 1 file, 1 glob\
+    Read scripts/smoke-luna.ts\
+    Globbed "tsconfig*.json" in .\
+\
+    Edited smoke-luna.ts +2\
+\
+    \uc0\u9614   import \{ generateText \} from "ai";\
+    \uc0\u9614   import \{ languageModel \} from "../src/models.js";\
+    \uc0\u9614 \
+    \uc0\u9614 + console.log("smoke: start");\
+    \uc0\u9614 +\
+    \uc0\u9614   async function main(): Promise<void> \{\
+    \uc0\u9614     const result = await generateText(\{\
+    \uc0\u9614       model: languageModel("gpt-5.6-luna"),\
+\
+    Read tsconfig.json\
+\
+  $ npx tsx scripts/smoke-luna.ts; echo "exit:$?" 845ms\
+    smoke: start\
+    exit:0\
+\
+    Grepped "process\\.exit" in ...dules/eve/dist/src/public/models/openai/chatgpt\
+    Found 0 matches\
+\
+    Edited smoke-luna.ts +7\
+\
+    \uc0\u9614   import \{ languageModel \} from "../src/models.js";\
+    \uc0\u9614 \
+    \uc0\u9614   console.log("smoke: start");\
+    \uc0\u9614 + process.on("exit", (code) => \{\
+    \uc0\u9614 +   console.log("smoke: process exit", code);\
+    \uc0\u9614 + \});\
+    \uc0\u9614 \
+    \uc0\u9614   async function main(): Promise<void> \{\
+    \uc0\u9614 +   console.log("smoke: building model");\
+    \uc0\u9614 +   const model = languageModel("gpt-5.6-luna");\
+    \uc0\u9614 +   console.log("smoke: model ready");\
+    \uc0\u9614     const result = await generateText(\{\
+    \uc0\u9614  \'85 truncated (4 more lines) \'b7 ctrl+r to review\
+\
+    Read scripts/smoke-luna.ts\
+\
+    Edited smoke-luna.ts -1\
+\
+    \uc0\u9614     console.log("smoke: model ready");\
+    \uc0\u9614     const result = await generateText(\{\
+    \uc0\u9614       model,\
+    \uc0\u9614 -     model: languageModel("gpt-5.6-luna"),\
+    \uc0\u9614       prompt: "Reply with the single word pong.",\
+    \uc0\u9614       maxRetries: 0,\
+    \uc0\u9614       timeout: 90_000,\
+\
+  $ npx tsx scripts/smoke-luna.ts; echo "shell_exit:$?" 976ms\
+    \'85 3 output lines hidden \'b7 ctrl+o to expand\
+    smoke: process exit 0\
+    shell_exit:0\
+\
+  The bare call returns before Codex\'92s app-server keeps the process alive. The\
+  harness already holds the event loop with a timer, so the smoke test should do\
+  the same.\
+\
+    Edited smoke-luna.ts +13 -8\
+\
+    \uc0\u9614     console.log("smoke: building model");\
+    \uc0\u9614     const model = languageModel("gpt-5.6-luna");\
+    \uc0\u9614     console.log("smoke: model ready");\
+    \uc0\u9614 -   const result = await generateText(\{\
+    \uc0\u9614 -     model,\
+    \uc0\u9614 -     prompt: "Reply with the single word pong.",\
+    \uc0\u9614 -     maxRetries: 0,\
+    \uc0\u9614 -     timeout: 90_000,\
+    \uc0\u9614 -   \});\
+    \uc0\u9614 -   const usage = result.totalUsage ?? result.usage;\
+    \uc0\u9614 -   console.log(JSON.stringify(\{ text: result.text.trim(), usage \}));\
+    \uc0\u9614 +   const keepAlive = setInterval(() => \{\}, 1_000);\
+    \uc0\u9614  \'85 truncated (15 more lines) \'b7 ctrl+r to review\
+\
+  $ npx tsx scripts/smoke-luna.ts; echo "shell_exit:$?" 1.9s\
+    \'85 14 output lines hidden \'b7 ctrl+o to expand\
+    smoke: process exit 1\
+    shell_exit:1\
+\
+    Edited smoke-luna.ts +8 -1\
+\
+    \uc0\u9614   \}\
+    \uc0\u9614 \
+    \uc0\u9614   main().catch((err: unknown) => \{\
+    \uc0\u9614 -   console.error(err instanceof Error ? err.stack ?? err.message : err);\
+    \uc0\u9614 +   const error = err as \{ message?: string; cause?: unknown; statusCode?:\
+    \uc0\u9614   number; responseBody?: string; url?: string \};\
+    \uc0\u9614 +   console.error(JSON.stringify(\{\
+    \uc0\u9614 +     message: error.message,\
+    \uc0\u9614 +     statusCode: error.statusCode,\
+    \uc0\u9614 +     url: error.url,\
+    \uc0\u9614 +     responseBody: typeof error.responseBody === "string" ?\
+    \uc0\u9614   error.responseBody.slice(0, 800) : undefined,\
+    \uc0\u9614 +     cause: error.cause instanceof Error ? error.cause.message :\
+    \uc0\u9614   error.cause,\
+    \uc0\u9614 +   \}, null, 2));\
+    \uc0\u9614  \'85 truncated (2 more lines) \'b7 ctrl+r to review\
+\
+  $ npx tsx scripts/smoke-luna.ts; echo "shell_exit:$?" 1.2s\
+    \'85 9 output lines hidden \'b7 ctrl+o to expand\
+    smoke: process exit 1\
+    shell_exit:1\
+\
+    Grepped 3 greps\
+    Grepped "stream" in .../dist/src/public/models/openai/chatgpt/model.js\
+    Grepped "stream:" in node_modules/ai/src/generate-text\
+    Grepped "...e set to true|doGenerate|store: false" in node_modules/eve\
+\
+    Edited smoke-luna.ts +1 -1\
+\
+    \uc0\u9614 - import \{ generateText \} from "ai";\
+    \uc0\u9614 + import \{ streamText \} from "ai";\
+    \uc0\u9614   import \{ languageModel \} from "../src/models.js";\
+    \uc0\u9614 \
+    \uc0\u9614   console.log("smoke: start");\
+\
+    Edited smoke-luna.ts +4 -3\
+\
+    \uc0\u9614     console.log("smoke: model ready");\
+    \uc0\u9614     const keepAlive = setInterval(() => \{\}, 1_000);\
+    \uc0\u9614     try \{\
+    \uc0\u9614 -     const result = await generateText(\{\
+    \uc0\u9614 +     const result = streamText(\{\
+    \uc0\u9614         model,\
+    \uc0\u9614         prompt: "Reply with the single word pong.",\
+    \uc0\u9614         maxRetries: 0,\
+    \uc0\u9614         timeout: 90_000,\
+    \uc0\u9614       \});\
+    \uc0\u9614 -     const usage = result.totalUsage ?? result.usage;\
+    \uc0\u9614 -     console.log(JSON.stringify(\{ text: result.text.trim(), usage \}));\
+    \uc0\u9614  \'85 truncated (6 more lines) \'b7 ctrl+r to review\
+\
+  $ npx tsx scripts/smoke-luna.ts; echo "shell_exit:$?" 3.7s\
+    \'85 4 output lines hidden \'b7 ctrl+o to expand\
+    smoke: process exit 0\
+    shell_exit:0\
+\
+  Auth works. The harness call does not: the subscription endpoint rejects a\
+  non-streaming request. I'll note that on the Luna step so the k=5 run is not\
+  launched into that error.\
+\
+    Edited RUN-PLAN.md +4\
+\
+    \uc0\u9614       Exhibit B terms line instead of the HTS row, stop swapping readers.\
+    \uc0\u9614       Sonnet (`configs/s-sonnet.json`) is one pass of the eight stacks, and\
+    \uc0\u9614   only\
+    \uc0\u9614       then.\
+    \uc0\u9614 +     Smoke 2026-09-30: `chatgpt("gpt-5.6-luna")` reaches `api.openai.com`.\
+    \uc0\u9614 +     `streamText` returned `pong` (13 input tokens, 5 output).\
+    \uc0\u9614   `generateText`,\
+    \uc0\u9614 +     which `runAgent` uses, returns 400 `Stream must be set to true`. Switch\
+    \uc0\u9614 +     the harness call to streaming before launching the k=5 run.\
+    \uc0\u9614 \
+    \uc0\u9614   17. **Jev on the Cascade findings that already describe the closed\
+    \uc0\u9614   window.**\
+    \uc0\u9614       The k=30 study classified the future-notice text. k4 and k5 each\
+    \uc0\u9614   contain a\
+\
+  Codex is signed in with ChatGPT, and a one-call smoke test through eve's\
+  chatgpt("gpt-5.6-luna") returned pong (13 input tokens, 5 output).\
+\
+  The harness path does not work yet. runAgent calls generateText, and the\
+  subscription endpoint answers that with 400 and Stream must be set to true. The\
+  streaming call is what succeeded. Step 16 in the run plan needs that switch\
+  before the Luna k=5 run is worth launching.\
+\
+  The ten experiments are appended to eval-scenarios/RUN-PLAN.md as steps 10\'9619,\
+  in the ranked order. Step 16 records the smoke result.\
+\
+\
+  additonally, update in place in the run plan: The next round will need to\
+  intermediate summary/.approval gates by me - they should be tirggered, run,\
+  investigated, logged and continue autontousmoualy without me. I will rejoin\
+  for a final report of what actual stayed. In all cases, i expect 1-3\
+  experiments for impoprvements against the measured eval. I am a big fanb of\
+  the date tool suiggestion - in fact, we should keep it as long as theres\
+  evidence of no regression, even if it does not hit the same net wion\
+  threshold other chnages are expected to before keeping. See you on the other\
+  side! Remember: avoid experiments that are exlusively overfitting - stay\
+  generalized and prinbcipl based when making imporvments. I'll review at the\
+  end to ensure this was adhered to. Note the runAgent/Strem must be set to\
+  true update - i suggest making that chjnage now so step 16 is already ready\
+  to go when its turn coes up. Go. *typo correction: the next round (10-19)\
+  will need NO intermiadte approval gates from me.\
+\
+\
+  Steps 10\'9619 will run without approval stops, and the Luna call will stream\
+  before that step comes up. I'll put that rule in the run plan and switch\
+  runAgent off the non-streaming request.\
+\
+    Read, grepped, globbed 13 files, 6 greps, 1 glob\
+    \'85 17 earlier items hidden\
+    Read src/prompts.ts lines 1-40\
+    Read test/harness.test.ts\
+    Read src/enums.ts\
+\
+  The subscription call has to stream, and steps 10\'9619 will run straight through.\
+  I'll record that in the plan, switch the harness, then start the clock-rubric\
+  check.\
+\
+    Edited models.ts +1 -1\
+\
+    \uc0\u9614   import \{ anthropic \} from "@ai-sdk/anthropic";\
+    \uc0\u9614   import \{ openai \} from "@ai-sdk/openai";\
+    \uc0\u9614 - import \{ gateway, generateText, stepCountIs, tool, type LanguageModel, type\
+    \uc0\u9614   ModelMessage, type ToolSet \} from "ai";\
+    \uc0\u9614 + import \{ gateway, generateText, streamText, stepCountIs, tool, type\
+    \uc0\u9614   LanguageModel, type ModelMessage, type ToolSet  ...\
+    \uc0\u9614   import \{ chatgpt \} from "eve/models/openai";\
+    \uc0\u9614   import type \{ ZodType \} from "zod";\
+    \uc0\u9614   import type \{ TokenUse, ToolCallRecord, ToolOutcome \} from "./types.js";\
+\
+    Edited models.ts +20 -2\
+\
+    \uc0\u9614     const system = opts.cache === "off" ? `$\{opts.system\}\\n\\nCache-bust:\
+    \uc0\u9614   $\{crypto.randomUUID()\}` : opts.system;\
+    \uc0\u9614     const beat = setInterval(() => opts.onEvent?.(\{ type: "working", model:\
+    \uc0\u9614   opts.modelId \}), 5_000);\
+    \uc0\u9614     try \{\
+    \uc0\u9614 -     const result = await generateText(\{\
+    \uc0\u9614 +     const request = \{\
+    \uc0\u9614         model: languageModel(opts.modelId),\
+    \uc0\u9614         system,\
+    \uc0\u9614         messages: opts.messages,\
+    \uc0\u9614         timeout: 300_000,\
+    \uc0\u9614         maxRetries: 2,\
+    \uc0\u9614         providerOptions: opts.providerPin ? \{ gateway: \{ only:\
+    \uc0\u9614   [opts.providerPin] \} \} : undefined,\
+    \uc0\u9614 -     \});\
+    \uc0\u9614  \'85 truncated (22 more lines) \'b7 ctrl+r to review\
+\
+    Edited RUN-PLAN.md +8\
+\
+    \uc0\u9614 \
+    \uc0\u9614   ## Next\
+    \uc0\u9614 \
+    \uc0\u9614 + Steps 10\'9619 run with no approval gate. Trigger, run, investigate, log, and\
+    \uc0\u9614 + continue. Jason rejoins for the final report of what stayed. Each step gets\
+    \uc0\u9614 + one to three improvement experiments against the measured eval. Keep a\
+    \uc0\u9614   change\
+    \uc0\u9614 + when it wins on that eval and does not regress the controls. The date tool\
+    \uc0\u9614 + (step 14) stays on evidence of no regression, even if its net win is\
+    \uc0\u9614   smaller\
+    \uc0\u9614 + than the bar for the other changes. Improvements stay generalized and\
+    \uc0\u9614 + principle-based. A change that only restates a gold answer is reverted.\
+    \uc0\u9614 +\
+    \uc0\u9614   Ranked by hypothesized impact per dollar, from the k=5 reader comparison\
+    \uc0\u9614   and\
+    \uc0\u9614  \'85 truncated (2 more lines) \'b7 ctrl+r to review\
+\
+    Edited RUN-PLAN.md +3 -3\
+\
+    \uc0\u9614       Sonnet (`configs/s-sonnet.json`) is one pass of the eight stacks, and\
+    \uc0\u9614   only\
+    \uc0\u9614       then.\
+    \uc0\u9614       Smoke 2026-09-30: `chatgpt("gpt-5.6-luna")` reaches `api.openai.com`.\
+    \uc0\u9614 -     `streamText` returned `pong` (13 input tokens, 5 output).\
+    \uc0\u9614   `generateText`,\
+    \uc0\u9614 -     which `runAgent` uses, returns 400 `Stream must be set to true`. Switch\
+    \uc0\u9614 -     the harness call to streaming before launching the k=5 run.\
+    \uc0\u9614 +     `streamText` returned `pong`. `generateText` returns 400 `Stream must\
+    \uc0\u9614   be\
+    \uc0\u9614 +     set to true`. `runAgent` now uses `streamText` for the chatgpt provider\
+    \uc0\u9614 +     and `generateText` for every other provider.\
+    \uc0\u9614 \
+    \uc0\u9614   17. **Jev on the Cascade findings that already describe the closed\
+    \uc0\u9614   window.**\
+    \uc0\u9614       The k=30 study classified the future-notice text. k4 and k5 each\
+    \uc0\u9614   contain a\
+\
+    Read src/types.ts lines 50-89\
+\
+    Edited smoke-luna.ts +9 -37\
+\
+    \uc0\u9614 - import \{ streamText \} from "ai";\
+    \uc0\u9614 - import \{ languageModel \} from "../src/models.js";\
+    \uc0\u9614 + import \{ runAgent \} from "../src/models.js";\
+    \uc0\u9614 \
+    \uc0\u9614 - console.log("smoke: start");\
+    \uc0\u9614 - process.on("exit", (code) => \{\
+    \uc0\u9614 -   console.log("smoke: process exit", code);\
+    \uc0\u9614 + const run = await runAgent(\{\
+    \uc0\u9614 +   modelId: "gpt-5.6-luna",\
+    \uc0\u9614 +   system: "Reply with the single word pong.",\
+    \uc0\u9614 +   messages: [\{ role: "user", content: "Reply with the single word pong."\
+    \uc0\u9614   \}],\
+    \uc0\u9614 +   tools: \{\},\
+    \uc0\u9614  \'85 truncated (36 more lines) \'b7 ctrl+r to review\
+\
+    Read, grepped 2 files, 1 grep\
+    Read src/agents.ts lines 480-559\
+    Grepped "...commit|labels\\.urgency|accepted\\.push" in src/pipeline.ts\
+    Read src/pipeline.ts lines 390-439\
+\
+    Edited labels.ts +13\
+\
+    \uc0\u9614 + import type \{ Labels \} from "./types.js";\
+    \uc0\u9614 +\
+    \uc0\u9614 + const RUNNING_CLOCK = new Set(["forfeitable_clock_running",\
+    \uc0\u9614   "obligation_clock_running"]);\
+    \uc0\u9614 + const MISSING_DATE = "A running clock needs a deadline date; none was\
+    \uc0\u9614   located.";\
+    \uc0\u9614 +\
+    \uc0\u9614 + /** A clock that is already running and has no date is undeterminable. A\
+    \uc0\u9614   dated clock is unchanged. */\
+    \uc0\u9614 + export function requireRunningClockDate(labels: Labels, deadlineDate:\
+    \uc0\u9614   string | null | undefined): Labels \{\
+    \uc0\u9614 +   if (!RUNNING_CLOCK.has(labels.urgency)) return labels;\
+    \uc0\u9614 +   if (deadlineDate && /^\\d\{4\}-\\d\{2\}-\\d\{2\}$/.test(deadlineDate)) return\
+    \uc0\u9614   labels;\
+    \uc0\u9614 +   const prior = labels.missing_fact?.trim();\
+    \uc0\u9614 +   const missing_fact = prior && prior.includes(MISSING_DATE) ? prior :\
+    \uc0\u9614   [prior, MISSING_DATE].filter(Boolean).join(" ...\
+    \uc0\u9614 +   return \{ ...labels, urgency: "undeterminable", missing_fact \};\
+    \uc0\u9614  \'85 truncated (1 more line) \'b7 ctrl+r to review\
+\
+    Edited agents.ts +1\
+\
+    \uc0\u9614   import \{ z \} from "zod";\
+    \uc0\u9614   import \{ resolveSpan \} from "./citations.js";\
+    \uc0\u9614   import \{ classifyFinding \} from "./classify.js";\
+    \uc0\u9614 + import \{ requireRunningClockDate \} from "./labels.js";\
+    \uc0\u9614   import type \{ Corpus \} from "./corpus.js";\
+    \uc0\u9614   import \{ readNormalized \} from "./corpus.js";\
+    \uc0\u9614   import \{\
+\
+    Edited agents.ts +1 -1\
+\
+    \uc0\u9614       try \{\
+    \uc0\u9614         const classified = await classifyFinding(\{ finding: item, company,\
+    \uc0\u9614   asOf \});\
+    \uc0\u9614         item.finding_type = classified.finding_type;\
+    \uc0\u9614 -       item.labels = \{ ...item.labels, ...classified.labels \};\
+    \uc0\u9614 +       item.labels = requireRunningClockDate(\{ ...item.labels,\
+    \uc0\u9614   ...classified.labels \}, item.facts?.deadline_date);\
+    \uc0\u9614         usage.input += classified.usage.input;\
+    \uc0\u9614         usage.output += classified.usage.output;\
+    \uc0\u9614         model = classified.model;\
+\
+    Edited agents.ts +3 -2\
+\
+    \uc0\u9614         const span = resolveSpan(opts.corpus, hop, new Set([...opts.reading,\
+    \uc0\u9614   ...opts.triggerAllowed]));\
+    \uc0\u9614         if (span.span) hops.push(\{ span: span.span, inference: hop.inference\
+    \uc0\u9614   \});\
+    \uc0\u9614       \}\
+    \uc0\u9614 -     const labels: Labels = \{\
+    \uc0\u9614 +     const deadlineDate = item.deadline_date &&\
+    \uc0\u9614   /^\\d\{4\}-\\d\{2\}-\\d\{2\}$/.test(item.deadline_date) ? item.deadline_date  ...\
+    \uc0\u9614 +     const labels: Labels = requireRunningClockDate(\{\
+    \uc0\u9614         ...item.labels,\
+    \uc0\u9614         label_source: "self",\
+    \uc0\u9614         missing_fact: item.labels.missing_fact ?? null,\
+    \uc0\u9614 -     \};\
+    \uc0\u9614 +     \}, deadlineDate);\
+    \uc0\u9614       findings.push(\{\
+    \uc0\u9614  \'85 truncated (2 more lines) \'b7 ctrl+r to review\
+\
+    Edited agents.ts +1 -1\
+\
+    \uc0\u9614         labels,\
+    \uc0\u9614         facts: \{\
+    \uc0\u9614           deadline_rule: item.deadline_rule ? \{ rule: item.deadline_rule \} :\
+    \uc0\u9614   null,\
+    \uc0\u9614 -         deadline_date: item.deadline_date &&\
+    \uc0\u9614   /^\\d\{4\}-\\d\{2\}-\\d\{2\}$/.test(item.deadline_date) ? item.deadline_date :  ...\
+    \uc0\u9614 +         deadline_date: deadlineDate,\
+    \uc0\u9614           exposure: item.exposure ?? null,\
+    \uc0\u9614         \},\
+    \uc0\u9614         reasoning: item.reasoning,\
+\
+    Edited pipeline.ts +1\
+\
+    \uc0\u9614   import \{ applyOverrides, loadCorpus, loadProfile, readNormalized,\
+    \uc0\u9614   triggerFiles, type Corpus \} from "./corpus.js";\
+    \uc0\u9614   import \{ buildIncorporates \} from "./incorporates.js";\
+    \uc0\u9614   import \{ providerFor \} from "./models.js";\
+    \uc0\u9614 + import \{ requireRunningClockDate \} from "./labels.js";\
+    \uc0\u9614   import \{ urgencyWindowFromPrompt, rankReport, type Accepted \} from\
+    \uc0\u9614   "./ranking.js";\
+    \uc0\u9614   import \{ contractVersion, findingPath, readJson, writeJson \} from\
+    \uc0\u9614   "./paths.js";\
+    \uc0\u9614   import \{ assertArtifact \} from "./schema.js";\
+\
+    Edited pipeline.ts +4 -1\
+\
+    \uc0\u9614             accepted.push(\{\
+    \uc0\u9614               stack_id: item.stack_id,\
+    \uc0\u9614               finding: hit.finding,\
+    \uc0\u9614 -             labels: item.labels ? \{ ...hit.finding.labels, ...item.labels,\
+    \uc0\u9614   label_source: hit.finding.labels.label_s ...\
+    \uc0\u9614 +             labels: requireRunningClockDate(\
+    \uc0\u9614 +               item.labels ? \{ ...hit.finding.labels, ...item.labels,\
+    \uc0\u9614   label_source: hit.finding.labels.label_source  ...\
+    \uc0\u9614 +               hit.finding.facts?.deadline_date,\
+    \uc0\u9614 +             ),\
+    \uc0\u9614               headline: item.headline,\
+    \uc0\u9614               what: item.what,\
+    \uc0\u9614               why: item.why,\
+\
+    Read 2 files\
+    Read src/pipeline.ts\
+    Read src/agents.ts\
+\
+    Edited labels.test.ts +25\
+\
+    \uc0\u9614 + import assert from "node:assert/strict";\
+    \uc0\u9614 + import \{ test \} from "node:test";\
+    \uc0\u9614 + import \{ requireRunningClockDate \} from "../src/labels.js";\
+    \uc0\u9614 + import type \{ Labels \} from "../src/types.js";\
+    \uc0\u9614 +\
+    \uc0\u9614 + function labels(urgency: Labels["urgency"]): Labels \{\
+    \uc0\u9614 +   return \{ urgency, materiality: "material", direction: "exposure",\
+    \uc0\u9614   response_type: "monitor" \};\
+    \uc0\u9614 + \}\
+    \uc0\u9614 +\
+    \uc0\u9614 + test("a running clock without a date becomes undeterminable", () => \{\
+    \uc0\u9614 +   for (const urgency of ["forfeitable_clock_running",\
+    \uc0\u9614   "obligation_clock_running"] as const) \{\
+    \uc0\u9614 +     const next = requireRunningClockDate(labels(urgency), null);\
+    \uc0\u9614  \'85 truncated (13 more lines) \'b7 ctrl+r to review\
+\
+  $ npx tsc --noEmit 2.1s\
+\
+  $ npx tsx --test test/labels.test.ts 844ms\
+    \'85 8 output lines hidden \'b7 ctrl+o to expand\
+    \uc0\u8505  todo 0\
+    \uc0\u8505  duration_ms 136.963916\
+\
+  $ npx tsx scripts/smoke-luna.ts; echo "shell_exit:$?" 3.8s\
+    \{"text":"pong","usage":\{"input":24,"cached_input":0,"cache_write":0,"output":5,\'85\
+    shell_exit:0\
+\
+    Edited score-step10.ts +21\
+\
+    \uc0\u9614 + import \{ readdirSync, readFileSync \} from "node:fs";\
+    \uc0\u9614 + import path from "node:path";\
+    \uc0\u9614 + import \{ requireRunningClockDate \} from "../src/labels.js";\
+    \uc0\u9614 + import type \{ Finding, StackFinding \} from "../src/types.js";\
+    \uc0\u9614 +\
+    \uc0\u9614 + const dirs = process.argv.slice(2);\
+    \uc0\u9614 + for (const dir of dirs) \{\
+    \uc0\u9614 +   const findingsDir = path.join(dir, "findings");\
+    \uc0\u9614 +   const file = readdirSync(findingsDir).find((name) =>\
+    \uc0\u9614   name.endsWith(".json"));\
+    \uc0\u9614 +   if (!file) \{\
+    \uc0\u9614 +     console.log(`$\{dir\}: no findings`);\
+    \uc0\u9614 +     continue;\
+    \uc0\u9614  \'85 truncated (9 more lines) \'b7 ctrl+r to review\
+\
+    Edited score-step10.ts +1 -1\
+\
+    \uc0\u9614   import \{ readdirSync, readFileSync \} from "node:fs";\
+    \uc0\u9614   import path from "node:path";\
+    \uc0\u9614   import \{ requireRunningClockDate \} from "../src/labels.js";\
+    \uc0\u9614 - import type \{ Finding, StackFinding \} from "../src/types.js";\
+    \uc0\u9614 + import type \{ StackFinding \} from "../src/types.js";\
+    \uc0\u9614 \
+    \uc0\u9614   const dirs = process.argv.slice(2);\
+    \uc0\u9614   for (const dir of dirs) \{\
+\
+  $ npx tsx scripts/score-step10.ts runs/step2/cascade-k3 runs/step2/valley-k2\
+    runs/step2/valley-k3 runs/step8/glm/valley-k4 runs/step9/valley-deleted-k1\
+    runs/step9/valley-deleted-k2 runs/step9/valley-deleted-k3 && npm test 1.7s\
+    \'85 66 output lines hidden \'b7 ctrl+o to expand\
+    \uc0\u8505  todo 0\
+    \uc0\u8505  duration_ms 712.09525\
+}

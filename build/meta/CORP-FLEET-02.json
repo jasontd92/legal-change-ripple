@@ -1,0 +1,25 @@
+{
+ "doc_id": "CORP-FLEET-02",
+ "path": "documents/corporate/summit-fleet-leasing_master-equity-lease/02_maintenance-agreement_2020-02-03.md",
+ "chars": 12257,
+ "area": "corporate",
+ "cluster": "summit-fleet-leasing_master-equity-lease",
+ "doc_type": "ancillary_agreement",
+ "parent_id": "CORP-FLEET-01",
+ "counterparty": null,
+ "effective_date": "2020-02-03",
+ "status": "active",
+ "roles": [],
+ "source_class": "edgar",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1109879/000119312510231780/dex102.htm",
+ "year_shift": 10,
+ "governing_law_remap": null,
+ "name_map_size": 24,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

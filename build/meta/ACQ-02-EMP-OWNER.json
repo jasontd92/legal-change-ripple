@@ -1,0 +1,37 @@
+{
+ "doc_id": "ACQ-02-EMP-OWNER",
+ "path": "documents/acquisitions/ACQ-02_alan-mercer_employment-agreement_2021-06-01.md",
+ "chars": 21185,
+ "area": "acquisitions",
+ "cluster": null,
+ "doc_type": "seller_employment_agreement",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2021-06-01",
+ "status": "active",
+ "roles": [
+  "noncompete",
+  "seller_employee",
+  "wa"
+ ],
+ "source_class": "edgar",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1005502/000101968708000629/buckeye_sb2a1-ex1017.htm",
+ "year_shift": 15,
+ "governing_law_remap": {
+  "from": [
+   "California"
+  ],
+  "to": "Washington"
+ },
+ "name_map_size": 25,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ },
+ "post_fixes": [
+  "scrubbed residual real names: Weinstein"
+ ]
+}

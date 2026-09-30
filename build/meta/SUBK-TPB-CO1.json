@@ -1,0 +1,17 @@
+{
+ "doc_id": "SUBK-TPB-CO1",
+ "path": "documents/subcontracts/titan-peak-builders_subcontract-fm-1960-interchange/03_change-order-1_2025-06-30.md",
+ "chars": 549,
+ "area": "subcontracts",
+ "cluster": "titan-peak-builders_subcontract-fm-1960-interchange",
+ "source_class": "generated_structured",
+ "doc_type": "change_order",
+ "parent_id": "SUBK-TPB-01",
+ "counterparty": "GC-TPB",
+ "effective_date": "2025-06-30",
+ "roles": [
+  "firm_price",
+  "tariff"
+ ],
+ "status": "active"
+}

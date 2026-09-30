@@ -1,0 +1,28 @@
+{
+ "doc_id": "CORP-INS-CGL",
+ "path": "documents/corporate/insurance_commercial-general-liability-policy_2026-2027.md",
+ "chars": 33437,
+ "area": "corporate",
+ "cluster": null,
+ "doc_type": "insurance_policy",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2026-07-01",
+ "status": "active",
+ "roles": [
+  "insurance",
+  "additional_insured",
+  "l2_link"
+ ],
+ "source_class": "generated_llm",
+ "template": false,
+ "placeholders": [],
+ "planted_features": [
+  "INS_CONTRACTUAL_AI"
+ ],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

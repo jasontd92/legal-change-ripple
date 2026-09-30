@@ -1,0 +1,28 @@
+{
+ "doc_id": "SUP-GPC-02",
+ "path": "documents/supply/great-plains-copper-tube_master-supply-agreement/02_exhibit-b_metals-price-adjustment_2019-11-01.md",
+ "chars": 3031,
+ "area": "supply",
+ "cluster": "great-plains-copper-tube_master-supply-agreement",
+ "doc_type": "pricing_exhibit",
+ "parent_id": "SUP-GPC-01",
+ "counterparty": "SUP-GPC",
+ "effective_date": "2019-11-01",
+ "status": "active",
+ "roles": [
+  "tariff",
+  "price_adjustment"
+ ],
+ "source_class": "edgar_llm_adapted",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1616318/000161631817000139/asaex104.htm",
+ "year_shift": 0,
+ "governing_law_remap": null,
+ "name_map_size": 0,
+ "filled_fields": [],
+ "adapt_length_ratio": 13.71,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

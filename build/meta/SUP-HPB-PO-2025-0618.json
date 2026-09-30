@@ -1,0 +1,17 @@
+{
+ "doc_id": "SUP-HPB-PO-2025-0618",
+ "path": "documents/supply/purchase-orders/PO-2025-0618_hai-phong-precision-brass_2025-06-23.md",
+ "chars": 1160,
+ "area": "supply",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "purchase_order",
+ "parent_id": "SUP-HPB-01",
+ "counterparty": "SUP-HPB",
+ "effective_date": "2025-06-23",
+ "roles": [
+  "tariff",
+  "importer_of_record"
+ ],
+ "status": "active"
+}

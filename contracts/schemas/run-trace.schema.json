@@ -1,0 +1,204 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gc-take-home.local/contracts/0.1.0/run-trace.schema.json",
+  "title": "Run summary + trace events (telemetry contract)",
+  "type": "object",
+  "required": [
+    "run_id",
+    "contract_version",
+    "scenario",
+    "model_config",
+    "agents",
+    "stages",
+    "status"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "contract_version": {
+      "type": "string"
+    },
+    "scenario": {
+      "$ref": "scenario-input.schema.json"
+    },
+    "model_config": {
+      "$ref": "common.schema.json#/$defs/model_config"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "completed",
+        "failed",
+        "resumed_completed",
+        "partial"
+      ]
+    },
+    "stages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "stage",
+          "status",
+          "started_at",
+          "ended_at"
+        ],
+        "properties": {
+          "stage": {
+            "type": "string",
+            "enum": [
+              "0",
+              "1",
+              "1b",
+              "3",
+              "4",
+              "5"
+            ]
+          },
+          "status": {
+            "type": "string"
+          },
+          "started_at": {
+            "type": "string"
+          },
+          "ended_at": {
+            "type": "string"
+          },
+          "injected": {
+            "type": "boolean",
+            "description": "true when upstream was teacher-forced"
+          }
+        }
+      }
+    },
+    "agents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "agent_id",
+          "role",
+          "model",
+          "tokens",
+          "tool_calls"
+        ],
+        "properties": {
+          "agent_id": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "orchestrator",
+              "subagent",
+              "classifier",
+              "judge"
+            ]
+          },
+          "stack_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "model": {
+            "type": "string"
+          },
+          "provider": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "tokens": {
+            "type": "object",
+            "required": [
+              "input",
+              "cached_input",
+              "output"
+            ],
+            "properties": {
+              "input": {
+                "type": "integer"
+              },
+              "cached_input": {
+                "type": "integer"
+              },
+              "cache_write": {
+                "type": "integer"
+              },
+              "output": {
+                "type": "integer"
+              },
+              "reasoning": {
+                "type": "integer"
+              }
+            }
+          },
+          "peak_context_tokens": {
+            "type": "integer"
+          },
+          "cost_usd": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "retries": {
+            "type": "integer"
+          },
+          "tool_calls": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "tool",
+                "ok"
+              ],
+              "properties": {
+                "tool": {
+                  "type": "string"
+                },
+                "file": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "chars_returned": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "description": "V6 coverage audit"
+                },
+                "file_chars": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "ok": {
+                  "type": "boolean"
+                },
+                "error": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "injected_fault": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "compactions": {
+      "type": "integer"
+    }
+  }
+}

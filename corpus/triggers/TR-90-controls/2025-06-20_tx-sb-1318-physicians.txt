@@ -1,0 +1,267 @@
+89(R) SB 1318 - Enrolled version - Bill Text
+
+S.B. No. 1318
+
+AN ACT
+
+relating to restrictions on covenants not to compete for physicians 
+
+and certain health care practitioners.
+
+ BE IT ENACTED BY THE LEGISLATURE OF THE STATE OF TEXAS:
+
+ SECTION 1. Section 15.50, Business & Commerce Code, is 
+
+amended by amending Subsections (a) and (b) and adding Subsections 
+
+(b-1) and (d) to read as follows:
+
+ (a) Notwithstanding Section 15.05 [of this code,] and 
+
+subject to any applicable provision of Subsection (b) and Section 
+
+15.501, a covenant not to compete is enforceable if it is ancillary 
+
+to or part of an otherwise enforceable agreement at the time the 
+
+agreement is made to the extent that it contains limitations as to 
+
+time, geographical area, and scope of activity to be restrained 
+
+that are reasonable and do not impose a greater restraint than is 
+
+necessary to protect the goodwill or other business interest of the 
+
+promisee.
+
+ (b) A covenant not to compete relating to the practice of 
+
+medicine is enforceable against a person licensed as a physician by 
+
+the Texas Medical Board if such covenant complies with the 
+
+following requirements:
+
+ (1) the covenant must:
+
+ (A) not deny the physician access to a list of the 
+
+physician's [his] patients whom the physician [he] had seen or 
+
+treated within one year of termination of the contract or 
+
+employment;
+
+ (B) provide access to medical records of the 
+
+physician's patients upon authorization of the patient and any 
+
+copies of medical records for a reasonable fee as established by the 
+
+Texas Medical Board under Section 159.008, Occupations Code; and
+
+ (C) provide that any access to a list of patients 
+
+or to patients' medical records after termination of the contract 
+
+or employment shall not require such list or records to be provided 
+
+in a format different than that by which such records are maintained 
+
+except by mutual consent of the parties to the contract;
+
+ (2) the covenant must provide for a buyout [buy out] of 
+
+the covenant by the physician in an amount that is not greater than 
+
+the physician's total annual salary and wages at the time of 
+
+termination of the contract or employment [at a reasonable price 
+
+or, at the option of either party, as determined by a mutually 
+
+agreed upon arbitrator or, in the case of an inability to agree, an 
+
+arbitrator of the court whose decision shall be binding on the 
+
+parties]; [and]
+
+ (3) the covenant must provide that the physician will 
+
+not be prohibited from providing continuing care and treatment to a 
+
+specific patient or patients during the course of an acute illness 
+
+even after the contract or employment has been terminated; and
+
+ (4) the covenant must:
+
+ (A) expire not later than the one-year 
+
+anniversary of the date the contract or employment has been 
+
+terminated;
+
+ (B) limit the geographical area subject to the 
+
+covenant to no more than a five-mile radius from the location at 
+
+which the physician primarily practiced before the contract or 
+
+employment terminated; and
+
+ (C) have terms and conditions clearly and 
+
+conspicuously stated in writing.
+
+ (b-1) For the purposes of Subsection (b), the practice of 
+
+medicine does not include managing or directing medical services in 
+
+an administrative capacity for a medical practice or other health 
+
+care provider.
+
+ (d) Notwithstanding any other law, a covenant not to compete 
+
+relating to the practice of medicine is void and unenforceable 
+
+against a person licensed as a physician by the Texas Medical Board 
+
+if the physician is involuntarily discharged from contract or 
+
+employment without good cause. For purposes of this subsection, 
+
+"good cause" means a reasonable basis for discharge of a physician 
+
+from contract or employment that is directly related to the 
+
+physician's conduct, including the physician's conduct on the job 
+
+or otherwise, job performance, and contract or employment record.
+
+ SECTION 2. Subchapter E, Chapter 15, Business & Commerce 
+
+Code, is amended by adding Section 15.501 to read as follows:
+
+ Sec. 15.501. COVENANTS NOT TO COMPETE AGAINST HEALTH CARE 
+
+PRACTITIONERS. (a) In this section, "health care practitioner" 
+
+means:
+
+ (1) a person licensed by the State Board of Dental 
+
+Examiners to practice dentistry in this state;
+
+ (2) a person licensed under Chapter 301, Occupations 
+
+Code, to engage in professional or vocational nursing; or
+
+ (3) a physician assistant licensed under Chapter 204, 
+
+Occupations Code.
+
+ (b) A covenant not to compete relating to the practice of 
+
+dentistry or nursing, or practice as a physician assistant, as 
+
+applicable, is not enforceable against a health care practitioner 
+
+unless the covenant:
+
+ (1) provides for a buyout of the covenant by the health 
+
+care practitioner in an amount that is not greater than the 
+
+practitioner's total annual salary and wages at the time of 
+
+termination of the practitioner's contract or employment;
+
+ (2) expires not later than the one-year anniversary of 
+
+the date the contract or employment has been terminated;
+
+ (3) limits the geographical area subject to the 
+
+covenant to no more than a five-mile radius from the location at 
+
+which the health care practitioner primarily practiced before the 
+
+contract or employment terminated; and
+
+ (4) has terms and conditions that are clearly and 
+
+conspicuously stated in writing.
+
+ SECTION 3. Section 15.52, Business & Commerce Code, is 
+
+amended to read as follows:
+
+ Sec. 15.52. PREEMPTION OF OTHER LAW. The criteria for 
+
+enforceability of a covenant not to compete provided by Sections
+
+[Section] 15.50 and 15.501 [of this code] and the procedures and 
+
+remedies in an action to enforce a covenant not to compete provided 
+
+by Section 15.51 [of this code] are exclusive and preempt [any] 
+
+other law, including [criteria for enforceability of a covenant not 
+
+to compete or procedures and remedies in an action to enforce a 
+
+covenant not to compete under] common law [or otherwise].
+
+ SECTION 4. The changes in law made by this Act apply only to 
+
+a covenant not to compete entered into or renewed on or after the 
+
+effective date of this Act. A covenant not to compete entered into 
+
+or renewed before the effective date of this Act is governed by the 
+
+law in effect on the date the covenant was entered into or renewed, 
+
+and the former law is continued in effect for that purpose.
+
+ SECTION 5. This Act takes effect September 1, 2025.
+
+______________________________
+______________________________
+
+ President of the Senate
+Speaker of the House 
+
+ I hereby certify that S.B. No. 1318 passed the Senate on 
+
+April 10, 2025, by the following vote: Yeas 30, Nays 0; and that 
+
+the Senate concurred in House amendment on May 28, 2025, by the 
+
+following vote: Yeas 31, Nays 0.
+
+______________________________
+
+Secretary of the Senate 
+
+ I hereby certify that S.B. No. 1318 passed the House, with 
+
+amendment, on May 23, 2025, by the following vote: Yeas 126, 
+
+Nays 12, two present not voting.
+
+______________________________
+
+Chief Clerk of the House 
+
+Approved:
+
+______________________________ 
+
+ Date
+
+______________________________ 
+
+ Governor

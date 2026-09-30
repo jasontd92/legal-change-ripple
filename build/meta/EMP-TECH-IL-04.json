@@ -1,0 +1,23 @@
+{
+ "doc_id": "EMP-TECH-IL-04",
+ "path": "documents/employment/signed-agreements/farah-haverford_technician-employment-agreement_il_2023-01-21.md",
+ "chars": 25655,
+ "area": "employment",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "employment_agreement",
+ "parent_id": "EMP-TPL-TECH-IL",
+ "effective_date": "2023-01-21",
+ "roles": [
+  "noncompete",
+  "il"
+ ],
+ "planted_features": [
+  "template_instance",
+  "annualized_earnings:99320",
+  "signed:2023-01-21",
+  "state:IL"
+ ],
+ "employee": "Farah Haverford",
+ "status": "active"
+}

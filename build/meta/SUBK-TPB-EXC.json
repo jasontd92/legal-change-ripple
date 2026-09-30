@@ -1,0 +1,18 @@
+{
+ "doc_id": "SUBK-TPB-EXC",
+ "path": "documents/subcontracts/titan-peak-builders_subcontract-fm-1960-interchange/02_exhibit-c_form-fhwa-1273-required-contract-provisions.md",
+ "chars": 72569,
+ "area": "subcontracts",
+ "cluster": "titan-peak-builders_subcontract-fm-1960-interchange",
+ "source_class": "generated_structured",
+ "doc_type": "exhibit",
+ "parent_id": "SUBK-TPB-01",
+ "counterparty": "GC-TPB",
+ "effective_date": "2024-09-03",
+ "roles": [
+  "flow_down",
+  "federal_aid"
+ ],
+ "source_ref": "https://www.fhwa.dot.gov/programadmin/contracts/1273/1273.pdf",
+ "status": "active"
+}

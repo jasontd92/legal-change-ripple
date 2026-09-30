@@ -1,0 +1,625 @@
+- id: S1a-TR01-01
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S1a
+  set: e2e
+  slice:
+  - control
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'authored by WP2 Demoted: focused set did not author this item.'
+- id: S1a-TR01-02
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S1a
+  set: e2e
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'authored by WP2 Demoted: focused set did not author this item.'
+- id: S1a-TR01-03
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S1a
+  set: e2e
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'authored by WP2 Demoted: focused set did not author this item.'
+- id: S1a-TR01-04
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S1a
+  set: e2e
+  slice:
+  - version
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'authored by WP2 Demoted: focused set did not author this item.'
+- id: S1a-TR01-05
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S1a
+  set: e2e
+  slice:
+  - version
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'authored by WP2 Demoted: focused set did not author this item.'
+- id: S1a-TR01-06
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S1a
+  set: e2e
+  slice:
+  - decoy
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'authored by WP2 Demoted: focused set did not author this item.'
+- id: S1a-TR01-07
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S1a
+  set: e2e
+  slice:
+  - decoy
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'authored by WP2 Demoted: focused set did not author this item.'
+- id: S3-01
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S3
+  set: e2e
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'authored by WP2 Demoted: focused set did not author this item.'
+- id: S4-GPC-01
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  set: sentinel
+  slice:
+  - hop-complete
+  confidence: high
+  status: done
+  gold_file: e2e/T1_TR01_2026-10-01.yaml
+  gold_ref: F4
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: authored by WP2; sentinel per HANDOFF §4 (hop-complete chains)
+- id: S4-GPC-02
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  set: sentinel
+  slice:
+  - decoy
+  confidence: high
+  status: done
+  gold_file: e2e/T1_TR01_2026-10-01.yaml
+  gold_ref: F4
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: authored by WP2; sentinel per HANDOFF §4 (decoys)
+- id: S4-GPC-05
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  set: sentinel
+  slice:
+  - abstention
+  confidence: abstain_only
+  status: done
+  gold_file: e2e/T1_TR01_2026-10-01.yaml
+  gold_ref: F9
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: authored by WP2; abstention-only sentinel (HTS 7412 annex tier unconfirmed, HANDOFF §10). NOT in T2 tier table -> WP2's (T1), per WP1 brief instruction.
+- id: S4-LWP-01
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  set: e2e
+  slice:
+  - hop-complete
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'authored by WP2 Demoted: focused set did not author this item.'
+- id: S4-LWP-02
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  set: e2e
+  slice:
+  - superseded
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'authored by WP2 Demoted: focused set did not author this item.'
+- id: S4-NCS-01
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  set: e2e
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'authored by WP2. Northaire ratchet: still asserted-not-verified per README §4/HANDOFF §10 open items; that judgment call is WP2''s. Demoted: focused set did not author this item.'
+- id: S1a-TR02-01
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-02
+  eval_ids:
+  - S1a
+  set: e2e
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: planned for e2e/T2_TR02_2026-10-01.yaml change_record (C1, SCOTUS opinion); not yet written
+- id: S1a-TR02-02
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-02
+  eval_ids:
+  - S1a
+  set: e2e
+  slice:
+  - decoy
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: planned for e2e/T2_TR02_2026-10-01.yaml change_record (C2, EO 14389); also backs the EO14389 cross-trigger decoy finding; not yet written
+- id: S1a-TR02-03
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-02
+  eval_ids:
+  - S1a
+  set: e2e
+  slice:
+  - expired-surviving
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: planned for e2e/T2_TR02_2026-10-01.yaml change_record (C3, Proc. 11012 sec 122 surcharge, expired 2026-07-24); also the change_ref target for the GPC overcharge and FCCR findings (V13); not yet written
+- id: S1a-TR02-04/05
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-02
+  eval_ids:
+  - S1a
+  set: e2e
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: planned for e2e/T2_TR02_2026-10-01.yaml change_record (CBP PRA notice + IEEPA duty-refunds page, CAPE mechanics); combined bullet in source file; not yet written
+- id: S3-02
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-02
+  eval_ids:
+  - S3
+  set: e2e
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: planned relevant_stacks/pruned_stacks for e2e/T2; must also read B29 (downstream side) per WP1 task; not yet written
+- id: S4-HPB-01
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-02
+  eval_ids:
+  - S4
+  set: sentinel
+  slice:
+  - hop-complete
+  confidence: high
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'sentinel per HANDOFF §4: the $8,172 IEEPA line only, hop-complete. Dollar figure and entry (MX7-2304417-9) actually come from S4-HPB-02''s fact pattern per priority-tiers-draft.md T2 table row 3 (''per S4-HPB-02'') -- must re-verify against the raw customs-entry document before finalizing. Not yet written.'
+- id: S4-HPB-02
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-02
+  eval_ids:
+  - S4
+  set: e2e
+  slice:
+  - decoy
+  confidence: high
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: logged decoy per T2 tier table ('§232 and MFN lines on the Hai Phong entry ... belong to TR-01, not TR-02'); may end up folded into S4-HPB-01's decoy_spans rather than a separate finding row -- decide when writing. Not yet written.
+- id: S4-GPC-03
+  aliases:
+  - B24
+  source_file: A-tariff-supply.md
+  trigger: TR-02
+  eval_ids:
+  - S4
+  - S5-link
+  set: sentinel
+  slice:
+  - overcharge
+  - hop-complete
+  confidence: high
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'sentinel per HANDOFF §4 (overcharge: INV-26-1911). Tier 1. change_ref must point to C3 (Proc. 11012 expiry) per V13. Not yet written; B24 is the same fact pattern from Package B, alias not a separate finding.'
+- id: S4-GPC-04
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-02
+  eval_ids:
+  - S4
+  set: e2e
+  slice:
+  - decoy
+  confidence: high
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: logged per T2 tier table (refund pass-back clause likely moot for the TR-02 CAPE program; pass_rule not_affected). Not yet written.
+- id: S4-KPS-01
+  aliases:
+  - B25
+  source_file: A-tariff-supply.md
+  trigger: TR-02
+  eval_ids:
+  - S4
+  - S5-link
+  set: e2e
+  slice:
+  - absence
+  - hop-complete
+  confidence: high
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: tier 2 per T2 tier table (Keystone passed IEEPA duties, no refund pass-back). Not yet written.
+- id: S4-KPS-03
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: null
+  eval_ids:
+  - S4
+  - V5
+  set: sentinel
+  slice:
+  - version
+  - superseded
+  confidence: high
+  status: done
+  gold_file: unit/S4-KPS-03.yaml
+  gold_ref: F1
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: unit sentinel per WP1 task brief (version pin, not in any e2e file); to be written as unit/S4-KPS-03.yaml. Not yet written.
+- id: S4-NCS-02
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  set: sentinel
+  slice:
+  - version
+  confidence: high
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: unit sentinel per WP1 task brief (version pin, TR-01, not in any e2e file); to be written as unit/S4-NCS-02.yaml. Not yet written.
+- id: S4-KPS-02
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  set: null
+  slice:
+  - decoy
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: HTS 8481/8419 near-miss decoy; decoy slice already 'good' (~21 items) per README coverage matrix; not selected
+- id: S4-DSC-02
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: null
+  eval_ids:
+  - S4
+  set: null
+  slice:
+  - decoy
+  - expired-surviving
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: expired-reference decoy (Delmont Q-2025-44710); not in T1 or T2 tier tables; not selected
+- id: S4-SCP-01
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  set: null
+  slice:
+  - absence
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: absence (no transaction to apply Solace's duty clause to); absence slice already 'good' (~11 items); not selected
+- id: LBL-urgency-01
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: null
+  eval_ids:
+  - LBL-urgency
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: urgency LBL triple (Delmont window); underlying S4-DSC-01 fact pattern authored by WP2 in T1; urgency slice already 'good'; not selected
+- id: LBL-urgency-02
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-02
+  eval_ids:
+  - LBL-urgency
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: no-clock/lapsed §122 case on GPC-INV-26-1911; substantively covered by my planned S4-GPC-03 finding's urgency label already; urgency slice already 'good'; not selected as its own item
+- id: LBL-direction-01
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: null
+  eval_ids:
+  - LBL-direction
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: split-direction on Hai Phong entry MX7-2304417-9; direction slice is 'thin' per README (3 items) -- candidate for a future coverage-fill pass, but out of my brief's coverage-fill scope (absence/template-instance/superseded/version only); flagged, not selected
+- id: LBL-direction-02
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-02
+  eval_ids:
+  - LBL-direction
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: KPS exposure-only contrast case; direction slice is 'thin' per README but outside my brief's coverage-fill scope; flagged, not selected
+- id: LBL-materiality-02
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - LBL-materiality
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: materiality-despite-no-clock (Northaire ratchet); materiality slice already 'good'; underlying S4-NCS-01 authored by WP2; not selected
+- id: S4-RPS-01
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids: []
+  set: null
+  slice: []
+  confidence: null
+  status: excluded
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: 'REMOVED in A-tariff-supply.md: Riverside Pipe & Supply Co. deleted from corpus/company/profile.yaml 2026-09-29 (CHANGES-2026-09-29.md §A3); nothing left to prune or scope'
+  contradiction: null
+  tier_flag: null
+  notes: null

@@ -1,0 +1,238 @@
+{
+ "ACQ-01-APA": {
+  "fixes": 1,
+  "violations": []
+ },
+ "ACQ-01-EMP-SELLER": {
+  "fixes": 1,
+  "violations": []
+ },
+ "ACQ-02-APA": {
+  "fixes": 0,
+  "violations": []
+ },
+ "ACQ-02-EMP-NONOWNER": {
+  "fixes": 0,
+  "violations": []
+ },
+ "ACQ-02-EMP-OWNER": {
+  "fixes": 0,
+  "violations": []
+ },
+ "ACQ-03-APA": {
+  "fixes": 0,
+  "violations": []
+ },
+ "ACQ-03-NC-01": {
+  "fixes": 0,
+  "violations": []
+ },
+ "ACQ-03-NC-02": {
+  "fixes": 0,
+  "violations": []
+ },
+ "ACQ-04-EMP-SELLER": {
+  "fixes": 1,
+  "violations": []
+ },
+ "ACQ-04-MERGER": {
+  "fixes": 1,
+  "violations": []
+ },
+ "ACQ-04-NOTE": {
+  "fixes": 0,
+  "violations": []
+ },
+ "ACQ-05-APA": {
+  "fixes": 0,
+  "violations": []
+ },
+ "ACQ-05-CONSULT": {
+  "fixes": 0,
+  "violations": []
+ },
+ "ACQ-05-EMP-OWNER": {
+  "fixes": 1,
+  "violations": []
+ },
+ "ACQ-05-FRANCHISE": {
+  "fixes": 0,
+  "violations": []
+ },
+ "ACQ-05-GUIDEBOOK": {
+  "fixes": 0,
+  "violations": []
+ },
+ "ACQ-05-NOTE": {
+  "fixes": 1,
+  "violations": []
+ },
+ "ACQ-05-RCA": {
+  "fixes": 0,
+  "violations": []
+ },
+ "CORP-CREDIT-01": {
+  "fixes": 1,
+  "violations": []
+ },
+ "CORP-CREDIT-02": {
+  "fixes": 0,
+  "violations": []
+ },
+ "CORP-CREDIT-03": {
+  "fixes": 1,
+  "violations": []
+ },
+ "CORP-CREDIT-04": {
+  "fixes": 1,
+  "violations": []
+ },
+ "CORP-EQUIP-LEASE": {
+  "fixes": 0,
+  "violations": []
+ },
+ "CORP-FLEET-01": {
+  "fixes": 0,
+  "violations": []
+ },
+ "CORP-FLEET-02": {
+  "fixes": 0,
+  "violations": []
+ },
+ "CORP-LEASE-ELK": {
+  "fixes": 1,
+  "violations": []
+ },
+ "CORP-LEASE-HOU": {
+  "fixes": 0,
+  "violations": []
+ },
+ "CORP-LEASE-SAC-02": {
+  "fixes": 0,
+  "violations": []
+ },
+ "CUS-KPPA-COOP": {
+  "fixes": 0,
+  "violations": []
+ },
+ "CUS-LKP-01": {
+  "fixes": 0,
+  "violations": []
+ },
+ "CUS-LKP-02": {
+  "fixes": 0,
+  "violations": []
+ },
+ "CUS-LKP-03": {
+  "fixes": 0,
+  "violations": []
+ },
+ "CUS-SMB-01": {
+  "fixes": 0,
+  "violations": []
+ },
+ "CUS-WADES-01": {
+  "fixes": 0,
+  "violations": []
+ },
+ "CUS-WADES-02": {
+  "fixes": 0,
+  "violations": []
+ },
+ "CUS-WADES-03": {
+  "fixes": 0,
+  "violations": []
+ },
+ "CUS-WADES-04": {
+  "fixes": 0,
+  "violations": []
+ },
+ "EMP-CONSULT-WA-2025": {
+  "fixes": 0,
+  "violations": []
+ },
+ "EMP-EXEC-TX-2022": {
+  "fixes": 0,
+  "violations": []
+ },
+ "EMP-GM-IL-2014": {
+  "fixes": 0,
+  "violations": []
+ },
+ "EMP-LIT-IL-2025": {
+  "fixes": 0,
+  "violations": []
+ },
+ "EMP-MGR-IL-2022": {
+  "fixes": 0,
+  "violations": []
+ },
+ "EMP-MGR-TX-2023": {
+  "fixes": 1,
+  "violations": []
+ },
+ "EMP-OFFER-CA-2024": {
+  "fixes": 3,
+  "violations": []
+ },
+ "EMP-PSA-2022": {
+  "fixes": 1,
+  "violations": []
+ },
+ "EMP-PSU-2025": {
+  "fixes": 2,
+  "violations": []
+ },
+ "EMP-RCA-FORM": {
+  "fixes": 0,
+  "violations": []
+ },
+ "EMP-RSU-FORM": {
+  "fixes": 0,
+  "violations": []
+ },
+ "EMP-SEP-TX-2024": {
+  "fixes": 0,
+  "violations": []
+ },
+ "EMP-SEP-WA-2025": {
+  "fixes": 2,
+  "violations": []
+ },
+ "SUBK-BHC-01": {
+  "fixes": 0,
+  "violations": []
+ },
+ "SUP-GPC-01": {
+  "fixes": 0,
+  "violations": []
+ },
+ "SUP-GPC-02": {
+  "fixes": 0,
+  "violations": []
+ },
+ "SUP-GPC-03": {
+  "fixes": 0,
+  "violations": []
+ },
+ "SUP-GPC-04": {
+  "fixes": 4,
+  "violations": []
+ },
+ "SUP-HPB-01": {
+  "fixes": 0,
+  "violations": []
+ },
+ "SUP-NCS-DEALER": {
+  "fixes": 1,
+  "violations": []
+ },
+ "VEN-FSM-SUPPORT": {
+  "fixes": 1,
+  "violations": []
+ },
+ "VEN-LEADGEN-MSA": {
+  "fixes": 2,
+  "violations": []
+ }
+}

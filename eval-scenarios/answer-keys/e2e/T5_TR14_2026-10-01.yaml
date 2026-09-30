@@ -1,0 +1,265 @@
+id: T5_TR14_2026-10-01
+contract_version: 0.1.0
+offsets: computed_pre_G0
+scenario_ids:
+- D-TR14-S4-01
+- D-TR14-S4-02
+- D-TR14-S4-03
+- D-TR14-CASTELLANO-12
+eval_ids:
+- S1a
+- S1b
+- S3
+- S4
+- S5-R1
+- S5-R3
+- V14
+- LBL-urgency
+- LBL-materiality
+- LBL-finding_type
+set: e2e
+inputs:
+  trigger: TR-14-ca-noncompete-sb699-ab1076
+  versions:
+  - 2023-09-01_ca-sb-699.txt
+  - 2023-10-13_ca-ab-1076.txt
+  as_of: '2026-10-01'
+  profile: default
+  custom_prompt: null
+provenance:
+  author: non-attorney reference
+  sources:
+  - corpus documents cited on each span
+  - eval-scenarios/priority-tiers-draft.md
+  - eval-scenarios/legal-questions.md
+  - Washington State Register 25-20-099 (2026 RCW 49.62 threshold $126,858.83), https://lawfilesext.leg.wa.gov/law/wsr/2025/20/25-20-099.htm
+  verified_on: '2026-09-29'
+change_record:
+  items:
+  - id: C1
+    substantive: true
+    anchor: &id001
+      file: corpus/triggers/TR-14-ca-noncompete-sb699-ab1076/2023-09-01_ca-sb-699.txt
+      section_label: 'Section 16600.5 is added to the Business and Professions Code, to read:'
+      quote: (c) An employer shall not enter into a contract with an employee or prospective employee that includes a provision that is void under this chapter.
+      start: 5569
+      end: 5716
+    legal_status: in_force
+    effective_date: '2024-01-01'
+    applies_to:
+      jurisdictions:
+      - CA
+      entity_types:
+      - employer
+      product_classes:
+      - contract void under B&P 16600
+      thresholds: []
+  - id: C2
+    substantive: true
+    anchor:
+      file: corpus/triggers/TR-14-ca-noncompete-sb699-ab1076/2023-09-01_ca-sb-699.txt
+      section_label: 'Section 16600.5 is added to the Business and Professions Code, to read:'
+      quote: (a) Any contract that is void under this chapter is unenforceable regardless of where and when the contract was signed.
+      start: 5239
+      end: 5358
+    legal_status: in_force
+    effective_date: '2024-01-01'
+    applies_to:
+      jurisdictions:
+      - CA
+      entity_types:
+      - employer
+      product_classes:
+      - void noncompete, any signing place or date
+      thresholds: []
+  - id: C3
+    substantive: true
+    anchor: &id002
+      file: corpus/triggers/TR-14-ca-noncompete-sb699-ab1076/2023-10-13_ca-ab-1076.txt
+      section_label: 'Section 16600.1 is added to the Business and Professions Code, to read:'
+      quote: (b) (1) For current employees, and for former employees who were employed after January 1, 2022, whose contracts include a noncompete clause, or who were required to enter a noncompete agreement, that does not satisfy an exception to this chapter, the employer shall, by February 14, 2024, notify the employee that the noncompete clause or noncompete agreement is void.
+      start: 4374
+      end: 4743
+    legal_status: in_force
+    effective_date: '2024-01-01'
+    applies_to:
+      jurisdictions:
+      - CA
+      entity_types:
+      - employer
+      product_classes:
+      - noncompete notice
+      thresholds:
+      - notice by 2024-02-14
+  noise_items: []
+notes: C1 and C2 are both SB 699 and must stay separate from C3 (AB 1076). The Castellano file header names 'Nadia Mayo' and states employment begins June 10, 2024. The filename says nadia-castellano and 2024-05-06. Both dates are after the February 14, 2024 notice deadline, so the AB 1076 timing call does not change. Section 12 is the SB 699 clause.
+company_gate: proceed
+relevant_stacks:
+- employment/templates/form_technician-employment-agreement_california_rev-2017
+- employment/signed-agreements/sabrina-marchetti_technician-employment-agreement_ca_2024-04-07
+- employment/signed-agreements/alan-ellison_technician-employment-agreement_ca_2017-12-10
+- employment/nadia-castellano_offer-letter-and-piia_sales-manager_2024-05-06
+pruned_stacks: []
+negative_controls:
+- stack_id: corporate/first-harbor-bank_credit-agreement
+  must_not_appear: true
+  reason: The First Harbor Bank FCCR covenant is a tariff-run finding. It must not appear on this run.
+findings:
+- id: F1
+  scenario_id: D-TR14-S4-01
+  aliases: []
+  stack_id: employment/templates/form_technician-employment-agreement_california_rev-2017
+  change_ref: C1
+  required_spans:
+  - *id001
+  - file: corpus/documents/employment/templates/form_technician-employment-agreement_california_rev-2017.md
+    section_label: 6. NON-SOLICITATION
+    quote: 6.1 Non-Solicitation of Employees. During the Employee's employment with the Company and for a period of one (1) year immediately following termination of employment for any reason, the Employee agrees not to solicit, recruit, encourage, or attempt to hire or engage any employee of the Company, or to solicit any employee to leave the Company's employment or reduce the scope of their employment, without the prior express written consent of the Company. This restriction applies whether such solicitation is direct or indirect, and whether undertaken by the Employee personally or through a third party, intermediary, or competing business.
+    start: 16259
+    end: 16901
+  - file: corpus/documents/employment/signed-agreements/sabrina-marchetti_technician-employment-agreement_ca_2024-04-07.md
+    section_label: 1. POSITION AND DUTIES
+    quote: 1.1 Position. The Company hereby employs the Employee, and the Employee hereby accepts such employment, commencing on April 21, 2024, as a Service Technician II (HVAC) assigned to the San Jose, California branch of the Company (the "Start Date").
+    start: 2774
+    end: 3020
+  - file: corpus/documents/employment/signed-agreements/sabrina-marchetti_technician-employment-agreement_ca_2024-04-07.md
+    section_label: 15.2 Voluntary Agreement. The Employee confirms and affirms that the Employee is
+    quote: IN WITNESS WHEREOF, the parties have executed this Employment Agreement as of April 7, 2024.
+    start: 30407
+    end: 30499
+  decoy_spans:
+  - file: corpus/documents/employment/templates/form_technician-employment-agreement_california_rev-2017.md
+    section_label: 6.2 Non-Solicitation of Customers Through Use of Trade Secrets.
+    quote: Non-Solicitation of Customers Through Use of Trade Secrets. Employee shall not, during or after employment, use the Company's trade secrets, including its customer lists, service histories and Comfort Club membership data, to solicit any Company customer. Nothing in this Agreement prohibits Employee from engaging in any lawful profession, trade or business after employment ends, consistent with California Business and Professions Code Section 16600.
+    start: 16968
+    end: 17421
+  absence: null
+  labels:
+    urgency: no_clock
+    materiality: material
+    direction: exposure
+    finding_type: liability_or_compliance_exposure
+    response_type:
+    - update_template
+  facts:
+    marchetti_commencement: '2024-04-21'
+    marchetti_executed: '2024-04-07'
+  confidence: high
+  pass_rule: affected
+  rationale: Template section 6.1 is a one-year post-employment employee non-solicit. SB 699 makes it unlawful to enter into or enforce a contract that is void under section 16600. Sabrina Marchetti's agreement is executed April 7, 2024 and commences April 21, 2024, both after SB 699's January 1, 2024 effective date. Section 6.2 is a trade-secret customer non-solicit that cites section 16600. Citing 6.2 as the violation is a decoy. That decoy is D-TR14-S4-03.
+- id: F2
+  scenario_id: D-TR14-CASTELLANO-12
+  aliases: []
+  stack_id: employment/nadia-castellano_offer-letter-and-piia_sales-manager_2024-05-06
+  change_ref: C1
+  required_spans:
+  - *id001
+  - file: corpus/documents/employment/nadia-castellano_offer-letter-and-piia_sales-manager_2024-05-06.md
+    section_label: '12.'
+    quote: 'Non-Solicitation of Employees/Consultants. During my employment with the Company and for a period of one (1) year thereafter,
+
+      I will not directly or indirectly solicit away employees or consultants of the Company for my own benefit or for the benefit of any other
+
+      person or entity.'
+    start: 18310
+    end: 18591
+  - file: corpus/documents/employment/nadia-castellano_offer-letter-and-piia_sales-manager_2024-05-06.md
+    section_label: MERIDIAN
+    quote: employment with the company shall be June 10th, 2024 and will be remote from the USA until you have the required visa. The terms of our
+    start: 454
+    end: 589
+  decoy_spans:
+  - file: corpus/documents/employment/nadia-castellano_offer-letter-and-piia_sales-manager_2024-05-06.md
+    section_label: '10.'
+    quote: 'Efforts; Duty Not to Compete. I understand that my employment with the
+
+      Company requires my undivided attention and effort during normal business hours. While I am employed by the Company, I will not, without
+
+      the Company''s express prior written consent, provide services to, or assist in any manner, any business or third party which competes
+
+      with the current or planned business of the Company.'
+    start: 17752
+    end: 18146
+  - file: corpus/documents/employment/nadia-castellano_offer-letter-and-piia_sales-manager_2024-05-06.md
+    section_label: '13.'
+    quote: 'Non-Solicitation of Suppliers/Customers. During my employment with the Company and after termination of my employment, I will
+
+      not directly or indirectly solicit or take away suppliers or customers of the Company if the identity of the supplier or customer or
+
+      information about the supplier or customer relationship is a trade secret or is otherwise deemed confidential information within the
+
+      meaning of California law.'
+    start: 18598
+    end: 19016
+  absence: null
+  labels:
+    urgency: no_clock
+    materiality: material
+    direction: exposure
+    finding_type: liability_or_compliance_exposure
+    response_type:
+    - update_template
+  facts:
+    employment_start_in_body: '2024-06-10'
+  confidence: high
+  pass_rule: affected
+  rationale: Section 12 is a one-year post-employment employee non-solicit, the same SB 699 problem as the technician template. Section 10 is an in-term duty not to compete. Section 13 is a trade-secret customer restriction. Neither is the post-employment employee non-solicit. The body dates the job to June 10, 2024, which is after January 1, 2024.
+- id: F3
+  scenario_id: D-TR14-S4-02
+  aliases: []
+  stack_id: employment/signed-agreements/alan-ellison_technician-employment-agreement_ca_2017-12-10
+  change_ref: C3
+  required_spans:
+  - *id002
+  - file: corpus/documents/employment/signed-agreements/alan-ellison_technician-employment-agreement_ca_2017-12-10.md
+    section_label: 1. POSITION AND DUTIES
+    quote: 1.1 Position. The Company hereby employs the Employee, and the Employee hereby accepts such employment, commencing on December 24, 2017, as a Installation Technician assigned to the San Jose, California branch of the Company (the "Start Date").
+    start: 2769
+    end: 3013
+  - file: corpus/documents/employment/signed-agreements/alan-ellison_technician-employment-agreement_ca_2017-12-10.md
+    section_label: 15.2 Voluntary Agreement. The Employee confirms and affirms that the Employee is
+    quote: IN WITNESS WHEREOF, the parties have executed this Employment Agreement as of December 10, 2017.
+    start: 30390
+    end: 30486
+  decoy_spans: []
+  absence: null
+  labels:
+    urgency: undeterminable
+    materiality: undeterminable
+    direction: neutral
+    finding_type: watch
+    response_type:
+    - monitor
+  facts:
+    ellison_commencement: '2017-12-24'
+    notice_deadline: '2024-02-14'
+    ellison_executed: '2017-12-10'
+  confidence: abstain_only
+  pass_rule: abstain_only
+  rationale: Alan Ellison's agreement is executed December 10, 2017 and commences December 24, 2017, both before AB 1076's February 14, 2024 notice deadline. Whether an employee non-solicit is a 'noncompete clause' for that notice, whether notice was sent, and whether he was employed after January 1, 2022 are not in the corpus. Needs review passes. Not affected fails. A settled notice violation fails.
+- id: F4
+  scenario_id: D-TR14-S4-03
+  aliases: []
+  stack_id: employment/templates/form_technician-employment-agreement_california_rev-2017
+  change_ref: C1
+  required_spans: []
+  decoy_spans:
+  - file: corpus/documents/employment/templates/form_technician-employment-agreement_california_rev-2017.md
+    section_label: 6.2 Non-Solicitation of Customers Through Use of Trade Secrets.
+    quote: Non-Solicitation of Customers Through Use of Trade Secrets. Employee shall not, during or after employment, use the Company's trade secrets, including its customer lists, service histories and Comfort Club membership data, to solicit any Company customer. Nothing in this Agreement prohibits Employee from engaging in any lawful profession, trade or business after employment ends, consistent with California Business and Professions Code Section 16600.
+    start: 16968
+    end: 17421
+  absence: null
+  labels: null
+  facts: {}
+  confidence: high
+  pass_rule: not_affected
+  rationale: Section 6.2 limits customer solicitation to use of trade secrets and recites section 16600. It is not the SB 699 or AB 1076 finding.
+tiers:
+  '1': []
+  '2':
+  - F1
+  - F2
+  '3':
+  - F3
+  logged: []

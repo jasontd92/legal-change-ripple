@@ -1,0 +1,3369 @@
+contract_version: 0.1.0
+generated_by: tools/merge.py
+split:
+  seed: 20260929
+  holdout_fraction: 0.3
+  method: '~30 % holdout among selected gold rows (status done, not merged), stratified by
+
+    (trigger, primary slice), fixed SEED. Sentinel rows are stratified on their own so they split in
+
+    proportion. The unit is the scenario id; e2e files hold both dev and holdout findings (the scorer
+
+    reports each split on the findings it owns). Metamorphic rows inherit their base item''s split to avoid
+
+    leakage; invariant fixtures are synthetic and always dev. T3a/T3b share scenario ids, so a finding is
+
+    in the same split at both dates.'
+totals:
+  total_rows: 171
+  status:
+    backlog: 137
+    done: 30
+    excluded: 3
+    merged: 1
+  gold_items_done: 30
+  abstain_only: 2
+  split:
+    dev: 21
+    holdout: 9
+  by_set:
+    sentinel: 11
+    e2e: 16
+    broad: 2
+    robustness: 1
+  by_eval_id:
+    I6: 1
+    LBL-direction: 3
+    LBL-finding_type: 3
+    LBL-legal_status: 3
+    LBL-materiality: 3
+    LBL-response_type: 3
+    LBL-urgency: 3
+    M1: 3
+    M2: 1
+    S0: 2
+    S1a: 3
+    S1b: 3
+    S3: 3
+    S4: 20
+    S5-R1: 4
+    S5-R2: 3
+    S5-R3: 4
+    S5-link: 2
+    V13: 1
+    V14: 4
+    V5: 1
+  by_slice:
+    absence: 1
+    abstention: 2
+    control: 9
+    decoy: 4
+    expired-surviving: 1
+    forfeitable-clock: 2
+    hop-complete: 2
+    superseded: 1
+    template-instance: 3
+    version: 1
+  thin_eval_ids:
+    I6: 1
+    V1: 0
+    V2: 0
+    V3: 0
+    V4: 0
+    V5: 1
+    V6: 0
+    V7: 0
+    V8: 0
+    V9: 0
+    V10: 0
+    V11: 0
+    V12: 0
+    V13: 1
+    M2: 1
+    M3: 0
+    M4: 0
+    M5: 0
+    M6: 0
+    M7: 0
+  thin_slices:
+    absence: 1
+    version: 1
+    superseded: 1
+    expired-surviving: 1
+items:
+- id: S4-GPC-01
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  set: sentinel
+  slice:
+  - hop-complete
+  confidence: high
+  status: done
+  gold_file: e2e/T1_TR01_2026-10-01.yaml
+  gold_ref: F4
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: authored by WP2; sentinel per HANDOFF §4 (hop-complete chains)
+  split: dev
+  package: WP1
+- id: S4-GPC-02
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  set: sentinel
+  slice:
+  - decoy
+  confidence: high
+  status: done
+  gold_file: e2e/T1_TR01_2026-10-01.yaml
+  gold_ref: F4
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: authored by WP2; sentinel per HANDOFF §4 (decoys)
+  split: holdout
+  package: WP1
+- id: S4-GPC-05
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  set: sentinel
+  slice:
+  - abstention
+  confidence: abstain_only
+  status: done
+  gold_file: e2e/T1_TR01_2026-10-01.yaml
+  gold_ref: F9
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: authored by WP2; abstention-only sentinel (HTS 7412 annex tier unconfirmed, HANDOFF §10). NOT in T2 tier table -> WP2's (T1), per WP1 brief instruction.
+  split: dev
+  package: WP1
+- id: S4-KPS-03
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: null
+  eval_ids:
+  - S4
+  - V5
+  set: sentinel
+  slice:
+  - version
+  - superseded
+  confidence: high
+  status: done
+  gold_file: unit/S4-KPS-03.yaml
+  gold_ref: F1
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: unit sentinel per WP1 task brief (version pin, not in any e2e file); to be written as unit/S4-KPS-03.yaml. Not yet written.
+  split: dev
+  package: WP1
+- id: B02
+  aliases: []
+  source_file: B-tariff-downstream.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  - LBL-direction
+  set: sentinel
+  slice:
+  - expired-surviving
+  confidence: high
+  status: done
+  gold_file: e2e/T1_TR01_2026-10-01.yaml
+  gold_ref: F5
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: ''
+  split: dev
+  package: WP2
+- id: B03
+  aliases: []
+  source_file: B-tariff-downstream.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  - LBL-urgency
+  - LBL-materiality
+  - S5-R1
+  - S5-R2
+  - S5-R3
+  - LBL-response_type
+  set: sentinel
+  slice:
+  - forfeitable-clock
+  confidence: high
+  status: done
+  gold_file: e2e/T1_TR01_2026-10-01.yaml
+  gold_ref: F1
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: ''
+  split: dev
+  package: WP2
+- id: B05
+  aliases: []
+  source_file: B-tariff-downstream.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  - LBL-direction
+  - S5-link
+  set: e2e
+  slice:
+  - hop-complete
+  confidence: high
+  status: done
+  gold_file: e2e/T1_TR01_2026-10-01.yaml
+  gold_ref: F2
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Cross-document pass-through notice.
+  split: holdout
+  package: WP2
+- id: B07
+  aliases: []
+  source_file: B-tariff-downstream.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  - LBL-materiality
+  - S5-R1
+  - S5-R2
+  - S5-R3
+  - LBL-response_type
+  set: e2e
+  slice: []
+  confidence: high
+  status: done
+  gold_file: e2e/T1_TR01_2026-10-01.yaml
+  gold_ref: F8
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Tier 3 monitor.
+  split: dev
+  package: WP2
+- id: B10
+  aliases: []
+  source_file: B-tariff-downstream.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  set: e2e
+  slice:
+  - absence
+  confidence: high
+  status: done
+  gold_file: e2e/T1_TR01_2026-10-01.yaml
+  gold_ref: F7
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: ''
+  split: dev
+  package: WP2
+- id: B11
+  aliases: []
+  source_file: B-tariff-downstream.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  - LBL-urgency
+  set: sentinel
+  slice:
+  - forfeitable-clock
+  confidence: high
+  status: done
+  gold_file: e2e/T1_TR01_2026-10-01.yaml
+  gold_ref: F6
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Clock already ran. Urgency gold is no_clock.
+  split: holdout
+  package: WP2
+- id: B15
+  aliases: []
+  source_file: B-tariff-downstream.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  - S5-link
+  - V13
+  set: e2e
+  slice: []
+  confidence: high
+  status: done
+  gold_file: e2e/T1_TR01_2026-10-01.yaml
+  gold_ref: F3
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: affected_or_needs_review. Certificate does not isolate this proclamation.
+  split: holdout
+  package: WP2
+- id: B16
+  aliases: []
+  source_file: B-tariff-downstream.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  - S3
+  set: sentinel
+  slice:
+  - decoy
+  confidence: high
+  status: done
+  gold_file: e2e/T1_TR01_2026-10-01.yaml
+  gold_ref: F10
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: ''
+  split: dev
+  package: WP2
+- id: TR10-S4-01
+  aliases: []
+  source_file: C-noncompete.md
+  trigger: TR-10
+  eval_ids:
+  - S4
+  - LBL-urgency
+  - M1
+  - S5-R1
+  - S5-R2
+  - S5-R3
+  - LBL-response_type
+  - LBL-legal_status
+  set: e2e
+  slice:
+  - template-instance
+  confidence: high
+  status: done
+  gold_file: e2e/T3a_TR10_2026-10-01.yaml
+  gold_ref: F2
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Pair with T3b. Whitcombe annualizes above the 2026 threshold.
+  split: dev
+  package: WP3
+- id: TR10-S4-05
+  aliases: []
+  source_file: C-noncompete.md
+  trigger: TR-10
+  eval_ids:
+  - S4
+  - LBL-finding_type
+  - M1
+  - S5-R1
+  - V14
+  - LBL-legal_status
+  set: sentinel
+  slice:
+  - template-instance
+  confidence: high
+  status: done
+  gold_file: e2e/T3a_TR10_2026-10-01.yaml
+  gold_ref: F1
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Pair with T3b. Classification only; earnings not in corpus.
+  split: dev
+  package: WP3
+- id: TR10-S4-06
+  aliases: []
+  source_file: C-noncompete.md
+  trigger: TR-10
+  eval_ids:
+  - S4
+  - M1
+  set: e2e
+  slice: []
+  confidence: high
+  status: done
+  gold_file: e2e/T3a_TR10_2026-10-01.yaml
+  gold_ref: F3
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Hale, non-owner. Pair with T3b.
+  split: dev
+  package: WP3
+- id: TR10-S4-06-OWNER
+  aliases: []
+  source_file: C-noncompete.md
+  trigger: TR-10
+  eval_ids:
+  - S4
+  set: e2e
+  slice:
+  - control
+  confidence: high
+  status: done
+  gold_file: e2e/T3a_TR10_2026-10-01.yaml
+  gold_ref: F4
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Mercer stays not_affected at both dates. The purchase agreement states that OWNER owns all outstanding shares of the seller.
+  split: dev
+  package: WP3
+- id: D-DIST-01
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-01
+  eval_ids:
+  - S1a
+  set: e2e
+  slice:
+  - control
+  confidence: high
+  status: done
+  gold_file: e2e/T1_TR01_2026-10-01.yaml
+  gold_ref: change_record
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  split: dev
+  package: WP4
+- id: D-DIST-02
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-01
+  eval_ids:
+  - S1a
+  set: e2e
+  slice:
+  - control
+  confidence: high
+  status: done
+  gold_file: e2e/T1_TR01_2026-10-01.yaml
+  gold_ref: change_record
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  split: holdout
+  package: WP4
+- id: D-S0-05
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S0
+  set: broad
+  slice: []
+  confidence: high
+  status: done
+  gold_file: unit/D-S0-05.yaml
+  gold_ref: file
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  split: holdout
+  package: WP4
+- id: D-S1B-01
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-10
+  eval_ids:
+  - S1b
+  - M2
+  set: broad
+  slice:
+  - control
+  confidence: high
+  status: done
+  gold_file: unit/D-S1B-01.yaml
+  gold_ref: company_gate
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  split: holdout
+  package: WP4
+- id: D-TR14-CASTELLANO-12
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-14
+  eval_ids:
+  - S4
+  - LBL-finding_type
+  set: e2e
+  slice:
+  - decoy
+  confidence: high
+  status: done
+  gold_file: e2e/T5_TR14_2026-10-01.yaml
+  gold_ref: F2
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Castellano section 12, split from the technician-template finding so each document is its own stack.
+  split: dev
+  package: WP4
+- id: D-TR14-S4-01
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-14
+  eval_ids:
+  - S4
+  - LBL-materiality
+  - LBL-direction
+  - LBL-finding_type
+  - V14
+  - S5-R3
+  set: e2e
+  slice:
+  - template-instance
+  confidence: high
+  status: done
+  gold_file: e2e/T5_TR14_2026-10-01.yaml
+  gold_ref: F1
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  split: dev
+  package: WP4
+- id: D-TR14-S4-02
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-14
+  eval_ids:
+  - S4
+  set: sentinel
+  slice:
+  - abstention
+  confidence: abstain_only
+  status: done
+  gold_file: e2e/T5_TR14_2026-10-01.yaml
+  gold_ref: F3
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  split: dev
+  package: WP4
+- id: D-TR14-S4-03
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-14
+  eval_ids:
+  - S4
+  set: e2e
+  slice:
+  - decoy
+  confidence: high
+  status: done
+  gold_file: e2e/T5_TR14_2026-10-01.yaml
+  gold_ref: F4
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  split: holdout
+  package: WP4
+- id: D-TR90-S1b-03
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-90
+  eval_ids:
+  - S1b
+  - V14
+  set: e2e
+  slice:
+  - control
+  confidence: high
+  status: done
+  gold_file: e2e/C2_TR90_2026-10-01.yaml
+  gold_ref: company_gate
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  split: dev
+  package: WP4
+- id: D-TR90-S1b-04
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-90
+  eval_ids:
+  - S1b
+  set: e2e
+  slice:
+  - control
+  confidence: high
+  status: done
+  gold_file: e2e/C2_TR90_2026-10-01.yaml
+  gold_ref: company_gate
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  split: holdout
+  package: WP4
+- id: D-TR90-S3-01
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-14
+  eval_ids:
+  - S3
+  set: e2e
+  slice:
+  - control
+  confidence: high
+  status: done
+  gold_file: e2e/T5_TR14_2026-10-01.yaml
+  gold_ref: relevant_stacks
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  split: dev
+  package: WP4
+- id: S1a-TR03-01
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-03
+  eval_ids:
+  - S1a
+  - V14
+  - LBL-legal_status
+  set: e2e
+  slice:
+  - control
+  confidence: high
+  status: done
+  gold_file: e2e/C1_TR03_2026-10-01.yaml
+  gold_ref: change_record
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  split: dev
+  package: WP4
+- id: S3-03
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-03
+  eval_ids:
+  - S3
+  set: sentinel
+  slice:
+  - control
+  confidence: high
+  status: done
+  gold_file: e2e/C1_TR03_2026-10-01.yaml
+  gold_ref: relevant_stacks
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  split: dev
+  package: WP4
+- id: E-I6-01
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: TR-10 (source file for the constructed cosmetic pair)
+  eval_ids:
+  - S0
+  - I6
+  set: robustness
+  slice: []
+  confidence: high
+  status: done
+  gold_file: unit/D-S0-05.yaml
+  gold_ref: file
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Cosmetic rewrap of the Wyoming SF 107 trigger. Pair lives in unit/D-S0-05.yaml. Built from TR-90 text, not a TR-10 file, because that statute is short and the words survive a reflow.
+  split: dev
+  package: WP5
+- id: LBL-direction-01
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: null
+  eval_ids:
+  - LBL-direction
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: split-direction on Hai Phong entry MX7-2304417-9; direction slice is 'thin' per README (3 items) -- candidate for a future coverage-fill pass, but out of my brief's coverage-fill scope (absence/template-instance/superseded/version only); flagged, not selected
+  package: WP1
+- id: LBL-direction-02
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-02
+  eval_ids:
+  - LBL-direction
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: KPS exposure-only contrast case; direction slice is 'thin' per README but outside my brief's coverage-fill scope; flagged, not selected
+  package: WP1
+- id: LBL-materiality-02
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - LBL-materiality
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: materiality-despite-no-clock (Northaire ratchet); materiality slice already 'good'; underlying S4-NCS-01 authored by WP2; not selected
+  package: WP1
+- id: LBL-urgency-01
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: null
+  eval_ids:
+  - LBL-urgency
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: urgency LBL triple (Delmont window); underlying S4-DSC-01 fact pattern authored by WP2 in T1; urgency slice already 'good'; not selected
+  package: WP1
+- id: LBL-urgency-02
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-02
+  eval_ids:
+  - LBL-urgency
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: no-clock/lapsed §122 case on GPC-INV-26-1911; substantively covered by my planned S4-GPC-03 finding's urgency label already; urgency slice already 'good'; not selected as its own item
+  package: WP1
+- id: S1a-TR01-01
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S1a
+  set: e2e
+  slice:
+  - control
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'authored by WP2 Demoted: focused set did not author this item.'
+  package: WP1
+- id: S1a-TR01-02
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S1a
+  set: e2e
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'authored by WP2 Demoted: focused set did not author this item.'
+  package: WP1
+- id: S1a-TR01-03
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S1a
+  set: e2e
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'authored by WP2 Demoted: focused set did not author this item.'
+  package: WP1
+- id: S1a-TR01-04
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S1a
+  set: e2e
+  slice:
+  - version
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'authored by WP2 Demoted: focused set did not author this item.'
+  package: WP1
+- id: S1a-TR01-05
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S1a
+  set: e2e
+  slice:
+  - version
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'authored by WP2 Demoted: focused set did not author this item.'
+  package: WP1
+- id: S1a-TR01-06
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S1a
+  set: e2e
+  slice:
+  - decoy
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'authored by WP2 Demoted: focused set did not author this item.'
+  package: WP1
+- id: S1a-TR01-07
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S1a
+  set: e2e
+  slice:
+  - decoy
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'authored by WP2 Demoted: focused set did not author this item.'
+  package: WP1
+- id: S1a-TR02-01
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-02
+  eval_ids:
+  - S1a
+  set: e2e
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: planned for e2e/T2_TR02_2026-10-01.yaml change_record (C1, SCOTUS opinion); not yet written
+  package: WP1
+- id: S1a-TR02-02
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-02
+  eval_ids:
+  - S1a
+  set: e2e
+  slice:
+  - decoy
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: planned for e2e/T2_TR02_2026-10-01.yaml change_record (C2, EO 14389); also backs the EO14389 cross-trigger decoy finding; not yet written
+  package: WP1
+- id: S1a-TR02-03
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-02
+  eval_ids:
+  - S1a
+  set: e2e
+  slice:
+  - expired-surviving
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: planned for e2e/T2_TR02_2026-10-01.yaml change_record (C3, Proc. 11012 sec 122 surcharge, expired 2026-07-24); also the change_ref target for the GPC overcharge and FCCR findings (V13); not yet written
+  package: WP1
+- id: S1a-TR02-04/05
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-02
+  eval_ids:
+  - S1a
+  set: e2e
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: planned for e2e/T2_TR02_2026-10-01.yaml change_record (CBP PRA notice + IEEPA duty-refunds page, CAPE mechanics); combined bullet in source file; not yet written
+  package: WP1
+- id: S3-01
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S3
+  set: e2e
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'authored by WP2 Demoted: focused set did not author this item.'
+  package: WP1
+- id: S3-02
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-02
+  eval_ids:
+  - S3
+  set: e2e
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: planned relevant_stacks/pruned_stacks for e2e/T2; must also read B29 (downstream side) per WP1 task; not yet written
+  package: WP1
+- id: S4-DSC-02
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: null
+  eval_ids:
+  - S4
+  set: null
+  slice:
+  - decoy
+  - expired-surviving
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: expired-reference decoy (Delmont Q-2025-44710); not in T1 or T2 tier tables; not selected
+  package: WP1
+- id: S4-GPC-03
+  aliases:
+  - B24
+  source_file: A-tariff-supply.md
+  trigger: TR-02
+  eval_ids:
+  - S4
+  - S5-link
+  set: sentinel
+  slice:
+  - overcharge
+  - hop-complete
+  confidence: high
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'sentinel per HANDOFF §4 (overcharge: INV-26-1911). Tier 1. change_ref must point to C3 (Proc. 11012 expiry) per V13. Not yet written; B24 is the same fact pattern from Package B, alias not a separate finding.'
+  package: WP1
+- id: S4-GPC-04
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-02
+  eval_ids:
+  - S4
+  set: e2e
+  slice:
+  - decoy
+  confidence: high
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: logged per T2 tier table (refund pass-back clause likely moot for the TR-02 CAPE program; pass_rule not_affected). Not yet written.
+  package: WP1
+- id: S4-HPB-01
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-02
+  eval_ids:
+  - S4
+  set: sentinel
+  slice:
+  - hop-complete
+  confidence: high
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'sentinel per HANDOFF §4: the $8,172 IEEPA line only, hop-complete. Dollar figure and entry (MX7-2304417-9) actually come from S4-HPB-02''s fact pattern per priority-tiers-draft.md T2 table row 3 (''per S4-HPB-02'') -- must re-verify against the raw customs-entry document before finalizing. Not yet written.'
+  package: WP1
+- id: S4-HPB-02
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-02
+  eval_ids:
+  - S4
+  set: e2e
+  slice:
+  - decoy
+  confidence: high
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: logged decoy per T2 tier table ('§232 and MFN lines on the Hai Phong entry ... belong to TR-01, not TR-02'); may end up folded into S4-HPB-01's decoy_spans rather than a separate finding row -- decide when writing. Not yet written.
+  package: WP1
+- id: S4-KPS-01
+  aliases:
+  - B25
+  source_file: A-tariff-supply.md
+  trigger: TR-02
+  eval_ids:
+  - S4
+  - S5-link
+  set: e2e
+  slice:
+  - absence
+  - hop-complete
+  confidence: high
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: tier 2 per T2 tier table (Keystone passed IEEPA duties, no refund pass-back). Not yet written.
+  package: WP1
+- id: S4-KPS-02
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  set: null
+  slice:
+  - decoy
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: HTS 8481/8419 near-miss decoy; decoy slice already 'good' (~21 items) per README coverage matrix; not selected
+  package: WP1
+- id: S4-LWP-01
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  set: e2e
+  slice:
+  - hop-complete
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'authored by WP2 Demoted: focused set did not author this item.'
+  package: WP1
+- id: S4-LWP-02
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  set: e2e
+  slice:
+  - superseded
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'authored by WP2 Demoted: focused set did not author this item.'
+  package: WP1
+- id: S4-NCS-01
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  set: e2e
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'authored by WP2. Northaire ratchet: still asserted-not-verified per README §4/HANDOFF §10 open items; that judgment call is WP2''s. Demoted: focused set did not author this item.'
+  package: WP1
+- id: S4-NCS-02
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  set: sentinel
+  slice:
+  - version
+  confidence: high
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: unit sentinel per WP1 task brief (version pin, TR-01, not in any e2e file); to be written as unit/S4-NCS-02.yaml. Not yet written.
+  package: WP1
+- id: S4-RPS-01
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids: []
+  set: null
+  slice: []
+  confidence: null
+  status: excluded
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: 'REMOVED in A-tariff-supply.md: Riverside Pipe & Supply Co. deleted from corpus/company/profile.yaml 2026-09-29 (CHANGES-2026-09-29.md §A3); nothing left to prune or scope'
+  contradiction: null
+  tier_flag: null
+  notes: null
+  package: WP1
+- id: S4-SCP-01
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  set: null
+  slice:
+  - absence
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: absence (no transaction to apply Solace's duty clause to); absence slice already 'good' (~11 items); not selected
+  package: WP1
+- id: D-DIST-04
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-90
+  eval_ids:
+  - S1a
+  - S5-link
+  set: e2e
+  slice:
+  - decoy
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-S0-01
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-01
+  eval_ids:
+  - S0
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-S0-02
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-01
+  eval_ids:
+  - S0
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-S0-03
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-10
+  eval_ids:
+  - S0
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-S0-04
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-11
+  eval_ids:
+  - S0
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-S1B-02
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-11
+  eval_ids:
+  - S1b
+  - M2
+  set: null
+  slice:
+  - control
+  - flip
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-S1B-03
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S1b
+  - M2
+  set: broad
+  slice:
+  - control
+  - flip
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-S1B-04
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-02
+  eval_ids:
+  - S1b
+  - M2
+  set: null
+  slice:
+  - control
+  - flip
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-S1B-05
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-01
+  eval_ids:
+  - S1b
+  - M2
+  set: null
+  slice:
+  - control
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-S1B-06
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S1b
+  - M6
+  set: null
+  slice:
+  - control
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-S1B-07
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S1b
+  - M2
+  set: null
+  slice:
+  - control
+  - flip
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-S1B-08
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-90
+  eval_ids:
+  - S1b
+  - M2
+  set: null
+  slice:
+  - control
+  - flip
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-S1B-09
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S1b
+  - M6
+  set: null
+  slice:
+  - control
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-TR20-S1a-01
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S1a
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-TR20-S1a-02
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S1a
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-TR20-S1a-03
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S1a
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-TR20-S1a-04
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S1a
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-TR20-S1a-05
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S1a
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-TR20-S1a-06
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S1a
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-TR20-S3-01
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S3
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-TR20-S4-01
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S4
+  - LBL-materiality
+  - LBL-direction
+  set: broad
+  slice:
+  - hop-complete
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-TR20-S4-02
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S4
+  set: null
+  slice:
+  - absence
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-TR20-S4-03
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S4
+  - V5
+  set: null
+  slice:
+  - superseded
+  - version
+  confidence: null
+  status: merged
+  gold_file: null
+  gold_ref: null
+  canonical: D-TR20-S4-07
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-TR20-S4-04
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S4
+  set: null
+  slice:
+  - decoy
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-TR20-S4-05
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S4
+  set: null
+  slice:
+  - decoy
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-TR20-S4-06
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S4
+  set: null
+  slice:
+  - decoy
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-TR20-S4-07
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S4
+  - V5
+  set: broad
+  slice:
+  - version
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-TR20-S4-08
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S4
+  set: broad
+  slice:
+  - decoy
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: pending Jason per HANDOFF §10 (CA Comfort Club two-price split) — gold authored as a two-silo decoy, flagged for confirmation it's intentional
+  tier_flag: null
+  package: WP4
+- id: D-TR21-S1a-01
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-21
+  eval_ids:
+  - S1a
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: depends on missing 16 CFR 425 text (HANDOFF §10); backlogged
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-TR21-S1a-02
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-21
+  eval_ids:
+  - S1a
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: depends on missing 16 CFR 425 text (HANDOFF §10); backlogged
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-TR21-S1a-03
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-21
+  eval_ids:
+  - S1a
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: depends on missing 16 CFR 425 text (HANDOFF §10); backlogged
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-TR21-S3-01
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-21
+  eval_ids:
+  - S3
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: depends on missing 16 CFR 425 text (HANDOFF §10); backlogged
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-TR21-S4-01
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-21
+  eval_ids:
+  - S4
+  set: null
+  slice:
+  - decoy
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: depends on missing 16 CFR 425 text (HANDOFF §10); backlogged
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-TR21-S4-02
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-21
+  eval_ids:
+  - S4
+  set: null
+  slice:
+  - decoy
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: depends on missing 16 CFR 425 text (HANDOFF §10); backlogged
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-TR21-S4-03
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-21
+  eval_ids:
+  - S4
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: depends on missing 16 CFR 425 text (HANDOFF §10); backlogged
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-TR90-S1b-01
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-14
+  eval_ids:
+  - S1b
+  - S4
+  - LBL-materiality
+  - LBL-direction
+  set: e2e
+  slice:
+  - flip
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: D-TR90-S1b-02
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-14
+  eval_ids:
+  - S1b
+  set: e2e
+  slice:
+  - control
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  package: WP4
+- id: E-I6-02
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: TR-01
+  eval_ids:
+  - I6
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Not selected given the I6 budget (4 of 6 candidates chosen); its pass condition ('each run internally consistent') is harder to express as a static fixture than the 4 selected items.
+  package: WP5
+- id: E-I6-03
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - I6
+  - V6
+  - V7
+  set: robustness
+  slice: []
+  confidence: high
+  status: backlog
+  gold_file: unit/E-I6-03.yaml
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: SELECTED. Not yet built. Reuses First Harbor Bank credit-agreement facts (441,875 chars, FCCR covenant near line 3,770) already confirmed for the V6-FX fixture.
+  package: WP5
+- id: E-I6-04
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - I6
+  set: robustness
+  slice: []
+  confidence: high
+  status: backlog
+  gold_file: unit/E-I6-04.yaml
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'SELECTED. Not yet built. Maps to contract §2.6 `faults.tool_error: {tool, nth_call}` hook on ACQ-05 (pinecrest franchise, 206,523 chars).'
+  package: WP5
+- id: E-I6-05
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - I6
+  set: robustness
+  slice: []
+  confidence: high
+  status: backlog
+  gold_file: unit/E-I6-05.yaml
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: SELECTED. Not yet built. Maps to contract §2.6 `faults.kill_after` + `harness resume` hook; largely an infra/harness test per the E file's own note, pass condition is app-level checkpoint-and-skip, not eve's native replay.
+  package: WP5
+- id: E-I6-06
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - I6
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Not selected given the I6 budget (4 of 6 candidates chosen); embedded-instructions test is optional per eval-design.md §8 ('Optional adversarial case in I6'). Candidate if WP6 wants a 5th I6 item.
+  package: WP5
+- id: E-M1-01
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: TR-10
+  eval_ids:
+  - M1
+  set: null
+  slice:
+  - version
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: M1 for TR-10 is WP3's T3a/T3b pair territory; not selected by WP5 (WP5's one added M1 item is E-M1-03 per HANDOFF's own suggestion).
+  package: WP5
+- id: E-M1-02
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: TR-10
+  eval_ids:
+  - M1
+  set: null
+  slice:
+  - forfeitable-clock
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: WP3/T3a-T3b territory (WA notice deadline); not selected by WP5.
+  package: WP5
+- id: E-M1-03
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: TR-12
+  eval_ids:
+  - M1
+  - S4
+  set: metamorphic
+  slice:
+  - forfeitable-clock
+  - version
+  confidence: high
+  status: backlog
+  gold_file: unit/E-M1-03.yaml
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'SELECTED (WP5''s added M1 item per HANDOFF''s suggestion ''e.g. M1-03 on TR-12''). Not yet authored (paused). Docs: EMP-TRAIN-CA-2026-02-09 (ca_ab692_after_cutoff) vs EMP-TRAIN-CA-2025-09-15 (ca_ab692_before_cutoff, should-not-flip control). As-of 2025-11-15 vs 2026-10-01. No VERIFY blocking; legal position resolved in legal-questions.md Q1 (prospective only, cutoff 2026-01-01).'
+  package: WP5
+- id: E-M1-04
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - M1
+  set: null
+  slice:
+  - forfeitable-clock
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Good clean M1 candidate (Delmont price-protection expiry) but not selected given the M1 budget of 1 added item; also feeds E-M4-02 (M4 dangerous-confusion stress) which WP5 does plan to author, so its dollar/date facts will be reused there.
+  package: WP5
+- id: E-M1-05
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - M1
+  set: null
+  slice:
+  - forfeitable-clock
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Paired duplicate mechanism to E-M1-04; not selected.
+  package: WP5
+- id: E-M1-06
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: TR-01
+  eval_ids:
+  - M1
+  set: null
+  slice:
+  - forfeitable-clock
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: VERIFY-blocked (the actual notice date starting the 21-day clock is not confirmed, so the as-of shift boundary can't be computed at high confidence yet). Also likely `merged` with Package B's Cascade Ridge REA (B11, a sentinel forfeitable-clock item) — B11 already covers this stack's core finding, so a WP5 M1 item here would risk duplicating B11 rather than adding new signal. Not selected.
+  package: WP5
+- id: E-M1-07
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: TR-02
+  eval_ids:
+  - M1
+  set: null
+  slice:
+  - forfeitable-clock
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: VERIFY-blocked (date GPC began paying at the qualifying tariff rate not established; needs a Package A/B cross-check). Not selected.
+  package: WP5
+- id: E-M1-08
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - M1
+  - expired-surviving
+  set: null
+  slice:
+  - expired-surviving
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Likely `merged` with Package B's Sunpoint MFN scenarios (B02/B21 in priority-tiers-draft.md); not authored separately by WP5 to avoid duplication — confirm canonical id once B lands.
+  package: WP5
+- id: E-M1-09
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - M1
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Breadth check flagged by the E file itself as needing per-document survival analysis (VERIFY, not done in that pass) and partly outside cross-cutting scope (flagged for Package B/Z); not selected.
+  package: WP5
+- id: E-M3-01
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - M3
+  set: metamorphic
+  slice: []
+  confidence: high
+  status: backlog
+  gold_file: unit/E-M3-01.yaml
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: SELECTED. Not yet authored (paused). WA-focus custom prompt; in-focus/dismissed lists per the E file are usable as-is, still need to verify the WA-DES judgment-call note before finalizing.
+  package: WP5
+- id: E-M3-02
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - M3
+  set: metamorphic
+  slice: []
+  confidence: high
+  status: backlog
+  gold_file: unit/E-M3-02.yaml
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: SELECTED. Not yet authored (paused). Deadline-only-focus custom prompt; the E file flags a VERIFY on whether E-V7-02's Claims section 21-day window reclassifies it as in-focus — resolve by reading that section before finalizing gold.
+  package: WP5
+- id: E-M4-01
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - M4
+  set: metamorphic
+  slice: []
+  confidence: high
+  status: backlog
+  gold_file: unit/E-M4-01.yaml
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: SELECTED. Not yet authored (paused). $50k threshold mechanics test; several exposure figures in the E file are VERIFY-flagged (GPC surcharge aggregate volume, PDE sub-subcontract delta, credit facility size) — resolve by computing from corpus text before finalizing, or narrow the item to the mechanics-only claim per the E file's own framing (E-V7-01's $486,000 fee is already a clean above-threshold fact).
+  package: WP5
+- id: E-M4-02
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - M4
+  set: metamorphic
+  slice:
+  - forfeitable-clock
+  confidence: high
+  status: backlog
+  gold_file: unit/E-M4-02.yaml
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: SELECTED. Not yet authored (paused). Dangerous-confusion stress case (small-dollar forfeitable-clock item must not be silently dropped by a materiality threshold); needs the Delmont Q-2025-44710 quote's actual dollar value (VERIFY in the E file) before finalizing — resolve via spans.py/direct read on resume.
+  package: WP5
+- id: E-M5-01
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - M5
+  set: metamorphic
+  slice: []
+  confidence: high
+  status: backlog
+  gold_file: unit/E-M5-01.yaml
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: SELECTED, only M5 candidate the E file supports (training-repayment/vendor-NDA families are hardcoded tuples, not knob-scalable). Not yet authored (paused). Needs the WA rate=61.50 boundary-case employee names resolved (grep -l '61.50 per hour' documents/employment/signed-agreements/*wa*.md) before finalizing, per the E file's own flagged gap.
+  package: WP5
+- id: E-M6-01
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - M6
+  set: metamorphic
+  slice: []
+  confidence: high
+  status: backlog
+  gold_file: unit/E-M6-01.yaml
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: SELECTED. Not yet authored (paused). No VERIFY blocking; construction/methodology item.
+  package: WP5
+- id: E-M6-02
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - M6
+  set: metamorphic
+  slice: []
+  confidence: high
+  status: backlog
+  gold_file: unit/E-M6-02.yaml
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: SELECTED. Not yet authored (paused). No VERIFY blocking (all spot-checked clusters already in ascending date order).
+  package: WP5
+- id: E-M7-01
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: TR-01/TR-02
+  eval_ids:
+  - M7
+  set: metamorphic
+  slice:
+  - absence
+  confidence: high
+  status: backlog
+  gold_file: unit/E-M7-01.yaml
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'SELECTED. Not yet authored (paused). Quote for FIXED_PRICE_VALLEY confirmed verbatim via grep at line 65 of CUS-VMS-MSA (see progress/WP5.md). Fixture: fixtures/metamorphic/E-M7-01.yaml (file, exact quote to delete, replacement text) not yet written.'
+  package: WP5
+- id: E-M7-02
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: TR-10
+  eval_ids:
+  - M7
+  set: metamorphic
+  slice:
+  - template-instance
+  confidence: high
+  status: backlog
+  gold_file: unit/E-M7-02.yaml
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: SELECTED. Not yet authored (paused). Quote for TECH_NC_WA confirmed verbatim via grep at line 67 of the WA technician template (see progress/WP5.md).
+  package: WP5
+- id: E-M7-03
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: TR-01
+  eval_ids:
+  - M7
+  set: metamorphic
+  slice:
+  - absence
+  - control
+  confidence: high
+  status: backlog
+  gold_file: unit/E-M7-03.yaml
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: SELECTED. Not yet authored (paused). Quote for ESCALATION_CASCADE confirmed verbatim via grep at line 103 of the Cascade Ridge subcontract (see progress/WP5.md).
+  package: WP5
+- id: E-M7-04
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - M7
+  set: null
+  slice:
+  - version
+  - abstention
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'Not selected: its ''before'' baseline (E-VR-01) is excluded from gold, so this pair needs the same abstention-only caution per the E file''s Round-2 note. Skipped given the M7 budget (4 of 6 non-excluded candidates chosen).'
+  package: WP5
+- id: E-M7-05
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - M7
+  set: metamorphic
+  slice: []
+  confidence: high
+  status: backlog
+  gold_file: unit/E-M7-05.yaml
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: SELECTED. Not yet authored (paused). Standalone (no cross-stack identity link after the Round-2 Rafael Underhill/Ingrid Falkner correction). Quote for STAY_BONUS_CLAWBACK not yet grepped — resume by reading documents/employment/rafael-underhill_retention-bonus-agreement_2025-04-01.md.
+  package: WP5
+- id: E-M7-06
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: TR-01
+  eval_ids:
+  - M7
+  set: null
+  slice:
+  - abstention
+  confidence: abstain_only
+  status: excluded
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: 'Deferred per HANDOFF §3/§4 and legal-questions.md Q4: TX contract-silence default (no-adjustment vs. open-to-negotiation) is not decidable at high confidence without a GC judgment call.'
+  contradiction: null
+  tier_flag: null
+  notes: Excluded per instructions (explicitly named in the WP5 task as excluded, matching the E file's own Round-2 exclusion).
+  package: WP5
+- id: E-M7-07
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: TR-12
+  eval_ids:
+  - M7
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Not selected given the M7 budget cap of 4 items; M1-03 already gives temporal/AB-692 coverage on the same underlying document family, so this would be partially redundant. Candidate if WP6 wants a 5th M7 item.
+  package: WP5
+- id: E-TID-01
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: TR-10
+  eval_ids:
+  - S4
+  - template-instance
+  set: null
+  slice:
+  - template-instance
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Likely `merged` with Package C's TR-10 e2e/unit set (T3a/T3b own the WA technician noncompete findings per priority-tiers-draft.md T3). Sentinel-set version-pin items (S4-KPS-03/S4-NCS-02) are separate; this is WP3 (C) territory — mark merged with canonical once C lands, don't author a duplicate.
+  package: WP5
+- id: E-TID-02
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - S4
+  - template-instance
+  set: null
+  slice:
+  - template-instance
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: VERIFY-blocked (IL WHEREAS recital vs template not diffed); not selected given budget.
+  package: WP5
+- id: E-TID-03
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: TR-13
+  eval_ids:
+  - S4
+  - V7
+  - template-instance
+  - absence
+  set: null
+  slice:
+  - absence
+  - control
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Good should-not-flag control; likely belongs to Package C's TR-13 set. Not selected for WP5's budget; candidate if WP6 finds the absence/control slice short.
+  package: WP5
+- id: E-TID-04
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - S4
+  - template-instance
+  set: null
+  slice:
+  - template-instance
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: VERIFY-blocked (dollar figures/completion dates not read; CA repayment-restriction rule not confirmed).
+  package: WP5
+- id: E-TID-05
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - S4
+  - template-instance
+  - control
+  set: null
+  slice:
+  - template-instance
+  - control
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Should-match control per Round 2 correction (Ingrid Falkner, not Rafael Underhill); likely Package C territory (TX technician / TR-10 or TR-13 set).
+  package: WP5
+- id: E-V5-01
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - V5
+  set: null
+  slice:
+  - superseded
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: V5 slice already well covered by e2e/base-package V5 material; not selected for a WP5 invariant-fixture or metamorphic item. Candidate for coverage-fill if WP6 finds the V5 slice under 2 items elsewhere.
+  package: WP5
+- id: E-V5-02
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - V5
+  set: null
+  slice:
+  - superseded
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: null
+  package: WP5
+- id: E-V5-03
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - V5
+  set: null
+  slice:
+  - superseded
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: null
+  package: WP5
+- id: E-V5-04
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - V5
+  set: null
+  slice:
+  - superseded
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: null
+  package: WP5
+- id: E-V5-05
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: TR-01/TR-02 (downstream only; scenario itself trigger-independent)
+  eval_ids:
+  - V5
+  set: null
+  slice:
+  - superseded
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'Planned reuse (not a separate gold item): supplies the real GPC base-vs-amendment-1 spans for the V5-FX invariant fixture (fixtures/invariants/V5/). Not itself authored as a unit item.'
+  package: WP5
+- id: E-V5-06
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: TR-02
+  eval_ids:
+  - V5
+  set: null
+  slice:
+  - superseded
+  - expired-surviving
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Strongest compound V5 case per the E file's own flag, but depends on the still-open HTS-7412/successor-duty VERIFY owned by Package A; deferred, not selected by WP5.
+  package: WP5
+- id: E-V5-07
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - V5
+  set: null
+  slice:
+  - version
+  - superseded
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: null
+  package: WP5
+- id: E-V5-08
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - V5
+  - M1
+  set: null
+  slice:
+  - version
+  - control
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Pairs naturally with M1 per the E file's own realism note; not selected as WP5's M1 addition (E-M1-03 chosen instead, cleaner/no VERIFY).
+  package: WP5
+- id: E-V5-09
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - V5
+  - expired-surviving
+  set: null
+  slice:
+  - expired-surviving
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Likely duplicates/overlaps a base-package (B/D) expired-document item; check for merge before final authoring.
+  package: WP5
+- id: E-V5-10
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - V5
+  set: null
+  slice:
+  - superseded
+  - expired-surviving
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Cross-checks Package B's Sunpoint/Crestline MFN scenarios per the E file's own note; likely `merged` with a Package B canonical id once B lands — do not author a duplicate.
+  package: WP5
+- id: E-V5-11
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: TR-01/TR-02
+  eval_ids:
+  - V5
+  - S4
+  set: null
+  slice:
+  - decoy
+  - abstention
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Almost certainly `merged` with Package A's e2e T1/T2 findings (S4-GPC-03/05, GPC-INV-26-1911/1912 already appear in priority-tiers-draft.md T1/T2) — likely authored by WP1's e2e file, not WP5. Confirm gold_file once e2e/T1 or T2 lands, then mark merged with canonical = that finding id.
+  package: WP5
+- id: E-V6-01
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - V6
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'Planned reuse: supplies the real First Harbor Bank credit-agreement file/char-count for the V6-FX invariant fixture. Not itself authored as a separate unit item (would duplicate the fixture).'
+  package: WP5
+- id: E-V6-02
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: TR-10/TR-13
+  eval_ids:
+  - V6
+  - V5
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: VERIFY-blocked (which of 3 occurrences is operative not confirmed); not selected given budget.
+  package: WP5
+- id: E-V6-03
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - V6
+  - control
+  set: null
+  slice:
+  - control
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: null
+  package: WP5
+- id: E-V6-04
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: TR-10/TR-13
+  eval_ids:
+  - V6
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: VERIFY-blocked (exact char span not confirmed).
+  package: WP5
+- id: E-V6-05
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - V6
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Flagged unverified candidates in the source file itself (grep for expected headings did not match on a first pass); not selected.
+  package: WP5
+- id: E-V7-01
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: TR-01/TR-02
+  eval_ids:
+  - V7
+  - absence
+  set: null
+  slice:
+  - absence
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'Planned reuse: supplies real Valley Medical FIXED_PRICE_VALLEY spans for V2/V4/V7/V8 invariant fixtures and for the M7-01 metamorphic item. Likely also `merged` with Package A/B''s e2e T1 (priority-tiers/B-file already covers Valley Medical fixed-price absence under B03/related ids) — confirm canonical id once A/B land.'
+  package: WP5
+- id: E-V7-02
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: TR-01
+  eval_ids:
+  - V7
+  - absence
+  set: null
+  slice:
+  - absence
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: VERIFY-blocked (whether the 21-day Claims section gives an additional path); likely `merged` with Package B (Harborview appears in priority-tiers T1 as B04/B05).
+  package: WP5
+- id: E-V7-03
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: TR-01
+  eval_ids:
+  - V7
+  - absence
+  set: null
+  slice:
+  - absence
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Dependent finding for the excluded E-M7-06; likely `merged` with Package B's Titan Peak (B12).
+  package: WP5
+- id: E-V7-04
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: TR-01
+  eval_ids:
+  - V7
+  - absence
+  set: null
+  slice:
+  - absence
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: VERIFY-blocked (unlisted escalation clause not ruled out); not selected given budget.
+  package: WP5
+- id: E-V7-05
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: TR-01
+  eval_ids:
+  - V7
+  - control
+  set: null
+  slice:
+  - control
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Should-not-flag control; planned reuse as the M7-03 'before' state (ESCALATION_CASCADE).
+  package: WP5
+- id: E-VR-01
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - V5
+  - S5-R1
+  set: null
+  slice:
+  - version
+  - abstention
+  confidence: abstain_only
+  status: excluded
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: 'Deferred per HANDOFF §3/§4 and legal-questions.md Q4: which clause governs (PO notation vs. account-agreement shipment-date rule) is not decidable at high confidence without a GC judgment call and the PO''s actual ship date.'
+  contradiction: null
+  tier_flag: null
+  notes: Excluded per instructions (WP5 task explicitly lists E-VR-01 as excluded, matching the E file's own Round-2 exclusion).
+  package: WP5
+- id: E-VR-02
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - V5
+  set: null
+  slice:
+  - version
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Blocked on an unresolved VERIFY (exact differing clause between the two stale Northaire revisions not yet read); not selected given budget, revisit if V5/version slice needs a 3rd item.
+  package: WP5
+- id: E-VR-03
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - V5
+  set: null
+  slice:
+  - version
+  - control
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: null
+  package: WP5
+- id: E-VR-04
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: none
+  eval_ids:
+  - V5
+  set: null
+  slice:
+  - version
+  - decoy
+  - abstention
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: VERIFY-blocked (Delmont account-agreement mechanism not located); would be abstain_only if authored.
+  package: WP5
+- id: E-VR-05
+  aliases: []
+  source_file: E-cross-cutting.md
+  trigger: TR-20/TR-21
+  eval_ids:
+  - V5
+  set: null
+  slice:
+  - version
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: VERIFY already resolved per the E file's Revision log (both clause versions quoted); likely belongs to Package D's TR-20/TR-21 e2e/unit set rather than WP5 — confirm ownership before authoring to avoid duplication.
+  package: WP5
+- id: V1-FX
+  aliases: []
+  source_file: eval-design.md §4
+  trigger: none
+  eval_ids:
+  - V1
+  set: invariant-fixture
+  slice: []
+  confidence: high
+  status: backlog
+  gold_file: fixtures/invariants/V1/
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'Design: StackFinding JSON missing a required field or with an out-of-enum label value. Not yet built.'
+  package: WP5
+- id: V10-FX
+  aliases: []
+  source_file: eval-design.md §4
+  trigger: none
+  eval_ids:
+  - V10
+  set: invariant-fixture
+  slice: []
+  confidence: high
+  status: backlog
+  gold_file: fixtures/invariants/V10/
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'Design: ChangeRecord item C2 (substantive:true) absent from ImpactReport change_item_closure. Not yet built.'
+  package: WP5
+- id: V11-FX
+  aliases: []
+  source_file: eval-design.md §4
+  trigger: none
+  eval_ids:
+  - V11
+  set: invariant-fixture
+  slice: []
+  confidence: high
+  status: backlog
+  gold_file: fixtures/invariants/V11/
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'Design: ScopeTrace omits a real stack_id present in corpus/manifest.jsonl. Not yet built; still need to confirm the exact stack_id string form for a cluster-folder stack per CONVENTIONS §3 before writing it.'
+  package: WP5
+- id: V12-FX
+  aliases: []
+  source_file: eval-design.md §4
+  trigger: none
+  eval_ids:
+  - V12
+  set: invariant-fixture
+  slice: []
+  confidence: high
+  status: backlog
+  gold_file: fixtures/invariants/V12/
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'Design: ImpactReport item rationale text names no actual label/fact field of the finding (structural check). Not yet built.'
+  package: WP5
+- id: V13-FX
+  aliases: []
+  source_file: HANDOFF.md §3
+  trigger: none
+  eval_ids:
+  - V13
+  set: invariant-fixture
+  slice: []
+  confidence: high
+  status: backlog
+  gold_file: fixtures/invariants/V13/
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'Design per explicit HANDOFF instruction: finding.change_ref points to an id not present in the run''s own ChangeRecord.items. Not yet built.'
+  package: WP5
+- id: V14-FX
+  aliases: []
+  source_file: HANDOFF.md §3
+  trigger: none
+  eval_ids:
+  - V14
+  set: invariant-fixture
+  slice:
+  - control
+  confidence: high
+  status: backlog
+  gold_file: fixtures/invariants/V14/
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'Design per explicit HANDOFF instruction: First Harbor Bank FCCR covenant finding appears in a non-tariff run''s ImpactReport (e.g. TR-10) as a negative-control violation. Not yet built.'
+  package: WP5
+- id: V2-FX
+  aliases: []
+  source_file: eval-design.md §4
+  trigger: none
+  eval_ids:
+  - V2
+  set: invariant-fixture
+  slice: []
+  confidence: high
+  status: backlog
+  gold_file: fixtures/invariants/V2/
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'Design: ImpactReport item citations.clause quote altered vs. real text at the real Valley Medical FIXED_PRICE_VALLEY span. Not yet built.'
+  package: WP5
+- id: V3-FX
+  aliases: []
+  source_file: eval-design.md §4
+  trigger: none
+  eval_ids:
+  - V3
+  set: invariant-fixture
+  slice: []
+  confidence: high
+  status: backlog
+  gold_file: fixtures/invariants/V3/
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'Design: real verbatim quote from a file, but span offsets point to a different location in the same file (out-of-section). Not yet built.'
+  package: WP5
+- id: V4-FX
+  aliases: []
+  source_file: eval-design.md §4
+  trigger: none
+  eval_ids:
+  - V4
+  set: invariant-fixture
+  slice: []
+  confidence: high
+  status: backlog
+  gold_file: fixtures/invariants/V4/
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'Design: quote from TECH_NC_WA (WA technician template, line 67) truncated right before ''...this Section shall not apply if Employee''s earnings...'' — a real unless/carve-out continuation, confirmed via grep. Not yet built.'
+  package: WP5
+- id: V5-FX
+  aliases: []
+  source_file: eval-design.md §4
+  trigger: none
+  eval_ids:
+  - V5
+  set: invariant-fixture
+  slice:
+  - superseded
+  confidence: high
+  status: backlog
+  gold_file: fixtures/invariants/V5/
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'Design: finding citing GPC''s superseded 2019 base Exhibit A/Metals Price Adjustment instead of Amendment-1''s Exhibit A-1 (E-V5-05 material). Not yet built.'
+  package: WP5
+- id: V6-FX
+  aliases: []
+  source_file: eval-design.md §4
+  trigger: none
+  eval_ids:
+  - V6
+  set: invariant-fixture
+  slice: []
+  confidence: high
+  status: backlog
+  gold_file: fixtures/invariants/V6/
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'Design: run-trace claiming a full read of First Harbor Bank credit agreement (441,875 chars per manifest CORP-CREDIT-01) with chars_returned far short of file_chars. Not yet built.'
+  package: WP5
+- id: V7-FX
+  aliases: []
+  source_file: eval-design.md §4
+  trigger: none
+  eval_ids:
+  - V7
+  set: invariant-fixture
+  slice:
+  - absence
+  confidence: high
+  status: backlog
+  gold_file: fixtures/invariants/V7/
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'Design: absence finding (Valley Medical, E-V7-01 shape) whose searched_files includes a file the run-trace shows was only partially read. Not yet built.'
+  package: WP5
+- id: V8-FX
+  aliases: []
+  source_file: eval-design.md §4
+  trigger: none
+  eval_ids:
+  - V8
+  set: invariant-fixture
+  slice: []
+  confidence: high
+  status: backlog
+  gold_file: fixtures/invariants/V8/
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'Design: StackFinding emits finding F1; ImpactReport omits F1 from both items and not_material. Not yet built.'
+  package: WP5
+- id: V9-FX
+  aliases: []
+  source_file: eval-design.md §4
+  trigger: none
+  eval_ids:
+  - V9
+  set: invariant-fixture
+  slice: []
+  confidence: high
+  status: backlog
+  gold_file: fixtures/invariants/V9/
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: 'Design: StackFinding cross_references entry with no matching cross_reference_resolutions entry in ImpactReport. Not yet built.'
+  package: WP5

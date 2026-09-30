@@ -1,0 +1,29 @@
+{
+ "doc_id": "SUP-HPB-01",
+ "path": "documents/supply/hai-phong-precision-brass_supply-contract_2023-05-15.md",
+ "chars": 12007,
+ "area": "supply",
+ "cluster": null,
+ "doc_type": "supply_agreement",
+ "parent_id": null,
+ "counterparty": "SUP-HPB",
+ "effective_date": "2023-05-15",
+ "status": "active",
+ "roles": [
+  "tariff",
+  "importer_of_record",
+  "supply_master"
+ ],
+ "source_class": "cuad_llm_adapted",
+ "source_ref": "CUAD v1: LohaCompanyltd_20191209_F-1_EX-10.16_11917878_EX-10.16_Supply Agreement",
+ "year_shift": 0,
+ "governing_law_remap": null,
+ "name_map_size": 8,
+ "filled_fields": [],
+ "adapt_length_ratio": 1.07,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

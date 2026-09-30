@@ -1,0 +1,27 @@
+{
+ "doc_id": "VEN-FSM-SUPPORT",
+ "path": "documents/vendors/fieldflow-software_support-and-maintenance-agreement_2021-04-01.md",
+ "chars": 64547,
+ "area": "vendors",
+ "cluster": null,
+ "doc_type": "software_support_agreement",
+ "parent_id": null,
+ "counterparty": "SAAS-FSM",
+ "effective_date": "2021-04-01",
+ "status": "active",
+ "roles": [
+  "distractor"
+ ],
+ "source_class": "cuad_llm_adapted",
+ "source_ref": "CUAD v1: ON2TECHNOLOGIES,INC_11_17_2006-EX-10.3-SUPPORT AND MAINTENANCE AGREEMENT",
+ "year_shift": 0,
+ "governing_law_remap": null,
+ "name_map_size": 21,
+ "filled_fields": [],
+ "adapt_length_ratio": 0.98,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

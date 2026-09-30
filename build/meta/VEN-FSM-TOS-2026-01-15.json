@@ -1,0 +1,28 @@
+{
+ "doc_id": "VEN-FSM-TOS-2026-01-15",
+ "path": "documents/vendors/fieldflow-software_terms-of-service_2026-01-15.md",
+ "chars": 44391,
+ "area": "vendors",
+ "cluster": null,
+ "doc_type": "standard_terms",
+ "counterparty": "SAAS-FSM",
+ "effective_date": "2026-01-15",
+ "version_label": "last updated January 15, 2026",
+ "published_url": "https://www.fieldflow.io/terms",
+ "status": "active",
+ "roles": [
+  "distractor"
+ ],
+ "source_class": "web_rewritten",
+ "source_ref": "W-HCP-TERMS",
+ "copy_share": 0.728,
+ "version_pair_check": null,
+ "checks": {
+  "ok": true,
+  "fails": [],
+  "leaks": []
+ },
+ "post_fixes": [
+  "scrubbed residual real names: Stripe"
+ ]
+}

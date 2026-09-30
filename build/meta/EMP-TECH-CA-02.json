@@ -1,0 +1,23 @@
+{
+ "doc_id": "EMP-TECH-CA-02",
+ "path": "documents/employment/signed-agreements/uma-kilgore_technician-employment-agreement_ca_2019-02-09.md",
+ "chars": 30876,
+ "area": "employment",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "employment_agreement",
+ "parent_id": "EMP-TPL-TECH-CA",
+ "effective_date": "2019-02-09",
+ "roles": [
+  "confidentiality",
+  "ca"
+ ],
+ "planted_features": [
+  "template_instance",
+  "annualized_earnings:74880",
+  "signed:2019-02-09",
+  "state:CA"
+ ],
+ "employee": "Uma Kilgore",
+ "status": "active"
+}

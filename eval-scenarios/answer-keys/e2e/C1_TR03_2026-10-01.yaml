@@ -1,0 +1,73 @@
+id: C1_TR03_2026-10-01
+contract_version: 0.1.0
+offsets: computed_pre_G0
+scenario_ids:
+- S1a-TR03-01
+- S3-03
+eval_ids:
+- S1a
+- S1b
+- S3
+- V14
+set: e2e
+inputs:
+  trigger: TR-03-adcvd-copper-pipe-mexico
+  versions:
+  - 2026-09-21_preliminary-results.txt
+  as_of: '2026-10-01'
+  profile: default
+  custom_prompt: null
+provenance:
+  author: non-attorney reference
+  sources:
+  - corpus documents cited on each span
+  - eval-scenarios/priority-tiers-draft.md
+  - eval-scenarios/legal-questions.md
+  - Washington State Register 25-20-099 (2026 RCW 49.62 threshold $126,858.83), https://lawfilesext.leg.wa.gov/law/wsr/2025/20/25-20-099.htm
+  verified_on: '2026-09-29'
+change_record:
+  items:
+  - id: C1
+    substantive: true
+    anchor:
+      file: corpus/triggers/TR-03-adcvd-copper-pipe-mexico/2026-09-21_preliminary-results.txt
+      section_label: DEPARTMENT OF COMMERCE
+      quote: "Seamless Refined Copper Pipe and Tube From Mexico: Preliminary \nResults and Rescission, in Part, of Antidumping Duty Administrative "
+      start: 506
+      end: 638
+    legal_status: proposed
+    effective_date: null
+    applies_to:
+      jurisdictions:
+      - US
+      entity_types:
+      - importer
+      product_classes:
+      - seamless refined copper pipe and tube from Mexico
+      thresholds: []
+    cash_deposit:
+      file: corpus/triggers/TR-03-adcvd-copper-pipe-mexico/2026-09-21_preliminary-results.txt
+      section_label: 68 FR 23954 (May 6, 2003).
+      quote: The following deposit requirements will be effective for all shipments of the subject merchandise entered, or withdrawn from warehouse, for consumption on or after the publication date of the final results of this administrative review
+      start: 13219
+      end: 13457
+  noise_items: []
+company_gate: proceed
+relevant_stacks: []
+pruned_stacks:
+- supply/great-plains-copper-tube_master-supply-agreement
+- supply/hai-phong-precision-brass_supply-contract_2023-05-15
+negative_controls:
+- stack_id: supply/great-plains-copper-tube_master-supply-agreement
+  must_not_appear: true
+  reason: 'Keyword trap: Great Plains sells copper tube, but nothing in the corpus shows Mexico-origin copper pipe. Do not scope it in for TR-03.'
+- stack_id: corporate/first-harbor-bank_credit-agreement
+  must_not_appear: true
+  reason: FCCR covenant must not appear. This run has no tariff-cost nexus to score.
+findings: []
+tiers:
+  '1': []
+  '2': []
+  '3': []
+  logged: []
+notes: 'Company gate proceeds because Meridian buys copper pipe. Scope is then empty: no document shows Mexican-origin copper pipe or tube, and the direct import supplier is in Vietnam. legal_status is proposed because the contract enum has no preliminary value. The notice itself says cash-deposit requirements take effect only on or after publication of the final results.'

@@ -1,0 +1,17 @@
+{
+ "doc_id": "CUS-SMB-JO-2024-031",
+ "path": "documents/customers/work-orders/JO-2024-031_city-of-san-marcos-bend-job-order_2024-04-15.md",
+ "chars": 510,
+ "area": "customers",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "work_order",
+ "parent_id": "CUS-SMB-01",
+ "counterparty": "CUS-SMB",
+ "effective_date": "2024-04-15",
+ "roles": [
+  "tariff",
+  "indirect_escalator"
+ ],
+ "status": "active"
+}

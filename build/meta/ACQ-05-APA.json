@@ -1,0 +1,36 @@
+{
+ "doc_id": "ACQ-05-APA",
+ "path": "documents/acquisitions/ACQ-05_pinecrest-plumbing-and-drain_asset-purchase-agreement_2025-02-18.md",
+ "chars": 87561,
+ "area": "acquisitions",
+ "cluster": null,
+ "doc_type": "asset_purchase_agreement",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2025-02-18",
+ "status": "active",
+ "roles": [
+  "noncompete",
+  "sale_of_business",
+  "wa",
+  "template_lineage"
+ ],
+ "source_class": "edgar",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1005502/000101968708005426/energyking_8k-ex0201.htm",
+ "year_shift": 17,
+ "governing_law_remap": {
+  "from": [
+   "Tennessee",
+   "Massachusetts"
+  ],
+  "to": "Washington"
+ },
+ "name_map_size": 91,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

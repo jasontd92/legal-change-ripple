@@ -1,0 +1,223 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gc-take-home.local/contracts/0.1.0/stack-finding.schema.json",
+  "title": "StackFinding (stage 2+4), one per in-scope stack",
+  "type": "object",
+  "required": [
+    "stack_id",
+    "applicability",
+    "determination",
+    "findings",
+    "files_read",
+    "files_unparseable",
+    "cross_references"
+  ],
+  "properties": {
+    "stack_id": {
+      "$ref": "common.schema.json#/$defs/stack_id"
+    },
+    "applicability": {
+      "$ref": "common.schema.json#/$defs/applicability"
+    },
+    "applicability_reason": {
+      "type": "string"
+    },
+    "determination": {
+      "$ref": "common.schema.json#/$defs/determination"
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "change_ref",
+          "finding_type",
+          "citations",
+          "labels",
+          "reasoning"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "change_ref": {
+            "type": "string",
+            "description": "ChangeRecord item id (V13)"
+          },
+          "finding_type": {
+            "$ref": "common.schema.json#/$defs/finding_type"
+          },
+          "hop_chain": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "span",
+                "inference"
+              ],
+              "properties": {
+                "span": {
+                  "$ref": "common.schema.json#/$defs/span"
+                },
+                "inference": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Dev-only view; all required gold spans must appear here or in citations for hop-complete credit"
+          },
+          "citations": {
+            "type": "object",
+            "required": [
+              "trigger",
+              "clause"
+            ],
+            "description": "The two surfaced citations (V2-V4)",
+            "properties": {
+              "trigger": {
+                "$ref": "common.schema.json#/$defs/span"
+              },
+              "clause": {
+                "$ref": "common.schema.json#/$defs/span"
+              }
+            }
+          },
+          "absence": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "clause_type": {
+                "type": "string"
+              },
+              "searched_files": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "labels": {
+            "type": "object",
+            "required": [
+              "urgency",
+              "materiality",
+              "direction",
+              "response_type"
+            ],
+            "properties": {
+              "urgency": {
+                "$ref": "common.schema.json#/$defs/urgency"
+              },
+              "materiality": {
+                "$ref": "common.schema.json#/$defs/materiality"
+              },
+              "direction": {
+                "$ref": "common.schema.json#/$defs/direction"
+              },
+              "response_type": {
+                "$ref": "common.schema.json#/$defs/response_type"
+              },
+              "materiality_test": {
+                "type": "string"
+              },
+              "missing_fact": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Required when any label is undeterminable"
+              },
+              "label_source": {
+                "type": "string",
+                "enum": [
+                  "self",
+                  "jev"
+                ]
+              },
+              "label_probabilities": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "description": "Jev only"
+              }
+            }
+          },
+          "facts": {
+            "type": "object",
+            "properties": {
+              "deadline_rule": {
+                "type": [
+                  "object",
+                  "null"
+                ]
+              },
+              "deadline_date": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date"
+              },
+              "exposure": {
+                "type": [
+                  "object",
+                  "null"
+                ]
+              }
+            }
+          },
+          "reasoning": {
+            "type": "string"
+          },
+          "open_questions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "files_read": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Claimed; audited against the trace (V6)"
+    },
+    "files_unparseable": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cross_references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "target_description"
+        ],
+        "properties": {
+          "target_description": {
+            "type": "string"
+          },
+          "target_stack_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "span": {
+            "$ref": "common.schema.json#/$defs/span"
+          }
+        }
+      }
+    }
+  }
+}

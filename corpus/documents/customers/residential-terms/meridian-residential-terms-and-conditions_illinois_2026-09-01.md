@@ -1,0 +1,116 @@
+# MERIDIAN PLUMBING, HEATING & AIR
+## MERIDIAN COMFORT CLUB MEMBERSHIP PROGRAM
+### TERMS AND CONDITIONS
+
+**Version:** Illinois, current  
+**Published at:** https://www.meridianpha.com/il/terms-and-conditions
+
+---
+
+## 1. ACCEPTANCE AND ENTIRE AGREEMENT
+
+These terms and conditions ("Terms") constitute the complete understanding between Meridian Plumbing, Heating & Air, a division of Meridian Mechanical of Illinois, LLC ("Service Provider") and the member identified in the membership agreement ("Member") regarding the sale of equipment and products ("Products") and the provision of maintenance, repair, and installation services ("Services") by the Service Provider to the Member. This agreement supersedes all prior agreements, negotiations, understandings, representations, and warranties, whether written or oral, relating to the subject matter hereof. Except as expressly provided in these Terms, all service orders are final.
+
+## 2. PAYMENT
+
+Member shall pay all invoiced amounts in accordance with the payment terms specified on each invoice. The Service Provider retains ownership of all equipment and materials, even if already installed, until final payment is received in full. All invoiced amounts exclude taxes, shipping fees, and related charges, which Member agrees to pay separately. All orders not prepaid in full are subject to approval by the Service Provider's credit department.
+
+## 3. CHANGES AND CONCEALED CONDITIONS
+
+Any work involving modifications or deviations from the original specifications that result in additional costs shall be performed only upon receipt of written authorization from Member and shall incur charges in addition to the original estimate. The Service Provider reserves the right to assess additional fees for: (i) inaccurate information provided by Member; (ii) work specifications that deviate from those initially provided by Member; and (iii) circumstances beyond the Service Provider's reasonable control, including but not limited to supply chain disruptions, operational interruptions, regulatory changes, and third-party failures. If site conditions or circumstances materially differ from what could be visually observed prior to work commencement, including concealed physical conditions or unusual circumstances, Member acknowledges responsibility for such conditions and agrees to pay for all labor, materials, and repairs resulting therefrom. This provision establishes that Member bears responsibility for all unforeseen and concealed conditions, as well as conditions beyond the Service Provider's control.
+
+## 4. COLLECTION
+
+Should Member's account be referred to counsel for collection activities, Member agrees to pay attorney's fees, court costs, and collection expenses. Interest shall accrue at the highest allowable rate permitted by Illinois law from the date of service completion. In addition to other available remedies, the Service Provider may suspend delivery of Products or performance of Services if Member fails to make payment when due.
+
+## 5. DELAY
+
+The Service Provider does not guarantee specific completion dates, as equipment availability and delivery schedules may be subject to factors beyond its control. The Service Provider does not provide monetary compensation for service delays, equipment malfunctions, or failures that may cause Member inconvenience or financial loss.
+
+## 6. INSTALLATION
+
+Member is responsible for any additional costs related to deficiencies in existing duct systems, hydronic piping systems, electrical systems, or gas systems. The Service Provider assumes no responsibility for damage to pipes, sewer lines, drains, or other infrastructure damage that may occur during drain or sewer line cleaning services.
+
+## 7. EXCAVATION AND SITE CONDITIONS
+
+Pricing for excavation, sewer, water service, drain, and underground plumbing work is based on normal excavation conditions, assuming existing soil is stable, suitable for excavation, and does not require specialized methods or equipment. Should unforeseen or abnormal site conditions be encountered during work, including but not limited to: (a) unstable or unsuitable soil conditions; (b) sand or other unstable granular materials; (c) excessively wet or water-bearing ground; (d) high groundwater requiring dewatering; (e) subsurface rock, ledge, boulders, or obstructions; (f) buried concrete, foundations, asphalt, debris, or abandoned structures; (g) soil conditions requiring engineered excavation methods or OSHA-mandated safety measures; (h) hazardous or contaminated soils; (i) conditions requiring additional equipment, machinery, engineering, permitting, restoration, or subcontracted services; or (j) any other concealed subsurface condition materially differing from reasonable expectations during estimation (collectively, "Changed Site Conditions"), such conditions fall outside the original scope of work. Upon encountering Changed Site Conditions, the Service Provider shall promptly notify Member and provide a written change order detailing additional work and costs. No additional work shall commence until Member approves the change order, except where immediate action is necessary to protect life, property, public safety, or ensure compliance with applicable law. Member acknowledges that all additional labor, equipment, materials, engineering, subcontractor services, disposal, dewatering, stabilization, permitting, restoration, and related expenses resulting from Changed Site Conditions shall be Member's sole responsibility and shall be paid in addition to the original contract price. Member further agrees to release, indemnify, defend, and hold harmless the Service Provider, its owners, employees, agents, subcontractors, and affiliates from all claims, damages, delays, losses, and additional costs arising from concealed, unknown, or unforeseen subsurface conditions not reasonably identifiable prior to excavation.
+
+## 8. DRAIN CLEANING CABLE RETRIEVAL
+
+Member acknowledges that drain and sewer cleaning involves mechanical cables, cutting heads, chains, and specialized equipment that may become lodged or stuck due to concealed conditions including but not limited to collapsed piping, offsets, broken pipe, root intrusion, foreign objects, scale buildup, running fittings, defective pipe, or other obstructions not visible before service. If the Service Provider's equipment becomes stuck or cannot be safely retrieved through standard procedures, work required to expose, excavate, access, repair, replace, or retrieve the equipment shall be deemed additional work outside the original drain cleaning service scope. All associated costs, including labor, excavation, restoration, plumbing repairs, subcontractor services, permits, and materials, shall be Member's sole responsibility and shall require written authorization through a change order prior to commencement, unless immediate action is necessary to protect persons or property. Member further acknowledges that the Service Provider shall not be liable for damages or costs resulting from concealed defects within the drainage system that prevent equipment retrieval.
+
+## 9. WATER SUPPLY SHUT-OFF
+
+Member understands that the Service Provider may need to shut off water at the main building supply or at the water heater shut-off valve to perform contracted work. Because water supply lines may be galvanized, iron, or copper pipes, and because mineral buildup can affect pipe integrity, the Service Provider cannot be held responsible for pressure loss or broken shut-off valves resulting from the shut-down procedure. While the Service Provider will exercise reasonable precautions, it cannot guarantee the absence of pressure loss.
+
+## 10. GAS LEAK AND DETECTION
+
+Member acknowledges and agrees that: (a) a pressure test of the gas line system is required; (b) gas lines marked by the gas provider shall be pressure-tested first, as the gas company may not locate all leaks, and repairs to marked leaks do not ensure absence of additional leaks; (c) the Service Provider's pressure test evaluates visible and exposed gas lines as a diagnostic procedure to locate leaks, but if no visible line leaks are found, leaks may exist within walls, ceilings, or floors, requiring written proposal for additional inspection; (d) once all leaks are located, the Service Provider shall provide a written repair proposal, with pricing determined after leak exposure and location; and (e) gas service restoration is the responsibility of the gas provider, over whom the Service Provider has no control and for which it cannot be held accountable.
+
+## 11. TOILET REPLACEMENT
+
+Member acknowledges and agrees that: (a) if the toilet's closet collar requires replacement, the Service Provider shall notify Member but cannot install the toilet until the collar is repaired or replaced; (b) the existing collar's condition cannot be visually assessed without removing the toilet, and repair shall be an additional charge beyond standard installation; and (c) if Member declines to repair the defective collar, the Service Provider shall leave both old and new toilets with Member rather than proceed with installation on faulty existing plumbing.
+
+## 12. HAZARDOUS MATERIALS
+
+The Service Provider shall not be responsible for identifying, detecting, abating, encapsulating, storing, removing, or transporting regulated or hazardous substances, including but not limited to asbestos, refrigerants, and refrigerant oils. Work may be discontinued upon discovery of such materials until removal or elimination is completed. The Service Provider shall receive a time extension equal to the duration of delay caused by removal or elimination. Member shall indemnify and hold the Service Provider harmless from claims by its agents, employees, or members related to hazards and shall compensate the Service Provider for losses resulting from such delays.
+
+## 13. SERVICE PROVIDER WARRANTIES
+
+The Service Provider provides only trained and qualified technicians in its employ. All parts and labor warranties apply exclusively to the original property owner. All work shall be completed in a professional workmanlike manner consistent with standard practices. Except as expressly stated herein, the Service Provider makes no warranties regarding Services and expressly disclaims all other warranties, express or implied, including warranties of merchantability and fitness for a particular purpose. If equipment is not maintained annually in accordance with these Terms, all warranties are void. **THESE WARRANTIES ARE EXCLUSIVE AND IN LIEU OF ALL OTHER WARRANTIES, EXPRESS OR IMPLIED, INCLUDING THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.** For warranty claims, the Service Provider shall, in its sole discretion, either (i) repair, replace, or reperform the Products or Services, or (ii) credit or refund the price to Member.
+
+## 14. LIMITATION OF MEMBER'S REMEDIES
+
+**THE SERVICE PROVIDER SHALL NOT BE LIABLE FOR SPECIAL, INDIRECT, EXEMPLARY, INCIDENTAL, CONSEQUENTIAL, THIRD-PARTY, OR PUNITIVE DAMAGES, INCLUDING DAMAGES BASED ON WARRANTY BREACH, CONTRACT BREACH, NEGLIGENCE, TORT, OR ANY OTHER LEGAL OR EQUITABLE CLAIM OR CAUSE OF ACTION. THE SERVICE PROVIDER'S TOTAL LIABILITY, REGARDLESS OF LEGAL THEORY, SHALL NOT EXCEED THE TOTAL AMOUNTS PAID BY MEMBER FOR PRODUCTS AND SERVICES PROVIDED. THE SERVICE PROVIDER SHALL NOT BE REQUIRED TO INDEMNIFY MEMBER OR ANY OTHER PARTY. THE REMEDIES STATED HEREIN ARE MEMBER'S SOLE AND EXCLUSIVE REMEDY, AND THE SERVICE PROVIDER'S ENTIRE LIABILITY FOR ANY BREACH OF THE LIMITED WARRANTIES HEREIN.** Member agrees to hold the Service Provider harmless and shall indemnify and defend the Service Provider and its agents and employees from all claims, damages, losses, and expenses, including attorney's fees and consequential damages, arising from the Service Provider's performance of work involving unforeseen or concealed conditions, regardless of whether caused in part by the Service Provider.
+
+## 15. SERVICE PROVIDER REMEDIES
+
+The Service Provider may defer performance under these Terms or any other agreement with Member until all past due payments are satisfied, without waiving other available remedies under law. The Service Provider's rights and remedies under these Terms and any invoice are in addition to, and not in lieu of, any other remedies available at law or equity.
+
+## 16. EXCLUDED SERVICES
+
+Member acknowledges that the Service Provider is not responsible for carpentry, painting, plastering, patching, or similar work. During service, it may be necessary to disturb lawn, plants, landscaping, pavers, sidewalks, patios, concrete, driveways, or similar areas. The Service Provider is not responsible for repairing or restoring such areas to their previous condition. While the Service Provider shall backfill any excavated openings, settling may occur over time, and Member is responsible for restoring ground or grade to its previous condition.
+
+## 17. PRICE-MATCHING GUARANTEE
+
+If Member obtains a competing bid for equivalent Products or Services, the Service Provider shall match such bid, provided the bid is written, for comparable equipment from a licensed contractor operating from a business location (not residential), and offered prior to service commencement—otherwise, the offer is void. Unless otherwise noted in the service agreement, payment in full is due before the Service Provider commences work. If payment becomes delinquent beyond thirty (30) days, a monthly finance charge shall be applied at the highest allowable interest rate under Illinois law. The Service Provider reserves the right to charge any credit card on file for unpaid amounts. A two-year one-hundred-percent (100%) satisfaction guarantee applies to all work except pricing adjustments. Any service proposal remains valid for thirty (30) days from the written date.
+
+## 18. HOT WATER TANK GUARANTEE
+
+The Service Provider shall replace the hot water tank at no installation charge if it leaks within two (2) years following service completion, with replacement terms to be mutually agreed upon. This guarantee does not apply to well water applications.
+
+## 19. MEMBER OBLIGATIONS
+
+Member shall, at its own expense: (i) exercise reasonable care in operation and routine maintenance of Products; (ii) operate Products within the Service Provider's specifications; (iii) maintain Products according to the Service Provider's maintenance standards and manufacturer recommendations; and (iv) properly maintain the service site and operating environment.
+
+## 20. ONGOING MAINTENANCE
+
+All equipment installed by the Service Provider shall be cleaned, oiled, and inspected annually by a certified technician per manufacturer requirements. Member is responsible for scheduling maintenance within each twelve (12) month period at a mutually convenient time. The Service Provider is not liable for unperformed maintenance if Member fails to schedule. Non-compliance with maintenance requirements shall forfeit all warranties and guarantees under these Terms.
+
+## 21. RECORD RETENTION
+
+Member must maintain records qualifying for warranties and guarantees hereunder, including proof of service completion, annual maintenance records, and related documentation. Misuse, abuse, or neglect may void warranties and guarantees.
+
+## 22. REBATES
+
+To qualify for any rebate, Member must submit a written claim to the Service Provider within seven (7) days of product delivery or service completion. Failure to timely claim results in forfeiture of rebate rights.
+
+## 23. FORCE MAJEURE
+
+Except for Member's payment obligations, neither party shall be liable for performance delays or losses resulting from causes beyond reasonable control, including acts of God, fire, strikes, epidemics, pandemics, embargoes, governmental or military action, war, riots, transportation delays, or difficulties obtaining labor, materials, or facilities ("Force Majeure Events"). The affected party shall promptly notify the other. The affected party may (i) extend performance time for the Force Majeure Event's duration, or (ii) cancel unperformed portions if the Force Majeure Event exceeds sixty (60) days. If a Force Majeure Event increases the Service Provider's costs or prevents agreed-upon pricing, the Service Provider may adjust pricing upon written notice to Member.
+
+## 24. GOVERNING LAW
+
+All matters arising from these Terms or any invoice are governed by the internal laws of the State of Illinois, without regard to conflicts of law principles. Any legal action shall be instituted exclusively in the federal courts of the United States or the state courts of Illinois located in Cook County, and each party irrevocably submits to such jurisdiction.
+
+## 25. SMS MESSAGING TERMS
+
+By providing a mobile phone number, Member consents to receive text messages regarding appointment scheduling, invoices, payment notifications, and service updates. Message frequency varies and standard message and data rates may apply. Consent is not a condition of purchase. Member may opt out by replying STOP or contacting the Service Provider's Customer Service. Automated technology may be used for messaging. Marketing and promotional messages require express written consent. The Service Provider shall not sell, rent, or share Member's phone number for third-party marketing. Opt-out rights survive service completion.
+
+## 26. CUSTOMER INFORMATION
+
+Member's personal information is handled according to the Service Provider's Privacy Policy, which is incorporated herein by reference.
+
+## 27. ENTIRE AGREEMENT; MODIFICATION; WAIVER
+
+These Terms and any invoice constitute the entire agreement between the parties regarding the subject matter, with no other promises, terms, conditions, or obligations. If any provision is declared invalid or unenforceable, the remainder shall remain valid to the fullest extent permitted by law. Any modification or amendment requires written consent of both parties. The Service Provider's failure to strictly enforce these Terms does not constitute a waiver of its rights hereunder.

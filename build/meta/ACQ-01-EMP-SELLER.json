@@ -1,0 +1,33 @@
+{
+ "doc_id": "ACQ-01-EMP-SELLER",
+ "path": "documents/acquisitions/ACQ-01_robert-barrow_employment-agreement_2019-03-04.md",
+ "chars": 34073,
+ "area": "acquisitions",
+ "cluster": null,
+ "doc_type": "seller_employment_agreement",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2019-03-04",
+ "status": "active",
+ "roles": [
+  "noncompete",
+  "sale_of_business",
+  "seller_employee",
+  "ca"
+ ],
+ "source_class": "edgar",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1005502/000101968706002838/buckeye_ex9901.htm",
+ "year_shift": 13,
+ "governing_law_remap": null,
+ "name_map_size": 18,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ },
+ "post_fixes": [
+  "scrubbed residual real names: EK Acquisition Corp., Weinstein"
+ ]
+}

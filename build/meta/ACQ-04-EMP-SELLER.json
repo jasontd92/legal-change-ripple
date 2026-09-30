@@ -1,0 +1,37 @@
+{
+ "doc_id": "ACQ-04-EMP-SELLER",
+ "path": "documents/acquisitions/ACQ-04_timothy-galvan_employment-agreement_2023-08-15.md",
+ "chars": 33510,
+ "area": "acquisitions",
+ "cluster": null,
+ "doc_type": "seller_employment_agreement",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2023-08-15",
+ "status": "active",
+ "roles": [
+  "noncompete",
+  "seller_employee",
+  "tx"
+ ],
+ "source_class": "edgar",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1005502/000101968708002225/energyking_10qsb-ex1001.htm",
+ "year_shift": 15,
+ "governing_law_remap": {
+  "from": [
+   "California"
+  ],
+  "to": "Texas"
+ },
+ "name_map_size": 33,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ },
+ "post_fixes": [
+  "scrubbed residual real names: Larry Weinstein, Weinstein"
+ ]
+}

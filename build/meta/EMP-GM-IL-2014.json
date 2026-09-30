@@ -1,0 +1,35 @@
+{
+ "doc_id": "EMP-GM-IL-2014",
+ "path": "documents/employment/general-manager-employment-agreement_illinois_2014-06-02.md",
+ "chars": 9319,
+ "area": "employment",
+ "cluster": null,
+ "doc_type": "manager_employment_agreement",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2014-06-02",
+ "status": "active",
+ "roles": [
+  "noncompete",
+  "il",
+  "legacy_template"
+ ],
+ "source_class": "edgar",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1035983/000095012902002592/h96776qex10-1.txt",
+ "year_shift": 12,
+ "governing_law_remap": {
+  "from": [
+   "Texas",
+   "Delaware"
+  ],
+  "to": "Illinois"
+ },
+ "name_map_size": 15,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

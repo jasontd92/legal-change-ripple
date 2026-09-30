@@ -1,0 +1,16 @@
+{
+ "doc_id": "SUP-GPC-PO-2025-0112",
+ "path": "documents/supply/purchase-orders/PO-2025-0112_great-plains-copper-tube_2025-01-14.md",
+ "chars": 1387,
+ "area": "supply",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "purchase_order",
+ "parent_id": "SUP-GPC-01",
+ "counterparty": "SUP-GPC",
+ "effective_date": "2025-01-14",
+ "roles": [
+  "tariff"
+ ],
+ "status": "active"
+}

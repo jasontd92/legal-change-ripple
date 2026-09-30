@@ -1,0 +1,27 @@
+{
+ "doc_id": "SUP-SCP-TERMS-2025-11-01",
+ "path": "documents/supply/supplier-terms/solace-comfort-products_terms-of-sale_2025-11-01.md",
+ "chars": 10251,
+ "area": "supply",
+ "cluster": null,
+ "doc_type": "standard_terms",
+ "counterparty": "SUP-SCP",
+ "effective_date": "2025-11-01",
+ "version_label": "effective November 1, 2025",
+ "published_url": "https://www.solacecomfort.com/terms-of-sale",
+ "status": "active",
+ "roles": [
+  "tariff",
+  "duties_paid_by_buyer",
+  "incorporated_web_terms"
+ ],
+ "source_class": "web_rewritten",
+ "source_ref": "W-DAIKIN",
+ "copy_share": 0.676,
+ "version_pair_check": null,
+ "checks": {
+  "ok": true,
+  "fails": [],
+  "leaks": []
+ }
+}

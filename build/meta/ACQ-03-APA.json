@@ -1,0 +1,35 @@
+{
+ "doc_id": "ACQ-03-APA",
+ "path": "documents/acquisitions/ACQ-03_kessler-comfort-services_asset-purchase-agreement_2022-10-03.md",
+ "chars": 164338,
+ "area": "acquisitions",
+ "cluster": null,
+ "doc_type": "asset_purchase_agreement",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2022-10-03",
+ "status": "active",
+ "roles": [
+  "noncompete",
+  "sale_of_business",
+  "il"
+ ],
+ "source_class": "edgar",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1039690/000119312503004754/dex21.txt",
+ "year_shift": 19,
+ "governing_law_remap": {
+  "from": [
+   "Texas",
+   "Delaware"
+  ],
+  "to": "Illinois"
+ },
+ "name_map_size": 28,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

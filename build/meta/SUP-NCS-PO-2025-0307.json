@@ -1,0 +1,16 @@
+{
+ "doc_id": "SUP-NCS-PO-2025-0307",
+ "path": "documents/supply/purchase-orders/PO-2025-0307_northaire-comfort-systems_2025-03-17.md",
+ "chars": 1261,
+ "area": "supply",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "purchase_order",
+ "counterparty": "SUP-NCS",
+ "effective_date": "2025-03-17",
+ "roles": [
+  "tariff",
+  "incorporated_web_terms"
+ ],
+ "status": "active"
+}

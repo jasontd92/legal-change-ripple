@@ -1,0 +1,95 @@
+# Fictional company profile. Every company document in the corpus is adapted to this entity.
+as_of: 2026-10-01            # default evaluation as-of date (a scenario can override it)
+
+company:
+  legal_name: Meridian Mechanical Group, Inc.
+  dba: Meridian Plumbing, Heating & Air
+  entity_type: Delaware corporation
+  hq: 2150 Harbor Point Drive, Suite 400, Sacramento, CA 95833
+  parent: Meridian Home Services Holdings, LLC   # private-equity-backed holding company (acquisition vehicle)
+  subsidiaries:
+    - {name: Meridian Mechanical of Washington, LLC, state: WA}
+    - {name: Meridian Mechanical of Illinois, LLC, state: IL}
+    - {name: Meridian Mechanical of Texas, LLC, state: TX}
+  industry: Residential and commercial plumbing, HVAC service, installation, and maintenance
+  naics: [238220]
+  employees: 412
+  workforce:
+    field_technicians_hourly: 268   # plumbers, HVAC technicians, apprentices (non-exempt)
+    service_managers_salaried: 34
+    sales_comfort_advisors: 38      # commission-based
+    dispatch_csr_admin: 52
+    executives_directors: 20
+  annual_revenue_usd: 96000000
+  revenue_mix: {commercial_service: 0.34, public_agency: 0.14, residential_service_and_install: 0.42, new_construction_subcontract: 0.10}
+  states_of_operation: [CA, WA, IL, TX]
+  branches:
+    - {id: SAC, city: Sacramento, state: CA, employees: 71}
+    - {id: SJC, city: San Jose, state: CA, employees: 48}
+    - {id: FRE, city: Fresno, state: CA, employees: 29}
+    - {id: TAC, city: Tacoma, state: WA, employees: 44}
+    - {id: SPO, city: Spokane, state: WA, employees: 21}
+    - {id: ELK, city: Elk Grove Village, state: IL, employees: 52}
+    - {id: NAP, city: Naperville, state: IL, employees: 27}
+    - {id: HOU, city: Houston, state: TX, employees: 58}
+    - {id: SAT, city: San Antonio, state: TX, employees: 36}
+    - {id: DAL, city: Dallas, state: TX, employees: 26}
+  purchasing:
+    main_inputs: [copper tube and pipe, copper and brass fittings, valves, water heaters, HVAC equipment (condensers, furnaces, heat pumps, air handlers), PEX and PVC]
+    annual_material_spend_usd: 31000000
+    copper_share_of_material_spend: 0.38
+    imports_directly: true        # a small share is imported directly (CIF Long Beach), which makes the Company the importer of record
+    direct_import_share: 0.06
+  insurance_broker: Alder & Crane Insurance Services
+  lender: First Harbor Bank, N.A.
+  fleet_lessor: Summit Fleet Leasing, LLC
+  acquisitions:   # local shops acquired 2019–2025 (asset purchases, plus one stock merger)
+    - {deal: ACQ-01, target: "Barrow Plumbing, Inc. dba Barrow Heating and Air", state: CA, closed: 2019-03-04}
+    - {deal: ACQ-02, target: "Northgate Heating & Air Conditioning, Inc.", state: WA, closed: 2021-06-01}
+    - {deal: ACQ-03, target: "Kessler Comfort Services, Inc.", state: IL, closed: 2022-10-03}
+    - {deal: ACQ-04, target: "Lone Oak Mechanical, LLC", state: TX, closed: 2023-08-15}
+    - {deal: ACQ-05, target: "Pinecrest Plumbing & Drain, LLC", state: WA, closed: 2025-02-18}
+  key_people:   # fictional
+    ceo: Daniel R. Okafor
+    cfo: Priya Ramaswamy
+    general_counsel: Lauren M. Whitfield
+    vp_operations: Marcus T. Delgado
+    hr_director: Elena Sorensen
+    purchasing_director: Grant Holloway
+
+# Fictional counterparties. Each real source party maps onto one of these.
+counterparties:
+  suppliers:
+    - {id: SUP-GPC, name: "Great Plains Copper Tube, Inc.", role: copper tube mill (direct MSA), state: OK}
+    - {id: SUP-KPS, name: "Keystone Plumbing Supply, LLC", role: national plumbing distributor (web terms, implicit pass-through), state: VA}
+    - {id: SUP-LWP, name: "Lakeshore Waterworks & PVF, LP", role: waterworks/PVF distributor (web terms; tariff clause added Feb 2025), state: MO}
+    - {id: SUP-NCS, name: "Northaire Comfort Systems Corporation", role: HVAC equipment manufacturer (versioned terms; one-way ratchet), state: FL}
+    - {id: SUP-DSC, name: "Delmont Supply Company", role: plumbing/HVAC distributor (job-quote price protection), state: PA}
+    - {id: SUP-SCP, name: "Solace Comfort Products, Inc.", role: HVAC equipment (duties paid by buyer), state: TX}
+    - {id: SUP-HPB, name: "Hai Phong Precision Brass Co., Ltd.", role: direct-import fittings supplier (CIF; Company is importer of record), state: Vietnam}
+  customers:
+    - {id: CUS-WADES, name: "State of Washington, Department of Enterprise Services", role: statewide HVAC services contract (public; kept as a real state agency)}
+    - {id: CUS-LKP, name: "City of Lakeport, Illinois", role: municipal HVAC reference contract (fictional city)}
+    - {id: CUS-SMB, name: "City of San Marcos Bend, Texas", role: municipal on-call plumbing job-order contract (fictional city)}
+    - {id: CUS-HRP, name: "Harborview Realty Partners, LP", role: commercial property manager (facilities MSA)}
+    - {id: CUS-CRT, name: "Crestline Retail Trust", role: retail REIT (facilities MSA with MFN)}
+    - {id: CUS-VMS, name: "Valley Medical Services Group", role: clinic operator (facilities MSA, fixed price)}
+    - {id: CUS-SPS, name: "Sunpoint Public Schools Cooperative", role: school district co-op (facilities MSA, MFN counterpart)}
+    - {id: CUS-OAK, name: "Oakridge Hospitality Group, LLC", role: hotel group (facilities MSA, no-hire)}
+    - {id: CUS-NBC, name: "Northbrook Commons Condominium Association", role: Illinois commercial maintenance customer (2026 pricing letter agreement)}
+    - {id: CUS-RES, name: "Residential customers (Meridian Comfort Club members)", role: consumer customers under published membership and installation terms}
+  general_contractors:
+    - {id: GC-BHC, name: "Bridgewell Construction Company", state: CA}
+    - {id: GC-TPB, name: "Titan Peak Builders, Inc.", state: TX}
+    - {id: GC-CRC, name: "Cascade Ridge Contractors, LLC", state: WA}
+    - {id: GC-LMC, name: "Lakemont Construction Group", state: IL}
+  subcontractors:
+    - {id: SUB-ENS, name: "Ember & Stone Insulation, LLC"}
+    - {id: SUB-PDE, name: "Precision Duct & Exhaust, Inc."}
+  other:
+    - {id: FR-TPG, name: "TruPipe Global Franchising, Inc.", role: franchisor of acquired shop ACQ-05's former franchise}
+    - {id: SAAS-FSM, name: "FieldFlow Software, Inc.", role: field-service management software}
+    - {id: SAAS-PAY, name: "Paystream Technologies, Inc.", role: payment processor}
+    - {id: SAAS-TEL, name: "RoadIQ Telematics, Inc.", role: fleet telematics}
+    - {id: SAAS-LG1, name: "HomeHero Leads, Inc.", role: lead-generation marketplace}
+    - {id: SAAS-LG2, name: "ProMatch Networks, LLC", role: lead-generation marketplace}

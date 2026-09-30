@@ -1,0 +1,23 @@
+{
+ "doc_id": "EMP-TECH-CA-04",
+ "path": "documents/employment/signed-agreements/felix-delacroix_technician-employment-agreement_ca_2021-08-28.md",
+ "chars": 30860,
+ "area": "employment",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "employment_agreement",
+ "parent_id": "EMP-TPL-TECH-CA",
+ "effective_date": "2021-08-28",
+ "roles": [
+  "confidentiality",
+  "ca"
+ ],
+ "planted_features": [
+  "template_instance",
+  "annualized_earnings:63960",
+  "signed:2021-08-28",
+  "state:CA"
+ ],
+ "employee": "Felix Delacroix",
+ "status": "active"
+}

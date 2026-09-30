@@ -1,0 +1,26 @@
+{
+ "doc_id": "SUP-LWP-TERMS-2018-09-17",
+ "path": "documents/supply/supplier-terms/lakeshore-waterworks-pvf_terms-and-conditions-of-sale_2018-09-17.md",
+ "chars": 10808,
+ "area": "supply",
+ "cluster": null,
+ "doc_type": "standard_terms",
+ "counterparty": "SUP-LWP",
+ "effective_date": "2018-09-17",
+ "version_label": "Rev 091718",
+ "published_url": "https://www.lakeshorepvf.com/terms-of-sale",
+ "status": "superseded",
+ "roles": [
+  "tariff",
+  "incorporated_web_terms"
+ ],
+ "source_class": "web_rewritten",
+ "source_ref": "W-COREMAIN-REV091718",
+ "copy_share": 0.089,
+ "version_pair_check": null,
+ "checks": {
+  "ok": true,
+  "fails": [],
+  "leaks": []
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "doc_id": "CUS-WADES-03",
+ "path": "documents/customers/wa-des-04224_hvac-services-contract/03_exhibit-b_price-sheet_2025-10-01.md",
+ "chars": 6384,
+ "area": "customers",
+ "cluster": "wa-des-04224_hvac-services-contract",
+ "doc_type": "pricing_exhibit",
+ "parent_id": "CUS-WADES-01",
+ "counterparty": "CUS-WADES",
+ "effective_date": "2025-10-01",
+ "status": "active",
+ "roles": [
+  "price_ceiling"
+ ],
+ "source_class": "public_agency",
+ "source_ref": "https://apps.des.wa.gov/contracting/04224p.xlsx",
+ "year_shift": 0,
+ "governing_law_remap": null,
+ "name_map_size": 4,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ },
+ "post_fixes": [
+  "rebuilt from xlsx: awarded contractor's columns only"
+ ]
+}

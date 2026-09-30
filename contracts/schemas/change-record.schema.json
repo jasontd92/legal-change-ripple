@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gc-take-home.local/contracts/0.1.0/change-record.schema.json",
+  "title": "ChangeRecord (stage 1 + 1b)",
+  "type": "object",
+  "required": [
+    "items",
+    "company_gate"
+  ],
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "substantive",
+          "anchor",
+          "legal_status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "System-assigned. Scorer maps to gold by anchor overlap."
+          },
+          "summary": {
+            "type": "string"
+          },
+          "substantive": {
+            "type": "boolean"
+          },
+          "dismissal_reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "anchor": {
+            "$ref": "common.schema.json#/$defs/span"
+          },
+          "legal_status": {
+            "$ref": "common.schema.json#/$defs/legal_status"
+          },
+          "effective_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "applies_to": {
+            "type": "object",
+            "properties": {
+              "jurisdictions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "entity_types": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "product_classes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "thresholds": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "company_gate": {
+      "$ref": "common.schema.json#/$defs/company_gate"
+    },
+    "company_gate_reason": {
+      "type": "string"
+    },
+    "source_chars_read": {
+      "type": "integer",
+      "description": "For the trigger-coverage audit (gap: long sources)"
+    }
+  }
+}

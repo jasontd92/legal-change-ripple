@@ -1,0 +1,20 @@
+{
+ "doc_id": "CUS-CONCESSION-NBC",
+ "path": "documents/customers/notices/meridian-illinois_pricing-letter-agreement_northbrook-commons_2026-02-17.md",
+ "chars": 840,
+ "area": "customers",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "pricing_concession",
+ "counterparty": "CUS-NBC",
+ "effective_date": "2026-02-17",
+ "roles": [
+  "mfn",
+  "l2_link",
+  "il"
+ ],
+ "planted_features": [
+  "il_concession_triggers_sunpoint_mfn"
+ ],
+ "status": "active"
+}

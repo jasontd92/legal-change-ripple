@@ -1,0 +1,112 @@
+{
+ "doc_id": "SUP-GPC-03",
+ "path": "documents/supply/great-plains-copper-tube_master-supply-agreement/03_amendment-1_pricing-and-term_2022-04-01.md",
+ "chars": 8685,
+ "area": "supply",
+ "cluster": "great-plains-copper-tube_master-supply-agreement",
+ "doc_type": "amendment",
+ "parent_id": "SUP-GPC-01",
+ "counterparty": "SUP-GPC",
+ "effective_date": "2022-04-01",
+ "status": "active",
+ "roles": [
+  "supply_amendment"
+ ],
+ "source_class": "edgar_llm_adapted",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1616318/000161631817000139/apsaaddendum6ex102.htm",
+ "year_shift": 0,
+ "governing_law_remap": null,
+ "name_map_size": 16,
+ "filled_fields": [
+  {
+   "context": "added to the Price for any copper tube Product ordered for delivery",
+   "value": "$0.08 per pound"
+  },
+  {
+   "context": "the Annual Volume Commitment on or before December 31, 2022",
+   "value": "December 31 of each subsequent year"
+  },
+  {
+   "context": "for every pound of copper tube ordered in excess of",
+   "value": "1,150,000 lbs annually"
+  },
+  {
+   "context": "calculated on a monthly basis effective the first business day of",
+   "value": "each calendar month"
+  },
+  {
+   "context": "The base copper price shall be",
+   "value": "$4.75 per pound"
+  },
+  {
+   "context": "Copper High Grade (Globex) (COMEX) Month-End",
+   "value": "Settlement Price"
+  },
+  {
+   "context": "does not decrease its total annual quantity ordered during any",
+   "value": "calendar year below 1,150,000 lbs of copper tube"
+  },
+  {
+   "context": "purchase a minimum of",
+   "value": "1,150,000 lbs of copper tube and fittings annually"
+  },
+  {
+   "context": "shall pay Great Plains Copper Tube, Inc. a shortfall fee of",
+   "value": "$0.18 per pound"
+  },
+  {
+   "context": "for each pound of copper tube not purchased below the",
+   "value": "1,150,000 lbs minimum"
+  },
+  {
+   "context": "November 1, 2027 through October 31",
+   "value": "2032"
+  },
+  {
+   "context": "Follow-On Agreement is not agreed upon and executed by both Parties by",
+   "value": "August 31, 2027"
+  },
+  {
+   "context": "Type L Copper Tube (Hard Drawn, 1/2\" OD)",
+   "value": "$318.50 per 100 ft"
+  },
+  {
+   "context": "Type L Copper Tube (Hard Drawn, 3/4\" OD)",
+   "value": "$425.75 per 100 ft"
+  },
+  {
+   "context": "Type M Copper Tube (Hard Drawn, 1/2\" to 1\" OD)",
+   "value": "$195.25 per 100 ft"
+  },
+  {
+   "context": "ACR Copper Tube (Soft Drawn, 3/8\" and 5/8\" OD)",
+   "value": "$168.00 per 100 ft"
+  },
+  {
+   "context": "Solder Joint Fittings (90\u00b0 Elbows, Tees, Couplings, 1/2\" to 1-1/2\")",
+   "value": "$0.92 per each"
+  },
+  {
+   "context": "Press Connect Fittings (1/2\" to 1-1/4\" OD)",
+   "value": "$2.65 per each"
+  },
+  {
+   "context": "Brazed Fittings and Ball Valves (Various Sizes and Types)",
+   "value": "$3.45 per each"
+  },
+  {
+   "context": "April 2022 first month binding order quantity",
+   "value": "98,500 lbs"
+  },
+  {
+   "context": "Master Supply Agreement initial effective date",
+   "value": "January 1, 2020"
+  }
+ ],
+ "adapt_length_ratio": 1.02,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

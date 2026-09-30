@@ -1,0 +1,70 @@
+{
+ "doc_id": "SUP-GPC-04",
+ "path": "documents/supply/great-plains-copper-tube_master-supply-agreement/04_amendment-2_tariff-surcharge_2026-03-02.md",
+ "chars": 6092,
+ "area": "supply",
+ "cluster": "great-plains-copper-tube_master-supply-agreement",
+ "doc_type": "amendment",
+ "parent_id": "SUP-GPC-01",
+ "counterparty": "SUP-GPC",
+ "effective_date": "2026-03-02",
+ "status": "active",
+ "roles": [
+  "tariff",
+  "refund_chain",
+  "price_adjustment"
+ ],
+ "source_class": "edgar_llm_adapted",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1604821/000162828026032478/ntra-20260331xex101.htm",
+ "year_shift": 0,
+ "governing_law_remap": null,
+ "name_map_size": 16,
+ "filled_fields": [
+  {
+   "context": "place of business at [***], Denver, CO",
+   "value": "2750 West 5th Avenue"
+  },
+  {
+   "context": "having an Effective Date of [***], and amended on",
+   "value": "March 2, 2019"
+  },
+  {
+   "context": "and amended on [***] (such Master Supply Agreement",
+   "value": "December 15, 2024"
+  },
+  {
+   "context": "increases to above [***]%, Seller will invoice",
+   "value": "5"
+  },
+  {
+   "context": "over [***]% for the Products (or components",
+   "value": "5"
+  },
+  {
+   "context": "rises to [***]% and if the then-current price",
+   "value": "15"
+  },
+  {
+   "context": "Copper Fitting Kit (Model [***]) ordered pursuant",
+   "value": "SCP-500"
+  },
+  {
+   "context": "Agreement is $[***], then thirty (30) days after",
+   "value": "$38.00"
+  },
+  {
+   "context": "a [***]% surcharge assessed against $38.00, resulting",
+   "value": "5"
+  },
+  {
+   "context": "resulting in $[***] surcharge per Copper Fitting",
+   "value": "$1.90"
+  }
+ ],
+ "adapt_length_ratio": 0.14,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

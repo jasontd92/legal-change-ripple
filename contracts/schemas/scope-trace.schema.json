@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gc-take-home.local/contracts/0.1.0/scope-trace.schema.json",
+  "title": "ScopeTrace (stage 3). Must list EVERY stack (V11).",
+  "type": "object",
+  "required": [
+    "stacks"
+  ],
+  "properties": {
+    "stacks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "stack_id",
+          "in_scope",
+          "reason"
+        ],
+        "properties": {
+          "stack_id": {
+            "$ref": "common.schema.json#/$defs/stack_id"
+          },
+          "in_scope": {
+            "type": "boolean"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

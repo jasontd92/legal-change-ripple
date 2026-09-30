@@ -1,0 +1,23 @@
+{
+ "doc_id": "EMP-TECH-WA-08",
+ "path": "documents/employment/signed-agreements/omar-wilder_technician-employment-agreement_wa_2024-10-14.md",
+ "chars": 19433,
+ "area": "employment",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "employment_agreement",
+ "parent_id": "EMP-TPL-TECH-WA",
+ "effective_date": "2024-10-14",
+ "roles": [
+  "noncompete",
+  "wa"
+ ],
+ "planted_features": [
+  "template_instance",
+  "annualized_earnings:127920",
+  "signed:2024-10-14",
+  "state:WA"
+ ],
+ "employee": "Omar Wilder",
+ "status": "active"
+}

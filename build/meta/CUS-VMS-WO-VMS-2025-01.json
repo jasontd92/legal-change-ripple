@@ -1,0 +1,16 @@
+{
+ "doc_id": "CUS-VMS-WO-VMS-2025-01",
+ "path": "documents/customers/work-orders/WO-VMS-2025-01_vms_2025-05-19.md",
+ "chars": 510,
+ "area": "customers",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "work_order",
+ "parent_id": "CUS-VMS-MSA",
+ "counterparty": "CUS-VMS",
+ "effective_date": "2025-05-19",
+ "roles": [
+  "tariff"
+ ],
+ "status": "active"
+}

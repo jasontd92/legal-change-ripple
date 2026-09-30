@@ -1,0 +1,28 @@
+{
+ "doc_id": "SUP-GPC-01",
+ "path": "documents/supply/great-plains-copper-tube_master-supply-agreement/01_master-supply-agreement_2019-11-01.md",
+ "chars": 60389,
+ "area": "supply",
+ "cluster": "great-plains-copper-tube_master-supply-agreement",
+ "doc_type": "master_supply_agreement",
+ "parent_id": null,
+ "counterparty": "SUP-GPC",
+ "effective_date": "2019-11-01",
+ "status": "active",
+ "roles": [
+  "tariff",
+  "supply_master"
+ ],
+ "source_class": "cuad_llm_adapted",
+ "source_ref": "CUAD v1: ReynoldsConsumerProductsInc_20191115_S-1_EX-10.18_11896469_EX-10.18_Supply Agreement",
+ "year_shift": 0,
+ "governing_law_remap": null,
+ "name_map_size": 38,
+ "filled_fields": [],
+ "adapt_length_ratio": 0.99,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "doc_id": "CUS-SPS-WO-SPS-2025-01",
+ "path": "documents/customers/work-orders/WO-SPS-2025-01_sps_2025-06-23.md",
+ "chars": 533,
+ "area": "customers",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "work_order",
+ "parent_id": "CUS-SPS-MSA",
+ "counterparty": "CUS-SPS",
+ "effective_date": "2025-06-23",
+ "roles": [
+  "tariff"
+ ],
+ "status": "active"
+}

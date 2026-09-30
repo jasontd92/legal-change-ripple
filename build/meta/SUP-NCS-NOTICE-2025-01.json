@@ -1,0 +1,17 @@
+{
+ "doc_id": "SUP-NCS-NOTICE-2025-01",
+ "path": "documents/supply/supplier-notices/northaire-comfort-systems_tariff-price-adjustment-notice_2025-01-06.md",
+ "chars": 756,
+ "area": "supply",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "supplier_notice",
+ "counterparty": "SUP-NCS",
+ "effective_date": "2025-01-06",
+ "roles": [
+  "tariff",
+  "price_increase_notice",
+  "one_way_ratchet"
+ ],
+ "status": "active"
+}

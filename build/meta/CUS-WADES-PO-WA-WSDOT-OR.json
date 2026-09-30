@@ -1,0 +1,17 @@
+{
+ "doc_id": "CUS-WADES-PO-WA-WSDOT-OR",
+ "path": "documents/customers/work-orders/WA-WSDOT-OR_wa-des-04224-purchase-order_2025-11-03.md",
+ "chars": 787,
+ "area": "customers",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "work_order",
+ "parent_id": "CUS-WADES-01",
+ "counterparty": "CUS-WADES",
+ "effective_date": "2025-11-03",
+ "roles": [
+  "tariff",
+  "price_ceiling"
+ ],
+ "status": "active"
+}

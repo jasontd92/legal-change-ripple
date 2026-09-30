@@ -1,0 +1,17 @@
+{
+ "doc_id": "CUS-SPS-EXPIRY",
+ "path": "documents/customers/sunpoint-public-schools-cooperative_mechanical-services-contract/04_notice-of-expiration-and-resolicitation_2026-04-20.md",
+ "chars": 849,
+ "area": "customers",
+ "cluster": "sunpoint-public-schools-cooperative_mechanical-services-contract",
+ "source_class": "generated_structured",
+ "doc_type": "customer_notice",
+ "parent_id": "CUS-SPS-MSA",
+ "counterparty": "CUS-SPS",
+ "effective_date": "2026-04-20",
+ "roles": [
+  "renewal",
+  "term_status"
+ ],
+ "status": "active"
+}

@@ -1,0 +1,25 @@
+{
+ "doc_id": "VEN-PAY-SSA-2026-03-01",
+ "path": "documents/vendors/paystream-technologies_services-agreement_2026-03-01.md",
+ "chars": 48625,
+ "area": "vendors",
+ "cluster": null,
+ "doc_type": "standard_terms",
+ "counterparty": "SAAS-PAY",
+ "effective_date": "2026-03-01",
+ "version_label": "effective March 1, 2026",
+ "published_url": "https://www.paystream.com/legal/services-agreement",
+ "status": "active",
+ "roles": [
+  "distractor"
+ ],
+ "source_class": "web_rewritten",
+ "source_ref": "W-STRIPE-SSA",
+ "copy_share": 0.137,
+ "version_pair_check": null,
+ "checks": {
+  "ok": true,
+  "fails": [],
+  "leaks": []
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "doc_id": "EMP-TPL-TRAINING",
+ "path": "documents/employment/templates/form_training-repayment-agreement_rev-2024.md",
+ "chars": 13484,
+ "area": "employment",
+ "cluster": null,
+ "doc_type": "training_repayment_form",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2024-01-01",
+ "status": "active",
+ "roles": [
+  "training_repayment",
+  "stay_or_pay",
+  "forfeiture"
+ ],
+ "source_class": "generated_llm",
+ "template": true,
+ "placeholders": [
+  "[[COMPANY_ENTITY]]",
+  "[[EMPLOYEE_NAME]]",
+  "[[TRAINING_PROGRAM]]",
+  "[[TRAINING_COST]]",
+  "[[COMPLETION_DATE]]",
+  "[[STATE]]",
+  "[[SIGN_DATE]]"
+ ],
+ "planted_features": [
+  "TRAINING_REPAY"
+ ],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

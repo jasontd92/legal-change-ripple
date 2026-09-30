@@ -1,0 +1,33 @@
+{
+ "doc_id": "CORP-EQUIP-LEASE",
+ "path": "documents/corporate/northwind-equipment-finance_master-equipment-lease-agreement_2022-09-01.md",
+ "chars": 55637,
+ "area": "corporate",
+ "cluster": null,
+ "doc_type": "master_lease",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2022-09-01",
+ "status": "active",
+ "roles": [
+  "distractor"
+ ],
+ "source_class": "edgar",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/720154/000092794603000004/masterleasekeycorp.htm",
+ "year_shift": 19,
+ "governing_law_remap": {
+  "from": [
+   "Ohio",
+   "Indiana"
+  ],
+  "to": "California"
+ },
+ "name_map_size": 32,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

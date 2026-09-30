@@ -1,0 +1,17 @@
+{
+ "doc_id": "CUS-HRP-MATADJ-NOTICE",
+ "path": "documents/customers/notices/meridian_notice-of-material-cost-adjustment_harborview_2025-04-14.md",
+ "chars": 950,
+ "area": "customers",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "outgoing_notice",
+ "parent_id": "CUS-HRP-MSA",
+ "counterparty": "CUS-HRP",
+ "effective_date": "2025-04-14",
+ "roles": [
+  "tariff",
+  "pass_through"
+ ],
+ "status": "active"
+}

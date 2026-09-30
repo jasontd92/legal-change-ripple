@@ -1,0 +1,27 @@
+{
+ "doc_id": "SUBK-LMC-01",
+ "path": "documents/subcontracts/lakemont-construction-group_subcontract-naperville-library_2023-06-12.md",
+ "chars": 47431,
+ "area": "subcontracts",
+ "cluster": null,
+ "doc_type": "subcontract",
+ "parent_id": null,
+ "counterparty": "GC-LMC",
+ "effective_date": "2023-06-12",
+ "status": "active",
+ "roles": [
+  "flow_down",
+  "l2_link"
+ ],
+ "source_class": "generated_llm",
+ "template": false,
+ "placeholders": [],
+ "planted_features": [
+  "FLOWDOWN_LAKEMONT"
+ ],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

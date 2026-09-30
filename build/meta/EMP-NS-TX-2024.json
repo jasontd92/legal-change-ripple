@@ -1,0 +1,27 @@
+{
+ "doc_id": "EMP-NS-TX-2024",
+ "path": "documents/employment/darius-kilgore_customer-non-solicitation-agreement_2024-03-11.md",
+ "chars": 13252,
+ "area": "employment",
+ "cluster": null,
+ "doc_type": "non_solicitation_agreement",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2024-03-11",
+ "status": "active",
+ "roles": [
+  "tx",
+  "non_solicit"
+ ],
+ "source_class": "generated_llm",
+ "template": false,
+ "placeholders": [],
+ "planted_features": [
+  "CUST_NONSOLICIT"
+ ],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

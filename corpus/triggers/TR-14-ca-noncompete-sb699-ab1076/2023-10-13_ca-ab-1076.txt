@@ -1,0 +1,155 @@
+Bill Text - AB-1076 Contracts in restraint of trade: noncompete agreements.
+
+skip to content
+
+home
+
+accessibility
+
+FAQ
+
+feedback
+
+sitemap
+
+login
+
+x
+
+ Quick Search:
+
+ Bill Number
+Bill Keyword
+
+Home
+
+Bill Information
+
+California Law
+
+Publications
+
+Other Resources
+
+My Subscriptions
+
+My Favorites
+
+Bill Information
+ >>
+
+Bill Search
+ >>
+
+Text
+
+Bill Text
+
+PDF2
+Bill PDF
+
+ |Add To My Favorites | Version: 10/13/23 - Chaptered
+09/18/23 - Enrolled
+07/10/23 - Amended Senate
+04/12/23 - Amended Assembly
+03/08/23 - Amended Assembly
+02/15/23 - Introduced
+
+AB-1076 Contracts in restraint of trade: noncompete agreements.(2023-2024)
+
+Text
+
+>>
+
+Votes
+
+>>
+
+History
+>>
+
+Bill Analysis
+>>
+
+Today's Law As Amended
+>>
+
+Compare Versions
+>>
+
+Status
+>>
+
+Comments To Author
+
+>>
+
+Add To My Favorites
+>>
+
+SHARE THIS:
+
+Date Published: 10/16/2023 09:00 PM
+
+AB1076:v94#DOCUMENTBill Start
+
+ Assembly Bill
+ 
+ No. 1076
+
+ CHAPTER 828
+
+An act to amend Section 16600 of, and to add Section 16600.1 to, the Business and Professions Code, relating to business. 
+
+ [
+ Approved by
+ 
+ Governor
+ October 13, 2023.
+ 
+ Filed with
+ 
+ Secretary of State
+ October 13, 2023.
+ ]
+
+LEGISLATIVE COUNSEL'S DIGEST
+
+AB 1076, Bauer-Kahan.
+ Contracts in restraint of trade: noncompete agreements.
+Existing law voids contractual provisions by which a person is restrained from engaging in a lawful profession, trade, or business of any kind, except as otherwise provided. Existing case law, as established in the case of Edwards v. Arthur Andersen LLP (2008) 44 Cal.4th 937, interprets this provision to void noncompete agreements in an employment context and noncompete clauses within employment contracts, even if that agreement is narrowly tailored, unless an exception applies.
+Existing law, the Unfair Competition Law (UCL), makes various practices unlawful and makes a person who engages in unfair competition liable for a civil penalty, as specified. Existing law provides for enforcement of these provisions exclusively by the Attorney General or other specified local agency attorneys.
+This bill would codify existing case law by specifying that the statutory provision voiding noncompete contracts is to be broadly construed to void the application of any noncompete agreement in an employment context, or any noncompete clause in an employment contract, no matter how narrowly tailored, that does not satisfy specified exceptions. The bill would state that this provision is declaratory of existing law. The bill would make these provisions applicable to contracts where the person being restrained is not a party to the contract.
+This bill would also make it unlawful to include a noncompete clause in an employment contract, or to require an employee to enter a noncompete agreement, that does not satisfy specified exceptions. The bill would require employers to notify current and former employees in writing by February 14, 2024, that the noncompete clause or agreement is void, as specified. This bill would make a
+ violation of these provisions an act of unfair competition pursuant to the UCL.
+
+Digest Key
+
+ Vote:
+ MAJORITY 
+ Appropriation:
+ NO 
+ Fiscal Committee:
+ YES 
+ Local Program:
+ NO 
+Bill Text
+The people of the State of California do enact as follows:
+
+SECTION 1.
+ Section 16600 of the Business and Professions Code is amended to read:
+16600.
+ (a) Except as provided in this chapter, every contract by which anyone is restrained from engaging in a lawful profession, trade, or business of any kind is to that extent void.
+(b) (1) This section shall be read broadly, in accordance with Edwards v. Arthur Andersen LLP (2008) 44 Cal.4th 937, to void the application of any noncompete agreement in an employment context, or any noncompete clause in an employment contract, no matter how narrowly tailored, that does not satisfy an exception in this chapter.
+(2) This subdivision does not constitute a change in, but is declaratory
+ of, existing law.
+(c) This section shall not be limited to contracts where the person being restrained from engaging in a lawful profession, trade, or business is a party to the contract. 
+
+SEC. 2.
+ Section 16600.1 is added to the Business and Professions Code, to read:
+16600.1.
+ (a) It shall be unlawful to include a noncompete clause in an employment contract, or to require an employee to enter a noncompete agreement, that does not satisfy an exception in this chapter.
+(b) (1) For current employees, and for former employees who were employed after January 1, 2022, whose contracts include a noncompete clause, or who were required to enter a noncompete agreement, that does not satisfy an exception to this chapter, the employer shall, by February 14, 2024, notify the employee that the noncompete clause or noncompete agreement is void.
+(2) Notice made under this
+ subdivision shall be in the form of a written individualized communication to the employee or former employee, and shall be delivered to the last known address and the email address of the employee or former employee.
+(c) A violation of this section constitutes an act of unfair competition within the meaning of Chapter 5 (commencing with Section 17200).

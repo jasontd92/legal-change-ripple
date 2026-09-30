@@ -1,0 +1,1053 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2870
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+    plugin-playwright-playwright browser_navigate\
+\
+    Read .playwright-mcp/page-2026-09-30T05-49-14-704Z.yml\
+\
+  $ python3 - <<'PY'\
+    import json,urllib.request 1.9s\
+    \'85 7 input lines hidden \'b7 ctrl+o to expand\
+    ui-mini-banks status completed scenario ui-mini-banks exit False reason None gate exit\
+    ui-mini-whitespace status completed scenario ui-mini-whitespace exit True reason No substantive diff: snap\'85\
+\
+    plugin-playwright-playwright browser_evaluate\
+\
+    Read src/server.ts line 140\
+\
+    Edited server.ts +2 -1\
+\
+    \uc0\u9614     if (!existsSync(file) || statSync(file).isDirectory()) file = path.join(ui, "index.html");\
+    \uc0\u9614     const ext = path.extname(file);\
+    \uc0\u9614     const types: Record<string, string> = \{ ".html": "text/html", ".js": "text/javascript", ".css":\
+    \uc0\u9614   "text/css", ".svg ...\
+    \uc0\u9614 -   res.writeHead(200, \{ "content-type": types[ext] ?? "application/octet-stream" \});\
+    \uc0\u9614 +   const cache = ext === ".html" ? "no-cache" : "public, max-age=31536000, immutable";\
+    \uc0\u9614 +   res.writeHead(200, \{ "content-type": types[ext] ?? "application/octet-stream", "cache-control":\
+    \uc0\u9614   cache \});\
+    \uc0\u9614     createReadStream(file).pipe(res);\
+    \uc0\u9614   \}\
+    \uc0\u9614 \
+\
+  $ kill 79466; sleep 0.3; npx tsx src/cli.ts serve --port 8787 1.9s (background)\
+\
+    Monitored background tasks, 1 complete, 1 active\
+    \'85 7 earlier items hidden\
+    Read .playwright-mcp/page-2026-09-30T05-50-41-118Z.yml\
+    Called plugin-playwright-playwright:browser_click\
+    Called plugin-playwright-playwright:browser_click\
+\
+    Grepped "...review\\"|Start review|Company profile" in .playwright-mcp/page-2026-09-30T05-50-49-936Z.yml\
+    Found 4 matches\
+\
+    plugin-playwright-playwright browser_close\
+\
+  $ npx tsc --noEmit --pretty false 2.5s\
+\
+  $ lsof -ti tcp:8787 | xargs kill 197ms\
+\
+    To-do All done\
+    \uc0\u10004  Normalizer, corpus, stacks, incorporates, stage 0, citations, pages/tools, ranking, schemas\
+    \uc0\u10004  Model loop, stage agents, one-session pipeline, CLI, telemetry, hooks\
+    \uc0\u10004  Eve agent, HTTP server, GC report UI\
+    \uc0\u10004  Tests (vectors, stacks, pipeline, resume) and browser check of the report UI\
+\
+  The harness is implemented end to end against contract 0.1.0. Schemas, enums, id rules, and the normaliser\
+  spec are unchanged. Twelve tests pass, including the six normaliser vectors, Keystone's October 2019\
+  incorporation pin, a full stub pipeline, resume after kill_after, and an injected read fault.\
+\
+  harness is the system the eval suite should shell out to:\
+\
+  npx tsx src/cli.ts run   --input scenario.json --config configs/o1-glm.json --out runs/<id>\
+  npx tsx src/cli.ts stage --stage 1|3|4|5 --input scenario.json --config configs/o1-glm.json --out DIR\
+  npx tsx src/cli.ts resume --run runs/<id>\
+  npx tsx src/cli.ts serve\
+  npx tsx src/cli.ts tick --url https://\'85 --config configs/o1-glm.json\
+\
+  Configs are configs/o1-glm.json, o2-deepseek, r1-luna, j-jev, s-sonnet, and stub. The stub is offline\
+  wiring that locates real quotes. It is on the setup form only as "Offline stub (wiring only)." Gateway,\
+  OpenAI, Anthropic, and TypeSafe keys are read by those SDKs. cost_usd stays null unless a config supplies\
+  prices.\
+\
+  One orchestrator session covers stages 1, 3, and 5. The harness fans out stage 4, one fresh analyst per\
+  in-scope stack, and writes each finding as that stack finishes. Resume skips stacks that already have a\
+  finding file. Ranking is approach A. ranking: "model" keeps the model's order among items that are shown.\
+\
+  The report UI is at harness serve (port 8787). Setup takes the company profile, one source URL and its\
+  snapshots, custom instructions, and a model, then starts a run. The report groups by direction, ranks\
+  within that, and expands citations. I checked that flow in the browser: a stub review of the copper\
+  investigation, citation expand, the whitespace-only banner, the company-gate exit, and a 390px-wide layout.\
+\
+  G0 is marked system-side frozen in contracts/READINESS.md, dated 2026-09-29, awaiting eval sign-off. G1\'96G3\
+  stay unflipped until a real model run produces a run id.\
+\
+\
+  how did you set up/aquire the various model auth/keys for the e2e runs?\
+\
+\
+  The runs that actually executed never called a model provider. I\'92ll confirm the code path so the answer\
+  matches what is in the repo.\
+\
+    Grepped, globbed 1 grep, 1 glob\
+    Grepped "process\\.env|API_KEY|gateway\\(" in src\
+    Globbed ".env*" in .\
+\
+  I did not set up or acquire any model keys. There is no .env in the project, and the harness never reads\
+  credentials itself.\
+\
+  Every run that actually executed used configs/stub.json. That path is in-process: it locates quotes in the\
+  vault and writes schema-valid artifacts. It does not call the AI Gateway, OpenAI, Anthropic, or TypeSafe.\
+  The twelve tests and the browser check of the report were all stub runs. G1\'96G3 are still unflipped for that\
+  reason.\
+\
+  The real configs only name model ids (zai/glm-5.3-flash, deepseek/deepseek-v4.1-flash, gpt-5.6-luna,\
+  claude-sonnet-5, classifier jev). When one of those is selected, the installed SDK looks up its own\
+  credentials from the environment. Nothing in this session supplied those.\
+\
+\
+  okay - i belive luna can be set up through vercel eve chatgpt() subscription, and the open weight\
+  models were indended through vercel's gateway. defer sonnet. let me know the minimal setup steps on my\
+  end for these keys (whatver you can't do yourself), and then also how to boot the app.\
+\
+\
+  Luna and the open-weight models are wired differently, so I\'92ll check what this repo actually calls before\
+  listing the steps only you can do.\
+\
+    Read, grepped 7 files, 7 greps\
+    \'85 11 earlier items hidden\
+    Grepped "TYPESAFE_API_KEY|apiKey" in node_modules/@typesafe-ai/sdk/dist/index.d.mts\
+    Read contracts/schemas/run-trace.schema.json lines 100-119\
+    Grepped "\\.env" in .gitignore\
+\
+    WebSearch Vercel AI Gateway API key AI_GATEWAY_API_KEY create 2026\
+    Found 2 references\
+\
+    Grepped ""./models/openai"" in node_modules/eve/package.json\
+    Found 1 matches\
+\
+  Luna is still pointed at an OpenAI API key. The design uses the ChatGPT subscription through eve, so I\'92ll\
+  point that config at chatgpt() and load a local env file. The gateway key and the ChatGPT sign-in still\
+  have to be yours.\
+\
+    Edited models.ts +1\
+\
+    \uc0\u9614   import \{ anthropic \} from "@ai-sdk/anthropic";\
+    \uc0\u9614   import \{ openai \} from "@ai-sdk/openai";\
+    \uc0\u9614   import \{ gateway, generateText, stepCountIs, tool, type LanguageModel, type ModelMessage, type ToolSet\
+    \uc0\u9614   \} from "ai";\
+    \uc0\u9614 + import \{ chatgpt \} from "eve/models/openai";\
+    \uc0\u9614   import type \{ ZodType \} from "zod";\
+    \uc0\u9614   import type \{ TokenUse, ToolCallRecord, ToolOutcome \} from "./types.js";\
+    \uc0\u9614 \
+\
+    Edited models.ts +5 -3\
+\
+    \uc0\u9614     steps: number;\
+    \uc0\u9614   \};\
+    \uc0\u9614 \
+    \uc0\u9614 - export function providerFor(modelId: string): "gateway" | "anthropic" | "openai" | "stub" \{\
+    \uc0\u9614 + export function providerFor(modelId: string): "gateway" | "anthropic" | "openai" | "chatgpt" | "stub"\
+    \uc0\u9614   \{\
+    \uc0\u9614     if (modelId === "stub") return "stub";\
+    \uc0\u9614     if (modelId.startsWith("claude") || modelId.startsWith("anthropic/")) return "anthropic";\
+    \uc0\u9614 -   if (modelId.startsWith("gpt-") || modelId.startsWith("chatgpt:")) return "openai";\
+    \uc0\u9614 +   if (modelId === "gpt-5.6-luna" || modelId.startsWith("chatgpt:")) return "chatgpt";\
+    \uc0\u9614 +   if (modelId.startsWith("gpt-")) return "openai";\
+    \uc0\u9614     return "gateway";\
+    \uc0\u9614   \}\
+    \uc0\u9614  \'85 truncated (10 more lines) \'b7 ctrl+r to review\
+\
+    Edited cli.ts +1 -1\
+\
+    \uc0\u9614 - import \{ cpSync, mkdirSync, readFileSync, writeFileSync \} from "node:fs";\
+    \uc0\u9614 + import \{ cpSync, existsSync, mkdirSync, readFileSync, writeFileSync \} from "node:fs";\
+    \uc0\u9614   import path from "node:path";\
+    \uc0\u9614   import \{ parseArgs \} from "node:util";\
+    \uc0\u9614   import \{ loadConfig, loadScenario \} from "./corpus.js";\
+\
+    Edited cli.ts +8\
+\
+    \uc0\u9614   Resume continues a partial run from artifacts already written and does not repeat finished stacks.\
+    \uc0\u9614   `;\
+    \uc0\u9614 \
+    \uc0\u9614 + function loadLocalEnv(repo: string): void \{\
+    \uc0\u9614 +   for (const name of [".env.local", ".env"]) \{\
+    \uc0\u9614 +     const file = path.join(repo, name);\
+    \uc0\u9614 +     if (!existsSync(file)) continue;\
+    \uc0\u9614 +     process.loadEnvFile(file);\
+    \uc0\u9614 +   \}\
+    \uc0\u9614 + \}\
+    \uc0\u9614 +\
+    \uc0\u9614   async function main(): Promise<void> \{\
+    \uc0\u9614  \'85 truncated (2 more lines) \'b7 ctrl+r to review\
+\
+    Edited cli.ts +1\
+\
+    \uc0\u9614     \}\
+    \uc0\u9614     const cmd = positionals[0];\
+    \uc0\u9614     const repo = findRepo();\
+    \uc0\u9614 +   loadLocalEnv(repo);\
+    \uc0\u9614     if (cmd === "serve") \{\
+    \uc0\u9614       const port = Number(values.port ?? 8787);\
+    \uc0\u9614       await startServer(\{ repo, port \});\
+\
+    Edited .gitignore +2\
+\
+    \uc0\u9614   .eve/\
+    \uc0\u9614   *.log\
+    \uc0\u9614   .DS_Store\
+    \uc0\u9614 + .env\
+    \uc0\u9614 + .env.local\
+    \uc0\u9614   .playwright-mcp/\
+\
+  $ npx tsc --noEmit --pretty false && npm test 3.3s\
+    \'85 22 output lines hidden \'b7 ctrl+o to expand\
+    \uc0\u8505  todo 0\
+    \uc0\u8505  duration_ms 845.559208\
+\
+  Two credentials are yours to create. Sonnet stays unused. Luna no longer looks for an OpenAI API key:\
+  configs/r1-luna.json calls eve's chatgpt("gpt-5.6-luna"), which bills your ChatGPT subscription. GLM and\
+  DeepSeek go through the Vercel AI Gateway.\
+\
+  AI Gateway key (O1 GLM and O2 DeepSeek)\
+\
+  1. In the Vercel dashboard, open AI Gateway API keys\
+     (https://vercel.com/docs/ai-gateway/authentication-and-byok/api-keys) and create a key. Copy it once;\
+     Vercel will not show it again. A team payment method is required if you want the free Gateway credits.\
+  2. Put it in .env.local in this repo (that file is gitignored):\
+\
+  AI_GATEWAY_API_KEY=the-key-you-just-copied\
+\
+  The CLI loads .env.local on startup and does not override a key already in the shell.\
+\
+  ChatGPT subscription (R1 Luna only)\
+\
+  From this repo, run npx eve dev, open the URL it prints, go to /login, and choose ChatGPT subscription. If\
+  the Codex CLI is installed, eve uses codex login; otherwise it opens a browser sign-in and stores the\
+  session in the macOS keychain. Quit eve after that. Later Luna runs reuse the saved login. This credential\
+  stays on your machine.\
+\
+  Boot the report app\
+\
+  cd /Users/jason/Documents/gc-ai-take-home-research\
+  npm run serve\
+\
+  Open http://127.0.0.1:8787. The form defaults to o1-glm. Choose r1-luna for a Luna run. Restart npm run\
+  serve after you add or change .env.local.\
+\
+  The UI is already built. Rebuild it with npm run ui:build only if you change ui/. A CLI run of the same\
+  pipeline is:\
+\
+  npx tsx src/cli.ts run --input path/to/scenario.json --config configs/o1-glm.json --out runs/<id>\
+\
+\
+  create the key yourself via vercel ai-gateway api-keys create --name my-api-key\
+\
+\
+  I\'92ll create the Gateway key with the Vercel CLI and store it in .env.local so the harness can read it.\
+\
+  $ vercel whoami && vercel ai-gateway api-keys create --help exit 127 \'95 469ms\
+    (eval):1: command not found: vercel\
+\
+  $ npx vercel@latest whoami && npx vercel@latest ai-gateway api-keys create --help exit 1 \'95 15s\
+    \'85 11 output lines hidden \'b7 ctrl+o to expand\
+    > Logged out.\
+    > Run `vercel deploy --temporary` to create a temporary deployment you can claim later, or `vercel login` \'85\
+\
+  $ if [ -n "$VERCEL_TOKEN" ]; then echo "VERCEL_TOKEN is set"; else echo "VERCEL_TOKEN is unset"; fi; if [ -n\
+    "$AI_GATEWAY_API_KEY" ]; then echo "AI_GATEWAY_API_KEY is set"; else echo "AI_GATEWAY_API_KEY is unset";\
+    fi; ls -la "$HOME/.local/share/com.vercel.cli" "$HOME/Library/Application Support/com.vercel.cli"\
+    "$HOME/.vercel" 2>/dev/null | head -40 193ms\
+    \'85 8 output lines hidden \'b7 ctrl+o to expand\
+    -rw-------@   1 jason  staff   112 Sep 30 00:03 telemetry-session.json\
+    -rw-------@   1 jason  staff   424 Sep 30 00:03 telemetry-version-context.json\
+\
+  $ npx vercel@latest login --help 1.2s\
+    \'85 25 output lines hidden \'b7 ctrl+o to expand\
+        $ vercel login\
+\
+  $ npx vercel@latest login 12s\
+    \'85 11 output lines hidden \'b7 ctrl+o to expand\
+      \uc0\u55357 \u56481  To deploy every commit automatically,\
+      connect a Git Repository (vercel.link/git (https://vercel.link/git)).\
+\
+  $ npx vercel@latest ai-gateway api-keys create --help 1.4s\
+    \'85 61 output lines hidden \'b7 ctrl+o to expand\
+        $ vercel ai-gateway api-keys create --name escape-hatch --bypass-all-settings --expiration 7d\
+\
+  $ npx vercel@latest ai-gateway api-keys create --name my-api-key > /tmp/meridian-gw-key.txt\
+    python3 - <<'PY' 1.8s\
+    \'85 6 input + 5 output lines hidden \'b7 ctrl+o to expand\
+    ---LINES 1\
+\
+  $ python3 - <<'PY'\
+    from pathlib import Path 202ms\
+    \'85 13 input lines hidden \'b7 ctrl+o to expand\
+    chars 61 nonempty_lines 1 line_lens [60]\
+    wrote /Users/jason/Documents/gc-ai-take-home-research/.env.local mode 0o600 key_len 60\
+\
+  The Gateway key is created and saved. The Vercel CLI was logged out, so a device login completed first,\
+  then vercel ai-gateway api-keys create --name my-api-key ran under that account.\
+\
+  The secret is in .env.local as AI_GATEWAY_API_KEY, mode 600, and that file is gitignored. No spend limit\
+  was set on the key, so usage counts toward your team and user budgets.\
+\
+  Restart npm run serve if it is already running. The process only reads .env.local at startup.\
+\
+\
+  does vercel eve support streaming to somethoing like vercel ai elemtns? what would be the lowest lift\
+  to update the UI (though not the focus) with baisc streaming + subagnet obervability - like observing\
+  an active run/chat.\
+\
+\
+  The current report page polls a finished run. I\'92ll check what eve actually streams and how close that is to\
+  AI Elements before suggesting the smallest UI change.\
+\
+    Grepped, read 7 greps, 4 files\
+    \'85 8 earlier items hidden\
+    Read src/server.ts lines 79-108\
+    Grepped "...ic-tool|type: \\"reasoning\\"|UIMessage" in node_modules/eve/dist/src/react\
+    Grepped "parts|dynamic-tool|subagent" in node_modules/eve/docs/guides/frontend/overview.mdx\
+\
+  Eve streams its own session protocol, not the AI SDK data stream that AI Elements is built on. The parts\
+  look similar, and they are not the same type.\
+\
+  useEveAgent() from eve/react already reduces an NDJSON session into messages whose text, reasoning, and\
+  dynamic-tool parts follow the AI SDK UIMessage shape. Eve\'92s own docs say those types are not\
+  interchangeable with UIMessage, so an AI Elements chat would need a small adapter. Live subagent progress\
+  is not inside the parent message. The parent emits subagent.called with a childSessionId, and the client\
+  follows that child\'92s stream with streamSubagent().\
+\
+  That path would not show this app\'92s stack analysts. Those runs happen inside the harness, as separate\
+  generateText calls. Eve only sees one run_pipeline tool call that stays open until the whole review\
+  finishes. Moving the fan-out into eve subagents would be a second execution path, and the eval CLI is the\
+  system under test.\
+\
+  The low-lift view is the harness trace that already exists. trace.jsonl records stage boundaries, and each\
+  stack writes a finding file when it finishes. The report page already polls /api/runs/:id until the run is\
+  terminal.\
+\
+  \'95 Add those events to the poll response: current stage, stacks finished, and the last few trace lines.\
+  \'95 Render them above the report as a short activity list, then keep the ranked report as the finished\
+    view.\
+\
+  Tailing trace.jsonl as NDJSON is the next step if the poll feels coarse. Token-level streaming, and an AI\
+  Elements transcript, are a larger change: the model loop would have to switch from generateText to\
+  streamText, and the UI would be watching model chatter instead of stacks finishing.\
+\
+\
+  what would trialing logs as ndjson require?\
+\
+\
+  The harness already appends one JSON line per event. I\'92ll look at that writer and the report page so the\
+  NDJSON tail is scoped to what is actually missing.\
+\
+    Read, grepped 2 files, 2 greps\
+    Read src/pipeline.ts lines 560-619\
+    Grepped "state\\.event\\(" in src\
+    Read ui/src/App.tsx lines 155-204\
+    Grepped "flush\\(|addStage\\(" in src/pipeline.ts\
+\
+  Tailing the log is a small server route plus a reader on the report page. The file is already NDJSON.\
+  trace.jsonl is one JSON object per line, appended as the run goes.\
+\
+  What that file contains today is sparse. A line is written for a finished stack (type: "finding", with\
+  stack_id and determination), an early exit, a kill_after, or an error. Stage changes go to run.json when a\
+  stage flushes, not onto this log. Token and tool-call text never land here, because each model call waits\
+  for generateText to finish before anything is recorded.\
+\
+  Server. Add GET /api/runs/:id/trace on the existing Node server. It should:\
+\
+  \'95 Reject a run id that escapes runs/.\
+  \'95 Send content-type: application/x-ndjson and flush headers immediately.\
+  \'95 Write the lines already in trace.jsonl, then keep reading new bytes from the last offset.\
+    createReadStream stops at the current end of file, so the follow has to be a short offset loop or\
+    fs.watchFile. Hold back a trailing partial line until the next newline.\
+  \'95 If the file does not exist yet, wait briefly and start once the run creates it.\
+  \'95 Stop when the client disconnects, or when run.json status is completed, failed, resumed_completed, or\
+    partial.\
+  \'95 Close the response after that. Do not buffer the whole run and send it at the end.\
+\
+  Page. On the report route, fetch that URL, read response.body with a reader, split on newlines, and\
+  JSON.parse each complete line. Append those rows above the report. Keep the existing JSON poll for the\
+  finished ImpactReport; the stream is the activity list, and the poll still loads the ranked report when the\
+  run ends. Abort the reader when the page unmounts or the run id changes.\
+\
+  That shows stacks finishing, in order, while the review is in flight. Stage labels and live model text\
+  would each be a separate addition: one event() call next to each stage flush, or switching the model loop\
+  from generateText to streamText and logging those deltas.\
+\
+\
+  need beter observability - as a dev, triggering a run through the ui, i have almost no insight into\
+  progress, or if a run is even still active. reporting stages is worse than the minum. are there any\
+  well adopted open source repos or vercel-native methods for eve visibility? I can't imagine anyone\
+  serious using a harness with no visibility...\
+\
+\
+  The report page only learns that a run finished. I\'92ll check what eve and Vercel already expose for a live\
+  session, and which of that can see this harness.\
+\
+    Grepped, globbed, read 4 greps, 1 glob, 3 files\
+    \'85 5 earlier items hidden\
+    Read .../eve/docs/guides/instrumentation/agent-runs.mdx\
+    Read ...odules/eve/docs/guides/instrumentation/otel.mdx lines 140-209\
+    Read src/pipeline.ts lines 250-309\
+\
+\
+  also search the web\
+\
+\
+  The local eve docs only cover traces that run inside an eve session. I\'92ll check current Vercel and\
+  open-source options against that.\
+\
+    WebSearch Vercel eve observability Agent Runs local traces OpenTelemetry 2026\
+    Found 1 reference\
+\
+    WebSearch open source LLM agent tracing Langfuse Phoenix OpenTelemetry gen_ai AI SDK telemetry 2026\
+    Found 3 references\
+\
+    WebSearch Vercel AI Gateway observability logs traces dashboard 2026\
+    Found 1 reference\
+\
+    Grepped "telemetry\\?:" in node_modules/ai/dist/index.d.ts\
+    Found 17 matches  (truncated)\
+\
+    WebFetch https://vercel.com/docs/eve/observability\
+\
+  Eve and the AI Gateway already have real trace UIs. A run started from this report page never enters either\
+  of them, so those dashboards stay dark while the review is in flight.\
+\
+  What you have today. The page polls until run.json says the run is finished. Stage 4 is written only after\
+  every stack returns, and the page does not list finding files as they appear. A long model call looks\
+  identical to a dead process. The per-stack records are already on disk (findings/*.json, and run.json is\
+  rewritten after each stack). The page does not read them until the end.\
+\
+  Vercel-native, and what each one can see\
+\
+  \uc0\u9484 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9516 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9516 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9488 \
+  \uc0\u9474  Surface               \u9474  Where                         \u9474  What it shows for this app                      \u9474 \
+  \uc0\u9500 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9508 \
+  \uc0\u9474  Agent Runs            \u9474  Vercel project \u8594               \u9474  Sessions, turns, tools, reasoning, tokens, and  \u9474 \
+  \uc0\u9474  (https://vercel.com/d \u9474  Observability. Default on     \u9474  subagent links. Only for work that runs inside  \u9474 \
+  \uc0\u9474  ocs/eve/agent-runs)   \u9474  preview/production eve        \u9474  an eve session. The report button calls         \u9474 \
+  \uc0\u9474                        \u9474  deploys. Locally, eve dev     \u9474  executeRun directly, so Agent Runs never sees   \u9474 \
+  \uc0\u9474                        \u9474  then /traces, or eve traces   \u9474  it.                                             \u9474 \
+  \uc0\u9474                        \u9474  after it exits.               \u9474                                                  \u9474 \
+  \uc0\u9500 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9508 \
+  \uc0\u9474  AI Gateway logs       \u9474  Team or project \u8594  AI Gateway  \u9474  One row per Gateway HTTP call: model, status,   \u9474 \
+  \uc0\u9474  (https://vercel.com/d \u9474  \u8594  Logs, with a Live tail      \u9474  latency, tokens, cost. GLM and DeepSeek show up \u9474 \
+  \uc0\u9474  ocs/ai-gateway/observ \u9474                                \u9474  here with no code changes. Luna does not,       \u9474 \
+  \uc0\u9474  ability-and-spend/log \u9474                                \u9474  because it uses the ChatGPT subscription. Rows  \u9474 \
+  \uc0\u9474  s)                    \u9474                                \u9474  are requests, not stacks.                       \u9474 \
+  \uc0\u9500 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9508 \
+  \uc0\u9474  AI Gateway trace      \u9474  Team Settings \u8594  Drains,       \u9474  The same Gateway requests as OpenTelemetry      \u9474 \
+  \uc0\u9474  drains                \u9474  OTLP/HTTP                     \u9474  spans, including provider failover. Still one   \u9474 \
+  \uc0\u9474  (https://vercel.com/d \u9474                                \u9474  span per HTTP call.                             \u9474 \
+  \uc0\u9474  ocs/ai-gateway/observ \u9474                                \u9474                                                  \u9474 \
+  \uc0\u9474  ability-and-spend/tra \u9474                                \u9474                                                  \u9474 \
+  \uc0\u9474  ce-drains)            \u9474                                \u9474                                                  \u9474 \
+  \uc0\u9492 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9524 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9524 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9496 \
+\
+  Eve\'92s own trace tree, from the observability docs (https://vercel.com/docs/eve/observability), is\
+  invoke_agent \uc0\u8594  agent.step \u8594  chat and execute_tool. A subagent is a linked trace\
+  (eve.link.type=agent.dispatch). If this UI called the eve agent, you would see one run_pipeline tool span\
+  that stays open until the whole review returns. The stack analysts are generateText calls inside that tool,\
+  so they are not eve steps.\
+\
+  Open source that people actually use\
+\
+  The shared format is OpenTelemetry GenAI spans (gen_ai.*). Eve already emits those for its own sessions.\
+  The AI SDK 7 generateText call this harness uses accepts telemetry and will emit the same kind of spans\
+  once a tracer is registered. Backends that render that tree:\
+\
+  \'95 Langfuse (https://langfuse.com/resources/engineering/opentelemetry-languages) is the usual open-source\
+    choice. Self-host or cloud, OTLP in, nested generations with model, tokens, and cost.\
+  \'95 Arize Phoenix (https://github.com/Arize-ai/phoenix) is the usual local one. A single process, no\
+    account, built for OTLP GenAI traces.\
+  \'95 Braintrust, Honeycomb, Datadog, and Jaeger are the ones eve\'92s docs name as otelIntegration()\
+    destinations. Braintrust is also a native Vercel trace-drain target. Those are products, not something\
+    you drop into this repo.\
+\
+  OpenLLMetry will auto-instrument provider SDKs. It will not know what a stack is unless the span attributes\
+  say so.\
+\
+  What I would use here\
+\
+  Gateway Live logs are the zero-setup check that GLM is still being called. They will not tell you which\
+  stack, or whether stage 1 is stuck.\
+\
+  The view that matches this harness is the report page reading the files the run already writes: current\
+  stage, stacks finished versus still in scope, and the last error. That is a poll of run.json,\
+  scope_trace.json, and findings/, not a new tracing vendor.\
+\
+  A trace product is the step after that, and only if you want model steps and tool calls inside a stack.\
+  Turn on telemetry in runAgent, tag each span with run_id and stack_id, and export OTLP to Phoenix locally\
+  or Langfuse if you want it hosted. Eve\'92s Agent Runs stays the right viewer for the eve shell, and it will\
+  not replace that until the stack loop itself is an eve session.\
+\
+\
+  yeah i want something viewable/surfaced "natively" in the local html view - whether migrating to react\
+  etc. - but a streaming effect i think its critical. Whats the best path - hand rolling log mapping to a\
+  "trailing logs" woidow (cleaned/formatted)? something esle?\
+\
+\
+  Keep the React page you already have. The streaming surface should be a short activity timeline on the\
+  report route, fed by structured events, not a console log and not an AI Elements chat.\
+\
+  A trailing window is the right shape. A model transcript is the wrong one. Four stacks run at once, and the\
+  thing you need to see is whether the run is alive and what it is doing: stage, stack, tool, finding,\
+  error. Token deltas from streamText would be a chat UI for work that is not a chat.\
+\
+  Do not tail trace.jsonl as it stands. That file only grows when a stack finishes, the run exits early, or\
+  something throws. A model call that is still inside generateText writes nothing, so a live tail of the\
+  current log stays blank for the entire stretch where you cannot tell a live run from a dead one.\
+\
+  Emit a few events from the places that already know the truth, and append them to that same NDJSON file:\
+\
+  \'95 stage started and stage finished\
+  \'95 stack started, before generateText\
+  \'95 each tool call as it starts and as it returns (grep, read, commit_finding), from the wrapper in\
+    runAgent that already records the call\
+  \'95 finding written\
+  \'95 error\
+\
+  The report page then reads GET /api/runs/:id/trace as NDJSON and renders one line per event, stuck to the\
+  bottom:\
+\
+  Stage 3 \'b7 scoping\
+  supply/acme-supply \'b7 read purchase-orders/po-1.md\
+  supply/acme-supply \'b7 finding \'b7 affected\
+\
+  When impact_report.json appears, the ranked report stays underneath that list. The poll you have now can\
+  remain the way the finished report loads.\
+\
+  That is the whole path: about a dozen event() calls, one streaming route, and a list on the page you\
+  already ship. No framework change, and no second trace product.\
+\
+\
+  okay - update & implment, for the sake of session observability in realtime\
+\
+\
+  The report page should show the run while it is happening. I\'92ll emit stage, stack, and tool events as they\
+  occur and stream them into the page you already have.\
+\
+    Read, grepped 27 files, 4 greps\
+    \'85 28 earlier items hidden\
+    Read src/agents.ts lines 250-279\
+    Read ui/src/App.tsx\
+    Read ui/src/styles.css line 40\
+\
+  The report page only learns a run finished. I'll emit stage, stack, and tool events as they happen and\
+  stream them into a live timeline on that page.\
+\
+    Edited models.ts +60 -29\
+\
+    \uc0\u9614     return \{ input: 0, cached_input: 0, cache_write: 0, output: 0, reasoning: 0 \};\
+    \uc0\u9614   \}\
+    \uc0\u9614 \
+    \uc0\u9614 + export type AgentEvent =\
+    \uc0\u9614 +   | \{ type: "working"; model: string \}\
+    \uc0\u9614 +   | \{ type: "tool"; phase: "started" | "finished"; tool: string; file?: string | null; ok?: boolean;\
+    \uc0\u9614   error?: string ...\
+    \uc0\u9614 +\
+    \uc0\u9614   export async function runAgent(opts: \{\
+    \uc0\u9614     modelId: string;\
+    \uc0\u9614     system: string;\
+    \uc0\u9614     stopWhen?: () => boolean;\
+    \uc0\u9614     providerPin?: string | null;\
+    \uc0\u9614  \'85 truncated (102 more lines) \'b7 ctrl+r to review\
+\
+    Edited agents.ts +2\
+\
+    \uc0\u9614   \});\
+    \uc0\u9614 \
+    \uc0\u9614   export type AgentSink = (record: AgentRecord) => void;\
+    \uc0\u9614 + export type Observe = (event: Record<string, unknown>) => void;\
+    \uc0\u9614 \
+    \uc0\u9614   type Common = \{\
+    \uc0\u9614     config: HarnessConfig;\
+    \uc0\u9614     scenario: ScenarioInput;\
+    \uc0\u9614     messages: ModelMessage[];\
+    \uc0\u9614     sink: AgentSink;\
+    \uc0\u9614 +   observe?: Observe;\
+    \uc0\u9614   \};\
+    \uc0\u9614  \'85 truncated (2 more lines) \'b7 ctrl+r to review\
+\
+    Edited agents.ts +1\
+\
+    \uc0\u9614     prior: \{ question: string; finding: StackFinding \} | null;\
+    \uc0\u9614     fault: FaultState | null;\
+    \uc0\u9614     sink: AgentSink;\
+    \uc0\u9614 +   observe?: Observe;\
+    \uc0\u9614   \}): Promise<StackFinding> \{\
+    \uc0\u9614     const loaded = new Map<string, string>();\
+    \uc0\u9614     const unparseable: string[] = [];\
+\
+    Edited agents.ts +1 -1\
+\
+    \uc0\u9614   \}\
+    \uc0\u9614 \
+    \uc0\u9614   async function finishStack(\
+    \uc0\u9614 -   opts: \{ config: HarnessConfig; scenario: ScenarioInput; profileText: string; manifest:\
+    \uc0\u9614   StackManifest; files: stri ...\
+    \uc0\u9614 +   opts: \{ config: HarnessConfig; scenario: ScenarioInput; profileText: string; manifest:\
+    \uc0\u9614   StackManifest; files: stri ...\
+    \uc0\u9614     messages: ModelMessage[],\
+    \uc0\u9614     tools: Record<string, AgentTool>,\
+    \uc0\u9614     box: \{ done: boolean; attempts: number; finding: StackFinding | null \},\
+\
+    Edited agents.ts +1\
+\
+    \uc0\u9614       stopWhen: () => box.done,\
+    \uc0\u9614       providerPin: opts.config.model_config.provider_pin,\
+    \uc0\u9614       cache: cacheOf(opts.config),\
+    \uc0\u9614 +     onEvent: (event) => opts.observe?.(\{ ...event, stack_id: opts.manifest.stack_id \}),\
+    \uc0\u9614     \});\
+    \uc0\u9614     if (!box.finding) \{\
+    \uc0\u9614       box.finding = \{\
+\
+    Edited agents.ts +1\
+\
+    \uc0\u9614       stopWhen,\
+    \uc0\u9614       providerPin: opts.config.model_config.provider_pin,\
+    \uc0\u9614       cache: cacheOf(opts.config),\
+    \uc0\u9614 +     onEvent: (event) => opts.observe?.(\{ ...event, role: "orchestrator" \}),\
+    \uc0\u9614     \});\
+    \uc0\u9614     opts.messages.push(...run.messages);\
+    \uc0\u9614     return agentRecord("orchestrator", "orchestrator", modelId, run.usage, run.peak_context_tokens,\
+    \uc0\u9614   run.tool_calls, 0 ...\
+\
+    Edited pipeline.ts +3\
+\
+    \uc0\u9614     \}\
+    \uc0\u9614     const state = new RunDir(opts.repo, opts.runDir, scenario, activeConfig, corpus, stacks, manifests);\
+    \uc0\u9614     if (opts.resume) state.load();\
+    \uc0\u9614 +   state.event(\{ type: "run", phase: "started", run_id: path.basename(opts.runDir) \});\
+    \uc0\u9614     try \{\
+    \uc0\u9614       if (opts.mode.kind === "stage") await runStage(state, opts.mode);\
+    \uc0\u9614       else await runFull(state);\
+    \uc0\u9614     \} catch (err) \{\
+    \uc0\u9614       state.status = state.status === "partial" ? "partial" : "failed";\
+    \uc0\u9614       state.event(\{ type: "error", message: err instanceof Error ? err.message : String(err) \});\
+    \uc0\u9614 +     state.event(\{ type: "run", phase: "finished", status: state.status \});\
+    \uc0\u9614       state.flush();\
+    \uc0\u9614  \'85 truncated (6 more lines) \'b7 ctrl+r to review\
+\
+    Edited pipeline.ts +1\
+\
+    \uc0\u9614 \
+    \uc0\u9614   async function runFull(state: RunDir): Promise<void> \{\
+    \uc0\u9614     if (!state.raw) \{\
+    \uc0\u9614 +     noteStage(state, "0", "started");\
+    \uc0\u9614       const raw = computeRaw(state);\
+    \uc0\u9614       state.raw = raw;\
+    \uc0\u9614       writeJson(path.join(state.runDir, "raw_change.json"), raw);\
+\
+    Edited pipeline.ts +1\
+\
+    \uc0\u9614 \
+    \uc0\u9614   async function runStage(state: RunDir, mode: Extract<RunMode, \{ kind: "stage" \}>): Promise<void> \{\
+    \uc0\u9614     if (mode.stage === "1") \{\
+    \uc0\u9614 +     noteStage(state, "0", "started");\
+    \uc0\u9614       const raw = computeRaw(state);\
+    \uc0\u9614       state.raw = raw;\
+    \uc0\u9614       writeJson(path.join(state.runDir, "raw_change.json"), raw);\
+\
+    Edited pipeline.ts +1\
+\
+    \uc0\u9614       state.change = readJson<ChangeRecord>(file);\
+    \uc0\u9614       return;\
+    \uc0\u9614     \}\
+    \uc0\u9614 +   noteStage(state, "1", "started");\
+    \uc0\u9614     const started = new Date().toISOString();\
+    \uc0\u9614     if (!state.newText || !state.newFile) \{\
+    \uc0\u9614       const raw = state.raw ?? computeRaw(state);\
+\
+    Edited pipeline.ts +1\
+\
+    \uc0\u9614         newFile: state.newFile!,\
+    \uc0\u9614         preview: state.raw?.preview ?? "",\
+    \uc0\u9614         newText: state.newText!,\
+    \uc0\u9614 +       observe: (event) => state.event(event),\
+    \uc0\u9614       \});\
+    \uc0\u9614       state.change = result.record;\
+    \uc0\u9614     \}\
+\
+    Edited pipeline.ts +1\
+\
+    \uc0\u9614       return;\
+    \uc0\u9614     \}\
+    \uc0\u9614     if (!state.change) throw new Error("Stage 3 needs a change record.");\
+    \uc0\u9614 +   noteStage(state, "3", "started");\
+    \uc0\u9614     const started = new Date().toISOString();\
+    \uc0\u9614     const known = new Set(state.stacks.map((s) => s.stack_id));\
+    \uc0\u9614     const lines = state.stacks.map((s) => manifestLine(state.manifests.get(s.stack_id)!));\
+\
+    Edited pipeline.ts +1\
+\
+    \uc0\u9614         change: state.change,\
+    \uc0\u9614         lines,\
+    \uc0\u9614         known,\
+    \uc0\u9614 +       observe: (event) => state.event(event),\
+    \uc0\u9614       \});\
+    \uc0\u9614       decisions = result.decisions;\
+    \uc0\u9614       extras = result.extras;\
+\
+    Edited pipeline.ts +1\
+\
+    \uc0\u9614     if (!state.scope || !state.change) throw new Error("Fan-out needs a scope and a change record.");\
+    \uc0\u9614     const started = new Date().toISOString();\
+    \uc0\u9614     const pending = state.scope.stacks.filter((row) => row.in_scope &&\
+    \uc0\u9614   !existsSync(findingPath(state.runDir, row.stac ...\
+    \uc0\u9614 +   noteStage(state, "4", "started");\
+    \uc0\u9614     const limit = Math.max(1, state.config.concurrency ?? 4);\
+    \uc0\u9614     let cursor = 0;\
+    \uc0\u9614     const workers = Array.from(\{ length: Math.min(limit, Math.max(pending.length, 1)) \}, async () => \{\
+\
+    Edited pipeline.ts +6\
+\
+    \uc0\u9614   async function analyse(state: RunDir, manifest: StackManifest, prior: \{ question: string; finding:\
+    \uc0\u9614   StackFinding \} | ...\
+    \uc0\u9614     const stack = state.stacks.find((s) => s.stack_id === manifest.stack_id);\
+    \uc0\u9614     if (!stack || !state.change) throw new Error(`Missing stack $\{manifest.stack_id\}`);\
+    \uc0\u9614 +   state.event(\{ type: "stack", phase: "started", stack_id: manifest.stack_id \});\
+    \uc0\u9614     const files = readingSet(state.scenario.corpus_root, stack, state.edgesOf(stack),\
+    \uc0\u9614   state.corpus.byId);\
+    \uc0\u9614     const fault = faultState(state);\
+    \uc0\u9614     const profile = loadProfile(state.corpus, state.scenario.profile);\
+    \uc0\u9614         files,\
+    \uc0\u9614         fault,\
+    \uc0\u9614       \});\
+    \uc0\u9614 +     for (const call of stub.agent.tool_calls) \{\
+    \uc0\u9614 +       state.event(\{ type: "tool", phase: "started", tool: call.tool, stack_id: manifest.stack_id,\
+    \uc0\u9614   file: call.file \});\
+    \uc0\u9614  \'85 truncated (12 more lines) \'b7 ctrl+r to review\
+\
+    Edited pipeline.ts +1\
+\
+    \uc0\u9614   \}\
+    \uc0\u9614 \
+    \uc0\u9614   async function ensureReport(state: RunDir, injected: boolean): Promise<void> \{\
+    \uc0\u9614 +   noteStage(state, "5", "started");\
+    \uc0\u9614     const started = new Date().toISOString();\
+    \uc0\u9614     const findings = loadFindings(state);\
+    \uc0\u9614     const windowDays = urgencyWindowFromPrompt(state.scenario.custom_prompt);\
+\
+    Edited pipeline.ts +1\
+\
+    \uc0\u9614         scenario: state.scenario,\
+    \uc0\u9614         messages: state.messages,\
+    \uc0\u9614         sink: (agent) => state.absorb(agent),\
+    \uc0\u9614 +       observe: (event) => state.event(event),\
+    \uc0\u9614         summaries,\
+    \uc0\u9614         windowDays,\
+    \uc0\u9614         fetchStack: (stackId) => fetchStack(state, stackId),\
+\
+    Edited pipeline.ts +1\
+\
+    \uc0\u9614     addStageAt(stage: StageRecord["stage"], status: string, injected: boolean, started: string, ended:\
+    \uc0\u9614   string): void \{\
+    \uc0\u9614       this.stages = this.stages.filter((row) => row.stage !== stage);\
+    \uc0\u9614       this.stages.push(\{ stage, status, started_at: started, ended_at: ended, injected \});\
+    \uc0\u9614 +     this.event(\{ type: "stage", phase: "finished", stage, name: STAGE_NAME[stage] ?? stage, status \});\
+    \uc0\u9614     \}\
+    \uc0\u9614 \
+    \uc0\u9614     event(value: Record<string, unknown>): void \{\
+\
+    Edited pipeline.ts +13\
+\
+    \uc0\u9614     return model === "stub";\
+    \uc0\u9614   \}\
+    \uc0\u9614 \
+    \uc0\u9614 + const STAGE_NAME: Record<string, string> = \{\
+    \uc0\u9614 +   "0": "diff",\
+    \uc0\u9614 +   "1": "understand",\
+    \uc0\u9614 +   "1b": "company gate",\
+    \uc0\u9614 +   "3": "scope",\
+    \uc0\u9614 +   "4": "stacks",\
+    \uc0\u9614 +   "5": "report",\
+    \uc0\u9614 + \};\
+    \uc0\u9614 +\
+    \uc0\u9614  \'85 truncated (7 more lines) \'b7 ctrl+r to review\
+\
+    Grepped "finishStack\\(" in src/agents.ts\
+    Found 2 matches\
+\
+    Edited server.ts +1 -1\
+\
+    \uc0\u9614 - import \{ createReadStream, existsSync, readdirSync, statSync \} from "node:fs";\
+    \uc0\u9614 + import \{ closeSync, createReadStream, existsSync, openSync, readdirSync, readSync, statSync \} from\
+    \uc0\u9614   "node:fs";\
+    \uc0\u9614   import \{ createServer, type IncomingMessage, type ServerResponse \} from "node:http";\
+    \uc0\u9614   import path from "node:path";\
+    \uc0\u9614   import \{ listTriggerGroups, loadConfig, loadCorpus \} from "./corpus.js";\
+\
+    Edited server.ts +2\
+\
+    \uc0\u9614     if (req.method === "GET" && url.pathname === "/api/runs") \{\
+    \uc0\u9614       return send(res, 200, \{ runs: listRuns(repo) \});\
+    \uc0\u9614     \}\
+    \uc0\u9614 +   const traceMatch = /^\\/api\\/runs\\/([^/]+)\\/trace$/.exec(url.pathname);\
+    \uc0\u9614 +   if (req.method === "GET" && traceMatch) return streamTrace(repo, decodeURIComponent(traceMatch[1]!),\
+    \uc0\u9614   req, res);\
+    \uc0\u9614     const runMatch = /^\\/api\\/runs\\/([^/]+)$/.exec(url.pathname);\
+    \uc0\u9614     if (req.method === "GET" && runMatch) return send(res, 200, readRun(repo,\
+    \uc0\u9614   decodeURIComponent(runMatch[1]!)));\
+    \uc0\u9614     if (req.method === "POST" && url.pathname === "/api/runs") \{\
+\
+    Edited server.ts +91\
+\
+    \uc0\u9614     \};\
+    \uc0\u9614   \}\
+    \uc0\u9614 \
+    \uc0\u9614 + const SETTLED = new Set(["completed", "failed", "resumed_completed"]);\
+    \uc0\u9614 +\
+    \uc0\u9614 + function runDirectory(repo: string, id: string): string | null \{\
+    \uc0\u9614 +   if (!id || id.includes("..") || id.includes("/") || id.includes("\\\\") || id.includes("\\0")) return\
+    \uc0\u9614   null;\
+    \uc0\u9614 +   const root = path.resolve(repo, "runs");\
+    \uc0\u9614 +   const dir = path.resolve(root, id);\
+    \uc0\u9614 +   if (dir !== path.join(root, id)) return null;\
+    \uc0\u9614 +   return dir;\
+    \uc0\u9614 + \}\
+    \uc0\u9614  \'85 truncated (85 more lines) \'b7 ctrl+r to review\
+\
+    Edited App.tsx +1 -1\
+\
+    \uc0\u9614 - import \{ useEffect, useMemo, useState, type FormEvent \} from "react";\
+    \uc0\u9614 + import \{ useEffect, useMemo, useRef, useState, type FormEvent \} from "react";\
+    \uc0\u9614 \
+    \uc0\u9614   type Version = \{ id: string; title?: string; effective?: string; source_url?: string | null \};\
+    \uc0\u9614   type Trigger = \{ group: string; summary?: string; versions: Version[] \};\
+\
+    Edited App.tsx +2 -1\
+\
+    \uc0\u9614         <p className="lede">Status: \{status\}\{data.job?.error ? ` \'97 $\{data.job.error\}` : ""\}</p>\
+    \uc0\u9614         \{data.raw_change?.exit && <div className="banner"><strong>No substantive change.</strong>\
+    \uc0\u9614   \{data.raw_change.re ...\
+    \uc0\u9614         \{data.change_record?.company_gate === "exit" && <div className="banner">The company gate exited.\
+    \uc0\u9614   The profile  ...\
+    \uc0\u9614 -       \{!report && !data.raw_change?.exit && <p>The review is still running. Stages so far:\
+    \uc0\u9614   \{(data.run?.stages ?? [] ...\
+    \uc0\u9614 +       <Activity key=\{id\} id=\{id\} />\
+    \uc0\u9614 +       \{!report && !data.raw_change?.exit && <p>The review is still running. The activity above updates\
+    \uc0\u9614   as each stag ...\
+    \uc0\u9614         \{report && <ReportView report=\{report\} open=\{open\} setOpen=\{setOpen\} />\}\
+    \uc0\u9614         \{data.coverage && (\
+    \uc0\u9614           <footer className="coverage">\
+\
+    Edited App.tsx +107\
+\
+    \uc0\u9614     );\
+    \uc0\u9614   \}\
+    \uc0\u9614 \
+    \uc0\u9614 + type TraceEvent = \{\
+    \uc0\u9614 +   at?: string;\
+    \uc0\u9614 +   type?: string;\
+    \uc0\u9614 +   phase?: string;\
+    \uc0\u9614 +   stage?: string;\
+    \uc0\u9614 +   name?: string;\
+    \uc0\u9614 +   status?: string;\
+    \uc0\u9614 +   stack_id?: string;\
+    \uc0\u9614 +   role?: string;\
+    \uc0\u9614  \'85 truncated (101 more lines) \'b7 ctrl+r to review\
+\
+    Edited styles.css +14\
+\
+    \uc0\u9614   .quote \{ white-space: pre-wrap; background: #fff; border-left: 3px solid var(--rust); padding: 8px\
+    \uc0\u9614   10px; margin: 8p ...\
+    \uc0\u9614   .meta \{ color: var(--muted); font-size: 14px; \}\
+    \uc0\u9614   footer.coverage \{ border-top: 1px solid var(--ink); margin-top: 28px; padding-top: 12px; font-size:\
+    \uc0\u9614   14px; \}\
+    \uc0\u9614 + .activity \{\
+    \uc0\u9614 +   background: var(--ink);\
+    \uc0\u9614 +   color: var(--paper);\
+    \uc0\u9614 +   max-height: 280px;\
+    \uc0\u9614 +   overflow: auto;\
+    \uc0\u9614 +   padding: 12px 14px;\
+    \uc0\u9614 +   margin: 14px 0;\
+    \uc0\u9614 +   font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;\
+    \uc0\u9614 +   font-size: 12.5px;\
+    \uc0\u9614  \'85 truncated (6 more lines) \'b7 ctrl+r to review\
+\
+    Edited harness.test.ts +7\
+\
+    \uc0\u9614       assert.ok(report.items.length >= 1);\
+    \uc0\u9614       assert.equal(report.items[0]?.rank, 1);\
+    \uc0\u9614       assert.match(report.items[0]?.rationale ?? "", /urgency=/);\
+    \uc0\u9614 +     const activity = readFileSync(path.join(out, "trace.jsonl"), "utf8").trim().split("\\n").map((line)\
+    \uc0\u9614   => JSON.pars ...\
+    \uc0\u9614 +     assert.ok(activity.some((event) => event.type === "stage" && event.phase === "started" &&\
+    \uc0\u9614   event.stage === "1"));\
+    \uc0\u9614 +     assert.ok(activity.some((event) => event.type === "stack" && event.phase === "started"));\
+    \uc0\u9614 +     assert.ok(activity.some((event) => event.type === "tool" && event.tool === "read" && event.phase\
+    \uc0\u9614   === "finished"));\
+    \uc0\u9614 +     assert.ok(activity.some((event) => event.type === "finding"));\
+    \uc0\u9614 +     assert.equal(activity.at(-1)?.type, "run");\
+    \uc0\u9614 +     assert.equal(activity.at(-1)?.phase, "finished");\
+    \uc0\u9614       const findingFiles = ["supply__acme-supply.json", "supply__supplier-terms__acme-terms_2019.json",\
+    \uc0\u9614   "vendors__lon ...\
+    \uc0\u9614       for (const name of findingFiles) \{\
+    \uc0\u9614  \'85 truncated (1 more line) \'b7 ctrl+r to review\
+\
+    Edited App.tsx +1 -1\
+\
+    \uc0\u9614         \{lines.map((event, index) => \{\
+    \uc0\u9614           const view = formatActivity(event);\
+    \uc0\u9614           const live = open && index === lines.length - 1 && event.type !== "run";\
+    \uc0\u9614 -         return <div className=\{`line$\{view.bad ? " bad" : ""\}$\{live || event.type === "working" ? "\
+    \uc0\u9614   live" : ""\}`\} k ...\
+    \uc0\u9614 +         return <div className=\{`line$\{view.bad ? " bad" : ""\}$\{live ? " live" : ""\}`\} key=\{`$\{event.at\
+    \uc0\u9614   ?? ""\}-$\{ind ...\
+    \uc0\u9614         \})\}\
+    \uc0\u9614       </div>\
+    \uc0\u9614     );\
+\
+  $ npx tsc --noEmit && npm test 4.4s\
+    \'85 22 output lines hidden \'b7 ctrl+o to expand\
+    \uc0\u8505  todo 0\
+    \uc0\u8505  duration_ms 1054.28225\
+\
+  $ npm run ui:build && lsof -ti tcp:8787 || true 2.1s\
+    \'85 16 output lines hidden \'b7 ctrl+o to expand\
+    \uc0\u10003  built in 647ms\
+    26122\
+\
+    Explored available MCP tools plugin-playwright-playwright \'b7 browser_navigate\
+\
+  $ kill 26122; sleep 0.4; lsof -ti tcp:8787 | xargs kill 2>/dev/null || true; sleep 0.3; npm run serve 5m 50s\
+    (background)\
+\
+    Monitored background task, 1 active\
+    Waited for "harness serve|EADDRINUSE|Error" in shell\
+    Read test/fixtures/scenario-substantive.json\
+\
+    Explored available MCP tools pattern browser_(snapshot|tabs|evaluate|click)\
+\
+    Grepped "TERMINAL" in ui/src/App.tsx\
+    Found 2 matches\
+\
+    Explored available MCP tools plugin-playwright-playwright \'b7 browser_snapshot\
+\
+    Explored available MCP tools plugin-playwright-playwright \'b7 browser_evaluate\
+\
+  The server is up with the new trace route. Next I\'92ll confirm a run\'92s activity shows up while it is still\
+  going, then that the finished report still renders.\
+\
+  $ mkdir -p runs/obs-live && printf '%s\\n' '\{"status":"running"\}' > runs/obs-live/run.json && printf '%s\\n'\
+    '\{"at":"2026-09-30T06:40:00.000Z","type":"run","phase":"started"\}' > runs/obs-live/trace.jsonl 1.3s\
+\
+    plugin-playwright-playwright browser_navigate\
+\
+    Read .playwright-mcp/page-2026-09-30T06-35-40-704Z.yml\
+\
+  $ sleep 0.6; printf '%s\\n'\
+    '\{"at":"2026-09-30T06:40:01.000Z","type":"stage","phase":"started","stage":"1","name":"understand"\}' >>\
+    runs/obs-live/trace.jsonl; sleep 0.6; printf '%s\\n'\
+    '\{"at":"2026-09-30T06:40:02.000Z","type":"stack","phase":"started","stack_id":"supply/acme-supply"\}' >>\
+    runs/obs-live/trace.jsonl; sleep 0.6; printf '%s\\n' '\{"at":"2026-09-30T06:40:03.000Z","type":"tool","phase"\
+    :"started","tool":"read","stack_id":"supply/acme-supply","file":"purchase-orders/po-1.md"\}' >>\
+    runs/obs-live/trace.jsonl 3.0s\
+\
+    plugin-playwright-playwright browser_snapshot\
+\
+    Explored available MCP tools plugin-playwright-playwright \'b7 browser_resize\
+\
+  $ curl -s -X POST http://127.0.0.1:8787/api/runs -H 'content-type: application/json' -d\
+    '\{"scenario_id":"obs-mini","trigger_group":"TR-MINI","versions":["v1","v2"],"config":"configs/stub.json","c\
+    orpus_root":"test/fixtures/mini","as_of":"2026-10-01"\}' && sleep 1 && python3 -c "\
+    import json 2.0s\
+    \'85 4 input lines hidden \'b7 ctrl+o to expand\
+    \{"run_id":"obs-mini","out":"/Users/jason/Documents/gc-ai-take-home-research/runs/obs-mini"\}25 run finished\'85\
+\
+    plugin-playwright-playwright browser_navigate\
+\
+    Grepped, read 1 grep, 1 file\
+    Grepped "...What\\.|Status:|Coverage|still running" in .playwright-mcp/page-2026-09-30T06-36-28-875Z.yml\
+    Read .playwright-mcp/page-2026-09-30T06-36-28-875Z.yml\
+\
+  $ curl -sD - --max-time 3 http://127.0.0.1:8787/api/runs/obs-mini/trace | head -n 40 657ms\
+    \'85 32 output lines hidden \'b7 ctrl+o to expand\
+    \{"at":"2026-09-30T06:36:24.254Z","type":"stage","phase":"finished","stage":"5","name":"report","status":"r\'85\
+    \{"at":"2026-09-30T06:36:24.254Z","type":"run","phase":"finished","status":"completed"\}\
+\
+    Read /Users/jason/.cursor/projects/Users-jason-Documents/terminals/616152.txt\
+\
+    plugin-playwright-playwright browser_evaluate\
+\
+    Explored available MCP tools plugin-playwright-playwright \'b7 browser_click\
+\
+    Edited App.tsx +1 -1\
+\
+    \uc0\u9614     if (event.type === "stage") return \{ text: `Stage $\{event.stage\} \'b7 $\{event.name ?? ""\} \'b7\
+    \uc0\u9614   $\{event.status ?? "finis ...\
+    \uc0\u9614     if (event.type === "stack") return \{ text: `$\{event.stack_id\} \'b7 analyst started`, bad: false \};\
+    \uc0\u9614     if (event.type === "tool" && event.phase === "started") return \{ text: `$\{who\} \'b7 $\{event.tool\}\
+    \uc0\u9614   $\{event.file ?? "" ...\
+    \uc0\u9614 -   if (event.type === "tool") return \{ text: `$\{who\} \'b7 $\{event.tool\} $\{event.ok === false ?\
+    \uc0\u9614   (event.error ?? "failed" ...\
+    \uc0\u9614 +   if (event.type === "tool") return \{ text: `$\{who\} \'b7 $\{event.tool\} $\{event.ok === false ? `failed \'b7\
+    \uc0\u9614   $\{event.error  ...\
+    \uc0\u9614     if (event.type === "finding") return \{ text: `$\{event.stack_id\} \'b7 finding \'b7 $\{event.determination ??\
+    \uc0\u9614   ""\}`, bad: f ...\
+    \uc0\u9614     if (event.type === "working") return \{ text: `$\{who\} \'b7 still working \'b7 $\{event.model ?? ""\}`.trim(),\
+    \uc0\u9614   bad: false \};\
+    \uc0\u9614     if (event.type === "error") return \{ text: `Error \'b7 $\{event.message ?? ""\}`, bad: true \};\
+\
+    plugin-playwright-playwright browser_click\
+\
+  $ npm run ui:build 2.0s\
+    \'85 15 output lines hidden \'b7 ctrl+o to expand\
+    dist/assets/index-C1IkGDen.js   233.44 kB \uc0\u9474  gzip: 72.93 kB\
+    \uc0\u10003  built in 674ms\
+\
+    Grepped "Trigger|Clause|Hide citations|blockquote" in .playwright-mcp/page-2026-09-30T06-37-09-587Z.yml\
+    Found 5 matches\
+\
+    plugin-playwright-playwright browser_navigate\
+\
+    plugin-playwright-playwright browser_evaluate\
+\
+  $ curl -sD - http://127.0.0.1:8787/ | head -n 20 583ms\
+    \'85 18 output lines hidden \'b7 ctrl+o to expand\
+        <div id="root"></div>\
+      </body>\
+\
+    plugin-playwright-playwright browser_navigate\
+\
+    plugin-playwright-playwright browser_evaluate\
+\
+    plugin-playwright-playwright browser_resize\
+\
+  $ echo "bad: $(curl -s -o /dev/null -w '%\{http_code\}' http://127.0.0.1:8787/api/runs/..%2F..%2Fetc/trace)";\
+    echo "slash: $(curl -s -o /dev/null -w '%\{http_code\}' 'http://127.0.0.1:8787/api/runs/foo%2Fbar/trace')"\
+    812ms\
+    bad: 400\
+    slash: 400\
+\
+    plugin-playwright-playwright browser_evaluate\
+\
+  $ rm -rf runs/obs-live 1.6s\
+\
+  The report page now follows the run while it is working. A dark activity timeline sits above the ranked\
+  findings and stays pinned to the latest line.\
+\
+  Each line is one event from trace.jsonl, streamed from GET /api/runs/:id/trace:\
+\
+  \'95 Stage start and finish (diff, understand, company gate, scope, stacks, report)\
+  \'95 Each stack's analyst starting\
+  \'95 Each read or grep as it starts, then returned or failed\
+  \'95 The finding, once it is written\
+  \'95 still working \'b7 <model> every 5 seconds during a real model call, so a quiet stage does not look frozen\
+\
+  A stub mini run showed the lines arriving while the status was still running, then the same page rendered\
+  the ranked report underneath after the run finished. Citations still expand. The phone-width layout does\
+  not overflow.\
+\
+  The app is already serving at http://127.0.0.1:8787. A finished example is at\
+  http://127.0.0.1:8787/#/runs/obs-mini.}

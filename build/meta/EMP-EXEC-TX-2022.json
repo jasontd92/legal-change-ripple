@@ -1,0 +1,33 @@
+{
+ "doc_id": "EMP-EXEC-TX-2022",
+ "path": "documents/employment/marcus-delgado_executive-employment-agreement_2022-02-28.md",
+ "chars": 57271,
+ "area": "employment",
+ "cluster": null,
+ "doc_type": "executive_employment_agreement",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2022-02-28",
+ "status": "active",
+ "roles": [
+  "noncompete",
+  "tx"
+ ],
+ "source_class": "edgar",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1048268/000119312519138305/d740684dex109.htm",
+ "year_shift": 3,
+ "governing_law_remap": {
+  "from": [
+   "Texas"
+  ],
+  "to": "Texas"
+ },
+ "name_map_size": 13,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

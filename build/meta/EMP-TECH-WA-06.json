@@ -1,0 +1,23 @@
+{
+ "doc_id": "EMP-TECH-WA-06",
+ "path": "documents/employment/signed-agreements/hana-bellweather_technician-employment-agreement_wa_2023-03-23.md",
+ "chars": 19430,
+ "area": "employment",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "employment_agreement",
+ "parent_id": "EMP-TPL-TECH-WA",
+ "effective_date": "2023-03-23",
+ "roles": [
+  "noncompete",
+  "wa"
+ ],
+ "planted_features": [
+  "template_instance",
+  "annualized_earnings:85800",
+  "signed:2023-03-23",
+  "state:WA"
+ ],
+ "employee": "Hana Bellweather",
+ "status": "active"
+}

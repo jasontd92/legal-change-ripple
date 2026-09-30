@@ -1,0 +1,28 @@
+{
+ "doc_id": "CUS-RES-IL-TERMS-2026-09-01",
+ "path": "documents/customers/residential-terms/meridian-residential-terms-and-conditions_illinois_2026-09-01.md",
+ "chars": 18119,
+ "area": "customers",
+ "cluster": null,
+ "doc_type": "standard_terms",
+ "counterparty": "CUS-RES",
+ "effective_date": "2026-09-01",
+ "version_label": "Illinois, current",
+ "published_url": "https://www.meridianpha.com/il/terms-and-conditions",
+ "status": "active",
+ "roles": [
+  "auto_renewal",
+  "consumer",
+  "il",
+  "price_increase_clause"
+ ],
+ "source_class": "web_rewritten",
+ "source_ref": "W-FOURSEASONS",
+ "copy_share": 0.051,
+ "version_pair_check": null,
+ "checks": {
+  "ok": true,
+  "fails": [],
+  "leaks": []
+ }
+}

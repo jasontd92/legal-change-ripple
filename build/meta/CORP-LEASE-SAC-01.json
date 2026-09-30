@@ -1,0 +1,24 @@
+{
+ "doc_id": "CORP-LEASE-SAC-01",
+ "path": "documents/corporate/lease_sacramento-headquarters/01_industrial-commercial-lease_2017-04-01.md",
+ "chars": 37188,
+ "area": "corporate",
+ "cluster": "lease_sacramento-headquarters",
+ "doc_type": "real_estate_lease",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2017-04-01",
+ "status": "active",
+ "roles": [
+  "distractor"
+ ],
+ "source_class": "generated_llm",
+ "template": false,
+ "placeholders": [],
+ "planted_features": [],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

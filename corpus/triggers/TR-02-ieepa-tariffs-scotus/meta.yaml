@@ -1,0 +1,51 @@
+group: TR-02-ieepa-tariffs-scotus
+domain: tariff
+summary: Supreme Court holds IEEPA does not authorize tariffs; collection ends; a Section 122 surcharge bridges; refunds go
+  to the importer of record.
+versions:
+- id: 2026-02-20_learning-resources-v-trump-opinion
+  status: decided
+  effective: 2026-02-20
+  file: 2026-02-20_learning-resources-v-trump-opinion.txt
+  source_url: https://www.supremecourt.gov/opinions/25pdf/607us2r12_8nj9.pdf
+  fetched_url: https://www.supremecourt.gov/opinions/25pdf/607us2r12_8nj9.pdf
+  sha256_16: fcad6c603f29cd32
+  chars: 351971
+  title: Learning Resources, Inc. v. Trump, 607 U.S. 229 (2026)
+- id: 2026-02-20_eo-14389-ending-ieepa-tariffs
+  status: effective
+  effective: 2026-02-24
+  file: 2026-02-20_eo-14389-ending-ieepa-tariffs.txt
+  source_url: https://www.federalregister.gov/documents/full_text/text/2026/02/25/2026-03832.txt
+  fetched_url: https://www.federalregister.gov/documents/full_text/text/2026/02/25/2026-03832.txt
+  sha256_16: 4b2e9146e05d935d
+  chars: 7088
+  title: EO 14389 Ending Certain Tariff Actions
+- id: 2026-02-20_proclamation-11012-section-122-surcharge
+  status: expired
+  effective: 2026-02-24
+  expires: 2026-07-24
+  file: 2026-02-20_proclamation-11012-section-122-surcharge.txt
+  source_url: https://www.federalregister.gov/documents/full_text/text/2026/02/25/2026-03824.txt
+  fetched_url: https://www.federalregister.gov/documents/full_text/text/2026/02/25/2026-03824.txt
+  sha256_16: 13e124db18b56a40
+  chars: 26130
+  title: Proclamation 11012 Temporary Import Surcharge (Section 122)
+- id: 2026-07-08_cbp-ieepa-refunds-pra-notice
+  status: final
+  effective: 2026-07-08
+  file: 2026-07-08_cbp-ieepa-refunds-pra-notice.txt
+  source_url: https://www.federalregister.gov/documents/full_text/text/2026/07/08/2026-13771.txt
+  fetched_url: https://www.federalregister.gov/documents/full_text/text/2026/07/08/2026-13771.txt
+  sha256_16: 8d23f83cb9eddb46
+  chars: 15940
+  title: CBP Court-Ordered Refunds Under IEEPA (PRA notice)
+- id: 2026-09-02_cbp-ieepa-duty-refunds-page
+  status: guidance
+  effective: 2026-09-02
+  file: 2026-09-02_cbp-ieepa-duty-refunds-page.txt
+  source_url: https://www.cbp.gov/trade/programs-administration/trade-remedies/ieepa-duty-refunds
+  fetched_url: https://www.cbp.gov/trade/programs-administration/trade-remedies/ieepa-duty-refunds
+  sha256_16: fc0df5584699838d
+  chars: 38532
+  title: CBP IEEPA Duty Refunds page

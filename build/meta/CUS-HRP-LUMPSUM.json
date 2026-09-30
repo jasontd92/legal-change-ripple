@@ -1,0 +1,28 @@
+{
+ "doc_id": "CUS-HRP-LUMPSUM",
+ "path": "documents/customers/harborview-capitol-tower_hvac-replacement-construction-contract/01_construction-contract-stipulated-sum_2025-05-19.md",
+ "chars": 35820,
+ "area": "customers",
+ "cluster": "harborview-capitol-tower_hvac-replacement-construction-contract",
+ "doc_type": "construction_contract",
+ "parent_id": null,
+ "counterparty": "CUS-HRP",
+ "effective_date": "2025-05-19",
+ "status": "active",
+ "roles": [
+  "tariff",
+  "fixed_price",
+  "lump_sum"
+ ],
+ "source_class": "generated_llm",
+ "template": false,
+ "placeholders": [],
+ "planted_features": [
+  "LUMPSUM_HARBORVIEW"
+ ],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "doc_id": "VEN-LG2-TOS-2026-02-01",
+ "path": "documents/vendors/promatch-networks_terms-of-use_2026-02-01.md",
+ "chars": 48664,
+ "area": "vendors",
+ "cluster": null,
+ "doc_type": "standard_terms",
+ "counterparty": "SAAS-LG2",
+ "effective_date": "2026-02-01",
+ "version_label": "effective February 1, 2026",
+ "published_url": "https://www.promatch.com/terms",
+ "status": "active",
+ "roles": [
+  "distractor"
+ ],
+ "source_class": "web_rewritten",
+ "source_ref": "W-THUMBTACK-TOS",
+ "copy_share": 0.722,
+ "version_pair_check": null,
+ "checks": {
+  "ok": true,
+  "fails": [],
+  "leaks": []
+ },
+ "post_fixes": [
+  "scrubbed residual real names: Stripe"
+ ]
+}

@@ -1,0 +1,61 @@
+# TERMS AND CONDITIONS OF SALE
+
+## 1. Definitions and Binding Agreement
+
+All references to "Seller" shall include Lakeshore Waterworks & PVF, LP and any parent company, subsidiary, or affiliate of Lakeshore Waterworks & PVF, LP (including any division thereof), whether or not such entity performs any portion of the work described or is specifically identified in this document. All references to "Buyer" shall include the parent company(ies), subsidiaries, and affiliates of the entity that places the order. Buyer and Seller may be referred to individually as a "Party" and collectively as the "Parties."
+
+All sales to Buyer are governed exclusively by these Terms, which supersede any conflicting or inconsistent terms contained in Buyer's purchase order or other documents. Any additional or different terms that modify or alter these Terms are objected to in their entirety and shall have no binding effect on Seller unless specifically accepted in writing by an authorized representative of Seller. Seller's shipment of goods following receipt of Buyer's purchase order or other documents containing additional, conflicting, or inconsistent terms shall not constitute acceptance of such terms and does not modify these Terms. These Terms represent the entire agreement between the Parties regarding the subject matter; all prior proposals, discussions, and understandings are merged into this document. These Terms are binding on Buyer and Seller and their respective successors and permitted assigns.
+
+## 2. Pricing and Taxes
+
+Prices quoted or displayed are subject to change without notice. All price quotations expire and are no longer valid 30 calendar days from the date of issue, unless Seller indicates otherwise in writing. Any extension of a price quote is provided solely for Buyer's benefit and carries no binding obligation on Seller; mathematical, stenographic, or clerical errors are likewise not binding. Seller reserves the right to increase prices at any time upon written notice to address factors beyond its control including but not limited to government regulations, tariffs, transportation, fuel and raw material costs. The quoted prices exclude all sales taxes, excise taxes, and other government-imposed charges or duties for which Seller may be liable. Buyer shall reimburse Seller for any taxes assessed on sales or shipments, or provide Seller with an acceptable certificate of tax exemption. All prices and terms provided to Buyer shall remain confidential unless a Party is required by law to disclose them.
+
+## 3. Force Majeure
+
+Seller shall not be held liable for delays or failures in delivery caused by circumstances outside Seller's reasonable control, including but not limited to: government action, labor disputes or strikes, fire, destruction or damage to goods, declared or undeclared war, acts of terrorism, manufacturer shortages, transportation unavailability or delays, material and fuel scarcity, and acts of God. Each constitutes a "Force Majeure Event." Upon occurrence of a Force Majeure Event: (a) the time for Seller's performance shall be extended for a reasonable period, and the Parties shall adjust all affected dates accordingly; (b) the purchase price shall be adjusted upward by any additional costs incurred by Seller as a result of the Force Majeure Event; and (c) Buyer shall have no other remedy.
+
+## 4. Warranties and Limitation of Liability
+
+Seller functions solely as a reseller and provides no warranties for the goods supplied under these Terms. Notwithstanding this as-is limitation, Seller shall transfer to Buyer any transferable manufacturer's standard warranties applicable to the goods. BUYER AND ALL PERSONS CLAIMING THROUGH BUYER SHALL SEEK RECOURSE SOLELY AND EXCLUSIVELY FROM MANUFACTURERS REGARDING ANY PRODUCT DEFECTS OR FAILURES, AND SUCH RECOURSE SHALL BE THE EXCLUSIVE REMEDY FOR BUYER AND ALL PERSONS CLAIMING THROUGH BUYER FOR DEFECTIVE GOODS, REGARDLESS OF WHETHER THE CLAIM ARISES FROM CONTRACT, TORT, STRICT LIABILITY, STATUTORY VIOLATION, OR NEGLIGENCE. BUYER SHALL COMMUNICATE AND PASS THESE TERMS TO ALL SUBSEQUENT BUYERS AND END USERS OF THE GOODS. SELLER DISCLAIMS AND EXCLUDES ALL OTHER EXPRESS AND IMPLIED WARRANTIES, INCLUDING WITHOUT LIMITATION ALL WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. SELLER ASSUMES NO LIABILITY FOR SELLER'S INTERPRETATION OF PLANS, SPECIFICATIONS, OR DOCUMENTS PROVIDED BY BUYER. BUYER'S ACCEPTANCE AND USE OF GOODS SUPPLIED UNDER THESE TERMS SHALL BE CONDITIONED ON BUYER'S OWN FINAL APPROVAL OR BUYER'S RELIANCE ON ARCHITECTS, ENGINEERS, OR OTHER THIRD-PARTY PROFESSIONALS RATHER THAN ON SELLER'S INTERPRETATION. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, SELLER SHALL NOT BE LIABLE, WHETHER BASED ON CONTRACT, WARRANTY, INDEMNITY, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY, OR ANY OTHER LEGAL THEORY, FOR ANY DAMAGES ARISING DIRECTLY OR INDIRECTLY FROM PERFORMANCE OR BREACH OF THESE TERMS, INCLUDING: (a) ANY INCIDENTAL, INDIRECT, PUNITIVE, SPECIAL, CONSEQUENTIAL, OR SIMILAR DAMAGES INCLUDING LOSS OF USE, LOST PROFITS, ATTORNEYS' FEES, OR DELAY COSTS, EVEN IF SELLER WAS ADVISED OF THE POSSIBILITY OF SUCH DAMAGES OR IF SUCH DAMAGES RESULTED FROM SELLER'S BREACH OF THIS AGREEMENT; (b) ANY CLAIM THAT PROPERLY CONSTITUTES A MANUFACTURER'S LIABILITY; OR (c) ANY AMOUNT EXCEEDING THE TOTAL PURCHASE PRICE PAID BY BUYER TO SELLER FOR THE GOODS AT ISSUE. ALL CLAIMS MUST BE ASSERTED WITHIN ONE YEAR FROM THE DATE THE CAUSE OF ACTION ACCRUED.
+
+## 5. Indemnification
+
+Buyer shall indemnify, defend, and hold harmless Seller, including its officers, directors, employees, and agents, from and against all costs (including reasonable attorneys' fees and accountants' fees and expenses), liabilities, and damages arising from or connected to any third-party claim, demand, complaint, and/or judgment (including those asserted by Buyer's employees) relating to Buyer's use of goods furnished under these Terms, as well as any negligent, intentional, or tortious action or inaction by Buyer or any material non-compliance by Buyer with these Terms.
+
+## 6. Delivery, Title, and Risk of Loss
+
+If goods are delivered using Seller's own vehicles, the F.O.B. point shall be Buyer's designated delivery location. For all other deliveries, the F.O.B. point shall be Seller's facility or warehouse, and all freight, shipping, and delivery costs and responsibility beyond that point shall be borne by Buyer. Title to and risk of loss for the goods shall transfer to Buyer at the applicable F.O.B. point—or, for goods not delivered in Seller's vehicles, when Seller delivers them to the common carrier. Any claims for shortage of goods or damage in transit are forfeited unless Buyer provides Seller written notice within 10 calendar days after receipt, with a complete description of the alleged shortage or damage. Seller may effect partial shipments at its sole discretion.
+
+## 7. Changes to Orders and Returns
+
+Any modification to product specifications, order quantities, delivery locations, shipping schedules, or any other aspect of the goods must be approved in writing by Seller, and may result in adjustments to both price and delivery dates. Buyer shall receive no credit for returned goods without Seller's prior written authorization. All returned goods are subject to a restocking charge.
+
+## 8. Payment Terms
+
+Unless otherwise agreed in writing, payment is due net 30 days from delivery in United States dollars. All orders remain subject to Seller's continuing approval of Buyer's creditworthiness. Should Buyer's credit be declined or become unsatisfactory in Seller's sole judgment, Seller may suspend or cancel performance, restrict any order, or impose alternative payment terms, including cash on delivery or prepayment. Seller may also require an advance deposit of up to 100% of Seller's selling price for goods that are specially manufactured per Buyer's specifications. Acceptable payment methods include cash, check, money order, or such other forms as approved in writing by Seller. Seller may apply Buyer's payments toward any open charges or outstanding debt at its sole discretion. Overdue balances accrue interest at the lesser of 1.5% per month or the maximum legal rate permitted by applicable law, and such interest continues to accrue after Seller obtains judgment against Buyer. Seller may exercise setoff or recoupment against any outstanding debt owed by Buyer. Buyer waives any and all rights of setoff. Seller reserves all rights to file and enforce liens on materials for non-payment and expressly rejects any provision in any future agreement that purports to waive Seller's lien rights. Seller retains all rights to invoice for materials supplied, and any terms in Buyer's purchase orders or other documents that purport to limit when or how Seller may invoice are hereby waived by Buyer.
+
+## 9. Export Controls
+
+Buyer shall not export or re-export, whether directly or indirectly, any goods or related technology received from Seller under these Terms except as permitted by applicable United States export laws and regulations. A Buyer that is a non-U.S. company or citizen shall limit all export and re-export activities to those that would comply with U.S. export laws and regulations if undertaken by a U.S. company or citizen.
+
+## 10. Collection Costs and Assignment
+
+Buyer shall pay Seller for all reasonable collection costs and legal expenses, including but not limited to actual attorneys' fees, paralegal fees, and collection expenses incurred during pre-suit investigation, trial, appeal, and in any bankruptcy or administrative proceedings. Any cause of action that Seller has against Buyer may be assigned or transferred without Buyer's consent to Lakeshore Waterworks & PVF, LP or to any affiliate, parent company, or subsidiary thereof.
+
+## 11. Default and Miscellaneous Provisions
+
+If Buyer fails to comply with these Terms, Seller may immediately terminate or restrict any order upon notice to Buyer. Buyer certifies that it is solvent and agrees to notify Seller immediately if it becomes insolvent. Buyer shall provide Seller written notice within 5 days of any change in the form of ownership of Buyer's business. Buyer and Seller are the sole intended beneficiaries of these Terms, and no third-party beneficiary rights are created.
+
+## 12. Severability
+
+Should any portion of these Terms be determined invalid or unenforceable, the remainder shall remain valid and enforceable. The Parties agree to replace any void or unenforceable provision with one that achieves substantially the same practical and economic result while remaining valid and enforceable.
+
+---
+
+The following provisions shall survive termination, cancellation, and completed performance of this Agreement as long as necessary to allow the aggrieved party to enforce them: Sections 5, 6, 9, 10, 11, and 12.
+
+---
+
+**LAKESHORE WATERWORKS & PVF, LP TERMS AND CONDITIONS OF SALE – Rev 020425**
+
+Published at: https://www.lakeshorepvf.com/terms-of-sale

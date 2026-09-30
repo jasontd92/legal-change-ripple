@@ -1,0 +1,35 @@
+{
+ "doc_id": "EMP-TPL-TECH-IL",
+ "path": "documents/employment/templates/form_technician-employment-agreement_illinois_rev-2021.md",
+ "chars": 25637,
+ "area": "employment",
+ "cluster": null,
+ "doc_type": "employment_agreement_form",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2021-01-01",
+ "status": "active",
+ "roles": [
+  "il",
+  "noncompete",
+  "construction_employees"
+ ],
+ "source_class": "generated_llm",
+ "template": true,
+ "placeholders": [
+  "[[EMPLOYEE_NAME]]",
+  "[[POSITION]]",
+  "[[BRANCH_CITY]]",
+  "[[START_DATE]]",
+  "[[HOURLY_RATE]]",
+  "[[SIGN_DATE]]"
+ ],
+ "planted_features": [
+  "TECH_NC_IL"
+ ],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

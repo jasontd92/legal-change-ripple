@@ -1,0 +1,35 @@
+{
+ "doc_id": "EMP-LIT-IL-2025",
+ "path": "documents/employment/meridian-v-former-technicians_complaint-for-injunctive-relief_n-d-ill_2025-08-11.md",
+ "chars": 50640,
+ "area": "employment",
+ "cluster": null,
+ "doc_type": "litigation_complaint",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2025-08-11",
+ "status": "active",
+ "roles": [
+  "noncompete",
+  "il",
+  "construction_employees",
+  "active_litigation"
+ ],
+ "source_class": "court_llm_adapted",
+ "source_ref": "https://storage.courtlistener.com/recap/gov.uscourts.txwd.1164756/gov.uscourts.txwd.1164756.2.0.pdf",
+ "year_shift": 3,
+ "governing_law_remap": {
+  "from": [
+   "Texas"
+  ],
+  "to": "Illinois"
+ },
+ "name_map_size": 82,
+ "filled_fields": [],
+ "adapt_length_ratio": 0.97,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

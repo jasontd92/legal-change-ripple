@@ -1,0 +1,23 @@
+{
+ "doc_id": "EMP-TRAIN-WA-2025-06-02",
+ "path": "documents/employment/signed-agreements/gavin-ingersoll_training-repayment-agreement_wa_2025-06-02.md",
+ "chars": 13543,
+ "area": "employment",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "training_repayment_agreement",
+ "parent_id": "EMP-TPL-TRAINING",
+ "effective_date": "2025-06-02",
+ "roles": [
+  "training_repayment",
+  "stay_or_pay",
+  "wa"
+ ],
+ "planted_features": [
+  "template_instance",
+  "signed:2025-06-02",
+  "state:WA"
+ ],
+ "employee": "Gavin Ingersoll",
+ "status": "active"
+}

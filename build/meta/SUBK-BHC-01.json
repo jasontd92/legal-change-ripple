@@ -1,0 +1,34 @@
+{
+ "doc_id": "SUBK-BHC-01",
+ "path": "documents/subcontracts/bridgewell-construction_master-subcontract-solara-fab/01_service-agreement-subcontract_2025-04-14.md",
+ "chars": 70496,
+ "area": "subcontracts",
+ "cluster": "bridgewell-construction_master-subcontract-solara-fab",
+ "doc_type": "subcontract",
+ "parent_id": null,
+ "counterparty": "GC-BHC",
+ "effective_date": "2025-04-14",
+ "status": "active",
+ "roles": [
+  "flow_down",
+  "anti_indemnity",
+  "tariff"
+ ],
+ "source_class": "edgar",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/2080841/000121390025126775/ea025237804ex10-1_bwindus.htm",
+ "year_shift": 0,
+ "governing_law_remap": {
+  "from": [
+   "Arizona"
+  ],
+  "to": "California"
+ },
+ "name_map_size": 15,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

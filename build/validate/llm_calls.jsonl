@@ -1,0 +1,197 @@
+{"tag": "ent:EMP-SEP-WA-2025", "key": "38209fe3579892085c2f7472", "secs": 21.0, "cost": 0.02379, "out_tokens": 1979, "stop": "end_turn"}
+{"tag": "ent:EMP-SEP-WA-2025", "key": "e2462ebf1863203b4cffde1d", "secs": 24.5, "cost": 0.0251, "out_tokens": 2243, "stop": "end_turn"}
+{"tag": "adapt:EMP-SEP-WA-2025", "key": "c93061da4e5921723b509b6d", "secs": 191.2, "cost": 0.10299999999999998, "out_tokens": 17396, "stop": "end_turn"}
+{"tag": "ent:CUS-LKP-01", "key": "1899fe54eb6f6748cfe4da73", "secs": 43.3, "cost": 0.038153999999999993, "out_tokens": 4332, "stop": "end_turn"}
+{"tag": "ent:ACQ-04-MERGER", "key": "7f135e3353c7cc8f4d540279", "secs": 44.0, "cost": 0.049765000000000004, "out_tokens": 5503, "stop": "end_turn"}
+{"tag": "ent:CORP-CREDIT-01", "key": "ce5f8a58472dda7f729e6d8c", "secs": 106.3, "cost": 0.078121, "out_tokens": 11197, "stop": "end_turn"}
+{"tag": "web:SUP-LWP-TERMS:Rev 091718", "key": "f838841a4f1d7b0b84dbf85b", "secs": 39.8, "cost": 0.021238, "out_tokens": 3603, "stop": "end_turn"}
+{"tag": "web:SUP-KPS-TERMS:as published October 2019", "key": "6a40d0022e80d2373916451c", "secs": 40.5, "cost": 0.020078, "out_tokens": 3378, "stop": "end_turn"}
+{"tag": "web:CUS-RES-CA-TERMS:California, as published June 2024", "key": "1f181c5dc2c60c9972703576", "secs": 50.0, "cost": 0.033183, "out_tokens": 6376, "stop": "end_turn"}
+{"tag": "web:SUP-DSC-TERMS:updated 09-20-2019", "key": "f3c7063b07d3a668e2c5fa87", "secs": 51.7, "cost": 0.024339, "out_tokens": 4163, "stop": "end_turn"}
+{"tag": "ent:CORP-CREDIT-03", "key": "7365060e4125ce1a715e56ba", "secs": 139.3, "cost": 0.09249499999999998, "out_tokens": 16810, "stop": "end_turn"}
+{"tag": "webdiff:CUS-RES-CA-TERMS:California, as published August 2026", "key": "a5434af8d382ecb2b6a7ebb9", "secs": 14.2, "cost": 0.007576, "out_tokens": 1054, "stop": "end_turn"}
+{"tag": "webdiff:SUP-LWP-TERMS:Rev 020425", "key": "cace9d731f5163cc4182710a", "secs": 47.9, "cost": 0.030128, "out_tokens": 4378, "stop": "end_turn"}
+{"tag": "web:SUP-NCS-TERMS:Rev. 07/23/24", "key": "4627d76eaf74f99f6eccc549", "secs": 88.5, "cost": 0.051493000000000004, "out_tokens": 7159, "stop": "end_turn"}
+{"tag": "webdiff:SUP-KPS-TERMS:as published June 2025", "key": "4b88e8c0127f3e956b51ee4a", "secs": 56.1, "cost": 0.04398, "out_tokens": 4774, "stop": "end_turn"}
+{"tag": "web:CUS-RES-WA-TERMS:Washington, current", "key": "d9865d1bbabcaac2b3d5d788", "secs": 61.6, "cost": 0.041596, "out_tokens": 7874, "stop": "end_turn"}
+{"tag": "web:SUP-SCP-TERMS:effective November 1, 2025", "key": "c1e0b70ca99361bd4d1589cf", "secs": 132.3, "cost": 0.065794, "out_tokens": 12543, "stop": "end_turn"}
+{"tag": "webdiff:SUP-DSC-TERMS:updated 04-04-2024", "key": "6247949486f1ef412826ed58", "secs": 136.7, "cost": 0.07958, "out_tokens": 12018, "stop": "end_turn"}
+{"tag": "webdiff:SUP-NCS-TERMS:Rev. 12/10/24", "key": "95f796f95ca4009cb86c1440", "secs": 102.0, "cost": 0.058957, "out_tokens": 9415, "stop": "end_turn"}
+{"tag": "adapt:CORP-CREDIT-03", "key": "cfd27c6f86a7b8b4843be292", "secs": 144.7, "cost": 0.075364, "out_tokens": 14327, "stop": "end_turn"}
+{"tag": "ent:SUP-GPC-02", "key": "56d7b38d9f909cb051c79548", "secs": 6.1, "cost": 0.002501, "out_tokens": 360, "stop": "end_turn"}
+{"tag": "ent:SUP-GPC-03", "key": "bd2168a35864dbeaaab74105", "secs": 10.2, "cost": 0.007128000000000001, "out_tokens": 862, "stop": "end_turn"}
+{"tag": "ent:SUP-HPB-01", "key": "e2de439b1481bf75aecb1285", "secs": 18.4, "cost": 0.011835, "out_tokens": 1722, "stop": "end_turn"}
+{"tag": "ent:SUP-NCS-DEALER", "key": "4397a932dda294a2aa644601", "secs": 25.2, "cost": 0.026754, "out_tokens": 2347, "stop": "end_turn"}
+{"tag": "web:CUS-RES-IL-TERMS:Illinois, current", "key": "f498b1eb1cd3e41df8f7ec76", "secs": 144.0, "cost": 0.070735, "out_tokens": 11649, "stop": "end_turn"}
+{"tag": "ent:SUP-GPC-04", "key": "a921d71af5f58ff3e436aa7e", "secs": 26.0, "cost": 0.041028, "out_tokens": 3672, "stop": "end_turn"}
+{"tag": "adapt:SUP-GPC-02", "key": "7a970ddf7ad38fc2663a12a7", "secs": 45.3, "cost": 0.028716, "out_tokens": 5579, "stop": "end_turn"}
+{"tag": "web:CUS-RES-TX-TERMS:Texas, current", "key": "707297d1d899880b942c5734", "secs": 162.8, "cost": 0.083745, "out_tokens": 15979, "stop": "end_turn"}
+{"tag": "webdiff:SUP-DSC-TERMS:updated 01-29-2025", "key": "ba1cdaf3c4895e12a572683b", "secs": 73.1, "cost": 0.052349, "out_tokens": 6127, "stop": "end_turn"}
+{"tag": "web:VEN-PAY-SSA:effective March 1, 2026", "key": "009a27a7e138e7f38176b457", "secs": 131.8, "cost": 0.078405, "out_tokens": 11317, "stop": "end_turn"}
+{"tag": "webdiff:SUP-NCS-TERMS:Rev. 08/21/26", "key": "852e54e20e6fa950f5509493", "secs": 79.3, "cost": 0.05741500000000001, "out_tokens": 6561, "stop": "end_turn"}
+{"tag": "ent:SUP-GPC-01", "key": "9fffb507942426068c1b5f17", "secs": 65.1, "cost": 0.053962, "out_tokens": 7166, "stop": "end_turn"}
+{"tag": "ent:CUS-WADES-01", "key": "0bab5ae718729a507fbb4604", "secs": 38.8, "cost": 0.041143, "out_tokens": 3821, "stop": "end_turn"}
+{"tag": "adapt:SUP-GPC-03", "key": "89f5f3028c7706c00e73bbb8", "secs": 105.9, "cost": 0.052328, "out_tokens": 9845, "stop": "end_turn"}
+{"tag": "ent:CUS-WADES-03", "key": "cff71db102cb58cf61de1ce5", "secs": 4.9, "cost": 0.002399, "out_tokens": 338, "stop": "end_turn"}
+{"tag": "adapt:SUP-GPC-04", "key": "01c0d26bb4fd1d345b712274", "secs": 106.8, "cost": 0.07783999999999999, "out_tokens": 10570, "stop": "end_turn"}
+{"tag": "ent:CUS-WADES-02", "key": "827c6325e00047249319b7c6", "secs": 45.0, "cost": 0.031355999999999995, "out_tokens": 4627, "stop": "end_turn"}
+{"tag": "web:VEN-TEL-TOS:effective July 1, 2025", "key": "078e0fc4de7bf6dad054c07f", "secs": 134.2, "cost": 0.079414, "out_tokens": 11606, "stop": "end_turn"}
+{"tag": "adapt:SUP-HPB-01", "key": "f91f688b78c9bf546ab1fe69", "secs": 154.0, "cost": 0.07072099999999999, "out_tokens": 13479, "stop": "end_turn"}
+{"tag": "web:VEN-FSM-TOS:last updated January 15, 2026", "key": "150ba0099d717243bb8ac8e4", "secs": 265.8, "cost": 0.117007, "out_tokens": 19351, "stop": "end_turn"}
+{"tag": "ent:CUS-WADES-04", "key": "f10652ec076c7962dc4d6277", "secs": 68.5, "cost": 0.03964, "out_tokens": 7317, "stop": "end_turn"}
+{"tag": "web:VEN-LG2-TOS:effective February 1, 2026", "key": "a3c7794cf7bd7b27555277bf", "secs": 139.2, "cost": 0.077053, "out_tokens": 11153, "stop": "end_turn"}
+{"tag": "adapt:SUP-NCS-DEALER", "key": "3067a359ca7afe10e3b6c8b7", "secs": 176.8, "cost": 0.097662, "out_tokens": 15924, "stop": "end_turn"}
+{"tag": "web:SUP-KPS-TERMS:as published October 2019", "key": "f5cbb7b3c2dff7788ece7979", "secs": 93.0, "cost": 0.04486999999999999, "out_tokens": 8322, "stop": "end_turn"}
+{"tag": "ent:CUS-LKP-02", "key": "d3a5f1660d9da33425e5f300", "secs": 77.9, "cost": 0.050334, "out_tokens": 9318, "stop": "end_turn"}
+{"tag": "web:SUP-DSC-TERMS:updated 09-20-2019", "key": "32a1781cf4bac9b06e1b183a", "secs": 98.2, "cost": 0.045585, "out_tokens": 8401, "stop": "end_turn"}
+{"tag": "ent:CUS-SMB-01", "key": "5f4dc6cd74be164dbb41276a", "secs": 22.5, "cost": 0.028863, "out_tokens": 1995, "stop": "end_turn"}
+{"tag": "ent:CUS-LKP-03", "key": "041e955ee09a8928cfd65dd1", "secs": 79.2, "cost": 0.086787, "out_tokens": 11219, "stop": "end_turn"}
+{"tag": "web:SUP-LWP-TERMS:Rev 091718", "key": "e6424ec15c0d0fa7e52fdc81", "secs": 118.1, "cost": 0.065664, "out_tokens": 12478, "stop": "end_turn"}
+{"tag": "ent:EMP-RSU-FORM", "key": "776bf4a0aabb1767bf7cdf8e", "secs": 28.0, "cost": 0.032185000000000005, "out_tokens": 2471, "stop": "end_turn"}
+{"tag": "ent:EMP-PSU-2025", "key": "ac97e08aa8a7381cbcd6295d", "secs": 29.0, "cost": 0.026701000000000003, "out_tokens": 2716, "stop": "end_turn"}
+{"tag": "ent:SUBK-BHC-01", "key": "18278032f4e663a635fd4ca3", "secs": 65.8, "cost": 0.053191, "out_tokens": 6723, "stop": "end_turn"}
+{"tag": "ent:EMP-EXEC-TX-2022", "key": "e9d6c125137f41b86c68abfb", "secs": 31.2, "cost": 0.03574, "out_tokens": 3016, "stop": "end_turn"}
+{"tag": "webdiff:SUP-LWP-TERMS:Rev 020425", "key": "16f5c7097d17962f994812ad", "secs": 39.3, "cost": 0.020900000000000002, "out_tokens": 3468, "stop": "end_turn"}
+{"tag": "web:SUP-SCP-TERMS:effective November 1, 2025", "key": "5dda29e911b8eb8869bd3847", "secs": 157.5, "cost": 0.09527, "out_tokens": 18428, "stop": "end_turn"}
+{"tag": "ent:CUS-KPPA-COOP", "key": "533506e80d4e1963911b652f", "secs": 109.1, "cost": 0.082911, "out_tokens": 11467, "stop": "end_turn"}
+{"tag": "adapt:SUP-GPC-01", "key": "eb3f2c86124d931a9387d625", "secs": 222.5, "cost": 0.12956499999999999, "out_tokens": 20523, "stop": "end_turn"}
+{"tag": "ent:EMP-PSA-2022", "key": "dd28528b1efbc748789eb880", "secs": 78.6, "cost": 0.040291, "out_tokens": 7288, "stop": "end_turn"}
+{"tag": "ent:EMP-RCA-FORM", "key": "3316d1fd71ca924348b00c06", "secs": 16.9, "cost": 0.026621, "out_tokens": 1497, "stop": "end_turn"}
+{"tag": "ent:EMP-MGR-IL-2022", "key": "b55849f0da108a986f0c5b84", "secs": 42.5, "cost": 0.024451, "out_tokens": 4079, "stop": "end_turn"}
+{"tag": "ent:EMP-GM-IL-2014", "key": "6f4f4bb2b49830203238b999", "secs": 50.2, "cost": 0.029316000000000002, "out_tokens": 5281, "stop": "end_turn"}
+{"tag": "ent:EMP-MGR-TX-2023", "key": "6cd9e274339de33d4b30d5a3", "secs": 44.6, "cost": 0.042603, "out_tokens": 5624, "stop": "end_turn"}
+{"tag": "adapt:EMP-PSU-2025", "key": "54f6aa166a57f7ba558ce20f", "secs": 88.3, "cost": 0.052546999999999996, "out_tokens": 8031, "stop": "end_turn"}
+{"tag": "ent:EMP-SEP-WA-2025", "key": "9bce00b5ec22af90a4d1c475", "secs": 23.0, "cost": 0.024135, "out_tokens": 2050, "stop": "end_turn"}
+{"tag": "webfull:SUP-DSC-TERMS:updated 04-04-2024", "key": "198756ebffe3276cfa62fa36", "secs": 140.1, "cost": 0.075243, "out_tokens": 12263, "stop": "end_turn"}
+{"tag": "webfull:SUP-KPS-TERMS:as published June 2025", "key": "34784df58ac0a0d09f0759ec", "secs": 161.2, "cost": 0.09887099999999999, "out_tokens": 14589, "stop": "end_turn"}
+{"tag": "ent:EMP-SEP-TX-2024", "key": "bd65c6f9502b8d35a2269197", "secs": 40.7, "cost": 0.034036, "out_tokens": 4053, "stop": "end_turn"}
+{"tag": "ent:EMP-CONSULT-WA-2025", "key": "e6902fba6d8318fc43ec4e4d", "secs": 48.7, "cost": 0.035154, "out_tokens": 4239, "stop": "end_turn"}
+{"tag": "ent:EMP-LIT-IL-2025", "key": "2629fb91f72d94b467b242d0", "secs": 34.9, "cost": 0.049134, "out_tokens": 5206, "stop": "end_turn"}
+{"tag": "adapt:EMP-PSA-2022", "key": "a535c55ef65dceb036465146", "secs": 89.8, "cost": 0.045326000000000005, "out_tokens": 8332, "stop": "end_turn"}
+{"tag": "ent:EMP-OFFER-CA-2024", "key": "5515eabf7c1258fbfaa9ab43", "secs": 74.2, "cost": 0.067255, "out_tokens": 9295, "stop": "end_turn"}
+{"tag": "web:SUP-NCS-TERMS:Rev. 07/23/24", "key": "4fbe0f37dc7890695f431970", "secs": 282.2, "cost": 0.135387, "out_tokens": 23911, "stop": "end_turn"}
+{"tag": "ent:ACQ-01-APA", "key": "dd40ec48cee9b1127261ccbf", "secs": 30.1, "cost": 0.036772, "out_tokens": 3268, "stop": "end_turn"}
+{"tag": "adapt:EMP-RCA-FORM", "key": "4403b5d169532aef5d663d45", "secs": 120.2, "cost": 0.07335900000000001, "out_tokens": 10795, "stop": "end_turn"}
+{"tag": "ent:ACQ-01-EMP-SELLER", "key": "04352559274d2e988913f36b", "secs": 62.3, "cost": 0.044796, "out_tokens": 6019, "stop": "end_turn"}
+{"tag": "adapt:EMP-SEP-TX-2024", "key": "3ce37dbc084d138e32fcc704", "secs": 106.5, "cost": 0.067323, "out_tokens": 10575, "stop": "end_turn"}
+{"tag": "webfull:SUP-DSC-TERMS:updated 01-29-2025", "key": "dc142f40995dea17a910b942", "secs": 130.9, "cost": 0.08821999999999999, "out_tokens": 14224, "stop": "end_turn"}
+{"tag": "webdiff:SUP-NCS-TERMS:Rev. 12/10/24", "key": "cbb195318175e78ec6e0c4cb", "secs": 118.1, "cost": 0.07747399999999999, "out_tokens": 12610, "stop": "end_turn"}
+{"tag": "ent:ACQ-02-EMP-NONOWNER", "key": "ecffa1bfbc9078f0ae6cd0ee", "secs": 52.9, "cost": 0.038326, "out_tokens": 5531, "stop": "end_turn"}
+{"tag": "ent:ACQ-02-EMP-OWNER", "key": "64cd6adce558fbab24f9b556", "secs": 61.3, "cost": 0.041595, "out_tokens": 6078, "stop": "end_turn"}
+{"tag": "adapt:EMP-CONSULT-WA-2025", "key": "0235220d943a2b9c6a98e993", "secs": 178.0, "cost": 0.095719, "out_tokens": 15697, "stop": "end_turn"}
+{"tag": "ent:ACQ-03-APA", "key": "2569ff3d6e0c70f1c3e76436", "secs": 49.1, "cost": 0.05779200000000001, "out_tokens": 7534, "stop": "end_turn"}
+{"tag": "ent:ACQ-03-NC-01", "key": "94d2870fbffdcd4002124c4b", "secs": 99.6, "cost": 0.085365, "out_tokens": 14678, "stop": "end_turn"}
+{"tag": "adapt:EMP-LIT-IL-2025", "key": "9fabb2850e381bcce8f562f8", "secs": 271.7, "cost": 0.155163, "out_tokens": 25049, "stop": "end_turn"}
+{"tag": "adapt:EMP-OFFER-CA-2024", "key": "f958388050c74a01035f956b", "secs": 313.0, "cost": 0.17353000000000002, "out_tokens": 24542, "stop": "end_turn"}
+{"tag": "webfull:SUP-NCS-TERMS:Rev. 08/21/26", "key": "c33edd7c6a72aa756ddbccc5", "secs": 218.1, "cost": 0.123301, "out_tokens": 18149, "stop": "end_turn"}
+{"tag": "ent:CUS-LKP-01", "key": "9384ebd23e927bf48502b3f9", "secs": 43.1, "cost": 0.044309, "out_tokens": 5563, "stop": "end_turn"}
+{"tag": "ent:ACQ-04-MERGER", "key": "863e93e3a30b758804063870", "secs": 68.7, "cost": 0.05842, "out_tokens": 7234, "stop": "end_turn"}
+{"tag": "ent:CORP-CREDIT-01", "key": "5872189d3ada4926b73296ca", "secs": 126.6, "cost": 0.09363099999999999, "out_tokens": 14299, "stop": "end_turn"}
+{"tag": "ent:CORP-CREDIT-03", "key": "de1541615f6bce6ffcadce86", "secs": 130.3, "cost": 0.087575, "out_tokens": 15826, "stop": "end_turn"}
+{"tag": "adapt:CORP-CREDIT-03", "key": "81fab85359249e64c1dbdae2", "secs": 80.8, "cost": 0.046003, "out_tokens": 8454, "stop": "end_turn"}
+{"tag": "prose:CUS-CRT-AMD1", "key": "673f857fd412bfaeedf16281", "secs": 22.8, "cost": 0.013097000000000001, "out_tokens": 2349, "stop": "end_turn"}
+{"tag": "ent:SUP-NCS-DEALER", "key": "d65adad900d68bbe0a1b9173", "secs": 41.8, "cost": 0.035314, "out_tokens": 4059, "stop": "end_turn"}
+{"tag": "ent:CUS-LKP-02", "key": "ea746f200ec2ce62e3a63997", "secs": 83.9, "cost": 0.063484, "out_tokens": 11948, "stop": "end_turn"}
+{"tag": "prose:CUS-CRT-MSA", "key": "03bcbfcdf11050734fcc408a", "secs": 92.3, "cost": 0.046383, "out_tokens": 9001, "stop": "end_turn"}
+{"tag": "ent:EMP-RSU-FORM", "key": "5987453fa711d1b81b96058d", "secs": 14.8, "cost": 0.026405, "out_tokens": 1315, "stop": "end_turn"}
+{"tag": "ent:CUS-KPPA-COOP", "key": "72eb04709d519a481d3cde8d", "secs": 102.7, "cost": 0.089556, "out_tokens": 12796, "stop": "end_turn"}
+{"tag": "prose:CUS-VMS-MSA", "key": "44393c6573f2543b1cd2dc23", "secs": 79.2, "cost": 0.045635, "out_tokens": 8841, "stop": "end_turn"}
+{"tag": "ent:EMP-PSU-2025", "key": "1979adf8368498cff87b011b", "secs": 71.7, "cost": 0.048251, "out_tokens": 7026, "stop": "end_turn"}
+{"tag": "ent:EMP-PSA-2022", "key": "25e55e1a11133946ddd88265", "secs": 104.3, "cost": 0.054620999999999996, "out_tokens": 10154, "stop": "end_turn"}
+{"tag": "prose:CUS-OAK-MSA", "key": "70ce0fdd6ffe5ff704940997", "secs": 98.0, "cost": 0.050648000000000006, "out_tokens": 9841, "stop": "end_turn"}
+{"tag": "prose:CUS-HRP-MSA", "key": "a447e0c00452532c000843e5", "secs": 206.7, "cost": 0.10670100000000002, "out_tokens": 21045, "stop": "end_turn"}
+{"tag": "adapt:SUP-NCS-DEALER", "key": "ac3fba951943da88091f8d02", "secs": 176.7, "cost": 0.090616, "out_tokens": 14510, "stop": "end_turn"}
+{"tag": "ent:EMP-EXEC-TX-2022", "key": "4c51a0a4c7cde1f1c4364e16", "secs": 39.7, "cost": 0.041285, "out_tokens": 4125, "stop": "end_turn"}
+{"tag": "adapt:EMP-PSA-2022", "key": "5e0bb2fa67bbc00acedd107c", "secs": 71.8, "cost": 0.036841000000000006, "out_tokens": 6623, "stop": "end_turn"}
+{"tag": "adapt:EMP-PSU-2025", "key": "d5dd2cabb879a432ca27536e", "secs": 108.6, "cost": 0.06272900000000001, "out_tokens": 10067, "stop": "end_turn"}
+{"tag": "ent:EMP-RCA-FORM", "key": "5657de6b18653666ae362767", "secs": 35.6, "cost": 0.035821000000000006, "out_tokens": 3337, "stop": "end_turn"}
+{"tag": "prose:CUS-SPS-MSA", "key": "e65071931c39aa1c08113ee0", "secs": 233.3, "cost": 0.114853, "out_tokens": 22686, "stop": "end_turn"}
+{"tag": "ent:EMP-GM-IL-2014", "key": "3a9ed63ee027495a2d2f0c3d", "secs": 74.4, "cost": 0.040811, "out_tokens": 7580, "stop": "end_turn"}
+{"tag": "ent:EMP-SEP-WA-2025", "key": "31ea99ca353c394352e15965", "secs": 29.2, "cost": 0.027545, "out_tokens": 2732, "stop": "end_turn"}
+{"tag": "prose-retry:CUS-HRP-MSA", "key": "2ba2e6183469f06f911eabcd", "secs": 163.6, "cost": 0.091257, "out_tokens": 17947, "stop": "end_turn"}
+{"tag": "ent:EMP-OFFER-CA-2024", "key": "bf1194862fec9f5c09fd9936", "secs": 91.0, "cost": 0.06389500000000001, "out_tokens": 8623, "stop": "end_turn"}
+{"tag": "ent:EMP-CONSULT-WA-2025", "key": "8ca21d3bc6e4818b4233dbf5", "secs": 40.2, "cost": 0.032354, "out_tokens": 3679, "stop": "end_turn"}
+{"tag": "prose:CUS-HRP-LUMPSUM", "key": "8d056dc711bbbbcf6c06ff43", "secs": 225.4, "cost": 0.10631600000000001, "out_tokens": 20985, "stop": "end_turn"}
+{"tag": "prose:CUS-RES-SVC-AGMT", "key": "50ed132f03413bd4698f1aa5", "secs": 59.2, "cost": 0.030222000000000002, "out_tokens": 5793, "stop": "end_turn"}
+{"tag": "adapt:EMP-RCA-FORM", "key": "66cad7b118221c4b3470e536", "secs": 141.0, "cost": 0.082096, "out_tokens": 12710, "stop": "end_turn"}
+{"tag": "prose-retry:CUS-SPS-MSA", "key": "4694bb5ceb50437b16b92d2c", "secs": 134.9, "cost": 0.066452, "out_tokens": 12999, "stop": "end_turn"}
+{"tag": "ent:EMP-LIT-IL-2025", "key": "dc1a86c2236f447bf3bbed20", "secs": 85.3, "cost": 0.071679, "out_tokens": 9715, "stop": "end_turn"}
+{"tag": "ent:ACQ-01-APA", "key": "2970c8956ef4cd735bc0a116", "secs": 43.5, "cost": 0.043776999999999996, "out_tokens": 4669, "stop": "end_turn"}
+{"tag": "prose:SUBK-TPB-01", "key": "6cd504a6b03a5731b180d676", "secs": 90.3, "cost": 0.046297, "out_tokens": 8976, "stop": "end_turn"}
+{"tag": "prose:SUBK-CRC-01", "key": "80f0f26c300e34ea4c6d904b", "secs": 75.6, "cost": 0.039057, "out_tokens": 7528, "stop": "end_turn"}
+{"tag": "ent:ACQ-02-APA", "key": "aa7a73fb6365118048a1b524", "secs": 76.3, "cost": 0.042607500000000006, "out_tokens": 8302, "stop": "end_turn"}
+{"tag": "prose:SUBK-ENS-01", "key": "ce60edc7c26ccc96283fd7d7", "secs": 64.1, "cost": 0.032539000000000005, "out_tokens": 6256, "stop": "end_turn"}
+{"tag": "ent:ACQ-02-EMP-OWNER", "key": "a45edca885d6a7d1ae727265", "secs": 46.3, "cost": 0.03433, "out_tokens": 4625, "stop": "end_turn"}
+{"tag": "prose:SUBK-PDE-01", "key": "9dea9279b1e31415bfe84a70", "secs": 52.3, "cost": 0.028202999999999995, "out_tokens": 5396, "stop": "end_turn"}
+{"tag": "prose-retry:CUS-HRP-LUMPSUM", "key": "713da68dbf0123b6ffce3aee", "secs": 229.3, "cost": 0.109682, "out_tokens": 21649, "stop": "end_turn"}
+{"tag": "ent:ACQ-02-EMP-NONOWNER", "key": "5bea8d9a1d795480d8fba235", "secs": 58.2, "cost": 0.040785999999999996, "out_tokens": 6023, "stop": "end_turn"}
+{"tag": "prose:SUBK-LMC-01", "key": "2fa377c37886e7b608818192", "secs": 167.4, "cost": 0.087253, "out_tokens": 17178, "stop": "end_turn"}
+{"tag": "prose:EMP-HBK-CA", "key": "adff7be1dad5ddfc7ed04a94", "secs": 44.4, "cost": 0.022656999999999997, "out_tokens": 4300, "stop": "end_turn"}
+{"tag": "adapt:EMP-OFFER-CA-2024", "key": "0aa3db942814796f0709d20e", "secs": 335.3, "cost": 0.18294100000000002, "out_tokens": 26429, "stop": "end_turn"}
+{"tag": "prose:EMP-HBK-WA", "key": "83be2880992a81931e6aab06", "secs": 33.0, "cost": 0.016235000000000003, "out_tokens": 3024, "stop": "end_turn"}
+{"tag": "adapt:EMP-LIT-IL-2025", "key": "9c5f1f56fe4c05950328f0bf", "secs": 250.9, "cost": 0.158808, "out_tokens": 25820, "stop": "end_turn"}
+{"tag": "prose:EMP-HBK-TX", "key": "f94275b184c21fd22a5f7d95", "secs": 33.0, "cost": 0.015817, "out_tokens": 2942, "stop": "end_turn"}
+{"tag": "ent:ACQ-03-NC-02", "key": "3a352fb204c45e77c24fd9b8", "secs": 27.7, "cost": 0.022521, "out_tokens": 4203, "stop": "end_turn"}
+{"tag": "prose:EMP-HBK-IL", "key": "9448358921351e3dde5da47b", "secs": 69.7, "cost": 0.037233999999999996, "out_tokens": 7225, "stop": "end_turn"}
+{"tag": "prose-retry:EMP-HBK-TX", "key": "b639d4b92c1b2c68eb9bd1f8", "secs": 27.8, "cost": 0.013559, "out_tokens": 2484, "stop": "end_turn"}
+{"tag": "ent:ACQ-03-APA", "key": "6080c332bdd99a2cb36a5be1", "secs": 123.6, "cost": 0.086247, "out_tokens": 13225, "stop": "end_turn"}
+{"tag": "adapt:ACQ-03-NC-02", "key": "c05d4d90c7bd42184ba80313", "secs": 68.9, "cost": 0.057074, "out_tokens": 11093, "stop": "end_turn"}
+{"tag": "ent:ACQ-03-NC-01", "key": "bb586acc10d3d3e495feacc8", "secs": 131.2, "cost": 0.085715, "out_tokens": 14748, "stop": "end_turn"}
+{"tag": "ent:ACQ-04-EMP-SELLER", "key": "e584a98dd8070730652543eb", "secs": 55.9, "cost": 0.043865, "out_tokens": 5864, "stop": "end_turn"}
+{"tag": "prose:EMP-ARB-FORM", "key": "514b90fcc22cc375cbdb5949", "secs": 86.5, "cost": 0.043477999999999996, "out_tokens": 8433, "stop": "end_turn"}
+{"tag": "ent:ACQ-04-NOTE", "key": "3275df4eca22e020e8b696c4", "secs": 37.0, "cost": 0.034279000000000004, "out_tokens": 4558, "stop": "end_turn"}
+{"tag": "ent:ACQ-05-RCA", "key": "65bd6897bc6859e88fc2fcd7", "secs": 27.6, "cost": 0.026362, "out_tokens": 2727, "stop": "end_turn"}
+{"tag": "prose:EMP-TPL-TECH-WA", "key": "bf26e298700cb0ac9b6a1f33", "secs": 44.9, "cost": 0.023864999999999997, "out_tokens": 4493, "stop": "end_turn"}
+{"tag": "ent:ACQ-05-CONSULT", "key": "4d672f1e64e5184f710638d0", "secs": 44.5, "cost": 0.037092, "out_tokens": 4379, "stop": "end_turn"}
+{"tag": "prose:EMP-TPL-TECH-CA", "key": "6ff1c9b83448888fef527923", "secs": 135.8, "cost": 0.06812599999999999, "out_tokens": 13345, "stop": "end_turn"}
+{"tag": "ent:ACQ-05-EMP-OWNER", "key": "a18d1ebf02b990d8b8b7eb1b", "secs": 51.8, "cost": 0.042207, "out_tokens": 5486, "stop": "end_turn"}
+{"tag": "ent:ACQ-05-GUIDEBOOK", "key": "294848ffca8bbed714fa516a", "secs": 10.4, "cost": 0.007620999999999999, "out_tokens": 895, "stop": "end_turn"}
+{"tag": "ent:ACQ-05-NOTE", "key": "94f901472fc0be6f6a0eb920", "secs": 38.1, "cost": 0.032257, "out_tokens": 3928, "stop": "end_turn"}
+{"tag": "adapt:ACQ-03-NC-01", "key": "e0aa29a86ad8fb6256f8b42d", "secs": 113.6, "cost": 0.06731300000000001, "out_tokens": 11067, "stop": "end_turn"}
+{"tag": "prose:EMP-TPL-TECH-IL", "key": "e057147b8fca4d6604db901d", "secs": 55.7, "cost": 0.030102, "out_tokens": 5751, "stop": "end_turn"}
+{"tag": "prose:EMP-TPL-TECH-TX", "key": "12ca71a8ee753cf46f13d170", "secs": 48.8, "cost": 0.025602, "out_tokens": 4855, "stop": "end_turn"}
+{"tag": "prose:EMP-HBK-01", "key": "1ccdacf88d4161711dc55b04", "secs": 323.3, "cost": 0.150673, "out_tokens": 29847, "stop": "end_turn"}
+{"tag": "ent:ACQ-05-FRANCHISE", "key": "fd2b9fe4c3f8de71c25164bd", "secs": 41.9, "cost": 0.046119, "out_tokens": 5105, "stop": "end_turn"}
+{"tag": "prose:EMP-TPL-TRAINING", "key": "557bdbfaca3d8183246f0335", "secs": 33.4, "cost": 0.016872, "out_tokens": 3085, "stop": "end_turn"}
+{"tag": "prose:EMP-STAY-WA-2024", "key": "566df19adec6f25beadecc10", "secs": 22.4, "cost": 0.013318, "out_tokens": 2404, "stop": "end_turn"}
+{"tag": "ent:CORP-CREDIT-02", "key": "50396fc20b624951b6f926c5", "secs": 62.2, "cost": 0.054322, "out_tokens": 6480, "stop": "end_turn"}
+{"tag": "prose:EMP-NS-TX-2024", "key": "378408d284308d0786592667", "secs": 29.0, "cost": 0.017565, "out_tokens": 3265, "stop": "end_turn"}
+{"tag": "prose:EMP-STAY-WA-2025", "key": "3aa3cb04a68737bdc9ab68f3", "secs": 61.1, "cost": 0.035292000000000004, "out_tokens": 6793, "stop": "end_turn"}
+{"tag": "prose:EMP-NS-WA-2023", "key": "08fc894cc58057ff92ebe82c", "secs": 30.8, "cost": 0.017151, "out_tokens": 3186, "stop": "end_turn"}
+{"tag": "ent:CORP-FLEET-01", "key": "d4ccd3e3cd2550afeeeb062e", "secs": 64.5, "cost": 0.053615, "out_tokens": 7746, "stop": "end_turn"}
+{"tag": "prose:EMP-SEP-IL-2025", "key": "3ee42daff9692a0dfbe35245", "secs": 45.5, "cost": 0.024786, "out_tokens": 4700, "stop": "end_turn"}
+{"tag": "ent:CORP-CREDIT-04", "key": "93950f2c39c3a869c93769d5", "secs": 116.5, "cost": 0.081186, "out_tokens": 13783, "stop": "end_turn"}
+{"tag": "ent:CORP-EQUIP-LEASE", "key": "338f3b31705034e16c91fac9", "secs": 25.3, "cost": 0.035380999999999996, "out_tokens": 2733, "stop": "end_turn"}
+{"tag": "ent:CORP-FLEET-02", "key": "901e99c615911ad6177e2da2", "secs": 84.7, "cost": 0.046953, "out_tokens": 8702, "stop": "end_turn"}
+{"tag": "prose:CORP-LEASE-TAC", "key": "38923deb099cfd4553797c5a", "secs": 70.4, "cost": 0.036943000000000004, "out_tokens": 7150, "stop": "end_turn"}
+{"tag": "prose-retry:EMP-SEP-IL-2025", "key": "5919997143bbd959471a23f1", "secs": 40.2, "cost": 0.021355, "out_tokens": 4007, "stop": "end_turn"}
+{"tag": "prose:CORP-LEASE-SAC-01", "key": "d281733191df6fcbdaecf678", "secs": 90.5, "cost": 0.047724, "out_tokens": 9279, "stop": "end_turn"}
+{"tag": "ent:CORP-LEASE-ELK", "key": "48e98e2b06255501518aa62b", "secs": 79.8, "cost": 0.066218, "out_tokens": 9022, "stop": "end_turn"}
+{"tag": "prose:CORP-LEASE-SJC", "key": "66b1960a8706483921709bd2", "secs": 74.0, "cost": 0.040907, "out_tokens": 7915, "stop": "end_turn"}
+{"tag": "prose:CORP-LEASE-DAL", "key": "9e67bc93e52bc59e8a5845fd", "secs": 75.7, "cost": 0.040716999999999996, "out_tokens": 7876, "stop": "end_turn"}
+{"tag": "ent:CORP-LEASE-SAC-02", "key": "5e3ddf427b3900e76aebcdf0", "secs": 46.3, "cost": 0.027353000000000002, "out_tokens": 5020, "stop": "end_turn"}
+{"tag": "adapt:CORP-CREDIT-04", "key": "67d193e176848c6f84638368", "secs": 139.2, "cost": 0.078158, "out_tokens": 13214, "stop": "end_turn"}
+{"tag": "ent:CORP-LEASE-HOU", "key": "8434642a19e72245d8dba06e", "secs": 114.4, "cost": 0.08950799999999999, "out_tokens": 13310, "stop": "end_turn"}
+{"tag": "prose:CORP-INS-UMB", "key": "89f323c8993a6929b0508094", "secs": 47.1, "cost": 0.023484, "out_tokens": 4449, "stop": "end_turn"}
+{"tag": "ent:VEN-FSM-SUPPORT", "key": "88b1abf638622e6f3488941c", "secs": 29.8, "cost": 0.035934, "out_tokens": 2974, "stop": "end_turn"}
+{"tag": "ent:VEN-LEADGEN-MSA", "key": "a6b76924f738945efefd15af", "secs": 33.5, "cost": 0.032825, "out_tokens": 4088, "stop": "end_turn"}
+{"tag": "prose:CORP-INS-CGL", "key": "9a2e58786519cafd309e885d", "secs": 128.0, "cost": 0.064241, "out_tokens": 12545, "stop": "end_turn"}
+{"tag": "prose:CORP-INS-AUTO", "key": "574a8a2be2053de965484672", "secs": 35.9, "cost": 0.018358, "out_tokens": 3423, "stop": "end_turn"}
+{"tag": "prose:VEN-NDA-FORM", "key": "7d2ea73a1652088fee74e2a8", "secs": 55.3, "cost": 0.039221, "out_tokens": 7598, "stop": "end_turn"}
+{"tag": "prose:SUP-KPS-ACCOUNT", "key": "934a12863783818523109afb", "secs": 78.7, "cost": 0.041579000000000005, "out_tokens": 8051, "stop": "end_turn"}
+{"tag": "prose-retry:CORP-LEASE-SJC", "key": "27c9d1e3902cefab049770c5", "secs": 166.7, "cost": 0.08542099999999998, "out_tokens": 16810, "stop": "end_turn"}
+{"tag": "prose:VEN-WASTE", "key": "95339570180b692c333ce8e3", "secs": 32.5, "cost": 0.017431000000000002, "out_tokens": 3249, "stop": "end_turn"}
+{"tag": "adapt:VEN-LEADGEN-MSA", "key": "a22380d5a449342884729a9f", "secs": 133.9, "cost": 0.070185, "out_tokens": 11441, "stop": "end_turn"}
+{"tag": "prose:VEN-EQUIP-RENTAL", "key": "11f6b11a2b484fdc58bdefd6", "secs": 39.2, "cost": 0.021528000000000002, "out_tokens": 4047, "stop": "end_turn"}
+{"tag": "prose:VEN-RADIO", "key": "e4ef0f3df127de87d784a1fa", "secs": 29.4, "cost": 0.015513, "out_tokens": 2863, "stop": "end_turn"}
+{"tag": "prose:VEN-UNIFORM", "key": "d67a1276bc5a861bcbb776e2", "secs": 162.2, "cost": 0.083964, "out_tokens": 16552, "stop": "end_turn"}
+{"tag": "adapt:VEN-FSM-SUPPORT", "key": "4903d6c0c6f9393997fc5f72", "secs": 252.4, "cost": 0.150618, "out_tokens": 23982, "stop": "end_turn"}
+{"tag": "webdiff:SUP-LWP-TERMS:Rev 020425", "key": "42a1a0cb2805b40107cc02a5", "secs": 33.2, "cost": 0.018698, "out_tokens": 3086, "stop": "end_turn"}
+{"tag": "webdiff:SUP-DSC-TERMS:updated 04-04-2024", "key": "0a933aab42a5f84adccb5b60", "secs": 57.2, "cost": 0.039495999999999996, "out_tokens": 4592, "stop": "end_turn"}
+{"tag": "prose-retry:VEN-UNIFORM", "key": "37ec3ebaa09c410d5cac7429", "secs": 82.4, "cost": 0.043563000000000004, "out_tokens": 8465, "stop": "end_turn"}
+{"tag": "webfix:SUP-KPS-TERMS:as published June 2025", "key": "6f7ca779f6f9250361be6c91", "secs": 131.1, "cost": 0.074673, "out_tokens": 12337, "stop": "end_turn"}
+{"tag": "webdiff:SUP-DSC-TERMS:updated 01-29-2025", "key": "ca5e8d0d995f2fa166671a1e", "secs": 117.7, "cost": 0.072838, "out_tokens": 10918, "stop": "end_turn"}
+{"tag": "webdiff:SUP-NCS-TERMS:Rev. 12/10/24", "key": "c17d6bf762f87aaf541be84f", "secs": 177.5, "cost": 0.092764, "out_tokens": 15586, "stop": "end_turn"}
+{"tag": "webdiff:SUP-NCS-TERMS:Rev. 08/21/26", "key": "3490ab98f97701aeac89c65c", "secs": 226.8, "cost": 0.096742, "out_tokens": 9075, "stop": "end_turn"}
+{"tag": "prose:CUS-RES-CA-TERMS-2024-06-01", "key": "8571f151a2f0ea7806f0cf0e", "secs": 40.4, "cost": 0.020030999999999997, "out_tokens": 3738, "stop": "end_turn"}
+{"tag": "prose:CUS-RES-CA-TERMS-2026-08-01", "key": "c4eb3dcde9128194f752f5cb", "secs": 69.2, "cost": 0.035286, "out_tokens": 6784, "stop": "end_turn"}

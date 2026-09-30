@@ -1,0 +1,71 @@
+id: D-S0-05
+contract_version: 0.1.0
+offsets: computed_pre_G0
+scenario_ids:
+- D-S0-05
+- E-I6-01
+eval_ids:
+- S0
+set: broad
+inputs:
+  trigger: null
+  versions: []
+  as_of: '2026-10-01'
+  profile: default
+  custom_prompt: null
+provenance:
+  author: non-attorney reference
+  sources:
+  - corpus documents cited on each span
+  - eval-scenarios/priority-tiers-draft.md
+  - eval-scenarios/legal-questions.md
+  - Washington State Register 25-20-099 (2026 RCW 49.62 threshold $126,858.83), https://lawfilesext.leg.wa.gov/law/wsr/2025/20/25-20-099.htm
+  verified_on: '2026-09-29'
+pairs:
+- id: membership-substantive
+  substantive: true
+  expect: survive
+  old:
+    file: corpus/documents/customers/residential-terms/meridian-comfort-club_membership-terms_california_2024-06-01.md
+    section_label: 7. AUTOMATIC RENEWAL
+    quote: Automatic Renewal. Your Comfort Club membership renews automatically each month at the then-current monthly membership fee (currently $19.95) and will be charged to your payment method on file until you cancel. You may cancel at any time by calling Member Services at (916) 555-0199, Monday through Friday, 8:00 a.m. to 5:00 p.m., or by writing to Meridian at 2150 Harbor Point Drive, Suite 400, Sacramento, CA 95833. Meridian may change the monthly membership fee upon thirty (30) days' notice sent to the email address on file; continued membership after the effective date constitutes acceptance of the new fee.
+    start: 8186
+    end: 8800
+  new:
+    file: corpus/documents/customers/residential-terms/meridian-comfort-club_membership-terms_california_2026-08-01.md
+    section_label: 4. AUTOMATIC RENEWAL
+    quote: 'Automatic Renewal; Your Consent. By checking the box labeled ''I agree to automatic renewal'' at enrollment, you give your express affirmative consent to the automatic renewal terms: your membership renews monthly at $21.95 until you cancel. Cancellation. You may cancel online at any time at www.meridianpha.com/ca/cancel using the ''Cancel Membership'' button, without being required to speak with a representative, or by calling (916) 555-0199. Annual Reminder. At least once each year, Meridian will send you a reminder describing your membership, the frequency and amount of charges, and how to cancel. Price Changes. Meridian will notify you of any increase in the membership fee at least seven (7) and no more than thirty (30) days before the increase takes effect, together with instructions for how to cancel.'
+    start: 4296
+    end: 5110
+- id: membership-cosmetic
+  substantive: false
+  expect: exit
+  old:
+    file: corpus/documents/customers/residential-terms/meridian-comfort-club_membership-terms_california_2026-08-01.md
+    section_label: 4. AUTOMATIC RENEWAL
+    quote: 'Automatic Renewal; Your Consent. By checking the box labeled ''I agree to automatic renewal'' at enrollment, you give your express affirmative consent to the automatic renewal terms: your membership renews monthly at $21.95 until you cancel. Cancellation. You may cancel online at any time at www.meridianpha.com/ca/cancel using the ''Cancel Membership'' button, without being required to speak with a representative, or by calling (916) 555-0199. Annual Reminder. At least once each year, Meridian will send you a reminder describing your membership, the frequency and amount of charges, and how to cancel. Price Changes. Meridian will notify you of any increase in the membership fee at least seven (7) and no more than thirty (30) days before the increase takes effect, together with instructions for how to cancel.'
+    start: 4296
+    end: 5110
+  new:
+    file: eval-scenarios/answer-keys/fixtures/s0/membership-terms-california-2026-08-01-cosmetic.md
+    section_label: 4. AUTOMATIC RENEWAL
+    quote: 'Automatic Renewal; Your Consent. By checking the box labeled ''I agree to automatic renewal'' at enrollment, you give your express affirmative consent to the automatic renewal terms: your membership renews monthly at $21.95 until you cancel. Cancellation. You may cancel online at any time at www.meridianpha.com/ca/cancel using the ''Cancel Membership'' button, without being required to speak with a representative, or by calling (916) 555-0199. Annual Reminder. At least once each year, Meridian will send you a reminder describing your membership, the frequency and amount of charges, and how to cancel. Price Changes. Meridian will notify you of any increase in the membership fee at least seven (7) and no more than thirty (30) days before the increase takes effect, together with instructions for how to cancel.'
+    start: 4296
+    end: 5110
+- id: E-I6-01
+  substantive: false
+  expect: exit
+  old:
+    file: corpus/triggers/TR-90-controls/2025-03-_wy-sf-107.txt
+    section_label: 'Section 1.  W.S. 1-23-108 is created to read:'
+    quote: "(a)  Any covenant not to compete that restricts the \nright of any person to receive compensation for performance \nof skilled or unskilled labor shall be void. This "
+    start: 641
+    end: 805
+  new:
+    file: eval-scenarios/answer-keys/fixtures/s0/wy-sf-107-cosmetic.txt
+    section_label: '[[page 1]] ORIGINAL SENATE ENGROSSED FILE NO.'
+    quote: "(a)  Any covenant not to compete that restricts the \nright of any person to receive compensation for performance \nof skilled or unskilled labor shall be void. This "
+    start: 634
+    end: 794
+    section_note: No heading-like line precedes this span.
+notes: 'Three stage-0 pairs. The membership pair changes the renewal terms: phone-only cancel at $19.95 versus express consent, a Cancel Membership button, and $21.95. The cosmetic membership file only renumbers a)/b)/c) list markers to 1./2./3. The trigger fixture rewraps the Wyoming statute and adds a trailing blank line. A false exit on the substantive pair is the miss. A failure to exit on either cosmetic pair is the other miss.'

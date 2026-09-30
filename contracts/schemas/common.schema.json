@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gc-take-home.local/contracts/0.1.0/common.schema.json",
+  "title": "Shared definitions (enums, span, ids)",
+  "$defs": {
+    "span": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "file",
+        "start",
+        "end"
+      ],
+      "description": "Character offsets into the NORMALISED text of `file` (see normalize/SPEC.md). `end` exclusive. V3 'citation locates' = quote is contained in text[start:end].",
+      "properties": {
+        "file": {
+          "type": "string",
+          "description": "Repo-relative path, e.g. corpus/documents/customers/.../01_x.md or corpus/triggers/TR-01-.../x.txt"
+        },
+        "start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "section_label": {
+          "type": "string",
+          "description": "Display label as it appears in the document (e.g. '\u00a73.2 Automatic Renewal Terms'). Advisory; offsets are authoritative."
+        },
+        "quote": {
+          "type": "string",
+          "description": "Verbatim quote. Required on surfaced citations (V2); optional elsewhere."
+        }
+      }
+    },
+    "stack_id": {
+      "type": "string",
+      "description": "Clustered docs: '<area>/<cluster folder>'. Standalone docs: document path relative to corpus/documents/ without '.md'."
+    },
+    "legal_status": {
+      "type": "string",
+      "enum": [
+        "in_force",
+        "enacted_future_effective",
+        "in_force_challenged",
+        "stayed_or_enjoined",
+        "proposed",
+        "vacated_or_repealed",
+        "undeterminable"
+      ]
+    },
+    "company_gate": {
+      "type": "string",
+      "enum": [
+        "proceed",
+        "exit",
+        "uncertain"
+      ]
+    },
+    "applicability": {
+      "type": "string",
+      "enum": [
+        "applies",
+        "does_not_apply",
+        "undeterminable"
+      ]
+    },
+    "determination": {
+      "type": "string",
+      "enum": [
+        "affected",
+        "not_affected",
+        "needs_review"
+      ]
+    },
+    "urgency": {
+      "type": "string",
+      "enum": [
+        "forfeitable_clock_running",
+        "obligation_clock_running",
+        "clock_pending",
+        "no_clock",
+        "undeterminable"
+      ]
+    },
+    "materiality": {
+      "type": "string",
+      "enum": [
+        "material",
+        "not_material",
+        "undeterminable"
+      ]
+    },
+    "direction": {
+      "type": "string",
+      "enum": [
+        "exposure",
+        "recovery",
+        "both",
+        "neutral"
+      ]
+    },
+    "finding_type": {
+      "type": "string",
+      "enum": [
+        "deadline_bound_right",
+        "deadline_bound_obligation",
+        "liability_or_compliance_exposure",
+        "recovery_opportunity",
+        "billing_discrepancy",
+        "cost_exposure",
+        "consistency_gap",
+        "clerical_update",
+        "watch"
+      ],
+      "description": "Exactly ONE value per finding. When several apply, choose the first in this precedence order (the enum order): deadline_bound_right > deadline_bound_obligation > liability_or_compliance_exposure > recovery_opportunity > billing_discrepancy > cost_exposure > consistency_gap > clerical_update > watch. recovery_opportunity = a contractual or statutory right to recover (refund claim, pass-through, MFN refund). billing_discrepancy = a counterparty is charging outside its contract or on an expired/incorrect basis (e.g. a surcharge whose authority lapsed). 'Needs review' is never a finding_type; it is StackFinding.determination."
+    },
+    "response_type": {
+      "type": "string",
+      "enum": [
+        "send_notice",
+        "exercise_pass_through",
+        "seek_refund_or_credit",
+        "renegotiate",
+        "update_template",
+        "escalate_outside_counsel",
+        "brief_finance",
+        "monitor",
+        "no_action"
+      ],
+      "description": "seek_refund_or_credit covers refund filings (e.g. CBP CAPE), invoice disputes and credit requests, and unwinding a surcharge already passed through. renegotiate includes change-order and equitable-adjustment requests. The system emits exactly one value; answer keys may accept up to two."
+    },
+    "model_config": {
+      "type": "object",
+      "required": [
+        "orchestrator",
+        "subagent",
+        "classifier"
+      ],
+      "properties": {
+        "orchestrator": {
+          "type": "string",
+          "description": "e.g. zai/glm-5.3-flash, chatgpt:gpt-5.6-luna"
+        },
+        "subagent": {
+          "type": "string"
+        },
+        "classifier": {
+          "type": "string",
+          "description": "'self' or 'jev'"
+        },
+        "provider_pin": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

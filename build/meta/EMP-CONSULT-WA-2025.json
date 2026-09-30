@@ -1,0 +1,30 @@
+{
+ "doc_id": "EMP-CONSULT-WA-2025",
+ "path": "documents/employment/joshua-halvorsen_post-retirement-consulting-agreement_2025-06-01.md",
+ "chars": 36607,
+ "area": "employment",
+ "cluster": null,
+ "doc_type": "consulting_agreement",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2025-06-01",
+ "status": "active",
+ "roles": [
+  "noncompete",
+  "wa",
+  "contractor",
+  "arbitration"
+ ],
+ "source_class": "edgar_llm_adapted",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1782170/000178217025000018/exhibit1016-postxretiremen.htm",
+ "year_shift": 0,
+ "governing_law_remap": null,
+ "name_map_size": 6,
+ "filled_fields": [],
+ "adapt_length_ratio": 1.0,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

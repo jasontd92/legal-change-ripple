@@ -1,0 +1,19 @@
+{
+ "doc_id": "CUS-CONCESSION-HRP",
+ "path": "documents/customers/notices/meridian_pricing-concession-letter_harborview_2025-09-02.md",
+ "chars": 564,
+ "area": "customers",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "pricing_concession",
+ "counterparty": "CUS-HRP",
+ "effective_date": "2025-09-02",
+ "roles": [
+  "mfn",
+  "l2_link"
+ ],
+ "planted_features": [
+  "concession_ca_customer_not_triggering_tx_only_mfn"
+ ],
+ "status": "active"
+}

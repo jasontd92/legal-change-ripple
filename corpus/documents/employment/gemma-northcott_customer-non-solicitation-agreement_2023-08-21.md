@@ -1,0 +1,133 @@
+CONFIDENTIALITY AND CUSTOMER NON-SOLICITATION AGREEMENT
+
+THIS CONFIDENTIALITY AND CUSTOMER NON-SOLICITATION AGREEMENT ("Agreement") is entered into effective as of August 21, 2023 ("Effective Date"), by and between MERIDIAN MECHANICAL OF WASHINGTON, LLC, a Washington limited liability company with its principal place of business at 3310 South Pine Street, Tacoma, Washington 98409 ("Company"), and GEMMA NORTHCOTT, an individual residing in Pierce County, Washington ("Employee").
+
+RECITALS
+
+WHEREAS, the Company is engaged in the business of providing residential heating, ventilation, air conditioning, and related mechanical services throughout the State of Washington;
+
+WHEREAS, Employee has been engaged by the Company as a Comfort Advisor (commission sales) at the Company's Tacoma branch location, and in that capacity will be exposed to and have access to confidential business information, customer lists, pricing information, and other proprietary materials of the Company;
+
+WHEREAS, the Company desires to protect its legitimate business interests, including its proprietary information and customer relationships, by requiring Employee to execute this Agreement as a condition of employment;
+
+NOW, THEREFORE, in consideration of Employee's continued employment with the Company and the mutual covenants and agreements contained herein, the parties agree as follows:
+
+1. DEFINITIONS
+
+As used in this Agreement, the following terms shall have the meanings ascribed to them below:
+
+1.1 "Confidential Information" means all non-public information concerning the Company's business, operations, plans, strategies, customers, customer lists, pricing, costs, margins, sales techniques, marketing plans, financial information, service protocols, employee information, contracts, vendor relationships, and any other proprietary information that is disclosed to Employee or that Employee learns about in connection with employment by the Company. Confidential Information includes information disclosed orally, in writing, electronically, or by any other means. Confidential Information shall not include information that is or becomes publicly available through no breach of this Agreement by Employee, or that was rightfully in Employee's possession prior to disclosure by the Company.
+
+1.2 "Customer Information" means the identity of any customer or prospective customer of the Company, including residential customers and commercial accounts served by the Company or with whom the Company has bid or negotiated within the past twenty-four (24) months, as well as the contact information, service history, pricing, and preferences of such customers.
+
+1.3 "Employment Period" means the period during which Employee is employed by the Company.
+
+1.4 "Restricted Period" means the period commencing on the Effective Date and continuing for a period of two (2) years following the termination of the Employment Period for any reason.
+
+1.5 "Company Group" means the Company, its parent company, subsidiaries, affiliates, and their respective current and future owners, officers, directors, employees, agents, and representatives.
+
+2. ACKNOWLEDGMENTS
+
+Employee acknowledges and agrees that:
+
+2.1 In the course of employment as a Comfort Advisor at the Company's Tacoma branch, Employee will have access to and become familiar with the Company's Confidential Information, including but not limited to customer lists, pricing information, service schedules, customer preferences and needs assessment data, sales techniques and materials, marketing strategies, financial information, and other proprietary business information.
+
+2.2 The Confidential Information is valuable, material, and constitutes a significant source of competitive advantage for the Company in the residential HVAC services market in Washington State.
+
+2.3 Employee's access to such Confidential Information is provided to Employee solely for the purpose of performing Employee's duties on behalf of the Company and not for any other purpose.
+
+2.4 The restrictions contained in this Agreement are reasonable and necessary to protect the Company's legitimate business interests and are a material inducement for the Company to continue Employee's employment.
+
+3. CONFIDENTIAL INFORMATION
+
+3.1 Protection of Confidential Information. Employee agrees that at all times during the Employment Period and thereafter, Employee shall maintain in strict confidence all Confidential Information of the Company and shall not, without the prior written consent of the Company, disclose such Confidential Information to any person or entity outside the Company Group, or use such Confidential Information for any purpose other than the performance of Employee's duties as a Comfort Advisor for the Company.
+
+3.2 Permitted Disclosures. Notwithstanding Section 3.1, Employee may disclose Confidential Information to the extent required by applicable law, regulation, or a valid order of a court or governmental agency, provided that Employee promptly provides the Company Group with written notice thereof so that the Company may seek an appropriate protective order and/or waive in writing compliance with the confidentiality provisions of this Agreement.
+
+3.3 Prior Employment. Employee represents that performance of all of the terms of this Agreement has not breached and will not breach any agreement to keep in confidence proprietary information, knowledge, or data acquired by Employee in confidence or in trust prior or subsequent to commencement of employment with the Company. Employee will not disclose to any member of the Company Group, or induce any member of the Company Group to use, any confidential or proprietary information or material obtained in connection with employment with any prior employer in violation of a confidentiality agreement, nondisclosure agreement, or similar agreement with such prior employer. During the Employment Period, Employee will not improperly make use of, or disclose, any confidential or proprietary information or material of any prior employer or other third party, nor will Employee bring onto the premises of the Company or use any unpublished documents or any property belonging to any prior employer or other third party in violation of any lawful agreements with that prior employer or third party.
+
+3.4 Third Party Information. Employee understands that the Company Group has received and in the future may receive from third parties confidential or proprietary information subject to a duty on the Company Group's part to maintain the confidentiality of such information and to use it only for certain limited purposes. In recognition of the foregoing, Employee agrees, at all times during the Employment Period and thereafter, to hold in confidence and not disclose to anyone any such third party information, except as required by law or with the prior written consent of the Company.
+
+3.5 Return of Information. Upon termination of employment with the Company for any reason, Employee shall immediately return to the Company all documents, materials, electronic files, devices, and other property containing or representing Confidential Information, including but not limited to customer lists, pricing information, customer contact information, service records, sales materials, and any copies thereof in any form, whether created by Employee or otherwise.
+
+4. CUSTOMER NON-SOLICITATION
+
+4.1 Non-Solicitation of Customers. During the Restricted Period, Employee shall not, directly or indirectly:
+
+Customer Non-Solicitation. For twenty-four (24) months following the end of Employee's employment, Employee shall not, directly or indirectly, solicit, divert or accept plumbing or HVAC business from any customer or Comfort Club member of the Company with whom Employee had material contact during the last eighteen (18) months of employment.
+
+5. REMEDIES
+
+5.1 Injunctive Relief. Employee acknowledges that breach of this Agreement would cause irreparable harm to the Company for which monetary damages would be an inadequate remedy. In addition to any other remedies available at law or in equity, the Company shall be entitled to seek injunctive relief and specific performance to prevent or stop any breach or threatened breach of this Agreement by Employee, without the requirement of posting bond or proving actual damages.
+
+5.2 Additional Remedies. The Company's right to seek injunctive relief shall not preclude the Company from seeking monetary damages for any breach of this Agreement, including but not limited to damages resulting from lost customers, lost sales, and lost profits, as well as attorneys' fees and costs incurred in enforcing this Agreement.
+
+5.3 No Waiver. The failure of the Company to enforce any provision of this Agreement shall not constitute a waiver of such provision or any other provision, nor shall it waive any subsequent breach or default.
+
+6. TERM AND DURATION
+
+6.1 This Agreement shall become effective on the Effective Date and shall continue during the Employment Period and for the full Restricted Period thereafter, which is a period of two (2) years following termination of employment.
+
+6.2 The obligations of Employee under Sections 3 (Confidential Information) and 5 (Remedies) shall survive termination of employment indefinitely.
+
+7. EMPLOYEE ACKNOWLEDGMENTS
+
+Employee further acknowledges and agrees that:
+
+7.1 Employee has read and understands all terms and conditions of this Agreement and has been given the opportunity to consult with an attorney regarding this Agreement.
+
+7.2 The restrictions contained in this Agreement are reasonable in scope, duration, and geographic area, and are necessary to protect the Company's legitimate business interests, including protection of trade secrets, confidential business information, and substantial relationships with prospective and existing customers.
+
+7.3 Employee enters into this Agreement willingly and understands that violation of this Agreement may result in immediate termination of employment and/or legal action by the Company to enforce the terms hereof.
+
+7.4 Employee is not being required to disclose any information regarding any unlawful conduct, nor is Employee being prevented from engaging in any protected concerted activity under the National Labor Relations Act.
+
+8. GOVERNING LAW AND VENUE
+
+This Agreement shall be governed by and construed in accordance with the laws of the State of Washington, without regard to conflict of law principles. The parties irrevocably consent to the exclusive jurisdiction of the state and federal courts located in Pierce County, Washington, and agree that any action to enforce this Agreement shall be brought in those courts. Employee irrevocably waives any objection based on forum non conveniens or any claim that such courts are an inconvenient forum.
+
+9. ENTIRE AGREEMENT
+
+This Agreement, together with any offer letter or employment agreement between the parties, constitutes the entire agreement between the Company and Employee regarding the subject matter hereof and supersedes all prior and contemporaneous agreements, understandings, and negotiations, whether written or oral. This Agreement may not be amended, modified, or supplemented except by written instrument signed by both the Company and Employee.
+
+10. SEVERABILITY
+
+If any provision of this Agreement is held by a court to be invalid, illegal, or unenforceable, such provision shall be modified to the minimum extent necessary to make it valid and enforceable, and if such modification is not possible, the provision shall be severed, and the remaining provisions of this Agreement shall continue in full force and effect. If any provision is found to be overly broad, the parties request that a court reform such provision to the extent permitted by law.
+
+11. ASSIGNMENT
+
+Employee may not assign any rights or delegate any obligations under this Agreement without the prior written consent of the Company. The Company may assign its rights and delegate its obligations under this Agreement to any successor or affiliated entity without Employee's consent.
+
+12. NOTICES
+
+Any notice required under this Agreement shall be in writing and shall be deemed given when delivered personally, sent by email with read receipt, or sent by certified mail, return receipt requested, to the addresses set forth below:
+
+If to the Company:
+Meridian Mechanical of Washington, LLC
+3310 South Pine Street
+Tacoma, Washington 98409
+Attention: Human Resources
+
+If to Employee:
+Gemma Northcott
+Tacoma, Washington
+
+
+IN WITNESS WHEREOF, the parties have executed this Confidentiality and Customer Non-Solicitation Agreement as of the Effective Date.
+
+COMPANY:
+
+MERIDIAN MECHANICAL OF WASHINGTON, LLC
+
+
+By: _________________________________
+Name: _______________________________
+Title: ________________________________
+Date: ________________________________
+
+
+EMPLOYEE:
+
+_____________________________________
+Gemma Northcott
+Date: ________________________________

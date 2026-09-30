@@ -1,0 +1,30 @@
+{
+ "doc_id": "ACQ-05-FRANCHISE",
+ "path": "documents/acquisitions/ACQ-05_pinecrest-legacy-franchise-agreement_trupipe_2019-05-01.md",
+ "chars": 206523,
+ "area": "acquisitions",
+ "cluster": null,
+ "doc_type": "franchise_agreement",
+ "parent_id": null,
+ "counterparty": "FR-TPG",
+ "effective_date": "2019-05-01",
+ "status": "terminated_on_acquisition",
+ "roles": [
+  "noncompete",
+  "no_poach",
+  "wa",
+  "l2_link"
+ ],
+ "source_class": "court",
+ "source_ref": "https://storage.courtlistener.com/recap/gov.uscourts.ohsd.303558/gov.uscourts.ohsd.303558.1.1.pdf",
+ "year_shift": 0,
+ "governing_law_remap": null,
+ "name_map_size": 16,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

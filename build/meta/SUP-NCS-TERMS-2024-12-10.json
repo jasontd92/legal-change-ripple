@@ -1,0 +1,31 @@
+{
+ "doc_id": "SUP-NCS-TERMS-2024-12-10",
+ "path": "documents/supply/supplier-terms/northaire-comfort-systems_terms-and-conditions-of-sale_2024-12-10.md",
+ "chars": 28043,
+ "area": "supply",
+ "cluster": null,
+ "doc_type": "standard_terms",
+ "counterparty": "SUP-NCS",
+ "effective_date": "2024-12-10",
+ "version_label": "Rev. 12/10/24",
+ "published_url": "https://www.northaire.com/terms-of-sale",
+ "status": "superseded",
+ "roles": [
+  "tariff",
+  "one_way_ratchet",
+  "incorporated_web_terms"
+ ],
+ "source_class": "web_rewritten",
+ "source_ref": "W-CARRIER-20241210",
+ "copy_share": 0.342,
+ "version_pair_check": {
+  "orig_similarity": 0.969,
+  "rewritten_similarity": 0.99,
+  "ok": true
+ },
+ "checks": {
+  "ok": true,
+  "fails": [],
+  "leaks": []
+ }
+}

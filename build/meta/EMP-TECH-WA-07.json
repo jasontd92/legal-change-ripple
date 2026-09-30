@@ -1,0 +1,23 @@
+{
+ "doc_id": "EMP-TECH-WA-07",
+ "path": "documents/employment/signed-agreements/beatrice-falkner_technician-employment-agreement_wa_2024-01-06.md",
+ "chars": 19441,
+ "area": "employment",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "employment_agreement",
+ "parent_id": "EMP-TPL-TECH-WA",
+ "effective_date": "2024-01-06",
+ "roles": [
+  "noncompete",
+  "wa"
+ ],
+ "planted_features": [
+  "template_instance",
+  "annualized_earnings:121160",
+  "signed:2024-01-06",
+  "state:WA"
+ ],
+ "employee": "Beatrice Falkner",
+ "status": "active"
+}

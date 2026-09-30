@@ -1,0 +1,34 @@
+{
+ "doc_id": "EMP-OFFER-CA-2024",
+ "path": "documents/employment/nadia-castellano_offer-letter-and-piia_sales-manager_2024-05-06.md",
+ "chars": 114168,
+ "area": "employment",
+ "cluster": null,
+ "doc_type": "offer_letter",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2024-05-06",
+ "status": "active",
+ "roles": [
+  "noncompete",
+  "relocation_allowance",
+  "employee_nonsolicit",
+  "ca",
+  "arbitration"
+ ],
+ "source_class": "edgar_llm_adapted",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1861785/000190359622000562/f2ssos1a042122ex10_10.htm",
+ "year_shift": 2,
+ "governing_law_remap": null,
+ "name_map_size": 19,
+ "filled_fields": [],
+ "adapt_length_ratio": 1.0,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ },
+ "post_fixes": [
+  "role relocation_repayment replaced: clause is an unconditional $30,000 allowance (no repayment term); added employee_nonsolicit for section 12"
+ ]
+}

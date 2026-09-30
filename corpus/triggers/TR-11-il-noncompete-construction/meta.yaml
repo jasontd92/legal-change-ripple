@@ -1,0 +1,23 @@
+group: TR-11-il-noncompete-construction
+domain: noncompete
+summary: Illinois voids noncompetes AND non-solicits for construction employees (effective 2025-01-01); earnings thresholds
+  step up 2027-01-01.
+versions:
+- id: 2023-03-_820-ilcs-90-prior-text
+  status: superseded
+  effective: 2022-01-01
+  file: 2023-03-_820-ilcs-90-prior-text.txt
+  source_url: https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3737&ChapterID=68
+  fetched_url: https://web.archive.org/web/20230306194439id_/https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3737&ChapterID=68
+  sha256_16: 8bdb0defeff5bcdb
+  chars: 15764
+  title: 820 ILCS 90 Illinois Freedom to Work Act
+- id: 2024-08-09_public-act-103-0921
+  status: effective
+  effective: 2025-01-01
+  file: 2024-08-09_public-act-103-0921.txt
+  source_url: https://www.ilga.gov/legislation/publicacts/fulltext.asp?Name=103-0921
+  fetched_url: https://web.archive.org/web/20241218183042id_/https://www.ilga.gov/legislation/publicacts/fulltext.asp?Name=103-0921
+  sha256_16: a5d6b9c15080c10e
+  chars: 3406
+  title: Illinois Public Act 103-0921 (construction employees)

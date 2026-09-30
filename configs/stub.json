@@ -1,0 +1,12 @@
+{
+  "model_config": {
+    "orchestrator": "stub",
+    "subagent": "stub",
+    "classifier": "self",
+    "provider_pin": null
+  },
+  "cache": "off",
+  "concurrency": 1,
+  "max_tool_calls_per_subagent": 8,
+  "ranking": "deterministic"
+}

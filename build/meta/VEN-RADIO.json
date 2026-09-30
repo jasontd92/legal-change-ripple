@@ -1,0 +1,25 @@
+{
+ "doc_id": "VEN-RADIO",
+ "path": "documents/vendors/valleywave-media_advertising-agreement_2026-01-05.md",
+ "chars": 10014,
+ "area": "vendors",
+ "cluster": null,
+ "doc_type": "vendor_agreement",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2026-01-05",
+ "status": "active",
+ "roles": [
+  "distractor",
+  "exclusivity_lookalike"
+ ],
+ "source_class": "generated_llm",
+ "template": false,
+ "placeholders": [],
+ "planted_features": [],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

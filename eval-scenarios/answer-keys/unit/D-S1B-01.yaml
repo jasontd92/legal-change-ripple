@@ -1,0 +1,50 @@
+id: D-S1B-01
+contract_version: 0.1.0
+offsets: computed_pre_G0
+scenario_ids:
+- D-S1B-01
+eval_ids:
+- S1b
+- M2
+set: broad
+inputs:
+  trigger: TR-10-wa-noncompete-eshb-1155
+  versions:
+  - 2026-03-23_eshb-1155-session-law.txt
+  as_of: '2026-10-01'
+  profile: drop_wa
+  custom_prompt: null
+provenance:
+  author: non-attorney reference
+  sources:
+  - corpus documents cited on each span
+  - eval-scenarios/priority-tiers-draft.md
+  - eval-scenarios/legal-questions.md
+  - Washington State Register 25-20-099 (2026 RCW 49.62 threshold $126,858.83), https://lawfilesext.leg.wa.gov/law/wsr/2025/20/25-20-099.htm
+  verified_on: '2026-09-29'
+change_record:
+  items:
+  - id: C1
+    substantive: true
+    anchor:
+      file: corpus/triggers/TR-10-wa-noncompete-eshb-1155/2026-03-23_eshb-1155-session-law.txt
+      section_label: 2026 Regular Session
+      quote: 'EFFECTIVE DATE: June 30, 2027'
+      start: 206
+      end: 235
+    legal_status: enacted_future_effective
+    effective_date: '2027-06-30'
+company_gate: exit
+profile_edits:
+- path: company.states_of_operation
+  remove: WA
+- path: company.subsidiaries
+  remove_state: WA
+- path: company.branches
+  remove_ids:
+  - TAC
+  - SPO
+baseline:
+  gold_file: e2e/T3a_TR10_2026-10-01.yaml
+  company_gate: proceed
+notes: Same TR-10 change as T3a. Removing Washington from the profile flips the company gate from proceed to exit. Keeping proceed is a profile-blindness miss.

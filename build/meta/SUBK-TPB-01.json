@@ -1,0 +1,29 @@
+{
+ "doc_id": "SUBK-TPB-01",
+ "path": "documents/subcontracts/titan-peak-builders_subcontract-fm-1960-interchange/01_subcontract-agreement_2024-09-03.md",
+ "chars": 37499,
+ "area": "subcontracts",
+ "cluster": "titan-peak-builders_subcontract-fm-1960-interchange",
+ "doc_type": "subcontract",
+ "parent_id": null,
+ "counterparty": "GC-TPB",
+ "effective_date": "2024-09-03",
+ "status": "active",
+ "roles": [
+  "tariff",
+  "firm_price",
+  "flow_down",
+  "federal_aid"
+ ],
+ "source_class": "generated_llm",
+ "template": false,
+ "placeholders": [],
+ "planted_features": [
+  "FIRM_PRICE_TITAN"
+ ],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

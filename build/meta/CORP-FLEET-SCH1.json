@@ -1,0 +1,15 @@
+{
+ "doc_id": "CORP-FLEET-SCH1",
+ "path": "documents/corporate/summit-fleet-leasing_master-equity-lease/03_vehicle-schedule-1_2023-03-01.md",
+ "chars": 609,
+ "area": "corporate",
+ "cluster": "summit-fleet-leasing_master-equity-lease",
+ "source_class": "generated_structured",
+ "doc_type": "lease_schedule",
+ "parent_id": "CORP-FLEET-01",
+ "effective_date": "2023-03-01",
+ "roles": [
+  "distractor"
+ ],
+ "status": "active"
+}

@@ -1,0 +1,27 @@
+{
+ "doc_id": "CUS-VMS-MSA",
+ "path": "documents/customers/valley-medical-services-group_hvac-maintenance-agreement_2024-01-01.md",
+ "chars": 37654,
+ "area": "customers",
+ "cluster": null,
+ "doc_type": "customer_master_agreement",
+ "parent_id": null,
+ "counterparty": "CUS-VMS",
+ "effective_date": "2024-01-01",
+ "status": "active",
+ "roles": [
+  "tariff",
+  "fixed_price"
+ ],
+ "source_class": "generated_llm",
+ "template": false,
+ "placeholders": [],
+ "planted_features": [
+  "FIXED_PRICE_VALLEY"
+ ],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

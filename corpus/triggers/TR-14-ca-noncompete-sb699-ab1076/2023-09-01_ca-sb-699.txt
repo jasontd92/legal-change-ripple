@@ -1,0 +1,160 @@
+Bill Text - SB-699 Contracts in restraint of trade.
+
+skip to content
+
+home
+
+accessibility
+
+FAQ
+
+feedback
+
+sitemap
+
+login
+
+x
+
+ Quick Search:
+
+ Bill Number
+Bill Keyword
+
+Home
+
+Bill Information
+
+California Law
+
+Publications
+
+Other Resources
+
+My Subscriptions
+
+My Favorites
+
+Bill Information
+ >>
+
+Bill Search
+ >>
+
+Text
+
+Bill Text
+
+PDF2
+Bill PDF
+
+ |Add To My Favorites | Version: 09/01/23 - Chaptered
+08/17/23 - Enrolled
+05/18/23 - Amended Senate
+04/10/23 - Amended Senate
+03/22/23 - Amended Senate
+02/16/23 - Introduced
+
+SB-699 Contracts in restraint of trade.(2023-2024)
+
+Text
+
+>>
+
+Votes
+
+>>
+
+History
+>>
+
+Bill Analysis
+>>
+
+Today's Law As Amended
+>>
+
+Compare Versions
+>>
+
+Status
+>>
+
+Comments To Author
+
+>>
+
+Add To My Favorites
+>>
+
+SHARE THIS:
+
+Date Published: 09/01/2023 09:00 PM
+
+SB699:v94#DOCUMENTBill Start
+
+ Senate Bill
+ 
+ No. 699
+
+ CHAPTER 157
+
+An act to add Section 16600.5 to the Business and Professions Code, relating to business. 
+
+ [
+ Approved by
+ 
+ Governor
+ September 01, 2023.
+ 
+ Filed with
+ 
+ Secretary of State
+ September 01, 2023.
+ ]
+
+LEGISLATIVE COUNSEL'S DIGEST
+
+SB 699, Caballero.
+ Contracts in restraint of trade.
+Existing law regulates business activities in order to maintain competition. Existing law voids contractual provisions by which a person is restrained from engaging in a lawful profession, trade, or business of any kind, except as otherwise provided.
+This bill would establish that any contract that is void under the law described above is unenforceable regardless of where and when the contract was signed. The bill would prohibit an employer or former employer from attempting to enforce a contract that is void regardless of whether the contract was signed and the employment was maintained outside of California.
+The bill would prohibit an employer from entering into a contract with an employee or prospective employee that includes a provision that is void under the law described above. The bill would
+ establish that an employer who violates that law commits a civil violation. The bill would authorize an employee, former employee, or prospective employee to bring an action to enforce that law for injunctive relief or the recovery of actual damages, or both, and would provide that a prevailing employee, former employee, or prospective employee is entitled to recover reasonable attorney’s fees and costs.
+The bill would also make a related statement of legislative findings and declarations.
+
+Digest Key
+
+ Vote:
+ MAJORITY 
+ Appropriation:
+ NO 
+ Fiscal Committee:
+ NO 
+ Local Program:
+ NO 
+Bill Text
+The people of the State of California do enact as follows:
+
+SECTION 1.
+ The Legislature finds and declares the following:
+(a) Noncompete clauses in employment contracts are extremely common in the United States. Research shows that one in five workers are currently subject to a noncompete clause out of approximately 30 million workers nationwide. The research further shows that California employers continue to have their employees sign noncompete clauses that are clearly void and unenforceable under California law. Employers who pursue frivolous noncompete litigation has a chilling effect on employee mobility.
+(b) California’s public policy provides that every
+ contract that restrains anyone from engaging in a lawful profession, trade, or business of any kind is, to that extent, void, except under limited statutory exceptions. California has benefited significantly from this law, fueling competition, entrepreneurship, innovation, job and wage growth, equality, and economic development.
+(c) Over the past two decades, research on the harm of noncompete clauses and other contract clauses involving restraint of trade to pursue one’s profession has been accelerating. Empirical research shows that noncompete clauses stifle economic development, limit firms’ ability to hire and depress innovation and growth. Noncompete clauses are associated with suppressed wages and exacerbated racial and gender pay gaps, as well as reduced entrepreneurship, job growth, firm entry, and innovation.
+(d) Recent years have shown that employers utilizing broad noncompete agreements attempt to subvert this longstanding policy by requiring employees to enter void contracts that impact employment opportunities once an employee has been terminated from the existing employer. Moreover, as the market for talent has become national and remote work has grown, California employers increasingly face the challenge of employers outside of California attempting to prevent the hiring of former employees.
+(e) The California courts have been clear that California’s public policy against restraint of trade law trumps other state laws when an employee seeks employment in California, even if the employee had signed the contractual restraint while living outside of California and working for a
+ non-California employer.
+(f) California has a strong interest in protecting the freedom of movement of persons whom California-based employers wish to employ to provide services in California, regardless of the person’s state of residence. This freedom of employment is paramount to competitive business interests.
+
+SEC. 2.
+ Section 16600.5 is added to the Business and Professions Code, to read:
+16600.5.
+ (a) Any contract that is void under this chapter is unenforceable regardless of where and when the contract was signed.
+(b) An employer or former employer shall not attempt to enforce a contract that is void under this chapter regardless of whether the contract was signed and the employment was maintained outside of California.
+(c) An employer shall not enter into a contract with an employee or prospective employee that includes a provision that is void under this chapter.
+(d) An employer that enters into a contract that is void under this
+ chapter or attempts to enforce a contract that is void under this chapter commits a civil violation.
+(e) (1) An employee, former employee, or prospective employee may bring a private action to enforce this chapter for injunctive relief or the recovery of actual damages, or both.
+(2) In addition to the remedies
+ described in paragraph (1), a prevailing employee, former employee, or prospective employee in an action based on a violation of this chapter shall be entitled to recover reasonable attorney’s fees and costs.

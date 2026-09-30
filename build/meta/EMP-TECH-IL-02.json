@@ -1,0 +1,23 @@
+{
+ "doc_id": "EMP-TECH-IL-02",
+ "path": "documents/employment/signed-agreements/talia-tanaka_technician-employment-agreement_il_2021-12-07.md",
+ "chars": 25649,
+ "area": "employment",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "employment_agreement",
+ "parent_id": "EMP-TPL-TECH-IL",
+ "effective_date": "2021-12-07",
+ "roles": [
+  "noncompete",
+  "il"
+ ],
+ "planted_features": [
+  "template_instance",
+  "annualized_earnings:102960",
+  "signed:2021-12-07",
+  "state:IL"
+ ],
+ "employee": "Talia Tanaka",
+ "status": "active"
+}

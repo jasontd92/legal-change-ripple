@@ -1,0 +1,36 @@
+{
+ "doc_id": "CORP-CREDIT-01",
+ "path": "documents/corporate/first-harbor-bank_credit-agreement/01_credit-agreement_2021-07-20.md",
+ "chars": 441875,
+ "area": "corporate",
+ "cluster": "first-harbor-bank_credit-agreement",
+ "doc_type": "credit_agreement",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2021-07-20",
+ "status": "active",
+ "roles": [
+  "financial_covenants",
+  "notice_obligations",
+  "l2_link"
+ ],
+ "source_class": "edgar",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1606163/000114420416114494/v444860_ex10-3.htm",
+ "year_shift": 5,
+ "governing_law_remap": {
+  "from": [
+   "Ohio",
+   "Pennsylvania",
+   "New York"
+  ],
+  "to": "California"
+ },
+ "name_map_size": 52,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

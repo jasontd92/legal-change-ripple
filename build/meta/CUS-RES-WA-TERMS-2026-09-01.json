@@ -1,0 +1,27 @@
+{
+ "doc_id": "CUS-RES-WA-TERMS-2026-09-01",
+ "path": "documents/customers/residential-terms/meridian-comfort-club_membership-terms_washington_2026-09-01.md",
+ "chars": 5824,
+ "area": "customers",
+ "cluster": null,
+ "doc_type": "standard_terms",
+ "counterparty": "CUS-RES",
+ "effective_date": "2026-09-01",
+ "version_label": "Washington, current",
+ "published_url": "https://www.meridianpha.com/wa/comfort-club-terms",
+ "status": "active",
+ "roles": [
+  "auto_renewal",
+  "consumer",
+  "wa"
+ ],
+ "source_class": "web_rewritten",
+ "source_ref": "W-WAENERGY",
+ "copy_share": 0.021,
+ "version_pair_check": null,
+ "checks": {
+  "ok": true,
+  "fails": [],
+  "leaks": []
+ }
+}

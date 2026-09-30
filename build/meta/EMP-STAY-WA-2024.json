@@ -1,0 +1,28 @@
+{
+ "doc_id": "EMP-STAY-WA-2024",
+ "path": "documents/employment/talia-ruiz-montoya_retention-bonus-agreement_2024-02-15.md",
+ "chars": 9925,
+ "area": "employment",
+ "cluster": null,
+ "doc_type": "retention_agreement",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2024-02-15",
+ "status": "active",
+ "roles": [
+  "wa",
+  "forfeiture",
+  "noncompete"
+ ],
+ "source_class": "generated_llm",
+ "template": false,
+ "placeholders": [],
+ "planted_features": [
+  "STAY_BONUS_CLAWBACK"
+ ],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

@@ -1,0 +1,641 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 77 (Wednesday, April 22, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 77 (Wednesday, April 22, 2026)]
+[Notices]
+[Pages 21497-21501]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-07844]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+FEDERAL TRADE COMMISSION
+
+[File No. 251 0011]
+
+
+Rollins, Inc.; Analysis of Proposed Agreement Containing Consent 
+Order To Aid Public Comment
+
+AGENCY: Federal Trade Commission.
+
+ACTION: Proposed consent agreement; request for comment.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The consent agreement in this matter settles alleged 
+violations of Federal law prohibiting unfair methods of competition. 
+The attached Analysis of Proposed Agreement Containing Consent Order to 
+Aid Public Comment describes both the allegations in the complaint and 
+the terms of the consent order--embodied in the consent agreement--that 
+would settle these allegations.
+
+DATES: Comments must be received on or before May 22, 2026.
+
+ADDRESSES: Interested parties may file comments online or on paper by 
+following the instructions in the Request for Comment part of the 
+SUPPLEMENTARY INFORMATION section below. Please file your comment 
+online at <a href="https://www.regulations.gov">https://www.regulations.gov</a> by following the instructions on 
+the web-based form. If you prefer to file your comment on paper, please 
+write ``Rollins, Inc.; File 251 0011'' on it and mail it to the 
+following address: Federal Trade Commission, Office of the Secretary, 
+600 Pennsylvania Avenue NW, Mail Stop H-144 (Annex V), Washington, DC 
+20580.
+
+SUPPLEMENTARY INFORMATION: Pursuant to section 6(f) of the Federal 
+Trade Commission Act, 15 U.S.C. 46(f), and FTC Rule 2.34, 16 CFR 2.34, 
+notice is hereby given that the above-captioned consent agreement 
+containing a consent order to cease and desist, having been filed with 
+and accepted, subject to final approval, by the Commission, has been 
+placed on the public record for a period of 30 days. The following 
+Analysis of Proposed Agreement Containing Consent Orders to Aid Public 
+Comment describes the terms of the consent agreement and the 
+allegations in the complaint. An electronic copy of the full text of 
+the consent agreement package can be obtained from the FTC website at 
+this web address: <a href="https://www.ftc.gov/news-events/commission-actions">https://www.ftc.gov/news-events/commission-actions</a>.
+    The public is invited to submit comments on this document. For the 
+Commission to consider your comment, we must receive it on or before 
+May 22, 2026. Write ``Rollins, Inc.; File 251 0011'' on your comment. 
+Your comment--including your name and your State--will be placed on the 
+public record of this proceeding, including, to the extent practicable, 
+on the <a href="https://www.regulations.gov">https://www.regulations.gov</a> website.
+    Because of the agency's heightened security screening, postal mail 
+addressed to the Commission will be delayed. We strongly encourage you 
+to submit your comments online through the <a href="https://www.regulations.gov">https://www.regulations.gov</a> 
+website. If you prefer to file your comment on paper, write ``Rollins, 
+Inc.; File 251 0011'' on your comment and on the envelope, and mail 
+your comment by overnight service to: Federal Trade Commission, Office 
+of the Secretary, 600 Pennsylvania Avenue NW, Mail Stop H-144 (Annex 
+V), Washington, DC 20580.
+    Because your comment will be placed on the publicly accessible 
+website at <a href="https://www.regulations.gov">https://www.regulations.gov</a>, you are solely responsible for 
+making sure your comment does not include any sensitive or confidential 
+information. In particular, your comment should not include sensitive 
+personal information, such as your or anyone else's Social Security 
+number; date of birth; driver's license number or other State 
+identification number, or foreign country equivalent; passport number; 
+financial account number; or credit or debit card number. You are also 
+solely responsible for making sure your comment does not include 
+sensitive health information, such as medical records or other 
+individually identifiable health information. In addition, your comment 
+should not include any ``trade secret or any commercial or financial 
+information which . . . is privileged or confidential''--as provided by 
+section 6(f) of the FTC Act, 15 U.S.C. 46(f), and FTC Rule 4.10(a)(2), 
+16 CFR 4.10(a)(2)--including competitively sensitive information such 
+as costs, sales statistics, inventories, formulas, patterns, devices, 
+manufacturing processes, or customer names.
+    Comments containing material for which confidential treatment is 
+requested must be filed in paper form, must be clearly labeled 
+``Confidential,'' and must comply with FTC Rule 4.9(c). In particular, 
+the written request for confidential treatment that accompanies the 
+comment must include the factual and legal basis for the request and 
+must identify the specific portions of the comment to be withheld from 
+the public record. See FTC Rule 4.9(c). Your comment will be kept 
+confidential only if the General Counsel grants your request in 
+accordance with the law and the public interest. Once your comment has 
+been posted on <a href="https://www.regulations.gov">https://www.regulations.gov</a>--as legally required by FTC 
+Rule 4.9(b)--we cannot redact or remove your comment from that website, 
+unless you submit a confidentiality request that meets the requirements 
+for such treatment under FTC Rule 4.9(c), and the General Counsel 
+grants that request.
+    Visit the FTC website at <a href="https://www.ftc.gov">https://www.ftc.gov</a> to read this document 
+and the news release describing this matter. The FTC Act and other laws 
+the Commission administers permit the collection of public comments to 
+consider and use in this proceeding, as appropriate. The Commission 
+will consider all timely and responsive public comments it receives on 
+or before May 22, 2026. For information on the Commission's privacy 
+policy, including routine uses permitted by the Privacy Act, see 
+<a href="https://www.ftc.gov/site-information/privacy-policy">https://www.ftc.gov/site-information/privacy-policy</a>.
+
+Analysis of Proposed Agreement Containing Consent Orders To Aid Public 
+Comment
+
+I. Introduction
+
+    The Federal Trade Commission (``Commission'') has accepted for 
+public comment, subject to final approval, The Federal Trade Commission 
+(``Commission'') has accepted for public comment, subject to final 
+approval, an Agreement Containing Consent Order (``Consent Agreement'') 
+with Rollins, Inc. (``Rollins'' or ``Respondent''). The proposed 
+Decision and Order (``Proposed Order''), included in the Consent 
+Agreement and subject to final Commission approval, is designed to 
+remedy the anticompetitive effects that have resulted from Respondent's 
+use of post-employment covenants not to compete (``Non-Compete 
+Agreements''). A Non-Compete Agreement refers to contract terms that, 
+after a worker has ceased working for an employer, restricts the 
+worker's freedom to accept
+
+[[Page 21498]]
+
+employment with a competing business, to form a competing business, or 
+otherwise to compete with the employer.
+    The Consent Agreement settles charges that Respondent has engaged 
+in unfair methods of competition in violation of section 5 of the FTC 
+Act, as amended, 15 U.S.C. 45, by entering into Non-Compete Agreements 
+with its employees and enforcing them against its former employees.
+    The Proposed Order has been placed on the public record for 30 days 
+in order to receive comments from interested persons. Comments received 
+during this period will become part of the public record. After 30 
+days, the Commission will again review the Consent Agreement and the 
+comments received and will decide whether it should withdraw from the 
+Consent Agreement and take appropriate action or make the Proposed 
+Order final.
+
+II. The Respondent
+
+    Rollins is a corporation organized, existing, and doing business 
+under, and by virtue of, the laws of the State of Delaware, with its 
+principal place of business located in Atlanta, Georgia. Respondent is 
+one of the largest pest-control companies in the United States. Rollins 
+operates over 700 locations with over 18,000 U.S-based employees.
+
+III. The Complaint
+
+    The complaint makes the following allegations.
+    Respondent provides pest-control services in the United States. 
+Respondent long had a policy requiring all newly hired employees to 
+enter Non-Compete Agreements, regardless of their position or 
+responsibilities, with limited exceptions that depend on the employee's 
+location of employment.
+    Respondent's Non-Compete Agreements have covered a broad range of 
+employees, including pest-control technicians, customer-service 
+representatives, and other employees earning relatively low wages. 
+These types of employees account for the bulk of Respondent's U.S.-
+based employees subject to Non-Compete Agreements.
+    As alleged in the complaint, Respondent's Non-Compete Agreements 
+have contained a clause prohibiting, for two years following the 
+conclusion of employment with Rollins, the employee from working in the 
+pest-control services industry within a predetermined distance--usually 
+a 75-mile radius around the Rollins location at which the employee 
+worked, but often a multi-county region.
+    The complaint alleges Respondent's Non-Compete Agreements are 
+unfair and anticompetitive because they degrade employees' ability to 
+negotiate for better terms of employment in the pest-control industry. 
+The Non-Compete Agreements deny employees access to job opportunities 
+and restrict their mobility, including their ability to start their own 
+pest-control businesses. The complaint alleges this has the tendency or 
+likely effect of restricting business formation, lowering worker 
+earnings (including but not limited to wages and salaries), reducing 
+benefits, and causing less favorable working conditions and other 
+personal hardships to employees. The complaint further alleges that 
+Respondent's Non-Compete Agreements are unfair and anticompetitive 
+because they suppress competition to sell pest control services to 
+consumers, including by inhibiting current competition in the pest-
+control industry and by impeding competitive entry.
+    The complaint further alleges that any procompetitive objectives 
+Respondent sought to achieve through its Non-Compete Agreements do not 
+depend on the use and enforcement of Non-Compete Agreements and could 
+have been achieved through significantly less restrictive means. In 
+particular, the complaint alleges that Respondent's Non-Compete 
+Agreements are not reasonably necessary to incentivize Respondent to 
+continue investing in developing confidential information and employee 
+training. The complaint also alleges Respondent offers the same level 
+of employee training where it does not use or enforce Non-Compete 
+Agreements and is incentivized to provide adequate training to compete 
+on the merits by offering quality services. The complaint further 
+alleges Respondent can use narrowly tailored non-solicitation 
+agreements, which may promote continued investment in growing or 
+maintaining customer relationships and client goodwill. These 
+agreements may reduce or eliminate the harms associated with more 
+restrictive Non-Compete Agreements.
+
+IV. Legal Analysis
+
+    Section 5 of the Federal Trade Commission (FTC) Act prohibits 
+unfair methods of competition.\1\ This prohibition includes agreements 
+in restraint of trade proscribed by section 1 of the Sherman Act \2\ as 
+well as agreements or other practices that ``conflict with the basic 
+policies of the Sherman and Clayton Acts'' even if they ``may not 
+actually violate these laws.'' \3\ Section 5 claims typically ``bear 
+the characteristics of recognized antitrust violations.'' \4\ Courts 
+have long found agreements not to compete between workers and their 
+current or former employers to be ``proper subjects for scrutiny'' 
+under Federal antitrust law.\5\ That courts at common law prior to the 
+passage of the Federal antitrust laws treated agreements between 
+workers and business owners not to compete as presumptively unlawful 
+further suggests that these agreements often conflict with the basic 
+policies of the antitrust laws.\6\
+---------------------------------------------------------------------------
+
+    \1\ 15 U.S.C. 45.
+    \2\ 15 U.S.C. 1; see FTC v. Cement Inst., 333 U.S. 683, 693-94 
+(1948).
+    \3\ FTC v. Brown Shoe, 384 U.S. 316, 321 (1966).
+    \4\ Atl. Ref. Co. v. FTC, 381 U.S. 357, 369-70 (1965).
+    \5\ See Newburger, Loeb & Co., Inc. v. Gross, 563 F.2d 1057, 
+1081-82 (2d Cir. 1977); see also Polk Bros., Inc. v. Forest City 
+Enters., Inc., 776 F.2d 185, 189 (7th Cir. 1985) (``A covenant not 
+to compete following employment does not operate any differently 
+from a horizontal market division among competitors--not at the time 
+the covenant has its bite, anyway.'').
+    \6\ See United States v. Addyston Pipe & Steel Co., 85 F. 271, 
+281-82 (6th Cir. 1898), aff'd, 175 U.S. 211 (1899) (collecting cases 
+and relating the treatment of agreements not to compete at common 
+law to Sherman Act principles, describing them as permissible only 
+where shown to be ancillary to the sale of a business, a 
+partnership, a lease, or where otherwise shown ``reasonably 
+necessary'' to protect confidential knowledge); cf. Mitchel v. 
+Reynolds, 24 Eng. Rep. 347, 351 (Q.B. 1711) (analyzing noncompete 
+accompanying the sale of a bakery and presuming noncompetes ``prima 
+facie to be bad'' unless shown otherwise).
+---------------------------------------------------------------------------
+
+    In applying antitrust scrutiny to such agreements, courts typically 
+make a fact-specific determination to assess the agreements' likely 
+effects on competition.\7\ Agreements between market participants not 
+to compete may suppress competition by limiting the entry or growth of 
+competitors or otherwise giving rise to the types of harms the 
+antitrust laws are aimed at preventing. These harms include higher 
+consumer prices, reduced availability of services, lower quality 
+services, and reduced worker earnings and benefits. Courts have long 
+held that agreements between market participants that restrain 
+competition but are not reasonably necessary to achieve some 
+procompetitive purpose can be unlawful ``even in the absence of 
+elaborate market analysis.'' \8\ Moreover, a growing volume
+
+[[Page 21499]]
+
+of empirical evidence indicates agreements not to compete between 
+workers and their current or former employers can harm both competition 
+between market participants and the workers subject to them.\9\ One 
+notable study found such agreements can hinder the formation and growth 
+of competitors.\10\
+---------------------------------------------------------------------------
+
+    \7\ See Ohio v. Am. Express Co. (``Amex''), 585 U.S. 529, 541 
+(2018). This analysis is similar to but distinct from that under 
+many State employment law tests for enforceability of non-compete 
+agreements, which tend to focus on balancing the interests of the 
+two parties to the case rather than on competitive effects. See 
+DeSantis v. Wackenhut Corp., 793 SW2d 670, 688 (Tex. 1990) (``Rule 
+of reason analysis under antitrust laws must not be confused with 
+reasonableness analysis under the common law. . . . An agreement may 
+be reasonable as between the parties and nevertheless violate 
+antitrust laws. Conversely, an agreement may be unreasonable as 
+between the parties and yet not violate the rule of reason test 
+under the antitrust laws.'').
+    \8\ FTC v. Ind. Fed'n of Dentists, 476 U.S. 447, 459-61 (1986) 
+(citations omitted); see also, e.g., Newburger, 563 F.2d at 1082 
+(suggesting similar framework for analysis of agreements not to 
+compete between workers and their former employers); Mitchel, 24 
+Eng. Rep. at 351 (non-compete agreements presumed ``prima facie to 
+be bad'' unless shown otherwise); Cal. Dental Ass'n v. FTC, 526 U.S. 
+756, 770 (1999) (affirming that an abbreviated rule of reason 
+analysis is appropriate where ``an observer with even a rudimentary 
+understanding of economics could conclude that [they] would have an 
+anticompetitive effect on customers and markets'').
+    \9\ See, e.g., Michael Lipsitz & Mark Tremblay, Noncompete 
+Agreements and the Welfare of Consumers, 16 (4) Am. Econ. J. 
+Microecon. 112 (2024) (showing empirically that when non-compete 
+agreements are enforced more at the State level, market 
+concentration increases, with the potential for harm the greatest in 
+industries in which non-compete agreements are likely to be used at 
+the highest rate); Matthew S. Johnson, Kurt J. Lavetti & Michael 
+Lipsitz, The Labor Market Effects of Legal Restrictions on Worker 
+Mobility, J. Pol. Econ. 133(9), 2735-279 (2025) (linking non-compete 
+agreement enforcement to negative worker earnings); Bo Cowgill, 
+Brandon Freiberg & Evan Starr, Clause and Effect: Theory and Field 
+Experimental Evidence on Noncompete Clauses (Jan. 10, 2024) (last 
+revised July 18, 2025), <a href="https://ssrn.com/abstract=5012370">https://ssrn.com/abstract=5012370</a> (causal 
+study finding that removing non-compete agreements increases 
+workers' earnings and mobility without generating information 
+leakage).
+    \10\ Evan Starr, Natarajan Balasubramanian & Marik Sakakibara, 
+Screening Spinouts?: How Noncompete Enforceability Affects the 
+Creation, Growth, and Survival of New Firms, 64 Mgmt. Sci. 552 
+(2018) (detailing how noncompete enforcement can hinder startup 
+employment).
+---------------------------------------------------------------------------
+
+    Determining agreements' lawfulness also typically requires 
+consideration of whether (a) any purported procompetitive 
+justifications are in fact legitimate,\11\ and (b) less restrictive 
+alternative measures can incentivize any associated procompetitive 
+investments.\12\ The existence of less restrictive alternatives can be 
+dispositive.\13\ In assessing the validity of potential justifications, 
+the basic fact that a company trains its employees, for example, does 
+not mean that any worker restraints are necessary to incentivize 
+investments in training.\14\ And even if an employer submits persuasive 
+evidence of procompetitive investments that it aims to promote through 
+its restrictive agreements, less restrictive alternatives often exist 
+to advance those aims, including narrowly-tailored non-disclosure 
+agreements and non-solicitation agreements.\15\
+---------------------------------------------------------------------------
+
+    \11\ See Newburger, 563 F.2d at 1082 (suggesting non-compete 
+agreements would be invalid if, as an initial step, they ``serve no 
+legitimate purpose at the time they are adopted'').
+    \12\ See Amex, 585 U.S. at 540-41.
+    \13\ See NCAA v. Alston, 594 U.S. 69, 100 (2021) (``[R]estraints 
+of trade may wind up flunking the rule of reason to the extent the 
+evidence shows that substantially less restrictive means exist to 
+achieve any proven procompetitive benefits.'').
+    \14\ See, e.g., Addyston Pipe, 85 F. at 281 (discussing employee 
+training only in context of whether the noncompete is necessary to 
+protect confidential information); Deslandes v. McDonald's USA, LLC, 
+81 F.4th 699, 704 (7th Cir. 2023) (advocating scrutiny of whether 
+restraints that affect employees are actually necessary for 
+promoting output and do not ``just take advantage of workers' sunk 
+costs and help[ ] [the] business's bottom line''); AWP, Inc. v. Safe 
+Zone Servs., LLC, No. 3:19-CV-00734-CRS, 2022 WL 989133, at *10-11 
+(W.D. Ky. 2022) (finding that even though the employer ``made some 
+investment of `time, effort and money' in training its employees, 
+whether this investment is `significant' enough to constitute a 
+legitimate business interest is questionable at best'').
+    \15\ See, e.g., AWP, 2022 WL 989133, at *8 (``Insofar as any 
+Former Employees . . . had access to sensitive information, the fact 
+that the Employee Agreement contains a separate nondisclosure 
+provision forecloses any argument that [the employer] needed a 
+noncompete agreement to protect it.''); Total Quality Logistics, LLC 
+v. EDA Logistics LLC, No. 23-3713, 2024 WL 4372312, at *5 (6th Cir. 
+Oct. 2, 2024) (affirming lower court decision that found employer's 
+customer goodwill and relationship interest to be ``adequately 
+protected by the agreement's non-solicitation provision'').
+---------------------------------------------------------------------------
+
+    Applying these principles, the factual allegations described in the 
+complaint support concluding that Respondent's Non-Compete Agreements 
+constitute unfair methods of competition in violation of section 5 of 
+the FTC Act, as amended, 15 U.S.C. 45. As detailed above, the Non-
+Compete Agreements likely have anticompetitive effects, including by 
+inhibiting new business formation and restricting worker mobility and 
+self-determination. The Non-Compete Agreements are not needed to 
+advance any procompetitive aims--for example, Respondent provides the 
+same training to employees regardless of whether they are subject to a 
+Non-Compete Agreement. And even if there were procompetitive aims 
+associated with the Non-Compete Agreements, alternatives such as 
+narrowly tailored non-solicitation agreements are available to promote 
+them.
+
+V. Proposed Order
+
+    The Proposed Order seeks to remedy Respondent's unfair methods of 
+competition. Section II of the Proposed Order prohibits Respondent 
+from: entering into, maintaining, or enforcing a Non-Compete Agreement 
+against a Covered Employee; communicating to a Covered Employee or any 
+other prospective or current employer that the Covered Employee is 
+subject to a Non-Compete Agreement; and requiring any Covered Employee 
+to pay any fees or penalties relating to a Non-Compete Agreement. 
+Section II of the Proposed Order also specifies that Respondent cannot 
+prohibit Covered Employees from using general advertisements to solicit 
+customers in competition with Rollins nor prohibit Covered Employees 
+from responding to inquiries initiated by Rollins customers.
+    Section III of the Proposed Order requires Respondent to provide 
+clear and conspicuous written notice to Covered Employees that they (i) 
+are not subject to a Non-Compete Agreement; (ii) may compete with 
+Respondent, including by starting their own business; and (iii) may 
+solicit customers through general advertisements.
+    Other sections of the Proposed Order contain standard order 
+provisions regarding compliance reports, requirements for Respondent to 
+provide notice to the FTC of material changes to its business, and 
+access for the FTC to documents and personnel. The term of the Proposed 
+Order is ten years.
+    The purpose of this analysis is to facilitate public comment on the 
+Consent Agreement and Proposed Order to aid the Commission in 
+determining whether it should make the Proposed Order final. This 
+analysis is not an official interpretation of the Proposed Order and 
+does not modify its terms in any way.
+
+    By direction of the Commission.
+April J. Tabor,
+Secretary.
+
+Statement of Chairman Andrew N. Ferguson Joined by Commissioner Mark R. 
+Meador
+
+    Over 18,000 workers are free from the constraints of unlawful 
+noncompete agreements. The Commission has secured this victory by 
+issuing an administrative complaint and accepting for public comment a 
+proposed consent agreement with Rollins, Inc. (``Rollins''), one of the 
+largest pest-control services companies in the United States, and the 
+parent company of the Orkin brand, among others.\1\ Rollins provides 
+pest-control services, including insect identification and treatment, 
+trapping and removing wildlife, and termite treatment and 
+prevention,\2\ through more than 700 locations in 49 States.\3\
+
+[[Page 21500]]
+
+Its customers are owners of residential and commercial real estate.\4\
+---------------------------------------------------------------------------
+
+    \1\ Rollins, Brands, <a href="https://www.rollins.com/brands">https://www.rollins.com/brands</a> (last 
+visited Apr. 13, 2026); Complaint, In re Rollins, Inc., Matter No. 
+2510011 (Apr. 13, 2026) (``Complaint''); Decision and Order, In re 
+Rollins, Inc., Matter No. 2510011 (Apr. 13, 2026) (``Order'').
+    \2\ Western Pest Services, Pest Control, <a href="https://www.westernpest.com/pest-control">https://www.westernpest.com/pest-control</a> (last visited Apr. 13, 2026); 
+Orkin, Pest Control Services, <a href="https://www.orkinglobal.com/services/">https://www.orkinglobal.com/services/</a> 
+(last visited Apr. 13, 2026).
+    \3\ See Today's Homeowner, Orkin Review, <a href="https://todayshomeowner.com/pest-control/reviews/orkin-reviews/">https://todayshomeowner.com/pest-control/reviews/orkin-reviews/</a> (last 
+visited Apr. 13, 2026).
+    \4\ Rollins, About Us, <a href="https://www.rollins.com/about-us">https://www.rollins.com/about-us</a> (last 
+visited Apr. 13, 2026).
+---------------------------------------------------------------------------
+
+    The unlawful conduct the Commission today proscribes was the 
+alleged widespread imposition and enforcement of unfair and 
+anticompetitive noncompete agreements.\5\ As I have said before, a 
+priority for the Commission under my leadership is protecting American 
+workers from practices that adversely impact competition in labor 
+markets, including unlawful noncompete agreements.\6\ Of course, not 
+all noncompete agreements are unlawful. ``Sometimes noncompete 
+agreements have anticompetitive effects, and other times they have 
+procompetitive effects.'' \7\ For this reason, noncompete agreements 
+``present opposing economic considerations that require careful 
+analysis.'' \8\ As with nearly every other type of business restraint, 
+the Commission reviews the lawfulness of noncompete agreements on a 
+case-by-case basis under a reasonableness inquiry.\9\ Under that 
+balancing test, which is a particular application of the rule of 
+reason, a noncompete agreement violates the antitrust laws where the 
+anticompetitive effects of the restraint outweigh any procompetitive 
+effects that could not be achieved through substantially less 
+restrictive means.\10\
+---------------------------------------------------------------------------
+
+    \5\ Compl. ]] 7-11.
+    \6\ See Press Release, FTC, FTC Launches Joint Labor Task Force 
+to Protect American Workers (Feb. 26, 2025), <a href="https://www.ftc.gov/news-events/news/press-releases/2025/02/ftc-launches-joint-labor-task-force-protect-americanworkers">https://www.ftc.gov/news-events/news/press-releases/2025/02/ftc-launches-joint-labor-task-force-protect-americanworkers</a>; Statement of Chairman Andrew N. 
+Ferguson, Joined by Comm'r Melissa Holyoak, In re Gateway Pet Mem'l 
+Servs., Matter No. 2210170, at 1 (Sept. 4, 2025) (``Ferguson Gateway 
+Statement''); Statement of Chairman Andrew N. Ferguson, Joined by 
+Comm'r Melissa Holyoak, Ryan, LLC v. FTC, No. 24-10951, at 2, 3 
+(Sept. 5, 2025).
+    \7\ Dissenting Statement of Comm'r Andrew N. Ferguson, Joined by 
+Comm'r Melissa Holyoak, In the Matter of the Non-Compete Clause 
+Rule, Matter No. P201200, at 41-42 (June 28, 2024) (``Ferguson 
+Noncompete Rule Dissent''). For example, noncompete agreements can 
+promote investment in employees by ``mitigating the risk that a 
+rival will lure employees away'' and ``allow business owners to sell 
+their enterprise profitably because no one would buy a business if 
+the seller could immediately compete again in the same field.'' 
+Ferguson Gateway Statement at 3. Such agreements can also ``serve 
+legitimate business interest by protecting employer investments in 
+human capital development, safeguarding confidential information and 
+proprietary know-how that cannot be easily protected though other 
+means (e.g., non-disclosure and confidentiality agreements or 
+intellectual property), and encouraging intra-firm collaboration and 
+knowledge sharing.'' Statement of Mark R. Meador, In the Matter of 
+Non-Compete Clauses, Matter No. P201200, at 3 (Sept. 5, 2025) 
+(``Meador Noncompete Statement'').
+    \8\ Meador Noncompete Statement at 1.
+    \9\ Ferguson Gateway Statement at 4, 5; Meador Noncompete 
+Statement at 2-5. Similarly, the common law ``abandoned the 
+categorical proscription in the early eighteenth century in favor of 
+a case-specific reasonableness test.'' Id. at 3, n.20 (citing 
+Ferguson Noncompete Rule Dissent at 35 & Section I.B).
+    \10\ See Mitchel v. Reynolds, 24 Eng. Rep. 347 (Q.B. 1711); Ohio 
+v. Am. Express, 585 U.S. U.S. 529, 541-42 (2018); NCAA v. Alston, 
+594 U.S. 69, 100 (2021) (``[A]nticompetitive restraints of trade may 
+wind up flunking the rule of reason to the extent the evidence shows 
+that substantially less restrictive means exist to achieve any 
+proven procompetitive benefits.''); cf. Newburger, Loeb & Co., Inc. 
+v. Gross, 563 F.2d 1057, 1082 (2d Cir. 1977) (explaining that the 
+relevant inquiry in employee agreements not to compete should focus 
+on whether such restrictions ``operate in circumstances where no 
+valid business interest of the ex-employer is at stake'' and whether 
+they ``[a]re so burdensome that their anticompetitive purposes and 
+effects outweigh their justifications.''); Eichorn v. AT&T Corp., 
+248 F.3d 131 (3d Cir. 2001) (challenged no-hire agreement ``not an 
+antitrust violation under the rule of reason'' where the particular 
+provision at issue ``did not have a significant anti-competitive 
+effect on the plaintiffs' ability to seek employment''); Aya 
+Healthcare Servs., Inc. v. AMN Healthcare, Inc., 9 F.4th 1102, 1110 
+(9th Cir. 2021) (challenged non-solicitation agreement, involving 
+employee outsourcing arrangement between healthcare staffing 
+agencies collaborating to supply traveling nurses not unlawful under 
+rule of reason where restraint was reasonably necessary to ensure 
+neither would lose personnel during collaboration).
+---------------------------------------------------------------------------
+
+    Here, staff obtained compelling evidence during their investigation 
+that gives me the required ``reason to believe'' that Rollins's use of 
+the vast majority of its noncompete agreements violates section 5 of 
+the FTC Act,\11\ as charged in the Complaint.\12\ Let me briefly 
+explain.
+---------------------------------------------------------------------------
+
+    \11\ 15 U.S.C. 45(b); FTC v. Standard Oil of Cal., 449 U.S. 232, 
+241 (1980); see also AMREP Corp. v. FTC, 768 F.2d 1171, 1177 (10th 
+Cir. 1985); Boise Cascade Corp. v. FTC, 498 F. Supp. 772, 779 (D. 
+Del. 1980).
+    \12\ Compl. ] 19.
+---------------------------------------------------------------------------
+
+    On one side of the scale, the Commission evaluates the 
+anticompetitive effect of the noncompete agreements. We start with the 
+scope and coverage of Rollins's noncompete agreements that have applied 
+to the vast majority of its workforce of more than 18,000 people. The 
+noncompete agreements prohibited Rollins employees from working in the 
+pest-control industry generally within 75 miles of the Rollins location 
+at which the employee worked for two years after the end of the 
+employment relationship.\13\ As our Complaint explains, Rollins 
+required all newly hired employees, regardless of their position or 
+responsibilities, to enter into these noncompete agreements--including 
+employees at firms that Rollins acquired.\14\ That sort of 
+indiscriminate ``general policy'' approach of requiring every single 
+worker to sign a noncompete agreement irrespective of the worker's 
+position or responsibilities cries out for scrutiny under the antitrust 
+laws.
+---------------------------------------------------------------------------
+
+    \13\ Id. ] 7.
+    \14\ Id. ]] 7, 9, 10.
+---------------------------------------------------------------------------
+
+    These noncompete agreements were not merely pro forma. When workers 
+left Rollins to seek opportunities elsewhere or start their own 
+businesses, we allege that Rollins sent hundreds of threatening letters 
+or initiated litigation to enforce the noncompete agreements.\15\ The 
+targets of this enforcement campaign often lacked the resources to 
+litigate and acceded to the threat at great personal and professional 
+expense.\16\ And our Complaint alleges that the agreements imposed 
+additional anticompetitive effects, including impeding the expansion of 
+existing competitors and delaying entry of new small-business 
+competitors who could challenge Rollins.\17\
+---------------------------------------------------------------------------
+
+    \15\ Id. ] 11.
+    \16\ See id. ]] 11-12.
+    \17\ See id. ]] 13-14.
+---------------------------------------------------------------------------
+
+    Turning to the procompetitive interests that could justify these 
+onerous agreements, we come up nearly empty. As the Complaint charges, 
+Rollins did not need the challenged provisions to continue making any 
+capital investments in training or the development of associated 
+proprietary information--in fact, Rollins's pest control methods are 
+publicly accessible on the internet, so they are hardly a secret.\18\ 
+The majority of Rollins's workforce in the U.S. is comprised of pest 
+control technicians and customer service representatives.\19\ Although 
+technicians are critical to providing pest-control services, their job 
+duties do not require access to proprietary information that may 
+justify noncompete restrictions in other circumstances. Rollins's 
+technicians had access to customer lists, and Rollins has an interest 
+in protecting those lists to safeguard customer relationships and 
+client goodwill. But Rollins has available to it the less restrictive 
+alternative of narrowly tailored non-solicitation provisions to 
+vindicate those interests.\20\ And, indeed, Rollins has available to it 
+the alternative of tailored non-solicitation agreements.\21\ Therefore, 
+Rollins's noncompete agreements flunk the test as to these categories 
+of Rollins employees and those similarly situated.
+---------------------------------------------------------------------------
+
+    \18\ Id. ] 15.
+    \19\ See id. ] 9.
+    \20\ Id. ]] 15-16.
+    \21\ Cf. Order at Section II.D.
+---------------------------------------------------------------------------
+
+    Nevertheless, the Commission's Order today, as was the case in 
+Gateway,\22\ recognizes that noncompete agreements can have their 
+(limited) place--it
+
+[[Page 21501]]
+
+excludes from the prohibition certain employees who do meet a 
+heightened bar for access to competitively sensitive information. That 
+list includes directors, officers, or other defined senior leaders who 
+exercise policy-making authority and are eligible for grants of equity 
+or equity-based interests in Rollins as a benefit of employment.\23\
+---------------------------------------------------------------------------
+
+    \22\ Decision and Order, In re Gateway Pet Mem'l Servs., Matter 
+No. 2210170, Section I.F (Nov. 25, 2025).
+    \23\ Order at Section II; see also Order at Section I.D.
+---------------------------------------------------------------------------
+
+    Today's Order is consistent with the enforcement approach the 
+Commission announced in 2025. We follow the general common-law rule 
+from which our antitrust laws arose that noncompete agreements are 
+lawful when they go no further than necessary to protect specific, 
+identifiable, valid interests of the employer that could not be 
+protected without the noncompete agreement.\24\ But we demand exacting 
+proof to ensure that the dangers of unfair or anticompetitive 
+noncompete agreements do not take hold. And the Commission will 
+continue to act against noncompete agreements that unlawfully limit 
+worker mobility and access to job opportunities, which in turn deny 
+consumers the benefits of vigorous competition.
+---------------------------------------------------------------------------
+
+    \24\ See Ferguson Gateway Statement at 7, n.50 (citing Horner v. 
+Graves, 131 Eng. Rep. 284, 287 (C.P. 1831) (English courts upheld 
+noncompete agreements if ``the restraint is such only as to afford a 
+fair protection to the interests of the party in favour of whom it 
+is given, and not so large as to interfere with the interests of the 
+public.''); 15 Corbin on Contracts Sec.  80.6 (2024) (describing 
+multifactor reasonableness test); Restatement (2d) of Contracts 
+Sec.  188 (1981) (same); United States v. Addyston Pipe & Steel Co., 
+85 F. 271, 281 (6th Cir. 1898), aff'd, 175 U.S. 211 (1899) 
+(collecting cases and relating noncompete agreements' treatment at 
+common law to antitrust principles).
+---------------------------------------------------------------------------
+
+[FR Doc. 2026-07844 Filed 4-21-26; 8:45 am]
+BILLING CODE 6750-01-P
+
+
+</pre></body>
+</html>

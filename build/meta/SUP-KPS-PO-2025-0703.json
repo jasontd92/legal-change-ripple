@@ -1,0 +1,16 @@
+{
+ "doc_id": "SUP-KPS-PO-2025-0703",
+ "path": "documents/supply/purchase-orders/PO-2025-0703_keystone-plumbing-supply_2025-07-14.md",
+ "chars": 1214,
+ "area": "supply",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "purchase_order",
+ "counterparty": "SUP-KPS",
+ "effective_date": "2025-07-14",
+ "roles": [
+  "tariff",
+  "incorporated_web_terms"
+ ],
+ "status": "active"
+}

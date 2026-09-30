@@ -1,0 +1,16 @@
+{
+ "doc_id": "SUBK-BHC-CO1",
+ "path": "documents/subcontracts/bridgewell-construction_master-subcontract-solara-fab/02_change-order-1_2025-09-22.md",
+ "chars": 916,
+ "area": "subcontracts",
+ "cluster": "bridgewell-construction_master-subcontract-solara-fab",
+ "source_class": "generated_structured",
+ "doc_type": "change_order",
+ "parent_id": "SUBK-BHC-01",
+ "counterparty": "GC-BHC",
+ "effective_date": "2025-09-22",
+ "roles": [
+  "flow_down"
+ ],
+ "status": "active"
+}

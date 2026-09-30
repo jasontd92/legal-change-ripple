@@ -1,0 +1,30 @@
+{
+ "doc_id": "VEN-NDA-FORM",
+ "path": "documents/vendors/form_mutual-nondisclosure-agreement_rev-2022.md",
+ "chars": 15916,
+ "area": "vendors",
+ "cluster": null,
+ "doc_type": "nda_form",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2022-01-01",
+ "status": "active",
+ "roles": [
+  "distractor"
+ ],
+ "source_class": "generated_llm",
+ "template": true,
+ "placeholders": [
+  "[[MERIDIAN_ENTITY]]",
+  "[[COUNTERPARTY]]",
+  "[[PURPOSE]]",
+  "[[GOVERNING_LAW]]",
+  "[[EFFECTIVE_DATE]]"
+ ],
+ "planted_features": [],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

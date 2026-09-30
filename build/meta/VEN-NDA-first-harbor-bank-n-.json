@@ -1,0 +1,18 @@
+{
+ "doc_id": "VEN-NDA-first-harbor-bank-n-",
+ "path": "documents/vendors/first-harbor-bank-n-a_mutual-nondisclosure-agreement_2021-04-26.md",
+ "chars": 16027,
+ "area": "vendors",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "nda",
+ "parent_id": "VEN-NDA-FORM",
+ "effective_date": "2021-04-26",
+ "roles": [
+  "distractor"
+ ],
+ "planted_features": [
+  "template_instance"
+ ],
+ "status": "active"
+}

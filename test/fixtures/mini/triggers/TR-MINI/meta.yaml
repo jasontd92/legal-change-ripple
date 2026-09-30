@@ -1,0 +1,15 @@
+group: TR-MINI
+summary: Mini trigger for harness tests
+versions:
+- id: v1
+  file: v1.txt
+  title: Investigation
+- id: v2
+  file: v2.txt
+  title: Duty
+- id: v2-ws
+  file: v2-ws.txt
+  title: Duty with whitespace
+- id: banks
+  file: banks.txt
+  title: Banks only

@@ -1,0 +1,18 @@
+{
+ "doc_id": "VEN-NDA-fieldflow-software-i",
+ "path": "documents/vendors/fieldflow-software-inc_mutual-nondisclosure-agreement_2021-01-11.md",
+ "chars": 16039,
+ "area": "vendors",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "nda",
+ "parent_id": "VEN-NDA-FORM",
+ "effective_date": "2021-01-11",
+ "roles": [
+  "distractor"
+ ],
+ "planted_features": [
+  "template_instance"
+ ],
+ "status": "active"
+}

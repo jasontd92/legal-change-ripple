@@ -1,0 +1,19 @@
+{
+ "doc_id": "SUP-DSC-Q-2025-45122",
+ "path": "documents/supply/quotes/Q-2025-45122_delmont-supply_job-quotation_2025-02-18.md",
+ "chars": 927,
+ "area": "supply",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "supplier_quote",
+ "counterparty": "SUP-DSC",
+ "effective_date": "2025-02-18",
+ "roles": [
+  "tariff",
+  "price_protection"
+ ],
+ "planted_features": [
+  "price_protection_expiry:2025-04-04"
+ ],
+ "status": "active"
+}

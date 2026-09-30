@@ -1,0 +1,1019 @@
+ ▐▛███▛█   Claude Code v2.1.285
+▝▜██████▀  Opus 5.5 · Claude Pro
+ ▝▝   ▝▝   ~/Documents/gc-ai-take-home-research
+
+  Get to finished work sooner with Opus 5.5. Switch anytime with /model.
+
+❯ final update to the UI of this project - i want a clean way for general       
+  counsel to remove/delete (dismiss) findings, as well as approve (thinking a   
+  simple check or confimration icon, stacked next to the delte icon. These      
+  actions will be persisted into the existing sqlite db - the deletions as soft 
+  deletions/hidden from view. This will serve as a first version of human       
+  weighted labels.                                                              
+
+  Searched for 3 patterns, listed 1 directory, ran 1 shell command (ctrl+o to expand)
+
+⏺ Looking for the SQLite DB you mentioned — it's referenced in the design doc
+  but I don't see one in code yet. Checking.
+
+  Searched for 1 pattern, ran 2 shell commands (ctrl+o to expand)
+
+⏺ No SQLite DB exists in the project yet (the design doc notes state is JSON /
+  event log). I'll create one with Node's built-in node:sqlite — no new deps.
+  Reading the UI now.
+
+  Read 2 files (ctrl+o to expand)
+
+⏺ Plan: a node:sqlite store at .harness/reviews.db (gitignored), a GET/POST
+  verdicts API, and approve/dismiss icons on each finding row, with an undo
+  toast and a restore list.
+
+⏺ Write(src/verdicts.ts)
+  ⎿  Wrote 118 lines to src/verdicts.ts
+       1 import { mkdirSync } from "node:fs";
+       2 import path from "node:path";
+       4 
+       5 /**
+       6  * The GC's verdict on a finding: approved, or dismissed (a soft
+       7  * from the report). Each row keeps the model's labels as they w
+         ere when the
+       8  * verdict was given, so the table reads as a human-labelled set
+       9  */
+      10 export type Verdict = "approved" | "dismissed";
+     … +128 lines (ctrl+o to expand)
+
+⏺ Now the server routes.
+
+  Ran 1 shell command (ctrl+o to expand)
+  ⎿  Interrupted · What should Claude do instead?
+
+❯ okay - does @system-design.md mention it? i'm curious if theres any logged    
+  decsions of why it was deferred. continuing the local json model is totally   
+  fine for this.                                                                
+  ⎿  Read system-design.md (728 lines)
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ I found no actual decision to defer SQLite—it just never came up beyond
+  describing eve's own architecture and the corpus junction table, both of which
+  already use file-based storage. Since run state is already JSON under
+  runs/<id>/, I'll follow the same pattern for verdicts.
+
+⏺ Write(src/verdicts.ts)
+  ⎿  Added 59 lines, removed 95 lines
+        1 -import { mkdirSync } from "node:fs";                          
+        1 +import { appendFileSync, existsSync, mkdirSync } from "node:fs
+          +";                                                            
+        2  import path from "node:path";
+        3 -import { DatabaseSync } from "node:sqlite";                   
+        3 +import { readJson, writeJson } from "./paths.js";             
+        4  
+        5  /**
+        6   * The GC's verdict on a finding: approved, or dismissed (a so
+           ft delete, hidden
+        7 - * from the report). Each row keeps the model's labels as they
+          - were when the                                                
+        8 - * verdict was given, so the table reads as a human-labelled s
+          -et on its own.                                                
+        7 + * from the report). Each entry keeps the model's labels as th
+          +ey were when the                                              
+        8 + * verdict was given, so the file reads as a human-labelled se
+          +t on its own.                                                 
+        9 + *                                                            
+       10 + * Stored beside the run's other artifacts: `verdicts.json` is
+          + the current state,                                           
+       11 + * `verdict_events.jsonl` is the append-only history. Nothing 
+          +is ever removed.                                              
+       12   */
+       13  export type Verdict = "approved" | "dismissed";
+       14  
+       12 -export type VerdictRow = {                                    
+       13 -  run_id: string;                                             
+       15 +export type VerdictSnapshot = {                               
+       16 +  change_ref?: string;                                        
+       17 +  headline?: string;                                          
+       18 +  urgency?: string;                                           
+       19 +  materiality?: string;                                       
+       20 +  direction?: string;                                         
+       21 +  response_type?: string;                                     
+       22 +};                                                            
+       23 +                                                              
+       24 +export type VerdictEntry = {                                  
+       25    stack_id: string;
+       26    finding_id: string;
+       16 -  verdict: Verdict;                                           
+       27 +  verdict: Verdict | null;                                    
+       28 +  snapshot: VerdictSnapshot;                                  
+       29 +  created_at: string;                                         
+       30    updated_at: string;
+       31  };
+       32  
+       33  export type VerdictInput = {
+       21 -  stack_id: string;                                           
+       22 -  finding_id: string;                                         
+       23 -  verdict: Verdict | null;                                    
+       24 -  snapshot?: {                                                
+       25 -    change_ref?: string;                                      
+       26 -    headline?: string;                                        
+       27 -    urgency?: string;                                         
+       28 -    materiality?: string;                                     
+       29 -    direction?: string;                                       
+       30 -    response_type?: string;                                   
+       31 -  };                                                          
+       34 +  stack_id?: unknown;                                         
+       35 +  finding_id?: unknown;                                       
+       36 +  verdict?: unknown;                                          
+       37 +  snapshot?: VerdictSnapshot;                                 
+       38  };
+       39  
+       34 -const VERDICTS = new Set<string>(["approved", "dismissed"]);  
+       40 +const VERDICTS = new Set<unknown>(["approved", "dismissed", nu
+          +ll]);                                                         
+       41  
+       36 -const dbs = new Map<string, DatabaseSync>();                  
+       42 +function verdictFile(runDir: string): string {                
+       43 +  return path.join(runDir, "verdicts.json");                  
+       44 +}                                                             
+       45  
+       38 -export function verdictDb(repo: string): DatabaseSync {       
+       39 -  const file = path.join(repo, ".harness", "reviews.db");     
+       40 -  const open = dbs.get(file);                                 
+       41 -  if (open) return open;                                      
+       42 -  mkdirSync(path.dirname(file), { recursive: true });         
+       43 -  const db = new DatabaseSync(file);                          
+       44 -  db.exec(`                                                   
+       45 -    PRAGMA journal_mode = WAL;                                
+       46 -    CREATE TABLE IF NOT EXISTS finding_verdicts (             
+       47 -      run_id        TEXT NOT NULL,                            
+       48 -      stack_id      TEXT NOT NULL,                            
+       49 -      finding_id    TEXT NOT NULL,                            
+       50 -      verdict       TEXT CHECK (verdict IN ('approved', 'dismi
+          -ssed')),                                                      
+       51 -      change_ref    TEXT,                                     
+       52 -      headline      TEXT,                                     
+       53 -      urgency       TEXT,                                     
+       54 -      materiality   TEXT,                                     
+       55 -      direction     TEXT,                                     
+       56 -      response_type TEXT,                                     
+       57 -      created_at    TEXT NOT NULL,                            
+       58 -      updated_at    TEXT NOT NULL,                            
+       59 -      PRIMARY KEY (run_id, stack_id, finding_id)              
+       60 -    );                                                        
+       61 -    CREATE TABLE IF NOT EXISTS finding_verdict_events (       
+       62 -      id         INTEGER PRIMARY KEY AUTOINCREMENT,           
+       63 -      run_id     TEXT NOT NULL,                               
+       64 -      stack_id   TEXT NOT NULL,                               
+       65 -      finding_id TEXT NOT NULL,                               
+       66 -      verdict    TEXT,                                        
+       67 -      at         TEXT NOT NULL                                
+       68 -    );                                                        
+       69 -  `);                                                         
+       70 -  dbs.set(file, db);                                          
+       71 -  return db;                                                  
+       46 +function readAll(runDir: string): Record<string, VerdictEntry>
+          + {                                                            
+       47 +  const file = verdictFile(runDir);                           
+       48 +  return existsSync(file) ? readJson<{ verdicts: Record<string
+          +, VerdictEntry> }>(file).verdicts : {};                       
+       49  }
+       50  
+       74 -/** Current verdicts for a run. A cleared verdict (null) is no
+          -t returned. */                                                
+       75 -export function listVerdicts(repo: string, runId: string): Ver
+          -dictRow[] {                                                   
+       76 -  return verdictDb(repo)                                      
+       77 -    .prepare(`SELECT run_id, stack_id, finding_id, verdict, up
+          -dated_at FROM finding_verdicts WHERE run_id = ? AND verdict IS
+          - NOT NULL`)                                                   
+       78 -    .all(runId) as VerdictRow[];                              
+       51 +/** Current verdicts for a run. A cleared verdict (null) is ke
+          +pt on disk but not returned. */                               
+       52 +export function listVerdicts(runDir: string): VerdictEntry[] {
+       53 +  return Object.values(readAll(runDir)).filter((entry) => entr
+          +y.verdict !== null);                                          
+       54  }
+       55  
+       81 -/**                                                           
+       82 - * Sets or clears one verdict. Clearing keeps the row with a n
+          -ull verdict, so                                               
+       83 - * nothing is ever hard-deleted; every change is also appended
+          - to the event log.                                            
+       84 - */                                                           
+       85 -export function setVerdict(repo: string, runId: string, input:
+          - VerdictInput): VerdictRow | null {                           
+       86 -  if (!input.stack_id || !input.finding_id) throw new Error("s
+          -tack_id and finding_id are required");                        
+       87 -  if (input.verdict !== null && !VERDICTS.has(input.verdict)) 
+          -throw new Error(`verdict must be approved, dismissed or null`)
+          -;                                                             
+       88 -  const db = verdictDb(repo);                                 
+       56 +/** Sets or clears one verdict. Clearing keeps the entry with 
+          +a null verdict. */                                            
+       57 +export function setVerdict(runDir: string, input: VerdictInput
+          +): VerdictEntry {                                             
+       58 +  const stackId = typeof input.stack_id === "string" ? input.s
+          +tack_id : "";                                                 
+       59 +  const findingId = typeof input.finding_id === "string" ? inp
+          +ut.finding_id : "";                                           
+       60 +  if (!stackId || !findingId) throw new Error("stack_id and fi
+          +nding_id are required");                                      
+       61 +  const verdict = input.verdict ?? null;                      
+       62 +  if (!VERDICTS.has(verdict)) throw new Error("verdict must be
+          + approved, dismissed or null");                               
+       63 +  if (!existsSync(runDir)) throw new Error("no such run");    
+       64 +                                                              
+       65 +  const all = readAll(runDir);                                
+       66 +  const key = `${stackId}:${findingId}`;                      
+       67    const at = new Date().toISOString();
+       90 -  const s = input.snapshot ?? {};                             
+       91 -  db.exec("BEGIN");                                           
+       92 -  try {                                                       
+       93 -    db.prepare(`                                              
+       94 -      INSERT INTO finding_verdicts (run_id, stack_id, finding_
+          -id, verdict, change_ref, headline, urgency, materiality, direc
+          -tion, response_type, created_at, updated_at)                  
+       95 -      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)             
+       96 -      ON CONFLICT (run_id, stack_id, finding_id) DO UPDATE SET
+       97 -        verdict = excluded.verdict,                           
+       98 -        change_ref = COALESCE(excluded.change_ref, change_ref)
+          -,                                                             
+       99 -        headline = COALESCE(excluded.headline, headline),     
+      100 -        urgency = COALESCE(excluded.urgency, urgency),        
+      101 -        materiality = COALESCE(excluded.materiality, materiali
+          -ty),                                                          
+      102 -        direction = COALESCE(excluded.direction, direction),  
+      103 -        response_type = COALESCE(excluded.response_type, respo
+          -nse_type),                                                    
+      104 -        updated_at = excluded.updated_at                      
+      105 -    `).run(                                                   
+      106 -      runId, input.stack_id, input.finding_id, input.verdict, 
+      107 -      s.change_ref ?? null, s.headline ?? null, s.urgency ?? n
+          -ull, s.materiality ?? null, s.direction ?? null, s.response_ty
+          -pe ?? null,                                                   
+      108 -      at, at,                                                 
+      109 -    );                                                        
+      110 -    db.prepare(`INSERT INTO finding_verdict_events (run_id, st
+          -ack_id, finding_id, verdict, at) VALUES (?, ?, ?, ?, ?)`)     
+      111 -      .run(runId, input.stack_id, input.finding_id, input.verd
+          -ict, at);                                                     
+      112 -    db.exec("COMMIT");                                        
+      113 -  } catch (err) {                                             
+      114 -    db.exec("ROLLBACK");                                      
+      115 -    throw err;                                                
+      116 -  }                                                           
+      117 -  return input.verdict === null ? null : { run_id: runId, stac
+          -k_id: input.stack_id, finding_id: input.finding_id, verdict: i
+          -nput.verdict, updated_at: at };                               
+       68 +  const prior = all[key];                                     
+       69 +  const entry: VerdictEntry = {                               
+       70 +    stack_id: stackId,                                        
+       71 +    finding_id: findingId,                                    
+       72 +    verdict: verdict as Verdict | null,                       
+       73 +    snapshot: { ...prior?.snapshot, ...input.snapshot },      
+       74 +    created_at: prior?.created_at ?? at,                      
+       75 +    updated_at: at,                                           
+       76 +  };                                                          
+       77 +  all[key] = entry;                                           
+       78 +  writeJson(verdictFile(runDir), { verdicts: all });          
+       79 +  mkdirSync(runDir, { recursive: true });                     
+       80 +  appendFileSync(path.join(runDir, "verdict_events.jsonl"), `$
+          +{JSON.stringify({ at, stack_id: stackId, finding_id: findingId
+          +, verdict })}\n`);                                            
+       81 +  return entry;                                               
+       82  }
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The first, rejected server edit was actually written to the file. I'm taking
+  that old SQLite-era block out so only the new version stays.
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ Typecheck is clean. Now the UI: the icons go on each finding row, next to the
+  row button rather than inside it, since buttons can't nest.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Now the styles.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+❯ in terms of the "included"/refrenced junstion table - how does that reflect   
+  today in terms of the json based sotrage? My concern is at runtime - how      
+  accessible are these relationships to a step 4 subagent                       
+
+⏺ The build and typecheck pass. Now looking at how the junction reaches a
+  stage-4 subagent.
+
+  Listed 1 directory, ran 2 shell commands (ctrl+o to expand)
+
+⏺ Before answering, a quick check that the verdict store writes and reads back
+  correctly.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Approve and dismiss are built, stored as JSON in the run directory like the
+  other run artifacts. I haven't clicked through it in the running app yet.
+
+  Approve / dismiss
+
+  - Store (src/verdicts.ts): each run gets runs/<id>/verdicts.json holding the
+    current mark per finding. Every change is also appended to
+    runs/<id>/verdict_events.jsonl, so the history is never overwritten.
+    - Dismissing hides the finding but never removes it; restoring sets the
+      verdict back to null.
+    - Each entry keeps the model's labels as they were when the GC marked it
+      (urgency, materiality, direction, response_type, change_ref, headline).
+      That makes the file usable as a human-labelled set on its own.
+  - API (src/server.ts): GET and POST /api/runs/:id/verdicts, using the same
+    run-id path check as the trace route.
+  - UI (ReportView.tsx, styles.css):
+    - A check icon and a trash icon sit side by side on the right of each
+      finding row. They're faint until you hover, and always fully visible on
+      mobile.
+    - Approving fills the check in green and turns the headline green; clicking
+      again clears it.
+    - Dismissing removes the finding from the list and shows a "Dismissed. Undo"
+      message for 6 seconds.
+    - Dismissed findings also appear in a closed "You dismissed N findings →"
+      section, each with a restore link.
+    - Dismissed findings no longer count toward "N things need you."
+    - Changes show immediately and save in the background. If a save fails, the
+      previous mark comes back.
+    - On the #/preview sample page, marks stay in the page and aren't saved.
+
+  Checked: both typechecks pass and the UI builds. A scratch run of the store
+  confirmed that set, clear and reject all behave, and that the event log
+  records every change.
+
+  One thing to know: my first server edit, the one you rejected, had actually
+  been written to src/server.ts. I deleted that block, so only the JSON version
+  is there now.
+
+  Your question: the incorporates junction today
+
+  It isn't stored anywhere. There's no JSON file for it. §4 says "an edge list
+  beside the manifest," but in practice buildIncorporates (src/incorporates.ts)
+  rebuilds it in memory at the start of every run (src/pipeline.ts:52, :579). It
+  scans every document's text for another document's published_url and picks
+  the version from the pin wording.
+
+  For a stage-4 subagent it's still very accessible, because it arrives with the
+  task rather than having to be looked up:
+
+  1. In the brief: each row whose source is in the family is written into the
+     prompt as target | section | pin | quote (src/agents.ts:430,
+     src/prompts.ts:123). The subagent sees the naming clause and the pin before
+     it makes a single tool call.
+  2. In the reading set: readingSet (src/stacks.ts:106) adds each target file to
+     the files the subagent may open, so grep and read reach it. Anything past
+     one hop is refused by the tool.
+  3. In the instructions: the prompt tells it to follow one hop and treat pins
+     as binding (prompts.ts:13).
+
+  Where it falls short:
+
+  - The reverse lookup isn't built. §4 says that when the trigger URL is itself
+    an incorporated document, stage 3 should treat every family pointing at it
+    as relevant. Nothing in the code runs that query. Those stacks only come in
+    through the default of including every stack.
+  - You can't inspect it. Because the edges are never written out, you can't see
+    which rows a run used. And a change to how URLs are matched would silently
+    change the rows between runs.
+  - The subagent can't query it. It gets only its own family's rows and has no
+    way to ask "who else names this target?" That matches the design ("do not
+    walk to other sources"), so it's a limit rather than a bug.
+
+  The cheap fix for the second point is to write edges to
+  runs/<id>/incorporates.json next to scope_trace.json. It's a one-line change,
+  and it also gives the stage-3 reverse lookup something concrete to read from
+  later.
+
+✻ Worked for 2m 10s · done 8:46 AM
+
+❯ make the change                                                               
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ I'll add the file write inside the RunDir constructor, since both run entry
+  points go through it and it already builds the edges. I'll only write it if it
+  doesn't already exist, so resumed or stepwise runs keep their original edges.
+
+⏺ Update(src/pipeline.ts)
+  ⎿  Added 2 lines
+      577      readonly manifests: Map<string, StackManifest>,
+      578    ) {
+      579      this.edges = buildIncorporates(corpus);
+      580 +    const edgeFile = path.join(runDir, "incorporates.json");  
+      581 +    if (!existsSync(edgeFile)) writeJson(edgeFile, { edges: th
+          +is.edges });                                                  
+      582      this.resumed = false;
+      583      this.resumeSkip = false;
+      584    }
+
+  Ran 1 shell command (ctrl+o to expand)
+⏺ Typecheck passes. Now a real check with the offline stub config.
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ The file is written with 16 edges. Running the test suite to make sure nothing
+  else moved.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Every run now saves its incorporates edges to runs/<id>/incorporates.json,
+  next to scope_trace.json.
+
+  - Where it's written: in the RunDir constructor (src/pipeline.ts:579), which
+    both ways of running the pipeline use. It's only written if the file doesn't
+    exist yet, so a resumed or stepwise run keeps the edges it started with
+    even if the corpus changes partway through.
+  - API: GET /api/runs/:id now returns the edges too, as an incorporates field
+    (src/server.ts:153).
+  - Checked: a stub-config run of the TR-01 input wrote 16 edges. The first is
+    SUP-KPS-ACCOUNT → SUP-KPS-TERMS-2019-10-22, with its pin ("as in effect on
+    the date of shipment") and the naming clause. Typecheck passes and all 46
+    tests pass.
+
+  The stage-3 reverse lookup (which families name the trigger's URL) is still
+  not built, but it now has a saved file to read from.
+
+  Nothing is committed yet. The approve/dismiss work and this change are both
+  uncommitted in the working tree.
+
+✻ Sautéed for 36s · done 8:49 AM
+
+❯  add a link to past reviews from the main home page, as a simple list to      
+  visit old runs. can be a non-primary link next to New review. use a clock     
+  icon for past reviews, and a plus icon next to new review. With new review    
+  being a button following the house style.                                     
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ The run list API currently returns only id and status, sorted by name. I'll
+  add the authority, model, start time and finding count, sort newest first,
+  then add a #/runs page and the header links.
+
+  Searched for 1 pattern, ran 1 shell command (ctrl+o to expand)
+
+⏺ Now the page and the header links.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Build is clean. Let me look at it in the running app.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Your server on :8787 is still running the old API code, so I'll start a second
+  copy on another port rather than restart yours.
+
+  Read 3 files, ran 2 shell commands (ctrl+o to expand)
+
+⏺ Desktop looks good, but the "New review" button overflows at phone width. I'll
+  let the header wrap onto two lines on narrow screens.
+
+  Read 2 files, ran 1 shell command (ctrl+o to expand)
+
+⏺ Good at both widths. Stopping my test server.
+
+  Ran 3 shell commands (ctrl+o to expand)
+
+⏺ I've added the past reviews list and restyled the header. Checked in a browser
+  at desktop and phone width.
+
+  - Header: "Past reviews" is a quiet grey link with a clock icon. "New review"
+    is now a dark button with a plus icon, styled like the app's other buttons.
+    On a phone the links wrap onto a second line under the company name instead
+    of running off the screen.
+  - Past reviews page (#/runs): lists every run, newest first. Each row shows
+    the authority, the start time, the outcome and the model; clicking it opens
+    that run's report. The outcome reads as "48 findings", "Stopped partway",
+    "No report", "Failed" or "Running". Failed runs are shown in the red accent
+    colour.
+  - API: GET /api/runs used to return only the id and status, sorted by name. It
+    now also returns authority, model, start time and finding count, newest
+    first. Nothing else in the app called it, so nothing else changed.
+
+  The list includes the eval runs (the step1-gp-k* ones), shown by authority
+  name, so several rows read "TR-01-copper-section-232". If you'd like the list
+  limited to runs started from the UI, I can filter out the step*, ui-mini-* and
+  similar directories.
+
+  Two things about your running server:
+  - Your server on :8787 has been up since 02:39, so it's still running the old
+    API code. The page will load, but its rows will show bare run ids until you
+    restart it.
+  - Your server's review agent (eve) had already stopped before I tested. So the
+    one my test server started on port 3210 (process 42463) outlived the test
+    server and is now the one your :8787 server talks to. I left it running
+    because stopping it would break your server's agent connection. A restart of
+    npm run serve will replace it cleanly.
+
+  Nothing is committed yet. The approve/dismiss work, the incorporates.json
+  change and this are all uncommitted in the working tree.
+
+✻ Brewed for 2m 6s · done 8:53 AM
+
+※ recap: We're finishing the review UI: approve/dismiss on findings, saving each run's incorporates links, and a Past reviews page are built and checked but not committed. Next, restart `npm run serve` so your server picks up the new code. (disable recaps in /config)
+
+❯ new review buton should be hidden when already on the setup page.             
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Without the button the header would be a few pixels shorter on the setup page,
+  so the page would jump when you switch pages. I'm giving the nav a fixed
+  minimum height to prevent that.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The "New review" button is now hidden on the setup page, and only "Past
+  reviews" shows there. It still appears on past reviews, a session, a run
+  report and the sample preview.
+
+  The setup page is also what loads at the bare URL and on any unknown route, so
+  the button is hidden in those cases too, since they're all the same page.
+
+  I also set a minimum height on the header links so the header stays the same
+  height when the button disappears; otherwise the page would jump when you
+  switch pages. The code (ui/src/App.tsx, ui/src/styles.css) typechecks and
+  builds, but I didn't take a new screenshot for this change.
+
+✻ Cogitated for 22s · done 8:57 AM
+
+※ recap: You're finishing the review UI; approve/dismiss, saving each run's incorporates edges, the past reviews page and header links are done but uncommitted. Next, restart `npm run serve` so the new API code loads. (disable recaps in /config)
+
+❯ anywhere in the ui that uses "stack" switch to cluster, i.e. "document        
+  clusters". this is more idiomatic to non-techincal users. remove dev style    
+  logs like material=not_material - parse urgency into a user facing label.     
+  Coverage needs the detailed log collapsed by default. The "document clusters" 
+  count should link to a page which visualizes the network of files/cluster     
+  rletionships - folders can expose full filename sets onhover tooltips to keep 
+  it clean. A new lghweight library, such as an elk library, is allowed for a   
+  clean visual. research whats available before proposing the best path. This   
+  visualizaion will be read-only.                                               
+
+⏺ Starting with the wording and log cleanup, then I'll research graph libraries
+  for the cluster map.
+
+  Searched for 4 patterns, ran 3 shell commands (ctrl+o to expand)
+
+⏺ Wording and label cleanup is mapped out. Now measuring the corpus graph to
+  pick a visualization library.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ 243 files form 131 clusters in 7 folders. There are 112 parent links, all
+  inside clusters, and 16 incorporates links between clusters. Checking the
+  candidate libraries.
+
+  Ran 2 shell commands (ctrl+o to expand)
+⏺ ELK turns out to be surprisingly heavy—elkjs 0.12 is ~470 KB gzipped since
+  it's Java-compiled, versus dagre (17 KB), React Flow (60 KB), and Cytoscape
+  (137 KB). I'll finish the wording/coverage changes and give a recommendation,
+  but first I want to check what's actually in the coverage file and trace.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Now the edits. First, a helper that turns urgency=no_clock; 
+  materiality=not_material into plain words.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The second example still starts with a bare enum ("forfeitable_clock_running
+  because…"). I'll translate those bare values too.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ That broke the key=value pairs, because the bare-value pass ran first. Putting
+  the pair pass first.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Helper works. Now the UI text, a shared coverage component (collapsed by
+  default), and the step labels.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ That pattern matched twice, which is fine: both are reasons to translate.
+  Nothing was written because the check failed first. Re-running with both
+  occurrences replaced.
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ Typecheck passes. One wording fix: "read in full" overclaims, because the
+  reviewers have a bounded read budget. Changing it to "reviewed".
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The suite passes but reports 45 tests where earlier it had 46. Checking why.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ All 45 tests pass, though the suite unexpectedly went from 46 to 45 due to
+  external edits to test/tool-inputs.test.ts and src/pipeline.ts. Since ELK
+  isn't well-suited for our mostly disconnected cluster graph (105 of 131
+  clusters are single files, only 16 cross-links) and adds ~470 KB gzipped, I'll
+  look for a different approach to the cluster map.
+
+⏺ User declined to answer questions
+  ⎿  · Which approach should the read-only document-cluster map use? (React Flow
+     + packed grid (Recommended) / React Flow + ELK / Plain SVG, no dependency)
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ I've finished the renaming, the label cleanup and the collapsed coverage log.
+  The cluster map is on hold until we settle the library. What would you like to
+  clarify about the choice?
+
+  What's done (the UI builds, both typechecks pass and all 45 tests pass):
+  - Stack → document cluster: every word the user sees now says "document
+    cluster": the custom-instructions placeholder, the banners, the coverage
+    line, the stage names in the activity log, and the step labels on the
+    session page (src/pipeline.ts). The underlying data fields keep their names.
+  - Plain-language reasons: a new helper, plainReason in src/report-display.ts,
+    rewrites reasons like "Conserved from the stack finding. urgency=no_clock;
+    materiality=not_material." as "No deadline. Not material." Urgency values
+    get readable labels, such as "A deadline is running and the right can be
+    lost". It's applied only when displaying, so the report files are unchanged.
+    Reasons in both "didn't affect you" lists and in coverage go through it.
+  - Coverage: it now reads "Checked 131 document clusters. 44 were reviewed and
+    87 were set aside as unrelated to this change." The list of what was set
+    aside, with plain reasons, is folded behind "See what was set aside".
+  - The cluster count already links to #/runs/<id>/clusters, but that page isn't
+    built, so the link opens nothing useful yet.
+
+  What I found about the map:
+  - Graph shape: 243 files in 131 clusters, across 7 folders. 105 of the
+    clusters are single files. The 112 parent links all sit inside clusters, and
+    only 16 incorporates links run between clusters.
+  - Library sizes, gzipped: elkjs 0.12 is about 470 KB because it's compiled
+    from Java, so it isn't lightweight. For comparison, @xyflow/react (React
+    Flow) is 60 KB, @dagrejs/dagre 17 KB and cytoscape 137 KB.
+  - ELK and this graph: ELK's strength is layered layout with routed edges,
+    which suits connected graphs. Laid out that way, most of these clusters
+    would end up in long single-file columns.
+
+  My recommendation is React Flow for rendering, pan/zoom and hover tooltips,
+  loaded only on the map page. Each folder would be a panel of cluster cards
+  sized by file count, with the 16 incorporates links drawn between cards.
+  Hovering a card would list its files, indented by parent. ELK can go in on top
+  of that if you want its automatic layout. A third option is plain SVG with no
+  library, but that means no pan or zoom.
+
+✻ Brewed for 4m 5s · done 9:14 AM
+
+❯ tradeoffs of packed grid vs ELK?                                              
+
+⏺ For this corpus the packed grid is the better fit. ELK starts to earn its
+  extra 470 KB only if many more links between clusters get added.
+
+  Fit to this graph
+  Packed grid (React Flow + our own layout): Good. Most clusters have no links,
+  so a tidy grid of cards inside each folder panel is what you'd draw by hand
+  anyway.
+  ELK (React Flow + elkjs): Mixed. Its main algorithm (layered) sorts nodes by
+  their links. Unlinked nodes get stacked in tall single columns, so folder
+  boxes come out long and thin.
+  ────────────────────────────────────────
+  Folder nesting
+  Packed grid (React Flow + our own layout): Easy. Folder panels are plain boxes
+
+  and the cards are placed inside them in rows.
+  ELK (React Flow + elkjs): ELK can pack each folder separately with its
+  rectpacking mode. Its layered mode can route links across folder borders, but
+   only if the whole graph uses layered. You can't combine the two, so you pick
+   tidy folders or routed links.
+  ────────────────────────────────────────
+  Link drawing
+  Packed grid (React Flow + our own layout): React Flow draws the 16 links as
+  curves. A few will pass over other cards. They read fine at this count but
+  get messy past a few dozen.
+  ELK (React Flow + elkjs): Right-angle links that go around cards, in layered
+  mode only. This is ELK's real advantage.
+  ────────────────────────────────────────
+  Bundle size
+  Packed grid (React Flow + our own layout): About 60 KB, loaded only on the map
+
+  page.
+  ELK (React Flow + elkjs): About 530 KB, also loaded only on that page. That's
+  negligible on localhost but noticeable on a slow connection if this is ever
+  deployed.
+  ────────────────────────────────────────
+  Control and tuning
+  Packed grid (React Flow + our own layout): About 60 lines we own. Folder
+  order,
+  card size and colours for reviewed vs set aside are simple edits.
+  ELK (React Flow + elkjs): Dozens of string settings (elk.algorithm,
+  elk.spacing.*, hierarchyHandling…). Powerful, but tuning is trial and error.
+  ────────────────────────────────────────
+  Stability
+  Packed grid (React Flow + our own layout): Deterministic. A new file only adds
+
+  a card, and nothing else moves.
+  ELK (React Flow + elkjs): Also deterministic, but adding one link can
+  reshuffle
+  the whole layered layout.
+  ────────────────────────────────────────
+  Speed
+  Packed grid (React Flow + our own layout): Instant.
+  ELK (React Flow + elkjs): Under 100 ms for 131 nodes, run in the background,
+  so
+  fine either way.
+  ────────────────────────────────────────
+  Growth
+  Packed grid (React Flow + our own layout): Weakens as links multiply.
+  ELK (React Flow + elkjs): Improves as links multiply.
+
+  Where each wins. The design doc plans to show more links between clusters
+  later: most-favored-customer, flow-down, pass-through, additional insured and
+  same-party links (§3). If those end up on the map, the graph becomes properly
+  connected and ELK's layered layout with routed links is worth its size. At
+  today's 16 links it isn't.
+
+  My recommendation: build the packed grid now. The layout is one function that
+  takes the clusters and returns positions, so switching to ELK later means
+  replacing that function. The rendering, tooltips and page stay the same.
+
+  Want me to build the packed grid?
+
+✻ Churned for 16s · done 9:15 AM
+
+※ recap: You're polishing the review UI so general counsel can use it; the wording, plain labels and collapsed coverage are done. Next is the document-cluster map, and I recommend the packed grid, waiting for your go-ahead to build it. (disable recaps in /config)
+
+❯ yes                                                                           
+
+⏺ Building it. First, checking what names and parent fields I have to work with.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Now the /api/clusters endpoint: folders, clusters with their files and parent
+  links, and the incorporates links between clusters.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The endpoint returns 131 clusters and 16 links. Installing React Flow in the
+  UI package.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Now the map page itself. It gets its own file so it can load on demand.
+
+⏺ Write(ui/src/ClusterMap.tsx)
+  ⎿  Wrote 337 lines to ui/src/ClusterMap.tsx
+      1 import { Background, Controls, Handle, MarkerType, MiniMap, Posit
+        low/react";
+      2 import "@xyflow/react/dist/style.css";
+        useEvent, type ReactNode } from "react";
+      4 import { documentIdentity } from "../../src/report-display";
+      6 type ClusterFile = { doc_id: string; path: string; parent_id: str
+        ing | null; doc_type: string | null; effective_date: string | nul
+      7 type Cluster = { id: string; folder: string; root: string; root_p
+        ath: string; files: ClusterFile[] };
+         target_doc: string; section: string; v
+     … +409 lines (ctrl+o to expand)
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Now the map styles, in the house palette.
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The map is a separate 61 KB chunk that loads only on its page. Taking
+  screenshots.
+
+  Read 3 files, ran 1 shell command (ctrl+o to expand)
+
+⏺ Everything's working—131 cards, 16 links, no errors—but I spotted four issues:
+  an overview that's too small, a minimap blocking a folder, links looping
+  oddly in Supply, and some weak card titles. I'll start by fixing the weak
+  titles.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ I noticed documentIdentity loses cluster name info since it was built for
+  report headlines, so I'll instead build card titles from the cluster's own
+  name (e.g. "Great Plains Copper Tube · Master supply agreement"). I'll also
+  attach links to the facing sides of their cards, size the canvas to fit the
+  frame's shape, and remove the minimap.
+
+  Read 1 file, ran 1 shell command (ctrl+o to expand)
+
+⏺ The screenshot is identical to the last one, minimap included, even though the
+  rebuild succeeded. ClusterMap.tsx was also changed on disk after my edit.
+  Checking what's actually in the file.
+
+  Listed 1 directory (ctrl+o to expand)
+
+⏺ The file and the build are both fine. The problem was mine: I ran the
+  screenshot script from the project folder, so the new screenshots were saved
+  there instead of the scratchpad. Moving them out.
+
+  Read 2 files, ran 1 shell command (ctrl+o to expand)
+
+⏺ The layout looks much better now, but Keystone's linked pages are still split
+  apart since orders sort under "PO" and terms sort under "K." I'll regroup
+  linked clusters so each terms page sits right before the orders referencing
+  it.
+
+  Read 1 file, ran 1 shell command (ctrl+o to expand)
+
+⏺ The linked clusters now sit together at the top of Supply, and the links are
+  much shorter. Checking a zoomed-in view, a link's tooltip and phone width.
+
+  Read 2 files, ran 1 shell command (ctrl+o to expand)
+
+⏺ The zoomed-in view reads well, and at phone width the layout switches to a
+  single column of folders. My link hover missed the line and landed on the
+  folder, so I'll aim at a point on the line itself.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ No links were in view after zooming, so I'll try again at the default zoom.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Hovering the link shows the folder's tooltip, so the folder panel is sitting
+  on top of the links. Checking what's under the pointer.
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ React Flow switches off pointer events on links when nothing can be selected,
+  and a hover handler doesn't count as selectable. I'll turn them back on for
+  the map's links in CSS.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Confirmed the link tooltip works correctly. I also found a CSS bug where my
+  link style rule was unintentionally shrinking React Flow's invisible hover
+  strip from 20px to 1.6px, making links hard to hover—I'll narrow the rule so
+  it only affects the visible line.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ It still works with the hover strip back at full width. Final checks, then
+  I'll stop my test server.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The document cluster map is built: a read-only page with a folder panel per
+  folder and a card per cluster. I checked it in a browser at desktop and phone
+  width. Both typechecks pass and all 45 tests pass.
+
+  How to reach it:
+  - In a report, "Checked 131 document clusters" in the coverage section links
+    to #/runs/<id>/clusters. That view marks what the run did with each cluster.
+  - #/clusters is the plain map with no run attached.
+
+  What's on the map:
+  - Folders: one panel per folder, largest first. The header gives cluster and
+    file counts, and hovering it repeats them.
+  - Cluster cards:
+    - The title comes from the cluster's own name, e.g. "Great Plains Copper
+      Tube · Master supply agreement". The line under it gives the document type
+      and date, or "7 documents".
+    - A cluster with more than one document is drawn as a small stack, and a
+      cluster of five or more takes two columns.
+    - Hovering a card lists its full filenames, each child indented under the
+      document it belongs to.
+  - In run view: reviewed clusters get a green left edge, set-aside clusters are
+    faded, and a red badge shows the finding count.
+  - Links: the 16 incorporates links are red arrows. Hovering one shows both
+    clusters, the section, the version pin and the incorporating clause.
+    Clusters that share links sit next to each other, and each arrow attaches to
+    the sides of its two cards that face each other, so the arrows stay short.
+  - Read-only: you can pan and zoom, with a zoom-to-fit button, but nothing can
+    be dragged, connected or selected.
+
+  Behind it:
+  - New endpoint: GET /api/clusters in src/server.ts returns clusters, files,
+    parent links and the links between clusters. It rebuilds them from the
+    corpus on each request.
+  - Page code: ui/src/ClusterMap.tsx is a new file. It loads on demand as a 62
+    KB (gzipped) chunk, including React Flow, so the rest of the app doesn't
+    grow. @xyflow/react 12.12.0 is added to ui/package.json.
+  - Layout: it's all one function, toFlow, so swapping in ELK later means
+    replacing only that function. The canvas width is picked to match the
+    frame's shape, which is why phones get a single column of folders.
+
+  Known limits:
+  - Small text at full view: with 131 cards, the zoomed-out view is an overview.
+    You zoom in to read the card text.
+  - Crossing links: a few Supply links still cross other cards, because the
+    three Keystone terms versions sit a row apart.
+  - Link colour: the links are drawn in the same red as the finding badges.
+
+  Things to know:
+  - Stray screenshots: one batch of my screenshots landed in the project root by
+    mistake. I moved them to the scratchpad and the project root has no stray
+    files now.
+  - Your :8787 server: restart it to get the new endpoints. Until then the map
+    shows no data and past reviews show bare run ids. The leftover eve process
+    (42463) from earlier is still running.
+  - Nothing is committed yet.
+
+✻ Cogitated for 7m 30s · done 9:43 AM
+
+※ recap: You're polishing the review app's UI for the GC, and the latest piece, the read-only document cluster map, is built and checked. Next, restart your server on :8787 so the new map and past-reviews data load.
+
+❯ [Image #1]                                                                    
+  ⎿  [Image #1]
+
+⏺ That error is from your :8787 server, which is still running code from before
+  I added /api/clusters. The old server doesn't recognise the path, so it sends
+  back the app's HTML page, and the map tries to read that as data. Restarting
+  it will fix this. Two small changes first, so a missing endpoint gives a clear
+  error instead of an HTML page.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The map error is from your :8787 server. It has been running since 02:39,
+  before /api/clusters existed. It doesn't know that path, so it sends back the
+  app's HTML page instead of data, and the map fails trying to read it. The same
+  stale server is why Past reviews shows bare run ids.
+
+  To fix it, stop the server in the terminal where it's running and start it
+  again with npm run serve. Restarting ends any review in progress, but I don't
+  see one running now.
+
+  After the restart there's one more step. The leftover review agent (eve,
+  process 42463) from my testing still holds port 3210, so the new server's own
+  eve won't be able to start. The new server will connect to the leftover one,
+  which works. If you'd rather have a clean start, run ! kill 42463 before
+  restarting.
+
+  I also made two small changes so a missing endpoint gives a clear message
+  instead of this one:
+  - The server now answers any unknown /api/… path with a JSON "not found"
+    instead of the app's page (src/server.ts).
+  - If the cluster data can't be loaded, the map now says so and suggests
+    restarting the server (ui/src/ClusterMap.tsx).
+
+  Both typechecks pass and the UI builds. The rest of these changes, and every
+  earlier one, only take effect once the server restarts.
+
+✻ Sautéed for 27s · done 9:48 AM
+
+❯ will resrtaing intrupt in-flight evals?                                       
+
+⏺ Checking what's running right now.
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The evals are all separate processes, none of them started by the server.
+  Checking whether any of them depend on the server or on eve.
+
+  Searched for 1 pattern, ran 1 shell command (ctrl+o to expand)
+
+⏺ No, restarting won't interrupt the evals.
+
+  - The evals don't run through the server. Everything running now is a separate
+    cli.ts run or cli.ts resume process (e.g. runs/e2e-k5/T3a/k3,
+    runs/e2e-k5/T1/k4, runs/e2e-k5-b/C1/k1). They were launched from other
+    shells, not by the server, and they call the models directly. Nothing
+    outside src/server.ts refers to the server's port (8787) or eve's port
+    (3210).
+  - The server has nothing in flight. Its only child process is esbuild, which
+    compiles the code as it runs. Reviews started from the UI run under eve, and
+    the eve process on 3210 has no children either, so no UI review is running.
+  - They don't share memory. The evals are separate processes and read the
+    corpus from disk themselves, so stopping the server doesn't touch them.
+
+  One caution: if you also kill the leftover eve process (42463), that's safe
+  right now for the same reason, since nothing is running under it. It would
+  only matter if someone had just started a review from the UI.
+
+✻ Crunched for 28s · done 9:48 AM
+
+❯ not sure the terminal the local env is running in - kill it and restart       
+  yourself                                                                      
+
+⏺ Stopping the old server and the leftover eve, then starting a fresh server
+  detached from this session so it keeps running after I finish.
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ Both are up. A quick check that the server can reach eve through its proxy:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ I restarted the local server, and it's now running the new code.
+
+  - Stopped: the old server (started at 02:39) and the leftover eve from my
+    testing.
+  - Started: a new npm run serve, detached from this session, so it keeps
+    running after I finish. Its output goes to .harness/serve.log (gitignored).
+    The server is on :8787 and its eve on :3210.
+  - Checked:
+    - /api/health and /api/clusters respond.
+    - An unknown /api/… path now returns the JSON "not found".
+    - Requests to eve through the server get eve's own response, so the
+      connection works.
+    - The eval processes are still running (36 cli.ts run/resume processes),
+      untouched by the restart.
+
+  Reload the map page and it should load. Past reviews will now show authorities
+  and dates, and approve/dismiss will save.
+
+  Since it isn't attached to a terminal, stop it with ! pkill -f "tsx src/cli.ts
+  serve", then restart it with npm run serve. The serve command stops its own
+  eve when it exits.
+
+✻ Sautéed for 51s · done 9:51 AM

@@ -1,0 +1,20 @@
+{
+ "doc_id": "VEN-NDA-summit-valley-plumbi",
+ "path": "documents/vendors/summit-valley-plumbing-rooter-inc_mutual-nondisclosure-agreement_2026-05-18.md",
+ "chars": 16479,
+ "area": "vendors",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "nda",
+ "parent_id": "VEN-NDA-FORM",
+ "effective_date": "2026-05-18",
+ "roles": [
+  "distractor",
+  "no_hire"
+ ],
+ "planted_features": [
+  "template_instance",
+  "NDA_NOHIRE"
+ ],
+ "status": "active"
+}

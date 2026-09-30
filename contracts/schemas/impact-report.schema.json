@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gc-take-home.local/contracts/0.1.0/impact-report.schema.json",
+  "title": "ImpactReport (stage 5): ranked, GC-facing",
+  "type": "object",
+  "required": [
+    "items",
+    "not_material",
+    "cross_links",
+    "change_item_closure"
+  ],
+  "properties": {
+    "items": {
+      "type": "array",
+      "description": "Rank order = array order (R1-R3)",
+      "items": {
+        "type": "object",
+        "required": [
+          "rank",
+          "stack_id",
+          "finding_id",
+          "change_ref",
+          "labels",
+          "rationale",
+          "citations"
+        ],
+        "properties": {
+          "rank": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "stack_id": {
+            "$ref": "common.schema.json#/$defs/stack_id"
+          },
+          "finding_id": {
+            "type": "string"
+          },
+          "change_ref": {
+            "type": "string"
+          },
+          "labels": {
+            "type": "object",
+            "description": "Final labels after cross-stack relabel (same shape as StackFinding labels)"
+          },
+          "category": {
+            "$ref": "common.schema.json#/$defs/finding_type"
+          },
+          "group": {
+            "$ref": "common.schema.json#/$defs/direction"
+          },
+          "headline": {
+            "type": "string"
+          },
+          "amount": {
+            "type": ["number", "null"]
+          },
+          "what": {
+            "type": "string"
+          },
+          "why": {
+            "type": "string"
+          },
+          "when": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string",
+            "description": "Must name the deciding label/fact fields (V12)"
+          },
+          "citations": {
+            "type": "object",
+            "required": [
+              "trigger",
+              "clause"
+            ],
+            "properties": {
+              "trigger": {
+                "$ref": "common.schema.json#/$defs/span"
+              },
+              "clause": {
+                "$ref": "common.schema.json#/$defs/span"
+              }
+            }
+          }
+        }
+      }
+    },
+    "not_material": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "stack_id",
+          "finding_id",
+          "reason"
+        ],
+        "properties": {
+          "stack_id": {
+            "type": "string"
+          },
+          "finding_id": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Logged, hidden by default. items + not_material must contain every accepted finding (V8)"
+    },
+    "cross_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "a",
+          "b",
+          "type"
+        ],
+        "properties": {
+          "a": {
+            "type": "string"
+          },
+          "b": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "resolves_cross_reference": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "cross_reference_resolutions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "description": "One entry per emitted cross_reference (V9)"
+    },
+    "change_item_closure": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "change_ref",
+          "status"
+        ],
+        "properties": {
+          "change_ref": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "addressed",
+              "unaddressed"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "V10"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+ "doc_id": "ACQ-03-NC-02",
+ "path": "documents/acquisitions/ACQ-03_kessler-seller-noncompetition-agreement/02_amendment-1_noncompetition-agreement_2024-08-16.md",
+ "chars": 4268,
+ "area": "acquisitions",
+ "cluster": "ACQ-03_kessler-seller-noncompetition-agreement",
+ "doc_type": "amendment",
+ "parent_id": "ACQ-03-NC-01",
+ "counterparty": null,
+ "effective_date": "2024-08-16",
+ "status": "active",
+ "roles": [
+  "noncompete",
+  "sale_of_business",
+  "il"
+ ],
+ "source_class": "cuad_llm_adapted",
+ "source_ref": "CUAD v1: VIVINT SOLAR, INC. - NON-COMPETITION AGREEMENT",
+ "year_shift": 0,
+ "governing_law_remap": null,
+ "name_map_size": 14,
+ "filled_fields": [],
+ "adapt_length_ratio": 1.19,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

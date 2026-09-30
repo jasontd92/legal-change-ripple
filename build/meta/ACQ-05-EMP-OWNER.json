@@ -1,0 +1,37 @@
+{
+ "doc_id": "ACQ-05-EMP-OWNER",
+ "path": "documents/acquisitions/ACQ-05_leah-pemberton_employment-agreement_2025-02-18.md",
+ "chars": 33875,
+ "area": "acquisitions",
+ "cluster": null,
+ "doc_type": "seller_employment_agreement",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2025-02-18",
+ "status": "active",
+ "roles": [
+  "noncompete",
+  "non_owner_signer",
+  "wa"
+ ],
+ "source_class": "edgar",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1005502/000101968706002838/buckeye_ex9902.htm",
+ "year_shift": 19,
+ "governing_law_remap": {
+  "from": [
+   "California"
+  ],
+  "to": "Washington"
+ },
+ "name_map_size": 18,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ },
+ "post_fixes": [
+  "scrubbed residual real names: EK Acquisition Corp., Weinstein"
+ ]
+}

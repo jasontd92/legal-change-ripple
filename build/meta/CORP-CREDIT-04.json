@@ -1,0 +1,25 @@
+{
+ "doc_id": "CORP-CREDIT-04",
+ "path": "documents/corporate/first-harbor-bank_credit-agreement/04_amendment-2_2025-03-26.md",
+ "chars": 18752,
+ "area": "corporate",
+ "cluster": "first-harbor-bank_credit-agreement",
+ "doc_type": "amendment",
+ "parent_id": "CORP-CREDIT-01",
+ "counterparty": null,
+ "effective_date": "2025-03-26",
+ "status": "active",
+ "roles": [],
+ "source_class": "edgar_llm_adapted",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1035983/000095012903001732/h03366exv10w26.txt",
+ "year_shift": 22,
+ "governing_law_remap": null,
+ "name_map_size": 195,
+ "filled_fields": [],
+ "adapt_length_ratio": 0.97,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

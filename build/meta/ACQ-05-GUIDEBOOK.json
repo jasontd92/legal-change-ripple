@@ -1,0 +1,28 @@
+{
+ "doc_id": "ACQ-05-GUIDEBOOK",
+ "path": "documents/acquisitions/ACQ-05_pinecrest-legacy-employee-guidebook-excerpt_2019.md",
+ "chars": 10059,
+ "area": "acquisitions",
+ "cluster": null,
+ "doc_type": "legacy_policy",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2019-01-01",
+ "status": "superseded",
+ "roles": [
+  "legacy",
+  "confidentiality"
+ ],
+ "source_class": "court",
+ "source_ref": "https://storage.courtlistener.com/recap/gov.uscourts.flmd.355075/gov.uscourts.flmd.355075.4.3_1.pdf",
+ "year_shift": 1,
+ "governing_law_remap": null,
+ "name_map_size": 4,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

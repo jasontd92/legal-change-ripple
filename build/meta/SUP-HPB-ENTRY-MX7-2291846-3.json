@@ -1,0 +1,22 @@
+{
+ "doc_id": "SUP-HPB-ENTRY-MX7-2291846-3",
+ "path": "documents/supply/customs/MX7-2291846-3_entry-summary-and-broker-invoice_2025-07-28.md",
+ "chars": 987,
+ "area": "supply",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "customs_entry",
+ "parent_id": "SUP-HPB-01",
+ "counterparty": "SUP-HPB",
+ "effective_date": "2025-07-28",
+ "roles": [
+  "tariff",
+  "importer_of_record",
+  "refund_chain",
+  "ieepa"
+ ],
+ "planted_features": [
+  "meridian_is_ior_ieepa_refund_eligible"
+ ],
+ "status": "active"
+}

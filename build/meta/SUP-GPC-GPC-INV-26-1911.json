@@ -1,0 +1,21 @@
+{
+ "doc_id": "SUP-GPC-GPC-INV-26-1911",
+ "path": "documents/supply/invoices/GPC-INV-26-1911_great-plains-copper-tube_2026-08-21.md",
+ "chars": 1366,
+ "area": "supply",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "supplier_invoice",
+ "parent_id": "SUP-GPC-01",
+ "counterparty": "SUP-GPC",
+ "effective_date": "2026-08-21",
+ "roles": [
+  "tariff",
+  "surcharge",
+  "refund_chain"
+ ],
+ "planted_features": [
+  "surcharge_after_section122_expiry"
+ ],
+ "status": "active"
+}

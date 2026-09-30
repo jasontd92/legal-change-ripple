@@ -1,0 +1,33 @@
+{
+ "doc_id": "ACQ-04-NOTE",
+ "path": "documents/acquisitions/ACQ-04_seller-promissory-note-and-pledge_2023-08-15.md",
+ "chars": 21722,
+ "area": "acquisitions",
+ "cluster": null,
+ "doc_type": "promissory_note",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2023-08-15",
+ "status": "active",
+ "roles": [
+  "seller_financing",
+  "setoff"
+ ],
+ "source_class": "edgar",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1005502/000101968708002225/energyking_10qsb-ex1002.htm",
+ "year_shift": 15,
+ "governing_law_remap": {
+  "from": [
+   "California"
+  ],
+  "to": "Texas"
+ },
+ "name_map_size": 35,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

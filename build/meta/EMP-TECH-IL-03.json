@@ -1,0 +1,23 @@
+{
+ "doc_id": "EMP-TECH-IL-03",
+ "path": "documents/employment/signed-agreements/ingrid-yardley_technician-employment-agreement_il_2022-06-27.md",
+ "chars": 25644,
+ "area": "employment",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "employment_agreement",
+ "parent_id": "EMP-TPL-TECH-IL",
+ "effective_date": "2022-06-27",
+ "roles": [
+  "noncompete",
+  "il"
+ ],
+ "planted_features": [
+  "template_instance",
+  "annualized_earnings:69680",
+  "signed:2022-06-27",
+  "state:IL"
+ ],
+ "employee": "Ingrid Yardley",
+ "status": "active"
+}

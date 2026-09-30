@@ -1,0 +1,20 @@
+{
+ "doc_id": "CORP-CREDIT-CC-2026Q2",
+ "path": "documents/corporate/first-harbor-bank_credit-agreement/05_compliance-certificate_fiscal-quarter-ended-2026-06-30.md",
+ "chars": 920,
+ "area": "corporate",
+ "cluster": "first-harbor-bank_credit-agreement",
+ "source_class": "generated_structured",
+ "doc_type": "compliance_certificate",
+ "parent_id": "CORP-CREDIT-01",
+ "effective_date": "2026-08-12",
+ "roles": [
+  "financial_covenants",
+  "tariff",
+  "l2_link"
+ ],
+ "planted_features": [
+  "fccr_breach_linked_to_tariff_costs"
+ ],
+ "status": "active"
+}

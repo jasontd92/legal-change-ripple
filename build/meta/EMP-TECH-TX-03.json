@@ -1,0 +1,23 @@
+{
+ "doc_id": "EMP-TECH-TX-03",
+ "path": "documents/employment/signed-agreements/gemma-brandt_technician-employment-agreement_tx_2024-04-23.md",
+ "chars": 21649,
+ "area": "employment",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "employment_agreement",
+ "parent_id": "EMP-TPL-TECH-TX",
+ "effective_date": "2024-04-23",
+ "roles": [
+  "noncompete",
+  "tx"
+ ],
+ "planted_features": [
+  "template_instance",
+  "annualized_earnings:72280",
+  "signed:2024-04-23",
+  "state:TX"
+ ],
+ "employee": "Gemma Brandt",
+ "status": "active"
+}

@@ -1,0 +1,147 @@
+TECHNICIAN EMPLOYMENT AGREEMENT
+
+THIS EMPLOYMENT AGREEMENT (this "Agreement") is entered into effective as of January 1, 2023 (the "Effective Date"), by and between MERIDIAN MECHANICAL OF TEXAS, LLC, a Texas limited liability company with principal place of business at 10850 West Little York Road, Houston, Texas 77041 (hereinafter "Company" or "Employer"), and Gemma Brandt, an individual (hereinafter "Employee").
+
+RECITALS
+
+WHEREAS, the Company is engaged in the business of providing plumbing, heating, ventilation, and air conditioning services and related installation, maintenance, and repair work throughout the State of Texas;
+
+WHEREAS, the Company desires to employ the Employee to perform certain services and duties as set forth in this Agreement; and
+
+WHEREAS, the Company and the Employee desire to establish the terms and conditions of the Employee's employment, including compensation, duties, confidentiality obligations, and post-employment restrictions, all as more particularly set forth herein.
+
+NOW, THEREFORE, in consideration of the mutual covenants and agreements contained herein and for other good and valuable consideration, the receipt and sufficiency of which are hereby acknowledged, the Company and the Employee agree as follows:
+
+1. POSITION AND DUTIES
+
+1.1 Position. The Employee is employed by the Company in the position of Installation Technician, located at the Company's San Antonio, Texas branch, and shall commence employment on or about May 7, 2024 (the "Start Date"). The Employee's position is classified as a non-exempt, hourly employee for purposes of federal wage and hour laws.
+
+1.2 Duties and Responsibilities. The Employee shall perform all duties, tasks, and responsibilities reasonably assigned to him by the Company, which duties shall include, without limitation: (a) the installation, maintenance, repair, and replacement of plumbing, heating, ventilation, and air conditioning systems and components in both residential and commercial properties; (b) the diagnosis and troubleshooting of mechanical and electrical problems related to such systems; (c) the proper maintenance of all tools, equipment, and vehicles assigned to the Employee; (d) the preparation of accurate work reports, service calls, and billing documentation; (e) the adherence to all safety protocols, building codes, and regulatory requirements applicable to the work performed; and (f) the maintenance of professional conduct and courteous interaction with customers, vendors, and fellow employees.
+
+1.3 Scope of Duties. The Employee understands that the nature of the Company's business requires flexibility with respect to work assignments, which may include work at various customer locations throughout the applicable service territory, overtime work when required by the Company, work on evenings and weekends as necessary to meet customer needs, and performance of duties beyond those specifically enumerated above. The Employee's specific duties, responsibilities, and work locations may be modified from time to time by the Company in its reasonable discretion, and the Employee agrees to comply with such modifications and directions.
+
+1.4 Supervisor and Chain of Command. The Employee shall report directly to the branch manager or such other supervisor as the Company may designate from time to time. The Employee shall comply with all reasonable instructions, policies, and directives issued by the Company's management and shall participate in all training programs and continuing education programs as required by the Company.
+
+2. COMPENSATION
+
+2.1 Hourly Rate. The Company shall compensate the Employee for all hours worked at an hourly rate of $34.75 per hour per hour, payable in accordance with the payroll practices of the Company and in compliance with all applicable federal, state, and local wage and hour laws. This hourly rate shall become effective as of the Start Date specified herein.
+
+2.2 Overtime. The Employee shall be compensated for overtime work in accordance with the Fair Labor Standards Act and applicable Texas law. All overtime work must be authorized in advance by the Company, and the Employee shall comply with all Company policies regarding overtime work.
+
+2.3 Payroll and Deductions. The Employee shall be paid on a bi-weekly basis or according to the Company's established payroll schedule. The Company shall make all legally required withholdings, including but not limited to federal income tax, Social Security, and Medicare taxes. The Employee acknowledges receipt of and agreement with the Company's notice regarding withholding elections and shall complete all necessary tax forms as required by law and the Company.
+
+2.4 Commission and Bonus Structure. The Employee may be eligible for performance bonuses, service call commissions, or other incentive compensation as outlined in the Company's separate compensation and bonus plan, if applicable. Any such additional compensation shall be discretionary and at the sole determination of the Company, and shall be based upon the Employee's performance, adherence to Company policies, customer satisfaction ratings, and other factors deemed relevant by the Company.
+
+2.5 Reimbursable Expenses. The Employee shall be reimbursed for all reasonable, documented, and pre-approved business expenses incurred in the course of performing duties for the Company, including but not limited to mileage, vehicle expenses, and materials, provided that such reimbursement is requested in accordance with Company procedures and receipt documentation is provided as required.
+
+2.6 Vehicle and Equipment. The Company shall provide or assign to the Employee all necessary tools, equipment, and vehicles required to perform the Employee's duties, including but not limited to a service vehicle, hand tools, diagnostic equipment, and safety equipment. The Employee shall maintain all such equipment in good working condition and shall return all Company property in the same condition as received (normal wear and tear excepted) upon termination of employment. The Employee shall be responsible for damage to Company property resulting from gross negligence or willful misconduct by the Employee.
+
+3. TERM AND EMPLOYMENT STATUS
+
+3.1 At-Will Employment. The Employee's employment hereunder is on an at-will basis, and may be terminated by either the Company or the Employee at any time, with or without cause, and with or without notice, except as specifically required by law or as otherwise provided in this Agreement. Nothing in this Agreement shall be construed to provide the Employee with any guarantee of employment for any specified period of time.
+
+3.2 Continuation of Obligations. Notwithstanding any termination or expiration of this Agreement or the Employee's employment with the Company, certain obligations of the Employee, including without limitation the obligations set forth in Section 4 (Confidential Information and Training) and Section 5 (Covenant Not to Compete), shall survive and continue in full force and effect for the periods specified therein.
+
+4. CONFIDENTIAL INFORMATION AND TRAINING
+
+4.1 Acknowledgment of Confidentiality. The Employee acknowledges and agrees that in the course of performing duties for the Company, the Employee shall have access to and shall become familiar with certain confidential and proprietary information belonging to the Company, including but not limited to customer lists, customer contact information, pricing information, pricing strategies, service area maps, route optimization information, proprietary service procedures and techniques, technical manuals and specifications, business plans, financial information, sales forecasts, vendor agreements, employee information, and other business information that gives the Company a competitive advantage in the marketplace or derives economic value from not being generally known.
+
+4.2 Confidentiality Obligations. The Employee shall maintain in strict confidence all such confidential and proprietary information, shall not disclose such information to any third party without the prior written consent of the Company, and shall not use such information except in the course of performing duties authorized by the Company. These confidentiality obligations shall apply during the Employee's employment and shall continue in full force and effect for a period of three (3) years following the termination of the Employee's employment with the Company, regardless of whether such termination is by the Company or by the Employee, with or without cause.
+
+4.3 Company Investment in Training. The Company acknowledges that it shall provide specialized training to the Employee, including but not limited to training on Company systems, software, safety procedures, customer service protocols, technical skills specific to plumbing and HVAC systems, and product-specific training on equipment and materials used by the Company. The Employee acknowledges that such training constitutes a valuable investment by the Company and that this training, combined with the Employee's access to confidential information, creates a legitimate business interest for the Company in imposing the restrictions set forth in this Section 4 and Section 5.
+
+4.4 Proprietary Information. All work product, reports, notes, drawings, designs, and other materials created or developed by the Employee in the course of employment shall be deemed to be the sole and exclusive property of the Company, and the Employee hereby assigns all right, title, and interest in such materials to the Company. The Employee shall promptly deliver all such materials to the Company upon request and upon termination of employment.
+
+4.5 Remedies for Breach. The Employee acknowledges that breach of this Section 4 would cause irreparable harm to the Company for which monetary damages would be an insufficient remedy, and the Company shall be entitled to seek equitable relief, including injunctive relief, in addition to any other remedies available at law or in equity. The pursuit of equitable relief shall not preclude the Company from pursuing other remedies.
+
+5. COVENANT NOT TO COMPETE
+
+5.1 Scope of Restriction. The Employee acknowledges that the Company has a legitimate business interest in protecting its customer relationships, confidential information, trade secrets, proprietary methods, good will, and customer loyalty developed through the Company's investment in the Employee's training and in the Company's service reputation and quality. Accordingly, in consideration for the employment opportunity and specialized training provided by the Company, the Employee agrees to the following covenant not to compete:
+
+Covenant Not to Compete. In exchange for the Company's promise to provide Employee with Confidential Information and specialized training, Employee agrees that for eighteen (18) months after termination of employment Employee will not perform plumbing or HVAC service, installation or repair work for any competing business within Harris, Fort Bend, Bexar, Dallas or Tarrant County, Texas, or any other county in which Employee regularly performed work during the last twelve (12) months of employment. This covenant is ancillary to an otherwise enforceable agreement and is intended to comply with Tex. Bus. & Com. Code Section 15.50.
+
+5.2 Acknowledgment. The Employee acknowledges and agrees that the restrictions set forth in Section 5.1 are reasonable in duration, geographic scope, and line of business, and are necessary to protect the legitimate business interests of the Company. The Employee further acknowledges that he has carefully read and considered these restrictions, has had the opportunity to consult with an attorney of his choosing, and enters into these restrictions knowingly and voluntarily.
+
+6. AT-WILL EMPLOYMENT AND TERMINATION
+
+6.1 Termination at Will. The Employee's employment is at-will, and the Employee or the Company may terminate the employment relationship at any time, for any reason, with or without cause, and with or without advance notice, except as expressly required by law. The at-will nature of the employment relationship shall not be modified by any verbal statements or representations, whether made by management, co-workers, or others, and only written amendments to this Agreement, signed by an authorized representative of the Company, shall modify or limit the at-will status of the employment.
+
+6.2 Final Compensation. Upon termination of employment, the Employee shall receive compensation for all hours worked through the date of termination, at the applicable hourly rate, payable in accordance with Company payroll practices and applicable law. The Employee shall not be entitled to compensation for any accrued but unused vacation time, personal days, or other paid time off, unless required by law or Company policy.
+
+6.3 Return of Property. Upon termination of employment, the Employee shall immediately return to the Company all Company property, including but not limited to service vehicles, tools, equipment, uniforms, access cards, keys, customer lists, documents, files, and all other materials belonging to the Company or containing confidential information. The Employee shall cooperate with the Company in effecting an orderly transition and shall provide all information necessary for the Company to service Customer accounts previously served by the Employee.
+
+7. BENEFITS AND WITHHOLDING
+
+7.1 Withholding and Deductions. The Company shall make all legally required withholdings from the Employee's compensation, including federal income tax withholding, Social Security and Medicare withholding, state income tax withholding, unemployment insurance contributions, and such other withholdings as may be required or authorized by law or as the Employee may authorize in writing. The Employee acknowledges that he is responsible for all taxes due with respect to his compensation and agrees to provide all documentation necessary for the Company to comply with tax withholding requirements.
+
+7.2 Employee Benefits. The Employee may be eligible to participate in any group health insurance, dental insurance, vision insurance, retirement plans, or other employee benefit programs offered by the Company to similarly situated employees, on a non-discriminatory basis and in accordance with the terms and conditions of such plans. The Company reserves the right to modify, suspend, or eliminate any benefit plan or program at any time in its discretion. The Employee shall comply with all eligibility requirements and conditions to participate in such plans.
+
+7.3 Workers' Compensation. The Company shall maintain workers' compensation insurance coverage as required by law. In the event the Employee is injured during the course of employment, the Employee shall report such injury immediately to the Company and shall comply with all requirements for workers' compensation claims, including but not limited to prompt reporting, submission of required forms, and cooperation with Company claims procedures.
+
+8. PERFORMANCE AND CONDUCT
+
+8.1 Professional Standards. The Employee shall maintain a high standard of professional conduct and courtesy in all interactions with customers, vendors, co-workers, and the public. The Employee shall comply with all Company policies and procedures, as may be amended from time to time, and shall comply with all applicable federal, state, and local laws and regulations.
+
+8.2 Safety and Compliance. The Employee shall comply strictly with all Occupational Safety and Health Administration (OSHA) regulations, Company safety protocols, and manufacturer instructions for all equipment and materials used. The Employee shall wear all required personal protective equipment, shall maintain safe work practices, and shall report all workplace hazards and safety concerns to management immediately.
+
+8.3 Substance Abuse Policy. The Employee shall not report to work or work while under the influence of alcohol, illegal drugs, or controlled substances. The Company reserves the right to require drug testing and alcohol testing as permitted by law, including pre-employment testing, reasonable suspicion testing, and random testing.
+
+8.4 Attendance and Punctuality. The Employee shall maintain regular and punctual attendance as required by the Company and shall arrive at all assigned work locations on time and in a condition fit for work. Unauthorized absences, tardiness, or leaving work without permission may result in disciplinary action up to and including termination.
+
+8.5 Quality of Work. The Employee shall perform all work in a professional, workmanlike manner in compliance with applicable building codes, industry standards, and Company standards. Work shall be performed safely and efficiently, and the Employee shall take pride in the quality of work delivered to customers.
+
+9. REFORMATION
+
+9.1 Severability. If any provision of this Agreement is held to be invalid, illegal, or unenforceable by a court of competent jurisdiction, such provision shall be reformed to the minimum extent necessary to make it enforceable while preserving the intent of the parties, or if such reformation is not possible, such provision shall be severed from this Agreement. The remaining provisions shall remain in full force and effect. Notwithstanding the foregoing, the parties expressly request that the court not sever or strike entirely any provision but instead reform such provision to the extent permitted by law to make it valid and enforceable consistent with the parties' intentions.
+
+9.2 Blue-Pencil Doctrine. The Company and the Employee expressly agree that if any restriction set forth in Section 5 (Covenant Not to Compete) or any other provision is found to be overly broad or unreasonable, the Company and the Employee authorize and request that a court of competent jurisdiction reform such provision to the maximum extent permitted by law to make the provision enforceable, rather than striking the provision entirely.
+
+10. ENTIRE AGREEMENT
+
+10.1 Agreement Constitutes Entire Understanding. This Agreement, together with any benefit plan documents and Company policy manuals provided to the Employee, constitutes the entire agreement between the Company and the Employee concerning the Employee's employment and supersedes all prior negotiations, representations, understandings, and agreements, whether oral or written, between the parties with respect to the subject matter hereof. There are no other agreements, representations, or warranties, express or implied, except as expressly set forth herein.
+
+10.2 Modification. This Agreement may not be modified, amended, or supplemented except by written instrument signed by an authorized representative of the Company and the Employee. Any verbal modifications, side agreements, or representations are void and unenforceable unless set forth in a writing signed by both parties.
+
+11. GOVERNING LAW AND VENUE
+
+11.1 Governing Law. This Agreement shall be governed by and construed in accordance with the laws of the State of Texas, without regard to conflicts of law principles. The Texas Restrictive Covenant Act, codified at Texas Business & Commerce Code § 15.50 et seq., shall apply to the covenant not to compete set forth in Section 5 hereof.
+
+11.2 Venue and Jurisdiction. The Employee and the Company hereby consent to the exclusive jurisdiction of the state and federal courts located in Harris County, Texas for the resolution of any disputes arising out of or relating to this Agreement. Each party hereby irrevocably submits to the jurisdiction of such courts and waives any objection to venue or any claim of inconvenient forum.
+
+11.3 Attorney's Fees. In the event any legal action or proceeding is brought by either party to enforce this Agreement or to seek relief for breach hereof, the prevailing party shall be entitled to recover its reasonable attorney's fees, court costs, and other expenses incurred in connection with such action or proceeding.
+
+12. ACKNOWLEDGMENTS
+
+12.1 Understanding of Terms. The Employee acknowledges that he has read and carefully reviewed this Agreement in its entirety, that he understands the terms and conditions contained herein, and that he has had the opportunity to discuss this Agreement with an attorney of his choosing prior to executing it.
+
+12.2 Voluntary Agreement. The Employee acknowledges and agrees that he enters into this Agreement voluntarily and of his own free will, that he is not signing under duress or coercion, and that he agrees with all of the terms and conditions set forth herein. The Employee further acknowledges that the terms of this Agreement, including without limitation the covenant not to compete set forth in Section 5, are reasonable and necessary to protect the legitimate business interests of the Company.
+
+12.3 Non-Waiver of Rights. The failure of either party to enforce any provision of this Agreement shall not constitute a waiver of such provision or a waiver of any other provision, and the partial exercise of any right shall not preclude the further exercise thereof or the exercise of any other right.
+
+IN WITNESS WHEREOF, the parties have executed this Agreement as of April 23, 2024.
+
+
+COMPANY:
+
+MERIDIAN MECHANICAL OF TEXAS, LLC
+
+
+By: _________________________________
+Name: _______________________________
+Title: ________________________________
+Date: ________________________________
+
+
+EMPLOYEE:
+
+
+_____________________________________
+Gemma Brandt
+
+
+Address: ______________________________
+
+_____________________________________
+
+
+Date: ________________________________

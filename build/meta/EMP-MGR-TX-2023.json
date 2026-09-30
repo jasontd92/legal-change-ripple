@@ -1,0 +1,36 @@
+{
+ "doc_id": "EMP-MGR-TX-2023",
+ "path": "documents/employment/service-manager-employment-agreement_houston_2023-01-09.md",
+ "chars": 33840,
+ "area": "employment",
+ "cluster": null,
+ "doc_type": "manager_employment_agreement",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2023-01-09",
+ "status": "active",
+ "roles": [
+  "noncompete",
+  "tx"
+ ],
+ "source_class": "edgar",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1005502/000101968708004978/energyking_10qsba-ex1001.htm",
+ "year_shift": 15,
+ "governing_law_remap": {
+  "from": [
+   "California"
+  ],
+  "to": "Texas"
+ },
+ "name_map_size": 18,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ },
+ "post_fixes": [
+  "scrubbed residual real names: Larry Weinstein, Weinstein, GALLAGHER'S"
+ ]
+}

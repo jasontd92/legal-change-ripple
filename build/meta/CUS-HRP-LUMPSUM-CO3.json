@@ -1,0 +1,16 @@
+{
+ "doc_id": "CUS-HRP-LUMPSUM-CO3",
+ "path": "documents/customers/harborview-capitol-tower_hvac-replacement-construction-contract/04_change-order-3_2026-01-26.md",
+ "chars": 551,
+ "area": "customers",
+ "cluster": "harborview-capitol-tower_hvac-replacement-construction-contract",
+ "source_class": "generated_structured",
+ "doc_type": "change_order",
+ "parent_id": "CUS-HRP-LUMPSUM",
+ "counterparty": "CUS-HRP",
+ "effective_date": "2026-01-26",
+ "roles": [
+  "lump_sum"
+ ],
+ "status": "active"
+}

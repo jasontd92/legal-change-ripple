@@ -1,0 +1,23 @@
+{
+ "doc_id": "EMP-TECH-IL-06",
+ "path": "documents/employment/signed-agreements/brianna-falkner_technician-employment-agreement_il_2024-03-21.md",
+ "chars": 25642,
+ "area": "employment",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "employment_agreement",
+ "parent_id": "EMP-TPL-TECH-IL",
+ "effective_date": "2024-03-21",
+ "roles": [
+  "noncompete",
+  "il"
+ ],
+ "planted_features": [
+  "template_instance",
+  "annualized_earnings:106600",
+  "signed:2024-03-21",
+  "state:IL"
+ ],
+ "employee": "Brianna Falkner",
+ "status": "active"
+}

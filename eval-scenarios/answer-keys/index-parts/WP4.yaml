@@ -1,0 +1,866 @@
+- id: D-TR20-S1a-01
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S1a
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-TR20-S1a-02
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S1a
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-TR20-S1a-03
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S1a
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-TR20-S1a-04
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S1a
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-TR20-S1a-05
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S1a
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-TR20-S1a-06
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S1a
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-TR20-S4-01
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S4
+  - LBL-materiality
+  - LBL-direction
+  set: broad
+  slice:
+  - hop-complete
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-TR20-S4-02
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S4
+  set: null
+  slice:
+  - absence
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-TR20-S4-03
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S4
+  - V5
+  set: null
+  slice:
+  - superseded
+  - version
+  confidence: null
+  status: merged
+  gold_file: null
+  gold_ref: null
+  canonical: D-TR20-S4-07
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-TR20-S4-04
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S4
+  set: null
+  slice:
+  - decoy
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-TR20-S4-05
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S4
+  set: null
+  slice:
+  - decoy
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-TR20-S4-06
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S4
+  set: null
+  slice:
+  - decoy
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-TR20-S4-07
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S4
+  - V5
+  set: broad
+  slice:
+  - version
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-TR20-S4-08
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S4
+  set: broad
+  slice:
+  - decoy
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: pending Jason per HANDOFF §10 (CA Comfort Club two-price split) — gold authored as a two-silo decoy, flagged for confirmation it's intentional
+  tier_flag: null
+- id: D-TR20-S3-01
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S3
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-TR21-S1a-01
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-21
+  eval_ids:
+  - S1a
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: depends on missing 16 CFR 425 text (HANDOFF §10); backlogged
+  contradiction: null
+  tier_flag: null
+- id: D-TR21-S1a-02
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-21
+  eval_ids:
+  - S1a
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: depends on missing 16 CFR 425 text (HANDOFF §10); backlogged
+  contradiction: null
+  tier_flag: null
+- id: D-TR21-S1a-03
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-21
+  eval_ids:
+  - S1a
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: depends on missing 16 CFR 425 text (HANDOFF §10); backlogged
+  contradiction: null
+  tier_flag: null
+- id: D-TR21-S4-01
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-21
+  eval_ids:
+  - S4
+  set: null
+  slice:
+  - decoy
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: depends on missing 16 CFR 425 text (HANDOFF §10); backlogged
+  contradiction: null
+  tier_flag: null
+- id: D-TR21-S4-02
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-21
+  eval_ids:
+  - S4
+  set: null
+  slice:
+  - decoy
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: depends on missing 16 CFR 425 text (HANDOFF §10); backlogged
+  contradiction: null
+  tier_flag: null
+- id: D-TR21-S4-03
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-21
+  eval_ids:
+  - S4
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: depends on missing 16 CFR 425 text (HANDOFF §10); backlogged
+  contradiction: null
+  tier_flag: null
+- id: D-TR21-S3-01
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-21
+  eval_ids:
+  - S3
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: depends on missing 16 CFR 425 text (HANDOFF §10); backlogged
+  contradiction: null
+  tier_flag: null
+- id: D-TR90-S1b-01
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-14
+  eval_ids:
+  - S1b
+  - S4
+  - LBL-materiality
+  - LBL-direction
+  set: e2e
+  slice:
+  - flip
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-TR90-S1b-02
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-14
+  eval_ids:
+  - S1b
+  set: e2e
+  slice:
+  - control
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-TR90-S1b-03
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-90
+  eval_ids:
+  - S1b
+  - V14
+  set: e2e
+  slice:
+  - control
+  confidence: high
+  status: done
+  gold_file: e2e/C2_TR90_2026-10-01.yaml
+  gold_ref: company_gate
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-TR90-S1b-04
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-90
+  eval_ids:
+  - S1b
+  set: e2e
+  slice:
+  - control
+  confidence: high
+  status: done
+  gold_file: e2e/C2_TR90_2026-10-01.yaml
+  gold_ref: company_gate
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-TR90-S3-01
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-14
+  eval_ids:
+  - S3
+  set: e2e
+  slice:
+  - control
+  confidence: high
+  status: done
+  gold_file: e2e/T5_TR14_2026-10-01.yaml
+  gold_ref: relevant_stacks
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-TR14-S4-01
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-14
+  eval_ids:
+  - S4
+  - LBL-materiality
+  - LBL-direction
+  - LBL-finding_type
+  - V14
+  - S5-R3
+  set: e2e
+  slice:
+  - template-instance
+  confidence: high
+  status: done
+  gold_file: e2e/T5_TR14_2026-10-01.yaml
+  gold_ref: F1
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-TR14-S4-02
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-14
+  eval_ids:
+  - S4
+  set: sentinel
+  slice:
+  - abstention
+  confidence: abstain_only
+  status: done
+  gold_file: e2e/T5_TR14_2026-10-01.yaml
+  gold_ref: F3
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-TR14-S4-03
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-14
+  eval_ids:
+  - S4
+  set: e2e
+  slice:
+  - decoy
+  confidence: high
+  status: done
+  gold_file: e2e/T5_TR14_2026-10-01.yaml
+  gold_ref: F4
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-DIST-01
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-01
+  eval_ids:
+  - S1a
+  set: e2e
+  slice:
+  - control
+  confidence: high
+  status: done
+  gold_file: e2e/T1_TR01_2026-10-01.yaml
+  gold_ref: change_record
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-DIST-02
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-01
+  eval_ids:
+  - S1a
+  set: e2e
+  slice:
+  - control
+  confidence: high
+  status: done
+  gold_file: e2e/T1_TR01_2026-10-01.yaml
+  gold_ref: change_record
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-DIST-04
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-90
+  eval_ids:
+  - S1a
+  - S5-link
+  set: e2e
+  slice:
+  - decoy
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-S0-01
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-01
+  eval_ids:
+  - S0
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-S0-02
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-01
+  eval_ids:
+  - S0
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-S0-03
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-10
+  eval_ids:
+  - S0
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-S0-04
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-11
+  eval_ids:
+  - S0
+  set: null
+  slice: []
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-S0-05
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S0
+  set: broad
+  slice: []
+  confidence: high
+  status: done
+  gold_file: unit/D-S0-05.yaml
+  gold_ref: file
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-S1B-01
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-10
+  eval_ids:
+  - S1b
+  - M2
+  set: broad
+  slice:
+  - control
+  confidence: high
+  status: done
+  gold_file: unit/D-S1B-01.yaml
+  gold_ref: company_gate
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-S1B-02
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-11
+  eval_ids:
+  - S1b
+  - M2
+  set: null
+  slice:
+  - control
+  - flip
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-S1B-03
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S1b
+  - M2
+  set: broad
+  slice:
+  - control
+  - flip
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-S1B-04
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-02
+  eval_ids:
+  - S1b
+  - M2
+  set: null
+  slice:
+  - control
+  - flip
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-S1B-05
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-01
+  eval_ids:
+  - S1b
+  - M2
+  set: null
+  slice:
+  - control
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-S1B-06
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S1b
+  - M6
+  set: null
+  slice:
+  - control
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-S1B-07
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S1b
+  - M2
+  set: null
+  slice:
+  - control
+  - flip
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-S1B-08
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-90
+  eval_ids:
+  - S1b
+  - M2
+  set: null
+  slice:
+  - control
+  - flip
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-S1B-09
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-20
+  eval_ids:
+  - S1b
+  - M6
+  set: null
+  slice:
+  - control
+  confidence: null
+  status: backlog
+  gold_file: null
+  gold_ref: null
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: S1a-TR03-01
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-03
+  eval_ids:
+  - S1a
+  - V14
+  - LBL-legal_status
+  set: e2e
+  slice:
+  - control
+  confidence: high
+  status: done
+  gold_file: e2e/C1_TR03_2026-10-01.yaml
+  gold_ref: change_record
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: S3-03
+  aliases: []
+  source_file: A-tariff-supply.md
+  trigger: TR-03
+  eval_ids:
+  - S3
+  set: sentinel
+  slice:
+  - control
+  confidence: high
+  status: done
+  gold_file: e2e/C1_TR03_2026-10-01.yaml
+  gold_ref: relevant_stacks
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+- id: D-TR14-CASTELLANO-12
+  aliases: []
+  source_file: D-consumer-controls-trigger-side.md
+  trigger: TR-14
+  eval_ids:
+  - S4
+  - LBL-finding_type
+  set: e2e
+  slice:
+  - decoy
+  confidence: high
+  status: done
+  gold_file: e2e/T5_TR14_2026-10-01.yaml
+  gold_ref: F2
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Castellano section 12, split from the technician-template finding so each document is its own stack.

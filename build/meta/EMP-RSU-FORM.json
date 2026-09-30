@@ -1,0 +1,29 @@
+{
+ "doc_id": "EMP-RSU-FORM",
+ "path": "documents/employment/form_restricted-stock-unit-award-with-restrictive-covenants_2025-plan.md",
+ "chars": 72138,
+ "area": "employment",
+ "cluster": null,
+ "doc_type": "equity_award_form",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2025-03-01",
+ "status": "active",
+ "roles": [
+  "noncompete",
+  "forfeiture",
+  "state_riders"
+ ],
+ "source_class": "edgar",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/2052568/000205256826000017/lgnex1052026formofrsugrant.htm",
+ "year_shift": -1,
+ "governing_law_remap": null,
+ "name_map_size": 12,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

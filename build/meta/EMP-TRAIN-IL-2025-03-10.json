@@ -1,0 +1,23 @@
+{
+ "doc_id": "EMP-TRAIN-IL-2025-03-10",
+ "path": "documents/employment/signed-agreements/dmitri-rosales_training-repayment-agreement_il_2025-03-10.md",
+ "chars": 13536,
+ "area": "employment",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "training_repayment_agreement",
+ "parent_id": "EMP-TPL-TRAINING",
+ "effective_date": "2025-03-10",
+ "roles": [
+  "training_repayment",
+  "stay_or_pay",
+  "il"
+ ],
+ "planted_features": [
+  "template_instance",
+  "signed:2025-03-10",
+  "state:IL"
+ ],
+ "employee": "Dmitri Rosales",
+ "status": "active"
+}

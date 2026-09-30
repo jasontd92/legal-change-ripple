@@ -1,0 +1,28 @@
+{
+ "doc_id": "CUS-KPPA-COOP",
+ "path": "documents/customers/keystone-public-purchasing-alliance_cooperative-master-solicitation-hvac_2015-08-13.md",
+ "chars": 117831,
+ "area": "customers",
+ "cluster": null,
+ "doc_type": "cooperative_master_agreement",
+ "parent_id": null,
+ "counterparty": "CUS-LKP",
+ "effective_date": "2015-08-13",
+ "status": "active",
+ "roles": [
+  "cooperative_piggyback",
+  "l2_link"
+ ],
+ "source_class": "public_agency",
+ "source_ref": "https://ecm.chicago.gov/eSMARTContracts/service/DPSWebDocumentViewer?id={D0FBF478-0000-C219-BBC7-13BE0E2E3F08}&osName=eContentContracts&el=0&image=image",
+ "year_shift": 0,
+ "governing_law_remap": null,
+ "name_map_size": 139,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

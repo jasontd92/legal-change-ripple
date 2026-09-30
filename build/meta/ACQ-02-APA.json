@@ -1,0 +1,37 @@
+{
+ "doc_id": "ACQ-02-APA",
+ "path": "documents/acquisitions/ACQ-02_northgate-heating-and-air_asset-purchase-agreement_2021-06-01.md",
+ "chars": 87595,
+ "area": "acquisitions",
+ "cluster": null,
+ "doc_type": "asset_purchase_agreement",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2021-06-01",
+ "status": "active",
+ "roles": [
+  "noncompete",
+  "sale_of_business",
+  "non_owner_signer",
+  "wa",
+  "template_lineage"
+ ],
+ "source_class": "edgar",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1005502/000101968708005426/energyking_8k-ex0201.htm",
+ "year_shift": 13,
+ "governing_law_remap": {
+  "from": [
+   "Tennessee",
+   "Massachusetts"
+  ],
+  "to": "Washington"
+ },
+ "name_map_size": 89,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

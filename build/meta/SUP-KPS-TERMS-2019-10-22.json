@@ -1,0 +1,27 @@
+{
+ "doc_id": "SUP-KPS-TERMS-2019-10-22",
+ "path": "documents/supply/supplier-terms/keystone-plumbing-supply_terms-and-conditions-of-sale_2019-10-22.md",
+ "chars": 10970,
+ "area": "supply",
+ "cluster": null,
+ "doc_type": "standard_terms",
+ "counterparty": "SUP-KPS",
+ "effective_date": "2019-10-22",
+ "version_label": "as published October 2019",
+ "published_url": "https://www.keystoneplumbingsupply.com/terms-of-sale",
+ "status": "superseded",
+ "roles": [
+  "tariff",
+  "implicit_pass_through",
+  "incorporated_web_terms"
+ ],
+ "source_class": "web_rewritten",
+ "source_ref": "W-FERGUSON-2019",
+ "copy_share": 0.168,
+ "version_pair_check": null,
+ "checks": {
+  "ok": true,
+  "fails": [],
+  "leaks": []
+ }
+}

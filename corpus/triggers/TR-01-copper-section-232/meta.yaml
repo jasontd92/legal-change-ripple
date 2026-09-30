@@ -1,0 +1,90 @@
+group: TR-01-copper-section-232
+domain: tariff
+summary: Section 232 copper duties. Three dated versions; each changes base, rate or scope.
+versions:
+- id: 2025-02-25_eo-14220-investigation
+  status: final
+  effective: 2025-02-25
+  file: 2025-02-25_eo-14220-investigation.txt
+  source_url: https://www.federalregister.gov/documents/full_text/text/2025/02/28/2025-03439.txt
+  fetched_url: https://www.federalregister.gov/documents/full_text/text/2025/02/28/2025-03439.txt
+  sha256_16: 77839e3d5b8553b8
+  chars: 6623
+  title: EO 14220 Addressing the Threat to National Security From Imports of Copper
+- id: 2025-07-30_proclamation-10962
+  status: effective
+  effective: 2025-08-01
+  note: Annex is image-only in the Federal Register. Per the White House annex images it covers HTS 7406-7419, including 7411
+    (copper tubes and pipes), 7412 (tube/pipe fittings) and 7418.20 (sanitary ware); not 8481 (valves), 8419 (water heaters)
+    or 8415 (air conditioners).
+  file: 2025-07-30_proclamation-10962.txt
+  source_url: https://www.federalregister.gov/documents/full_text/text/2025/08/05/2025-14893.txt
+  fetched_url: https://www.federalregister.gov/documents/full_text/text/2025/08/05/2025-14893.txt
+  sha256_16: 37eb88dc5cff07ac
+  chars: 16337
+  title: Proclamation 10962 Adjusting Imports of Copper
+- id: 2025-07-30_proclamation-10962_ANNEX-SCOPE-derived
+  status: derived_scope_note
+  effective: 2025-08-01
+  file: 2025-07-30_proclamation-10962_ANNEX-SCOPE-derived.txt
+  source_url: null
+  fetched_url: null
+  sha256_16: null
+  chars: 2554
+  title: Derived machine-readable scope note (see file header)
+- id: 2025-07-31_cbp-csms-65794272
+  status: guidance
+  effective: 2025-08-01
+  file: 2025-07-31_cbp-csms-65794272.txt
+  source_url: https://content.govdelivery.com/accounts/USDHSCBP/bulletins/3ebf0e0
+  fetched_url: https://web.archive.org/web/20250925133744id_/https://content.govdelivery.com/accounts/USDHSCBP/bulletins/3ebf0e0
+  sha256_16: c05170681cafedbb
+  chars: 7889
+  title: 'CSMS #65794272 Section 232 Import Duties on Copper and Copper Derivative Products'
+- id: 2026-04-02_proclamation-11021
+  status: effective
+  effective: 2026-04-06
+  file: 2026-04-02_proclamation-11021.txt
+  source_url: https://www.federalregister.gov/documents/full_text/text/2026/04/09/2026-06960.txt
+  fetched_url: https://www.federalregister.gov/documents/full_text/text/2026/04/09/2026-06960.txt
+  sha256_16: d234468f296d06bc
+  chars: 32567
+  title: Proclamation 11021 Strengthening Actions ... Aluminum, Steel, and Copper
+- id: 2026-06-01_proclamations-11021-11032_ANNEX-SCOPE-derived-ocr-partial
+  status: derived_scope_note
+  effective: 2026-06-08
+  file: 2026-06-01_proclamations-11021-11032_ANNEX-SCOPE-derived-ocr-partial.txt
+  source_url: null
+  fetched_url: null
+  sha256_16: null
+  chars: 2709
+  title: Derived machine-readable scope note (see file header)
+- id: 2026-06-01_proclamation-11032
+  status: effective
+  effective: 2026-06-08
+  file: 2026-06-01_proclamation-11032.txt
+  source_url: https://www.federalregister.gov/documents/full_text/text/2026/06/04/2026-11314.txt
+  fetched_url: https://www.federalregister.gov/documents/full_text/text/2026/06/04/2026-11314.txt
+  sha256_16: 69c2312b0b0576b0
+  chars: 19949
+  title: Proclamation 11032 Further Adjusting the Tariff Regimes ... Aluminum, Steel, and Copper
+- id: 2026-07-20_proclamation-11045-aluminum-DISTRACTOR
+  status: effective
+  effective: 2026-07-20
+  distractor: true
+  file: 2026-07-20_proclamation-11045-aluminum-DISTRACTOR.txt
+  source_url: https://www.federalregister.gov/documents/full_text/text/2026/07/23/2026-14990.txt
+  fetched_url: https://www.federalregister.gov/documents/full_text/text/2026/07/23/2026-14990.txt
+  sha256_16: e82a12d73173a905
+  chars: 13519
+  title: Proclamation 11045 Aluminum (distractor)
+- id: 2026-07-30_dpa-critical-minerals-DISTRACTOR
+  status: final
+  effective: 2026-07-30
+  distractor: true
+  file: 2026-07-30_dpa-critical-minerals-DISTRACTOR.txt
+  source_url: https://www.federalregister.gov/documents/full_text/text/2026/08/04/2026-15859.txt
+  fetched_url: https://www.federalregister.gov/documents/full_text/text/2026/08/04/2026-15859.txt
+  sha256_16: b8a2a51a7f6327e7
+  chars: 4211
+  title: DPA 101 Determination on Recoverable Critical Minerals (distractor)

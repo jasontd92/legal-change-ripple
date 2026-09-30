@@ -1,0 +1,15 @@
+{
+  "model_config": {
+    "orchestrator": "claude-sonnet-5",
+    "subagent": "claude-sonnet-5",
+    "classifier": "self",
+    "provider_pin": null
+  },
+  "cache": "on",
+  "concurrency": 4,
+  "max_tool_calls_per_subagent": 16,
+  "ranking": "deterministic",
+  "prices": {
+    "claude-sonnet-5": { "input": 2, "cached_input": 0.2, "output": 10 }
+  }
+}

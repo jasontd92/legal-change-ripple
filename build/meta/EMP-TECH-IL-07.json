@@ -1,0 +1,23 @@
+{
+ "doc_id": "EMP-TECH-IL-07",
+ "path": "documents/employment/signed-agreements/delia-whitcombe_technician-employment-agreement_il_2024-10-14.md",
+ "chars": 25648,
+ "area": "employment",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "employment_agreement",
+ "parent_id": "EMP-TPL-TECH-IL",
+ "effective_date": "2024-10-14",
+ "roles": [
+  "noncompete",
+  "il"
+ ],
+ "planted_features": [
+  "template_instance",
+  "annualized_earnings:93080",
+  "signed:2024-10-14",
+  "state:IL"
+ ],
+ "employee": "Delia Whitcombe",
+ "status": "active"
+}

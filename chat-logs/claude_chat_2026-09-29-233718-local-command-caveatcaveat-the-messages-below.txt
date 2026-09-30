@@ -1,0 +1,315 @@
+ ▐▛███▛█   Claude Code v2.1.282
+▝▜██████▀  Opus 5.5 · Claude Pro
+ ▝▝   ▝▝   ~/Documents/gc-ai-take-home-research/eval-scenarios/answer-keys
+
+  Opus 5.5 is now your default model and it draws down usage faster than Sonnet 5. Switch anytime with /model.
+
+❯ /clear                                                                        
+
+❯ execute the implmentation of the full eval suite, as desacribed in            
+  HANDOFF.md. For actual eval answer sets, use dedicated subagents to preserve  
+  your own session context for steering and ensuring e2e completion. Let me     
+  know at anytime if you run into ambiguity in fundamental areas. Otherwise,    
+  implemtn e2e                                                                  
+
+  Read 2 files, listed 2 directories, ran 2 shell commands (ctrl+o to expand)
+
+⏺ I've read the handoff doc and the contract schemas. Next I'm reading the tier
+  file and the scenario index so I can write the subagent briefs.
+
+  Ran 4 shell commands (ctrl+o to expand)
+
+⏺ Now I'll build shared span and QA tooling, so all five subagents compute
+  offsets and check their work the same way.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Write(tools/spans.py)
+  ⎿  Wrote 264 lines to tools/spans.py
+       1 #!/usr/bin/env python3
+         /normalize (v0.1.0):
+         po root.
+       5   python3 eval-scenarios/answer-keys/tools/spans.py find <file> 
+       6       Print every match of the quote (whitespace-insensitive) wi
+         th offsets and the
+          and section labels.
+         aml> [...]
+         m the quote. The quote
+         ) to pick one.
+     … +302 lines (ctrl+o to expand)
+
+⏺ Quick smoke test on a real document, with a tiny fixture gold file:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Tooling works. Next I'll write a shared conventions file so the five subagents
+  produce consistent, mergeable output.
+
+⏺ Write(CONVENTIONS.md)
+  ⎿  Wrote 134 lines to CONVENTIONS.md
+       1 # Answer-key conventions (binding for WP1–WP6)
+       3 Supplements `../HANDOFF.md` §6. Where this file is more specific
+         , follow it.
+       4 Contract version: **0.1.0** (`contracts/VERSION`). All paths bel
+       5 repo-relative (repo root = `gc-ai-take-home-research/`); run too
+         ls from there.
+       7 ## 1. Spans and offsets
+       8 - Every span has the contract shape (`contracts/schemas/common.s
+         chema.json`
+      10   `{file, section_label, quote, start, end, occurrence?}`.
+     … +199 lines (ctrl+o to expand)
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ Got the full picture: each e2e file's owner writes all findings from it, while
+  other packages just reference it via index rows. Launching WP1–WP5 in
+  parallel now as Sonnet-class agents per HANDOFF §8, each writing only its own
+  files.
+
+⏺ Write(BRIEF-common.md)
+  ⎿  Wrote 77 lines to BRIEF-common.md
+       1 # Common brief for gold work packages WP1–WP5
+       3 You are authoring **gold answer keys** for an eval suite of a le
+         gal-change
+       4 monitoring agent. Planning is finished and validated. Your job i
+       5 items, verify every fact against the corpus, and write gold file
+         s. You don't
+       7 
+       8 ## Read first (in this order, only the parts you need)
+       9 1. `eval-scenarios/HANDOFF.md`: the whole file. §3 (frozen decis
+      10    not up for debate.
+     … +95 lines (ctrl+o to expand)
+
+⏺ 5 background agents launched (↓ to manage)
+   ├ WP1 tariff supply + T2 gold
+   ├ WP2 tariff downstream + T1 gold
+   ├ WP3 noncompete + T3a/T3b/T4 gold
+   ├ WP4 consumer/TR-14/controls gold
+   └ WP5 metamorphic/robustness/invariant fixtures
+
+⏺ While the five packages run, I'll build the WP6 merge/split/QA script. It
+  needs to be ready when they report back.
+
+⏺ Write(tools/merge.py)
+  ⎿  Wrote 169 lines to tools/merge.py
+       1 #!/usr/bin/env python3
+         efs, assign the held-out split,
+       3 and report totals by eval id and slice. Run from anywhere:
+       5 Without --write it only prints the report and problems.
+       6 
+         us done, not merged), stratified by
+       8 (trigger, primary slice), fixed SEED. Sentinel rows are stratifi
+       9 proportion. The unit is the scenario id; e2e files hold both dev
+          and holdout findings (the scorer
+         herit their base item's split to a
+     … +197 lines (ctrl+o to expand)
+
+⏺ All five packages are running in the background:
+
+  - WP1: tariff supply and T2
+  - WP2: downstream and T1
+  - WP3: noncompete and T3a/T3b/T4
+  - WP4: TR-14, the TR-03 control and the TR-90 controls
+  - WP5: metamorphic, robustness and invariant fixtures
+
+  The shared pieces are in eval-scenarios/answer-keys/:
+  - Conventions: CONVENTIONS.md and BRIEF-common.md.
+  - tools/spans.py: works out character offsets from verbatim quotes and runs
+    the QA checks from HANDOFF §9. Nobody types offsets by hand.
+  - tools/merge.py: builds INDEX.yaml, assigns the held-out split with a fixed
+    seed and reports coverage.
+
+  One call made without asking: the contract (G0) isn't frozen yet, but I'm
+  computing offsets now against normaliser v0.1.0. Each gold file is marked
+  offsets: computed_pre_G0. If the normaliser changes, re-running spans.py fill
+  recomputes every offset. I'll check in again when the packages report back.
+
+✻ Worked for 5m 36s · done 11:12 PM
+
+❯ pause at earliest opprutnity to cleanly finsih out in flight jobs -           
+  approachin session limit                                                      
+  ⎿  Message queued for delivery to a94f1098413308c7b at its next tool 
+     round.
+  ⎿  Message queued for delivery to a9f637bb419217706 at its next tool 
+     round.
+  ⎿  Message queued for delivery to a9787b3f07b77578d at its next tool 
+     round.
+  ⎿  Message queued for delivery to ad43a0b5f4711a631 at its next tool 
+     round.
+  ⎿  Message queued for delivery to a104ed154dd0c49d5 at its next tool 
+     round.
+⏺ I'll also leave a resume note, so a fresh session can pick up where this one
+  stops.
+
+⏺ Write(PROGRESS.md)
+  ⎿  Wrote 34 lines to PROGRESS.md
+       1 # Answer-key build: progress (orchestrator)
+       3 **State 2026-09-29: PAUSED at the session limit.** WP1–WP5 were 
+         asked to
+       4 finish their current item and write `STATUS: paused` (or `comple
+       5 `## Remaining` list in `progress/WP<n>.md`.
+       6 
+       8 1. Read `../HANDOFF.md`, `CONVENTIONS.md` and `BRIEF-common.md`.
+       9 2. For each package, read `progress/WP<n>.md`. If it isn't `STAT
+         US: complete`,
+         Resume. Skip
+     … +41 lines (ctrl+o to expand)
+
+⏺ I've asked all five subagents to stop cleanly. Each will:
+  - finish only the item it's on now
+  - recompute and check its offsets
+  - mark its progress file STATUS: paused (or complete) with a ## Remaining list
+  - make sure its index rows cover everything done so far
+
+  None has reported back yet. I'll pass on their stop reports as they arrive.
+
+  If the session ends before that, eval-scenarios/answer-keys/PROGRESS.md has
+  what a new session needs to resume:
+  - the resume steps
+  - each subagent's original scope, so it can be relaunched to skip finished
+    items and continue from its remaining list
+  - the final merge/QA commands
+  - the decisions I made along the way
+
+  Nothing has been checked across all five packages yet. The merged INDEX.yaml,
+  the held-out split and the coverage check come after they're all done.
+
+✻ Worked for 30s · done 11:12 PM
+
+⏺ Agent "WP3 noncompete + T3a/T3b/T4 gold" finished · 3m 22s
+
+⏺ WP3 has stopped cleanly, before writing any gold files, so there's nothing to
+  check yet.
+
+  - Done: all the reading, and one open fact resolved. The official Washington
+    2026 earnings threshold for noncompetes is $126,858.83 (WSR 25-20-099), and
+    it's recorded in progress/WP3.md.
+  - Worth knowing: that threshold puts Beatrice Falkner ($121,160) below the
+    line, although the scenario file calls her "near-threshold". Only Whitcombe
+    and Wilder ($127,920) are above it.
+  - Remaining: everything else in WP3 is in the file's remaining list:
+    - both TR-10 end-to-end files and the TR-12 one
+    - the three unit files for the Illinois and FTC-rule sentinels
+    - the coverage-fill items and index rows
+    - finding Gemma Northcott's earnings
+    - the Illinois earnings threshold
+
+  Four packages (WP1, WP2, WP4, WP5) are still finishing their current item.
+
+✻ Sautéed for 4s · done 11:14 PM
+
+⏺ Agent "WP2 tariff downstream + T1 gold" finished · 5m 14s
+
+⏺ WP2 has stopped cleanly after planning only. It hasn't opened any corpus
+  documents, so there are no gold files or spans yet.
+
+  - Done: WP2 settled where each of its 37 scenarios goes:
+    - 26 go in the T1 end-to-end file it writes
+    - 3 belong to WP1's T2 file
+    - 1 belongs to WP4's TR-03 control
+    - 2 are merged into the validated tier file
+    - 5 are backlog
+
+    It also wrote a finding-by-finding build plan for the T1 file. Both are in
+    progress/WP2.md, marked STATUS: paused.
+  - Two calls it expects to be hard: whether the loan-covenant (FCCR) finding is
+    clearly tied to the copper trigger, and whether the Northaire "not subject
+    to decrease" clause is actually binding. Either could end up as a
+    needs-review item instead of a settled answer. The FCCR one is a tier-1
+    finding, so if that happens I'll bring it to you rather than downgrade it
+    quietly.
+
+  WP1, WP4 and WP5 are still wrapping up their current items.
+
+✻ Crunched for 6s · done 11:15 PM
+
+⏺ Agent "WP4 consumer/TR-14/controls gold" finished · 5m 35s
+
+⏺ WP4 has stopped cleanly after research and planning. It hasn't written any
+  gold files yet. It settled three gate calls, all recorded in progress/WP4.md:
+
+  - TR-90 controls: Wyoming SF 107 and Texas SB 1318 are both clean exits, so
+    one control file (C2) covers them.
+  - TR-03 control (Mexican copper pipe): the company gate is "proceed" and then
+    scoping finds nothing relevant. It is not an exit.
+  - Negative controls: the loan (credit) agreement must not appear in the
+    non-tariff runs, and the Great Plains Copper Tube supply contract is the
+    keyword-match trap in the TR-03 run.
+
+  Its index file covers all 49 scenarios in file D plus the two TR-03 scenarios
+  from file A. The 17 it selected are marked todo. merge.py doesn't accept that
+  status, so they'll need to become done as each file is written.
+
+  Still waiting on WP1 and WP5.
+
+✻ Churned for 5s · done 11:16 PM
+
+⏺ Agent "WP1 tariff supply + T2 gold" finished · 6m 44s
+
+⏺ WP1 has stopped cleanly. Like the others, it finished the reading and planning
+  but hasn't written any gold files, and nothing is half-edited.
+
+  - Plan: its build plan is in progress/WP1.md. It covers the TR-02 end-to-end
+    file (four change items, eight findings including the two sentinels and the
+    loan-covenant finding) and two version-pin unit files.
+  - Index: index-parts/WP1.yaml has 35 rows:
+    - 14 marked done that point at WP2's T1 file (which doesn't exist yet)
+    - 20 backlog, including its own planned items
+    - 1 excluded
+
+    When the merge runs, it will flag the 14 done rows until WP2 writes the T1
+    file.
+  - Still to do: WP1 worked only from the scenario-file summaries this pass.
+    Before writing spans it has to check the actual corpus documents: the Great
+    Plains invoices, the Hai Phong customs entry, Keystone's terms and the loan
+    agreement.
+
+  Only WP5 is still running.
+
+✻ Worked for 5s · done 11:17 PM
+
+⏺ Agent "WP5 metamorphic/robustness/invariant fixtures" finished · 5m 46s
+
+⏺ All five packages have stopped. I'll record where each one is in the resume
+  note.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ I've paused the build, and all five subagents stopped cleanly. They finished
+  their reading and planning, but no gold files have been written yet, so the
+  eval suite isn't built.
+
+  What's on disk in eval-scenarios/answer-keys/:
+  - Shared rules and tools: a conventions file and a common brief for the
+    subagents. tools/spans.py turns verbatim quotes into character offsets and
+    runs the QA checks. tools/merge.py builds INDEX.yaml, assigns the held-out
+    split and reports coverage.
+  - Per-package plans: progress/WP1–5.md, each marked STATUS: paused with a list
+    of what's left.
+  - Index rows: index-parts/WP1–5.yaml, the per-package scenario rows that
+    merge.py will combine into INDEX.yaml.
+  - PROGRESS.md: the resume point. It has where each package stands, the steps
+    to resume, each package's original scope, and the decisions I made.
+
+  Settled during planning:
+  - Washington 2026 earnings threshold: $126,858.83 (WSR 25-20-099). Beatrice
+    Falkner, at $121,160, is below it, although the scenario file calls her
+    "near-threshold".
+  - TR-90 controls: Wyoming SF 107 and Texas SB 1318 are both clean exits at the
+    company gate.
+  - TR-03 control: the company gate is "proceed", then scoping finds nothing
+    relevant.
+
+  Still open, and may need your decision:
+  - Loan-covenant (FCCR) finding: it's tier 1 in both tariff runs, but WP2 isn't
+    sure its link to the copper trigger will hold up as a settled answer. If it
+    can't, the plan is to keep it tier 1, mark it needs-review and bring it to
+    you rather than downgrade it quietly.
+  - Northaire "not subject to decrease" clause: whether it's actually binding
+    still has to be checked against the dealer agreement.
+
+  To resume in a new session: say "resume the answer-key build from
+  eval-scenarios/answer-keys/PROGRESS.md". I'll relaunch each package from where
+  it stopped, then merge, split and run the QA checks.
+
+✻ Cooked for 11m 0s · done 11:17 PM

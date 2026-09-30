@@ -1,0 +1,29 @@
+{
+ "doc_id": "EMP-RCA-FORM",
+ "path": "documents/employment/form_restrictive-covenant-and-invention-assignment-agreement_managers_2022.md",
+ "chars": 41020,
+ "area": "employment",
+ "cluster": null,
+ "doc_type": "restrictive_covenant_form",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2022-07-01",
+ "status": "active",
+ "roles": [
+  "noncompete",
+  "compensating_protection",
+  "confidentiality"
+ ],
+ "source_class": "edgar_llm_adapted",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1503707/000150370722000031/ceoformofrestrictivecovena.htm",
+ "year_shift": 0,
+ "governing_law_remap": null,
+ "name_map_size": 10,
+ "filled_fields": [],
+ "adapt_length_ratio": 1.0,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

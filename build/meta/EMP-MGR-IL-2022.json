@@ -1,0 +1,33 @@
+{
+ "doc_id": "EMP-MGR-IL-2022",
+ "path": "documents/employment/branch-manager-employment-agreement_elk-grove-village_2022-11-01.md",
+ "chars": 14522,
+ "area": "employment",
+ "cluster": null,
+ "doc_type": "manager_employment_agreement",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2022-11-01",
+ "status": "active",
+ "roles": [
+  "noncompete",
+  "il"
+ ],
+ "source_class": "edgar",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1005502/000101968708002225/energyking_10qsb-ex1005.htm",
+ "year_shift": 14,
+ "governing_law_remap": {
+  "from": [
+   "California"
+  ],
+  "to": "Illinois"
+ },
+ "name_map_size": 16,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

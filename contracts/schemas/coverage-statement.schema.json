@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gc-take-home.local/contracts/0.1.0/coverage-statement.schema.json",
+  "title": "CoverageStatement",
+  "type": "object",
+  "required": [
+    "reviewed_stacks",
+    "excluded_stacks",
+    "unparseable_files",
+    "out_of_scope"
+  ],
+  "properties": {
+    "reviewed_stacks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "excluded_stacks": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "unparseable_files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "out_of_scope": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

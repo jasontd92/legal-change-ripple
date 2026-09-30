@@ -1,0 +1,19 @@
+{
+ "doc_id": "SUP-NCS-NOTICE-2026-06",
+ "path": "documents/supply/supplier-notices/northaire-comfort-systems_dealer-bulletin_2026-06-15.md",
+ "chars": 635,
+ "area": "supply",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "supplier_notice",
+ "counterparty": "SUP-NCS",
+ "effective_date": "2026-06-15",
+ "roles": [
+  "tariff",
+  "one_way_ratchet"
+ ],
+ "planted_features": [
+  "ratchet_after_tariff_decrease"
+ ],
+ "status": "active"
+}

@@ -1,0 +1,29 @@
+{
+ "doc_id": "CUS-SMB-01",
+ "path": "documents/customers/city-of-san-marcos-bend_on-call-plumbing-job-order-contract_2023-10-03.md",
+ "chars": 137166,
+ "area": "customers",
+ "cluster": null,
+ "doc_type": "customer_master_agreement",
+ "parent_id": null,
+ "counterparty": "CUS-SMB",
+ "effective_date": "2023-10-03",
+ "status": "active",
+ "roles": [
+  "tariff",
+  "indirect_escalator",
+  "anti_indemnity"
+ ],
+ "source_class": "public_agency",
+ "source_ref": "https://legistar.granicus.com/sanantonio/attachments/52daf76c-1ae1-49d1-be07-83caaa4573e8.pdf",
+ "year_shift": 4,
+ "governing_law_remap": null,
+ "name_map_size": 9,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

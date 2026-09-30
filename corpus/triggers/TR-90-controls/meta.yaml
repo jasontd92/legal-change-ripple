@@ -1,0 +1,25 @@
+group: TR-90-controls
+domain: control
+summary: Real changes that should produce no action for this company (wrong profession, wrong state).
+versions:
+- id: 2025-06-20_tx-sb-1318-physicians
+  status: effective
+  effective: 2025-09-01
+  file: 2025-06-20_tx-sb-1318-physicians.txt
+  source_url: https://capitol.texas.gov/tlodocs/89R/billtext/html/SB01318F.htm
+  fetched_url: https://capitol.texas.gov/tlodocs/89R/billtext/html/SB01318F.htm
+  sha256_16: 737d88b8ff17c50b
+  chars: 6877
+  title: Texas SB 1318 (2025) physician noncompetes (control)
+- id: 2025-03-_wy-sf-107
+  status: effective
+  effective: 2025-07-01
+  file: 2025-03-_wy-sf-107.txt
+  source_url: https://wyoleg.gov/2025/Enroll/SF0107.pdf
+  fetched_url: https://wyoleg.gov/2025/Enroll/SF0107.pdf
+  sha256_16: 8bf0bc67816f391b
+  chars: 4042
+  title: Wyoming SF 107 (2025) (out-of-footprint control)
+role: control
+expected_relevance: 'CONTROL. Neither change reaches this company: TX SB 1318 covers physician noncompetes (no physicians
+  employed); WY SF 107 is outside the states of operation (CA, WA, IL, TX). Expected result: company-level exit or no findings.'

@@ -1,0 +1,35 @@
+{
+ "doc_id": "ACQ-05-RCA",
+ "path": "documents/acquisitions/ACQ-05_owen-pemberton_seller-restrictive-covenant-agreement_2025-02-18.md",
+ "chars": 23594,
+ "area": "acquisitions",
+ "cluster": null,
+ "doc_type": "seller_noncompete",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2025-02-18",
+ "status": "active",
+ "roles": [
+  "noncompete",
+  "sale_of_business",
+  "wa"
+ ],
+ "source_class": "court",
+ "source_ref": "https://storage.courtlistener.com/recap/gov.uscourts.flmd.355075/gov.uscourts.flmd.355075.4.1.pdf",
+ "year_shift": 7,
+ "governing_law_remap": {
+  "from": [
+   "Florida",
+   "Delaware"
+  ],
+  "to": "Washington"
+ },
+ "name_map_size": 12,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

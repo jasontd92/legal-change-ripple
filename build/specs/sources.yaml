@@ -1,0 +1,135 @@
+# Every fetch target. kind: trigger | agency | edgar | court | web | cuad
+# method: http (default) | fr (Federal Register full-text) | wb (Wayback raw snapshot at ts) | cdx (closest Wayback snapshot to date)
+# ---------------- TRIGGERS: tariff ----------------
+- {id: T-EO14220, kind: trigger, method: fr, fr: 2025/02/28/2025-03439, title: "EO 14220 Addressing the Threat to National Security From Imports of Copper"}
+- {id: T-P10962, kind: trigger, method: fr, fr: 2025/08/05/2025-14893, title: "Proclamation 10962 Adjusting Imports of Copper"}
+- {id: T-P11021, kind: trigger, method: fr, fr: 2026/04/09/2026-06960, title: "Proclamation 11021 Strengthening Actions ... Aluminum, Steel, and Copper"}
+- {id: T-P11032, kind: trigger, method: fr, fr: 2026/06/04/2026-11314, title: "Proclamation 11032 Further Adjusting the Tariff Regimes ... Aluminum, Steel, and Copper"}
+- {id: T-P11045, kind: trigger, method: fr, fr: 2026/07/23/2026-14990, title: "Proclamation 11045 Aluminum (distractor)"}
+- {id: T-DPA-CRITMIN, kind: trigger, method: fr, fr: 2026/08/04/2026-15859, title: "DPA 101 Determination on Recoverable Critical Minerals (distractor)"}
+- {id: T-SCOTUS-IEEPA, kind: trigger, url: "https://www.supremecourt.gov/opinions/25pdf/607us2r12_8nj9.pdf", fmt: pdf, title: "Learning Resources, Inc. v. Trump, 607 U.S. 229 (2026)"}
+- {id: T-EO14389, kind: trigger, method: fr, fr: 2026/02/25/2026-03832, title: "EO 14389 Ending Certain Tariff Actions"}
+- {id: T-P11012, kind: trigger, method: fr, fr: 2026/02/25/2026-03824, title: "Proclamation 11012 Temporary Import Surcharge (Section 122)"}
+- {id: T-CBP-REFUND-PRA, kind: trigger, method: fr, fr: 2026/07/08/2026-13771, title: "CBP Court-Ordered Refunds Under IEEPA (PRA notice)"}
+- {id: T-CBP-REFUND-PAGE, kind: trigger, url: "https://www.cbp.gov/trade/programs-administration/trade-remedies/ieepa-duty-refunds", fmt: html, title: "CBP IEEPA Duty Refunds page"}
+- {id: T-CSMS-65794272, kind: trigger, method: wb, url: "https://content.govdelivery.com/accounts/USDHSCBP/bulletins/3ebf0e0", ts: "20250925133744", fmt: html, title: "CSMS #65794272 Section 232 Import Duties on Copper and Copper Derivative Products"}
+- {id: T-ADCVD-MEX-2026, kind: trigger, method: fr, fr: 2026/09/21/2026-19273, title: "Seamless Refined Copper Pipe and Tube From Mexico: Preliminary Results (AD)"}
+# ---------------- TRIGGERS: noncompete & other ----------------
+- {id: T-WA-ESHB1155, kind: trigger, url: "https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Session%20Laws/House/1155-S.SL.pdf", fmt: pdf, title: "WA ESHB 1155, Chapter 149, Laws of 2026"}
+- {id: T-WA-RCW4962-CURRENT, kind: trigger, url: "https://app.leg.wa.gov/RCW/default.aspx?cite=49.62&full=true", fmt: html, title: "RCW 49.62 (text in force before ESHB 1155 takes effect)"}
+- {id: T-WA-SB5935-2024, kind: trigger, url: "https://lawfilesext.leg.wa.gov/biennium/2023-24/Pdf/Bills/Session%20Laws/Senate/5935-S.SL.pdf", fmt: pdf, title: "WA SB 5935 (2024) amending RCW 49.62"}
+- {id: T-IL-PA103-921, kind: trigger, method: cdx, url: "https://www.ilga.gov/legislation/publicacts/fulltext.asp?Name=103-0921", date: "20260101", fmt: html, title: "Illinois Public Act 103-0921 (construction employees)"}
+- {id: T-IL-820ILCS90, kind: trigger, method: wb, url: "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3737&ChapterID=68", ts: "20230306194439", fmt: html, title: "820 ILCS 90 Illinois Freedom to Work Act"}
+- {id: T-CA-AB692, kind: trigger, url: "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB692", fmt: html, title: "California AB 692 (Ch. 703, Stats. 2025)"}
+- {id: T-CA-AB2863, kind: trigger, url: "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB2863", fmt: html, title: "California AB 2863 (Ch. 515, Stats. 2024) Automatic Renewal Law"}
+- {id: T-CA-SB699, kind: trigger, url: "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240SB699", fmt: html, title: "California SB 699 (2023)"}
+- {id: T-CA-AB1076, kind: trigger, url: "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB1076", fmt: html, title: "California AB 1076 (2023)"}
+- {id: T-FTC-NCREMOVAL, kind: trigger, method: fr, fr: 2026/02/12/2026-02866, title: "FTC: Revision of Negative Option Rule, Withdrawal of CARS Rule, Removal of Non-Compete Rule"}
+- {id: T-FTC-NEGOPT-ANPRM, kind: trigger, method: fr, fr: 2026/03/13/2026-04952, title: "FTC Rule Concerning the Use of Prenotification Negative Option Plans (2026 request for comment)"}
+- {id: T-FTC-ROLLINS, kind: trigger, method: fr, fr: 2026/04/22/2026-07844, title: "Rollins, Inc.; Analysis of Proposed Agreement Containing Consent Order"}
+- {id: T-TX-SB1318, kind: trigger, url: "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB01318F.htm", fmt: html, title: "Texas SB 1318 (2025) physician noncompetes (control)"}
+- {id: T-WY-SF107, kind: trigger, url: "https://wyoleg.gov/2025/Enroll/SF0107.pdf", fmt: pdf, title: "Wyoming SF 107 (2025) (out-of-footprint control)"}
+# ---------------- PUBLIC AGENCY ----------------
+- {id: A-WADES-04224-C-MCK, kind: agency, url: "https://apps.des.wa.gov/contracting/04224c.McKinstry.pdf", fmt: pdf}
+- {id: A-WADES-04224-A-MCK, kind: agency, url: "https://apps.des.wa.gov/contracting/04224a.McKinstry.pdf", fmt: pdf}
+- {id: A-WADES-04224-C-JHK, kind: agency, url: "https://apps.des.wa.gov/contracting/04224c.JHKelly.pdf", fmt: pdf}
+- {id: A-WADES-04224-PRICE, kind: agency, url: "https://apps.des.wa.gov/contracting/04224p.xlsx", fmt: xlsx}
+- {id: A-WADES-04224-FAQ, kind: agency, url: "https://apps.des.wa.gov/contracting/04224.FAQ.docx", fmt: docx}
+- {id: A-WADES-04224-SUMMARY, kind: agency, url: "https://apps.des.wa.gov/DESContracts/Home/ContractSummary/04224", fmt: html}
+- {id: A-CHI-134953-R0, kind: agency, chicago: "{D0FBF478-0000-C219-BBC7-13BE0E2E3F08}", fmt: pdf}
+- {id: A-CHI-134953-R1, kind: agency, chicago: "{F08A8681-0000-C214-BF94-000D623AF3DF}", fmt: pdf}
+- {id: A-CHI-134953-R2, kind: agency, chicago: "{2094CD8E-0000-C31B-8A3B-0B06F3B5146D}", fmt: pdf}
+- {id: A-CHI-134953-R4, kind: agency, chicago: "{40682E9C-0000-C51A-BC04-C073AFB805EE}", fmt: pdf}
+- {id: A-CHI-32572-R0, kind: agency, chicago: "{A3F6B10C-DD35-4B1D-97CB-C046C1D4CF76}", fmt: pdf}
+- {id: A-CHI-32572-R1, kind: agency, chicago: "{B5D983B0-676F-4384-A7AA-BA6D41B80E09}", fmt: pdf}
+- {id: A-CHI-32572-R4, kind: agency, chicago: "{735153B5-636D-482B-8AEF-BF57A13EF920}", fmt: pdf}
+- {id: A-CHI-32572-R7, kind: agency, chicago: "{6967F526-2887-43B3-8E25-889272542622}", fmt: pdf}
+- {id: A-CHI-32572-R11, kind: agency, chicago: "{E87EEBBC-CD95-4CA2-BA79-61FDAA807084}", fmt: pdf}
+- {id: A-CHI-32572-R19, kind: agency, chicago: "{30ED52F7-5E28-4E3B-B569-A37BD4B2F906}", fmt: pdf}
+- {id: A-CHI-32572-R20, kind: agency, chicago: "{F7B1DF1D-4480-4160-BB83-A714955AC481}", fmt: pdf}
+- {id: A-CHI-74381-R0, kind: agency, chicago: "{A801C86A-72A7-4C82-8656-12BCE12EF601}", fmt: pdf}
+- {id: A-CHI-74381-R7, kind: agency, chicago: "{F0ECA897-0000-CA1B-A5B4-80DEEDC82FC0}", fmt: pdf}
+- {id: A-CHI-74381-R8, kind: agency, chicago: "{7074CE99-0000-CF18-8167-17062E7F0309}", fmt: pdf}
+- {id: A-CHI-74381-R10, kind: agency, chicago: "{C0E32C9E-0000-C618-9A67-6AB3F3DB29E9}", fmt: pdf}
+- {id: A-SA-JOC-PLUMB-RFCSP, kind: agency, url: "https://legistar.granicus.com/sanantonio/attachments/52daf76c-1ae1-49d1-be07-83caaa4573e8.pdf", fmt: pdf}
+- {id: A-SA-PLUMB-CITYWIDE-RFCSP, kind: agency, url: "https://legistar.granicus.com/sanantonio/attachments/77ddd570-3321-4410-8b44-e0494f806c9b.pdf", fmt: pdf}
+- {id: A-SA-PLUMB-CITYWIDE-ADD1, kind: agency, url: "https://legistar.granicus.com/sanantonio/attachments/91d2d6b5-7a76-49df-b958-2723ece5bc2d.pdf", fmt: pdf}
+- {id: A-FHWA-1273, kind: agency, url: "https://www.fhwa.dot.gov/programadmin/contracts/1273/1273.pdf", fmt: pdf}
+- {id: A-HUD-5370, kind: agency, url: "https://www.hud.gov/sites/dfiles/OCHCO/documents/5370.pdf", fmt: pdf}
+# ---------------- EDGAR ----------------
+- {id: E-NTRA-SUPPLY-2015, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1604821/000104746915005154/a2224899zex-10_13.htm"}
+- {id: E-NTRA-AMD11-2026, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1604821/000162828026032478/ntra-20260331xex101.htm"}
+- {id: E-FEDCART-ADD6, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1616318/000161631817000139/apsaaddendum6ex102.htm"}
+- {id: E-FEDCART-ADD7, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1616318/000161631817000139/apsaaddendum7ex103.htm"}
+- {id: E-FEDCART-ASA2018, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1616318/000161631817000139/asaex104.htm"}
+- {id: E-BWIND-SUBCONTRACT, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/2080841/000121390025126775/ea025237804ex10-1_bwindus.htm"}
+- {id: E-BUCK-APA-BARNETT, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1005502/000101968707000082/buckeye_8k-ex1001.htm"}
+- {id: E-EK-APA-ARS, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1005502/000101968708005426/energyking_8k-ex0201.htm"}
+- {id: E-EK-MERGER-GALLAGHER, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1005502/000101968708000961/energyking_8k-ex1001.htm"}
+- {id: E-EK-EMP-GALLAGHER, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1005502/000101968708002225/energyking_10qsb-ex1001.htm"}
+- {id: E-EK-NOTE-PLEDGE, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1005502/000101968708002225/energyking_10qsb-ex1002.htm"}
+- {id: E-EK-EMP-MGR-A, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1005502/000101968708002225/energyking_10qsb-ex1005.htm"}
+- {id: E-EK-EMP-MGR-B, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1005502/000101968708004978/energyking_10qsba-ex1001.htm"}
+- {id: E-BUCK-EMP-LARSON, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1005502/000101968706002838/buckeye_ex9901.htm"}
+- {id: E-BUCK-EMP-HARDWICK, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1005502/000101968706002838/buckeye_ex9902.htm"}
+- {id: E-BUCK-NOTE-LARSON, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1005502/000101968706002838/buckeye_ex9903.htm"}
+- {id: E-BUCK-NOTE-HARDWICK, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1005502/000101968706002838/buckeye_ex9904.htm"}
+- {id: E-EK-EMP-HULTMAN, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1005502/000101968708002513/energyking_8k-ex9902.htm"}
+- {id: E-BUCK-EMP-MINTZ, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1005502/000101968708000629/buckeye_sb2a1-ex1017.htm"}
+- {id: E-ENCOMPASS-APA, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1039690/000119312503004754/dex21.txt"}
+- {id: E-LGN-RSU-RIDERS, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/2052568/000205256826000017/lgnex1052026formofrsugrant.htm"}
+- {id: E-RMTL-TRANSITION, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1782170/000178217025000093/exhibit101-executionversio.htm"}
+- {id: E-RMTL-CONSULTING, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1782170/000178217025000018/exhibit1016-postxretiremen.htm"}
+- {id: E-SERV-SEPARATION, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1428875/000142887520000005/serv-20200121xex10_1.htm"}
+- {id: E-SERV-PSA, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1428875/000142887517000052/serv-20161231xex10_30.htm"}
+- {id: E-FTDR-PSU, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1727263/000119312526076548/ftdr-ex10_24.htm"}
+- {id: E-IES-EMP, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1048268/000119312519138305/d740684dex109.htm"}
+- {id: E-FIX-EMP-2002, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1035983/000095012902002592/h96776qex10-1.txt"}
+- {id: E-NSH-RCA, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1503707/000150370722000031/ceoformofrestrictivecovena.htm"}
+- {id: E-SOS-OFFER-PIIA, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1861785/000190359622000562/f2ssos1a042122ex10_10.htm"}
+- {id: E-LMB-CREDIT-2016, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1606163/000114420416114494/v444860_ex10-3.htm"}
+- {id: E-LMB-CREDIT-AMD-2018, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1606163/000114420418002128/tv483280_ex10-1.htm"}
+- {id: E-FIX-WAIVER-2002, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1035983/000095012902004151/h98970aexv10w2.txt"}
+- {id: E-FIX-AMD2-2003, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1035983/000095012903001732/h03366exv10w26.txt"}
+- {id: E-EFM-MELA, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1847590/000119312521107775/d18075dex1010.htm"}
+- {id: E-EFM-MAINT, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1109879/000119312510231780/dex102.htm"}
+- {id: E-LEASE-IL, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/1137091/000119312512093907/d310966dex101.htm"}
+- {id: E-LEASE-CA-AMD2, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/788920/000155335017001042/pdex_ex10z1.htm"}
+- {id: E-LEASE-TX, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/941738/000095013503004251/b46791wcexv10w14xdy.txt"}
+- {id: E-LEASE-WA, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/922810/000092701601001625/0004.txt"}
+- {id: E-KEY-EQUIP-LEASE, kind: edgar, url: "https://www.sec.gov/Archives/edgar/data/720154/000092794603000004/masterleasekeycorp.htm"}
+# ---------------- COURT (RECAP) ----------------
+- {id: C-SHVAC-SELLER-RCA, kind: court, url: "https://storage.courtlistener.com/recap/gov.uscourts.flmd.355075/gov.uscourts.flmd.355075.4.1.pdf", fmt: pdf}
+- {id: C-SHVAC-CONSULTING, kind: court, url: "https://storage.courtlistener.com/recap/gov.uscourts.flmd.355075/gov.uscourts.flmd.355075.4.2.pdf", fmt: pdf}
+- {id: C-SHVAC-GUIDEBOOK, kind: court, url: "https://storage.courtlistener.com/recap/gov.uscourts.flmd.355075/gov.uscourts.flmd.355075.4.3_1.pdf", fmt: pdf}
+- {id: C-CLIMATEPROS-COMPLAINT, kind: court, url: "https://storage.courtlistener.com/recap/gov.uscourts.txwd.1164756/gov.uscourts.txwd.1164756.2.0.pdf", fmt: pdf}
+- {id: C-1TOM-FRANCHISE, kind: court, url: "https://storage.courtlistener.com/recap/gov.uscourts.ohsd.303558/gov.uscourts.ohsd.303558.1.1.pdf", fmt: pdf}
+- {id: C-RJHEATING-OPINION, kind: court, url: "https://storage.courtlistener.com/recap/gov.uscourts.ohnd.287147/gov.uscourts.ohnd.287147.20.0.pdf", fmt: pdf}
+# ---------------- WEB TERMS (rewritten later; raw not committed) ----------------
+- {id: W-CARRIER-20240723, kind: web, url: "https://brandportal.carrier.com/m/544931481e869752/original/terms-conditions-carrier-sale-equip-service-us-english-07-23-2024.pdf", fmt: pdf}
+- {id: W-CARRIER-20241210, kind: web, url: "https://brandportal.carrier.com/m/281b7d20a3b5964e/original/terms-conditions-carrier-sale-equip_service-us-english-12-10-2024.pdf", fmt: pdf}
+- {id: W-CARRIER-20260821, kind: web, url: "https://brandportal.carrier.com/asset/f12da63b-e474-4f21-adea-20d769877892/terms-conditions-sale-equip-service-us-english-08-21-2026.pdf", fmt: pdf}
+- {id: W-COREMAIN-REV091718, kind: web, method: wb, url: "https://coreandmain.com/terms-of-sale/", ts: "20250114034925", fmt: html}
+- {id: W-COREMAIN-REV020425, kind: web, method: wb, url: "https://coreandmain.com/terms-of-sale/", ts: "20250213163816", fmt: html}
+- {id: W-FERGUSON-2019, kind: web, method: wb, url: "https://www.ferguson.com/content/website-info/terms-of-sale", ts: "20191022223341", fmt: html}
+- {id: W-FERGUSON-2025, kind: web, method: wb, url: "https://www.ferguson.com/content/customer-support/website-information/terms-of-sale/", ts: "20250608025450", fmt: html}
+- {id: W-HAJOCA-2019, kind: web, method: wb, url: "https://www.hajoca.com/sales-order-terms-and-conditions/", ts: "20231003181056", fmt: html}
+- {id: W-HAJOCA-2024, kind: web, method: wb, url: "https://www.hajoca.com/sales-order-terms-and-conditions/", ts: "20240526142826", fmt: html}
+- {id: W-HAJOCA-2025, kind: web, method: wb, url: "https://www.hajoca.com/sales-order-terms-and-conditions/", ts: "20250216192159", fmt: html}
+- {id: W-DAIKIN, kind: web, url: "https://www.daikincomfort.com/terms-of-sale", fmt: html}
+- {id: W-PARKER-2024, kind: web, method: cdx, url: "https://www.parkerandsons.com/maintenance-agreement", date: "20240601", fmt: html}
+- {id: W-PARKER-2026, kind: web, method: cdx, url: "https://www.parkerandsons.com/maintenance-agreement", date: "20260801", fmt: html}
+- {id: W-WAENERGY, kind: web, url: "https://www.washingtonenergy.com/guardian-maintenance-club-terms-restrictions/", fmt: html}
+- {id: W-FOURSEASONS, kind: web, url: "https://www.fourseasonsheatingcooling.com/terms-conditions/", fmt: html}
+- {id: W-BELLBROS-2024, kind: web, method: cdx, url: "https://bellbrothers.com/terms-and-conditions", date: "20240601", fmt: html}
+- {id: W-BELLBROS-2026, kind: web, method: cdx, url: "https://bellbrothers.com/terms-and-conditions", date: "20260801", fmt: html}
+- {id: W-HCP-TERMS, kind: web, url: "https://www.housecallpro.com/terms/", fmt: html}
+- {id: W-STRIPE-SSA, kind: web, url: "https://stripe.com/legal/ssa", fmt: html}
+- {id: W-SAMSARA-TOS, kind: web, url: "https://www.samsara.com/legal/platform-terms-of-service", fmt: html}
+- {id: W-MOTIVE-TOS, kind: web, url: "https://gomotive.com/legal/terms-of-service/", fmt: html}
+- {id: W-THUMBTACK-TOS, kind: web, url: "https://www.thumbtack.com/terms", fmt: html}
+- {id: W-JOBBER-TOS, kind: web, method: cdx, url: "https://www.getjobber.com/terms-of-service/", date: "20260601", fmt: html}
+- {id: W-ANGI-PRO, kind: web, url: "https://legal.angi.com/", fmt: html}
+# ---------------- CUAD ----------------
+- {id: CUAD-JSON, kind: cuad, url: "https://huggingface.co/datasets/theatticusproject/cuad/resolve/main/CUAD_v1/CUAD_v1.json", fmt: json}
+- {id: CUAD-CLAUSES, kind: cuad, url: "https://huggingface.co/datasets/theatticusproject/cuad/resolve/main/CUAD_v1/master_clauses.csv", fmt: csv}

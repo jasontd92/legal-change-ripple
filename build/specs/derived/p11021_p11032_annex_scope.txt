@@ -1,0 +1,21 @@
+MACHINE-READABLE SCOPE NOTE - PROCLAMATIONS 11021 (APRIL 2, 2026) AND 11032 (JUNE 1, 2026), ANNEXES I-A, I-B, I-C, II, III
+[Derived document. The Annexes are published only as scanned images in the Federal Register (91 FR 18201, 2026-06960; 91 FR 34085, 2026-11314).
+Scope below combines the proclamation text with OCR of the annex images (tesseract, 2026-09-29). OCR could not reliably read every HTS code column;
+items marked UNVERIFIED must not be relied on without checking the official annex images.]
+
+Proclamation 11021 (effective 12:01 a.m. EDT, April 6, 2026):
+- Section 232 duties on aluminum, steel and copper articles now apply to the FULL CUSTOMS VALUE, regardless of metal content (replaces the copper-content-only base of Proclamation 10962).
+- Annex I-A (50%): "all aluminum and steel articles, most copper articles, and certain derivative articles." OCR of the Annex I-A pages confirms copper and copper-alloy
+  plates/sheets/strip, profiles, and "tubes and pipes" (seamless and other than seamless) of chapter 74 are listed. VERIFIED (descriptions).
+- Annex I-B (25%): certain copper articles and aluminum/steel derivatives; OCR confirms insulated copper conductors (8544.19, 8544.42, 8544.49, 8544.60) and 8415.81.01 (heat-pump reversing valve units). VERIFIED (codes as OCR'd).
+- 10% rate for articles whose copper content is entirely smelted and cast in the United States.
+- Annex III (temporary reduced list through December 31, 2027; rate determined from the Column 1 duty rate): includes HVAC parts such as 8415.90.80xx and 8415.10.30/.60 per OCR. PARTIALLY VERIFIED.
+- Annex IV amends HTSUS chapter 99 (new headings 9903.82.02-9903.82.17); its "(v) Articles of copper" list repeats chapter 74 codes including 7411.10.10-7411.29.50 and 7412.10.00/7412.20.00. VERIFIED (codes as OCR'd).
+- Copper tube or pipe fittings (7412) annex placement (I-A vs I-B): UNVERIFIED. Water heaters (8419.11) and brass valves (8481.80): not found by OCR in any list. UNVERIFIED.
+
+Proclamation 11032 (effective 12:01 a.m. EDT, June 8, 2026):
+- Modifies the Annex I-A, I-B, II and III lists of Proclamation 11021 and adds Annex I-C (temporary tier through December 31, 2027; 25% default, 15% all-in for listed partner jurisdictions;
+  USMCA goods 25% on non-US content, minimum 15%) for agricultural equipment and "certain HVAC systems and components that are predominantly for residential use" (proclamation text).
+  The specific HTS codes moved to Annex I-C: UNVERIFIED (OCR of the Annex I-C pages shows steel derivatives only).
+- Lowers the "entirely U.S. metal" threshold from 95 percent to 85 percent.
+- Copper "tubes and pipes" remain on Annex I-A per OCR of the corresponding pages. VERIFIED (descriptions).

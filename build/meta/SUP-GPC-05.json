@@ -1,0 +1,17 @@
+{
+ "doc_id": "SUP-GPC-05",
+ "path": "documents/supply/great-plains-copper-tube_master-supply-agreement/05_exhibit-a_price-list_effective-2026-01-01.md",
+ "chars": 1415,
+ "area": "supply",
+ "cluster": "great-plains-copper-tube_master-supply-agreement",
+ "source_class": "generated_structured",
+ "doc_type": "pricing_exhibit",
+ "parent_id": "SUP-GPC-01",
+ "counterparty": "SUP-GPC",
+ "effective_date": "2026-01-01",
+ "roles": [
+  "tariff",
+  "price_adjustment"
+ ],
+ "status": "active"
+}

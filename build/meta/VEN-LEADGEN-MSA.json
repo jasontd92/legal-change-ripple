@@ -1,0 +1,28 @@
+{
+ "doc_id": "VEN-LEADGEN-MSA",
+ "path": "documents/vendors/homehero-leads_master-services-agreement_2022-02-05.md",
+ "chars": 26872,
+ "area": "vendors",
+ "cluster": null,
+ "doc_type": "vendor_msa",
+ "parent_id": null,
+ "counterparty": "SAAS-LG1",
+ "effective_date": "2022-02-05",
+ "status": "active",
+ "roles": [
+  "distractor",
+  "exclusivity_lookalike"
+ ],
+ "source_class": "cuad_llm_adapted",
+ "source_ref": "CUAD v1: KUBIENT,INC_07_02_2020-EX-10.14-MASTER SERVICES AGREEMENT_Part1",
+ "year_shift": 0,
+ "governing_law_remap": null,
+ "name_map_size": 14,
+ "filled_fields": [],
+ "adapt_length_ratio": 1.01,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

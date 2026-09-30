@@ -1,0 +1,491 @@
+id: T1_TR01_2026-10-01
+contract_version: 0.1.0
+offsets: computed_pre_G0
+scenario_ids:
+- B03
+- B05
+- B15
+- B02
+- B11
+- B10
+- B07
+- B16
+- S4-GPC-01
+- S4-GPC-02
+- S4-GPC-05
+eval_ids:
+- S1a
+- S1b
+- S3
+- S4
+- S5-link
+- S5-R1
+- S5-R2
+- S5-R3
+- LBL-urgency
+- LBL-materiality
+- LBL-direction
+- LBL-finding_type
+- LBL-response_type
+- V13
+set: e2e
+inputs:
+  trigger: TR-01-copper-section-232
+  versions:
+  - 2026-04-02_proclamation-11021.txt
+  - 2026-07-20_proclamation-11045-aluminum-DISTRACTOR.txt
+  - 2026-07-30_dpa-critical-minerals-DISTRACTOR.txt
+  as_of: '2026-10-01'
+  profile: default
+  custom_prompt: null
+provenance:
+  author: non-attorney reference
+  sources:
+  - corpus documents cited on each span
+  - eval-scenarios/priority-tiers-draft.md
+  - eval-scenarios/legal-questions.md
+  - Washington State Register 25-20-099 (2026 RCW 49.62 threshold $126,858.83), https://lawfilesext.leg.wa.gov/law/wsr/2025/20/25-20-099.htm
+  verified_on: '2026-09-29'
+change_record:
+  items:
+  - id: C1
+    substantive: true
+    anchor: &id001
+      file: corpus/triggers/TR-01-copper-section-232/2026-04-02_proclamation-11021.txt
+      section_label: (19 U.S.C. 2483) (section 604), authorizes the
+      quote: "                    (1) Effective with respect to goods entered for \n                consumption or withdrawn from warehouse for consumption \n                on or after 12:01 a.m. eastern daylight time on April \n                6, 2026, the additional ad valorem duty imposed \n                pursuant to section 232 on aluminum articles and \n                aluminum derivative articles under Proclamation 9704, \n                as amended; on steel articles and steel derivative \n                articles under Proclamation 9705, as amended; and on \n                copper articles and copper derivative articles under \n                Proclamation 10962 shall apply to the full customs \n                value of the imported product, regardless of metal \n                content."
+      start: 14844
+      end: 15627
+    legal_status: in_force
+    effective_date: '2026-04-06'
+    applies_to:
+      jurisdictions:
+      - US
+      entity_types:
+      - importer
+      product_classes:
+      - copper articles
+      - HTS chapter 74
+      thresholds: []
+  noise_items:
+  - id: N1
+    anchor:
+      file: corpus/triggers/TR-01-copper-section-232/2026-07-20_proclamation-11045-aluminum-DISTRACTOR.txt
+      section_label: <html>
+      quote: Proclamation 11045--Further Strengthening Actions Taken To Adjust Imports of Aluminum Into the United States
+      start: 536
+      end: 645
+      section_note: No heading-like line precedes this span.
+    reason: Aluminum-only proclamation filed in the copper group. Not a copper duty change.
+  - id: N2
+    anchor:
+      file: corpus/triggers/TR-01-copper-section-232/2026-07-30_dpa-critical-minerals-DISTRACTOR.txt
+      section_label: <html>
+      quote: "Presidential Determination Pursuant to Section \n                101 of the Defense Production Act of 1950, as Amended, \n                on Recoverable Critical Minerals and Materials"
+      start: 1265
+      end: 1447
+      section_note: No heading-like line precedes this span.
+    reason: Defense Production Act determination. No duty rate and no HTS scope.
+company_gate: proceed
+relevant_stacks:
+- supply/great-plains-copper-tube_master-supply-agreement
+- supply/purchase-orders/PO-2026-0204_great-plains-copper-tube_2026-03-16
+- supply/invoices/GPC-INV-26-0877_great-plains-copper-tube_2026-03-27
+- supply/invoices/GPC-INV-26-1912_great-plains-copper-tube_2026-08-21
+- customers/valley-medical-services-group_hvac-maintenance-agreement_2024-01-01
+- customers/harborview-realty-partners_facilities-maintenance-msa_2022-03-01
+- customers/notices/meridian_notice-of-material-cost-adjustment_harborview_2025-04-14
+- customers/sunpoint-public-schools-cooperative_mechanical-services-contract
+- customers/notices/meridian-illinois_pricing-letter-agreement_northbrook-commons_2026-02-17
+- subcontracts/cascade-ridge-contractors_subcontract-puyallup-medical-office
+- subcontracts/bridgewell-construction_master-subcontract-solara-fab
+- customers/wa-des-04224_hvac-services-contract
+- corporate/first-harbor-bank_credit-agreement
+pruned_stacks:
+- corporate/lease_san-jose-branch_2021-02-01
+- corporate/insurance_commercial-general-liability-policy_2026-2027
+- corporate/insurance_business-auto-policy_2026-2027
+- corporate/insurance_commercial-umbrella-policy_2026-2027
+notes: 'Focused T1. Other tier-table rows (Lakeshore, Northaire ratchet, San Marcos, Titan, Lakemont, Crestline, leases, vendor terms) stay backlog: they repeat modes already scored here. Proclamation 11032 is a later adjustment in this trigger group and is not a separate gold change item.'
+findings:
+- id: F1
+  scenario_id: B03
+  aliases: []
+  stack_id: customers/valley-medical-services-group_hvac-maintenance-agreement_2024-01-01
+  change_ref: C1
+  required_spans:
+  - *id001
+  - file: corpus/documents/customers/valley-medical-services-group_hvac-maintenance-agreement_2024-01-01.md
+    section_label: 4.1 Annual Maintenance Fee. In consideration for all services provided by Contra
+    quote: Fixed Pricing. The Annual Maintenance Fee and all rates set forth in Exhibit A are firm and fixed for the Initial Term and each Renewal Term and shall not be adjusted for any reason, including changes in the cost of labor, materials, equipment, fuel, freight, taxes, tariffs, duties or other governmental charges. Contractor assumes all risk of such cost changes.
+    start: 9287
+    end: 9650
+  - file: corpus/documents/customers/valley-medical-services-group_hvac-maintenance-agreement_2024-01-01.md
+    section_label: 3. TERM AND RENEWAL
+    quote: 3.1 Initial Term. The initial term of this Agreement shall commence on January 1, 2024 and shall expire at 11:59 p.m. Pacific Time on December 31, 2026, unless sooner terminated in accordance with the provisions of this Agreement (the "Initial Term").
+    start: 7439
+    end: 7690
+  - file: corpus/documents/customers/valley-medical-services-group_hvac-maintenance-agreement_2024-01-01.md
+    section_label: 3.1 Initial Term. The initial term of this Agreement shall commence on January 1
+    quote: 3.2 Automatic Renewal Terms. This Agreement shall automatically renew for two consecutive additional one-year terms (each, a "Renewal Term"), unless either party provides written notice of non-renewal to the other party at least sixty (60) days prior to the expiration of the then-current term. Each Renewal Term shall commence on January 1 of the calendar year following expiration of the preceding term and shall expire at 11:59 p.m. Pacific Time on December 31 of that calendar year.
+    start: 7692
+    end: 8178
+  - file: corpus/documents/customers/valley-medical-services-group_hvac-maintenance-agreement_2024-01-01.md
+    section_label: 4. ANNUAL MAINTENANCE FEE AND PAYMENT TERMS
+    quote: 4.1 Annual Maintenance Fee. In consideration for all services provided by Contractor under this Agreement, Customer shall pay Contractor an annual maintenance fee of Four Hundred Eighty-Six Thousand Dollars ($486,000.00) per Maintenance Year (the "Annual Maintenance Fee").
+    start: 9012
+    end: 9285
+  decoy_spans: []
+  absence: null
+  labels:
+    urgency: forfeitable_clock_running
+    materiality: material
+    direction: exposure
+    finding_type: deadline_bound_right
+    response_type:
+    - send_notice
+    - renegotiate
+  facts:
+    deadline_rule:
+      days: 60
+      trigger_event: expiration of the Initial Term
+      before: term_end
+    deadline_date: '2026-11-01'
+    term_end: '2026-12-31'
+    exposure:
+      amount: 486000
+      basis: annual_fee
+      cite:
+        file: corpus/documents/customers/valley-medical-services-group_hvac-maintenance-agreement_2024-01-01.md
+        section_label: 4. ANNUAL MAINTENANCE FEE AND PAYMENT TERMS
+        quote: 4.1 Annual Maintenance Fee. In consideration for all services provided by Contractor under this Agreement, Customer shall pay Contractor an annual maintenance fee of Four Hundred Eighty-Six Thousand Dollars ($486,000.00) per Maintenance Year (the "Annual Maintenance Fee").
+        start: 9012
+        end: 9285
+  confidence: high
+  pass_rule: affected
+  rationale: Section 4.1 fixes the $486,000 annual fee for the Initial Term and each renewal and bars adjustment for tariffs or duties. Section 3.1 ends the Initial Term on 2026-12-31. Section 3.2 renews unless either party gives written non-renewal notice at least 60 days prior, which is 2026-11-01. Missing that notice locks the tariff-blind price through 2027.
+- id: F2
+  scenario_id: B05
+  aliases: []
+  stack_id: customers/harborview-realty-partners_facilities-maintenance-msa_2022-03-01
+  change_ref: C1
+  required_spans:
+  - *id001
+  - file: corpus/documents/customers/harborview-realty-partners_facilities-maintenance-msa_2022-03-01.md
+    section_label: 4.3 MATERIALS COST. All Materials required to perform the Services shall be char
+    quote: Material Cost Adjustments. Contractor may adjust the pricing for Materials upon thirty (30) days' prior written notice to Customer to reflect documented increases in Contractor's cost of Materials, including increases resulting from tariffs, duties, or other governmental charges imposed after the Effective Date. Any adjustment shall be limited to Contractor's actual documented cost increase, without additional markup, and shall apply only to Work Orders issued after the effective date of the notice.
+    start: 9264
+    end: 9768
+  - file: corpus/documents/customers/notices/meridian_notice-of-material-cost-adjustment_harborview_2025-04-14.md
+    section_label: 500 Capitol Mall, Suite 1800, Sacramento, CA 95814
+    quote: Pursuant to the Material Cost Adjustments section of the Agreement, Meridian gives thirty (30) days' written notice that, for Work Orders issued on or after May 15, 2025, pricing for copper tube, copper and brass fittings and HVAC equipment will be adjusted to reflect documented cost increases from our suppliers resulting from newly imposed tariffs. Supporting supplier notices (Lakeshore Waterworks & PVF, March 10, 2025; Northaire Comfort Systems, January 6, 2025) are enclosed. The adjustment is limited to our documented cost increase without additional markup.
+    start: 333
+    end: 900
+  decoy_spans: []
+  absence: null
+  labels:
+    urgency: no_clock
+    materiality: material
+    direction: recovery
+    finding_type: recovery_opportunity
+    response_type:
+    - exercise_pass_through
+  facts:
+    notice_days: 30
+    last_notice_date: '2025-04-14'
+    last_notice_effective: '2025-05-15'
+  confidence: high
+  pass_rule: affected
+  rationale: 'The pass-through is forward-only: it applies to work orders issued after the notice, and only for documented cost increases. The only cost-adjustment notice in the corpus is dated April 14, 2025, before Proclamation 11021 (effective April 6, 2026). Days after that effective date without a new notice are not recoverable. There is no single expiry date, so urgency is no_clock; the tier is still 1 because the money is leaking through a fixable notice.'
+- id: F3
+  scenario_id: B15
+  aliases:
+  - B23
+  stack_id: corporate/first-harbor-bank_credit-agreement
+  change_ref: C1
+  required_spans:
+  - *id001
+  - file: corpus/documents/corporate/first-harbor-bank_credit-agreement/05_compliance-certificate_fiscal-quarter-ended-2026-06-30.md
+    section_label: COMPLIANCE CERTIFICATE
+    quote: '1. Fixed Charge Coverage Ratio (trailing four quarters): 1.23:1.00 (minimum required: 1.25:1.00 from January 1, 2026)'
+    start: 309
+    end: 426
+  - file: corpus/documents/corporate/first-harbor-bank_credit-agreement/05_compliance-certificate_fiscal-quarter-ended-2026-06-30.md
+    section_label: '2. Total Leverage Ratio: 2.71:1.00 (maximum permitted: 3.00:1.00)'
+    quote: '3. Consolidated EBITDA (trailing four quarters): $9,860,000, including $1,140,000 of unrecovered tariff-related material cost increases absorbed on fixed-price customer contracts.'
+    start: 493
+    end: 672
+  decoy_spans: []
+  absence: null
+  labels:
+    urgency: obligation_clock_running
+    materiality: material
+    direction: exposure
+    finding_type: liability_or_compliance_exposure
+    response_type:
+    - escalate_outside_counsel
+    - brief_finance
+  facts:
+    fccr_actual: 1.23:1.00
+    fccr_minimum: 1.25:1.00
+    unrecovered_tariff_cost: 1140000
+  confidence: high
+  pass_rule: affected_or_needs_review
+  rationale: The June 30, 2026 certificate reports FCCR 1.23 against a 1.25 minimum and attributes $1,140,000 of that result to unrecovered tariff-related material costs on fixed-price customer contracts. A waiver is requested, not shown as granted. The certificate does not isolate Proclamation 11021 from other tariff programs, so needs_review also passes. A settled not_affected does not. change_ref stays on this run's copper change item.
+- id: F4
+  scenario_id: S4-GPC-01
+  aliases:
+  - S4-GPC-02
+  stack_id: supply/great-plains-copper-tube_master-supply-agreement
+  change_ref: C1
+  required_spans:
+  - *id001
+  - file: corpus/documents/supply/purchase-orders/PO-2026-0204_great-plains-copper-tube_2026-03-16.md
+    section_label: '2150 Harbor Point Drive, Suite 400, Sacramento, CA 95833 | Purchasing: (916) 555'
+    quote: '| 1 | L34 | Type L hard-drawn copper water tube, 3/4 in. x 20 ft (ASTM B88) | 7411.10.1030 | 700 | 20 FT LEN | $58.40 | $40,880.00 |'
+    start: 700
+    end: 832
+  - file: corpus/documents/supply/great-plains-copper-tube_master-supply-agreement/04_amendment-2_tariff-surcharge_2026-03-02.md
+    section_label: Section 7 of the Agreement is hereby amended to add new subsection (g) as follow
+    quote: '"(g) Tariff Surcharge. "Tariff Charges" means the supplemental ad valorem duty imposed under Section 122 of the Trade Act of 1974 (19 U.S.C. § 2132), pursuant to Presidential Proclamation 11012 (91 Fed. Reg. 9339 (Feb. 25, 2026)), and any successor, replacement, and/or additional duties imposed on goods imported into the United States under Section 301 of the Trade Act of 1974, Section 232 of the Trade Expansion Act of 1962, or other applicable U.S. trade laws that increase or replace such duty. The rate of the Tariff Charges (the "Tariff Rate") as of March 2, 2026 is 10% (calculated as ad valorem).'
+    start: 1378
+    end: 1984
+  - file: corpus/documents/supply/invoices/GPC-INV-26-0877_great-plains-copper-tube_2026-03-27.md
+    section_label: 4400 Foundry Road, Tulsa, OK 74107
+    quote: '| | Tariff Surcharge per Section 7(g) - Tariff Rate 10% less 5% threshold | | | 5.0% | $3,812.35 |'
+    start: 905
+    end: 1003
+  decoy_spans:
+  - file: corpus/documents/supply/great-plains-copper-tube_master-supply-agreement/02_exhibit-b_metals-price-adjustment_2019-11-01.md
+    section_label: Exhibit B
+    quote: (b) The Metals Adjustment shall be calculated quarterly based on the variance between the average COMEX HG front-month settlement price for copper during the applicable adjustment period and the Base Metal Price of $2.60 per pound.
+    start: 215
+    end: 446
+    section_note: No heading-like line precedes this span.
+  absence: null
+  labels:
+    urgency: no_clock
+    materiality: material
+    direction: exposure
+    finding_type: cost_exposure
+    response_type:
+    - monitor
+  facts:
+    invoice: GPC-INV-26-0877
+    surcharge_amount: 3812.35
+    customer_po: PO-2026-0204
+  confidence: high
+  pass_rule: affected
+  rationale: 'Hop-complete chain: PO-2026-0204 buys HTS 7411 copper tube, Amendment 2 section 7(g) invoices the tariff rate above a 5% threshold, and invoice GPC-INV-26-0877 bills Tariff Surcharge per Section 7(g). The Exhibit B Metals Adjustment is a COMEX copper-price index from 2019. Citing it as the tariff surcharge is a decoy hit. That is S4-GPC-02.'
+- id: F5
+  scenario_id: B02
+  aliases: []
+  stack_id: customers/sunpoint-public-schools-cooperative_mechanical-services-contract
+  change_ref: C1
+  required_spans:
+  - *id001
+  - file: corpus/documents/customers/sunpoint-public-schools-cooperative_mechanical-services-contract/01_mechanical-services-contract_2021-07-01.md
+    section_label: 3.7 Travel and Mileage. Reasonable mileage from Contractor's principal office at
+    quote: Most Favored Pricing. The Cooperative is entitled to pricing at least as favorable as the most favorable pricing (including any discount, rebate, credit, or waiver or reduction of any surcharge) that Contractor extends to any other public entity or commercial customer in the State of Illinois for comparable Services. Contractor shall certify its compliance with this Section annually, and any breach shall entitle the Cooperative to a refund of the difference for the affected period.
+    start: 11010
+    end: 11496
+  - file: corpus/documents/customers/sunpoint-public-schools-cooperative_mechanical-services-contract/01_mechanical-services-contract_2021-07-01.md
+    section_label: 5.5 Termination for Cause. The Cooperative may terminate this Agreement immediat
+    quote: 5.6 Continuation of Obligations. Termination of this Agreement, whether by expiration, for cause, or for convenience, shall not relieve Contractor of the obligation to complete and properly close out all ongoing work and Task Orders. Contractor shall remain bound by all terms and conditions of this Agreement with respect to work performed prior to termination.
+    start: 17948
+    end: 18310
+  - file: corpus/documents/customers/notices/meridian-illinois_pricing-letter-agreement_northbrook-commons_2026-02-17.md
+    section_label: 1455 Busse Road, Elk Grove Village, IL 60007
+    quote: 'This letter agreement confirms Meridian''s pricing for HVAC, boiler and plumbing maintenance and repair services for the Association''s three buildings during calendar year 2026: (1) labor at prevailing wage plus 34% markup, and (2) no tariff or material surcharge on copper tube, fittings or HVAC equipment, which will be invoiced at Meridian''s cost plus 12%. Please countersign below to confirm.'
+    start: 308
+    end: 703
+  decoy_spans: []
+  absence: null
+  labels:
+    urgency: no_clock
+    materiality: material
+    direction: recovery
+    finding_type: recovery_opportunity
+    response_type:
+    - seek_refund_or_credit
+    - brief_finance
+  facts:
+    claim_window:
+      start: '2026-02-17'
+      end: '2026-06-30'
+    sunpoint_labor_markup_percent: 42
+    sunpoint_materials_markup_percent: 15
+    northbrook_labor_markup_percent: 34
+    northbrook_materials_markup_percent: 12
+  confidence: high
+  pass_rule: affected_or_needs_review
+  rationale: The contract expired June 30, 2026, and section 5.6 keeps the contractor bound for work performed before termination. The most-favored clause refunds the difference if a more favorable price was given to another Illinois commercial customer for comparable services. The Northbrook Commons letter of February 17, 2026 prices labor at prevailing wage plus 34% and materials at cost plus 12%, against Sunpoint's 42% and 15%. Comparability of a condominium association to a school cooperative is a judgment, so needs_review passes. Not affected, including 'expired so irrelevant,' fails.
+- id: F6
+  scenario_id: B11
+  aliases: []
+  stack_id: subcontracts/cascade-ridge-contractors_subcontract-puyallup-medical-office
+  change_ref: C1
+  required_spans:
+  - *id001
+  - file: corpus/documents/subcontracts/cascade-ridge-contractors_subcontract-puyallup-medical-office/01_subcontract-agreement_2025-03-17.md
+    section_label: 4. MATERIAL PRICE ESCALATION
+    quote: Material Price Escalation. If, between the date of Subcontractor's bid (February 10, 2025) and the date Subcontractor purchases copper tube, copper fittings or HVAC equipment for the Work, the documented price of any such item increases by more than eight percent (8%), Subcontractor may request an equitable adjustment equal to the increase in excess of eight percent (8%), supported by supplier quotations and invoices. Requests must be submitted within twenty-one (21) days after Subcontractor receives notice of the price increase; requests not timely submitted are waived.
+    start: 6961
+    end: 7538
+  - file: corpus/documents/subcontracts/cascade-ridge-contractors_subcontract-puyallup-medical-office/02_request-for-equitable-adjustment_2025-05-12.md
+    section_label: 3310 South Pine Street, Tacoma, WA 98409
+    quote: Under the Material Price Escalation section of the Subcontract, Meridian requests an equitable adjustment of $61,380 for copper tube, copper fittings and HVAC equipment. Our supplier Lakeshore Waterworks & PVF notified us of a 9% price increase and 4% tariff surcharge by letter dated March 10, 2025 (received March 12, 2025), and Northaire Comfort Systems applied a 6% tariff surcharge effective February 5, 2025. Supporting quotations and invoices are attached. The documented increase exceeds the 8% threshold measured from our February 10, 2025 bid.
+    start: 284
+    end: 837
+  decoy_spans: []
+  absence: null
+  labels:
+    urgency: no_clock
+    materiality: material
+    direction: recovery
+    finding_type: deadline_bound_right
+    response_type:
+    - brief_finance
+  facts:
+    notice_received: '2025-03-12'
+    deadline_rule:
+      days: 21
+      trigger_event: receipt of the supplier price-increase notice
+      before: null
+    deadline_date: '2025-04-02'
+    request_date: '2025-05-12'
+    days_after_receipt: 61
+    days_after_deadline: 40
+    amount_claimed: 61380
+  confidence: high
+  pass_rule: affected
+  rationale: Section 4 waives an equitable-adjustment request not submitted within 21 days after notice of the price increase. The request says the Lakeshore notice was received March 12, 2025, so the window ended April 2, 2025. The request is dated May 12, 2025, 61 days after receipt and 40 days after the waiver date. As of 2026-10-01 the clock is not still running. Treating the $61,380 as a live claim is the miss.
+- id: F7
+  scenario_id: B10
+  aliases: []
+  stack_id: subcontracts/bridgewell-construction_master-subcontract-solara-fab
+  change_ref: C1
+  required_spans:
+  - *id001
+  - file: corpus/documents/subcontracts/bridgewell-construction_master-subcontract-solara-fab/01_service-agreement-subcontract_2025-04-14.md
+    section_label: SERVICE AGREEMENT
+    quote: The Contract Price may only be changed by a Change Order pursuant to Section 26 and rules explicitly set forth in the Contract Documents.
+    start: 9796
+    end: 9933
+  decoy_spans: []
+  absence:
+    clause_type: price_adjustment_or_escalation
+    expected_in:
+    - corpus/documents/subcontracts/bridgewell-construction_master-subcontract-solara-fab/01_service-agreement-subcontract_2025-04-14.md
+  labels:
+    urgency: no_clock
+    materiality: material
+    direction: exposure
+    finding_type: cost_exposure
+    response_type:
+    - renegotiate
+  facts: {}
+  confidence: high
+  pass_rule: affected
+  rationale: The contract price may only be changed by a change order. The agreement does not contain the words tariff or escalation. The word duty appears only as a legal obligation, not as an import duty. There is no contractual price-adjustment right for the copper duty. The subcontract price itself is not stated in this file.
+- id: F8
+  scenario_id: B07
+  aliases: []
+  stack_id: customers/wa-des-04224_hvac-services-contract
+  change_ref: C1
+  required_spans:
+  - *id001
+  - file: corpus/documents/customers/wa-des-04224_hvac-services-contract/01_contract-04224_hvac-services_2025-09-10.md
+    section_label: 3.4. ECONOMIC ADJUSTMENTS FOR PART RATES. The prices for HVAC Parts set forth in
+    quote: There shall be no other economic adjustment to the Prices for HVAC Parts
+    start: 10987
+    end: 11060
+  - file: corpus/documents/customers/wa-des-04224_hvac-services-contract/04_contract-summary-and-ordering-instructions_as-published.md
+    section_label: Contract Summary
+    quote: TARIFFS No tariffs have been approved for this Contract.
+    start: 177
+    end: 233
+    section_note: No heading-like line precedes this span.
+  decoy_spans: []
+  absence: null
+  labels:
+    urgency: no_clock
+    materiality: material
+    direction: exposure
+    finding_type: cost_exposure
+    response_type:
+    - brief_finance
+    - monitor
+  facts: {}
+  confidence: high
+  pass_rule: affected
+  rationale: 'Section 3.4 says parts prices will not be adjusted and that there shall be no other economic adjustment. The published ordering instructions say no tariffs have been approved and additional fees are not allowed. A pass-through recommendation on this contract is a miss. Tier 3: brief finance, no dated clock.'
+- id: F9
+  scenario_id: S4-GPC-05
+  aliases: []
+  stack_id: supply/great-plains-copper-tube_master-supply-agreement
+  change_ref: C1
+  required_spans:
+  - *id001
+  - file: corpus/documents/supply/invoices/GPC-INV-26-1912_great-plains-copper-tube_2026-08-21.md
+    section_label: 4400 Foundry Road, Tulsa, OK 74107
+    quote: '| | Tariff Surcharge per Section 7(g) - Tariff Rate 10% less 5% threshold (imported fittings components) | | | 5.0% | $615.00 |'
+    start: 620
+    end: 747
+  - file: corpus/documents/supply/great-plains-copper-tube_master-supply-agreement/04_amendment-2_tariff-surcharge_2026-03-02.md
+    section_label: Section 7 of the Agreement is hereby amended to add new subsection (g) as follow
+    quote: '"(g) Tariff Surcharge. "Tariff Charges" means the supplemental ad valorem duty imposed under Section 122 of the Trade Act of 1974 (19 U.S.C. § 2132), pursuant to Presidential Proclamation 11012 (91 Fed. Reg. 9339 (Feb. 25, 2026)), and any successor, replacement, and/or additional duties imposed on goods imported into the United States under Section 301 of the Trade Act of 1974, Section 232 of the Trade Expansion Act of 1962, or other applicable U.S. trade laws that increase or replace such duty. The rate of the Tariff Charges (the "Tariff Rate") as of March 2, 2026 is 10% (calculated as ad valorem).'
+    start: 1378
+    end: 1984
+  decoy_spans: []
+  absence: null
+  labels:
+    urgency: undeterminable
+    materiality: undeterminable
+    direction: neutral
+    finding_type: watch
+    response_type:
+    - monitor
+  facts:
+    invoice: GPC-INV-26-1912
+    hts: 7412.10.0000
+  confidence: abstain_only
+  pass_rule: abstain_only
+  rationale: Invoice 1912 bills a 5% section 7(g) surcharge on HTS 7412 copper press couplings and does not name Proclamation 11012. HTS 7412 is copper-covered, and section 7(g) has successor-duty language, but the annex placement of 7412 (50% versus 25%) is not confirmed in the corpus. Needs review passes. A settled overcharge or a settled clean bill fails.
+- id: F10
+  scenario_id: B16
+  aliases: []
+  stack_id: corporate/lease_san-jose-branch_2021-02-01
+  change_ref: C1
+  required_spans: []
+  decoy_spans:
+  - file: corpus/documents/corporate/lease_san-jose-branch_2021-02-01.md
+    section_label: '5.1 Utilities. Tenant shall pay all charges for water, sewer, gas, electricity, '
+    quote: Utilities. Tenant shall pay for all electricity, natural gas and water supplied to the Premises at the rates set forth in the applicable utility provider's filed tariff, as amended from time to time by the California Public Utilities Commission.
+    start: 11472
+    end: 11717
+  absence: null
+  labels: null
+  facts: {}
+  confidence: high
+  pass_rule: not_affected
+  rationale: The lease 'filed tariff' is the utility provider's CPUC rate schedule for electricity, gas, and water. It is not an import duty. Stage 3 should prune this stack. A stage-4 finding that cites the utilities clause is a decoy hit.
+cross_links:
+- a: customers/sunpoint-public-schools-cooperative_mechanical-services-contract
+  b: customers/notices/meridian-illinois_pricing-letter-agreement_northbrook-commons_2026-02-17
+  type: parity
+  expected: found
+tiers:
+  '1':
+  - F1
+  - F2
+  - F3
+  '2':
+  - F4
+  - F5
+  - F6
+  - F7
+  '3':
+  - F8
+  - F9
+  logged: []

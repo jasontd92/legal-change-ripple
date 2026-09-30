@@ -1,0 +1,27 @@
+{
+ "doc_id": "EMP-NS-WA-2023",
+ "path": "documents/employment/gemma-northcott_customer-non-solicitation-agreement_2023-08-21.md",
+ "chars": 12988,
+ "area": "employment",
+ "cluster": null,
+ "doc_type": "non_solicitation_agreement",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2023-08-21",
+ "status": "active",
+ "roles": [
+  "wa",
+  "non_solicit"
+ ],
+ "source_class": "generated_llm",
+ "template": false,
+ "placeholders": [],
+ "planted_features": [
+  "CUST_NONSOLICIT"
+ ],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

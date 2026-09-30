@@ -1,0 +1,17 @@
+{
+ "doc_id": "CUS-SPS-RENEW-1",
+ "path": "documents/customers/sunpoint-public-schools-cooperative_mechanical-services-contract/02_notice-of-renewal_first-option_2024-04-15.md",
+ "chars": 600,
+ "area": "customers",
+ "cluster": "sunpoint-public-schools-cooperative_mechanical-services-contract",
+ "source_class": "generated_structured",
+ "doc_type": "customer_notice",
+ "parent_id": "CUS-SPS-MSA",
+ "counterparty": "CUS-SPS",
+ "effective_date": "2024-04-15",
+ "roles": [
+  "renewal",
+  "term_status"
+ ],
+ "status": "active"
+}

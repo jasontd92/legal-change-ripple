@@ -1,0 +1,25 @@
+{
+ "doc_id": "VEN-TEL-TOS-2025-07-01",
+ "path": "documents/vendors/roadiq-telematics_platform-terms-of-service_2025-07-01.md",
+ "chars": 47691,
+ "area": "vendors",
+ "cluster": null,
+ "doc_type": "standard_terms",
+ "counterparty": "SAAS-TEL",
+ "effective_date": "2025-07-01",
+ "version_label": "effective July 1, 2025",
+ "published_url": "https://www.roadiq.com/legal/platform-terms",
+ "status": "active",
+ "roles": [
+  "distractor"
+ ],
+ "source_class": "web_rewritten",
+ "source_ref": "W-SAMSARA-TOS",
+ "copy_share": 0.731,
+ "version_pair_check": null,
+ "checks": {
+  "ok": true,
+  "fails": [],
+  "leaks": []
+ }
+}

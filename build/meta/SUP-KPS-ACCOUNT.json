@@ -1,0 +1,28 @@
+{
+ "doc_id": "SUP-KPS-ACCOUNT",
+ "path": "documents/supply/keystone-plumbing-supply_commercial-credit-account-agreement_2016-02-08.md",
+ "chars": 18378,
+ "area": "supply",
+ "cluster": null,
+ "doc_type": "credit_account_agreement",
+ "parent_id": null,
+ "counterparty": "SUP-KPS",
+ "effective_date": "2016-02-08",
+ "status": "active",
+ "roles": [
+  "tariff",
+  "incorporated_web_terms",
+  "unilateral_amendment"
+ ],
+ "source_class": "generated_llm",
+ "template": false,
+ "placeholders": [],
+ "planted_features": [
+  "KPS_ACCOUNT_TERMS"
+ ],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

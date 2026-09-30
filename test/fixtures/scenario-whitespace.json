@@ -1,0 +1,8 @@
+{
+  "scenario_id": "mini-whitespace",
+  "trigger": { "group": "TR-MINI", "versions": ["v2", "v2-ws"] },
+  "as_of": "2026-10-01",
+  "profile": "default",
+  "custom_prompt": null,
+  "corpus_root": "test/fixtures/mini"
+}

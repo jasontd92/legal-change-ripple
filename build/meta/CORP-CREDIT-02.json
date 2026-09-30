@@ -1,0 +1,32 @@
+{
+ "doc_id": "CORP-CREDIT-02",
+ "path": "documents/corporate/first-harbor-bank_credit-agreement/02_amendment-1-and-waiver_2023-01-12.md",
+ "chars": 67457,
+ "area": "corporate",
+ "cluster": "first-harbor-bank_credit-agreement",
+ "doc_type": "amendment",
+ "parent_id": "CORP-CREDIT-01",
+ "counterparty": null,
+ "effective_date": "2023-01-12",
+ "status": "active",
+ "roles": [],
+ "source_class": "edgar",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1606163/000114420418002128/tv483280_ex10-1.htm",
+ "year_shift": 5,
+ "governing_law_remap": {
+  "from": [
+   "Ohio",
+   "Pennsylvania",
+   "New York"
+  ],
+  "to": "California"
+ },
+ "name_map_size": 58,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

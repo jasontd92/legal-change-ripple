@@ -1,0 +1,154 @@
+820 ILCS 90/ Illinois Freedom to Work Act.
+
+ Home 
+ Legislation & Laws 
+ Senate 
+ House 
+ My Legislation 
+ Site Map 
+
+ Bills & Resolutions 
+ Compiled Statutes 
+ Public Acts 
+ Legislative Reports 
+ IL Constitution 
+ Legislative Guide 
+ Legislative Glossary 
+
+ Search By Number
+ (example: HB0001)
+
+Search Tips
+
+Search By Keyword
+
+Search Tips
+
+Advanced Search
+
+Illinois Compiled Statutes
+Back to Act Listing Public Acts Search Guide Disclaimer Printer-Friendly Version
+ Information maintained by the Legislative Reference Bureau
+Updating the database of the Illinois Compiled Statutes (ILCS) is an ongoing process. Recent laws may not yet be included in the ILCS database, but they are found on this site as Public Acts soon after they become law. For information concerning the relationship between statutes and Public Acts, refer to the Guide.
+ Because the statute database is maintained primarily for legislative drafting purposes, statutory changes are sometimes included in the statute database before they take effect. If the source note at the end of a Section of the statutes includes a Public Act that has not yet taken effect, the version of the law that is currently in effect may have already been removed from the database and you should refer to that Public Act to see the changes made to the current law.
+
+EMPLOYMENT
+(820 ILCS 90/) Illinois Freedom to Work Act.
+820 ILCS 90/1
+ (820 ILCS 90/1) 
+
+ Sec. 1. Short title. This Act may be cited as the Illinois Freedom to Work Act.
+
+(Source: P.A. 99-860, eff. 1-1-17.)
+
+820 ILCS 90/5
+ (820 ILCS 90/5) 
+
+ Sec. 5. Definitions. In this Act:
+ "Adequate consideration" means (1) the employee worked for the employer for at least 2 years after the employee signed an agreement containing a covenant not to compete or a covenant not to solicit or (2) the employer otherwise provided consideration adequate to support an agreement to not compete or to not solicit, which consideration can consist of a period of employment plus additional professional or financial benefits or merely professional or financial benefits adequate by themselves. 
+ "Covenant not to compete" means an agreement between an employer and an employee that is entered into after the effective date of this amendatory Act of the 102nd General Assembly that restricts the employee from performing:
+ (1) any work for another employer for a specified 
+
+ period of time;
+
+ (2) any work in a specified geographical area; or
+ (3) work for another employer that is similar to 
+
+ employee's work for the employer included as a party to the agreement. 
+
+ "Covenant not to compete" also means an agreement between an employer and an employee, entered into after the effective date of this amendatory Act of the 102nd General Assembly, that by its terms imposes adverse financial consequences on the former employee if the employee engages in competitive activities after the termination of the employee's employment with the employer. 
+ "Covenant not to compete" does not include (1) a covenant not to solicit, (2) a confidentiality agreement or covenant, (3) a covenant or agreement prohibiting use or disclosure of trade secrets or inventions, (4) invention assignment agreements or covenants, (5) a covenant or agreement entered into by a person purchasing or selling the goodwill of a business or otherwise acquiring or disposing of an ownership interest, (6) clauses or an agreement between an employer and an employee requiring advance notice of termination of employment, during which notice period the employee remains employed by the employer and receives compensation, or (7) agreements by which the employee agrees not to reapply for employment to the same employer after termination of the employee.
+ "Covenant not to solicit" means an agreement that is entered into after the effective date of this amendatory Act of the 102nd General Assembly between an employer and an employee that (1) restricts the employee from soliciting for employment the employer's employees or (2) restricts the employee from soliciting, for the purpose of selling products or services of any kind to, or from interfering with the employer's relationships with, the employer's clients, prospective clients, vendors, prospective vendors, suppliers, prospective suppliers, or other business relationships.
+ "Earnings" means the compensation, including earned salary, earned bonuses, earned commissions, or any other form of taxable compensation, reflected or that is expected to be reflected as wages, tips, and other compensation on the employee's IRS Form W-2 plus any elective deferrals not reflected as wages, tips, and other compensation on the employee's IRS Form W-2, such as, without limitation, employee contributions to a 401(k) plan, a 403(b) plan, a flexible spending account, or a health savings account, or commuter benefit-related deductions.
+ "Employee" means any individual permitted to work by an employer in an occupation. 
+ "Employer" has the meaning given to such term in subsection (c) of Section 3 of the Minimum Wage Law. "Employer" does not include governmental or quasi-governmental bodies.
+ "Construction" means any constructing, altering, reconstructing, repairing,
+rehabilitating, refinishing, refurbishing, remodeling, remediating, renovating, custom fabricating, maintenance, landscaping, improving, wrecking, painting, decorating, demolishing, and adding to or subtracting from any building, structure, highway, roadway, street, bridge, alley, sewer, ditch, sewage disposal plant, water works, parking facility, railroad, excavation or other structure, project, development, real property or improvement, or to do any part thereof, whether or not the performance of the work herein described involves the addition to, or fabrication into, any structure, project, development, real property or improvement herein described of any material or article of merchandise. 
+
+(Source: P.A. 102-358, eff. 1-1-22.)
+
+820 ILCS 90/7
+ (820 ILCS 90/7) 
+ Sec. 7. Legitimate business interest of the employer. In determining the legitimate business interest of the employer, the totality of the facts and circumstances of the individual case shall be considered. Factors that may be considered in this analysis include, but are not limited to, the employee's exposure to the employer's customer relationships or other employees, the near-permanence of customer relationships, the employee's acquisition, use, or knowledge of confidential information through the employee's employment, the time restrictions, the place restrictions, and the scope of the activity restrictions. No factor carries any more weight than any other, but rather its importance will depend on the specific facts and circumstances of the individual case. Such factors are only non-conclusive aids in determining the employer's legitimate business interest, which in turn is but one component in the 3-prong rule of reason, grounded in the totality of the circumstances. Each situation must be determined on its own particular facts. Reasonableness is gauged not just by some, but by all of the circumstances. The same identical contract and restraint may be reasonable and valid under one set of circumstances and unreasonable and
+invalid under another set of circumstances.
+
+(Source: P.A. 102-358, eff. 1-1-22.)
+
+820 ILCS 90/10
+ (820 ILCS 90/10) 
+ Sec. 10. Prohibiting covenants not to compete and covenants not to solicit.
+ (a) No employer shall enter into a covenant not to compete with any employee unless the employee's actual or expected annualized rate of earnings exceeds $75,000 per year. This amount shall increase to $80,000 per year beginning on January 1, 2027, $85,000 per year beginning on January 1, 2032, and $90,000 per year beginning on January 1, 2037. A covenant not to compete entered into in violation of this subsection is void and unenforceable.
+ (b) No employer shall enter into a covenant not to solicit with any employee unless the employee's actual or expected annualized rate of earnings exceeds $45,000 per year. This amount shall increase to $47,500 per year beginning on January 1, 2027, $50,000 per year beginning on January 1, 2032, and $52,500 per year beginning on January 1, 2037. A covenant not to solicit entered into in violation of this subsection is void and unenforceable.
+
+ (c) No employer shall enter into a covenant not to compete or a covenant not to solicit with any employee who an employer terminates or furloughs or lays off as the result of business circumstances or governmental orders related to the COVID-19 pandemic or under circumstances that are similar to the COVID-19 pandemic, unless enforcement of the covenant not to compete includes compensation equivalent to the employee's base salary at the time of termination for the period of enforcement minus compensation earned through subsequent employment during the period of enforcement. A covenant not to compete or a covenant not to solicit entered into in violation of this subsection is void and unenforceable.
+ (d) A covenant not to compete is void and illegal with respect to individuals covered by a collective bargaining agreement under the Illinois Public Labor Relations Act or the Illinois Educational Labor Relations Act and individuals employed in construction. This subsection (d) does not apply to construction employees who primarily perform management, engineering or architectural, design, or sales functions for the employer or who are shareholders, partners, or owners in any capacity of the employer. 
+(Source: P.A. 102-358, eff. 1-1-22.)
+
+820 ILCS 90/15
+ (820 ILCS 90/15) 
+ Sec. 15. Enforceability of a covenant not to compete or a covenant not to solicit. A covenant not to compete or a covenant not to solicit is illegal and void unless (1) the employee receives adequate consideration, (2) the covenant is ancillary to a valid employment relationship, (3) the covenant is no greater than is required for the protection of a legitimate business interest of the employer, (4) the covenant does not impose undue hardship on the employee, and (5) the covenant is not injurious to the public.
+
+(Source: P.A. 102-358, eff. 1-1-22.)
+
+820 ILCS 90/20
+ (820 ILCS 90/20) 
+ Sec. 20. Ensuring employees are informed about their obligations. A covenant not to compete or a covenant not to solicit is illegal and void unless (1) the employer advises the employee in writing to consult with an attorney before entering into the covenant and (2) the employer provides the employee with a copy of the covenant at least 14 calendar days before the commencement of the employee's employment or the employer provides the employee with at least 14 calendar days to review the covenant. An employer is in compliance with this Section even if the employee voluntarily elects to sign the covenant before the expiration of the 14-day period.
+
+(Source: P.A. 102-358, eff. 1-1-22.)
+
+820 ILCS 90/25
+ (820 ILCS 90/25) 
+ Sec. 25. Remedies. In addition to any remedies available under any agreement between an employer and an employee or under any other statute, in a civil action or arbitration filed by an employer (including, but not limited to, a complaint or counterclaim), if an employee prevails on a claim to enforce a covenant not to compete or a covenant not to solicit, the employee shall recover from the employer all costs and all reasonable attorney's fees regarding such claim to enforce a covenant not to compete or a covenant not to solicit, and the court or arbitrator may award appropriate relief.
+
+(Source: P.A. 102-358, eff. 1-1-22.)
+
+820 ILCS 90/30
+ (820 ILCS 90/30) 
+ Sec. 30. Attorney General enforcement.
+ (a) Whenever the Attorney General has reasonable cause to believe that any person or entity is engaged in a pattern and practice prohibited by this Act, the Attorney General may initiate or intervene in a civil action in the name of the People of the State in any appropriate court to obtain appropriate relief.
+ (b) Before initiating an action, the Attorney General may conduct an investigation and may: (1) require an individual or entity to file a statement or report in writing under oath or otherwise, as to all information the Attorney General may consider necessary; (2) examine under oath any person alleged to have participated in or with knowledge of the alleged violation; or (3) issue subpoenas or conduct hearings in aid of any investigation.
+ (c) Service by the Attorney General of any notice requiring a person or entity to file a statement or report, or of a subpoena upon any person or entity, shall be made: 
+ (1) personally by delivery of a duly executed copy 
+
+ thereof to the person to be served or, if a person is not a natural person, in the manner provided in the Code of Civil Procedure when a complaint is filed; or
+
+ (2) by mailing by certified mail a duly executed copy 
+
+ thereof to the person to be served at his or her last known abode or principal place of business within this State or, if a person is not a natural person, in the manner provided in the Code of Civil Procedure when a complaint is filed.
+
+ The Attorney General may compel compliance with investigative demands under this Section through an order by any court of competent jurisdiction. 
+ (d)(1) In an action brought under this Act, the Attorney General may obtain, as a remedy, monetary damages to the State, restitution, and equitable relief, including any permanent or preliminary injunction, temporary restraining order, or other order, including an order enjoining the defendant from engaging in a violation, or order any action as may be appropriate. In addition, the Attorney General may request and the court may impose a civil penalty not to exceed $5,000 for each violation or $10,000 for each repeat violation within a 5-year period. For purposes of this Section, each violation of this Act for each person who was subject to an agreement in violation of this Act shall constitute a separate and distinct violation. 
+ (2) A civil penalty imposed under this subsection shall be deposited into the Attorney General Court Ordered and Voluntary Compliance Payment Projects Fund. Moneys in the Fund shall be used, subject to appropriation, for the performance of any function pertaining to the exercise of the duties of the Attorney General, including, but not limited to, enforcement of any law of this State and conducting public education programs; however, any moneys in the Fund that are required by the court or by an agreement to be used for a particular purpose shall be used for that purpose. 
+
+(Source: P.A. 102-358, eff. 1-1-22.)
+
+820 ILCS 90/35
+ (820 ILCS 90/35) 
+ Sec. 35. Reformation.
+ (a) Extensive judicial reformation of a covenant not to compete or a covenant not to solicit may be against the public policy of this State and a court may refrain from wholly rewriting contracts.
+ (b) In some circumstances, a court may, in its discretion, choose to reform or sever provisions of a covenant not to compete or a covenant not to solicit rather than hold such covenant unenforceable. Factors which may be considered when deciding whether such reformation is appropriate include the fairness of the restraints as originally written, whether the original restriction reflects a good-faith effort to protect a legitimate business interest of the employer, the extent of such reformation, and whether the parties included a clause
+authorizing such modifications in their agreement. 
+
+(Source: P.A. 102-358, eff. 1-1-22.)
+
+820 ILCS 90/97
+ (820 ILCS 90/97) 
+ Sec. 97. Severability. The provisions of this Act are severable under Section 1.31 of the Statute on Statutes.
+
+(Source: P.A. 102-358, eff. 1-1-22.)
+
+Top
+
+Home | 
+ Legislation & Laws | 
+ House | 
+ Senate |
+ My Legislation |
+ Disclaimers |
+ Email
+
+This site is maintained for the Illinois General Assembly 
+by the
+Legislative Information System, 705 Stratton Building, Springfield, Illinois 62706
+ 
+217-782-3944 217-782-2050 (TTY)

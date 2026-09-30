@@ -1,0 +1,16 @@
+{
+ "doc_id": "SUP-DSC-PO-2025-0402",
+ "path": "documents/supply/purchase-orders/PO-2025-0402_delmont-supply_2025-03-24.md",
+ "chars": 1146,
+ "area": "supply",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "purchase_order",
+ "counterparty": "SUP-DSC",
+ "effective_date": "2025-03-24",
+ "roles": [
+  "tariff",
+  "price_protection"
+ ],
+ "status": "active"
+}

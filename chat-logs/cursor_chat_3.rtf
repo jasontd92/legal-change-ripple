@@ -1,0 +1,1054 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2870
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0   from those files. spans.py check is still clean: 0 errors, 0 warnings.\
+\
+\
+  anything left, per the agreed upon minimal set?\
+\
+\
+  I'll check the focused set against what's actually on disk so the answer is\
+  about remaining work, not the earlier plan.\
+\
+    Read, globbed 1 file, 1 glob\
+    Read eval-scenarios/answer-keys/PROGRESS.md\
+    Globbed "...narios/answer-keys/**/*.\{yaml,md,txt\}" in .\
+\
+  Nothing left for the agreed set. The gold is written and checked.\
+\
+  The three integrations are T1 (copper \'a7232), the T3a/T3b Washington pair, and T5\
+  (California SB 699 / AB 1076). The two early-exit controls are TR-03 (proceed,\
+  then empty scope) and TR-90 (Wyoming and Texas, two separate exits). The units\
+  are the three stage-0 pairs, the Washington profile swap, and the Keystone\
+  version pin. spans.py check is 0 errors and 0 warnings. The index has 30 done\
+  rows, 9 of them holdout.\
+\
+  The calls that were not fully determinate are already decided and recorded in\
+  PROGRESS.md: FCCR is tier 1 with affected_or_needs_review, TR-03 is proposed\
+  because the contract list has no preliminary value, and Gemma Northcott\'92s\
+  earnings are not golded. Those are not unfinished items.\
+\
+  What is still unwritten was left out on purpose: the rest of the T1 tier table,\
+  T2 and T4, Illinois, the unused invariant fixtures, and the other metamorphic\
+  cases.\
+\
+\
+  okay - as a smoke test - what command opr script can run a single\
+  integration eval - and WATCH it for completion/hagnup/failure\
+\
+\
+  I'll look for the runner that executes one integration and how it reports hang\
+  or failure.\
+\
+    Globbed, grepped, read 7 globs, 11 greps, 19 files\
+    \'85 34 earlier items hidden\
+    Grepped "11021|id:" in corpus/triggers/TR-01-copper-section-232/meta.yaml\
+    Grepped "function buildStacks" in src/stacks.ts\
+    Read ...gers/TR-14-ca-noncompete-sb699-ab1076/meta.yaml\
+\
+  There is no scorer and no watch script. A smoke test is one blocking harness\
+  run. The gold YAML is not a valid input. The CLI wants a scenario JSON with one\
+  or two trigger version ids.\
+\
+  The short integration is T5, first observation of SB 699. Write this to\
+  runs/t5-input.json:\
+\
+  \{\
+    "scenario_id": "T5_TR14_2026-10-01",\
+    "trigger": \{ "group": "TR-14-ca-noncompete-sb699-ab1076", "versions":\
+  ["2023-09-01_ca-sb-699"] \},\
+    "as_of": "2026-10-01",\
+    "profile": "default",\
+    "custom_prompt": null,\
+    "corpus_root": "corpus"\
+  \}\
+\
+  Then, from the repo root:\
+\
+  ./bin/harness run --input runs/t5-input.json --config configs/o1-glm.json --out\
+  runs/smoke-t5\
+\
+  configs/o1-glm.json is the live model. configs/stub.json finishes without a\
+  model call and does not exercise the integration. The process loads .env.local\
+  itself.\
+\
+  Watch it from a second terminal:\
+\
+  tail -f runs/smoke-t5/trace.jsonl\
+\
+  How to read the three outcomes:\
+\
+  \'95 Done. The first command exits 0 and prints\
+    \{"run_id","status":"completed","out":"\'85/runs/smoke-t5"\}.\
+    runs/smoke-t5/run.json has "status": "completed" and impact_report.json\
+    exists.\
+  \'95 Failed. It exits 1 and the error is on stderr. run.json is "failed", and the\
+    last line of trace.jsonl is \{"type":"error",\'85\}.\
+  \'95 Hung. The process is still alive and trace.jsonl has stopped growing. A line\
+    with "type":"finding" is written as each stack finishes, and run.json is\
+    rewritten at each stage boundary. Each model call times out at 300 seconds\
+    (src/models.ts). Silence longer than that, with the process still up, is a\
+    hang past the timeout.\
+\
+  T1 is the same command with version id 2026-04-02_proclamation-11021 and group\
+  TR-01-copper-section-232. The CLI rejects the three files listed in the gold\
+  YAML. It allows one version, or two as an old/new pair.\
+\
+\
+  run it and montior yourself\
+\
+\
+  I'll start the T5 smoke run and watch the trace until it finishes, fails, or\
+  goes silent past the model timeout.\
+\
+    Globbed, read, grepped 1 glob, 1 file, 1 grep\
+    Globbed ".env*" in .\
+    Read configs/o1-glm.json\
+    Grepped "AI_GATEWAY|process\\.env" in src\
+\
+\
+  what directory to run the tail command out of?\
+\
+\
+  Run it from the repo root, /Users/jason/Documents/gc-ai-take-home-research. The\
+  path runs/smoke-t5/trace.jsonl is relative to that directory.\
+\
+  From anywhere else, use the absolute path:\
+\
+  tail -f\
+  /Users/jason/Documents/gc-ai-take-home-research/runs/smoke-t5/trace.jsonl\
+\
+  That file appears only after the run has started and written its first event.\
+\
+\
+  jason@Jasons-MacBook-Pro-3 gc-ai-take-home-research % tail -f\
+  runs/smoke-t5/trace.jsonl\
+  tail: runs/smoke-t5/trace.jsonl: No such file or directory\
+  jason@Jasons-MacBook-Pro-3 gc-ai-take-home-research %\
+\
+\
+  The trace file is missing because the run was never started. I'll start it now\
+  and confirm the directory shows up.\
+\
+  $ test -x node_modules/.bin/tsx && test -f .env.local && echo ready 407ms\
+    ready\
+\
+    Edited t5-input.json +11\
+\
+    \uc0\u9614 + \{\
+    \uc0\u9614 +   "scenario_id": "T5_TR14_2026-10-01",\
+    \uc0\u9614 +   "trigger": \{\
+    \uc0\u9614 +     "group": "TR-14-ca-noncompete-sb699-ab1076",\
+    \uc0\u9614 +     "versions": ["2023-09-01_ca-sb-699"]\
+    \uc0\u9614 +   \},\
+    \uc0\u9614 +   "as_of": "2026-10-01",\
+    \uc0\u9614 +   "profile": "default",\
+    \uc0\u9614 +   "custom_prompt": null,\
+    \uc0\u9614 +   "corpus_root": "corpus"\
+    \uc0\u9614 + \}\
+\
+  $ ./bin/harness run --input runs/t5-input.json --config configs/o1-glm.json --out\
+    runs/smoke-t5 1m 24s (background)\
+\
+    Monitored background task, 1 active\
+    Waited 8s\
+    Read ...ects/Users-jason-Documents/terminals/394236.txt\
+    Ran ls -la runs/smoke-t5 2>&1; echo "---"; wc -l runs/smoke-t5/trace.jsonl 2>&1\
+    Ran touch runs/smoke-t5/trace.jsonl && ls -lt runs/smoke-t5\
+\
+    Grepped ""status"" in runs/smoke-t5/run.json\
+    Found 5 matches\
+\
+  $ python3 -c "\
+    import json 200ms\
+    \'85 4 input lines hidden \'b7 ctrl+o to expand\
+    stacks 131 in_scope 44\
+\
+  The same command works now. Re-run it from the repo root:\
+\
+  tail -f runs/smoke-t5/trace.jsonl\
+\
+  The file was missing because the run had not been started. It is running now.\
+  Stages 0 through 3 are already written: the diff, the change record, a proceed\
+  gate, and the scope. run.json is partial while stage 4 fans out. 44 of 131\
+  stacks are in scope, and trace.jsonl gets one line each time a stack finishes.\
+\
+  tail exits immediately when the file does not exist yet. It does not wait for\
+  the file to be created.\
+\
+\
+  eval run status?\
+\
+\
+  I'll check the smoke run's process, trace, and artifacts.\
+\
+    Read, grepped 1 file, 1 grep\
+    Read ...ects/Users-jason-Documents/terminals/394236.txt\
+    Grepped ""status"|"stage"" in runs/smoke-t5/run.json\
+\
+  $ echo "trace_lines $(wc -l < runs/smoke-t5/trace.jsonl)"; echo "findings $(find\
+    runs/smoke-t5/findings -name '*.json' 2>/dev/null | wc -l)"; echo "report $(test\
+    -f runs/smoke-t5/impact_report.json && echo yes || echo no)"; ps -p 35983 -o\
+    pid,etime,state,command 2>/dev/null | awk 'NR==1 || NR==2' 485ms\
+    \'85 3 output lines hidden \'b7 ctrl+o to expand\
+      PID ELAPSED STAT COMMAND\
+    35983   10:34 Ss   /bin/zsh -c builtin export PATH="/usr/bin:/bin:/usr/sbin:/sb\'85\
+\
+  $ python3 -c "\
+    import json, os, time 251ms\
+    \'85 9 input + 1 output lines hidden \'b7 ctrl+o to expand\
+    newest_finding_age_s 2.9\
+    trace_mtime_age_s 2.9\
+\
+  The T5 smoke run is still going, and it is not hung. It has been running for\
+  about 11 minutes. Stages 0, 1, and 3 are done: the diff was substantive, the\
+  company gate proceeded, and the scope kept 44 of 131 stacks. Stage 4 has\
+  finished 36 of those 44 stacks. The last finding was written a few seconds ago.\
+  run.json is still partial, and impact_report.json is not written yet. That file\
+  appears only after stage 5.\
+\
+\
+  observe this actual run (not eval) - does it write timsetmaps? my impression\
+  was it finsihed within minutes - if true, i'm curious the gap between the\
+  two. http://localhost:8787/#/runs/TR-01-copper-section-232-1790748586041\
+\
+\
+  I'll look at that TR-01 run's artifacts and compare its timestamps with the T5\
+  smoke run.\
+\
+    Globbed, grepped 1 glob, 3 greps\
+    Globbed "...1-copper-section-232-1790748586041/**" in .\
+    Grepped "started_at|elapsed|timestamp" in src\
+    Grepped "started_at|timestamp|duration" in ui\
+    Grepped "runs/|run_id|listRuns" in src/server.ts\
+\
+  $ ls -d runs/* .harness/runs/* 2>/dev/null | head -80; echo '---'; find .\
+    -maxdepth 4 -type d -name '*1790748586041*' 2>/dev/null 224ms\
+    \'85 1 output lines hidden \'b7 ctrl+o to expand\
+    ---\
+    ./runs/TR-01-copper-section-232-1790748586041\
+\
+    Read 2 files\
+    Read src/server.ts lines 100-239\
+    Read ...TR-01-copper-section-232-1790748586041/run.json\
+\
+  $ python3 << 'PY'\
+    import json, os, time 224ms\
+    \'85 28 input + 94 output lines hidden \'b7 ctrl+o to expand\
+      subagent:customers/harborview-capitol-tower_hvac-replacement-construction-con\'85\
+      subagent:corporate/first-harbor-bank_credit-agreement zai/glm-5.3-flash retri\'85\
+\
+    Grepped "started_at|trace|elapsed|stage" in ui\
+    Found 7 matches\
+\
+  $ python3 << 'PY'\
+    import json 242ms\
+    \'85 20 input + 10 output lines hidden \'b7 ctrl+o to expand\
+    tr01 in_scope 63 of 131\
+    report True\
+\
+    Read ui/src/App.tsx lines 200-359\
+\
+  The TR-01 run writes timestamps, and the page does not show them. It also did\
+  not finish in a few minutes. Wall clock was 17 minutes 41 seconds, from\
+  06:09:46Z to 06:27:27Z.\
+\
+  Those clocks are in runs/TR-01-copper-section-232-1790748586041/run.json\
+  (started_at / ended_at on each stage) and on every line of trace.jsonl (at). The\
+  activity feed parses at and then drops it. formatActivity prints the stage or\
+  stack name only, so a finished page looks like a list of findings with no clock.\
+\
+  \uc0\u9484 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9516 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9488 \
+  \uc0\u9474  Stage                         \u9474  Duration              \u9474 \
+  \uc0\u9500 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9508 \
+  \uc0\u9474  0 diff                        \u9474  under a second        \u9474 \
+  \uc0\u9500 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9508 \
+  \uc0\u9474  1 and the company gate        \u9474  20 seconds            \u9474 \
+  \uc0\u9500 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9508 \
+  \uc0\u9474  3 scope                       \u9474  25 seconds            \u9474 \
+  \uc0\u9500 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9508 \
+  \uc0\u9474  4 fan-out, 63 stacks in scope \u9474  12 minutes 42 seconds \u9474 \
+  \uc0\u9500 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9508 \
+  \uc0\u9474  5 report                      \u9474  4 minutes 14 seconds  \u9474 \
+  \uc0\u9492 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9524 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9496 \
+\
+  The T5 smoke run has finished too. It took 18 minutes 13 seconds (06:27:22Z to\
+  06:45:35Z) for 44 in-scope stacks. Stage 4 was 12 minutes 51 seconds and stage 5\
+  was 4 minutes 40 seconds.\
+\
+  The gap is about 30 seconds. Both runs spend almost all of their time in the\
+  same place: four concurrent stack analysts, then one report call. The page hides\
+  that, which is why the TR-01 run looks shorter than it was.\
+\
+  Finished Start T5 integration smoke run\
+\
+    Read \'85n/.cursor/projects/Users-jason-Documents/terminals/394236.txt lines 1-20\
+\
+  The T5 smoke run finished successfully. The harness exited 0 with status\
+  completed after 18 minutes 14 seconds. The report is in runs/smoke-t5.\
+\
+\
+  based on both runs - i'm also seing in the vercel dahsboard about $1.90\
+  spent so far - what can be detemrined both on fronts of 1) high confidence,\
+  high ROI efficiency wins (context or cost management) 2) path to validating\
+  the existing set of evals and the pipleine efficiently, and when we are\
+  ready to strat running targeted experiments. An e2e immediate eval baseline\
+  feels premature though i may be wrong\
+\
+\
+  I'll pull token, cache, and stage costs from both runs so the efficiency and\
+  eval-timing calls are based on what they actually spent.\
+\
+  $ python3 << 'PY'\
+    import json 517ms\
+    \'85 43 input + 16 output lines hidden \'b7 ctrl+o to expand\
+      orchestrator: n=1 in=347458 cached=203264 fresh=144194 out=54141 reason=22050\'85\
+      subagent: n=44 in=5593270 cached=3217664 fresh=2375606 out=688307 reason=3176\'85\
+\
+    Grepped, read 1 grep, 3 files\
+    Grepped "prices|glm-5.3" in .\
+    Read eval-design.md lines 540-659\
+    Read src/agents.ts lines 360-439\
+    Read system-design.md lines 590-659\
+\
+  $ python3 << 'PY'\
+    import json 472ms\
+    \'85 44 input + 28 output lines hidden \'b7 ctrl+o to expand\
+     determinations \{'needs_review': 10, 'affected': 28, 'not_affected': 6\} finding\'85\
+     failed tools \{'read': 6, 'commit_finding': 16, 'grep': 73\}\
+\
+    Grepped, read 1 grep, 1 file\
+    Grepped "grep" in src\
+    Read eval-design.md lines 1-40\
+\
+    WebSearch Vercel AI Gateway zai glm-5.3-flash price per million tokens 2026\
+    Found 1 reference\
+\
+  $ python3 << 'PY'\
+    import json 296ms\
+    \'85 23 input + 30 output lines hidden \'b7 ctrl+o to expand\
+    combined $ at 0.075/0.015/0.25 0.89\
+    if reasoning extra 663371 * 0.50 0.33\
+\
+    Grepped "redispatch_stack" in src\
+    Found 3 matches\
+\
+  The two runs already account for the dashboard spend, and a scored end-to-end\
+  baseline would measure the wrong thing. These runs are a wiring check. The next\
+  dollars should go to teacher-forced sentinel stacks.\
+\
+  At the gateway list price for zai/glm-5.3-flash ($0.15 per million input, $0.03\
+  cached, $0.50 output), the two runs are about $1.77. That matches the $1.90,\
+  with a little room for other calls. The harness recorded $0 because\
+  configs/o1-glm.json has no prices block. The design-doc figure of $0.03 / $0.25\
+  is stale: a full corpus run is about $0.90 and 18 minutes, not $0.10.\
+\
+  Subagents are 93% of the input tokens. Stage 4 is about 13 of those 18 minutes.\
+  The orchestrator is the cheap part.\
+\
+  \uc0\u9484 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9516 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9516 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9516 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9516 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9488 \
+  \uc0\u9474  Run   \u9474  Trigger actually used                   \u9474  In     \u9474  Input    \u9474  Cache  \u9474 \
+  \uc0\u9474        \u9474                                          \u9474  scope  \u9474  tokens   \u9474  hit    \u9474 \
+  \uc0\u9500 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9508 \
+  \uc0\u9474  TR-01 \u9474  EO 14220, the investigation, not        \u9474  63 of  \u9474  6.0M     \u9474  48%    \u9474 \
+  \uc0\u9474        \u9474  Proclamation 11021                      \u9474  131    \u9474           \u9474         \u9474 \
+  \uc0\u9500 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9508 \
+  \uc0\u9474  T5    \u9474  SB 699 only, not AB 1076                \u9474  44 of  \u9474  5.9M     \u9474  58%    \u9474 \
+  \uc0\u9474  smoke \u9474                                          \u9474  131    \u9474           \u9474         \u9474 \
+  \uc0\u9492 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9524 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9524 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9524 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9524 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9496 \
+\
+  Efficiency\
+\
+  Three changes are worth making before any more full runs.\
+\
+  Fan out only the stacks the eval needs. Gold T1 is about a dozen stacks; this\
+  run reviewed 63, including 39 supply stacks. Gold T5 is four employment files;\
+  this run reviewed 44, including all 17 acquisitions and a blank NDA template.\
+  Default-in is doing what it was told, and it is the whole bill. A stage-4 run\
+  with the gold change record injected, on the relevant stacks plus the known\
+  decoys, is the same measurement at roughly a tenth of the cost.\
+\
+  Stop the analyst from searching the trigger file. 103 grep calls and a handful\
+  of reads failed with "path is outside this stack's reading set," almost all of\
+  them the trigger itself. The quote is already in the brief. Each failure is a\
+  wasted turn that stays in the transcript. That is a prompt or tool-scope fix,\
+  and it shows up on both runs.\
+\
+  Put prices on the config. Until cost_usd is filled from the gateway rates, the\
+  dashboard is the only cost meter. Cache is already working (about half of\
+  input). It is not the first lever. Output is expensive relative to input, and\
+  about 44% of output tokens are reasoning, but cutting that is a quality\
+  tradeoff, not a free win.\
+\
+  commit_finding failed 19 and 16 times, mostly bad change_ref values and\
+  citations outside the stack. Those retries cost something. They are a\
+  schema-adherence metric, not the place to start cutting.\
+\
+  When to score, and when to experiment\
+\
+  An end-to-end score of these two runs would not validate the gold set. The TR-01\
+  run is the investigation order, not Proclamation 11021. The T5 run is SB 699\
+  alone, not SB 699 plus AB 1076. There is no scorer against the answer keys yet,\
+  and a headline number would mostly reflect "reviewed 63 stacks" rather than the\
+  sentinel behaviors.\
+\
+  The pipeline itself is past the smoke test: both runs completed, wrote a report,\
+  and cited files. That was the right use of the $1.90.\
+\
+  The efficient path from here:\
+\
+  1. Score fixture artifacts in code, with no model calls. That checks the\
+     scorer against the gold files already written.\
+  2. Run teacher-forced stage 4 on the sentinel stacks (Great Plains hop, Valley\
+     clock, Bridgewell absence, Keystone version pin, Northcott, the technician\
+     template, Ellison abstain), injecting the gold change record. One stack is\
+     cents, not a dollar, and a miss is attributable.\
+  3. Add stage 1 and stage 3 the same way: one call each, gold downstream not\
+     required.\
+  4. Start a targeted experiment only after that slice has a score you can diff.\
+     A prompt change, a scope-policy change, or O1 versus O2 belongs there. k=3\
+     on the full corpus is about $3 per trigger at the real price, so it waits\
+     until a slice says the change is real.\
+\
+  A full T1/T3/T5 baseline is the run you do once that slice is stable, on the\
+  gold version ids, and you keep it. It is not the next run.\
+\
+\
+  I agree with the high ROI chnages - implment them now - especially with\
+  subagents reexploring the trigger file. what do you mean by "teacher-forced"\
+  and "gold change" record? also - what are the prelimnary runs\
+  testing/validating as aopposed to a full baaseline?\
+\
+\
+  The trigger re-read is the change to make in the harness. I'll look at how the\
+  stack brief and reading set are built, then implement that and the other two\
+  cost fixes.\
+\
+    Read, grepped, globbed 16 files, 4 greps, 1 glob\
+    \'85 18 earlier items hidden\
+    Read test/harness.test.ts lines 175-214\
+    Read test/harness.test.ts\
+    Grepped "only_stacks|max_tool_calls_per_subagent" in contracts/schemas\
+\
+  The analyst is told to copy the trigger quote from the file, and the tools then\
+  refuse that file. I'll point the quote at the change record, cap fan-out when a\
+  stack list is set, and record the gateway prices.\
+\
+    Edited prompts.ts +1 -1\
+\
+    \uc0\u9614    */\
+    \uc0\u9614   export const STACK_ANALYST_PROMPT = `You are the analyst for one contract\
+    \uc0\u9614   family (a stack) in an in-house counsel r ...\
+    \uc0\u9614 \
+    \uc0\u9614 - Tools: grep, then read. Both are confined to the reading set in the brief.\
+    \uc0\u9614   A path outside it is refused. grep retur ...\
+    \uc0\u9614 + Tools: grep, then read. Both open only the reading set in the brief. The\
+    \uc0\u9614   trigger snapshot is not in that set. Its v ...\
+    \uc0\u9614 \
+    \uc0\u9614   Decide applicability for this stack after you have the company profile from\
+    \uc0\u9614   the brief. When the profile leaves a re ...\
+    \uc0\u9614 \
+\
+    Edited prompts.ts +1 -1\
+\
+    \uc0\u9614 \
+    \uc0\u9614   Frame the work as the rights, obligations, and exposures this change\
+    \uc0\u9614   creates under this stack. Include opportunitie ...\
+    \uc0\u9614 \
+    \uc0\u9614 - Every surfaced finding needs two verbatim quotes: the trigger passage and\
+    \uc0\u9614   the clause passage. Copy them from the fi ...\
+    \uc0\u9614 + Every surfaced finding needs two verbatim quotes: the trigger passage and\
+    \uc0\u9614   the clause passage. Copy the trigger pass ...\
+    \uc0\u9614 \
+    \uc0\u9614   Labels are categorical. Do not invent a scale.\
+    \uc0\u9614   - urgency: forfeitable_clock_running (a right or claim is lost if this\
+    \uc0\u9614   running deadline passes) | obligation_clock_ ...\
+\
+    Edited prompts.ts +1 -1\
+\
+    \uc0\u9614       input.prior\
+    \uc0\u9614         ? `This is a fresh pass. The previous finding was too thin to support\
+    \uc0\u9614   a cross-stack join. Narrow question: $\{ ...\
+    \uc0\u9614         : "",\
+    \uc0\u9614 -     `Investigate with grep and read, then call commit_finding once.`,\
+    \uc0\u9614 +     `Investigate this stack with grep and read, then call commit_finding\
+    \uc0\u9614   once. The trigger quotes are already in th ...\
+    \uc0\u9614     ]\
+    \uc0\u9614       .filter(Boolean)\
+    \uc0\u9614       .join("\\n\\n");\
+\
+    Edited readset.ts +20\
+\
+    \uc0\u9614     \};\
+    \uc0\u9614   \}\
+    \uc0\u9614 \
+    \uc0\u9614 + /** The trigger snapshot is already quoted on the change record. Return\
+    \uc0\u9614   those quotes instead of a refusal. */\
+    \uc0\u9614 + export function triggerSnapshotAnswer(opts: \{\
+    \uc0\u9614 +   tool: string;\
+    \uc0\u9614 +   file: string;\
+    \uc0\u9614 +   anchors: \{ id: string; file: string; quote?: string; section_label?:\
+    \uc0\u9614   string \}[];\
+    \uc0\u9614 + \}): ToolOutcome | null \{\
+    \uc0\u9614 +   const norm = opts.file.replaceAll("\\\\", "/").replace(/^\\.\\//, "");\
+    \uc0\u9614 +   const hits = opts.anchors.filter((anchor) => anchor.file === norm ||\
+    \uc0\u9614   anchor.file.endsWith(`/$\{norm\}`) || norm.end ...\
+    \uc0\u9614 +   if (hits.length === 0) return null;\
+    \uc0\u9614  \'85 truncated (14 more lines) \'b7 ctrl+r to review\
+\
+    Edited agents.ts +1 -1\
+\
+    \uc0\u9614   \} from "./enums.js";\
+    \uc0\u9614   import \{ emptyUsage, providerFor, runAgent, type AgentTool \} from\
+    \uc0\u9614   "./models.js";\
+    \uc0\u9614   import \{ analystBrief, ORCHESTRATOR_PROMPT, STACK_ANALYST_PROMPT,\
+    \uc0\u9614   stage1Task, stage3Task, stage5Task \} from "./prom ...\
+    \uc0\u9614 - import \{ grepReadingSet, readPages, type FaultState \} from "./readset.js";\
+    \uc0\u9614 + import \{ grepReadingSet, readPages, triggerSnapshotAnswer, type FaultState\
+    \uc0\u9614   \} from "./readset.js";\
+    \uc0\u9614   import type \{ StackManifest \} from "./stacks.js";\
+    \uc0\u9614   import \{ assertArtifact \} from "./schema.js";\
+    \uc0\u9614   import type \{\
+\
+    Edited agents.ts +2\
+\
+    \uc0\u9614           const input = z.object(\{ query: z.string(), file:\
+    \uc0\u9614   z.string().optional() \}).parse(raw);\
+    \uc0\u9614           const gate = budget("grep", input);\
+    \uc0\u9614           if (gate.blocked) return gate.outcome!;\
+    \uc0\u9614 +         const known = input.file ? knownTrigger("grep", input.file) : null;\
+    \uc0\u9614 +         if (known) return known;\
+    \uc0\u9614           return grepReadingSet(\{ query: input.query, file: input.file,\
+    \uc0\u9614   files: loaded, allowed, fault: opts.fault \});\
+    \uc0\u9614         \},\
+    \uc0\u9614       \},\
+\
+    Edited agents.ts +2\
+\
+    \uc0\u9614           const input = z.object(\{ file: z.string(), start_page:\
+    \uc0\u9614   z.number().int().min(1).optional() \}).parse(raw);\
+    \uc0\u9614           const gate = budget("read", input);\
+    \uc0\u9614           if (gate.blocked) return gate.outcome!;\
+    \uc0\u9614 +         const known = knownTrigger("read", input.file);\
+    \uc0\u9614 +         if (known) return known;\
+    \uc0\u9614           const outcome = readPages(\{ file: input.file, startPage:\
+    \uc0\u9614   input.start_page ?? 1, files: loaded, allowed, fau ...\
+    \uc0\u9614           if (outcome.telemetry.ok && outcome.telemetry.file)\
+    \uc0\u9614   filesRead.add(outcome.telemetry.file);\
+    \uc0\u9614           return outcome;\
+\
+    Edited agents.ts +10\
+\
+    \uc0\u9614       \}\
+    \uc0\u9614       return \{ blocked: false \};\
+    \uc0\u9614     \};\
+    \uc0\u9614 +   const knownTrigger = (tool: string, file: string) =>\
+    \uc0\u9614   triggerSnapshotAnswer(\{\
+    \uc0\u9614 +     tool,\
+    \uc0\u9614 +     file,\
+    \uc0\u9614 +     anchors: opts.change.items.map((item) => (\{\
+    \uc0\u9614 +       id: item.id,\
+    \uc0\u9614 +       file: item.anchor.file,\
+    \uc0\u9614 +       quote: item.anchor.quote,\
+    \uc0\u9614 +       section_label: item.anchor.section_label,\
+    \uc0\u9614 +     \})),\
+    \uc0\u9614  \'85 truncated (4 more lines) \'b7 ctrl+r to review\
+\
+    Edited types.ts +5\
+\
+    \uc0\u9614     max_tool_calls_per_subagent?: number;\
+    \uc0\u9614     concurrency?: number;\
+    \uc0\u9614     ranking?: "deterministic" | "model";\
+    \uc0\u9614 +   /**\
+    \uc0\u9614 +    * Cap fan-out to these stack ids. Omit it to dispatch every in-scope\
+    \uc0\u9614   stack.\
+    \uc0\u9614 +    * Stacks outside the list are recorded as out of scope after the model's\
+    \uc0\u9614   own scope decision.\
+    \uc0\u9614 +    */\
+    \uc0\u9614 +   only_stacks?: string[];\
+    \uc0\u9614     /** USD per 1M tokens. Absent prices leave cost_usd null. */\
+    \uc0\u9614     prices?: Record<string, \{ input: number; output: number; cached_input?:\
+    \uc0\u9614   number \}>;\
+    \uc0\u9614   \};\
+\
+    Edited pipeline.ts +20 -1\
+\
+    \uc0\u9614     state.flush();\
+    \uc0\u9614   \}\
+    \uc0\u9614 \
+    \uc0\u9614 + function capScopeToSlice(state: RunDir): void \{\
+    \uc0\u9614 +   const slice = state.config.only_stacks;\
+    \uc0\u9614 +   if (!slice || !state.scope) return;\
+    \uc0\u9614 +   if (slice.length === 0) throw new Error("only_stacks is empty. Omit it to\
+    \uc0\u9614   review every in-scope stack.");\
+    \uc0\u9614 +   const keep = new Set(slice);\
+    \uc0\u9614 +   const known = new Set(state.stacks.map((stack) => stack.stack_id));\
+    \uc0\u9614 +   const unknown = slice.filter((id) => !known.has(id));\
+    \uc0\u9614 +   state.scope = \{\
+    \uc0\u9614 +     stacks: state.scope.stacks.map((row) => \{\
+    \uc0\u9614  \'85 truncated (18 more lines) \'b7 ctrl+r to review\
+\
+    Edited o1-glm.json +4 -1\
+\
+    \uc0\u9614     "cache": "on",\
+    \uc0\u9614     "concurrency": 4,\
+    \uc0\u9614     "max_tool_calls_per_subagent": 16,\
+    \uc0\u9614 -   "ranking": "deterministic"\
+    \uc0\u9614 +   "ranking": "deterministic",\
+    \uc0\u9614 +   "prices": \{\
+    \uc0\u9614 +     "zai/glm-5.3-flash": \{ "input": 0.15, "cached_input": 0.03, "output":\
+    \uc0\u9614   0.50 \}\
+    \uc0\u9614 +   \}\
+    \uc0\u9614   \}\
+\
+    Edited j-jev.json +4 -1\
+\
+    \uc0\u9614     "cache": "on",\
+    \uc0\u9614     "concurrency": 4,\
+    \uc0\u9614     "max_tool_calls_per_subagent": 16,\
+    \uc0\u9614 -   "ranking": "deterministic"\
+    \uc0\u9614 +   "ranking": "deterministic",\
+    \uc0\u9614 +   "prices": \{\
+    \uc0\u9614 +     "zai/glm-5.3-flash": \{ "input": 0.15, "cached_input": 0.03, "output":\
+    \uc0\u9614   0.50 \}\
+    \uc0\u9614 +   \}\
+    \uc0\u9614   \}\
+\
+    Edited s-sonnet.json +4 -1\
+\
+    \uc0\u9614     "cache": "on",\
+    \uc0\u9614     "concurrency": 4,\
+    \uc0\u9614     "max_tool_calls_per_subagent": 16,\
+    \uc0\u9614 -   "ranking": "deterministic"\
+    \uc0\u9614 +   "ranking": "deterministic",\
+    \uc0\u9614 +   "prices": \{\
+    \uc0\u9614 +     "claude-sonnet-5": \{ "input": 2, "cached_input": 0.2, "output": 10 \}\
+    \uc0\u9614 +   \}\
+    \uc0\u9614   \}\
+\
+    Read 2 files\
+    Read src/pipeline.ts lines 285-329\
+    Read test/harness.test.ts lines 300-329\
+\
+    Edited pipeline.ts +1\
+\
+    \uc0\u9614         return \{ stack_id: row.stack_id, in_scope: false, reason: `Outside\
+    \uc0\u9614   only_stacks. Model scope was: $\{row.reason ...\
+    \uc0\u9614       \}),\
+    \uc0\u9614     \};\
+    \uc0\u9614 +   assertArtifact("scope-trace.schema.json", state.scope);\
+    \uc0\u9614     writeJson(path.join(state.runDir, "scope_trace.json"), state.scope);\
+    \uc0\u9614     const kept = state.scope.stacks.filter((row) => row.in_scope &&\
+    \uc0\u9614   keep.has(row.stack_id)).length;\
+    \uc0\u9614     state.event(\{ type: "stack_slice", kept, listed: slice.length, unknown\
+    \uc0\u9614   \});\
+\
+    Edited harness.test.ts +1\
+\
+    \uc0\u9614   import \{ findRepo, readJson \} from "../src/paths.js";\
+    \uc0\u9614   import \{ advanceReview, executeRun \} from "../src/pipeline.js";\
+    \uc0\u9614   import \{ rankReport \} from "../src/ranking.js";\
+    \uc0\u9614 + import \{ triggerSnapshotAnswer \} from "../src/readset.js";\
+    \uc0\u9614   import \{ buildStacks \} from "../src/stacks.js";\
+    \uc0\u9614   import \{ locateQuote, quoteInSpan \} from "../src/text.js";\
+    \uc0\u9614   import \{ loadConfig, loadScenario \} from "../src/corpus.js";\
+\
+    Edited harness.test.ts +46\
+\
+    \uc0\u9614     assert.equal(report.not_material[0]?.finding_id, "small");\
+    \uc0\u9614     assert.equal(report.items[0]?.rank, 1);\
+    \uc0\u9614   \});\
+    \uc0\u9614 +\
+    \uc0\u9614 + test("a trigger path returns the quote already on the change record", () =>\
+    \uc0\u9614   \{\
+    \uc0\u9614 +   const file = "corpus/triggers/TR-01-copper-section-232/2026-04-02_proclam\
+    \uc0\u9614   ation-11021.txt";\
+    \uc0\u9614 +   const answer = triggerSnapshotAnswer(\{\
+    \uc0\u9614 +     tool: "grep",\
+    \uc0\u9614 +     file,\
+    \uc0\u9614 +     anchors: [\{ id: "C1", file, quote: "additional ad valorem duty",\
+    \uc0\u9614   section_label: "clause (1)" \}],\
+    \uc0\u9614 +   \});\
+    \uc0\u9614 +   assert.ok(answer);\
+    \uc0\u9614  \'85 truncated (37 more lines) \'b7 ctrl+r to review\
+\
+    Read test/harness.test.ts lines 270-309\
+\
+  $ npm test 2.4s\
+    \'85 34 output lines hidden \'b7 ctrl+o to expand\
+    \uc0\u8505  todo 0\
+    \uc0\u8505  duration_ms 1093.951458\
+\
+  A teacher-forced run scores one stage on the correct input. A full baseline\
+  scores the whole pipeline on whatever it actually produced. The harness changes\
+  below make the cheap version possible.\
+\
+  Teacher-forced means the stage under test is handed the right upstream answer\
+  instead of the previous stage's output. If stage 4 is given the correct change\
+  and still misses the Valley notice deadline, that miss belongs to stage 4. If it\
+  is given a bad stage-1 summary and then misses, you cannot tell which stage\
+  failed.\
+\
+  The gold change record is that upstream answer for the legal change: the items,\
+  verbatim quotes, legal status, and company gate already written in the answer\
+  key. harness stage --stage 4 --inject change_record.json feeds it in and marks\
+  the stage injected. The stack analyst never has to rediscover Proclamation\
+  11021.\
+\
+  The two runs you already have are a wiring check. They finished, wrote reports,\
+  and showed where the money goes. They are not a baseline. The TR-01 run read the\
+  investigation order, not Proclamation 11021, and the T5 run read SB 699 only.\
+  Nothing was scored against the answer keys.\
+\
+  The preliminary slice tests one behavior at a time: given the gold change, does\
+  Great Plains cite the master-supply hop, does Valley see a live clock, does the\
+  Keystone purchase order stay pinned to the 2019 terms. Each of those is one\
+  stack and a few cents. A full baseline is the later run, on the gold version\
+  ids, with no injected answers, scored end to end. That is the number you keep.\
+  It is the wrong next spend, because one upstream mistake makes every later miss\
+  look like a finding error, at about $0.90 per trigger.\
+\
+  Three harness changes are in place.\
+\
+  \'95 The stack analyst is told to copy the trigger quote from the change record\
+    and not to open the snapshot. If it tries anyway, grep and read return that\
+    quote instead of "path is outside this stack's reading set." That refusal\
+    was 103 of the failed tool calls across the two runs.\
+  \'95 A config field only_stacks caps fan-out. Omit it and every in-scope stack\
+    still runs. Set it and stacks outside the list are recorded as out of scope\
+    after the model's own scope decision, with that decision kept in the reason.\
+    An empty list is an error.\
+  \'95 configs/o1-glm.json and configs/j-jev.json now price zai/glm-5.3-flash at\
+    $0.15 / $0.03 cached / $0.50 per million, so cost_usd fills in. Sonnet is\
+    priced at the $2 / $10 rate from the design notes. DeepSeek is still\
+    unpriced because the published range is not a single rate.\
+\
+  The tests covering the trigger reply and the stack cap passed.\
+\
+\
+  addtioanlly - we can start with cheaper models and work our way up - fill in\
+  the pricing and along the way let me know which model we should starg with\
+  for cheap smoke vlaidations/baseline\
+\
+\
+  I'll fill the config prices from the current gateway rates, then pick the\
+  cheapest model that can still run a smoke validation.\
+\
+    Globbed, read 1 glob, 2 files\
+    Globbed "configs/*.json" in .\
+    Read src/models.ts\
+    Read system-design.md lines 600-639\
+\
+    WebFetch https://vercel.com/ai-gateway/models/providers/zai\
+\
+    Read 5 files\
+    \'85 2 earlier items hidden\
+    Read configs/r1-luna.json\
+    Read configs/s-sonnet.json\
+    Read configs/j-jev.json\
+\
+    WebSearch Vercel AI Gateway deepseek-v4.1-flash price per million cached input\
+              2026\
+    Found 1 reference\
+\
+    WebFetch https://vercel.com/ai-gateway/models/deepseek-v4-flash\
+\
+    WebSearch claude sonnet 5 API price per million tokens cache read 2026\
+              gpt-5.6-luna price\
+    Found 2 references\
+\
+  DeepSeek V4.1 Flash and Luna were the configs still missing rates. I'll fill\
+  those from the gateway and API lists, then name the smoke model from that\
+  ladder.\
+\
+    Edited o2-deepseek.json +4 -1\
+\
+    \uc0\u9614     "cache": "on",\
+    \uc0\u9614     "concurrency": 4,\
+    \uc0\u9614     "max_tool_calls_per_subagent": 16,\
+    \uc0\u9614 -   "ranking": "deterministic"\
+    \uc0\u9614 +   "ranking": "deterministic",\
+    \uc0\u9614 +   "prices": \{\
+    \uc0\u9614 +     "deepseek/deepseek-v4.1-flash": \{ "input": 0.15, "cached_input": 0.003,\
+    \uc0\u9614   "output": 0.60 \}\
+    \uc0\u9614 +   \}\
+    \uc0\u9614   \}\
+\
+    Edited r1-luna.json +4 -1\
+\
+    \uc0\u9614     "cache": "on",\
+    \uc0\u9614     "concurrency": 4,\
+    \uc0\u9614     "max_tool_calls_per_subagent": 16,\
+    \uc0\u9614 -   "ranking": "deterministic"\
+    \uc0\u9614 +   "ranking": "deterministic",\
+    \uc0\u9614 +   "prices": \{\
+    \uc0\u9614 +     "gpt-5.6-luna": \{ "input": 0.20, "cached_input": 0.02, "output": 1.20 \}\
+    \uc0\u9614 +   \}\
+    \uc0\u9614   \}\
+\
+  Start smoke validations on zai/glm-5.3-flash (configs/o1-glm.json). It is the\
+  cheapest model in the ladder that is built for tool use, and it is the one that\
+  already finished both full runs. One teacher-forced stack on it is about two\
+  cents. A full corpus run at the token mix from the TR-01 run is about $0.92.\
+\
+  The rates now in the configs, per million tokens:\
+\
+  \uc0\u9484 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9516 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9516 \u9472 \u9472 \u9472 \u9472 \u9472 \u9516 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9516 \u9472 \u9472 \u9472 \u9472 \u9472 \u9516 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9488 \
+  \uc0\u9474  Config  \u9474  Model         \u9474  Inp \u9474  Cach \u9474  Out \u9474  Full run at the TR-01 mix       \u9474 \
+  \uc0\u9474          \u9474                \u9474  ut  \u9474  e    \u9474  put \u9474                                  \u9474 \
+  \uc0\u9474          \u9474                \u9474      \u9474  read \u9474      \u9474                                  \u9474 \
+  \uc0\u9500 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9508 \
+  \uc0\u9474  o1-glm. \u9474  zai/glm-5.3-f \u9474  $0. \u9474  $0.0 \u9474  $0. \u9474  ~$0.92                          \u9474 \
+  \uc0\u9474  json    \u9474  lash          \u9474  15  \u9474  3    \u9474  50  \u9474                                  \u9474 \
+  \uc0\u9500 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9508 \
+  \uc0\u9474  o2-deep \u9474  deepseek/deep \u9474  $0. \u9474  $0.0 \u9474  $0. \u9474  ~$0.92                          \u9474 \
+  \uc0\u9474  seek.js \u9474  seek-v4.1-fla \u9474  15  \u9474  03   \u9474  60  \u9474                                  \u9474 \
+  \uc0\u9474  on      \u9474  sh            \u9474      \u9474       \u9474      \u9474                                  \u9474 \
+  \uc0\u9500 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9508 \
+  \uc0\u9474  r1-luna \u9474  gpt-5.6-luna  \u9474  $0. \u9474  $0.0 \u9474  $1. \u9474  ~$1.56 on the API list          \u9474 \
+  \uc0\u9474  .json   \u9474                \u9474  20  \u9474  2    \u9474  20  \u9474                                  \u9474 \
+  \uc0\u9500 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9508 \
+  \uc0\u9474  s-sonne \u9474  claude-sonnet \u9474  $2  \u9474  $0.2 \u9474  $10 \u9474  ~$14                            \u9474 \
+  \uc0\u9474  t.json  \u9474  -5            \u9474      \u9474  0    \u9474      \u9474                                  \u9474 \
+  \uc0\u9500 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9532 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9508 \
+  \uc0\u9474  j-jev.j \u9474  GLM, same as  \u9474  $0. \u9474  $0.0 \u9474  $0. \u9474  Jev itself has no public rate,  \u9474 \
+  \uc0\u9474  son     \u9474  O1            \u9474  15  \u9474  3    \u9474  50  \u9474  so classifier calls stay        \u9474 \
+  \uc0\u9474          \u9474                \u9474      \u9474       \u9474      \u9474  unpriced                        \u9474 \
+  \uc0\u9492 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9524 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9524 \u9472 \u9472 \u9472 \u9472 \u9472 \u9524 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9524 \u9472 \u9472 \u9472 \u9472 \u9472 \u9524 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9472 \u9496 \
+\
+  DeepSeek V4.1 Flash is not a cheaper start. Its input price matches GLM and its\
+  output price is higher. The very cheap cache rate ($0.003) only ties the\
+  full-run bill. Use it as the second open-weight rung, on the same stacks, once a\
+  GLM slice has a score.\
+\
+  Luna is the closed reference after that. Through the ChatGPT subscription the\
+  marginal cost is about zero, and the $1.56 figure is the API list the meter will\
+  print. Sonnet is the ceiling check, and only after the cheaper rungs miss.\
+\
+  There are cheaper gateway models, including DeepSeek V4 Flash at about $0.05 /\
+  $0.18. Its own page positions it for short classification, not a multi-step tool\
+  loop, so a cheap failure there would not tell you whether the eval or the\
+  pipeline is wrong.\
+\
+\
+  okay - so considering all the available levers to pull for imporveing the\
+  pipeline - namely, different models, experimenting with a jev-focused\
+  classification tool call, hill climbing each phase, whether through system\
+  prompt, avauible tool calls in section 5, and so on - the other experimetns\
+  listed inthis folder docs - what order do you propose? Keep in mind - I'd\
+  frame to goal as maximal pipeline discovery/progression for minimal cost.\
+  The idea here is to demosntrate discovering areas to imporve/failure\
+  poiunts, experimenting with a correction, and validating. With contued paths\
+  for further improtvment.\
+\
+\
+  The order should follow the experiments already written down, cheapest discovery\
+  first. I'll read those lists so the sequence matches them.\
+\
+    Grepped, read 1 grep, 6 files\
+    \'85 4 earlier items hidden\
+    Read eval-scenarios/HANDOFF.md lines 180-219\
+    Read eval-design.md lines 243-292\
+    Read system-design.md lines 330-369\
+\
+  Run one lever at a time, on the gold you already have, and spend the next\
+  dollars only on the stage that just failed. The two full runs already paid for\
+  the first discovery. A scored end-to-end baseline comes after a slice has a\
+  before-and-after, not before.\
+\
+  The arc that demonstrates the work is: score what you have, fix the one worst\
+  stage, rerun only that slice, then leave the next lever named. On GLM that arc\
+  is about $1\'962. A full-corpus run is $0.90 and mixes every stage together, so it\
+  is a poor place to learn.\
+\
+  1. Score the artifacts you already have. $0. Run the deterministic checks on\
+  both run directories: schema, surfaced quotes, conservation, change-item\
+  closure, scope completeness. You already know three failures without another\
+  model call. Scope kept 63 and 44 stacks against gold lists of about a dozen and\
+  four. Analysts spent 103 calls trying to re-read the trigger. commit_finding\
+  failed on bad change_refs and citations outside the stack. The trigger-file fix\
+  is already in the harness. Validate it by rerunning one stack that made those\
+  calls, not the corpus.\
+\
+  2. Stage 4 on GLM, teacher-forced, k=1. About $0.20. Inject the gold change\
+  record and run only the stacks that carry a distinct failure: Great Plains hop\
+  and the Metals Adjustment decoy, Valley\'92s open clock, Cascade\'92s missed clock,\
+  Bridgewell\'92s missing escalation, Sunpoint\'92s expired-but-surviving right, the\
+  Keystone 2019 pin, the California technician template against Marchetti, Ellison\
+  where abstaining is correct, and the utility-tariff decoy. This is the map. A\
+  hop miss, a decoy hit, and a wrong clock are three different corrections.\
+\
+  3. Hill-climb one prompt, then rerun only the misses. The analyst prompt is\
+  meant to be changed on its own. Change it for whichever slice failed hardest in\
+  step 2, rerun those stacks, then rerun the whole step-2 set once to see what the\
+  change broke. That is the correction-and-validation beat. Do not also swap the\
+  model or the tool list in that run.\
+\
+  4. Stage 1 and stage 3, one call each, on the gold triggers. T1 on Proclamation\
+  11021, the T3 pair, T5 with both California instruments, TR-03, and TR-90. These\
+  calls are cents. Stage 1 asks whether the substantive item is found and the\
+  distractor is dismissed. Stage 3 asks whether every gold stack is included and\
+  whether the utility lease and the insurance policies are pruned. The full runs\
+  showed weak pruning. Tighten the scope prompt only if this call shows a gold\
+  stack kept in for a bad reason. Default-in stays until a real miss says\
+  otherwise. Stage 0 is a unit test on the three pairs you already wrote, and it\
+  costs nothing.\
+\
+  5. Labels, on the evidence from step 2, not a new reading pass. Score urgency,\
+  materiality, and the dangerous swaps (material called not material, a live\
+  forfeitable clock called anything else). If the spans were right and the labels\
+  were wrong, the next experiment is the labeller. Jev belongs here: same\
+  findings, classify instead of self-labels, on those items only. Sweep Jev\'92s\
+  abstention threshold only if a dangerous swap remains. If the spans were wrong,\
+  Jev will not help, and you stay on the step-3 prompt.\
+\
+  6. Stage 5 on injected gold findings, ranking approach A. One call for T1 and\
+  one for the T3 pair. Check that tier 1 sits above tier 3, that tier 1 is not\
+  filed as not material, and that the Sunpoint\'96Northbrook link is found. The\
+  credit-agreement covenant must not show up on T3 or T5. Approach A is the\
+  deterministic sort you already run. B (the model ranks freely) and C (reorder\
+  only inside ties) are the one-time comparison, and only if A fails those checks.\
+  The \'93full findings versus a summary plus fetch_stack\'94 handoff is the tool\
+  change to try if the cross-link is the thing that fails.\
+\
+  7. The same slice on DeepSeek V4.1 Flash, k=1. Same stacks, same gold inputs.\
+  This is the model lever. The two models cost about the same per full run, so the\
+  comparison is the slice, not another corpus pass. A mixed config, one model for\
+  the orchestrator and another for the stacks, is justified only if this shows\
+  the two roles failing differently.\
+\
+  8. Repeat the winner. k=5 on the open-weight model that won the slice, sentinel\
+  items only. That is how you show a fix stayed fixed. Luna, on the ChatGPT\
+  subscription, is the closed reference after that: k=3, marginal cost about zero,\
+  limited by rate limits. Sonnet is one k=1 pass over the same slice, and only if\
+  Luna also scores low. At these prices a Sonnet pass over the whole corpus is\
+  about $14, so it stays on the slice.\
+\
+  After that, the cheap metamorphics reuse the artifacts: the T3 date pair (labels\
+  and tiers must move together), the Washington profile swap (the gate must\
+  flip), and one clause deletion on a single stack (the finding must flip).\
+  Scaling the corpus and renaming files are the later path. So is gold you have\
+  not written yet: the Hai Phong hop, the Illinois band, and the Northaire pin.\
+\
+  What stays off this path until the slice is stable: k=3 of every trigger across\
+  the full vault, and pulling two levers in one run. The first hides which stage\
+  moved. The second spends the discovery budget on a result you cannot attribute.\
+\
+\
+  okay - but with k=1 for intial evals - how does thay point to any kind of\
+  trend? it seems like the techer-forced + fgold responses (with the exception\
+  of stage 4) will be reletively cheap - I undertand not scaling to k=30\
+  immediately but k=1 is imposisble to tell if its simply an isolated fluke,\
+  would you agree?\
+\
+\
+  Yes. A single sample from a model cannot separate a stable miss from a one-off\
+  draw, and the cheap stages should not be run at k=1 once you are trying to learn\
+  anything.\
+\
+  k=1 is only a wiring check: the scorer runs, the gold loads, and a stack returns\
+  a schema-valid finding. A pass there means the harness worked. It does not mean\
+  the stage is reliable, and a fail there might not reproduce.\
+\
+  k=3 is the smallest number that gives a trend on these calls. The same item\
+  failing the same way three times is a failure worth a prompt change. One fail\
+  and two passes is variance, and you leave the prompt alone. Three passes means\
+  it is not a consistent miss. You still do not have a rate, and you do not need\
+  one to decide whether to hill-climb.\
+\
+  Stages 1, 3, and 5, and the label check, are one call each. Running each gold\
+  trigger three times costs cents, so they should start at k=3. Stage 4 is the\
+  expensive one, and the slice is still cheap there: about ten stacks at roughly\
+  two cents each is about $0.20 per pass, so k=3 is about $0.60. That replaces the\
+  k=1 step in the earlier order. The correction run uses the same k=3 on the\
+  items that failed at least twice, then one k=3 pass over the whole slice to see\
+  what the change broke.\
+\
+  k=5 stays where the design put it: on the open-weight model that won, after a\
+  fix, to show the result held. Luna stays at k=3 because the subscription is\
+  rate-limited. Nothing in this loop needs k=30.\
+\
+\
+  excellent - formalize this tiered, ROI based approach to the evals, whether\
+  int he existing eval docs or a new one.\
+\
+\
+  I'll put this in the eval docs where the budget and the run order already live,\
+  and match the way those files are written.\
+\
+    Read 5 files\
+    \'85 2 earlier items hidden\
+    Read eval-scenarios/README.md\
+    Read eval-scenarios/answer-keys/PROGRESS.md\
+    Read eval-design.md lines 460-471\
+\
+    Edited eval-design.md +1\
+\
+    \uc0\u9614   Companion to `system-design.md`. Stage-by-stage unit evals, multi-stage\
+    \uc0\u9614   integration evals, what each one measures, the levers each one tunes, and\
+    \uc0\u9614   the budget plan (\'a713). Concrete scenarios live in `eval-scenarios/`.\
+    \uc0\u9614 + The spend order and repeat counts to use now are\
+    \uc0\u9614   `eval-scenarios/RUN-PLAN.md`.\
+    \uc0\u9614 \
+    \uc0\u9614   Tags follow `system-design.md`: [JASON], [SUGGEST], [DECIDED], [OPEN].\
+    \uc0\u9614   \'a710 records the revision-2 changes. Decisions made later on 2026-09-29 are\
+\
+    Edited eval-design.md +5\
+\
+    \uc0\u9614 \
+    \uc0\u9614   ## 13. Budget plan: high-ROI evals under a fixed spend [SUGGEST,\
+    \uc0\u9614   2026-09-29]\
+    \uc0\u9614 \
+    \uc0\u9614 + > **Spend order superseded 2026-09-30.** The sequence, the repeat counts,\
+    \uc0\u9614   and\
+    \uc0\u9614 + > the dollar figures in this section were estimates. Measured runs replaced\
+    \uc0\u9614 + > them. Follow `eval-scenarios/RUN-PLAN.md`. The stage definitions in \'a75\
+    \uc0\u9614   still\
+    \uc0\u9614 + > hold.\
+    \uc0\u9614 +\
+    \uc0\u9614   Target [JASON]: one "suite" run costs **$1\'965** per model, on lightweight\
+    \uc0\u9614   models only. Magnitude, not precision. The token figures below are\
+    \uc0\u9614   **estimates to be replaced by measured usage** from the first instrumented\
+\
+    Edited PROGRESS.md +2 -1\
+\
+    \uc0\u9614   **State 2026-09-29: focused set written and checked.** This replaces the\
+    \uc0\u9614   paused 60\'9680 item plan. That plan's reading notes are still in\
+    \uc0\u9614   `progress/WP*.md`. Do not relaunch WP1\'96WP5 to author the rest unless a\
+    \uc0\u9614 - later session explicitly extends the set.\
+    \uc0\u9614 + later session explicitly extends the set. How to spend the next runs is\
+    \uc0\u9614 + `../RUN-PLAN.md`.\
+    \uc0\u9614 \
+    \uc0\u9614   ## What is gold\
+    \uc0\u9614 \
+\
+    Edited RUN-PLAN.md +148\
+\
+    \uc0\u9614 + # Run plan\
+    \uc0\u9614 +\
+    \uc0\u9614 + **Decided 2026-09-30.** This is the spend order for the focused gold in\
+    \uc0\u9614 + `answer-keys/`. It replaces the sequence, repeat counts, and dollar figures\
+    \uc0\u9614 + in `eval-design.md` \'a713. Stage definitions, levers, and invariants there\
+    \uc0\u9614 + still hold. Sentinel ids are in `HANDOFF.md` \'a74. Which of those ids are\
+    \uc0\u9614 + actually gold is in `answer-keys/PROGRESS.md`.\
+    \uc0\u9614 +\
+    \uc0\u9614 + Prices below are the gateway and API list rates recorded in `configs/`.\
+    \uc0\u9614 + Costs are measured from the two GLM-5.3-Flash corpus runs on 2026-09-30\
+    \uc0\u9614 + (`runs/TR-01-copper-section-232-1790748586041`, `runs/smoke-t5`), not from\
+    \uc0\u9614 + the \'a713 estimates.\
+    \uc0\u9614  \'85 truncated (136 more lines) \'b7 ctrl+r to review\
+\
+  The spend order is now eval-scenarios/RUN-PLAN.md. eval-design.md \'a713 and the\
+  answer-key progress note both point at it. The stage definitions in \'a713 are\
+  unchanged. The old dollar figures and the k=1 dev loop are marked superseded.\
+\
+  The plan records the measured rates, sets k=3 as the smallest count that\
+  justifies a change, and orders the work as score the existing runs, then the\
+  stage-4 slice on GLM, then one prompt change, then stages 1 and 3, labels and\
+  Jev, stage 5, DeepSeek on that same slice, and only then a held winner, Luna,\
+  and a conditional Sonnet pass. A full-corpus baseline stays after that slice has\
+  a before and after.}

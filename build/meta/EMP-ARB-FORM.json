@@ -1,0 +1,26 @@
+{
+ "doc_id": "EMP-ARB-FORM",
+ "path": "documents/employment/templates/form_mutual-arbitration-agreement_2023.md",
+ "chars": 16954,
+ "area": "employment",
+ "cluster": null,
+ "doc_type": "arbitration_agreement_form",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2023-01-01",
+ "status": "active",
+ "roles": [
+  "arbitration"
+ ],
+ "source_class": "generated_llm",
+ "template": false,
+ "placeholders": [],
+ "planted_features": [
+  "ARB_CLASS_WAIVER"
+ ],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

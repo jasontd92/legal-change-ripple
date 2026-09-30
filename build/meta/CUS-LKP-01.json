@@ -1,0 +1,28 @@
+{
+ "doc_id": "CUS-LKP-01",
+ "path": "documents/customers/city-of-lakeport_hvac-reference-contract/01_reference-contract-hvac-products-installation-services_2021-04-20.md",
+ "chars": 163067,
+ "area": "customers",
+ "cluster": "city-of-lakeport_hvac-reference-contract",
+ "doc_type": "customer_master_agreement",
+ "parent_id": null,
+ "counterparty": "CUS-LKP",
+ "effective_date": "2021-04-20",
+ "status": "active",
+ "roles": [
+  "tariff",
+  "cooperative_piggyback"
+ ],
+ "source_class": "public_agency",
+ "source_ref": "https://ecm.chicago.gov/eSMARTContracts/service/DPSWebDocumentViewer?id={D0FBF478-0000-C219-BBC7-13BE0E2E3F08}&osName=eContentContracts&el=0&image=image",
+ "year_shift": 0,
+ "governing_law_remap": null,
+ "name_map_size": 19,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

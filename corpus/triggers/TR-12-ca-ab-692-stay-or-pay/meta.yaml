@@ -1,0 +1,13 @@
+group: TR-12-ca-ab-692-stay-or-pay
+domain: noncompete
+summary: California bans stay-or-pay / training-repayment terms in contracts entered on or after 2026-01-01.
+versions:
+- id: 2025-10-13_ab-692-chaptered
+  status: effective
+  effective: 2026-01-01
+  file: 2025-10-13_ab-692-chaptered.txt
+  source_url: https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB692
+  fetched_url: https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB692
+  sha256_16: 02cb7da75b72c46f
+  chars: 10578
+  title: California AB 692 (Ch. 703, Stats. 2025)

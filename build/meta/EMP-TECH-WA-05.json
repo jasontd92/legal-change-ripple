@@ -1,0 +1,23 @@
+{
+ "doc_id": "EMP-TECH-WA-05",
+ "path": "documents/employment/signed-agreements/gavin-falkner_technician-employment-agreement_wa_2022-07-24.md",
+ "chars": 19434,
+ "area": "employment",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "employment_agreement",
+ "parent_id": "EMP-TPL-TECH-WA",
+ "effective_date": "2022-07-24",
+ "roles": [
+  "noncompete",
+  "wa"
+ ],
+ "planted_features": [
+  "template_instance",
+  "annualized_earnings:68120",
+  "signed:2022-07-24",
+  "state:WA"
+ ],
+ "employee": "Gavin Falkner",
+ "status": "active"
+}

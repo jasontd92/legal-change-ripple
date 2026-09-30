@@ -1,0 +1,17 @@
+{
+ "doc_id": "SUP-LWP-NOTICE-2025-03",
+ "path": "documents/supply/supplier-notices/lakeshore-waterworks-pvf_price-increase-notice_2025-03-10.md",
+ "chars": 905,
+ "area": "supply",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "supplier_notice",
+ "counterparty": "SUP-LWP",
+ "effective_date": "2025-03-10",
+ "roles": [
+  "tariff",
+  "price_increase_notice",
+  "ieepa"
+ ],
+ "status": "active"
+}

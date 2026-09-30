@@ -1,0 +1,28 @@
+{
+ "doc_id": "CUS-RES-CA-TERMS-2024-06-01",
+ "path": "documents/customers/residential-terms/meridian-comfort-club_membership-terms_california_2024-06-01.md",
+ "chars": 14517,
+ "area": "customers",
+ "cluster": null,
+ "doc_type": "standard_terms",
+ "parent_id": null,
+ "counterparty": "CUS-RES",
+ "effective_date": "2024-06-01",
+ "status": "superseded",
+ "roles": [
+  "auto_renewal",
+  "consumer",
+  "ca"
+ ],
+ "source_class": "generated_llm",
+ "template": false,
+ "placeholders": [],
+ "planted_features": [
+  "CA_RENEW_2024"
+ ],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

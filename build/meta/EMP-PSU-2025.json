@@ -1,0 +1,28 @@
+{
+ "doc_id": "EMP-PSU-2025",
+ "path": "documents/employment/priya-ramaswamy_performance-unit-award_2025-03-03.md",
+ "chars": 25182,
+ "area": "employment",
+ "cluster": null,
+ "doc_type": "equity_award",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2025-03-03",
+ "status": "active",
+ "roles": [
+  "noncompete",
+  "forfeiture"
+ ],
+ "source_class": "edgar_llm_adapted",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1727263/000119312526076548/ftdr-ex10_24.htm",
+ "year_shift": 0,
+ "governing_law_remap": null,
+ "name_map_size": 14,
+ "filled_fields": [],
+ "adapt_length_ratio": 1.0,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

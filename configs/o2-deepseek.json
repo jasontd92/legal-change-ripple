@@ -1,0 +1,15 @@
+{
+  "model_config": {
+    "orchestrator": "deepseek/deepseek-v4.1-flash",
+    "subagent": "deepseek/deepseek-v4.1-flash",
+    "classifier": "self",
+    "provider_pin": null
+  },
+  "cache": "on",
+  "concurrency": 4,
+  "max_tool_calls_per_subagent": 16,
+  "ranking": "deterministic",
+  "prices": {
+    "deepseek/deepseek-v4.1-flash": { "input": 0.15, "cached_input": 0.003, "output": 0.60 }
+  }
+}

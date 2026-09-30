@@ -1,0 +1,25 @@
+{
+ "doc_id": "CUS-CRT-AMD1",
+ "path": "documents/customers/crestline-retail-trust_master-services-agreement/02_amendment-1_rate-adjustment_2025-06-01.md",
+ "chars": 7325,
+ "area": "customers",
+ "cluster": "crestline-retail-trust_master-services-agreement",
+ "doc_type": "amendment",
+ "parent_id": "CUS-CRT-MSA",
+ "counterparty": "CUS-CRT",
+ "effective_date": "2025-06-01",
+ "status": "active",
+ "roles": [
+  "tariff",
+  "mfn"
+ ],
+ "source_class": "generated_llm",
+ "template": false,
+ "placeholders": [],
+ "planted_features": [],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

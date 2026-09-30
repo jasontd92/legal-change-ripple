@@ -1,0 +1,34 @@
+{
+ "doc_id": "EMP-TPL-TECH-TX",
+ "path": "documents/employment/templates/form_technician-employment-agreement_texas_rev-2023.md",
+ "chars": 21653,
+ "area": "employment",
+ "cluster": null,
+ "doc_type": "employment_agreement_form",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2023-01-01",
+ "status": "active",
+ "roles": [
+  "tx",
+  "noncompete"
+ ],
+ "source_class": "generated_llm",
+ "template": true,
+ "placeholders": [
+  "[[EMPLOYEE_NAME]]",
+  "[[POSITION]]",
+  "[[BRANCH_CITY]]",
+  "[[START_DATE]]",
+  "[[HOURLY_RATE]]",
+  "[[SIGN_DATE]]"
+ ],
+ "planted_features": [
+  "TECH_NC_TX"
+ ],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

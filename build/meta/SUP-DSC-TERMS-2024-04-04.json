@@ -1,0 +1,30 @@
+{
+ "doc_id": "SUP-DSC-TERMS-2024-04-04",
+ "path": "documents/supply/supplier-terms/delmont-supply_sales-order-terms-and-conditions_2024-04-04.md",
+ "chars": 16782,
+ "area": "supply",
+ "cluster": null,
+ "doc_type": "standard_terms",
+ "counterparty": "SUP-DSC",
+ "effective_date": "2024-04-04",
+ "version_label": "updated 04-04-2024",
+ "published_url": "https://www.delmontsupply.com/sales-order-terms-and-conditions",
+ "status": "superseded",
+ "roles": [
+  "job_quote_price_protection",
+  "incorporated_web_terms"
+ ],
+ "source_class": "web_rewritten",
+ "source_ref": "W-HAJOCA-2024",
+ "copy_share": 0.583,
+ "version_pair_check": {
+  "orig_similarity": 0.466,
+  "rewritten_similarity": 0.538,
+  "ok": true
+ },
+ "checks": {
+  "ok": true,
+  "fails": [],
+  "leaks": []
+ }
+}

@@ -1,0 +1,84 @@
+- id: TR10-S4-05
+  aliases: []
+  source_file: C-noncompete.md
+  trigger: TR-10
+  eval_ids:
+  - S4
+  - LBL-finding_type
+  - M1
+  - S5-R1
+  - V14
+  - LBL-legal_status
+  set: sentinel
+  slice:
+  - template-instance
+  confidence: high
+  status: done
+  gold_file: e2e/T3a_TR10_2026-10-01.yaml
+  gold_ref: F1
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Pair with T3b. Classification only; earnings not in corpus.
+- id: TR10-S4-01
+  aliases: []
+  source_file: C-noncompete.md
+  trigger: TR-10
+  eval_ids:
+  - S4
+  - LBL-urgency
+  - M1
+  - S5-R1
+  - S5-R2
+  - S5-R3
+  - LBL-response_type
+  - LBL-legal_status
+  set: e2e
+  slice:
+  - template-instance
+  confidence: high
+  status: done
+  gold_file: e2e/T3a_TR10_2026-10-01.yaml
+  gold_ref: F2
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Pair with T3b. Whitcombe annualizes above the 2026 threshold.
+- id: TR10-S4-06
+  aliases: []
+  source_file: C-noncompete.md
+  trigger: TR-10
+  eval_ids:
+  - S4
+  - M1
+  set: e2e
+  slice: []
+  confidence: high
+  status: done
+  gold_file: e2e/T3a_TR10_2026-10-01.yaml
+  gold_ref: F3
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Hale, non-owner. Pair with T3b.
+- id: TR10-S4-06-OWNER
+  aliases: []
+  source_file: C-noncompete.md
+  trigger: TR-10
+  eval_ids:
+  - S4
+  set: e2e
+  slice:
+  - control
+  confidence: high
+  status: done
+  gold_file: e2e/T3a_TR10_2026-10-01.yaml
+  gold_ref: F4
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Mercer stays not_affected at both dates. The purchase agreement states that OWNER owns all outstanding shares of the seller.

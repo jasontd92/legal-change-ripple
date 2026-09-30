@@ -1,0 +1,83 @@
+# Trigger groups -> versions. Each version is a raw source id plus deterministic expectations.
+# expect: must (regexes that must match) / must_not (regexes that must not match)
+# pairs: [older, newer]; the diff between them must contain added:/removed: regexes (checked on changed lines only)
+- group: TR-01-copper-section-232
+  domain: tariff
+  summary: Section 232 copper duties. Three dated versions; each changes base, rate or scope.
+  versions:
+    - {id: 2025-02-25_eo-14220-investigation, src: T-EO14220, status: final, effective: 2025-02-25, expect: {must: ['investigation']}}
+    - {id: 2025-07-30_proclamation-10962, src: T-P10962, status: effective, effective: 2025-08-01,
+       note: "Annex is image-only in the Federal Register. Per the White House annex images it covers HTS 7406-7419, including 7411 (copper tubes and pipes), 7412 (tube/pipe fittings) and 7418.20 (sanitary ware); not 8481 (valves), 8419 (water heaters) or 8415 (air conditioners).",
+       expect: {must: ['non-copper content', 'No drawback', '50 percent', 'June 30, 2026']}}
+    - {id: 2025-07-30_proclamation-10962_ANNEX-SCOPE-derived, src: "derived:p10962_annex_scope.txt", status: derived_scope_note, effective: 2025-08-01, expect: {must: ['7411\.10\.10', '7412\.10\.00', 'NOT LISTED: refined copper cathode'], must_not: ['8481\.80\.\d\d ']}}
+    - {id: 2025-07-31_cbp-csms-65794272, src: T-CSMS-65794272, status: guidance, effective: 2025-08-01, expect: {must: ['[Cc]opper', '9903\.78']}}
+    - {id: 2026-04-02_proclamation-11021, src: T-P11021, status: effective, effective: 2026-04-06, expect: {must: ['full customs value', 'Annex I-A']}}
+    - {id: 2026-06-01_proclamations-11021-11032_ANNEX-SCOPE-derived-ocr-partial, src: "derived:p11021_p11032_annex_scope.txt", status: derived_scope_note, effective: 2026-06-08, expect: {must: ['UNVERIFIED', 'FULL CUSTOMS VALUE', 'Annex I-C']}}
+    - {id: 2026-06-01_proclamation-11032, src: T-P11032, status: effective, effective: 2026-06-08, expect: {must: ['95 percent shall be modified to 85 percent', '[Rr]esidential']}}
+    - {id: 2026-07-20_proclamation-11045-aluminum-DISTRACTOR, src: T-P11045, status: effective, effective: 2026-07-20, distractor: true, expect: {must: ['[Aa]luminum']}}
+    - {id: 2026-07-30_dpa-critical-minerals-DISTRACTOR, src: T-DPA-CRITMIN, status: final, effective: 2026-07-30, distractor: true, expect: {must: ['[Cc]ritical']}}
+- group: TR-02-ieepa-tariffs-scotus
+  domain: tariff
+  summary: Supreme Court holds IEEPA does not authorize tariffs; collection ends; a Section 122 surcharge bridges; refunds go to the importer of record.
+  versions:
+    - {id: 2026-02-20_learning-resources-v-trump-opinion, src: T-SCOTUS-IEEPA, status: decided, effective: 2026-02-20, expect: {must: ['IEEPA does not authorize the President to impose tariffs']}}
+    - {id: 2026-02-20_eo-14389-ending-ieepa-tariffs, src: T-EO14389, status: effective, effective: 2026-02-24, expect: {must: ['shall no longer be in effect']}}
+    - {id: 2026-02-20_proclamation-11012-section-122-surcharge, src: T-P11012, status: expired, effective: 2026-02-24, expires: 2026-07-24, expect: {must: ['150', '10 percent']}}
+    - {id: 2026-07-08_cbp-ieepa-refunds-pra-notice, src: T-CBP-REFUND-PRA, status: final, effective: 2026-07-08, expect: {must: ['[Rr]efund']}}
+    - {id: 2026-09-02_cbp-ieepa-duty-refunds-page, src: T-CBP-REFUND-PAGE, status: guidance, effective: 2026-09-02, expect: {must: ['CAPE', '[Ii]mporter of [Rr]ecord']}}
+- group: TR-03-adcvd-copper-pipe-mexico
+  domain: tariff
+  role: control
+  expected_relevance: "CONTROL. No corpus document specifies Mexican-origin copper pipe or tube, and Meridian imports directly only from Vietnam. Expected result: no direct exposure; at most a monitor note that distributors pricing at time of shipment (Keystone, Lakeshore) could pass through any duty change."
+  summary: Antidumping duty administrative review, seamless refined copper pipe and tube from Mexico (preliminary results).
+  versions:
+    - {id: 2026-09-21_preliminary-results, src: T-ADCVD-MEX-2026, status: preliminary, effective: 2026-09-21, expect: {must: ['[Cc]opper [Pp]ipe and [Tt]ube', '[Pp]reliminary']}}
+- group: TR-10-wa-noncompete-eshb-1155
+  domain: noncompete
+  summary: Washington voids all noncompetition covenants (effective 2027-06-30), requires notice by 2027-10-01, treats forfeiture and repayment as noncompetes, and keeps a 1%-ownership sale-of-business exception.
+  versions:
+    - {id: 2024-03-_sb-5935-session-law, src: T-WA-SB5935-2024, status: effective, effective: 2024-06-06, expect: {must: ['49\.62']}}
+    - {id: 2026-09-_rcw-49-62-current-text, src: T-WA-RCW4962-CURRENT, status: in_force_until_2027-06-30, effective: 2024-06-06, expect: {must: ['18 months', 'void and unenforceable']}}
+    - {id: 2026-03-23_eshb-1155-session-law, src: T-WA-ESHB1155, status: enacted_not_yet_effective, effective: 2027-06-30, expect: {must: ['regardless of when', 'October 1, 2027', 'June 30, 2027', 'one percent or more', 'repay, or forfeit']}}
+- group: TR-11-il-noncompete-construction
+  domain: noncompete
+  summary: Illinois voids noncompetes AND non-solicits for construction employees (effective 2025-01-01); earnings thresholds step up 2027-01-01.
+  versions:
+    - {id: 2023-03-_820-ilcs-90-prior-text, src: T-IL-820ILCS90, status: superseded, effective: 2022-01-01, expect: {must: ['\$75,000']}}
+    - {id: 2024-08-09_public-act-103-0921, src: T-IL-PA103-921, status: effective, effective: 2025-01-01, expect: {must: ['individuals employed in construction', '\$80,000 per year beginning on January\s+1, 2027']}}
+- group: TR-12-ca-ab-692-stay-or-pay
+  domain: noncompete
+  summary: California bans stay-or-pay / training-repayment terms in contracts entered on or after 2026-01-01.
+  versions:
+    - {id: 2025-10-13_ab-692-chaptered, src: T-CA-AB692, status: effective, effective: 2026-01-01, expect: {must: ['on or after January 1, 2026', '\$5,000']}}
+- group: TR-13-ftc-noncompete-rule-removal
+  domain: noncompete
+  summary: FTC removes the vacated Non-Compete Clause Rule from the CFR (a no-op control), plus the Rollins enforcement order covering technicians.
+  versions:
+    - {id: 2026-02-12_ftc-rule-removal, src: T-FTC-NCREMOVAL, status: final, effective: 2026-02-12, expect: {must: ['Non-Compete Clause Rule', 'Eighth Circuit']}}
+    - {id: 2026-04-22_ftc-rollins-consent-order-analysis, src: T-FTC-ROLLINS, status: proposed_order, effective: 2026-04-22, expect: {must: ['75 miles', 'technicians']}}
+- group: TR-14-ca-noncompete-sb699-ab1076
+  domain: noncompete
+  expected_relevance: "POSITIVE (reclassified from control 2026-09-29). SB 699: void post-employment restrictive clauses entered into or enforced after 2024-01-01 are unlawful, including employee non-solicits (Castellano offer letter section 12; CA technician template section 6.1 and its signed instances). AB 1076: notice due 2024-02-14 for pre-existing void noncompete clauses; whether employee non-solicits count is unsettled, so the five pre-deadline technician instances are needs review. In-term and trade-secret-limited clauses are decoys."
+  summary: California codifies and extends the Section 16600 ban on noncompetes (SB 699, private right of action; AB 1076, voids noncompete clauses and requires notice by 2024-02-14).
+  versions:
+    - {id: 2023-09-01_ca-sb-699, src: T-CA-SB699, status: effective, effective: 2024-01-01, expect: {must: ['16600']}}
+    - {id: 2023-10-13_ca-ab-1076, src: T-CA-AB1076, status: effective, effective: 2024-01-01, expect: {must: ['February 14, 2024']}}
+- group: TR-20-ca-automatic-renewal-ab-2863
+  domain: consumer
+  summary: California Automatic Renewal Law amendments (express consent, click-to-cancel, annual reminder) for contracts entered, amended or extended on or after 2025-07-01.
+  versions:
+    - {id: 2024-09-24_ab-2863-chaptered, src: T-CA-AB2863, status: effective, effective: 2025-07-01, expect: {must: ['July 1, 2025', 'express affirmative consent']}}
+- group: TR-21-ftc-negative-option
+  domain: consumer
+  summary: FTC restores the pre-2024 Negative Option Rule after the Eighth Circuit vacatur, then asks for comment on new amendments.
+  versions:
+    - {id: 2026-03-13_negative-option-request-for-comment, src: T-FTC-NEGOPT-ANPRM, status: proposed, effective: null, expect: {must: ['[Nn]egative [Oo]ption']}}
+- group: TR-90-controls
+  domain: control
+  role: control
+  expected_relevance: "CONTROL. Neither change reaches this company: TX SB 1318 covers physician noncompetes (no physicians employed); WY SF 107 is outside the states of operation (CA, WA, IL, TX). Expected result: company-level exit or no findings."
+  summary: Real changes that should produce no action for this company (wrong profession, wrong state).
+  versions:
+    - {id: 2025-06-20_tx-sb-1318-physicians, src: T-TX-SB1318, status: effective, effective: 2025-09-01, expect: {must: ['physician']}}
+    - {id: 2025-03-_wy-sf-107, src: T-WY-SF107, status: effective, effective: 2025-07-01, expect: {must: ['[Nn]oncompet|covenant not to compete']}}

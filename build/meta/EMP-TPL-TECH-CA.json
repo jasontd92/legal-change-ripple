@@ -1,0 +1,34 @@
+{
+ "doc_id": "EMP-TPL-TECH-CA",
+ "path": "documents/employment/templates/form_technician-employment-agreement_california_rev-2017.md",
+ "chars": 30849,
+ "area": "employment",
+ "cluster": null,
+ "doc_type": "employment_agreement_form",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2017-03-01",
+ "status": "active",
+ "roles": [
+  "ca",
+  "confidentiality"
+ ],
+ "source_class": "generated_llm",
+ "template": true,
+ "placeholders": [
+  "[[EMPLOYEE_NAME]]",
+  "[[POSITION]]",
+  "[[BRANCH_CITY]]",
+  "[[START_DATE]]",
+  "[[HOURLY_RATE]]",
+  "[[SIGN_DATE]]"
+ ],
+ "planted_features": [
+  "TECH_NS_CA"
+ ],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

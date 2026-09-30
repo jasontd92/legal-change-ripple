@@ -1,0 +1,27 @@
+{
+ "doc_id": "CUS-OAK-MSA",
+ "path": "documents/customers/oakridge-hospitality-group_master-services-agreement_2020-09-15.md",
+ "chars": 41495,
+ "area": "customers",
+ "cluster": null,
+ "doc_type": "customer_master_agreement",
+ "parent_id": null,
+ "counterparty": "CUS-OAK",
+ "effective_date": "2020-09-15",
+ "status": "active",
+ "roles": [
+  "noncompete_lookalike",
+  "no_hire"
+ ],
+ "source_class": "generated_llm",
+ "template": false,
+ "placeholders": [],
+ "planted_features": [
+  "NOHIRE_OAKRIDGE"
+ ],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

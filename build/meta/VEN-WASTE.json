@@ -1,0 +1,24 @@
+{
+ "doc_id": "VEN-WASTE",
+ "path": "documents/vendors/greenline-disposal_waste-and-recycling-services-agreement_2023-01-01.md",
+ "chars": 13008,
+ "area": "vendors",
+ "cluster": null,
+ "doc_type": "vendor_agreement",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2023-01-01",
+ "status": "active",
+ "roles": [
+  "distractor"
+ ],
+ "source_class": "generated_llm",
+ "template": false,
+ "placeholders": [],
+ "planted_features": [],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

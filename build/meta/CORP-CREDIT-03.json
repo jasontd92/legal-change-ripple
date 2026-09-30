@@ -1,0 +1,25 @@
+{
+ "doc_id": "CORP-CREDIT-03",
+ "path": "documents/corporate/first-harbor-bank_credit-agreement/03_waiver-fixed-charge-coverage_2024-05-10.md",
+ "chars": 5560,
+ "area": "corporate",
+ "cluster": "first-harbor-bank_credit-agreement",
+ "doc_type": "waiver",
+ "parent_id": "CORP-CREDIT-01",
+ "counterparty": null,
+ "effective_date": "2024-05-10",
+ "status": "active",
+ "roles": [],
+ "source_class": "edgar_llm_adapted",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1035983/000095012902004151/h98970aexv10w2.txt",
+ "year_shift": 22,
+ "governing_law_remap": null,
+ "name_map_size": 158,
+ "filled_fields": [],
+ "adapt_length_ratio": 0.54,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

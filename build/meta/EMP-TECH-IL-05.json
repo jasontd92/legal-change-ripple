@@ -1,0 +1,23 @@
+{
+ "doc_id": "EMP-TECH-IL-05",
+ "path": "documents/employment/signed-agreements/nolan-quill_technician-employment-agreement_il_2023-08-25.md",
+ "chars": 25646,
+ "area": "employment",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "employment_agreement",
+ "parent_id": "EMP-TPL-TECH-IL",
+ "effective_date": "2023-08-25",
+ "roles": [
+  "noncompete",
+  "il"
+ ],
+ "planted_features": [
+  "template_instance",
+  "annualized_earnings:96720",
+  "signed:2023-08-25",
+  "state:IL"
+ ],
+ "employee": "Nolan Quill",
+ "status": "active"
+}

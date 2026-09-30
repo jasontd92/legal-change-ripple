@@ -1,0 +1,25 @@
+{
+ "doc_id": "CUS-LKP-02",
+ "path": "documents/customers/city-of-lakeport_hvac-reference-contract/02_modification-1_value-increase_2022-06-17.md",
+ "chars": 9600,
+ "area": "customers",
+ "cluster": "city-of-lakeport_hvac-reference-contract",
+ "doc_type": "amendment",
+ "parent_id": "CUS-LKP-01",
+ "counterparty": "CUS-LKP",
+ "effective_date": "2022-06-17",
+ "status": "active",
+ "roles": [],
+ "source_class": "public_agency",
+ "source_ref": "https://ecm.chicago.gov/eSMARTContracts/service/DPSWebDocumentViewer?id={F08A8681-0000-C214-BF94-000D623AF3DF}&osName=eContentContracts&el=0&image=image",
+ "year_shift": 0,
+ "governing_law_remap": null,
+ "name_map_size": 61,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

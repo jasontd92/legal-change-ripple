@@ -1,0 +1,1147 @@
+<html>
+<head>
+<title>Federal Register, Volume 91 Issue 49 (Friday, March 13, 2026)</title>
+</head>
+<body><pre>
+[Federal Register Volume 91, Number 49 (Friday, March 13, 2026)]
+[Proposed Rules]
+[Pages 12318-12325]
+From the Federal Register Online via the Government Publishing Office [<a href="http://www.gpo.gov">www.gpo.gov</a>]
+[FR Doc No: 2026-04952]
+
+
+=======================================================================
+-----------------------------------------------------------------------
+
+FEDERAL TRADE COMMISSION
+
+16 CFR Part 425
+
+RIN 3084-AB54
+
+
+Rule Concerning the Use of Prenotification Negative Option Plans
+
+AGENCY: Federal Trade Commission.
+
+ACTION: Advance notice of proposed rulemaking; request for public 
+comment.
+
+-----------------------------------------------------------------------
+
+SUMMARY: The Federal Trade Commission (``FTC'' or ``Commission'') seeks 
+public comment on the need for amendments to the Commission's ``Rule 
+Concerning the Use of Prenotification Negative Option Plans'' (i.e., 
+``Negative Option Rule'' or ``Rule'') to help consumers avoid recurring 
+payments for products and services they did not intend to order and to 
+allow them to cancel such payments without unwarranted obstacles.
+
+DATES: Comments must be received on or before April 13, 2026.
+
+ADDRESSES: Interested parties may file a comment online or on paper, by 
+following the instructions in the Request for Comments part of the 
+SUPPLEMENTARY INFORMATION section below. We strongly encourage you to 
+submit your comments online through the <a href="https://www.regulations.gov">https://www.regulations.gov</a> 
+website. If you prefer to file your comments on paper, write ``Negative 
+Option Rule ANPRM, Project No. P064202'' on your comment and on the 
+envelope, and mail your comment by overnight service to: Federal Trade 
+Commission, Office of the Secretary, 600 Pennsylvania Avenue NW, Mail 
+Stop H-144 (Annex N), Washington, DC 20580.
+
+FOR FURTHER INFORMATION CONTACT: Hong Park (202-326-2158), Attorney, 
+Division of Enforcement, Bureau of Consumer Protection, Federal Trade 
+Commission, 600 Pennsylvania Avenue NW, Washington, DC 20580.
+
+SUPPLEMENTARY INFORMATION:
+
+I. Overview
+
+    The Commission seeks comments on ways to improve its existing 
+regulations for negative option marketing, a common form of marketing 
+where the absence of affirmative consumer action constitutes assent to 
+be charged for goods or services. Negative option offers, which have 
+become more widespread in recent years, can provide substantial 
+benefits for sellers and consumers in the marketplace. However, 
+consumers cannot reap such benefits when sellers fail to make adequate 
+disclosures, charge consumers without their consent, or make 
+cancellation difficult or impossible. Over the years, these types of 
+negative option practices have remained a persistent source of consumer 
+harm, often saddling consumers with recurring payments for goods and 
+services they did not intend to purchase or they no longer want. In the 
+past, the Commission has sought to address such practices through 
+individual law enforcement cases and a patchwork of regulations. 
+Nevertheless, consumers continue to encounter these practices in the 
+marketplace and submit thousands of complaints about them to the FTC 
+each year.
+    In October 2024, the FTC amended the Rule to address ongoing 
+consumer complaints and continued misconduct in the marketplace. On 
+July 8, 2025, shortly before businesses would need to comply with all 
+parts of the Rule, the United States Court of Appeals for the Eighth 
+Circuit vacated the amended Rule, holding that the Commission had 
+failed to conduct the preliminary regulatory analysis required under 
+section 22 of the FTC Act, 15 U.S.C. 57b-3(b)(1).\1\ However, the 
+record compiled during that rulemaking, as well as ongoing consumer 
+complaints and recent enforcement cases,\2\ show continued unlawful 
+negative option marketing practices in the marketplace.
+---------------------------------------------------------------------------
+
+    \1\ Custom Commc'ns, Inc. v. FTC, 142 F.4th 1060, 1070-75 (8th 
+Cir. 2025).
+    \2\ Since the 2019 advance notice of proposed rulemaking 
+(``ANPRM''), 84 FR 52393 (Oct. 2, 2019), the FTC has brought cases 
+(using its own litigating authority or upon notification and 
+referral to the Department of Justice) alleging widespread negative 
+option abuses by major companies including Vonage, Amazon, Adobe, 
+Uber, LA Fitness, and Instacart. FTC v. Vonage Holdings, No. 3:22-
+cv-6435 (D.N.J. Nov. 3, 2022); FTC v. <a href="http://Amazon.com">Amazon.com</a> Inc., No. 2:23-cv-
+0932 (W.D. Wash. June 21, 2023); United States v. Adobe, Inc., No. 
+5:24-cv-03630 (N.D. Cal. July 23, 2024); FTC v. Uber Techs., Inc., 
+No. 3:25-cv-03477 (N.D. Cal. Apr. 21, 2025); FTC v. Fitness Int'l, 
+LLC, No. 8:25-cv-01841 (C.D. Cal. Aug. 20, 2025); FTC v. Maplebear 
+Inc., No. 3:25-cv-10783 (N.D. Cal. Dec. 18, 2025) (Instacart).
+---------------------------------------------------------------------------
+
+    To address these persistent concerns, the Commission seeks comments 
+on ways to improve existing regulatory requirements, including whether 
+it should use its rulemaking authority under the FTC Act to modernize 
+the Rule.\3\
+---------------------------------------------------------------------------
+
+    \3\ Section 18 of the FTC Act authorizes the Commission to 
+promulgate rules specifying acts or practices in or affecting 
+commerce which are unfair or deceptive. 15 U.S.C. 57a(a)(1)(B).
+---------------------------------------------------------------------------
+
+II. Negative Option Marketing
+
+    A ``negative option'' is any type of sales term or condition that 
+allows a seller to interpret a customer's silence, or failure to take 
+an affirmative action, as acceptance of an offer.\4\ Negative option 
+marketing generally falls into four categories: Prenotification 
+negative option plans, continuity plans, automatic renewals, and free-
+to-pay or nominal-fee-to-pay conversion offers.
+---------------------------------------------------------------------------
+
+    \4\ The Commission's Telemarketing Sales Rule defines a negative 
+option feature as a provision in an offer or agreement to sell or 
+provide any goods or services ``under which the customer's silence 
+or failure to take an affirmative action to reject goods or services 
+or to cancel the agreement is interpreted by the seller as 
+acceptance of the offer.'' 16 CFR 310.2(w).
+---------------------------------------------------------------------------
+
+    Prenotification plans are the only negative option practice 
+currently covered by the Commission's Negative Option Rule. Under such 
+plans (e.g., product-of-the-month clubs), sellers send periodic notices 
+offering goods to participating consumers and then send--and charge 
+for--those goods only if the consumers take no action to decline the 
+offer. The periodic announcements and shipments can continue 
+indefinitely. In continuity plans, consumers agree in advance to 
+receive periodic shipments of goods or provision of services (e.g., 
+bottled water delivery), which they continue to receive until they 
+cancel the agreement. In automatic renewals, sellers (e.g., a magazine 
+publisher) automatically renew consumers' subscriptions when they 
+expire and charge for them, unless consumers affirmatively cancel the 
+subscriptions. Finally, in free-to-pay or nominal-fee-to-pay plans, 
+consumers receive goods or services for free (or at a nominal fee) for 
+a trial period. After the trial period, sellers automatically begin 
+charging a fee (or higher fee) unless consumers affirmatively cancel or 
+return the goods or services.
+    Some negative option offers include upsell or bundled offers, where 
+the seller uses consumers' billing data to advertise and sell their 
+additional products or passes consumers' billing data to a third party 
+that generates additional offers. An upsell occurs
+
+[[Page 12319]]
+
+when a consumer completes a first transaction and then receives a 
+solicitation for an additional product or service. A bundled offer 
+occurs when a seller packages two products or services together, 
+typically so that they either cannot be purchased separately or can 
+only be purchased separately by paying a premium.
+
+III. FTC's Negative Option Rule
+
+    The Commission first promulgated the Rule in 1973 pursuant to the 
+FTC Act, 15 U.S.C. 41 et seq., after finding that some negative option 
+marketers had committed unfair or deceptive marketing practices that 
+violated section 5 of the Act, 15 U.S.C. 45. As discussed above, the 
+Rule applies only to prenotification plans for the sale of goods and 
+does not reach most modern negative option marketing.\5\
+---------------------------------------------------------------------------
+
+    \5\ The Rule defines ``negative option plan'' narrowly to apply 
+only to prenotification plans. 16 CFR 425.1(c)(1). The Rule covers 
+prenotification plan marketing in all media. In 1998, the Commission 
+clarified that the Rule ``covers all promotional materials that 
+contain a means for consumers to subscribe to prenotification 
+negative option plans, including those that are disseminated through 
+newer technologies . . . .'' 63 FR 44555, 44561 (Aug. 20, 1998).
+---------------------------------------------------------------------------
+
+    The Rule requires prenotification plan sellers to clearly and 
+conspicuously disclose their plan's material terms before consumers 
+subscribe. It enumerates seven material terms sellers must disclose 
+clearly and conspicuously, including: (1) how subscribers must notify 
+the seller if they do not wish to purchase the selection; (2) any 
+minimum purchase obligations; (3) the subscribers' right to cancel; (4) 
+whether billing charges include postage and handling; (5) that 
+subscribers have at least ten days to reject a selection; (6) that if 
+any subscriber is not given ten days to reject a selection, the seller 
+will credit the return of the selection and the postage to return the 
+selection, along with shipping and handling; and (7) the frequency with 
+which announcements and forms will be sent.\6\ In addition, sellers 
+must follow certain procedures, including: abiding by particular time 
+periods during which sellers must send introductory merchandise and 
+announcements identifying merchandise the seller plans to send; giving 
+consumers a specified period to respond to announcements; providing 
+instructions for rejecting merchandise in announcements; and promptly 
+honoring written requests to cancel from consumers who have met any 
+minimum purchase requirements.\7\
+---------------------------------------------------------------------------
+
+    \6\ 16 CFR 425.1(a)(1)(i)-(vii).
+    \7\ 16 CFR 425.1(a)(2), (3), 425.1(b).
+---------------------------------------------------------------------------
+
+IV. Existing Regulatory Requirements
+
+    In addition to the Rule, several other statutes and regulations 
+address aspects of harmful negative option practices. First, section 5 
+of the FTC Act, which prohibits unfair or deceptive acts or practices, 
+has traditionally served as one of the Commission's primary mechanisms 
+for addressing such practices. Additionally, the Restore Online 
+Shoppers' Confidence Act (``ROSCA'') (15 U.S.C. 8401-8405), the 
+Telemarketing Sales Rule (16 CFR part 310), the Postal Reorganization 
+Act (i.e., the Unordered Merchandise Statute) (39 U.S.C. 3009), and the 
+Electronic Fund Transfer Act (15 U.S.C. 1693-1693r) each address 
+various aspects of negative option marketing. ROSCA is the only Federal 
+law primarily designed to regulate negative option marketing, but it is 
+limited to seller transactions effected on the internet.\8\
+---------------------------------------------------------------------------
+
+    \8\ In addition to these Federal laws that are nationwide in 
+scope, an assortment of State laws also regulates negative option 
+marketing, primarily providing varying levels of protection for 
+consumers in those States. See, e.g., Cal. Bus. & Prof. Code sec. 
+17600 et seq. (California); Colo. Rev. Stat. sec. 6-1-732 
+(Colorado); Vt. Stat. Ann. Tit. 9, sec. 2454a (Vermont); Va. Code 
+Ann. sec. 59.1-207.46 (Virginia).
+---------------------------------------------------------------------------
+
+A. Section 5 of the FTC Act
+
+    The main consumer protection statute enforced by the Commission is 
+section 5(a) of the FTC Act, 15 U.S.C. 45(a)(1). This provision states 
+that ``unfair or deceptive acts or practices in or affecting commerce . 
+. . are . . . declared unlawful.'' \9\ In past guidance and cases, the 
+FTC has highlighted five basic section 5 requirements that negative 
+option marketing must follow.\10\ First, marketers must disclose the 
+material terms of a negative option offer including, at a minimum, the 
+following key terms: the existence of the negative option offer; the 
+offer's total cost; the transfer of a consumer's billing information to 
+a third party, if applicable; and how to cancel the offer. Second, 
+disclosures must be clear and conspicuous. Third, sellers must disclose 
+the material terms of the negative option offer before consumers agree 
+to the purchase. Fourth, marketers must obtain consumers' consent to 
+such offers. Finally, marketers must not impede the effective operation 
+of promised cancellation procedures, and they should honor cancellation 
+requests that comply with such procedures.
+---------------------------------------------------------------------------
+
+    \9\ The FTC Act defines ``unfair or deceptive acts or 
+practices'' to include such acts or practices involving foreign 
+commerce that cause or are likely to cause reasonably foreseeable 
+injury within the United States or involve material conduct 
+occurring within the United States. 15 U.S.C. 45(a)(4)(A). It also 
+defines ``unfair'' practices as those that cause or are likely ``to 
+cause substantial injury to consumers which is not reasonably 
+avoidable by consumers themselves and not outweighed by 
+countervailing benefits to consumers or to competition.'' 15 U.S.C. 
+45(n).
+    \10\ See Negative Options: A Report by the staff of the FTC's 
+Division of Enforcement 26-29 (Jan. 2009), <a href="https://www.ftc.gov/sites/default/files/documents/reports/negative-options-federal-trade-commission-workshop-analyzing-negative-option-marketing-report-staff/p064202negativeoptionreport.pdf">https://www.ftc.gov/sites/default/files/documents/reports/negative-options-federal-trade-commission-workshop-analyzing-negative-option-marketing-report-staff/p064202negativeoptionreport.pdf</a>. In discussing the five 
+principal section 5 requirements related to negative options, the 
+report cites to the following pre-ROSCA cases and publications: FTC 
+v. JAB Ventures, No. CV08-04648 (C.D. Cal. 2008); FTC v. Complete 
+Weightloss Ctr., No. 1:08cv00053 (D.N.D. 2008); FTC v. Berkeley 
+Premium Nutraceuticals, No. 1:06cv00051 (S.D. Ohio 2006); FTC v. 
+Think All Publ'g, No. 4:07cv11 (E.D. Tex. 2006); FTC v. Hispanexo, 
+No. 1:06cv424 (E.D. Va. 2006); FTC v. <a href="http://Consumerinfo.com">Consumerinfo.com</a>, No. SACV05-
+801 (C.D. Cal. 2005); FTC v. Conversion Mktg., No. SACV04-1264 (C.D. 
+Cal. 2004); FTC v. Mantra Films, No. CV03-9184 (C.D. Cal. 2003); FTC 
+v. Preferred Alliance, No. 103-CV0405 (N.D. Ga. 2003); United States 
+v. Prochnow, No. 102-CV-917 (N.D. Ga. 2002); FTC v. Ultralife 
+Fitness, Inc., No. 2:08-cv-07655-DSF-PJW (C.D. Cal. 2008); Am. Isuzu 
+Motors, FTC Docket No. C-3712 (1996); FTC v. Universal Premium 
+Servs., No. CV06-0849 (C.D. Cal. 2006); FTC v. Remote Response, No. 
+06-20168 (S.D. Fla. 2006); and the FTC Dot Com Disclosures (2000), 
+<a href="https://www.ftc.gov/sites/default/files/attachments/press-releases/ftc-staff-issues-guidelines-internet-advertising/0005dotcomstaffreport.pdf">https://www.ftc.gov/sites/default/files/attachments/press-releases/ftc-staff-issues-guidelines-internet-advertising/0005dotcomstaffreport.pdf</a>.
+---------------------------------------------------------------------------
+
+    Although adherence to these five principles should minimize the 
+likelihood of non-compliance with section 5, the legality of a 
+particular negative option depends on an individualized assessment of, 
+among other things, the claims made in the advertisement, consumers' 
+understanding of the advertisement (e.g., net impression), and the 
+seller's business practices. In addition to these deception-related 
+requirements, several courts have held that billing consumers without 
+consumers' express informed consent constitutes an unfair act or 
+practice under the FTC Act.\11\
+---------------------------------------------------------------------------
+
+    \11\ Courts have found unauthorized billing to be unfair under 
+the FTC Act. See, e.g., FTC. v. Neovi, Inc., 604 F.3d 1150, 1157-59 
+(9th Cir. 2010), amended by 2010 WL 2365956 (9th Cir. June 15, 
+2010); FTC v. <a href="http://Amazon.com">Amazon.com</a>, Inc., No. C14-1038-JCC, 2016 WL 10654030, 
+at *8 (W.D. Wash. July 22, 2016); FTC v. Ideal Fin. Sols., Inc., No. 
+2:13-CV-00143-JAD, 2015 WL 4032103, at *8 (D. Nev. June 30, 2015).
+---------------------------------------------------------------------------
+
+B. ROSCA
+
+    Enacted by Congress in 2010 to address ongoing problems with online 
+negative option marketing, ROSCA contains general provisions related to 
+disclosures, consent, and cancellation.\12\ ROSCA prohibits charging or 
+attempting to charge consumers for goods or services sold on the 
+internet through any negative option feature unless the marketer: (1) 
+clearly and conspicuously discloses all material terms of the 
+transaction before obtaining the consumer's billing information; (2)
+
+[[Page 12320]]
+
+obtains a consumer's express informed consent before charging the 
+consumer's account; and (3) provides simple mechanisms for the consumer 
+to stop recurring charges.\13\
+---------------------------------------------------------------------------
+
+    \12\ 15 U.S.C. 8401-8405.
+    \13\ 15 U.S.C. 8403. ROSCA incorporates the definition of 
+``negative option feature'' from the Commission's Telemarketing 
+Sales Rule, 16 CFR 310.2(w).
+---------------------------------------------------------------------------
+
+    ROSCA also addresses offers made by, or on behalf of, third-party 
+sellers during, or immediately following, a transaction effected on the 
+internet with an initial merchant.\14\ In connection with these offers, 
+ROSCA prohibits post-transaction third-party sellers from charging or 
+attempting to charge consumers for any good or service unless the 
+seller: (1) before obtaining the consumer's billing information, 
+clearly and conspicuously discloses all material terms of the 
+transaction; and (2) receives the consumer's express informed consent 
+for the charge by obtaining the consumer's name, address, contact 
+information, as well as the full account number to be charged, and by 
+requiring the consumer to perform an additional affirmative action 
+indicating consent.\15\ ROSCA also prohibits initial merchants from 
+disclosing billing information to any post-transaction third-party 
+seller for use in any internet-based sale of goods or services.\16\
+---------------------------------------------------------------------------
+
+    \14\ ROSCA defines ``post-transaction third-party seller'' as a 
+person other than the initial merchant who sells any good or service 
+on the internet and solicits the purchase on the internet through an 
+initial merchant after the consumer has initiated a transaction with 
+the initial merchant. 15 U.S.C. 8402(d)(2).
+    \15\ 15 U.S.C. 8402(a).
+    \16\ 15 U.S.C. 8402(b).
+---------------------------------------------------------------------------
+
+    ROSCA provides that a violation of that Act shall be treated as a 
+violation of a Commission rule under section 18 of the FTC Act.\17\ 
+Thus, the Commission may seek a variety of remedies for violations of 
+ROSCA, including civil penalties under section 5(m)(1)(A) of the FTC 
+Act; \18\ injunctive relief under section 13(b) of the FTC Act; \19\ 
+and consumer redress, damages, and other relief under section 19 of the 
+FTC Act.\20\ Although Congress charged the Commission with enforcing 
+ROSCA, it did not require the FTC to create regulations pursuant to its 
+section 18 rulemaking authority.\21\
+---------------------------------------------------------------------------
+
+    \17\ 15 U.S.C. 8404. Section 18 of the FTC Act is 15 U.S.C. 57a.
+    \18\ 15 U.S.C. 45(m)(1)(A).
+    \19\ 15 U.S.C. 53(b).
+    \20\ 15 U.S.C. 57b(a)(1), (b).
+    \21\ ROSCA states that a violation ``of this chapter or any 
+regulation prescribed under this chapter shall be treated as a 
+violation of a rule under section 18 of the Federal Trade Commission 
+Act (15 U.S.C. 57a) regarding unfair or deceptive acts or 
+practices.'' 15 U.S.C. 8404(a).
+---------------------------------------------------------------------------
+
+C. Telemarketing Sales Rule
+
+    The Telemarketing Sales Rule (``TSR'') (16 CFR part 310) prohibits 
+deceptive telemarketing acts or practices, including those involving 
+negative option offers, and certain types of payment methods common in 
+deceptive marketing. The TSR applies only to negative option offers 
+made over the telephone. Specifically, the TSR requires that 
+telemarketers disclose all material terms and conditions of the 
+negative option feature, including the need for affirmative consumer 
+action to avoid the charges; the date (or dates) the charges will be 
+submitted for payment; and the specific steps the customer must take to 
+avoid the charges. It also prohibits telemarketers from misrepresenting 
+such information and contains specific requirements related to payment 
+authorization.\22\ The Commission amended the TSR in 2015 to prohibit 
+the use of payment methods often used in deceptive marketing, including 
+negative options, such as remotely created checks.\23\
+---------------------------------------------------------------------------
+
+    \22\ 16 CFR 310.3(a).
+    \23\ 80 FR 77520 (Dec. 14, 2015). The TSR Notice of Proposed 
+Rulemaking (78 FR 41200 (July 9, 2013)) noted negative option cases 
+where the defendants used unauthorized remotely created checks. See, 
+e.g., FTC v. FTN Promotions, Inc., No. 8:07-1279 (M.D. Fla. Dec. 30, 
+2008) (Stip. Perm. Inj.) (defendants allegedly caused more than $171 
+million in unauthorized charges to consumers' accounts for bogus 
+travel and buyers' clubs in part by using unauthorized remotely 
+created checks).
+---------------------------------------------------------------------------
+
+D. Other Relevant Requirements
+
+    The Electronic Fund Transfer Act (``EFTA'') \24\ and the Postal 
+Reorganization Act (``PRA'') (i.e., Unordered Merchandise Statute) also 
+contain provisions that address negative option marketing.\25\ The EFTA 
+prohibits sellers from imposing recurring charges on a consumer's debit 
+cards or bank accounts without written authorization.\26\ The PRA 
+provides that mailing unordered merchandise, or a bill for such 
+merchandise, constitutes an unfair method of competition and an unfair 
+trade practice in violation of section 5 of the FTC Act.\27\
+---------------------------------------------------------------------------
+
+    \24\ 15 U.S.C. 1693-1693r.
+    \25\ 39 U.S.C. 3009.
+    \26\ The EFTA provides that the Commission shall enforce its 
+requirements, except to the extent that enforcement is specifically 
+committed to some other Federal government agency, and that a 
+violation of any of its requirements shall be deemed a violation of 
+the FTC Act. Accordingly, the Commission has authority to seek the 
+same injunctive and monetary equitable relief for EFTA violations 
+that it can seek for other section 5 violations.
+    \27\ The Commission has authority to seek the same remedies for 
+PRA violations that it can seek for other section 5 violations. For 
+example, the Commission can seek civil penalties pursuant to section 
+5(m)(1)(A) of the FTC Act from violators who have actual knowledge 
+that the Commission has found mailing unordered merchandise unfair.
+---------------------------------------------------------------------------
+
+V. Limitations of Existing Regulatory Requirements
+
+    The existing patchwork of laws and regulations does not provide 
+industry and consumers with a consistent legal framework for negative 
+option marketing across different media and types of plans. For 
+instance, as discussed above, the current Rule does not cover common 
+practices such as continuity plans, automatic renewals, and trial 
+conversions.\28\ In addition, ROSCA and the TSR each address negative 
+option plans only in certain media--ROSCA's general statutory 
+prohibitions on deceptive negative option marketing apply only to 
+transactions effected on the internet, whereas the TSR's more specific 
+provisions only apply to telemarketing. Furthermore, harmful negative 
+option practices that fall outside of ROSCA and the TSR's coverage 
+still occur.\29\ Therefore, under the current framework, different 
+rules apply depending on whether a negative option offer is made 
+online, over the phone, or in some other medium (e.g., in print, 
+through the mail, etc.).
+---------------------------------------------------------------------------
+
+    \28\ Indeed, the prenotification plans covered by the Rule 
+represent only a small fraction of negative option marketing. In 
+2024, for instance, FTC staff estimated that only 25 sellers 
+(``clubs'') were subject to the current Rule's requirements. 88 FR 
+59922 (Aug. 30, 2023); 89 FR 377 (Jan. 3, 2024).
+    \29\ For instance, in 2018, the Commission brought two cases 
+under section 5 involving negative option plans that did not involve 
+either internet sales or telemarketing. See FTC v. Health Research 
+Labs., LLC, No. 2:17-cv-00467-JDL (D. Me. 2018); FTC v. Mktg. 
+Architects, No. 2:18-cv-00050 (D. Me. 2018).
+---------------------------------------------------------------------------
+
+VI. Past FTC Rulemaking Efforts
+
+    The Commission began a regulatory review of the Rule in 2009 (74 FR 
+22720 (May 14, 2009)), following a 2007 FTC workshop and subsequent 
+Staff Report.\30\ The Commission completed the review in 2014 (79 FR 
+44271 (July 31, 2014)). The Commission received comments advocating for 
+the Rule's expansion because of the continued presence of ``unfair, 
+deceptive, and otherwise problematic negative option marketing 
+practices [that] continue to cause substantial consumer injury, despite 
+determined enforcement efforts by the Commission and other law 
+enforcement agencies.'' \31\ It also noted
+
+[[Page 12321]]
+
+that practices not covered by the Rule (e.g., trial conversions and 
+continuity plans) accounted for most of its enforcement activity in 
+this area. Despite these findings, the Commission declined to expand or 
+enhance the Rule at that time, concluding that amendments were not 
+warranted because the enforcement tools available then--namely, the TSR 
+and ROSCA--might prove adequate to address continued deceptive and 
+unfair negative option marketing. However, the Commission also 
+explained that, if ROSCA and its other enforcement tools do not 
+adequately protect consumers, the Commission could consider, based on a 
+more complete factual and evidentiary record, whether and how to amend 
+the Rule.\32\ The Commission's declination was made at a time, 
+moreover, when courts still interpreted the FTC Act's section 13(b) 
+authority as allowing monetary relief for harmed consumers.\33\
+---------------------------------------------------------------------------
+
+    \30\ See Negative Options: A Report by the staff of the FTC's 
+Division of Enforcement 26-29, <a href="https://www.ftc.gov/sites/default/files/documents/reports/negative-options-federal-trade-commission-workshop-analyzing-negative-option-marketing-report-staff/p064202negativeoptionreport.pdf">https://www.ftc.gov/sites/default/files/documents/reports/negative-options-federal-trade-commission-workshop-analyzing-negative-option-marketing-report-staff/p064202negativeoptionreport.pdf</a>.
+    \31\ The Commission cited a number of its law enforcement 
+actions challenging negative option marketing practices, including, 
+for example, FTC v. Process Am., Inc., No. 14-0386-PSG-VBKx (C.D. 
+Cal. Jan. 16, 2014) (processing of unauthorized charges relating to 
+negative option marketing); FTC v. Willms, No. 2:11-cv-00828 (W.D. 
+Wash. May 16, 2011) (internet free trials and continuity plans); FTC 
+v. Moneymaker, No. 2:11-cv-00461-JCM-RJJ (D. Nev. Mar. 28, 2011) 
+(internet trial offers and continuity programs); FTC v. Johnson, No. 
+2:10-cv-02203-RLH-GWF (D. Nev. Dec. 21, 2010) (internet trial 
+offers); and FTC v. John Beck Amazing Profits, LLC, No. 2:09-cv-
+04719 (C.D. Cal. June 30, 2009) (infomercial and telemarketing trial 
+offers and continuity programs); see also ``An Overview of the FTC's 
+Enforcement Actions Concerning Negative Option Marketing,'' a 
+presentation delivered during the Commission's 2007 ``Negative 
+Options: An FTC Workshop Analyzing Negative Option Marketing,'' 
+<a href="https://www.ftc.gov/news-events/events-calendar/2007/01/negative-options-workshop-analyzing-negative-option-marketing">https://www.ftc.gov/news-events/events-calendar/2007/01/negative-options-workshop-analyzing-negative-option-marketing</a>.
+    \32\ 79 FR at 44276.
+    \33\ Numerous courts had held that section 13(b)'s language 
+allowing the Commission to obtain a ``permanent injunction'' 
+included the authority to seek equitable monetary relief such as 
+restitution or disgorgement. See, e.g., FTC v. Ross, 743 F.3d 886, 
+890-92 (4th Cir. 2014); FTC v. Bronson Partners, LLC, 654 F.3d 359, 
+367 & 375 (2d Cir. 2011); FTC v. Stefanchik, 559 F.3d 924, 931 (9th 
+Cir. 2009). The Supreme Court rejected this interpretation in 2021. 
+AMG Cap. Mgmt., LLC v. FTC, 593 U.S. 67 (2021).
+---------------------------------------------------------------------------
+
+    After the conclusion of the 2009 regulatory review of the Rule, 
+mounting evidence strongly suggested that unlawful negative option 
+marketing continued to harm consumers. The Commission and the States 
+continued to regularly bring cases challenging unlawful negative option 
+practices, including more than 20 FTC cases before 2019. These matters 
+involved a range of deceptive or unfair practices, including inadequate 
+disclosures for ``free'' offers and other products or programs, 
+enrollment without consumer consent, and inadequate or overly 
+burdensome cancellation and refund procedures.\34\
+---------------------------------------------------------------------------
+
+    \34\ Examples of these matters include: FTC v. Nutraclick LLC, 
+No. 2:16-cv-06819-DMG (C.D. Cal. 2016); FTC v. Health Formulas, LLC, 
+No. 2:14-cv-01649-RFB-GWF (D. Nev. 2016); FTC v. AAFE Products 
+Corp., No. 3:17-cv-00575 (S.D. Cal. 2017); FTC v. Pact Inc., No. 
+2:17-cv-1429 (W.D. Wash. 2017); FTC v. Tarr, No. 3:17-cv-02024-LAB-
+KSC (S.D. Cal. 2017); FTC v. AdoreMe, Inc., No. 1:17-cv-09083 
+(S.D.N.Y 2017); FTC v. Credit Bureau Ctr., LLC, No. 17-cv-00194 
+(N.D. Ill. 2017); FTC v. JDI Dating, Ltd., No. 1:14-cv-08400 (N.D. 
+Ill. 2014); FTC v. XXL Impressions, No. 1:17-cv-00067-NT (D. Me. 
+2017); FTC v. <a href="http://DOTAuthority.com">DOTAuthority.com</a>, Inc., No. 0:16-cv-62186-WJZ (S.D. 
+Fla. 2018); FTC v. Bunzai Media Grp., Inc., No. CV15-04527-GW(PLAx) 
+(C.D. Cal. 2015); FTC v. RevMountain, LLC, No. 2:17-cv-02000-APG-GWF 
+(D. Nev. 2018); FTC v. Apex Capital Grp., LLC, No. 2:18-cv-9573 
+(C.D. Cal. 2018); FTC v. Jason Cardiff, No. 18-cv-2104 (C.D. Cal. 
+2018); FTC v. Triangle Media Corp., No. 18-cv-1388 (S.D. Cal. 2018); 
+FTC v. AH Media Grp., LLC, No. 3:19-cv-4022 (N.D. Cal. 2019); FTC v. 
+Elite IT Partners, Inc., No. 2:19-cv-125 (D. Utah 2019); FTC v. F9 
+Advertising LLC, No. 3:19-cv-1174 (D. P.R. 2019); UrthBox, Inc., FTC 
+Matter No. C-4676 (2019).
+---------------------------------------------------------------------------
+
+    In 2019, the Commission published an advance notice of proposed 
+rulemaking (``ANPRM'') seeking comment on the Rule (84 FR 52393 (Oct. 
+2, 2019)). Specifically, the Commission sought comment on alternatives, 
+including amendments to further address disclosures, consumer consent, 
+and cancellation. The Commission also requested input on using its 
+authority under section 18 of the FTC Act to expand the Rule. In 2021, 
+the Commission issued an ``Enforcement Policy Statement Regarding 
+Negative Option Marketing.'' \35\
+---------------------------------------------------------------------------
+
+    \35\ Enforcement Policy Statement, 86 FR 60822 (Nov. 4, 2021).
+---------------------------------------------------------------------------
+
+    In 2023, the Commission issued a notice of proposed rulemaking 
+(``NPRM'') to amend the Rule.\36\ The Commission received over 16,000 
+comments in response.\37\
+---------------------------------------------------------------------------
+
+    \36\ 88 FR 24716 (Apr. 24, 2023).
+    \37\ See 89 FR 90476 (Nov. 15, 2024). Unique public comments to 
+the NPRM are available online. See <a href="http://regulations.gov">regulations.gov</a>, Negative Option 
+Rule (NPRM), FTC-2023-0033-0001, <a href="https://www.regulations.gov/document/FTC-2023-0033-0001">https://www.regulations.gov/document/FTC-2023-0033-0001</a>.
+---------------------------------------------------------------------------
+
+    In 2024, the Commission promulgated an amended Rule.\38\ The 
+amendments expanded the scope of the Rule to cover all negative option 
+programs--across all media--and made it an unfair or deceptive act or 
+practice under section 5 of the FTC Act:
+---------------------------------------------------------------------------
+
+    \38\ 89 FR 90476 (Nov. 15, 2024).
+---------------------------------------------------------------------------
+
+    <bullet> to misrepresent any material fact made while marketing 
+using a negative option feature (Sec.  425.3);
+    <bullet> to fail to clearly and conspicuously disclose material 
+terms prior to obtaining a consumer's billing information in connection 
+with a negative option feature (Sec.  425.4);
+    <bullet> to fail to obtain a consumer's express informed consent to 
+the negative option feature before charging the consumer (Sec.  425.5); 
+and
+    <bullet> to fail to provide a simple mechanism to cancel the 
+negative option feature and immediately halt charges (Sec.  425.6).
+    The amended Rule had an effective date of January 14, 2025 and a 
+deferred compliance date of May 14, 2025 for certain parts (later 
+extended to July 14, 2025).\39\
+---------------------------------------------------------------------------
+
+    \39\ FTC, Statement of the Commission Regarding the Negative 
+Option Rule, Matter No. P064202 (May 9, 2025).
+---------------------------------------------------------------------------
+
+    In July 2025, the Eighth Circuit vacated the amended Rule 
+(``Vacated Rule'').\40\ The court found the FTC should have conducted a 
+preliminary regulatory analysis under section 22 of the FTC Act, 15 
+U.S.C. 57b-3(b)(1).\41\
+---------------------------------------------------------------------------
+
+    \40\ Custom Commc'ns, Inc. v. FTC, 142 F.4th 1060, 1070-75 (8th 
+Cir. 2025). The Eighth Circuit's vacatur reinstated the prior 
+version of the Rule which was first promulgated in 1973. 38 FR 4896 
+(Feb. 22, 1973).
+    \41\ Custom Commc'ns, Inc., 142 F.4th at 1074-75.
+---------------------------------------------------------------------------
+
+VII. Ongoing Problems With Negative Option Marketing
+
+    The Commission continues to receive thousands of complaints each 
+year regarding negative option marketing. The rate of these complaints 
+has steadily risen from at least 33 per day in late 2020 to more than 
+90 per day in 2025. The complaints come from all 50 States, and involve 
+dozens of industries, and hundreds of companies. These complaints have 
+led the Commission to bring additional enforcement actions. For 
+instance, since January 2025, the Commission has initiated five cases 
+alleging negative option misconduct, and has approved six settlements 
+of alleged negative option misconduct.\42\
+
+[[Page 12322]]
+
+These recent cases and the increasingly high volume of complaints 
+suggest there is prevalent, unabated consumer harm in the marketplace. 
+As discussed below, the Commission seeks comments on these issues.
+---------------------------------------------------------------------------
+
+    \42\ The Commission initiated (or referred to the Department of 
+Justice for initiating) enforcement actions in FTC v. JustAnswer 
+LLC, No. 3:26-cv-00333 (N.D. Cal. Jan. 13, 2026); United States v. 
+Iconic Hearts Holdings, No. 2:25-cv-09310 (C.D. Cal. Sept. 29, 
+2025); FTC v. Int'l Markets Live, Inc., No. 2:25-cv-00760 (D. Nev. 
+May 20, 2025); FTC v. Fitness Int'l, LLC, No. 8:25-cv-1841 (C.D. 
+Cal. Aug. 20, 2025); and FTC v. Uber Tech., Inc., No. 3:25-cv-03477 
+(N.D. Cal. Apr. 21, 2025). The Commission approved settlements in 
+FTC v. Maplebear Inc., No. 3:25-cv-10783 (N.D. Cal. Dec. 18, 2025) 
+(Instacart; Proposed Stipulated Order); FTC v. <a href="http://Amazon.com">Amazon.com</a> Inc., No. 
+2:23-cv-0932 (W.D. Wash. Sept. 25, 2025) (Stipulated Order); FTC v. 
+Chegg, Inc., No. 5:25-cv-07827 (N.D. Cal. Sept. 15, 2025) 
+(Stipulated Order); FTC v. Match Grp., Inc., No. 3:19-cv-0228 1-K 
+(N.D. Tex. Aug. 12, 2025) (Proposed Stipulated Order); FTC v. 
+<a href="http://Paddle.com">Paddle.com</a> Market Ltd., No. 1:25-cv-01886 (D.D.C. June 16, 2025) 
+(Stipulated Order); FTC v. Cleo AI, Inc., No. 1:25-cv-02594 
+(S.D.N.Y. Mar. 27, 2025) (Stipulated Order); see also FTC v. 
+<a href="http://Amazon.com">Amazon.com</a>, Inc., 2025 WL 2677086 (W.D. Wash. Sept. 17, 2025) 
+(granting summary judgment on certain ROSCA violations and 
+individual liability). In addition, the Commission has brought a 
+number of other recent enforcement actions involving unfair or 
+deceptive negative option practices, using its own litigating 
+authority or upon notification and referral to the Department of 
+Justice. See, e.g., United States v. Adobe, Inc., No. 5:24-cv-03630 
+(N.D. Cal. July 23, 2024); FTC v. Wealthpress Holdings, Inc., No. 
+3:23-cv-00046 (M.D. Fla. Jan. 12, 2023); FTC v. Vonage Holdings, No. 
+3:22-cv-6435 (D.N.J. Nov. 3, 2022); FTC v. Benefytt Techs., Inc., 
+8:22-cv-1794 (M.D. Fla. Aug. 8, 2022); FTC v. First Am. Payment 
+Sys., No. 4:22-cv-654 (E.D. Tex. July 29, 2022); Movie Pass, No. C-
+4751 (FTC Oct. 5, 2021); FTC v. <a href="http://RagingBull.com">RagingBull.com</a>, LLC, No. 1:20-cv-
+3538 (D. Md. Dec. 14, 2020); FTC v. Age of Learning, Inc., No. 2:20-
+cv-07996 (C.D. Cal. Sept. 2, 2020); United States v <a href="http://MyLife.com">MyLife.com</a>, 
+Inc., No. 20-cv-6692 (C.D. Cal. July 27, 2020).
+---------------------------------------------------------------------------
+
+VIII. Objectives, Regulatory Alternatives, and Request for Comments
+
+    The Commission seeks comments on the current Rule as well as 
+regulatory alternatives to better address unfair or deceptive negative 
+option practices. The Commission promulgated the current Rule to 
+address unlawful negative option conduct in the marketplace as it 
+existed over 50 years ago.\43\ While the record in the prior proceeding 
+amply demonstrates the prevalence of unlawful negative option 
+conduct,\44\ the Commission solicits additional public comment to 
+update the record and ensure its rulemaking adequately responds to 
+concerns from both consumers and industry.
+---------------------------------------------------------------------------
+
+    \43\ See 38 FR 4896 (Feb. 22, 1973); 63 FR 44555 (Aug. 20, 1998) 
+(minor technical amendments).
+    \44\ For instance, consumer complaints, law enforcement actions, 
+and academic studies, among other evidence, show unfair and 
+deceptive negative option practices permeate the economy across 
+industries. See supra Section VII (consumer complaints about 
+negative option marketing have increased to 90 per day in 2025); 
+supra notes 2, 34 (collecting recent cases); see also 89 FR 90476 
+(Nov. 11, 2024) at Sections VII.A.1(a)-(b), II.A.1(b) (2024 
+Statement of Basis and Purpose sections collecting enforcement 
+actions, studies, and consumer complaints that demonstrate the 
+prevalence of negative option misconduct for the Vacated Rule).
+---------------------------------------------------------------------------
+
+    Specifically, the Commission seeks information relating to 
+practices that prevent consumers from understanding the terms of the 
+negative option program, enroll consumers without their express 
+informed consent, or impede consumers from canceling their enrollments. 
+The Commission also seeks information regarding ways to address these 
+practices, including retaining the current Rule, adopting provisions of 
+the Vacated Rule or some other provision, or implementing alternatives 
+to regulation such as educating consumers and businesses on avoiding 
+unlawful negative option practices.
+    In responding to the questions below, the Commission invites the 
+public to submit any market studies, economic data, or other empirical 
+evidence that the Commission may not have considered in promulgating 
+the Vacated Rule in the prior proceeding. The Commission reminds 
+commenters that, while it reviews all submissions, comments may be more 
+persuasive when substantiated with evidence, particularly economic 
+evidence.
+
+A. General Questions About the Current Rule
+
+    1. Is there a continuing need for the current Rule? Why or why not?
+    2. Is there a need for new provisions to prevent unfair or 
+deceptive practices by addressing negative option plans not covered by 
+the current Rule? Why or why not?
+    a. If new regulations are needed, should the Rule be amended, or 
+should a new Rule or Rules be created?
+    b. Should the Commission consider alternatives to new regulation, 
+such as the publication of additional consumer and business education? 
+If so, what are these alternatives, and how effectively would they 
+prevent unfair or deceptive negative option practices?
+    c. What are the benefits and costs to consumers and businesses 
+under your proposed approach compared to the other options, whether 
+issuing a new Rule(s), amending the existing Rule, or implementing an 
+alternative to new regulation?
+    d. What evidence supports your responses to the above questions?
+
+B. Questions About the Marketplace for Negative Option Programs
+
+    1. How many negative option enrollments do all negative option 
+sellers have collectively?
+    a. On average, how many negative option programs is each person, 
+household, or business enrolled in?
+    b. On average, how many negative option program enrollments occur 
+each year, by enrollment method (i.e., online, over the phone, in 
+person)?
+    c. On average, how many negative option program enrollments are 
+cancelled each year, by cancellation method (i.e., online, over the 
+phone, in person)?
+    d. On average, how often do consumers attempt to cancel a negative 
+option program without being able to complete the cancellation process?
+    2. Which industries \45\ sell negative option programs? How many 
+businesses sell negative option programs? Is this expected to change, 
+and if so, how?
+---------------------------------------------------------------------------
+
+    \45\ You may use NAICS codes to identify industries. See NAICS 
+Code Identification Tools, <a href="https://www.naics.com/search/">https://www.naics.com/search/</a>.
+---------------------------------------------------------------------------
+
+    a. What is the total revenue associated with negative option 
+programs?
+    b. What is the average price of a negative option program?
+    c. How much do consumers spend on negative option programs that go 
+unused?
+    d. How much do consumers spend on negative option programs after 
+attempting to cancel?
+    3. On average, how long does it take consumers to enroll in 
+negative option programs, by enrollment method (i.e., online, over the 
+phone, in person), starting from the time the consumer reaches the 
+website, calls the phone number, or visits the premises designated by 
+the business for enrolling, and including the time consumers spend to 
+navigate the website, wait for a representative, or take steps to reach 
+a representative?
+    a. For each enrollment method, please provide the average times for 
+all consumers and separately the time for consumers at the 25th 
+percentile, 50th percentile, and 75th percentile ranked by time taken 
+to enroll.
+    b. Do these enrollment times vary by industry? If so, how?
+    4. On average, how long does it take consumers to cancel negative 
+option enrollments, by cancellation method (i.e., online, over the 
+phone, in person), starting from the time the consumer reaches the 
+website, calls the phone number, or visits the premises designated by 
+the business for canceling, and including the time consumers spend to 
+navigate the website, wait for a representative, or take steps to reach 
+a representative?
+    a. For each cancellation method, please provide the average times 
+for all consumers and separately the time for consumers at the 25th 
+percentile, 50th percentile, and 75th percentile ranked by time taken 
+to cancel.
+    b. Do these cancellation times vary by industry? If so, how?
+    5. Are third parties, such as payment service providers, 
+subscription management providers, or customer relationship management 
+providers, involved in enrolling consumers into, or canceling 
+consumers' enrollment for, a business's negative option program?
+    a. If so, what types of third parties, and how are they involved?
+    b. What impact, if any, do these third parties have on a business's 
+ability to disclose the material terms of the program, obtain 
+consumers' express informed consent, or enable consumers to easily 
+cancel their enrollment?
+    c. What role, if any, do third-party service providers, such as 
+subscription management providers or customer relationship management 
+providers, currently have in ensuring compliance with existing State 
+and Federal laws governing negative options?
+
+[[Page 12323]]
+
+    6. What evidence supports your responses to the above questions?
+    7. What timeframe(s) do your responses to the above questions 
+cover?
+
+C. Questions About Unfair or Deceptive Practices Involving Negative 
+Option Programs
+
+    1. What unfair or deceptive practices do consumers encounter that 
+involve negative option programs?
+    a. What practices make it difficult for consumers to understand 
+that a product or service is part of a negative option program?
+    b. What practices make it difficult for consumers to understand all 
+material terms of a negative option program?
+    c. What practices enroll consumers into negative option programs 
+without their express informed consent?
+    d. What practices make it difficult for consumers to cancel the 
+negative option feature of a product or service offering?
+    e. Is it unfair or deceptive to offer discounts or other incentives 
+to remain enrolled in a negative option program (``Saves'') instead of 
+promptly honoring a consumer's request to cancel? Why or why not?
+    i. What proportion of consumers who are offered Saves accept them?
+    ii. On average, how much money do consumers save by accepting a 
+Saves offer?
+    iii. To what extent, if any, do Saves make it difficult for 
+consumers to cancel their enrollment in a negative option program? If 
+the business makes a Saves offer and the consumer declines it, how much 
+longer on average does it take for a consumer to cancel?
+    iv. How do Saves impact competition in the negative options 
+marketplace? What are the circumstances under which Saves foster 
+competition and result in lower prices and/or better negative option 
+programs for consumers? What are the circumstances under which Saves 
+impede competition by undermining consumers' ability to cancel and 
+choose a different product or service?
+    v. What has been the impact of State laws regulating Save attempts 
+(e.g., California) on offers to consumers? Has compliance with these 
+laws resulted in an increase or decrease in Saves offered to consumers?
+    vi. In addition to the above factors, what other factors should the 
+Commission consider in evaluating the extent to which Saves are unfair 
+or deceptive? What do these factors indicate about whether Saves are 
+unfair or deceptive?
+    2. Congress authorized the Commission to propose a rule defining 
+unfair or deceptive acts or practices with specificity when the 
+Commission ``has reason to believe that the unfair or deceptive acts or 
+practices which are the subject of the proposed rulemaking are 
+prevalent.'' \46\ A determination about prevalence can be made either 
+on the basis of previous Commission cease-and-desist orders regarding 
+such acts or practices, or when the Commission has ``any other 
+information'' that ``indicates a widespread pattern of unfair or 
+deceptive acts or practices.'' \47\ Which unfair or deceptive negative 
+option practices identified in your response to Question C.1 are 
+prevalent? For each of these practices, please answer the following:
+---------------------------------------------------------------------------
+
+    \46\ 15 U.S.C. 57a(b)(3).
+    \47\ Id.
+---------------------------------------------------------------------------
+
+    a. Is there information indicating that such practices are 
+prevalent? If so, what information?
+    b. How frequently do consumers encounter the practice?
+    c. What proportion of consumers have encountered the practice?
+    d. Is the practice prevalent for all types of negative option 
+programs or just certain types?
+    e. If just certain types, for which types of negative option 
+programs is the practice not prevalent?
+    f. Are there features of certain negative option programs that 
+prevent the practice from becoming prevalent?
+    i. If so, which features?
+    ii. Is the practice not prevalent for negative option transactions 
+between certain types of parties (e.g., B2B transactions between 
+sophisticated business entities)? If so, which types of parties?
+    iii. How do negative option transactions between these types of 
+parties prevent the practice from becoming prevalent?
+    g. Is the practice not prevalent for certain industries?
+    i. If so, which industries?
+    ii. What aspects of these industries prevent the practice from 
+becoming prevalent?
+    h. Do you expect future developments in the negative option 
+marketplace to change any of your responses to the above questions? If 
+so, how?
+    3. How many, or what proportion of, businesses that sell negative 
+option programs do not engage in any unfair or deceptive negative 
+option practices?
+    a. Does the proportion that is not engaged in any unfair or 
+deceptive negative option practices vary by observable characteristics, 
+such as industry or firm size? If so, how?
+    b. Is the proportion of businesses not engaged in unfair or 
+deceptive negative option practices changing over time (i.e., getting 
+larger or smaller)? If so, how?
+    4. To the extent unfair or deceptive negative option practices are 
+prevalent in any industry, how do the practices affect competition 
+among businesses?
+    a. How do the practices affect a business's ability to win and 
+retain customers?
+    b. How do the practices affect the need for businesses to compete 
+on the merits of their products or services?
+    c. Are businesses that do not engage in the practices at a 
+competitive disadvantage to those who do? If so, how?
+    d. Do the practices affect small businesses differently? If so, 
+how?
+    5. What evidence supports your responses to the above questions?
+
+D. Questions About Specific Rule Provisions
+
+    The Commission may consider portions of the Vacated Rule to propose 
+a new rule.\48\ The Vacated Rule imposed the following four 
+requirements. First, it prohibited misrepresentations of any material 
+fact in connection with a negative option offering.\49\ Second, it 
+required sellers to obtain the consumer's consent to the negative 
+option feature separately from any other portion of the transaction and 
+to maintain records verifying the consumer's consent.\50\ Third, it 
+required disclosure of important information about the negative option 
+feature immediately next to the means for obtaining the consumer's 
+consent for the negative option.\51\ Finally, it required a simple
+
+[[Page 12324]]
+
+mechanism for consumers to cancel the negative option feature.\52\ In 
+the November 2024 Final Rule document, the Commission analyzed the 
+economic impact of these four requirements and the other requirements 
+of the Vacated Rule in its Final Regulatory Analysis, Final Regulatory 
+Flexibility Act Analysis, and Paperwork Reduction Act Analysis.\53\ The 
+following questions solicit comments on these four requirements and 
+their economic impact.
+---------------------------------------------------------------------------
+
+    \48\ Since January 2025, the FTC has received two petitions for 
+rulemaking regarding negative options. Petition for Rulemaking of 
+Consumer Federation of America and the American Economic Liberties 
+Project (Dec. 3, 2025), <a href="https://www.regulations.gov/document/FTC-2025-0792-0001">https://www.regulations.gov/document/FTC-2025-0792-0001</a>; Petition for Rulemaking of Central Office of Reform 
+and Efficiency (Negative Option Rule) (Jan. 21, 2025), <a href="https://www.regulations.gov/document/FTC-2025-0003-0001">https://www.regulations.gov/document/FTC-2025-0003-0001</a>. The Commission will 
+process these requests pursuant to 16 CFR 1.31.
+    \49\ Vacated Rule at Sec.  425.3. The prohibition applied to 
+misrepresentations relating to the negative option feature, the 
+underlying product or service, or ``[a]ny other Material fact.''
+    \50\ Vacated Rule at Sec.  425.5. The Vacated Rule required 
+Negative Option Sellers to maintain records verifying consumer 
+consent to the negative option feature for 3 years. The Vacated 
+Rule, however, deemed most sellers in compliance with this 
+recordkeeping requirement if they obtained consumer consent using 
+``a check box, signature, or other substantially similar method,'' 
+which the consumer must complete to accept the negative option 
+feature.
+    \51\ Vacated Rule at Sec.  425.4. Specifically, the Vacated Rule 
+required disclosure that consumers will be charged unless the 
+consumer cancels; the deadline(s) by which the consumer must cancel 
+to avoid the charge(s); the amount of the charge(s); and the 
+information necessary for the consumer to find the simple 
+cancellation mechanism.
+    \52\ Vacated Rule at Sec.  425.6. The Vacated Rule required the 
+simple cancellation mechanism to be ``at least as easy to use'' as 
+the mechanism used to obtain the consumer's consent to the negative 
+option feature and specified certain minimum requirements.
+    \53\ 89 FR 90476, 90517-37 (Nov. 15, 2024) (Sections X, XI, and 
+XII).
+---------------------------------------------------------------------------
+
+    1. What requirements, if any, from the Vacated Rule are needed to 
+address unlawful negative option practices prevalent in the 
+marketplace? For any such requirement, or part thereof, please provide 
+the following information:
+    a. What benefit would the requirement provide consumers in terms of 
+time and money saved?
+    b. What costs would the requirement impose on consumers?
+    c. What benefit would the requirement provide businesses in terms 
+of time and money saved?
+    i. Would complying with the requirement allow businesses to 
+eliminate or reduce certain other business practices? If so, which 
+business practices?
+    ii. What are the savings in terms of time and money for eliminating 
+or reducing such business practices?
+    d. What costs would the requirement impose on businesses?
+    e. What modifications, if any, should the Commission make to the 
+requirements to reduce the costs imposed on businesses, particularly 
+small businesses? \54\
+---------------------------------------------------------------------------
+
+    \54\ Please use the U.S. Small Business Administration's 
+(``SBA'') standards for defining ``small business.'' See Size 
+Standards, <a href="https://www.sba.gov/federal-contracting/contracting-guide/size-standards">https://www.sba.gov/federal-contracting/contracting-guide/size-standards</a>. SBA defines ``small business'' by NAICS code 
+based on either employment levels or annual receipts.
+---------------------------------------------------------------------------
+
+    f. Would the requirement interfere with legitimate business 
+practices?
+    i. If so, what types of legitimate business practices would be 
+affected and how?
+    ii. How can the Commission modify the requirements to accommodate 
+these legitimate business practices?
+    g. Does the requirement overlap or conflict with existing Federal, 
+State, or local laws or regulations?
+    i. If so, how?
+    ii. Should any Rule amendment address such overlaps or conflicts? 
+If so, why, and how? If not, why not?
+    2. The Commission seeks information on both (i) the current costs 
+\55\ for complying with existing laws on negative options and (ii) how 
+those costs will change if the Commission adopts all or part(s) of the 
+Vacated Rule.
+---------------------------------------------------------------------------
+
+    \55\ Current costs include fixed costs as well as costs that 
+vary with production.
+---------------------------------------------------------------------------
+
+    a. For the average negative option seller, what are the current 
+costs to comply with existing Federal, State, and local laws or 
+regulations governing negative options?
+    b. How, and to what extent, would each of these four requirements 
+change the costs to comply with existing Federal, State, and local laws 
+or regulations governing negative options?
+    i. Please provide separate estimates for each cost component, 
+including costs to read and understand the rule, costs to update 
+procedures and train personnel on compliance, costs to revise web pages 
+and apps for compliance, costs to modify existing contracts and 
+subscriptions, costs to update disclosures, costs for record keeping, 
+and any other compliance costs.
+    ii. Would any other requirement from the Vacated Rule change the 
+costs of compliance? If so, how and to what extent?
+    c. How do the costs in your responses to the above questions vary 
+by industry?
+    d. How do the costs in your responses to the above questions vary 
+by business size?
+    e. How do the costs in your responses to the above questions vary 
+by specific business processes, including third-party services, used to 
+market and operate the negative option program (e.g., how do costs vary 
+by type of system for managing customer relationships or 
+subscriptions)?
+    f. How do the costs in your responses to the above questions vary 
+over time (in real dollars), in particular between initial first year 
+compliance efforts and subsequent years?
+    3. What evidence supports your responses to the above questions?
+    4. What evidence do you have that either supports or contradicts 
+the Final Regulatory Analysis, the Final Regulatory Flexibility Act 
+Analysis, and the Paperwork Reduction Act Analysis in the Final Rule 
+document for the Vacated Rule? \56\
+---------------------------------------------------------------------------
+
+    \56\ 89 FR 90476, 90517-37 (Nov. 15, 2024) (Sections X, XI, and 
+XII).
+---------------------------------------------------------------------------
+
+E. Questions About Exemptions
+
+    The Commission will consider how to handle industry requests for 
+exemptions from the requirements of a new rule. The Vacated Rule, for 
+example, affirmed existing procedures for petitioning the Commission 
+for an exemption and specified these procedures apply to petitions for 
+both partial and full exemptions.\57\ The Commission could take a 
+similar approach to exemptions under a new rule and additionally 
+consider supplementing the existing petition process with new 
+procedural or substantive requirements. Alternatively, the Commission 
+could expressly exempt particular segments of the marketplace from a 
+new rule or apply any new requirements only to specific industries 
+where unlawful negative option marketing practices are prevalent. The 
+following questions solicit information and evidence for making this 
+determination.
+---------------------------------------------------------------------------
+
+    \57\ Vacated Rule at Sec.  425.8. Section 18 of the FTC Act 
+provides that any affected person may petition the Commission for an 
+exemption from a rule proscribing unfair or deceptive acts or 
+practices. 15 U.S.C. 57a(g). The Commission Rules incorporated this 
+right into 16 CFR 1.16. The vacated Rule specified this right covers 
+both petitions for partial and full exemptions and designated the 
+procedures under 16 CFR 1.31 for resolving such petitions.
+---------------------------------------------------------------------------
+
+    1. What procedure should the Commission use to decide requests for 
+exemptions?
+    2. What criteria should the Commission use to decide requests for 
+exemption?
+    3. What types of evidence should the Commission require petitioners 
+to submit to support their exemption request?
+    4. How broadly should the Commission grant exemptions to such a new 
+rule?
+    a. Should exemptions be limited to individual businesses or should 
+it cover entire industries?
+    b. Should it be limited in time or in any other manner?
+    5. Should a new rule exempt certain businesses or industries from 
+any of the four requirements discussed in Section VIII.D above or any 
+other requirement from the Vacated Rule?
+    a. If so, which requirement(s) and why?
+    6. Conversely, should a new rule apply to certain industries only? 
+If so, which industries, and why?
+    7. What evidence supports your responses to the above questions?
+
+IX. Comment Submissions
+
+    The public is invited to submit comments on this document. The 
+Commission will consider all timely and responsive comments it receives 
+on or before April 13, 2026. Because of the agency's heightened 
+security screening, postal mail addressed to the
+
+[[Page 12325]]
+
+Commission will be delayed. We strongly encourage you to submit your 
+comments online through the <a href="https://www.regulations.gov">https://www.regulations.gov</a> website. If you 
+prefer to file your comments on paper, write ``Negative Option Rule 
+ANPRM, Project No. P064202'' on your comment and on the envelope, and 
+mail your comment by overnight service to: Federal Trade Commission, 
+Office of the Secretary, 600 Pennsylvania Avenue NW, Mail Stop H-144 
+(Annex N), Washington, DC 20580.
+    For comments submitted online through the <a href="https://www.regulations.gov">https://www.regulations.gov</a> website, you are solely responsible for making sure 
+your comment does not include any sensitive personally identifiable or 
+health information. In addition, your comment should not include any 
+``trade secret or any commercial or financial information which . . . 
+is privileged or confidential''--as provided by section 6(f) of the FTC 
+Act, 15 U.S.C. 46(f), and FTC Rule 4.10(a)(2), 16 CFR 4.10(a)(2)--
+including in particular competitively sensitive information such as 
+costs, sales statistics, inventories, formulas, patterns, devices, 
+manufacturing processes, or customer names.
+    Your comment--including your name and your State--will be placed on 
+the public record of this proceeding, including, to the extent 
+practicable, on the <a href="https://www.regulations.gov">https://www.regulations.gov</a> website. Once your 
+comment has been posted there--as legally required by FTC Rule 4.9(b)--
+we cannot redact or remove your comment from that website unless you 
+submit a written confidentiality request that meets the requirements 
+for such treatment under FTC Rule 4.9(c), and the General Counsel 
+grants that request. Such requests must be clearly labeled 
+``Confidential,'' must include the factual and legal basis for the 
+request, and must identify the specific portions of the comment to be 
+withheld from the public record. See FTC Rule 4.9(c).
+    The FTC Act and other laws that the Commission administers permit 
+the collection of public comments to consider and use in this 
+proceeding, as appropriate. For information on the Commission's privacy 
+policy, including routine uses permitted by the Privacy Act, see 
+<a href="https://www.ftc.gov/site-information/privacy-policy">https://www.ftc.gov/site-information/privacy-policy</a>.
+
+X. Regulatory Review
+
+    E.O. 14215 requires all executive branch departments and agencies 
+to submit all their proposed and final significant regulatory actions 
+to the Office of Management and Budget (OMB) for review. E.O. 12866 
+says that agencies should assess the costs and benefits of available 
+regulatory alternatives and, if regulation is necessary, select 
+regulatory approaches that maximize net benefits (including potential 
+economic, environmental, public health and safety effects, and 
+distributive impacts).
+
+    By direction of the Commission.
+April J. Tabor,
+Secretary.
+[FR Doc. 2026-04952 Filed 3-12-26; 8:45 am]
+BILLING CODE 6750-01-P
+
+
+</pre></body>
+</html>

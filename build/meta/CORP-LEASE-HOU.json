@@ -1,0 +1,30 @@
+{
+ "doc_id": "CORP-LEASE-HOU",
+ "path": "documents/corporate/lease_houston-branch_4204-fidelity-road_2018-06-01.md",
+ "chars": 103181,
+ "area": "corporate",
+ "cluster": null,
+ "doc_type": "real_estate_lease",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2018-06-01",
+ "status": "active",
+ "roles": [
+  "distractor"
+ ],
+ "source_class": "edgar",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/941738/000095013503004251/b46791wcexv10w14xdy.txt",
+ "year_shift": 15,
+ "governing_law_remap": null,
+ "name_map_size": 86,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ },
+ "post_fixes": [
+  "scrubbed residual real names: Bank of Texas"
+ ]
+}

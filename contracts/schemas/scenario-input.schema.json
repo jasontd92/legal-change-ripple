@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gc-take-home.local/contracts/0.1.0/scenario-input.schema.json",
+  "title": "Scenario input (one runnable scenario)",
+  "type": "object",
+  "required": [
+    "scenario_id",
+    "trigger",
+    "as_of",
+    "profile",
+    "corpus_root"
+  ],
+  "properties": {
+    "scenario_id": {
+      "type": "string"
+    },
+    "trigger": {
+      "type": "object",
+      "required": [
+        "group",
+        "versions"
+      ],
+      "properties": {
+        "group": {
+          "type": "string",
+          "description": "e.g. TR-01-copper-section-232"
+        },
+        "versions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "version ids in corpus/triggers/<group>/meta.yaml; one = single new doc, two = old/new pair"
+        }
+      }
+    },
+    "as_of": {
+      "type": "string",
+      "format": "date"
+    },
+    "profile": {
+      "type": "string",
+      "description": "'default' or path to a profile variant YAML (S1b / M2)"
+    },
+    "custom_prompt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "corpus_root": {
+      "type": "string",
+      "default": "corpus",
+      "description": "Override for fixtures / perturbed corpora (I6, M5-M7)"
+    }
+  }
+}

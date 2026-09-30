@@ -1,0 +1,656 @@
+# Real-source documents adapted into the Meridian corpus.
+# src: raw id (build/raw/<id>.txt) or "cuad:<title substring>"
+# pages: "a-b" (PDF page range) | slice: [start_regex, end_regex] | max_chars
+# map: explicit original -> fictional (applied first, longest-first; UPPERCASE variants auto-added)
+# replace: literal domain/text replacements applied after mapping
+# year_shift: years added to full dates; gov: remap governing law/venue {from: [...], to: State}
+# adapt: true -> LLM adapts the product/domain specifics (structure and legal language preserved); used where the source industry differs
+# fill: fill confidential-treatment redactions from a parameter context
+# Common keys: area, cluster (folder; only for docs that cannot stand alone), file, doc_type, parent, counterparty, effective, status, roles
+defaults:
+  company: &MER "Meridian Mechanical Group, Inc."
+
+docs:
+# ============================ SUPPLY ============================
+- id: SUP-GPC-01
+  src: "cuad:ReynoldsConsumerProductsInc_20191115_S-1_EX-10.18"
+  area: supply
+  cluster: great-plains-copper-tube_master-supply-agreement
+  file: 01_master-supply-agreement_2019-11-01.md
+  doc_type: master_supply_agreement
+  counterparty: SUP-GPC
+  effective: 2019-11-01
+  status: active
+  roles: [tariff, supply_master]
+  map: {"REYNOLDS CONSUMER PRODUCTS LLC": "GREAT PLAINS COPPER TUBE, INC.", "Reynolds Consumer Products LLC": "Great Plains Copper Tube, Inc.", "PACTIV LLC": "MERIDIAN MECHANICAL GROUP, INC.", "Pactiv LLC": "Meridian Mechanical Group, Inc.", "Reynolds": "Great Plains", "Pactiv": "Meridian"}
+  adapt: true
+  adapt_note: "Seller (an Oklahoma corporation, 4400 Foundry Road, Tulsa, OK 74107) manufactures copper water tube (ASTM B88 Types K, L, M), ACR tube, and wrought copper fittings; Buyer (a Delaware corporation, 2150 Harbor Point Drive, Suite 400, Sacramento, CA 95833) is a plumbing and HVAC contractor that buys for installation, not resale. Keep all clause structure and language; change only product-, industry- and business-specific facts (e.g., the Parties' history of supplying each other, North America scope -> United States). Keep the governing law and venue in Illinois if present, otherwise use Illinois."
+- id: SUP-GPC-02
+  src: E-FEDCART-ASA2018
+  slice: ["Exhibit B", "Exhibit C|EXHIBIT C|$"]
+  slice_from: 38400
+  area: supply
+  cluster: great-plains-copper-tube_master-supply-agreement
+  file: 02_exhibit-b_metals-price-adjustment_2019-11-01.md
+  doc_type: pricing_exhibit
+  parent: SUP-GPC-01
+  counterparty: SUP-GPC
+  effective: 2019-11-01
+  roles: [tariff, price_adjustment]
+  adapt: true
+  fill: true
+  adapt_note: "Rewrite as 'Exhibit B - Metals Price Adjustment' to the Master Supply Agreement dated November 1, 2019 between Great Plains Copper Tube, Inc. (Seller) and Meridian Mechanical Group, Inc. (Buyer). Products are copper water tube and wrought copper fittings; copper is the only adjusted metal (drop other metals). Base price index: COMEX HG front-month settlement; base metal price $2.60/lb; quarterly adjustment using the average of the prior quarter; adjustment applies to the copper weight of each product (pounds per 100 feet). Keep the source's mechanics and drafting style. Do NOT mention tariffs or duties anywhere in this exhibit."
+- id: SUP-GPC-03
+  src: E-FEDCART-ADD6
+  area: supply
+  cluster: great-plains-copper-tube_master-supply-agreement
+  file: 03_amendment-1_pricing-and-term_2022-04-01.md
+  doc_type: amendment
+  parent: SUP-GPC-01
+  counterparty: SUP-GPC
+  effective: 2022-04-01
+  roles: [supply_amendment]
+  adapt: true
+  fill: true
+  adapt_note: "Rewrite as 'Amendment No. 1 to Master Supply Agreement' dated April 1, 2022 between Great Plains Copper Tube, Inc. and Meridian Mechanical Group, Inc. It extends the Initial Term to October 31, 2027, replaces the Exhibit A price list base prices (list 6 copper tube and fitting product families with prices per 100 ft or per each), changes the metals adjustment from quarterly to monthly, and adds a minimum annual purchase commitment of 1,150,000 lbs of copper tube with a shortfall fee of $0.18/lb. Keep the source's amendment structure and drafting style. Do NOT mention tariffs or duties."
+- id: SUP-GPC-04
+  src: E-NTRA-AMD11-2026
+  area: supply
+  cluster: great-plains-copper-tube_master-supply-agreement
+  file: 04_amendment-2_tariff-surcharge_2026-03-02.md
+  doc_type: amendment
+  parent: SUP-GPC-01
+  counterparty: SUP-GPC
+  effective: 2026-03-02
+  roles: [tariff, refund_chain, price_adjustment]
+  adapt: true
+  fill: true
+  adapt_note: "Rewrite as 'Amendment No. 2 to Master Supply Agreement' effective March 2, 2026 between Great Plains Copper Tube, Inc. (Seller) and Meridian Mechanical Group, Inc. (Buyer). Keep ONLY the tariff-surcharge mechanism and the general amendment boilerplate from the source; drop all genomics/product-specific sections. Preserve closely: the definition of 'Tariff Charges' (Section 122 duty under Proclamation 11012, 91 Fed. Reg. 9339, plus successor/replacement/additional duties under Section 301, Section 232 or other trade laws), the 'Tariff Rate' of 10% as of March 2, 2026, the threshold above which Seller may invoice a surcharge (use 5%), the thirty-day notice and non-retroactive start, and the rebate/refund pass-back sentence (Buyer entitled to its pro-rata share of any rebate, refund or other remuneration Seller later receives). Seller is the importer of record for imported copper cathode and fittings components. Make this new Section 7(g) of the Master Supply Agreement."
+# ---- supply: other real ----
+- id: SUP-HPB-01
+  src: "cuad:LohaCompanyltd_20191209_F-1_EX-10.16"
+  area: supply
+  file: hai-phong-precision-brass_supply-contract_2023-05-15.md
+  doc_type: supply_agreement
+  counterparty: SUP-HPB
+  effective: 2023-05-15
+  roles: [tariff, importer_of_record, supply_master]
+  adapt: true
+  adapt_note: "Buyer: Meridian Mechanical Group, Inc., Sacramento, California, USA. Seller: Hai Phong Precision Brass Co., Ltd., Lot C4 Trang Due Industrial Park, An Duong District, Hai Phong, Vietnam. Contract No. MMG-HPB-2023-01, dated May 15, 2023. Products: lead-free brass and copper press fittings, threaded brass adapters and couplings. Trade term: CIF Port of Long Beach (Incoterms 2020); Buyer is the importer of record in the United States and is responsible for all U.S. import duties, customs fees and entry filings. Keep all clause structure; fill blanks with realistic values."
+- id: SUP-NCS-DEALER
+  src: "cuad:LIMEENERGYCO_09_09_1999-EX-10-DISTRIBUTOR AGREEMENT"
+  area: supply
+  file: northaire-comfort-systems_authorized-dealer-agreement_2020-01-15.md
+  doc_type: dealer_agreement
+  counterparty: SUP-NCS
+  effective: 2020-01-15
+  roles: [supply_master, exclusivity]
+  adapt: true
+  adapt_note: "Company = Northaire Comfort Systems Corporation (Florida), a manufacturer of residential and light-commercial HVAC equipment (heat pumps, condensers, furnaces, air handlers). Distributor becomes 'Dealer' = Meridian Mechanical Group, Inc. Territory: the States of California, Washington, Illinois and Texas. Effective January 15, 2020. Keep clause structure (appointment, exclusivity, minimum purchase, pricing, term/termination, noncompetition). Pricing section must state that equipment is sold under Northaire's Terms and Conditions of Sale published at https://www.northaire.com/terms-of-sale as in effect on the date of each order."
+# ============================ CUSTOMERS ============================
+- id: CUS-WADES-01
+  src: A-WADES-04224-C-MCK
+  area: customers
+  cluster: wa-des-04224_hvac-services-contract
+  file: 01_contract-04224_hvac-services_2025-09-10.md
+  doc_type: customer_master_agreement
+  counterparty: CUS-WADES
+  effective: 2025-09-10
+  roles: [tariff, fixed_price, price_ceiling]
+  map: {"McKinstry Co., LLC": "Meridian Mechanical of Washington, LLC", "McKinstry Co. LLC": "Meridian Mechanical of Washington, LLC", "MCKINSTRY CO., LLC": "MERIDIAN MECHANICAL OF WASHINGTON, LLC", "McKinstry": "Meridian"}
+- id: CUS-WADES-02
+  src: A-WADES-04224-A-MCK
+  area: customers
+  cluster: wa-des-04224_hvac-services-contract
+  file: 02_amendment-1_price-exhibit-replacement_2025-10-01.md
+  doc_type: amendment
+  parent: CUS-WADES-01
+  counterparty: CUS-WADES
+  effective: 2025-10-01
+  roles: [price_ceiling]
+  map: {"McKinstry Co., LLC": "Meridian Mechanical of Washington, LLC", "McKinstry Co. LLC": "Meridian Mechanical of Washington, LLC", "MCKINSTRY CO., LLC": "MERIDIAN MECHANICAL OF WASHINGTON, LLC", "McKinstry": "Meridian"}
+- id: CUS-WADES-03
+  src: A-WADES-04224-PRICE
+  area: customers
+  cluster: wa-des-04224_hvac-services-contract
+  file: 03_exhibit-b_price-sheet_2025-10-01.md
+  doc_type: pricing_exhibit
+  parent: CUS-WADES-01
+  counterparty: CUS-WADES
+  effective: 2025-10-01
+  roles: [price_ceiling]
+  keep_only_rows_with: ["McKinstry", "Awarded", "Area", "Region", "Fee", "Truck", "Markup", "Parts", "Labor", "County"]
+  map: {"McKinstry Co., LLC": "Meridian Mechanical of Washington, LLC", "McKinstry": "Meridian Mechanical of Washington"}
+- id: CUS-WADES-04
+  src: A-WADES-04224-SUMMARY
+  area: customers
+  cluster: wa-des-04224_hvac-services-contract
+  file: 04_contract-summary-and-ordering-instructions_as-published.md
+  doc_type: incorporated_web_terms
+  parent: CUS-WADES-01
+  counterparty: CUS-WADES
+  effective: 2025-09-10
+  roles: [tariff, surcharge_prohibition]
+  map: {"McKinstry Co., LLC": "Meridian Mechanical of Washington, LLC", "McKinstry": "Meridian Mechanical of Washington"}
+  drop_other_contractors: true
+- id: CUS-LKP-01
+  src: A-CHI-134953-R0
+  pages: "1-40"
+  area: customers
+  cluster: city-of-lakeport_hvac-reference-contract
+  file: 01_reference-contract-hvac-products-installation-services_2021-04-20.md
+  doc_type: customer_master_agreement
+  counterparty: CUS-LKP
+  effective: 2021-04-20
+  roles: [tariff, cooperative_piggyback]
+  map: {"TRANE U.S. INC.": "MERIDIAN MECHANICAL OF ILLINOIS, LLC", "TRANE U.S. INC": "MERIDIAN MECHANICAL OF ILLINOIS, LLC", "Trane U.S. Inc.": "Meridian Mechanical of Illinois, LLC", "Trane U.S. Inc": "Meridian Mechanical of Illinois, LLC", "Trane": "Meridian", "TRANE": "MERIDIAN", "City of Chicago": "City of Lakeport", "CITY OF CHICAGO": "CITY OF LAKEPORT", "Chicago": "Lakeport", "CHICAGO": "LAKEPORT", "Harford County Public Schools": "Allegheny Regional Purchasing Cooperative", "Harford County": "Allegheny Regional", "OMNIA Partners": "Keystone Public Purchasing Alliance", "U.S. Communities": "Keystone Public Purchasing Alliance"}
+- id: CUS-LKP-02
+  src: A-CHI-134953-R1
+  area: customers
+  cluster: city-of-lakeport_hvac-reference-contract
+  file: 02_modification-1_value-increase_2022-06-17.md
+  doc_type: amendment
+  parent: CUS-LKP-01
+  counterparty: CUS-LKP
+  effective: 2022-06-17
+  map_from: CUS-LKP-01
+- id: CUS-LKP-03
+  src: A-CHI-134953-R4
+  area: customers
+  cluster: city-of-lakeport_hvac-reference-contract
+  file: 03_modification-4_time-extension-and-value-increase_2026-01-28.md
+  doc_type: amendment
+  parent: CUS-LKP-01
+  counterparty: CUS-LKP
+  effective: 2026-01-28
+  map_from: CUS-LKP-01
+- id: CUS-KPPA-COOP
+  src: A-CHI-134953-R0
+  pages: "97-160"
+  area: customers
+  file: keystone-public-purchasing-alliance_cooperative-master-solicitation-hvac_2015-08-13.md
+  doc_type: cooperative_master_agreement
+  counterparty: CUS-LKP
+  effective: 2015-08-13
+  roles: [cooperative_piggyback, l2_link]
+  map_from: CUS-LKP-01
+- id: CUS-SMB-01
+  src: A-SA-JOC-PLUMB-RFCSP
+  pages: "1-40"
+  area: customers
+  file: city-of-san-marcos-bend_on-call-plumbing-job-order-contract_2023-10-03.md
+  doc_type: customer_master_agreement
+  counterparty: CUS-SMB
+  effective: 2023-10-03
+  year_shift: 4
+  roles: [tariff, indirect_escalator, anti_indemnity]
+  map: {"City of San Antonio": "City of San Marcos Bend", "CITY OF SAN ANTONIO": "CITY OF SAN MARCOS BEND", "San Antonio International Airport": "San Marcos Bend Regional Airport", "SAIA": "SMBRA", "San Antonio": "San Marcos Bend", "SAN ANTONIO": "SAN MARCOS BEND", "Mueller & Wilson, Inc.": "Meridian Mechanical of Texas, LLC"}
+# ============================ SUBCONTRACTS ============================
+- id: SUBK-BHC-01
+  src: E-BWIND-SUBCONTRACT
+  area: subcontracts
+  cluster: bridgewell-construction_master-subcontract-solara-fab
+  file: 01_service-agreement-subcontract_2025-04-14.md
+  doc_type: subcontract
+  counterparty: GC-BHC
+  effective: 2025-04-14
+  roles: [flow_down, anti_indemnity, tariff]
+  map: {"TSMC Arizona Corporation": "Solara Semiconductor Fab 2, LLC", "TSMC Arizona": "Solara Semiconductor", "TSMC": "Solara", "Arizona": "California"}
+  map_roles: {"contractor_party": "Bridgewell Construction Company", "subcontractor_party": "Meridian Mechanical Group, Inc."}
+  gov: {from: [Arizona], to: California}
+  replace: [["Phone: [*]  Fax: N/A  Email: [*]  By:  /s/ Elise", "Phone: (916) 555-0142 Fax: N/A Email: contracts@bridgewellconstruction.com By: /s/ Elise"], ["Phone: [*]", "Phone: (916) 555-0187"], ["Email: [*]", "Email: legal@meridianmech.com"]]
+# ============================ EMPLOYMENT ============================
+- id: EMP-RSU-FORM
+  src: E-LGN-RSU-RIDERS
+  area: employment
+  file: form_restricted-stock-unit-award-with-restrictive-covenants_2025-plan.md
+  doc_type: equity_award_form
+  effective: 2025-03-01
+  roles: [noncompete, forfeiture, state_riders]
+  map: {"Legence Corp.": "Meridian Home Services Holdings, LLC", "Legence Corp": "Meridian Home Services Holdings, LLC", "Legence": "Meridian", "LEGENCE": "MERIDIAN", "Class A Common Stock": "Class B Units", "shares of Common Stock": "Class B Units"}
+  year_shift: -1
+- id: EMP-PSA-2022
+  src: E-SERV-PSA
+  area: employment
+  file: form_performance-unit-award-agreement_2022.md
+  doc_type: equity_award_form
+  effective: 2022-02-15
+  year_shift: 6
+  roles: [noncompete, forfeiture]
+  map: {"The ServiceMaster Company, LLC": "Meridian Home Services Holdings, LLC", "ServiceMaster Global Holdings, Inc.": "Meridian Home Services Holdings, LLC", "ServiceMaster": "Meridian", "SERVICEMASTER": "MERIDIAN", "Terminix": "Meridian Plumbing, Heating & Air", "American Home Shield": "Meridian Plumbing, Heating & Air"}
+  adapt: true
+  adapt_note: "Keep the parties, dates, compensation figures and every clause as written. Only replace references to the source company's original industry, products, mission or business lines (for example fintech, healthcare, beverages, pest control, home warranty) with Meridian's residential and commercial plumbing, heating and air-conditioning service business."
+- id: EMP-PSU-2025
+  src: E-FTDR-PSU
+  area: employment
+  file: priya-ramaswamy_performance-unit-award_2025-03-03.md
+  doc_type: equity_award
+  effective: 2025-03-03
+  year_shift: 0
+  roles: [noncompete, forfeiture]
+  map: {"Frontdoor, Inc.": "Meridian Home Services Holdings, LLC", "frontdoor, inc.": "Meridian Home Services Holdings, LLC", "Frontdoor": "Meridian", "frontdoor": "Meridian", "FRONTDOOR": "MERIDIAN", "American Home Shield": "Meridian Plumbing, Heating & Air"}
+  person_to: "Priya Ramaswamy"
+  adapt: true
+  adapt_note: "Keep the parties, dates, compensation figures and every clause as written. Only replace references to the source company's original industry, products, mission or business lines (for example fintech, healthcare, beverages, pest control, home warranty) with Meridian's residential and commercial plumbing, heating and air-conditioning service business."
+- id: EMP-EXEC-TX-2022
+  src: E-IES-EMP
+  area: employment
+  file: marcus-delgado_executive-employment-agreement_2022-02-28.md
+  doc_type: executive_employment_agreement
+  effective: 2022-02-28
+  year_shift: 3
+  roles: [noncompete, tx]
+  map: {"IES Holdings, Inc.": "Meridian Mechanical Group, Inc.", "IES Holdings": "Meridian", "IES": "Meridian", "Integrated Electrical Services": "Meridian Mechanical"}
+  person_to: "Marcus T. Delgado"
+  gov: {from: [Texas], to: Texas}
+- id: EMP-GM-IL-2014
+  src: E-FIX-EMP-2002
+  area: employment
+  file: general-manager-employment-agreement_illinois_2014-06-02.md
+  doc_type: manager_employment_agreement
+  effective: 2014-06-02
+  year_shift: 12
+  roles: [noncompete, il, legacy_template]
+  map: {"Comfort Systems USA, Inc.": "Meridian Mechanical Group, Inc.", "Comfort Systems": "Meridian", "COMFORT SYSTEMS USA, INC.": "MERIDIAN MECHANICAL GROUP, INC."}
+  gov: {from: [Texas, Delaware], to: Illinois}
+- id: EMP-MGR-IL-2022
+  src: E-EK-EMP-MGR-A
+  area: employment
+  file: branch-manager-employment-agreement_elk-grove-village_2022-11-01.md
+  doc_type: manager_employment_agreement
+  effective: 2022-11-01
+  year_shift: 14
+  roles: [noncompete, il]
+  map: {"Energy King, Inc.": "Meridian Mechanical of Illinois, LLC", "Energy King": "Meridian", "ENERGY KING": "MERIDIAN", "Buckeye Ventures, Inc.": "Meridian Home Services Holdings, LLC", "Buckeye Ventures": "Meridian Holdings", "Buckeye": "Meridian Holdings"}
+  gov: {from: [California], to: Illinois}
+- id: EMP-MGR-TX-2023
+  src: E-EK-EMP-MGR-B
+  area: employment
+  file: service-manager-employment-agreement_houston_2023-01-09.md
+  doc_type: manager_employment_agreement
+  effective: 2023-01-09
+  year_shift: 15
+  roles: [noncompete, tx]
+  map: {"Energy King, Inc.": "Meridian Mechanical of Texas, LLC", "Energy King": "Meridian", "ENERGY KING": "MERIDIAN", "Buckeye Ventures, Inc.": "Meridian Home Services Holdings, LLC", "Buckeye Ventures": "Meridian Holdings", "Buckeye": "Meridian Holdings"}
+  gov: {from: [California], to: Texas}
+- id: EMP-RCA-FORM
+  src: E-NSH-RCA
+  area: employment
+  file: form_restrictive-covenant-and-invention-assignment-agreement_managers_2022.md
+  doc_type: restrictive_covenant_form
+  effective: 2022-07-01
+  roles: [noncompete, compensating_protection, confidentiality]
+  map: {"NorthStar Healthcare Income, Inc.": "Meridian Mechanical Group, Inc.", "NorthStar Healthcare": "Meridian", "NorthStar": "Meridian", "Healthcare": "Home Services"}
+  adapt: true
+  adapt_note: "Keep the parties, dates, compensation figures and every clause as written. Only replace references to the source company's original industry, products, mission or business lines (for example fintech, healthcare, beverages, pest control, home warranty) with Meridian's residential and commercial plumbing, heating and air-conditioning service business."
+- id: EMP-OFFER-CA-2024
+  src: E-SOS-OFFER-PIIA
+  area: employment
+  file: nadia-castellano_offer-letter-and-piia_sales-manager_2024-05-06.md
+  doc_type: offer_letter
+  effective: 2024-05-06
+  year_shift: 2
+  roles: [noncompete, employee_nonsolicit, relocation_allowance, ca, arbitration]
+  map: {"SOS Hydration Inc.": "Meridian Mechanical Group, Inc.", "SOS Hydration": "Meridian", "SOS": "Meridian"}
+  person_to: "Nadia Castellano"
+  adapt: true
+  adapt_note: "Keep the parties, dates, compensation figures and every clause as written. Only replace references to the source company's original industry, products, mission or business lines (for example fintech, healthcare, beverages, pest control, home warranty) with Meridian's residential and commercial plumbing, heating and air-conditioning service business."
+- id: EMP-SEP-WA-2025
+  src: E-RMTL-TRANSITION
+  area: employment
+  file: joshua-halvorsen_transition-and-separation-agreement_2025-03-05.md
+  doc_type: separation_agreement
+  effective: 2025-03-05
+  roles: [noncompete, wa, reaffirmation]
+  map: {"Remitly Global, Inc.": "Meridian Home Services Holdings, LLC", "Remitly, Inc.": "Meridian Mechanical of Washington, LLC", "Remitly": "Meridian", "REMITLY": "MERIDIAN"}
+  person_to: "Joshua Halvorsen"
+  adapt: true
+  adapt_note: "Keep the parties, dates, compensation figures and every clause as written. Only replace references to the source company's original industry, products, mission or business lines (for example fintech, healthcare, beverages, pest control, home warranty) with Meridian's residential and commercial plumbing, heating and air-conditioning service business."
+- id: EMP-CONSULT-WA-2025
+  src: E-RMTL-CONSULTING
+  area: employment
+  file: joshua-halvorsen_post-retirement-consulting-agreement_2025-06-01.md
+  doc_type: consulting_agreement
+  effective: 2025-06-01
+  roles: [noncompete, wa, contractor, arbitration]
+  map: {"Remitly Global, Inc.": "Meridian Home Services Holdings, LLC", "Remitly, Inc.": "Meridian Mechanical of Washington, LLC", "Remitly": "Meridian", "REMITLY": "MERIDIAN"}
+  person_to: "Joshua Halvorsen"
+  adapt: true
+  adapt_note: "Keep the parties, dates, compensation figures and every clause as written. Only replace references to the source company's original industry, products, mission or business lines (for example fintech, healthcare, beverages, pest control, home warranty) with Meridian's residential and commercial plumbing, heating and air-conditioning service business."
+- id: EMP-SEP-TX-2024
+  src: E-SERV-SEPARATION
+  area: employment
+  file: vance-strickland_separation-letter-agreement_2024-01-17.md
+  doc_type: separation_agreement
+  effective: 2024-01-17
+  year_shift: 4
+  roles: [noncompete, tx, arbitration_program]
+  map: {"The ServiceMaster Company, LLC": "Meridian Mechanical of Texas, LLC", "ServiceMaster Global Holdings, Inc.": "Meridian Home Services Holdings, LLC", "ServiceMaster": "Meridian", "SERVICEMASTER": "MERIDIAN", "We Listen Dispute Resolution Plan": "Meridian Resolve Dispute Resolution Program", "Terminix": "Meridian"}
+  person_to: "Vance Strickland"
+  adapt: true
+  adapt_note: "Keep the parties, dates, compensation figures and every clause as written. Only replace references to the source company's original industry, products, mission or business lines (for example fintech, healthcare, beverages, pest control, home warranty) with Meridian's residential and commercial plumbing, heating and air-conditioning service business."
+- id: EMP-LIT-IL-2025
+  src: C-CLIMATEPROS-COMPLAINT
+  area: employment
+  file: meridian-v-former-technicians_complaint-for-injunctive-relief_n-d-ill_2025-08-11.md
+  doc_type: litigation_complaint
+  effective: 2025-08-11
+  year_shift: 3
+  roles: [noncompete, il, construction_employees, active_litigation]
+  map: {"Climate Pros, LLC": "Meridian Mechanical of Illinois, LLC", "Climate Pros": "Meridian", "CLIMATE PROS, LLC": "MERIDIAN MECHANICAL OF ILLINOIS, LLC", "CLIMATE PROS": "MERIDIAN", "SMCP Holdings": "Meridian Home Services Holdings", "Tri-Temp": "Kessler Comfort Services", "Norfoxx": "Kessler Refrigeration", "Western District of Texas": "Northern District of Illinois", "WESTERN DISTRICT OF TEXAS": "NORTHERN DISTRICT OF ILLINOIS", "Austin Division": "Eastern Division", "AUSTIN DIVISION": "EASTERN DIVISION"}
+  gov: {from: [Texas], to: Illinois}
+  adapt: true
+  adapt_note: "This complaint is filed in 2025 by Meridian Mechanical of Illinois, LLC (an Elk Grove Village, Illinois commercial and residential HVAC and plumbing contractor) against two former HVAC service technicians hired when Meridian acquired Kessler Comfort Services, Inc. in October 2022. Keep the verbatim-quoted covenant language (confidential information, non-competition, cooperation, non-solicitation) from the source, the causes of action and prayer for relief. Change the court to the U.S. District Court for the Northern District of Illinois and Texas law references to Illinois law (Illinois Freedom to Work Act, 820 ILCS 90; Illinois Trade Secrets Act). Do not add any analysis of whether the covenants are enforceable."
+# ============================ ACQUISITIONS ============================
+- id: ACQ-01-APA
+  src: E-BUCK-APA-BARNETT
+  area: acquisitions
+  file: ACQ-01_barrow-plumbing_asset-purchase-agreement_2019-03-04.md
+  doc_type: asset_purchase_agreement
+  effective: 2019-03-04
+  year_shift: 12
+  roles: [noncompete, sale_of_business, ca]
+  map: {"Energy King, Inc.": "Meridian Mechanical Group, Inc.", "Energy King": "Meridian", "ENERGY KING": "MERIDIAN", "Buckeye Ventures, Inc.": "Meridian Home Services Holdings, LLC", "Buckeye Ventures": "Meridian Holdings", "Buckeye": "Meridian Holdings", "Barnett Plumbing, Inc.": "Barrow Plumbing, Inc.", "Barnett Heating and Air": "Barrow Heating and Air", "Barnett Plumbing": "Barrow Plumbing", "Robert Barnett": "Robert Barrow", "Sherry Barnett": "Sharon Barrow", "Barnett": "Barrow", "BARNETT": "BARROW"}
+  gov: {from: [California], to: California}
+- id: ACQ-01-EMP-SELLER
+  src: E-BUCK-EMP-LARSON
+  area: acquisitions
+  file: ACQ-01_robert-barrow_employment-agreement_2019-03-04.md
+  doc_type: seller_employment_agreement
+  effective: 2019-03-04
+  year_shift: 13
+  roles: [noncompete, sale_of_business, seller_employee, ca]
+  map: {"Energy King, Inc.": "Meridian Mechanical Group, Inc.", "Energy King": "Meridian", "ENERGY KING": "MERIDIAN", "Buckeye Ventures, Inc.": "Meridian Home Services Holdings, LLC", "Buckeye": "Meridian Holdings", "Varin Larson": "Robert Barrow", "Deanna Larson": "Sharon Barrow", "Larson": "Barrow", "LARSON": "BARROW"}
+- id: ACQ-02-APA
+  src: E-EK-APA-ARS
+  area: acquisitions
+  file: ACQ-02_northgate-heating-and-air_asset-purchase-agreement_2021-06-01.md
+  doc_type: asset_purchase_agreement
+  effective: 2021-06-01
+  year_shift: 13
+  roles: [noncompete, sale_of_business, non_owner_signer, wa, template_lineage]
+  map: {"American Residential Services L.L.C.": "Meridian Mechanical of Washington, LLC", "American Residential Services": "Meridian Mechanical of Washington", "ARS": "Meridian", "Energy King, Inc. d/b/a Heating & Air Conditioning Services, Inc.": "Northgate Heating & Air Conditioning, Inc.", "Energy King, Inc.": "Northgate Heating & Air Conditioning, Inc.", "Energy King": "Northgate", "ENERGY KING": "NORTHGATE", "Heating & Air Conditioning Services, Inc.": "Northgate Heating & Air Conditioning, Inc.", "Alan Mintz": "Alan Mercer", "Mintz": "Mercer", "Jeff Hultman": "Jeffrey Hale", "Jeffrey Hultman": "Jeffrey Hale", "Jeffrey R. Hultman": "Jeffrey R. Hale", "Hultman": "Hale", "Plymouth": "Pierce", "Suffolk": "King", "Massachusetts": "Washington", "Commonwealth of Massachusetts": "State of Washington", "Buckeye Ventures, Inc.": "Meridian Home Services Holdings, LLC"}
+  gov: {from: [Tennessee, Massachusetts], to: Washington}
+- id: ACQ-02-EMP-OWNER
+  src: E-BUCK-EMP-MINTZ
+  area: acquisitions
+  file: ACQ-02_alan-mercer_employment-agreement_2021-06-01.md
+  doc_type: seller_employment_agreement
+  effective: 2021-06-01
+  year_shift: 15
+  roles: [noncompete, seller_employee, wa]
+  map: {"Energy King, Inc.": "Meridian Mechanical of Washington, LLC", "Energy King": "Meridian", "ENERGY KING": "MERIDIAN", "Buckeye Ventures, Inc.": "Meridian Home Services Holdings, LLC", "Buckeye": "Meridian Holdings", "Alan Mintz": "Alan Mercer", "Mintz": "Mercer", "MINTZ": "MERCER"}
+  gov: {from: [California], to: Washington}
+- id: ACQ-02-EMP-NONOWNER
+  src: E-EK-EMP-HULTMAN
+  area: acquisitions
+  file: ACQ-02_jeffrey-hale_executive-employment-agreement_2021-06-01.md
+  doc_type: executive_employment_agreement
+  effective: 2021-06-01
+  year_shift: 13
+  roles: [noncompete, non_owner_signer, wa, party_link]
+  map: {"Energy King, Inc.": "Meridian Mechanical of Washington, LLC", "Energy King": "Meridian", "ENERGY KING": "MERIDIAN", "Buckeye Ventures, Inc.": "Meridian Home Services Holdings, LLC", "Buckeye": "Meridian Holdings", "Jeffrey R. Hultman": "Jeffrey R. Hale", "Jeff Hultman": "Jeffrey Hale", "Hultman": "Hale", "HULTMAN": "HALE"}
+  gov: {from: [California], to: Washington}
+- id: ACQ-03-APA
+  src: E-ENCOMPASS-APA
+  area: acquisitions
+  file: ACQ-03_kessler-comfort-services_asset-purchase-agreement_2022-10-03.md
+  doc_type: asset_purchase_agreement
+  effective: 2022-10-03
+  year_shift: 19
+  roles: [noncompete, sale_of_business, il]
+  map: {"Encompass Services Corporation": "Meridian Mechanical of Illinois, LLC", "Encompass": "Meridian", "ENCOMPASS": "MERIDIAN"}
+  map_roles: {"seller_company": "Kessler Comfort Services, Inc.", "seller_owner": "Karl Kessler"}
+  gov: {from: [Texas, Delaware], to: Illinois}
+- id: ACQ-03-NC-01
+  src: "cuad:Quaker Chemical Corporation - NON COMPETITION AND NON SOLICITATION AGREEMENT"
+  area: acquisitions
+  cluster: ACQ-03_kessler-seller-noncompetition-agreement
+  file: 01_noncompetition-and-nonsolicitation-agreement_2022-10-03.md
+  doc_type: seller_noncompete
+  effective: 2022-10-03
+  year_shift: 3
+  roles: [noncompete, sale_of_business, il]
+  adapt: true
+  adapt_note: "Buyer = Meridian Mechanical of Illinois, LLC. Sellers = Kessler Comfort Services, Inc. (an Illinois corporation) and its sole shareholder Karl Kessler; also sign: Kessler Refrigeration, LLC (affiliate owned by Karl Kessler). Business = residential and commercial HVAC and plumbing service in the Chicago metropolitan area. Restricted Period: five years after the Closing Date (October 3, 2022). Territory: Cook, DuPage, Kane, Lake and Will Counties, Illinois. Keep the structure and restrictive-covenant language of the source (noncompetition, nonsolicitation of customers and employees, remedies, severability, governing law) and change the governing law to Illinois."
+- id: ACQ-03-NC-02
+  src: "cuad:VIVINT SOLAR, INC. - NON-COMPETITION AGREEMENT"
+  area: acquisitions
+  cluster: ACQ-03_kessler-seller-noncompetition-agreement
+  file: 02_amendment-1_noncompetition-agreement_2024-08-16.md
+  doc_type: amendment
+  parent: ACQ-03-NC-01
+  effective: 2024-08-16
+  roles: [noncompete, sale_of_business, il]
+  adapt: true
+  adapt_note: "Amendment No. 1, dated August 16, 2024, to the Non-Competition and Non-Solicitation Agreement dated October 3, 2022 among Meridian Mechanical of Illinois, LLC, Kessler Comfort Services, Inc., Kessler Refrigeration, LLC and Karl Kessler. The amendment narrows the Territory to Cook and DuPage Counties and permits Karl Kessler to perform residential boiler service for Kessler Refrigeration, LLC customers. Keep the source's amendment structure."
+- id: ACQ-04-MERGER
+  src: E-EK-MERGER-GALLAGHER
+  area: acquisitions
+  file: ACQ-04_lone-oak-mechanical_agreement-and-plan-of-merger_2023-08-15.md
+  doc_type: merger_agreement
+  effective: 2023-08-15
+  year_shift: 15
+  roles: [noncompete, sale_of_business, tx]
+  map: {"Gallagher's Heating & Air Conditioning, Inc.": "Lone Oak Mechanical, Inc.", "Gallagher's Heating & Air Conditioning": "Lone Oak Mechanical", "Gallagher's": "Lone Oak", "GHA Acquisition Corp.": "LOM Acquisition Corp.", "GHA": "LOM", "Timothy E. Gallagher": "Timothy E. Galvan", "Gallagher": "Galvan", "GALLAGHER": "GALVAN", "Energy King, Inc.": "Meridian Mechanical of Texas, LLC", "Energy King": "Meridian Texas", "Buckeye Ventures, Inc.": "Meridian Mechanical Group, Inc.", "Buckeye Ventures": "Meridian", "Buckeye": "Meridian", "BUCKEYE": "MERIDIAN"}
+  gov: {from: [California], to: Texas}
+- id: ACQ-04-EMP-SELLER
+  src: E-EK-EMP-GALLAGHER
+  area: acquisitions
+  file: ACQ-04_timothy-galvan_employment-agreement_2023-08-15.md
+  doc_type: seller_employment_agreement
+  effective: 2023-08-15
+  year_shift: 15
+  roles: [noncompete, seller_employee, tx]
+  map_from: ACQ-04-MERGER
+  gov: {from: [California], to: Texas}
+- id: ACQ-04-NOTE
+  src: E-EK-NOTE-PLEDGE
+  area: acquisitions
+  file: ACQ-04_seller-promissory-note-and-pledge_2023-08-15.md
+  doc_type: promissory_note
+  effective: 2023-08-15
+  year_shift: 15
+  roles: [seller_financing, setoff]
+  map_from: ACQ-04-MERGER
+  gov: {from: [California], to: Texas}
+- id: ACQ-05-APA
+  src: E-EK-APA-ARS
+  area: acquisitions
+  file: ACQ-05_pinecrest-plumbing-and-drain_asset-purchase-agreement_2025-02-18.md
+  doc_type: asset_purchase_agreement
+  effective: 2025-02-18
+  year_shift: 17
+  roles: [noncompete, sale_of_business, wa, template_lineage]
+  map: {"American Residential Services L.L.C.": "Meridian Mechanical of Washington, LLC", "American Residential Services": "Meridian Mechanical of Washington", "ARS": "Meridian", "Energy King, Inc. d/b/a Heating & Air Conditioning Services, Inc.": "Pinecrest Plumbing & Drain, LLC", "Energy King, Inc.": "Pinecrest Plumbing & Drain, LLC", "Energy King": "Pinecrest", "ENERGY KING": "PINECREST", "Heating & Air Conditioning Services, Inc.": "Pinecrest Plumbing & Drain, LLC", "Alan Mintz": "Owen Pemberton", "Mintz": "Pemberton", "Jeff Hultman": "Leah Pemberton", "Jeffrey Hultman": "Leah Pemberton", "Jeffrey R. Hultman": "Leah M. Pemberton", "Hultman": "Pemberton", "Plymouth": "Spokane", "Suffolk": "Stevens", "Massachusetts": "Washington", "Commonwealth of Massachusetts": "State of Washington", "Buckeye Ventures, Inc.": "Meridian Home Services Holdings, LLC", "heating and air conditioning": "plumbing and drain"}
+  gov: {from: [Tennessee, Massachusetts], to: Washington}
+- id: ACQ-05-RCA
+  src: C-SHVAC-SELLER-RCA
+  area: acquisitions
+  file: ACQ-05_owen-pemberton_seller-restrictive-covenant-agreement_2025-02-18.md
+  doc_type: seller_noncompete
+  effective: 2025-02-18
+  year_shift: 7
+  roles: [noncompete, sale_of_business, wa]
+  map_roles: {"buyer": "Meridian Mechanical of Washington, LLC", "seller_company": "Pinecrest Plumbing & Drain, LLC", "seller_owner": "Owen Pemberton"}
+  gov: {from: [Florida, Delaware], to: Washington}
+- id: ACQ-05-CONSULT
+  src: C-SHVAC-CONSULTING
+  area: acquisitions
+  file: ACQ-05_owen-pemberton_consulting-agreement_2025-02-18.md
+  doc_type: consulting_agreement
+  effective: 2025-02-18
+  year_shift: 7
+  roles: [noncompete, contractor, wa]
+  map_roles: {"company": "Meridian Mechanical of Washington, LLC", "consultant": "Owen Pemberton"}
+  gov: {from: [Florida, Delaware], to: Washington}
+- id: ACQ-05-EMP-OWNER
+  src: E-BUCK-EMP-HARDWICK
+  area: acquisitions
+  file: ACQ-05_leah-pemberton_employment-agreement_2025-02-18.md
+  doc_type: seller_employment_agreement
+  effective: 2025-02-18
+  year_shift: 19
+  roles: [noncompete, non_owner_signer, wa]
+  map: {"Energy King, Inc.": "Meridian Mechanical of Washington, LLC", "Energy King": "Meridian", "ENERGY KING": "MERIDIAN", "Buckeye Ventures, Inc.": "Meridian Home Services Holdings, LLC", "Buckeye": "Meridian Holdings", "Alan Hardwick": "Leah Pemberton", "Hardwick": "Pemberton", "HARDWICK": "PEMBERTON"}
+  gov: {from: [California], to: Washington}
+- id: ACQ-05-NOTE
+  src: E-BUCK-NOTE-HARDWICK
+  area: acquisitions
+  file: ACQ-05_seller-promissory-note_2025-02-18.md
+  doc_type: promissory_note
+  effective: 2025-02-18
+  year_shift: 19
+  roles: [seller_financing, setoff]
+  map: {"Energy King, Inc.": "Meridian Mechanical of Washington, LLC", "Energy King": "Meridian", "ENERGY KING": "MERIDIAN", "Buckeye Ventures, Inc.": "Meridian Home Services Holdings, LLC", "Buckeye": "Meridian Holdings", "Alan Hardwick": "Owen Pemberton", "Hardwick": "Pemberton", "HARDWICK": "PEMBERTON"}
+  gov: {from: [California], to: Washington}
+- id: ACQ-05-GUIDEBOOK
+  src: C-SHVAC-GUIDEBOOK
+  area: acquisitions
+  file: ACQ-05_pinecrest-legacy-employee-guidebook-excerpt_2019.md
+  doc_type: legacy_policy
+  effective: 2019-01-01
+  status: superseded
+  year_shift: 1
+  roles: [legacy, confidentiality]
+  map_roles: {"company": "Pinecrest Plumbing & Drain, LLC"}
+- id: ACQ-05-FRANCHISE
+  counterparty: FR-TPG
+  src: C-1TOM-FRANCHISE
+  slice: ["^", "EXHIBIT 2"]
+  area: acquisitions
+  file: ACQ-05_pinecrest-legacy-franchise-agreement_trupipe_2019-05-01.md
+  doc_type: franchise_agreement
+  effective: 2019-05-01
+  status: terminated_on_acquisition
+  roles: [noncompete, no_poach, wa, l2_link]
+  map: {"1-Tom-Plumber Global Inc.": "TruPipe Global Franchising, Inc.", "1-Tom-Plumber Global, Inc.": "TruPipe Global Franchising, Inc.", "1-Tom-Plumber": "TruPipe", "1-TOM-PLUMBER": "TRUPIPE", "Blue Ridge Plumbing & Drain LLC": "Pinecrest Plumbing & Drain, LLC", "Blue Ridge Plumbing & Drain": "Pinecrest Plumbing & Drain", "Blue Ridge": "Pinecrest", "Ohio": "Ohio"}
+  strip: ['Case: \d:\d\d-cv-\d+-\w+ Doc #: [\d-]+ Filed: [\d/]+ Page: \d+ of \d+ PAGEID #: \d+']
+# ============================ CORPORATE ============================
+- id: CORP-CREDIT-01
+  src: E-LMB-CREDIT-2016
+  slice: ["^", "Exhibit A\\s*\\n\\s*Notice"]
+  slice_from: 7700
+  area: corporate
+  cluster: first-harbor-bank_credit-agreement
+  file: 01_credit-agreement_2021-07-20.md
+  doc_type: credit_agreement
+  effective: 2021-07-20
+  year_shift: 5
+  roles: [financial_covenants, notice_obligations, l2_link]
+  map: {"Limbach Facility Services LLC": "Meridian Mechanical Group, Inc.", "Limbach Holdings LLC": "Meridian Home Services Holdings, LLC", "Limbach Holdings, Inc.": "Meridian Home Services Holdings, LLC", "Limbach": "Meridian", "LIMBACH": "MERIDIAN", "Fifth Third Bank": "First Harbor Bank, N.A.", "FIFTH THIRD BANK": "FIRST HARBOR BANK, N.A.", "Fifth Third": "First Harbor"}
+  gov: {from: [Ohio, Pennsylvania, New York], to: California}
+- id: CORP-CREDIT-02
+  src: E-LMB-CREDIT-AMD-2018
+  area: corporate
+  cluster: first-harbor-bank_credit-agreement
+  file: 02_amendment-1-and-waiver_2023-01-12.md
+  doc_type: amendment
+  parent: CORP-CREDIT-01
+  effective: 2023-01-12
+  year_shift: 5
+  map_from: CORP-CREDIT-01
+  gov: {from: [Ohio, Pennsylvania, New York], to: California}
+- id: CORP-CREDIT-03
+  src: E-FIX-WAIVER-2002
+  area: corporate
+  cluster: first-harbor-bank_credit-agreement
+  file: 03_waiver-fixed-charge-coverage_2024-05-10.md
+  doc_type: waiver
+  parent: CORP-CREDIT-01
+  effective: 2024-05-10
+  year_shift: 22
+  map: {"Comfort Systems USA, Inc.": "Meridian Mechanical Group, Inc.", "Comfort Systems": "Meridian", "COMFORT SYSTEMS USA, INC.": "MERIDIAN MECHANICAL GROUP, INC.", "Bank One, NA": "First Harbor Bank, N.A.", "Bank One": "First Harbor Bank", "BANK ONE": "FIRST HARBOR BANK"}
+  adapt: true
+  adapt_note: "Rewrite as a waiver under the Credit Agreement dated July 20, 2021 among Meridian Mechanical Group, Inc. (Borrower), Meridian Home Services Holdings, LLC and the other Loan Parties, and First Harbor Bank, N.A. (Lender and Administrative Agent), waiving a Fixed Charge Coverage Ratio default for the fiscal quarter ended March 31, 2024 (actual 1.12:1.00 against a 1.25:1.00 minimum), with a $35,000 waiver fee. Keep the source's structure and drafting."
+- id: CORP-CREDIT-04
+  src: E-FIX-AMD2-2003
+  area: corporate
+  cluster: first-harbor-bank_credit-agreement
+  file: 04_amendment-2_2025-03-26.md
+  doc_type: amendment
+  parent: CORP-CREDIT-01
+  effective: 2025-03-26
+  year_shift: 22
+  map_from: CORP-CREDIT-03
+  adapt: true
+  adapt_note: "Rewrite as Amendment No. 2, dated March 26, 2025, to the Credit Agreement dated July 20, 2021 among Meridian Mechanical Group, Inc., the other Loan Parties and First Harbor Bank, N.A. It increases the Permitted Acquisition basket to $12,000,000 per fiscal year (to fund the Pinecrest Plumbing & Drain acquisition), resets the Fixed Charge Coverage Ratio to 1.20:1.00 through December 31, 2025, and adds a covenant to deliver notice within five Business Days of any event that could reasonably be expected to cause a Material Adverse Effect, including any change in law or tariff increasing the Borrower's material costs by more than 10%. Keep the source's amendment structure."
+- id: CORP-FLEET-01
+  src: E-EFM-MELA
+  area: corporate
+  cluster: summit-fleet-leasing_master-equity-lease
+  file: 01_amended-and-restated-master-equity-lease-agreement_2020-02-03.md
+  doc_type: master_lease
+  effective: 2020-02-03
+  year_shift: 10
+  roles: [distractor, insurance_requirements]
+  map: {"Enterprise FM Trust": "Summit Fleet Trust", "Enterprise Fleet Management, Inc.": "Summit Fleet Leasing, LLC", "Enterprise Fleet Management": "Summit Fleet Leasing", "Enterprise": "Summit", "ENTERPRISE": "SUMMIT", "Bowman Consulting Group, Ltd.": "Meridian Mechanical Group, Inc.", "Bowman Consulting Group": "Meridian Mechanical Group", "Bowman": "Meridian"}
+- id: CORP-FLEET-02
+  src: E-EFM-MAINT
+  area: corporate
+  cluster: summit-fleet-leasing_master-equity-lease
+  file: 02_maintenance-agreement_2020-02-03.md
+  doc_type: ancillary_agreement
+  parent: CORP-FLEET-01
+  effective: 2020-02-03
+  year_shift: 10
+  map: {"Enterprise FM Trust": "Summit Fleet Trust", "Enterprise Fleet Management, Inc.": "Summit Fleet Leasing, LLC", "Enterprise Fleet Management": "Summit Fleet Leasing", "Enterprise": "Summit", "ENTERPRISE": "SUMMIT", "Computer Software Innovations, Inc.": "Meridian Mechanical Group, Inc.", "Computer Software Innovations": "Meridian Mechanical Group"}
+- id: CORP-EQUIP-LEASE
+  src: E-KEY-EQUIP-LEASE
+  area: corporate
+  file: northwind-equipment-finance_master-equipment-lease-agreement_2022-09-01.md
+  doc_type: master_lease
+  effective: 2022-09-01
+  year_shift: 19
+  roles: [distractor]
+  map: {"Key Corporate Capital Inc.": "Northwind Equipment Finance, LLC", "KeyCorp": "Northwind", "Key Corporate Capital": "Northwind Equipment Finance", "Bioanalytical Systems, Inc.": "Meridian Mechanical Group, Inc.", "Bioanalytical Systems": "Meridian Mechanical Group"}
+  gov: {from: [Ohio, Indiana], to: California}
+- id: CORP-LEASE-ELK
+  src: E-LEASE-IL
+  area: corporate
+  file: lease_elk-grove-village-branch_industrial-building-lease_2020-03-01.md
+  doc_type: real_estate_lease
+  effective: 2020-03-01
+  year_shift: 8
+  roles: [distractor, radius_clause]
+  map: {"CenterPoint Properties Trust": "Prairie Crossing Industrial REIT", "CenterPoint": "Prairie Crossing", "CENTERPOINT": "PRAIRIE CROSSING", "Power Solutions International, Inc.": "Meridian Mechanical of Illinois, LLC", "Power Solutions International": "Meridian Mechanical of Illinois", "Power Solutions": "Meridian", "Wood Dale": "Elk Grove Village"}
+- id: CORP-LEASE-HOU
+  src: E-LEASE-TX
+  area: corporate
+  file: lease_houston-branch_4204-fidelity-road_2018-06-01.md
+  doc_type: real_estate_lease
+  effective: 2018-06-01
+  year_shift: 15
+  roles: [distractor]
+  map: {"Wheeling-Pittsburgh": "Meridian Mechanical of Texas", "WHEELING-PITTSBURGH": "MERIDIAN MECHANICAL OF TEXAS", "4204 Fidelity Road": "4204 Fidelity Road"}
+- id: CORP-LEASE-SAC-02
+  src: E-LEASE-CA-AMD2
+  area: corporate
+  cluster: lease_sacramento-headquarters
+  file: 02_second-amendment-to-lease_2024-03-01.md
+  doc_type: amendment
+  parent: CORP-LEASE-SAC-01
+  effective: 2024-03-01
+  year_shift: 7
+  map: {"Pro-Dex, Inc.": "Meridian Mechanical Group, Inc.", "Pro-Dex": "Meridian", "PRO-DEX": "MERIDIAN", "Irvine": "Sacramento"}
+# ============================ VENDORS / DISTRACTORS ============================
+- id: VEN-FSM-SUPPORT
+  counterparty: SAAS-FSM
+  src: "cuad:ON2TECHNOLOGIES,INC_11_17_2006-EX-10.3-SUPPORT AND MAINTENANCE AGREEMENT"
+  area: vendors
+  file: fieldflow-software_support-and-maintenance-agreement_2021-04-01.md
+  doc_type: software_support_agreement
+  effective: 2021-04-01
+  roles: [distractor]
+  adapt: true
+  adapt_note: "Provider: FieldFlow Software, Inc. (field-service management software used for dispatch, scheduling and invoicing). Customer: Meridian Mechanical Group, Inc. Effective April 1, 2021. Keep the source's structure and drafting; adapt product-specific references to FieldFlow's cloud dispatch platform and mobile technician app."
+- id: VEN-LEADGEN-MSA
+  counterparty: SAAS-LG1
+  src: "cuad:KUBIENT,INC_07_02_2020-EX-10.14-MASTER SERVICES AGREEMENT_Part1"
+  area: vendors
+  file: homehero-leads_master-services-agreement_2022-02-05.md
+  doc_type: vendor_msa
+  effective: 2022-02-05
+  roles: [distractor, exclusivity_lookalike]
+  adapt: true
+  adapt_note: "Provider: HomeHero Leads, Inc., an online marketplace that sells residential plumbing and HVAC service leads. Customer: Meridian Mechanical Group, Inc. Effective February 5, 2022. Keep the source's structure (services, fees, exclusivity, confidentiality, term) and adapt the services to lead generation for home-services contractors."

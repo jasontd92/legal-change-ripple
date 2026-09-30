@@ -1,0 +1,15 @@
+{
+ "doc_id": "CORP-COI-bridgewell-construction-",
+ "path": "documents/corporate/certificates-of-insurance/coi_bridgewell-construction-company-and-solara-semiconductor-fab-2_2026-07-01.md",
+ "chars": 1528,
+ "area": "corporate",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "certificate_of_insurance",
+ "effective_date": "2026-07-01",
+ "roles": [
+  "insurance",
+  "l2_link"
+ ],
+ "status": "active"
+}

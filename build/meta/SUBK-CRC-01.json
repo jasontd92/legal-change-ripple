@@ -1,0 +1,28 @@
+{
+ "doc_id": "SUBK-CRC-01",
+ "path": "documents/subcontracts/cascade-ridge-contractors_subcontract-puyallup-medical-office/01_subcontract-agreement_2025-03-17.md",
+ "chars": 30671,
+ "area": "subcontracts",
+ "cluster": "cascade-ridge-contractors_subcontract-puyallup-medical-office",
+ "doc_type": "subcontract",
+ "parent_id": null,
+ "counterparty": "GC-CRC",
+ "effective_date": "2025-03-17",
+ "status": "active",
+ "roles": [
+  "tariff",
+  "escalation_clause",
+  "notice_deadline"
+ ],
+ "source_class": "generated_llm",
+ "template": false,
+ "placeholders": [],
+ "planted_features": [
+  "ESCALATION_CASCADE"
+ ],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

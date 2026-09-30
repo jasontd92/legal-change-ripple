@@ -1,0 +1,29 @@
+{
+ "doc_id": "EMP-SEP-WA-2025",
+ "path": "documents/employment/joshua-halvorsen_transition-and-separation-agreement_2025-03-05.md",
+ "chars": 34511,
+ "area": "employment",
+ "cluster": null,
+ "doc_type": "separation_agreement",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2025-03-05",
+ "status": "active",
+ "roles": [
+  "noncompete",
+  "wa",
+  "reaffirmation"
+ ],
+ "source_class": "edgar_llm_adapted",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1782170/000178217025000093/exhibit101-executionversio.htm",
+ "year_shift": 0,
+ "governing_law_remap": null,
+ "name_map_size": 8,
+ "filled_fields": [],
+ "adapt_length_ratio": 1.0,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

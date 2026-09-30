@@ -1,0 +1,90 @@
+KEYSTONE PLUMBING SUPPLY, LLC
+TERMS AND CONDITIONS OF SALE
+
+As Published June 2025
+
+---
+
+1. ENTIRE AGREEMENT:
+
+The provisions set forth herein, together with Seller's Privacy Policy (collectively "Terms"), represent the complete agreement between Keystone Plumbing Supply, LLC, a Virginia limited liability company ("Seller"), and the buyer ("Buyer"), constitute the entire understanding of the parties, and govern all sales between them unless the parties have signed a separate written agreement providing otherwise. All prior discussions, written correspondence, purchase orders, or other arrangements that modify or supplement these Terms shall have no binding effect on Seller unless Seller's authorized representative has explicitly agreed in writing.
+
+2. SHIPMENT:
+
+All orders are delivered FCA, Seller's facility (Incoterms® 2020). When the goods are presented to Buyer, Buyer's designee, or a transportation company, title and risk of loss shall be transferred to Buyer. Buyer shall bear the cost of any specialized packaging or handling arrangements requested by or resulting from Buyer's particular needs. Should Buyer request postponement of delivery or should an order be delivered incorrectly as a result of inaccurate, incomplete, or misleading information furnished by Buyer or Buyer's agents or employees, Buyer shall be responsible for all storage costs, additional handling expenses, and associated costs, as well as risk of loss.
+
+3. PRICE:
+
+All quoted prices are subject to adjustment absent contrary indication on Seller's quote. Buyer shall be billed at prices in effect at the time of shipment. All taxes, transportation costs, duties and other charges are in addition to quoted prices. Buyer shall pay all applicable sales, excise, and other taxes added to the invoice price, unless Buyer furnishes Seller with a valid tax exemption certificate.
+
+4. DELIVERY:
+
+Seller shall use reasonable efforts to deliver Products according to Buyer's desired delivery timeline. If delivery is delayed solely as a result of Seller's actions, Seller shall pay for expedited shipping to correct the delay. Seller shall have no liability for failure to deliver or for delays caused by conditions beyond its control, such as acts of God, war, labor disputes, civil disturbances, accidents, material shortages, delays by transportation providers or suppliers, pandemic events, or other uncontrollable circumstances.
+
+5. CANCELLATION:
+
+Buyer may not cancel, modify, or revise any purchase order without Seller's written consent and Buyer's payment of all applicable cancellation and restocking charges.
+
+6. PAYMENT:
+
+Buyer shall pay the invoice amount Net 10th Prox from the invoice date. If payment is not received by the due date, Seller may declare Buyer's entire account immediately due and payable without further notice. All past-due balances shall accrue a monthly service charge of up to 1.5%. Buyer shall not be permitted to withhold, delay, or decrease any payment, and Buyer's obligation to pay shall not depend on anything other than Seller's performance. Buyer's receipt of payment or funds from any other source shall not diminish Buyer's obligation to Seller. Buyer shall not have the right to apply any amounts owed to Seller as an offset against any other claim or demand against Seller under these Terms. By submitting a credit application to Seller, Buyer incorporates it by reference into these Terms.
+
+7. LIENS:
+
+If Seller receives payment without reservation, Seller warrants that no liens exist on the work performed or Products provided. Upon Buyer's request, Seller shall execute standard lien waivers; however, Seller shall not be obligated to obtain lien waivers from its suppliers or subcontractors. Any lien waivers shall be conditional upon full payment by Buyer to Seller. Seller does not waive statutory lien or bond rights and only relinquishes these rights to the extent Seller actually receives payment without reservation. Any language in a lien waiver extending beyond payment shall be void and of no effect.
+
+8. INSPECTION AND ACCEPTANCE:
+
+Buyer shall inspect all Products upon receipt and before installation or use. All claims relating to damage, shortages, shipping discrepancies, or delivery errors must be submitted to Seller in writing within two (2) business days of delivery; thereafter Buyer shall be deemed to have accepted the Products and shall have no right to reject them or revoke acceptance. Claims for billing errors or adjustments must be submitted to Seller in writing within ten (10) business days from the invoice date. Any claims not timely submitted shall be waived.
+
+9. RETURNS:
+
+Buyer may return Products that Seller regularly stocks and are not special order items within thirty (30) days of purchase, provided: (i) the Products are in new, resaleable condition in original undamaged packaging with all original components; and (ii) the Products have not been used, installed, modified, rebuilt, reconditioned, repaired, altered, or damaged. A restocking fee shall apply to all returns unless Seller agrees otherwise in writing. Special order or non-stock items may only be returned if the manufacturer accepts the return and Buyer reimburses Seller for all restocking and cancellation charges imposed by the manufacturer.
+
+10. COMPLIANCE WITH EXPORT CONTROL LAWS:
+
+Buyer represents that it is not subject to sanctions imposed by the United States ("U.S."), European Union ("E.U."), or United Nations ("U.N."), including designation on the U.S. Specially Designated Nationals ("SDN") List, and that Buyer is not more than 50 percent owned by any SDN. Buyer acknowledges that Products are subject to U.S. export control laws and regulations and may only be exported, re-exported, or transferred in compliance with such laws and regulations. For Products delivered to Buyer within the U.S., Buyer assumes all duties and liability for any subsequent export, including determining export licensing requirements, obtaining all authorizations, and submitting Electronic Export Information if required. Seller may not be designated as the U.S. Principal Party in Interest (USPPI) without Seller's prior written consent. When Buyer is located outside the U.S. and Seller delivers Products to Buyer's U.S. Authorized Agent, the shipment shall be routed export. Seller shall have no obligation to submit Electronic Export Information if required. Buyers located outside the U.S. assume all duties and liability for arranging a U.S. Authorized Agent to file Electronic Export Information. Buyer assumes responsibility for determining export licensing requirements under the Export Administration Regulations and obtaining required authorization. Seller shall not serve as Buyer's U.S. Authorized Agent. Seller may request information regarding Buyer's U.S. Authorized Agent, including data filed in the Automated Commercial Environment, the Internal Transaction Number, the export date, and the filing agent's name.
+
+11. WARRANTIES:
+
+(a) Private Label Products: Unless otherwise specified in product specifications, Seller warrants title to the Products and that for twelve (12) months following delivery to Buyer, Seller's Private Label Products shall conform to their specifications and be free from defects in materials and workmanship. Buyer's sole and exclusive remedy for breach of these warranties shall be repair or replacement of defective Products at Seller's cost, or at Seller's option, refund of the purchase price for Products returned during the warranty period.
+
+(b) All Other Products: Seller warrants only title to the Products. All other warranties are those provided by the product manufacturer. Seller assigns all manufacturer warranties to Buyer and shall cooperate with Buyer in obtaining repair, replacement, or other remedies for any warranty breach reported to Seller during the warranty period.
+
+(c) Installation Warranty: For Products installed by Seller, Seller warrants that for a period of twelve (12) months from installation or first use (whichever is later, but not to exceed eighteen (18) months from the date of installation), services shall be performed in a professional and workmanlike manner in accordance with manufacturer's installation instructions and applicable local codes. Upon notice from Buyer that installation services did not conform to this limited warranty, Seller shall re-perform the services to Buyer's satisfaction. This warranty shall not apply if there is evidence of misuse or abuse by Buyer or any third party.
+
+(d) Services: Seller warrants that all services performed by Seller shall be executed in a professional and workmanlike manner by qualified personnel.
+
+(e) Warranty Exclusions: These warranties shall not apply if there has been misuse, accident, unauthorized modifications, unsuitable environmental or operating conditions, improper maintenance, storage, or installation. SELLER DISCLAIMS ALL OTHER EXPRESS OR IMPLIED WARRANTIES, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR USE OR A PARTICULAR PURPOSE EVEN IF KNOWN BY SELLER. SELLER MAKES NO REPRESENTATION, WARRANTY, OR PROMISE THAT THE PRODUCTS OR SERVICES WILL CONFORM TO ANY APPLICABLE LAWS, ORDINANCES, REGULATIONS, CODES OR STANDARDS, INCLUDING BUT NOT LIMITED TO LOW LEAD OR LEAD-FREE LAWS OR REGULATIONS, EXCEPT AS SPECIFIED AND AGREED TO IN WRITING BY AN AUTHORIZED REPRESENTATIVE OF SELLER.
+
+12. INDEMNIFICATION:
+
+Each party ("Indemnitor") shall indemnify, defend, and hold harmless the other party and its employees, officers, directors, and agents (each an "Indemnitee") from any action, claim, suit, arbitration or mediation proceeding, judgment, or demand ("Claim") for property damage or bodily injury, wrongful death, infringement, liability of any type, costs, fines, penalties, and expenses, including reasonable attorney fees and litigation costs ("Damages"), to the extent directly caused by the negligent act, omission, or intentional misconduct of the Indemnitor. This indemnification obligation shall not extend to Damages proximately caused by the negligence of the Indemnitee.
+
+13. INSURANCE:
+
+Seller shall maintain all insurance required by law and shall not permit coverage to lapse. Seller shall maintain Workers' Compensation insurance as required by applicable state law, commercial general liability insurance of not less than two million dollars ($2,000,000) per occurrence and four million dollars ($4,000,000) aggregate (including product liability coverage), and automobile liability insurance of not less than five million dollars ($5,000,000). These requirements may be satisfied through any combination of primary, umbrella, or other policies. Seller shall not be obligated to pay premiums or fees associated with Owner Controlled Insurance Programs ("OCIP") or Contractor Controlled Insurance Programs ("CCIP"). Unless expressly stated in Seller's quotation, Seller shall not be required to provide payment or performance bonds.
+
+14. LIMITATION OF LIABILITY:
+
+IN NO EVENT SHALL SELLER BE LIABLE FOR SPECIAL, INCIDENTAL, CONSEQUENTIAL, PUNITIVE, STATUTORY, LIQUIDATED, OR INDIRECT DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFIT, REVENUES, CAPITAL, BUSINESS OPPORTUNITY OR DOWNTIME COSTS, ARISING OUT OF THE SALE OF PRODUCTS AND/OR SERVICES TO BUYER. This limitation shall apply regardless of whether such damages arise from breach of contract, breach of warranty, tort, strict liability, or any other legal theory.
+
+15. U.S. GOVERNMENT CONTRACTS:
+
+If Buyer is procuring, directly or indirectly, for sale to or on behalf of any U.S. Government agency, and/or Buyer's prime contract is funded in whole or in part by U.S. Government procurement funding, or if the end customer is the U.S. Government, Buyer warrants that: (a) All Products supplied by Seller meet the definition of a "commercial product," specifically a "commercially-available-off-the-shelf (COTS) item," and/or all services supplied by Seller meet the definition of a "commercial service" as defined in Federal Acquisition Regulation ("FAR") Part 2.101; and (b) All Products and/or services are furnished by Seller on a firm-fixed-price basis and are governed by FAR Part 12 and its implementing regulations. Seller shall incorporate mandatory flow-down clauses that align with the value and nature of the Products, including FAR and Defense Federal Acquisition Regulation Supplement ("DFARS") clauses applicable to COTS products, and clauses applicable to the specific Products and/or services provided hereunder, including but not limited to FAR 52.244-6, FAR 52.212(e), and DFARS 252.244-7000. Clauses that are not applicable by their terms shall be self-deleting and inapplicable. Regarding any Made in America law, including the Buy American Act, Buy America Act, Trade Agreements Act, or other domestic preference requirements that might otherwise apply, a Product's country of origin shall be unknown unless Seller has specifically confirmed it in writing in connection with the order. If the price of a Product cannot be established as reasonable, if cost or pricing data is required for any reason, or if the Products and/or services cannot be deemed "commercial," Seller may cancel its acceptance of the order without liability. The version of any applicable FAR or DFARS clause referenced in this Section 15 shall be that version in effect on the date of sale.
+
+16. SEVERABILITY:
+
+These Terms shall be construed as if prepared jointly by all parties, and no ambiguity or uncertainty shall be interpreted against any party. If any provision is found to be unenforceable, such provision shall be modified to the minimal extent necessary to make it enforceable. If any provision is declared unenforceable or invalid, such provision shall be severed from these Terms without affecting the validity or enforceability of the remaining provisions.
+
+17. NON-WAIVER:
+
+The failure of either party to strictly enforce any provision of these Terms shall not constitute a waiver of that provision or any other provision, nor shall it waive that party's right to enforce such provision in the future. Any waiver of these Terms shall be valid only if in writing and signed by a duly authorized representative of the waiving party.
+
+18. DISPUTE RESOLUTION:
+
+The parties shall attempt in good faith to resolve any dispute arising out of or relating to these Terms through negotiation between executives with authority to settle the dispute. Such executives shall hold positions at a higher management level than those with direct responsibility for administering these Terms. If negotiation fails to resolve the dispute, either party may pursue legal action as provided in Section 19 of these Terms.
+
+19. GOVERNING LAW:
+
+For Products and/or services delivered within the U.S., all disputes arising from or relating to Buyer's order shall be governed by the laws of the jurisdiction where the Products are delivered and/or services are performed, excluding rules on conflicts of law. For Products and/or services delivered outside the U.S., all disputes arising from or relating to Buyer's order shall be governed by the laws of the Commonwealth of Virginia, excluding rules on conflicts of law. Any legal action relating to or arising from Buyer's order shall be brought in the state or federal courts located in such jurisdiction. The United Nations Convention on Contracts for the International Sale of Goods and any successor provisions shall not apply.

@@ -1,0 +1,268 @@
+id: T3a_TR10_2026-10-01
+contract_version: 0.1.0
+offsets: computed_pre_G0
+scenario_ids:
+- TR10-S4-05
+- TR10-S4-01
+- TR10-S4-06
+eval_ids:
+- S1a
+- S1b
+- S3
+- S4
+- S5-R1
+- S5-R2
+- S5-R3
+- M1
+- V14
+- LBL-urgency
+- LBL-materiality
+- LBL-direction
+- LBL-finding_type
+set: e2e
+inputs:
+  trigger: TR-10-wa-noncompete-eshb-1155
+  versions:
+  - 2026-03-23_eshb-1155-session-law.txt
+  - 2026-09-_rcw-49-62-current-text.txt
+  as_of: '2026-10-01'
+  profile: default
+  custom_prompt: null
+provenance:
+  author: non-attorney reference
+  sources:
+  - corpus documents cited on each span
+  - eval-scenarios/priority-tiers-draft.md
+  - eval-scenarios/legal-questions.md
+  - Washington State Register 25-20-099 (2026 RCW 49.62 threshold $126,858.83), https://lawfilesext.leg.wa.gov/law/wsr/2025/20/25-20-099.htm
+  verified_on: '2026-09-29'
+pair_with: T3b_TR10_2027-07-01
+change_record:
+  items:
+  - id: C1
+    substantive: true
+    anchor: &id001
+      file: corpus/triggers/TR-10-wa-noncompete-eshb-1155/2026-03-23_eshb-1155-session-law.txt
+      section_label: 2026 Regular Session
+      quote: 'EFFECTIVE DATE: June 30, 2027'
+      start: 206
+      end: 235
+    legal_status: enacted_future_effective
+    effective_date: '2027-06-30'
+    applies_to:
+      jurisdictions:
+      - WA
+      entity_types:
+      - employer
+      product_classes:
+      - noncompetition covenant
+      thresholds: []
+  noise_items: []
+company_gate: proceed
+relevant_stacks:
+- employment/gemma-northcott_customer-non-solicitation-agreement_2023-08-21
+- employment/templates/form_technician-employment-agreement_washington_rev-2019
+- employment/signed-agreements/isaac-whitcombe_technician-employment-agreement_wa_2021-09-23
+- acquisitions/ACQ-02_northgate-heating-and-air_asset-purchase-agreement_2021-06-01
+pruned_stacks: []
+negative_controls:
+- stack_id: corporate/first-harbor-bank_credit-agreement
+  must_not_appear: true
+  reason: The First Harbor Bank FCCR covenant is a tariff-run finding. It must not appear on this run.
+notes: 'Scored as a pair with the other T3 file. Same finding ids. Gemma Northcott''s earnings are not in her agreement, so enforceability against the 2026 dollar threshold is not golded. The gold is that section 4.1 is a noncompetition covenant. Washington 2026 employee threshold used for Whitcombe: $126,858.83 (WSR 25-20-099).'
+findings:
+- id: F1
+  scenario_id: TR10-S4-05
+  aliases: []
+  stack_id: employment/gemma-northcott_customer-non-solicitation-agreement_2023-08-21
+  change_ref: C1
+  required_spans:
+  - *id001
+  - file: corpus/triggers/TR-10-wa-noncompete-eshb-1155/2026-09-_rcw-49-62-current-text.txt
+    section_label: (3) "Franchisor" and "franchisee" have the same meanings as in RCW 19.100.010.
+    quote: '(4) "Noncompetition covenant" includes every written or oral covenant, agreement, or contract by which an employee or independent contractor is prohibited or restrained from engaging in a lawful profession, trade, or business of any kind. A "noncompetition covenant" also includes an agreement that directly or indirectly prohibits the acceptance or transaction of business with a customer. A "noncompetition covenant" does not include: (a) A nonsolicitation agreement; (b) a confidentiality agreement; (c) a covenant prohibiting use or disclosure of trade secrets or inventions; (d) a covenant entered into by a person purchasing or selling the goodwill of a business or otherwise acquiring or disposing of an ownership interest, but only if the person signing the covenant purchases, sells, acquires, or disposes of an interest representing one percent or more of the business; or (e) a covenant entered into by a franchisee when the franchise sale complies with RCW 19.100.020(1).'
+    start: 5435
+    end: 6418
+  - file: corpus/documents/employment/gemma-northcott_customer-non-solicitation-agreement_2023-08-21.md
+    section_label: '4.1 Non-Solicitation of Customers. During the Restricted Period, Employee shall '
+    quote: Customer Non-Solicitation. For twenty-four (24) months following the end of Employee's employment, Employee shall not, directly or indirectly, solicit, divert or accept plumbing or HVAC business from any customer or Comfort Club member of the Company with whom Employee had material contact during the last eighteen (18) months of employment.
+    start: 7519
+    end: 7861
+  decoy_spans: []
+  absence: null
+  labels:
+    urgency: clock_pending
+    materiality: material
+    direction: exposure
+    finding_type: liability_or_compliance_exposure
+    response_type:
+    - update_template
+  facts:
+    earnings: null
+    threshold_2026_usd: 126858.83
+  confidence: high
+  pass_rule: affected
+  rationale: Section 4.1 bars her from soliciting, diverting, or accepting plumbing or HVAC business for 24 months. Current RCW 49.62 defines a noncompetition covenant to include an agreement that prohibits acceptance or transaction of business with a customer. The clause is a noncompete, not a nonsolicit. Her annualized earnings are not in the file, so whether today's earnings threshold makes it unenforceable is not decided here.
+- id: F2
+  scenario_id: TR10-S4-01
+  aliases: []
+  stack_id: employment/templates/form_technician-employment-agreement_washington_rev-2019
+  change_ref: C1
+  required_spans:
+  - *id001
+  - file: corpus/triggers/TR-10-wa-noncompete-eshb-1155/2026-03-23_eshb-1155-session-law.txt
+    section_label: (2) It is a violation of this chapter for an employer to enforce, 20
+    quote: '(3) By October 1, 2027, an employer must make reasonable efforts 26
+
+      to provide written notice to all current and former employees and 27
+
+      independent contractors whose noncompetition covenant is still within 28
+
+      its effective time period, that their noncompetition covenant is void 29
+
+      and unenforceable.30'
+    start: 11484
+    end: 11787
+  - file: corpus/documents/employment/templates/form_technician-employment-agreement_washington_rev-2019.md
+    section_label: 5.1 Acknowledgment and Disclosure. Employee acknowledges that Company has provid
+    quote: Noncompetition. For twelve (12) months after the end of Employee's employment for any reason, Employee shall not, within twenty-five (25) miles of the Company branch at which Employee was primarily assigned, perform residential or commercial plumbing, heating, ventilation or air-conditioning service work for any business that competes with the Company. The parties intend this covenant to be enforceable to the fullest extent permitted by RCW 49.62; this Section shall not apply if Employee's earnings from the Company, when annualized, are equal to or less than the threshold amount then in effect under RCW 49.62.020.
+    start: 9075
+    end: 9696
+  - file: corpus/documents/employment/signed-agreements/isaac-whitcombe_technician-employment-agreement_wa_2021-09-23.md
+    section_label: 2. COMPENSATION
+    quote: 2.1 Hourly Rate. Employee shall be compensated at an hourly rate of $61.50 per hour per hour for all hours worked ("Hourly Rate"). This rate shall be subject to adjustment at Company's sole discretion based on performance, experience, market conditions, and other factors deemed relevant by Company management.
+    start: 3115
+    end: 3425
+  - file: corpus/documents/employment/signed-agreements/isaac-whitcombe_technician-employment-agreement_wa_2021-09-23.md
+    section_label: 5.1 Acknowledgment and Disclosure. Employee acknowledges that Company has provid
+    quote: Noncompetition. For twelve (12) months after the end of Employee's employment for any reason, Employee shall not, within twenty-five (25) miles of the Company branch at which Employee was primarily assigned, perform residential or commercial plumbing, heating, ventilation or air-conditioning service work for any business that competes with the Company. The parties intend this covenant to be enforceable to the fullest extent permitted by RCW 49.62; this Section shall not apply if Employee's earnings from the Company, when annualized, are equal to or less than the threshold amount then in effect under RCW 49.62.020.
+    start: 9059
+    end: 9680
+  decoy_spans: []
+  absence: null
+  labels:
+    urgency: clock_pending
+    materiality: material
+    direction: exposure
+    finding_type: liability_or_compliance_exposure
+    response_type: &id002
+    - monitor
+  facts:
+    notice_deadline: '2027-10-01'
+    whitcombe_hourly_rate: 61.5
+    whitcombe_annualized_at_2080_hours: 127920
+    threshold_2026_usd: 126858.83
+    whitcombe_above_2026_threshold: true
+  confidence: high
+  pass_rule: affected
+  rationale: The Washington technician template is a 12-month, 25-mile noncompete with an earnings-threshold carve-out. Isaac Whitcombe's agreement states $61.50 per hour, which annualizes to $127,920 at 2,080 hours, above the 2026 threshold of $126,858.83, so the carve-out does not remove him. At 2026-10-01 the new law is not yet effective (tier 3, clock pending). At 2027-07-01 it is in force and the October 1, 2027 notice clock is running (tier 1).
+- id: F3
+  scenario_id: TR10-S4-06
+  aliases: []
+  stack_id: acquisitions/ACQ-02_northgate-heating-and-air_asset-purchase-agreement_2021-06-01
+  change_ref: C1
+  required_spans:
+  - *id001
+  - file: corpus/documents/acquisitions/ACQ-02_northgate-heating-and-air_asset-purchase-agreement_2021-06-01.md
+    section_label: THIS ASSET PURCHASE AGREEMENT
+    quote: 'SERVICES, INC., a Washington corporation (“SELLER”), ALAN MERCER, a shareholder of
+
+      SELLER (“OWNER”) and JEFFREY HALE
+
+      (“HALE”).'
+    start: 346
+    end: 472
+  - file: corpus/documents/acquisitions/ACQ-02_northgate-heating-and-air_asset-purchase-agreement_2021-06-01.md
+    section_label: 10. Non-Competition.
+    quote: '(a) For a period
+
+      of five (5) years from and after the Closing Date, neither SELLER nor OWNER nor
+
+      HALE will, directly or indirectly:
+
+
+      (i)
+
+
+      own,
+
+      manage, operate, join, control, or be employed by and/or participate in
+
+      the ownership, management, operations or control of, residential and
+
+      commercial heating and air conditioning installation and repair business
+
+      in the Area;'
+    start: 57113
+    end: 57482
+  decoy_spans: []
+  absence: null
+  labels:
+    urgency: clock_pending
+    materiality: material
+    direction: exposure
+    finding_type: liability_or_compliance_exposure
+    response_type: *id002
+  facts: {}
+  confidence: high
+  pass_rule: affected
+  rationale: 'The purchase agreement''s party block calls Alan Mercer a shareholder and OWNER, and states that OWNER owns all of the seller''s outstanding shares. Jeffrey Hale is named separately and is not called a shareholder. Section 10 binds SELLER, OWNER, and HALE to a five-year noncompete. The sale-of-business exception covers Mercer. Hale''s covenant follows the employee rule: monitor before the effective date, act once the law is in force.'
+- id: F4
+  scenario_id: TR10-S4-06-OWNER
+  aliases: []
+  stack_id: acquisitions/ACQ-02_northgate-heating-and-air_asset-purchase-agreement_2021-06-01
+  change_ref: C1
+  required_spans:
+  - file: corpus/documents/acquisitions/ACQ-02_northgate-heating-and-air_asset-purchase-agreement_2021-06-01.md
+    section_label: THIS ASSET PURCHASE AGREEMENT
+    quote: 'SERVICES, INC., a Washington corporation (“SELLER”), ALAN MERCER, a shareholder of
+
+      SELLER (“OWNER”) and JEFFREY HALE
+
+      (“HALE”).'
+    start: 346
+    end: 472
+  - file: corpus/documents/acquisitions/ACQ-02_northgate-heating-and-air_asset-purchase-agreement_2021-06-01.md
+    section_label: (2) result in a breach of the terms, conditions or provisions of, or
+    quote: OWNER owns all of the outstanding shares of capital stock of SELLER.
+    start: 22104
+    end: 22172
+  decoy_spans:
+  - file: corpus/documents/acquisitions/ACQ-02_northgate-heating-and-air_asset-purchase-agreement_2021-06-01.md
+    section_label: 10. Non-Competition.
+    quote: '(a) For a period
+
+      of five (5) years from and after the Closing Date, neither SELLER nor OWNER nor
+
+      HALE will, directly or indirectly:
+
+
+      (i)
+
+
+      own,
+
+      manage, operate, join, control, or be employed by and/or participate in
+
+      the ownership, management, operations or control of, residential and
+
+      commercial heating and air conditioning installation and repair business
+
+      in the Area;'
+    start: 57113
+    end: 57482
+  absence: null
+  labels: null
+  facts:
+    ownership: all outstanding shares of SELLER
+  confidence: high
+  pass_rule: not_affected
+  rationale: Alan Mercer is identified as a shareholder and as OWNER, and the agreement states that OWNER owns all of the outstanding shares of the seller. That is the sale-of-business exception (at least one percent). His section 10 covenant stays logged at both dates. Flagging him the same way as Hale, who is not identified as a shareholder, is the miss.
+tiers:
+  '1': []
+  '2':
+  - F1
+  '3':
+  - F2
+  - F3
+  logged: []

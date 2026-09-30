@@ -1,0 +1,16 @@
+{
+ "doc_id": "CUS-OAK-WO-OAK-2026-02",
+ "path": "documents/customers/work-orders/WO-OAK-2026-02_oak_2026-08-10.md",
+ "chars": 507,
+ "area": "customers",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "work_order",
+ "parent_id": "CUS-OAK-MSA",
+ "counterparty": "CUS-OAK",
+ "effective_date": "2026-08-10",
+ "roles": [
+  "tariff"
+ ],
+ "status": "active"
+}

@@ -1,0 +1,23 @@
+{
+ "doc_id": "EMP-TECH-WA-02",
+ "path": "documents/employment/signed-agreements/carter-thornbury_technician-employment-agreement_wa_2020-03-18.md",
+ "chars": 19443,
+ "area": "employment",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "employment_agreement",
+ "parent_id": "EMP-TPL-TECH-WA",
+ "effective_date": "2020-03-18",
+ "roles": [
+  "noncompete",
+  "wa"
+ ],
+ "planted_features": [
+  "template_instance",
+  "annualized_earnings:68640",
+  "signed:2020-03-18",
+  "state:WA"
+ ],
+ "employee": "Carter Thornbury",
+ "status": "active"
+}

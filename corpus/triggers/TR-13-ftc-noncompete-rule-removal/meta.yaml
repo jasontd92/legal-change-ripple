@@ -1,0 +1,23 @@
+group: TR-13-ftc-noncompete-rule-removal
+domain: noncompete
+summary: FTC removes the vacated Non-Compete Clause Rule from the CFR (a no-op control), plus the Rollins enforcement order
+  covering technicians.
+versions:
+- id: 2026-02-12_ftc-rule-removal
+  status: final
+  effective: 2026-02-12
+  file: 2026-02-12_ftc-rule-removal.txt
+  source_url: https://www.federalregister.gov/documents/full_text/text/2026/02/12/2026-02866.txt
+  fetched_url: https://www.federalregister.gov/documents/full_text/text/2026/02/12/2026-02866.txt
+  sha256_16: 59c26027fd483498
+  chars: 28939
+  title: 'FTC: Revision of Negative Option Rule, Withdrawal of CARS Rule, Removal of Non-Compete Rule'
+- id: 2026-04-22_ftc-rollins-consent-order-analysis
+  status: proposed_order
+  effective: 2026-04-22
+  file: 2026-04-22_ftc-rollins-consent-order-analysis.txt
+  source_url: https://www.federalregister.gov/documents/full_text/text/2026/04/22/2026-07844.txt
+  fetched_url: https://www.federalregister.gov/documents/full_text/text/2026/04/22/2026-07844.txt
+  sha256_16: d51fcec49762ab6b
+  chars: 36533
+  title: Rollins, Inc.; Analysis of Proposed Agreement Containing Consent Order

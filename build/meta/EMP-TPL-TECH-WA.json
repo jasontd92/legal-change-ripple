@@ -1,0 +1,34 @@
+{
+ "doc_id": "EMP-TPL-TECH-WA",
+ "path": "documents/employment/templates/form_technician-employment-agreement_washington_rev-2019.md",
+ "chars": 19452,
+ "area": "employment",
+ "cluster": null,
+ "doc_type": "employment_agreement_form",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2019-01-01",
+ "status": "active",
+ "roles": [
+  "wa",
+  "noncompete"
+ ],
+ "source_class": "generated_llm",
+ "template": true,
+ "placeholders": [
+  "[[EMPLOYEE_NAME]]",
+  "[[POSITION]]",
+  "[[BRANCH_CITY]]",
+  "[[START_DATE]]",
+  "[[HOURLY_RATE]]",
+  "[[SIGN_DATE]]"
+ ],
+ "planted_features": [
+  "TECH_NC_WA"
+ ],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

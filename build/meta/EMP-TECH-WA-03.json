@@ -1,0 +1,23 @@
+{
+ "doc_id": "EMP-TECH-WA-03",
+ "path": "documents/employment/signed-agreements/renee-mbeki_technician-employment-agreement_wa_2021-01-05.md",
+ "chars": 19421,
+ "area": "employment",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "employment_agreement",
+ "parent_id": "EMP-TPL-TECH-WA",
+ "effective_date": "2021-01-05",
+ "roles": [
+  "noncompete",
+  "wa"
+ ],
+ "planted_features": [
+  "template_instance",
+  "annualized_earnings:96720",
+  "signed:2021-01-05",
+  "state:WA"
+ ],
+ "employee": "Renee Mbeki",
+ "status": "active"
+}

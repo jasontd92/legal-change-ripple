@@ -1,0 +1,27 @@
+{
+ "doc_id": "CUS-WADES-02",
+ "path": "documents/customers/wa-des-04224_hvac-services-contract/02_amendment-1_price-exhibit-replacement_2025-10-01.md",
+ "chars": 10177,
+ "area": "customers",
+ "cluster": "wa-des-04224_hvac-services-contract",
+ "doc_type": "amendment",
+ "parent_id": "CUS-WADES-01",
+ "counterparty": "CUS-WADES",
+ "effective_date": "2025-10-01",
+ "status": "active",
+ "roles": [
+  "price_ceiling"
+ ],
+ "source_class": "public_agency",
+ "source_ref": "https://apps.des.wa.gov/contracting/04224a.McKinstry.pdf",
+ "year_shift": 0,
+ "governing_law_remap": null,
+ "name_map_size": 13,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

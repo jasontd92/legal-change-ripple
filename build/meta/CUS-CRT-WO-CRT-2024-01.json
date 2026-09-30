@@ -1,0 +1,16 @@
+{
+ "doc_id": "CUS-CRT-WO-CRT-2024-01",
+ "path": "documents/customers/work-orders/WO-CRT-2024-01_crt_2024-11-04.md",
+ "chars": 514,
+ "area": "customers",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "work_order",
+ "parent_id": "CUS-CRT-MSA",
+ "counterparty": "CUS-CRT",
+ "effective_date": "2024-11-04",
+ "roles": [
+  "tariff"
+ ],
+ "status": "active"
+}

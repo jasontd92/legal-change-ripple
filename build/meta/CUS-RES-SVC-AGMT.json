@@ -1,0 +1,26 @@
+{
+ "doc_id": "CUS-RES-SVC-AGMT",
+ "path": "documents/customers/residential-terms/meridian_residential-installation-agreement-form_california_2025-07-01.md",
+ "chars": 22504,
+ "area": "customers",
+ "cluster": null,
+ "doc_type": "consumer_contract_form",
+ "parent_id": null,
+ "counterparty": "CUS-RES",
+ "effective_date": "2025-07-01",
+ "status": "active",
+ "roles": [
+  "consumer",
+  "ca",
+  "auto_renewal"
+ ],
+ "source_class": "generated_llm",
+ "template": false,
+ "placeholders": [],
+ "planted_features": [],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

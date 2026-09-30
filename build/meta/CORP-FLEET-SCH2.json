@@ -1,0 +1,15 @@
+{
+ "doc_id": "CORP-FLEET-SCH2",
+ "path": "documents/corporate/summit-fleet-leasing_master-equity-lease/04_vehicle-schedule-2_2024-09-16.md",
+ "chars": 614,
+ "area": "corporate",
+ "cluster": "summit-fleet-leasing_master-equity-lease",
+ "source_class": "generated_structured",
+ "doc_type": "lease_schedule",
+ "parent_id": "CORP-FLEET-01",
+ "effective_date": "2024-09-16",
+ "roles": [
+  "distractor"
+ ],
+ "status": "active"
+}

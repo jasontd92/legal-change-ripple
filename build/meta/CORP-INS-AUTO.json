@@ -1,0 +1,24 @@
+{
+ "doc_id": "CORP-INS-AUTO",
+ "path": "documents/corporate/insurance_business-auto-policy_2026-2027.md",
+ "chars": 12179,
+ "area": "corporate",
+ "cluster": null,
+ "doc_type": "insurance_policy",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2026-07-01",
+ "status": "active",
+ "roles": [
+  "insurance"
+ ],
+ "source_class": "generated_llm",
+ "template": false,
+ "placeholders": [],
+ "planted_features": [],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

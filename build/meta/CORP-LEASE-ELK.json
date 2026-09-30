@@ -1,0 +1,28 @@
+{
+ "doc_id": "CORP-LEASE-ELK",
+ "path": "documents/corporate/lease_elk-grove-village-branch_industrial-building-lease_2020-03-01.md",
+ "chars": 123191,
+ "area": "corporate",
+ "cluster": null,
+ "doc_type": "real_estate_lease",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2020-03-01",
+ "status": "active",
+ "roles": [
+  "distractor",
+  "radius_clause"
+ ],
+ "source_class": "edgar",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1137091/000119312512093907/d310966dex101.htm",
+ "year_shift": 8,
+ "governing_law_remap": null,
+ "name_map_size": 36,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

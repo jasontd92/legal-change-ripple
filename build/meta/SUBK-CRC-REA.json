@@ -1,0 +1,20 @@
+{
+ "doc_id": "SUBK-CRC-REA",
+ "path": "documents/subcontracts/cascade-ridge-contractors_subcontract-puyallup-medical-office/02_request-for-equitable-adjustment_2025-05-12.md",
+ "chars": 896,
+ "area": "subcontracts",
+ "cluster": "cascade-ridge-contractors_subcontract-puyallup-medical-office",
+ "source_class": "generated_structured",
+ "doc_type": "claim_notice",
+ "parent_id": "SUBK-CRC-01",
+ "counterparty": "GC-CRC",
+ "effective_date": "2025-05-12",
+ "roles": [
+  "tariff",
+  "notice_deadline"
+ ],
+ "planted_features": [
+  "escalation_request_after_21_day_window"
+ ],
+ "status": "active"
+}

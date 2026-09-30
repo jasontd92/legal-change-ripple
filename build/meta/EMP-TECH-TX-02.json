@@ -1,0 +1,23 @@
+{
+ "doc_id": "EMP-TECH-TX-02",
+ "path": "documents/employment/signed-agreements/ingrid-falkner_technician-employment-agreement_tx_2023-10-20.md",
+ "chars": 21659,
+ "area": "employment",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "employment_agreement",
+ "parent_id": "EMP-TPL-TECH-TX",
+ "effective_date": "2023-10-20",
+ "roles": [
+  "noncompete",
+  "tx"
+ ],
+ "planted_features": [
+  "template_instance",
+  "annualized_earnings:68120",
+  "signed:2023-10-20",
+  "state:TX"
+ ],
+ "employee": "Ingrid Falkner",
+ "status": "active"
+}

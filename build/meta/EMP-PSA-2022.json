@@ -1,0 +1,31 @@
+{
+ "doc_id": "EMP-PSA-2022",
+ "path": "documents/employment/form_performance-unit-award-agreement_2022.md",
+ "chars": 13284,
+ "area": "employment",
+ "cluster": null,
+ "doc_type": "equity_award_form",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2022-02-15",
+ "status": "active",
+ "roles": [
+  "noncompete",
+  "forfeiture"
+ ],
+ "source_class": "edgar_llm_adapted",
+ "source_ref": "https://www.sec.gov/Archives/edgar/data/1428875/000142887517000052/serv-20161231xex10_30.htm",
+ "year_shift": 6,
+ "governing_law_remap": null,
+ "name_map_size": 16,
+ "filled_fields": [],
+ "adapt_length_ratio": 0.96,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ },
+ "post_fixes": [
+  "scrubbed residual real names: We Listen Dispute Resolution Plan"
+ ]
+}

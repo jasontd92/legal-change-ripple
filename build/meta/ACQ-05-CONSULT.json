@@ -1,0 +1,35 @@
+{
+ "doc_id": "ACQ-05-CONSULT",
+ "path": "documents/acquisitions/ACQ-05_owen-pemberton_consulting-agreement_2025-02-18.md",
+ "chars": 32004,
+ "area": "acquisitions",
+ "cluster": null,
+ "doc_type": "consulting_agreement",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2025-02-18",
+ "status": "active",
+ "roles": [
+  "noncompete",
+  "contractor",
+  "wa"
+ ],
+ "source_class": "court",
+ "source_ref": "https://storage.courtlistener.com/recap/gov.uscourts.flmd.355075/gov.uscourts.flmd.355075.4.2.pdf",
+ "year_shift": 7,
+ "governing_law_remap": {
+  "from": [
+   "Florida",
+   "Delaware"
+  ],
+  "to": "Washington"
+ },
+ "name_map_size": 5,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 0,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ }
+}

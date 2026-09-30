@@ -1,0 +1,25 @@
+{
+ "doc_id": "EMP-HBK-CA",
+ "path": "documents/employment/employee-handbook_2025-edition/02_california-addendum_2025-01-01.md",
+ "chars": 17811,
+ "area": "employment",
+ "cluster": "employee-handbook_2025-edition",
+ "doc_type": "handbook_addendum",
+ "parent_id": "EMP-HBK-01",
+ "counterparty": null,
+ "effective_date": "2025-01-01",
+ "status": "active",
+ "roles": [
+  "ca",
+  "noncompete"
+ ],
+ "source_class": "generated_llm",
+ "template": false,
+ "placeholders": [],
+ "planted_features": [],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

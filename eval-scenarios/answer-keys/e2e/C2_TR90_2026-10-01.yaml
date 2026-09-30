@@ -1,0 +1,87 @@
+id: C2_TR90_2026-10-01
+contract_version: 0.1.0
+offsets: computed_pre_G0
+scenario_ids:
+- D-TR90-S1b-03
+- D-TR90-S1b-04
+eval_ids:
+- S1a
+- S1b
+- V14
+set: e2e
+inputs:
+  trigger: TR-90-controls
+  versions:
+  - 2025-03-_wy-sf-107.txt
+  - 2025-06-20_tx-sb-1318-physicians.txt
+  as_of: '2026-10-01'
+  profile: default
+  custom_prompt: null
+provenance:
+  author: non-attorney reference
+  sources:
+  - corpus documents cited on each span
+  - eval-scenarios/priority-tiers-draft.md
+  - eval-scenarios/legal-questions.md
+  - Washington State Register 25-20-099 (2026 RCW 49.62 threshold $126,858.83), https://lawfilesext.leg.wa.gov/law/wsr/2025/20/25-20-099.htm
+  verified_on: '2026-09-29'
+change_record:
+  items:
+  - id: C1
+    substantive: true
+    anchor:
+      file: corpus/triggers/TR-90-controls/2025-03-_wy-sf-107.txt
+      section_label: 'Section 1.  W.S. 1-23-108 is created to read:'
+      quote: "(a)  Any covenant not to compete that restricts the \nright of any person to receive compensation for performance \nof skilled or unskilled labor shall be void. This "
+      start: 641
+      end: 805
+    legal_status: in_force
+    effective_date: '2025-03-01'
+    applies_to:
+      jurisdictions:
+      - WY
+      entity_types:
+      - employer
+      product_classes:
+      - covenant not to compete
+      thresholds: []
+  - id: C2
+    substantive: true
+    anchor:
+      file: corpus/triggers/TR-90-controls/2025-06-20_tx-sb-1318-physicians.txt
+      section_label: SECTION 1. Section 15.50, Business & Commerce Code, is
+      quote: " (b) A covenant not to compete relating to the practice of \n\nmedicine is enforceable against a person licensed as a physician by \n\nthe Texas Medical Board if such covenant complies with the "
+      start: 945
+      end: 1135
+    legal_status: in_force
+    effective_date: '2025-06-20'
+    applies_to:
+      jurisdictions:
+      - TX
+      entity_types:
+      - physician
+      product_classes:
+      - physician covenant not to compete
+      thresholds: []
+  noise_items: []
+company_gate: exit
+gate_by_item:
+  C1:
+    decision: exit
+    reason: Meridian has no Wyoming operations. states_of_operation is CA, WA, IL, TX.
+  C2:
+    decision: exit
+    reason: Meridian operates in Texas, but the statute reaches a person licensed as a physician by the Texas Medical Board. The workforce is plumbing and HVAC.
+relevant_stacks: []
+pruned_stacks: []
+negative_controls:
+- stack_id: corporate/first-harbor-bank_credit-agreement
+  must_not_appear: true
+  reason: The First Harbor Bank FCCR covenant is a tariff-run finding. It must not appear on this run.
+findings: []
+tiers:
+  '1': []
+  '2': []
+  '3': []
+  logged: []
+notes: 'One file, two change items, both exit. They must not be merged: Wyoming is out of footprint, Texas is the right state and the wrong profession. company_gate is exit for the run because neither item proceeds.'

@@ -1,0 +1,16 @@
+{
+ "doc_id": "SUP-LWP-PO-2026-0322",
+ "path": "documents/supply/purchase-orders/PO-2026-0322_lakeshore-waterworks-pvf_2026-03-30.md",
+ "chars": 1142,
+ "area": "supply",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "purchase_order",
+ "counterparty": "SUP-LWP",
+ "effective_date": "2026-03-30",
+ "roles": [
+  "tariff",
+  "incorporated_web_terms"
+ ],
+ "status": "active"
+}

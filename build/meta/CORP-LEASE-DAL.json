@@ -1,0 +1,27 @@
+{
+ "doc_id": "CORP-LEASE-DAL",
+ "path": "documents/corporate/lease_dallas-branch-and-showroom_2022-10-01.md",
+ "chars": 30073,
+ "area": "corporate",
+ "cluster": null,
+ "doc_type": "real_estate_lease",
+ "parent_id": null,
+ "counterparty": null,
+ "effective_date": "2022-10-01",
+ "status": "active",
+ "roles": [
+  "distractor",
+  "noncompete_lookalike"
+ ],
+ "source_class": "generated_llm",
+ "template": false,
+ "placeholders": [],
+ "planted_features": [
+  "LEASE_RADIUS_DAL"
+ ],
+ "checks": {
+  "ok": true,
+  "errors": [],
+  "plants_verbatim": true
+ }
+}

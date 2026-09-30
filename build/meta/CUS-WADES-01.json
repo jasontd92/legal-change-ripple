@@ -1,0 +1,33 @@
+{
+ "doc_id": "CUS-WADES-01",
+ "path": "documents/customers/wa-des-04224_hvac-services-contract/01_contract-04224_hvac-services_2025-09-10.md",
+ "chars": 111989,
+ "area": "customers",
+ "cluster": "wa-des-04224_hvac-services-contract",
+ "doc_type": "customer_master_agreement",
+ "parent_id": null,
+ "counterparty": "CUS-WADES",
+ "effective_date": "2025-09-10",
+ "status": "active",
+ "roles": [
+  "tariff",
+  "fixed_price",
+  "price_ceiling"
+ ],
+ "source_class": "public_agency",
+ "source_ref": "https://apps.des.wa.gov/contracting/04224c.McKinstry.pdf",
+ "year_shift": 0,
+ "governing_law_remap": null,
+ "name_map_size": 8,
+ "filled_fields": [],
+ "adapt_length_ratio": null,
+ "residual_redaction_markers": 1,
+ "leak_check": {
+  "ok": true,
+  "leaks": []
+ },
+ "post_fixes": [
+  "footnote asterisks converted to (a)/(b)/(c)",
+  "scrubbed residual real names: Lou Bailey"
+ ]
+}

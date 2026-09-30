@@ -1,0 +1,1052 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2870
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0     \uc0\u9614             \{note && <p className="note">\{note\}</p>\}\
+\
+    Edited ReportView.tsx +4\
+\
+    \uc0\u9614     title,\
+    \uc0\u9614     quote,\
+    \uc0\u9614     file,\
+    \uc0\u9614 +   excerpt,\
+    \uc0\u9614 +   onOpenDiff,\
+    \uc0\u9614   \}: \{\
+    \uc0\u9614     tone: "change" | "yours";\
+    \uc0\u9614     eyebrow: string;\
+    \uc0\u9614     title: string;\
+    \uc0\u9614     quote?: string;\
+    \uc0\u9614     file?: string;\
+    \uc0\u9614 +   excerpt?: \{ rows: import("../../src/diff").DiffRow[]; truncated: boolean \};\
+    \uc0\u9614  \'85 truncated (4 more lines) \'b7 ctrl+r to review\
+\
+    Edited ReportView.tsx +10 -3\
+\
+    \uc0\u9614       <div className=\{`source $\{tone\}`\}>\
+    \uc0\u9614         <p className="eyebrow">\{eyebrow\}</p>\
+    \uc0\u9614         <h3>\{title\}</h3>\
+    \uc0\u9614 -       \{text ? (\
+    \uc0\u9614 -         <blockquote className="passage">\{more ? text : excerpt.lead\}</blockquote>\
+    \uc0\u9614 +       \{excerpt && excerpt.rows.length > 0 ? (\
+    \uc0\u9614 +         <DiffExcerpt rows=\{excerpt.rows\} />\
+    \uc0\u9614 +       ) : text ? (\
+    \uc0\u9614 +         <blockquote className="passage">\{more ? text : excerptQuote.lead\}</blockquote>\
+    \uc0\u9614         ) : (\
+    \uc0\u9614           <p className="passage missing">Quoted language was not stored.</p>\
+    \uc0\u9614         )\}\
+    \uc0\u9614  \'85 truncated (14 more lines) \'b7 ctrl+r to review\
+\
+    Read 2 files\
+    Read ui/src/ReportView.tsx line 250\
+    Read ui/src/ReportView.tsx lines 210-249\
+\
+    Edited ReportView.tsx +1 -1\
+\
+    \uc0\u9614   import \{ useState \} from "react";\
+    \uc0\u9614 - import \{ excerptRows, hunkForRange, type ReviewDiff \} from "../../src/diff";\
+    \uc0\u9614 + import \{ excerptRows, hunkForRange, type DiffRow, type ReviewDiff \} from "../../src/diff";\
+    \uc0\u9614   import \{\
+    \uc0\u9614     GROUP_ORDER,\
+    \uc0\u9614     categoryLabel,\
+\
+    Edited ReportView.tsx +2 -2\
+\
+    \uc0\u9614                 title=\{trigger ? changeLabel(trigger.file) : "Change"\}\
+    \uc0\u9614                 quote=\{trigger?.quote\}\
+    \uc0\u9614                 file=\{trigger?.file\}\
+    \uc0\u9614 -               excerpt=\{located?.rows\}\
+    \uc0\u9614 -               onOpenDiff=\{located ? () => onOpenDiff(located.line) : undefined\}\
+    \uc0\u9614 +               excerpt=\{located ?? undefined\}\
+    \uc0\u9614 +               onOpenDiff=\{located?.truncated ? () => onOpenDiff(located.line) : undefined\}\
+    \uc0\u9614               />\
+    \uc0\u9614             </div>\
+    \uc0\u9614             \{note && <p className="note">\{note\}</p>\}\
+\
+    Edited ReportView.tsx +14 -7\
+\
+    \uc0\u9614     title: string;\
+    \uc0\u9614     quote?: string;\
+    \uc0\u9614     file?: string;\
+    \uc0\u9614 -   excerpt?: \{ rows: import("../../src/diff").DiffRow[]; truncated: boolean \};\
+    \uc0\u9614 +   excerpt?: \{ rows: DiffRow[]; truncated: boolean \};\
+    \uc0\u9614     onOpenDiff?: () => void;\
+    \uc0\u9614   \}) \{\
+    \uc0\u9614     const [more, setMore] = useState(false);\
+    \uc0\u9614 -   const excerpt = quoteExcerpt(quote);\
+    \uc0\u9614 +   const quoteView = quoteExcerpt(quote);\
+    \uc0\u9614     const text = quote?.trim() ?? "";\
+    \uc0\u9614 +   const shown = excerpt && excerpt.rows.length > 0;\
+    \uc0\u9614  \'85 truncated (40 more lines) \'b7 ctrl+r to review\
+\
+    Edited styles.css +42\
+\
+    \uc0\u9614     font-style: normal;\
+    \uc0\u9614     line-height: 1.45;\
+    \uc0\u9614   \}\
+    \uc0\u9614 + .first-read \{ color: var(--muted); margin: 14px 0 0; \}\
+    \uc0\u9614 + .viewer \{ margin: 14px 0 4px; \}\
+    \uc0\u9614 + .diff \{\
+    \uc0\u9614 +   margin-top: 10px;\
+    \uc0\u9614 +   background: #fff;\
+    \uc0\u9614 +   border: 1px solid var(--rule);\
+    \uc0\u9614 +   font-size: 14.5px;\
+    \uc0\u9614 +   line-height: 1.45;\
+    \uc0\u9614 +   font-style: normal;\
+    \uc0\u9614  \'85 truncated (36 more lines) \'b7 ctrl+r to review\
+\
+    Edited App.tsx +1 -1\
+\
+    \uc0\u9614   import \{ useEveAgent, type EveMessageData \} from "eve/react";\
+    \uc0\u9614   import \{ useEffect, useMemo, useRef, useState, type FormEvent \} from "react";\
+    \uc0\u9614 - import \{ ReportView, type ReportData \} from "./ReportView";\
+    \uc0\u9614 + import \{ ReportView, type ChangeBrief, type ReportData \} from "./ReportView";\
+    \uc0\u9614   import \{ sampleLegal, sampleReport \} from "./sampleReport";\
+    \uc0\u9614 \
+    \uc0\u9614   type Version = \{ id: string; title?: string; effective?: string; source_url?: string | null \};\
+\
+    Edited App.tsx +1\
+\
+    \uc0\u9614 + import type \{ ReviewDiff \} from "../../src/diff";\
+    \uc0\u9614   import \{ useEveAgent, type EveMessageData \} from "eve/react";\
+    \uc0\u9614   import \{ useEffect, useMemo, useRef, useState, type FormEvent \} from "react";\
+    \uc0\u9614   import \{ ReportView, type ChangeBrief, type ReportData \} from "./ReportView";\
+\
+    Edited App.tsx +1 -1\
+\
+    \uc0\u9614   import \{ useEveAgent, type EveMessageData \} from "eve/react";\
+    \uc0\u9614   import \{ useEffect, useMemo, useRef, useState, type FormEvent \} from "react";\
+    \uc0\u9614   import \{ ReportView, type ChangeBrief, type ReportData \} from "./ReportView";\
+    \uc0\u9614 - import \{ sampleLegal, sampleReport \} from "./sampleReport";\
+    \uc0\u9614 + import \{ sampleChanges, sampleDiff, sampleLegal, sampleReport \} from "./sampleReport";\
+    \uc0\u9614 \
+    \uc0\u9614   type Version = \{ id: string; title?: string; effective?: string; source_url?: string | null \};\
+    \uc0\u9614   type Trigger = \{ group: string; summary?: string; versions: Version[] \};\
+\
+    Edited App.tsx +5 -1\
+\
+    \uc0\u9614     impact_report?: Report | null;\
+    \uc0\u9614     coverage?: Coverage | null;\
+    \uc0\u9614     raw_change?: \{ exit?: boolean; reason?: string \} | null;\
+    \uc0\u9614 -   change_record?: \{ company_gate?: string; items?: \{ id: string; substantive: boolean; legal_status?:\
+    \uc0\u9614   string \}[] \}  ...\
+    \uc0\u9614 +   diff?: ReviewDiff | null;\
+    \uc0\u9614 +   change_record?: \{\
+    \uc0\u9614 +     company_gate?: string;\
+    \uc0\u9614 +     items?: \{ id: string; summary?: string; substantive: boolean; legal_status?: string; anchor?: \{\
+    \uc0\u9614   start?: number; ...\
+    \uc0\u9614 +   \} | null;\
+    \uc0\u9614   \};\
+    \uc0\u9614 \
+    \uc0\u9614   const TERMINAL = new Set(["completed", "failed", "resumed_completed", "partial"]);\
+\
+    Edited App.tsx +1 -1\
+\
+    \uc0\u9614       <>\
+    \uc0\u9614         <h1>Daily review</h1>\
+    \uc0\u9614         <p className="lede">Sample layout. These items are fixtures, not a live run.</p>\
+    \uc0\u9614 -       <ReportView report=\{sampleReport\} legalStatus=\{sampleLegal\} asOf="2026-10-01" />\
+    \uc0\u9614 +       <ReportView report=\{sampleReport\} legalStatus=\{sampleLegal\} asOf="2026-10-01" diff=\{sampleDiff\}\
+    \uc0\u9614   changes=\{samp ...\
+    \uc0\u9614       </>\
+    \uc0\u9614     );\
+    \uc0\u9614   \}\
+\
+\
+\
+    Edited App.tsx +9\
+\
+    \uc0\u9614     return map;\
+    \uc0\u9614   \}\
+    \uc0\u9614 \
+    \uc0\u9614 + function changeBriefs(record: RunPayload["change_record"]): ChangeBrief[] \{\
+    \uc0\u9614 +   return (record?.items ?? []).map((item) => (\{\
+    \uc0\u9614 +     id: item.id,\
+    \uc0\u9614 +     summary: item.summary,\
+    \uc0\u9614 +     start: item.anchor?.start,\
+    \uc0\u9614 +     end: item.anchor?.end,\
+    \uc0\u9614 +   \}));\
+    \uc0\u9614 + \}\
+    \uc0\u9614 +\
+    \uc0\u9614  \'85 truncated (3 more lines) \'b7 ctrl+r to review\
+\
+    Grepped "...ew|changeBriefs|sampleDiff|ReviewDiff" in ui/src/App.tsx\
+    Found 8 matches\
+\
+    Edited App.tsx +1 -1\
+\
+    \uc0\u9614         <StepActivity steps=\{steps\} waiting=\{waiting\} />\
+    \uc0\u9614         \{reply && <p className="meta">\{reply\}</p>\}\
+    \uc0\u9614         \{!report && review?.status === "running" && <p>The review is still running. Each line above is a\
+    \uc0\u9614   step finishi ...\
+    \uc0\u9614 -       \{report && <ReportView report=\{report\} legalStatus=\{legalMap(data?.change_record)\}\
+    \uc0\u9614   asOf=\{data?.run?.scenario? ...\
+    \uc0\u9614 +       \{report && <ReportView report=\{report\} legalStatus=\{legalMap(data?.change_record)\}\
+    \uc0\u9614   asOf=\{data?.run?.scenario? ...\
+    \uc0\u9614         \{data?.coverage && (\
+    \uc0\u9614           <footer className="coverage">\
+    \uc0\u9614             <div className="kicker">Coverage</div>\
+\
+    Edited App.tsx +1 -1\
+\
+    \uc0\u9614         \{data.change_record?.company_gate === "exit" && <div className="banner">The company gate exited.\
+    \uc0\u9614   The profile  ...\
+    \uc0\u9614         <Activity key=\{id\} id=\{id\} />\
+    \uc0\u9614         \{!report && !data.raw_change?.exit && <p>The review is still running. The activity above updates\
+    \uc0\u9614   as each stag ...\
+    \uc0\u9614 -       \{report && <ReportView report=\{report\} legalStatus=\{legalMap(data?.change_record)\}\
+    \uc0\u9614   asOf=\{data?.run?.scenario? ...\
+    \uc0\u9614 +       \{report && <ReportView report=\{report\} legalStatus=\{legalMap(data?.change_record)\}\
+    \uc0\u9614   asOf=\{data?.run?.scenario? ...\
+    \uc0\u9614         \{data.coverage && (\
+    \uc0\u9614           <footer className="coverage">\
+    \uc0\u9614             <div className="kicker">Coverage</div>\
+\
+    Edited sampleReport.ts +37\
+\
+    \uc0\u9614   import type \{ ReportData \} from "./ReportView";\
+    \uc0\u9614 + import type \{ ChangeBrief \} from "./ReportView";\
+    \uc0\u9614 + import \{ diffLines, lineBounds, type ReviewDiff \} from "../../src/diff";\
+    \uc0\u9614 \
+    \uc0\u9614 + const sampleOld = [\
+    \uc0\u9614 +   "A business that makes an automatic renewal offer shall provide a notice thirty days before the\
+    \uc0\u9614   renewal.",\
+    \uc0\u9614 +   "Importers may not recover duties deposited under the emergency tariff authority.",\
+    \uc0\u9614 + ].join("\\n");\
+    \uc0\u9614 + const sampleNew = [\
+    \uc0\u9614 +   "A business that makes an automatic renewal offer shall provide a notice sixty days before the\
+    \uc0\u9614   renewal.",\
+    \uc0\u9614 +   "Importers may request a refund of duties deposited under the emergency tariff authority.",\
+    \uc0\u9614 + ].join("\\n");\
+    \uc0\u9614  \'85 truncated (30 more lines) \'b7 ctrl+r to review\
+\
+    Edited sampleReport.ts +3 -1\
+\
+    \uc0\u9614             file: "corpus/triggers/TR-20-ca-automatic-renewal-ab-2863/2024-09-24_ab-2863-chaptered.txt",\
+    \uc0\u9614             start: 0,\
+    \uc0\u9614             end: 80,\
+    \uc0\u9614 -           quote: "A business that makes an automatic renewal offer shall provide a notice before the\
+    \uc0\u9614   renewal.",\
+    \uc0\u9614 +           quote: sampleNew.split("\\n")[0],\
+    \uc0\u9614 +           start: sampleLines[0]?.start ?? 0,\
+    \uc0\u9614 +           end: sampleLines[0]?.end ?? 0,\
+    \uc0\u9614           \},\
+    \uc0\u9614           clause: \{\
+    \uc0\u9614             file:\
+    \uc0\u9614   "corpus/documents/customers/valley-medical-center_master-services-agreement_2024-11-01.md",\
+\
+    Edited sampleReport.ts +3 -1\
+\
+    \uc0\u9614             file:\
+    \uc0\u9614   "corpus/triggers/TR-02-ieepa-tariffs-scotus/2026-09-02_cbp-ieepa-duty-refunds-page.txt",\
+    \uc0\u9614             start: 0,\
+    \uc0\u9614             end: 40,\
+    \uc0\u9614 -           quote: "Importers may request a refund of duties deposited under the emergency tariff\
+    \uc0\u9614   authority.",\
+    \uc0\u9614 +           quote: sampleNew.split("\\n")[1],\
+    \uc0\u9614 +           start: sampleLines[1]?.start ?? 0,\
+    \uc0\u9614 +           end: sampleLines[1]?.end ?? 0,\
+    \uc0\u9614           \},\
+    \uc0\u9614           clause: \{\
+    \uc0\u9614             file:\
+    \uc0\u9614   "corpus/documents/supply/supplier-terms/keystone-plumbing-supply_terms-and-conditions-of-sale_2019-\
+    \uc0\u9614   ...\
+\
+    Grepped, read 1 grep, 2 files\
+    Grepped "quote:|start:" in ui/src/sampleReport.ts\
+    Read ui/src/sampleReport.ts lines 50-79\
+    Read ui/src/sampleReport.ts lines 105-129\
+\
+    Edited sampleReport.ts +2 -4\
+\
+    \uc0\u9614         when: "2026-11-01 (31 day(s) from 2026-10-01; outside the 30-day window)",\
+    \uc0\u9614         citations: \{\
+    \uc0\u9614           trigger: \{\
+    \uc0\u9614 -           file: "corpus/triggers/TR-20-ca-automatic-renewal-ab-2863/2024-09-24_ab-2863-chaptered.txt",\
+    \uc0\u9614 -           start: 0,\
+    \uc0\u9614 -           end: 80,\
+    \uc0\u9614 -           quote: sampleNew.split("\\n")[0],\
+    \uc0\u9614 +           file: "corpus/triggers/sample/2026-09-02_renewal-notice.txt",\
+    \uc0\u9614             start: sampleLines[0]?.start ?? 0,\
+    \uc0\u9614             end: sampleLines[0]?.end ?? 0,\
+    \uc0\u9614 +           quote: sampleNew.split("\\n")[0],\
+    \uc0\u9614           \},\
+    \uc0\u9614  \'85 truncated (2 more lines) \'b7 ctrl+r to review\
+\
+    Edited styles.css +1 -1\
+\
+    \uc0\u9614     color: var(--muted);\
+    \uc0\u9614   \}\
+    \uc0\u9614   details.fold ul \{ margin: 10px 0 0; padding-left: 18px; \}\
+    \uc0\u9614 - details.fold li \{ margin: 6px 0; font-size: 14px; \}\
+    \uc0\u9614 + details.fold button.more \{ margin-left: 8px; \}\
+    \uc0\u9614   footer.coverage \{ border-top: 1px solid var(--ink); margin-top: 28px; padding-top: 12px; font-size:\
+    \uc0\u9614   14px; \}\
+    \uc0\u9614   .activity \{\
+    \uc0\u9614     background: var(--ink);\
+\
+    Edited sampleReport.ts +2 -4\
+\
+    \uc0\u9614         when: "no clock",\
+    \uc0\u9614         citations: \{\
+    \uc0\u9614           trigger: \{\
+    \uc0\u9614 -           file:\
+    \uc0\u9614   "corpus/triggers/TR-02-ieepa-tariffs-scotus/2026-09-02_cbp-ieepa-duty-refunds-page.txt",\
+    \uc0\u9614 -           start: 0,\
+    \uc0\u9614 -           end: 40,\
+    \uc0\u9614 -           quote: sampleNew.split("\\n")[1],\
+    \uc0\u9614 +           file: "corpus/triggers/sample/2026-09-02_renewal-notice.txt",\
+    \uc0\u9614             start: sampleLines[1]?.start ?? 0,\
+    \uc0\u9614             end: sampleLines[1]?.end ?? 0,\
+    \uc0\u9614 +           quote: sampleNew.split("\\n")[1],\
+    \uc0\u9614           \},\
+    \uc0\u9614  \'85 truncated (2 more lines) \'b7 ctrl+r to review\
+\
+    Read, grepped 2 files, 1 grep\
+    Read ui/src/sampleReport.ts\
+    Read ui/src/sampleReport.ts lines 130-149\
+    Grepped "...ncy|function openViewer|locatedChange" in ui/src/ReportView.tsx\
+\
+    Edited sampleReport.ts +1 -2\
+\
+    \uc0\u9614 - import type \{ ReportData \} from "./ReportView";\
+    \uc0\u9614 - import type \{ ChangeBrief \} from "./ReportView";\
+    \uc0\u9614 + import type \{ ChangeBrief, ReportData \} from "./ReportView";\
+    \uc0\u9614   import \{ diffLines, lineBounds, type ReviewDiff \} from "../../src/diff";\
+    \uc0\u9614 \
+    \uc0\u9614   const sampleOld = [\
+\
+    Edited sampleReport.ts +2\
+\
+    \uc0\u9614       \{ stack_id: "vendors/fieldflow-software-inc_mutual-nondisclosure-agreement_2021-01-11",\
+    \uc0\u9614   finding_id: "F-nda", re ...\
+    \uc0\u9614     ],\
+    \uc0\u9614     change_item_closure: [\
+    \uc0\u9614 +     \{ change_ref: "nonrenewal", status: "addressed", reason: "Referenced by a finding." \},\
+    \uc0\u9614 +     \{ change_ref: "refund", status: "addressed", reason: "Referenced by a finding." \},\
+    \uc0\u9614       \{ change_ref: "eo-14220", status: "addressed", reason: "Referenced by a finding." \},\
+    \uc0\u9614       \{ change_ref: "header-edit", status: "unaddressed", reason: "Dismissed as non-substantive:\
+    \uc0\u9614   formatting only." \},\
+    \uc0\u9614     ],\
+\
+  The model preview still has to stay short. A rewritten statute is one huge hunk, and the old cap would have\
+  let that entire hunk into the prompt.\
+\
+    Edited diff.ts +13 -5\
+\
+    \uc0\u9614     const blocks: string[] = [];\
+    \uc0\u9614     let used = 0;\
+    \uc0\u9614     let omitted = 0;\
+    \uc0\u9614 -   for (const hunk of hunks) \{\
+    \uc0\u9614 +   for (const [index, hunk] of hunks.entries()) \{\
+    \uc0\u9614 +     if (used >= maxRows) \{\
+    \uc0\u9614 +       omitted += hunks.length - index;\
+    \uc0\u9614 +       break;\
+    \uc0\u9614 +     \}\
+    \uc0\u9614       const end = hunk.newCount > 0 ? hunk.newStart + hunk.newCount - 1 : hunk.newStart;\
+    \uc0\u9614       const block = [`@@ $\{hunk.id\} new lines $\{hunk.newStart\}-$\{end\}`];\
+    \uc0\u9614 -     for (const row of hunk.rows) block.push(`$\{row.mark\}$\{row.spans.map((span) =>\
+    \uc0\u9614   span.text).join("")\}`);\
+    \uc0\u9614  \'85 truncated (15 more lines) \'b7 ctrl+r to review\
+\
+  $ npx tsx --test test/diff.test.ts test/report-display.test.ts && npx tsc --noEmit && npx tsc --noEmit -p ui\
+    exit 2 \'95 4.2s\
+    \'85 25 output lines hidden \'b7 ctrl+o to expand\
+    \uc0\u8505  duration_ms 173.353334\
+    src/normalize.ts(5,32): error TS2591: Cannot find name 'Buffer'. Do you need to install type definitions f\'85\
+\
+    Read ui/tsconfig.json\
+\
+    Edited diff.ts -1\
+\
+    \uc0\u9614    * then again on words inside each changed region. Hunks keep three lines of\
+    \uc0\u9614    * unchanged context.\
+    \uc0\u9614    */\
+    \uc0\u9614 - import \{ cpLength \} from "./normalize.js";\
+    \uc0\u9614 \
+    \uc0\u9614   export type Edit = \{ op: "equal" | "delete" | "insert"; text: string \};\
+    \uc0\u9614 \
+\
+    Edited diff.ts +3 -1\
+\
+    \uc0\u9614     \}));\
+    \uc0\u9614   \}\
+    \uc0\u9614 \
+    \uc0\u9614 - function tokenize(text: string): string[] \{\
+    \uc0\u9614 + function cpLength(text: string): number \{\
+    \uc0\u9614 +   return Array.from(text).length;\
+    \uc0\u9614 + \}\
+    \uc0\u9614     return text.split(/(\\s+)/).filter((token) => token.length > 0);\
+    \uc0\u9614   \}\
+    \uc0\u9614 \
+\
+    Read src/diff.ts line 300\
+\
+    Edited diff.ts +2\
+\
+    \uc0\u9614   function cpLength(text: string): number \{\
+    \uc0\u9614     return Array.from(text).length;\
+    \uc0\u9614   \}\
+    \uc0\u9614 +\
+    \uc0\u9614 + function tokenize(text: string): string[] \{\
+    \uc0\u9614     return text.split(/(\\s+)/).filter((token) => token.length > 0);\
+    \uc0\u9614   \}\
+    \uc0\u9614 \
+\
+  $ npx tsc --noEmit && npx tsc --noEmit -p ui && npx tsx --test test/diff.test.ts test/harness.test.ts 4.6s\
+    \'85 28 output lines hidden \'b7 ctrl+o to expand\
+    \uc0\u8505  todo 0\
+    \uc0\u8505  duration_ms 892.850458\
+\
+    Edited styles.css +1\
+\
+    \uc0\u9614   .dline \{\
+    \uc0\u9614     display: grid;\
+    \uc0\u9614     grid-template-columns: 1.25rem minmax(0, 1fr);\
+    \uc0\u9614 +   min-height: 1.45em;\
+    \uc0\u9614     padding: 0 10px 0 0;\
+    \uc0\u9614     white-space: pre-wrap;\
+    \uc0\u9614     overflow-wrap: anywhere;\
+\
+    Read Lints ui/src/ReportView.tsx (+6 more)\
+    Found 0 issues\
+\
+  $ head -n 10 *.txt 180ms in /Users/jason/.../terminals\
+    \'85 177 output lines hidden \'b7 ctrl+o to expand\
+    ---\
+\
+    Grepped "port" in src/cli.ts\
+    Found 13 matches\
+\
+    Explored available MCP tools plugin-playwright-playwright \'b7 browser_navigate\
+\
+  $ npm run ui:build 2.1s\
+    \'85 32 output lines hidden \'b7 ctrl+o to expand\
+    - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-opti\'85\
+    - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\
+\
+    Explored available MCP tools pattern browser_(snapshot|click|take_screenshot|tabs)\
+\
+    plugin-playwright-playwright browser_navigate\
+\
+    Explored available MCP tools plugin-playwright-playwright \'b7 browser_snapshot\
+\
+    Explored available MCP tools plugin-playwright-playwright \'b7 browser_click\
+\
+  $ ls "$HOME/Library/Caches/ms-playwright" 2>/dev/null | head -40; ls\
+    /Users/jason/.npm/_npx/9833c18b2d85bc59/node_modules/playwright/package.json 2>/dev/null 339ms\
+    \'85 2 output lines hidden \'b7 ctrl+o to expand\
+    ffmpeg-1011\
+    /Users/jason/.npm/_npx/9833c18b2d85bc59/node_modules/playwright/package.json\
+\
+  $ find "$HOME/Library/Caches/ms-playwright/chromium_headless_shell-1243" -name "chrome-headless-shell" -type\
+    f | head -3 253ms\
+    /Users/jason/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chr\'85\
+\
+  $ curl -s -o /dev/null -w "%\{http_code\}" http://localhost:5173/ 210ms\
+    200\
+\
+  $ node --input-type=module << 'EOF'\
+    import \{ chromium \} from "/Users/jason/.npm/_npx/9833c18b2d85bc59/node_modules/playwright/index.mjs"; 1.9s\
+    \'85 39 input + 11 output lines hidden \'b7 ctrl+o to expand\
+    ok closure hides the id\
+    pageerrors []\
+\
+    Read, globbed 2 files, 1 glob\
+    Read /tmp/diff-card.png\
+    Read /tmp/diff-viewer.png\
+    Globbed "impact_report.json" in runs/ui-mini-substantive\
+\
+  $ lsof -ti tcp:8787 | xargs kill; sleep 0.5; npm run serve 1m 35s (background)\
+\
+    Monitored background task, 1 active\
+    \'85 4 earlier items hidden\
+    Ran npx tsx -e '\
+    import \{ myersDiff \} from "./src/diff.ts";\
+    const a = "Section 2. The Department will investigate whether copper imports impair national\
+    security.".split(/(\\s+)/).filter(Boolean);\
+    const b = "Section 2. The duty on copper tube is 25 percent ad valorem, effective August 1,\
+    2025.".split(/(\\s+)/).filter(Boolean);\
+    const edits = myersDiff(a, b);\
+    const d = edits.filter(e => e.op !== "equal").length;\
+    console.log("D", d, "edits", edits.length);\
+    for (const e of edits) console.log(e.op.padEnd(6), JSON.stringify(e.text));\
+    '\
+    Ran npx tsx -e '\
+    import \{ myersDiff \} from "./src/diff.ts";\
+    function dist(a, b) \{\
+      const n = a.length, m = b.length;\
+      const dp = Array.from(\{ length: n + 1 \}, () => new Uint32Array(m + 1));\
+      for (let i = 0; i <= n; i++) dp[i][0] = i;\
+      for (let j = 0; j <= m; j++) dp[0][j] = j;\
+      for (let i = 1; i <= n; i++) \{\
+        for (let j = 1; j <= m; j++) \{\
+          if (a[i - 1] === b[j - 1]) dp[i][j] = dp[i - 1][j - 1];\
+          else dp[i][j] = 1 + Math.min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1] + 1);\
+        \}\
+      \}\
+      return dp[n][m];\
+    \}\
+    const cases = [\
+      [["a"," ","copper"," ","b"], ["a"," ","x"," ","copper"," ","y"]],\
+      ["Section 2. The Department will investigate whether copper imports impair national\
+    security.".split(/(\\s+)/).filter(Boolean),\
+       "Section 2. The duty on copper tube is 25 percent ad valorem, effective August 1,\
+    2025.".split(/(\\s+)/).filter(Boolean)],\
+    ];\
+    for (const [a, b] of cases) \{\
+      const edits = myersDiff(a, b);\
+      const d = edits.filter(e => e.op !== "equal").length;\
+      console.log("myers", d, "dp", dist(a, b), "len", a.length, b.length);\
+    \}\
+    '\
+    Ran npx tsx -e '\
+    function lcs(a, b) \{\
+      const n = a.length, m = b.length;\
+      const dp = Array.from(\{ length: n + 1 \}, () => new Uint32Array(m + 1));\
+      for (let i = 1; i <= n; i++) \{\
+        for (let j = 1; j <= m; j++) \{\
+          dp[i][j] = a[i - 1] === b[j - 1] ? dp[i - 1][j - 1] + 1 : Math.max(dp[i - 1][j], dp[i][j - 1]);\
+        \}\
+      \}\
+      return dp[n][m];\
+    \}\
+    function ses(a, b) \{\
+      const n = a.length, m = b.length;\
+      const dp = Array.from(\{ length: n + 1 \}, () => new Uint32Array(m + 1));\
+      for (let i = 0; i <= n; i++) dp[i][0] = i;\
+      for (let j = 0; j <= m; j++) dp[0][j] = j;\
+      for (let i = 1; i <= n; i++) \{\
+        for (let j = 1; j <= m; j++) \{\
+          if (a[i - 1] === b[j - 1]) dp[i][j] = dp[i - 1][j - 1];\
+          else dp[i][j] = 1 + Math.min(dp[i - 1][j], dp[i][j - 1]);\
+        \}\
+      \}\
+      return dp[n][m];\
+    \}\
+    const a = "Section 2. The Department will investigate whether copper imports impair national\
+    security.".split(/(\\s+)/).filter(Boolean);\
+    const b = "Section 2. The duty on copper tube is 25 percent ad valorem, effective August 1,\
+    2025.".split(/(\\s+)/).filter(Boolean);\
+    console.log("lcs", lcs(a, b), "ses", ses(a, b), "n+m-2lcs", a.length + b.length - 2 * lcs(a, b));\
+    '\
+\
+  The word diff was treating every space as its own token, so identical spaces crowded out real words like\
+  \'93copper.\'94 I\'92ll diff the words and keep the spaces as the gaps between them.\
+\
+    Edited diff.ts +22 -12\
+\
+    \uc0\u9614   \}\
+    \uc0\u9614 \
+    \uc0\u9614   function paintWords(before: string, after: string): \{ before: DiffSpan[]; after: DiffSpan[] \} \{\
+    \uc0\u9614 -   const left: DiffSpan[] = [];\
+    \uc0\u9614 -   const right: DiffSpan[] = [];\
+    \uc0\u9614 -   for (const edit of myersDiff(tokenize(before), tokenize(after))) \{\
+    \uc0\u9614 -     if (edit.op === "equal") \{\
+    \uc0\u9614 -       pushSpan(left, "same", edit.text);\
+    \uc0\u9614 -       pushSpan(right, "same", edit.text);\
+    \uc0\u9614 -     \} else if (edit.op === "delete") \{\
+    \uc0\u9614 -       pushSpan(left, "del", edit.text);\
+    \uc0\u9614 -     \} else \{\
+    \uc0\u9614  \'85 truncated (33 more lines) \'b7 ctrl+r to review\
+\
+    Edited diff.test.ts +10 -1\
+\
+    \uc0\u9614     assert.equal(added?.spans.some((span) => span.kind === "ins" && span.text.includes("The duty")),\
+    \uc0\u9614   false);\
+    \uc0\u9614   \});\
+    \uc0\u9614 \
+    \uc0\u9614 - test("a reflowed paragraph still highlights the new word", () => \{\
+    \uc0\u9614 + test("a shared word stays plain when the sentence is rewritten around it", () => \{\
+    \uc0\u9614 +   const hunks = diffLines(\
+    \uc0\u9614 +     "Section 2. The Department will investigate whether copper imports impair national security.\\n",\
+    \uc0\u9614 +     "Section 2. The duty on copper tube is 25 percent ad valorem, effective August 1, 2025.\\n",\
+    \uc0\u9614 +   );\
+    \uc0\u9614 +   const added = hunks[0]?.rows.find((row) => row.mark === "+");\
+    \uc0\u9614 +   assert.ok(added?.spans.some((span) => span.kind === "same" && span.text === "copper"));\
+    \uc0\u9614 +   assert.ok(added?.spans.some((span) => span.kind === "ins" && span.text === "25"));\
+    \uc0\u9614  \'85 truncated (5 more lines) \'b7 ctrl+r to review\
+\
+    Edited diff.ts +1 -1\
+\
+    \uc0\u9614   \}\
+    \uc0\u9614 \
+    \uc0\u9614   function tokenize(text: string): string[] \{\
+    \uc0\u9614 -   return text.split(/(\\s+)/).filter((token) => token.length > 0);\
+    \uc0\u9614 +   return text.match(/\\n+|\\S+/g) ?? [];\
+    \uc0\u9614   \}\
+    \uc0\u9614 \
+    \uc0\u9614   function pushSpan(out: DiffSpan[], kind: DiffSpan["kind"], text: string): void \{\
+\
+    Read 2 files\
+    Read test/diff.test.ts lines 40-69\
+    Read test/diff.test.ts lines 68-87\
+\
+    Edited diff.test.ts +2\
+\
+    \uc0\u9614     assert.ok(added?.spans.some((span) => span.kind === "ins" && span.text === "25"));\
+    \uc0\u9614     assert.equal(added?.spans.some((span) => span.kind === "ins" && span.text === "copper"), false);\
+    \uc0\u9614   \});\
+    \uc0\u9614 +\
+    \uc0\u9614 + test("a reflowed paragraph still highlights the new word", () => \{\
+    \uc0\u9614     const hunks = diffLines("alpha beta gamma\\ndelta\\n", "alpha BETA gamma delta\\n");\
+    \uc0\u9614     const added = hunks.flatMap((hunk) => hunk.rows).filter((row) => row.mark === "+");\
+    \uc0\u9614     assert.ok(added.some((row) => row.spans.some((span) => span.kind === "ins" && span.text ===\
+    \uc0\u9614   "BETA")));\
+\
+    Edited diff.test.ts +3 -1\
+\
+    \uc0\u9614     const added = hunks[0]?.rows.find((row) => row.mark === "+");\
+    \uc0\u9614     assert.ok(removed?.spans.some((span) => span.kind === "del" && span.text === "10"));\
+    \uc0\u9614     assert.ok(added?.spans.some((span) => span.kind === "ins" && span.text === "25"));\
+    \uc0\u9614 -   assert.ok(added?.spans.some((span) => span.kind === "same" && span.text.includes("The duty is")));\
+    \uc0\u9614 +   const plain = added?.spans.filter((span) => span.kind === "same").map((span) => span.text).join("")\
+    \uc0\u9614   ?? "";\
+    \uc0\u9614 +   assert.match(plain, /The duty is/);\
+    \uc0\u9614 +   assert.match(plain, /percent/);\
+    \uc0\u9614     assert.equal(added?.spans.some((span) => span.kind === "ins" && span.text.includes("The duty")),\
+    \uc0\u9614   false);\
+    \uc0\u9614   \});\
+    \uc0\u9614 \
+\
+  $ npx tsx --test test/diff.test.ts exit 1 \'95 922ms\
+    \'85 58 output lines hidden \'b7 ctrl+o to expand\
+        diff: 'simple'\
+      \}\
+\
+  $ npx tsx -e '\
+    import \{ myersDiff, diffLines \} from "./src/diff.ts"; 831ms\
+    \'85 10 input + 25 output lines hidden \'b7 ctrl+o to expand\
+    - same:"Section 2. The " | del:"Department" | same:" " | del:"will" | same:" " | del:"investigate" | same:\'85\
+    + same:"Section 2. The " | ins:"duty" | same:" " | ins:"on" | same:" copper " | ins:"tube" | same:" " | in\'85\
+\
+    Edited diff.test.ts +2 -2\
+\
+    \uc0\u9614       "Section 2. The duty on copper tube is 25 percent ad valorem, effective August 1, 2025.\\n",\
+    \uc0\u9614     );\
+    \uc0\u9614     const added = hunks[0]?.rows.find((row) => row.mark === "+");\
+    \uc0\u9614 -   assert.ok(added?.spans.some((span) => span.kind === "same" && span.text === "copper"));\
+    \uc0\u9614 +   assert.ok(added?.spans.some((span) => span.kind === "same" && span.text.includes("copper")));\
+    \uc0\u9614     assert.ok(added?.spans.some((span) => span.kind === "ins" && span.text === "25"));\
+    \uc0\u9614 -   assert.equal(added?.spans.some((span) => span.kind === "ins" && span.text === "copper"), false);\
+    \uc0\u9614 +   assert.equal(added?.spans.some((span) => span.kind === "ins" && span.text.includes("copper")),\
+    \uc0\u9614   false);\
+    \uc0\u9614   \});\
+    \uc0\u9614 \
+    \uc0\u9614   test("a reflowed paragraph still highlights the new word", () => \{\
+\
+    Edited diff.test.ts +1 -1\
+\
+    \uc0\u9614     const excerpt = excerptRows(hunk, bounds, line.start, line.end);\
+    \uc0\u9614     assert.ok(excerpt.rows.length < 20);\
+    \uc0\u9614     assert.equal(excerpt.truncated, true);\
+    \uc0\u9614 -   assert.ok(excerpt.rows.some((row) => row.spans.some((span) => span.text.includes("25 percent"))));\
+    \uc0\u9614 +   assert.ok(excerpt.rows.some((row) => row.spans.some((span) => span.text.includes("25"))));\
+    \uc0\u9614   \});\
+    \uc0\u9614 \
+    \uc0\u9614   test("a quote lands on the hunk that contains it", () => \{\
+\
+  $ npx tsx --test test/diff.test.ts && npm run ui:build && lsof -ti tcp:8787 | xargs kill; sleep 0.4; npm run\
+    serve 34s (background)\
+\
+    Monitored background task, 1 active\
+    Waited for "harness serve|fail [0-9]|\uc0\u10006 " in shell\
+    Read ...jects/Users-jason-Documents/terminals/70325.txt line 1\
+    Ran node --input-type=module << 'EOF'\
+    import \{ chromium \} from "/Users/jason/.npm/_npx/9833c18b2d85bc59/node_modules/playwright/index.mjs";\
+    const browser = await chromium.launch(\{\
+      executablePath: "/Users/jason/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-\
+    shell-mac-arm64/chrome-headless-shell",\
+      headless: true,\
+    \});\
+    const page = await browser.newPage(\{ viewport: \{ width: 1100, height: 800 \} \});\
+    await page.goto("http://127.0.0.1:8787/#/runs/ui-mini-substantive", \{ waitUntil: "networkidle" \});\
+    await page.locator("button.row").first().click();\
+    const spans = await page.locator(".finding.open .dline.ins .dtext span").evaluateAll((nodes) =>\
+      nodes.map((n) => `$\{n.className || "same"\}:$\{n.textContent\}`),\
+    );\
+    console.log(spans.join(" | "));\
+    const copperSame = spans.some((s) => s.startsWith("same") && s.includes("copper"));\
+    const copperIns = spans.some((s) => s.startsWith("ins") && s.includes("copper"));\
+    console.log(\{ copperSame, copperIns \});\
+    await page.screenshot(\{ path: "/tmp/diff-mini-words.png" \});\
+    await browser.close();\
+    if (!copperSame || copperIns) process.exit(1);\
+    EOF\
+    Read /tmp/diff-mini-words.png\
+\
+  C1 and C6 are gone from the list. That fold now uses each change's own summary. On the copper run you have\
+  open, there is still no red/green text, because that review is a first reading: the source has no earlier\
+  snapshot.\
+\
+  When a review does have two versions, stage 0 now runs Myers on the normalized snapshots. It aligns lines,\
+  then words inside each changed region, and keeps three lines of unchanged context. The old line-bag preview\
+  is gone.\
+\
+  On the page:\
+\
+  \'95 See what changed opens the full comparison, one viewer for the source. Removed words sit on a red line,\
+    added words on a green one. Words that stayed are plain. That color is not the rust clock bar.\
+  \'95 Inside a finding, the Change side shows only the hunk around the cited passage. If that hunk is long,\
+    in the full change jumps to it in the viewer. Your document stays an italic quotation.\
+  \'95 What was reviewed names the change in words. See the diff on that row opens the same viewer at that\
+    passage.\
+\
+  Hard-refresh http://localhost:8787/#/runs/TR-01-copper-section-232-1790748586041. You should see the\
+  summaries and a line that this source has no earlier version. A two-version review, such as\
+  http://localhost:8787/#/runs/ui-mini-substantive, shows the viewer and the inline hunk.\
+\
+  Finished Restart the report server on port 8787\
+\
+  The first restart was stopped on purpose when the server was started again. I'll confirm the one on port\
+  8787 is still up.\
+\
+  $ lsof -nP -iTCP:8787 -sTCP:LISTEN | awk 'NR==1 || /LISTEN/' 208ms\
+    COMMAND  PID  USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME\
+    node    5353 jason   14u  IPv6 0x800b1610c231df9b      0t0  TCP *:8787 (LISTEN)\
+\
+  The earlier report server was stopped so a new one could take its place. The current one is listening on\
+  port 8787. Hard-refresh the run page to load it.\
+\
+\
+  excellent. A few minor style tweaks at this point - i don't like the misalignment when a card is\
+  selected and the left edge extends past the rest of the list - it does not look inentional. the\
+  "badges" should be an off white or grey, to not be conflated with the document citations area.\
+  Additioanlly, lets move to a softly rounded broder UI, universally, rather than hard abrupt corners\
+  everywhere.\
+\
+\
+  The open card sticks out past the list, the action badges share the white of the cited text, and the\
+  corners are square. I'll align the open card with the list, give the badges a grey fill, and round the\
+  borders.\
+\
+    Read, grepped 1 file, 1 grep\
+    Read ui/src/styles.css\
+    Grepped "border|radius|finding\\.open|verb|source" in ui/src\
+\
+  The open card is pulled wider than the list with a negative margin. I'll keep it on the same edge, give the\
+  action badges a grey fill, and round the boxes.\
+\
+    Edited styles.css +2\
+\
+    \uc0\u9614     --rust: #8c3a2f;\
+    \uc0\u9614     --moss: #234036;\
+    \uc0\u9614     --card: #faf7f1;\
+    \uc0\u9614 +   --badge: #e4dfd6;\
+    \uc0\u9614 +   --radius: 8px;\
+    \uc0\u9614   \}\
+    \uc0\u9614 \
+    \uc0\u9614   * \{ box-sizing: border-box; \}\
+\
+    Edited styles.css +1\
+\
+    \uc0\u9614   form, .card, .banner \{\
+    \uc0\u9614     background: var(--card);\
+    \uc0\u9614     border: 1px solid var(--rule);\
+    \uc0\u9614 +   border-radius: var(--radius);\
+    \uc0\u9614     padding: 16px 18px;\
+    \uc0\u9614     margin: 14px 0;\
+    \uc0\u9614   \}\
+\
+    Edited styles.css +1\
+\
+    \uc0\u9614     width: 100%;\
+    \uc0\u9614     background: #fff;\
+    \uc0\u9614     border: 1px solid var(--rule);\
+    \uc0\u9614 +   border-radius: var(--radius);\
+    \uc0\u9614     padding: 8px 10px;\
+    \uc0\u9614   \}\
+    \uc0\u9614   textarea \{ min-height: 110px; \}\
+\
+    Edited styles.css +2 -1\
+\
+    \uc0\u9614     background: var(--ink);\
+    \uc0\u9614     color: var(--paper);\
+    \uc0\u9614     border: 0;\
+    \uc0\u9614 +   border-radius: var(--radius);\
+    \uc0\u9614     padding: 8px 14px;\
+    \uc0\u9614     cursor: pointer;\
+    \uc0\u9614   \}\
+    \uc0\u9614 - button.quiet \{ background: transparent; color: var(--ink); border: 1px solid var(--ink); \}\
+    \uc0\u9614 + button.quiet \{ background: transparent; color: var(--ink); border: 1px solid var(--ink);\
+    \uc0\u9614   border-radius: var(--radiu ...\
+    \uc0\u9614   .err \{ color: var(--rust); \}\
+    \uc0\u9614   .banner \{ border-color: var(--moss); \}\
+    \uc0\u9614   .kicker \{ font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); \}\
+\
+    Edited styles.css +1\
+\
+    \uc0\u9614     background: transparent;\
+    \uc0\u9614     color: var(--ink);\
+    \uc0\u9614     border: 1px solid var(--rule);\
+    \uc0\u9614 +   border-radius: var(--radius);\
+    \uc0\u9614     padding: 3px 9px;\
+    \uc0\u9614     font-size: 13px;\
+    \uc0\u9614     line-height: 1.3;\
+\
+    Edited styles.css +1 -1\
+\
+    \uc0\u9614   .finding.act \{ box-shadow: inset 3px 0 0 var(--rust); \}\
+    \uc0\u9614   .finding.ahead \{ box-shadow: inset 3px 0 0 #8a8175; \}\
+    \uc0\u9614   .finding.act .rank \{ color: var(--rust); \}\
+    \uc0\u9614 - .finding.open \{ background: var(--card); margin: 0 -14px; padding: 0 14px 4px; \}\
+    \uc0\u9614 + .finding.open \{ background: var(--card); \}\
+    \uc0\u9614   button.row \{\
+    \uc0\u9614     display: grid;\
+    \uc0\u9614     grid-template-columns: 2.6rem minmax(0, 1fr) auto;\
+\
+    Edited styles.css +1\
+\
+    \uc0\u9614   button.row \{\
+    \uc0\u9614     display: grid;\
+    \uc0\u9614     grid-template-columns: 2.6rem minmax(0, 1fr) auto;\
+    \uc0\u9614 +   border-radius: 0;\
+    \uc0\u9614     grid-template-areas:\
+    \uc0\u9614       "rank identity side"\
+    \uc0\u9614       "rank headline side"\
+\
+    Edited styles.css +4 -2\
+\
+    \uc0\u9614     letter-spacing: 0.01em;\
+    \uc0\u9614     line-height: 1.2;\
+    \uc0\u9614     padding: 2px 7px;\
+    \uc0\u9614 -   border: 1px solid var(--ink);\
+    \uc0\u9614 -   background: #fff;\
+    \uc0\u9614 +   border: 1px solid #c9c2b6;\
+    \uc0\u9614 +   border-radius: var(--radius);\
+    \uc0\u9614 +   background: var(--badge);\
+    \uc0\u9614 +   color: var(--ink);\
+    \uc0\u9614   \}\
+    \uc0\u9614   .money \{ font-variant-numeric: tabular-nums; font-size: 14px; white-space: nowrap; \}\
+    \uc0\u9614   .hot \{ color: var(--rust); font-weight: 600; font-variant-numeric: tabular-nums; font-size: 14px;\
+    \uc0\u9614   white-space: nowr ...\
+\
+    Edited styles.css +1 -1\
+\
+    \uc0\u9614   .sources \{ display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: stretch; \}\
+    \uc0\u9614   .source \{ min-width: 0; padding: 10px 12px 12px; \}\
+    \uc0\u9614   .source.change \{ border-top: 1px solid var(--rule); \}\
+    \uc0\u9614 - .source.yours \{ background: #fff; \}\
+    \uc0\u9614 + .source.yours \{ background: #fff; border-radius: var(--radius); \}\
+    \uc0\u9614   .source .eyebrow \{\
+    \uc0\u9614     margin: 0 0 4px;\
+    \uc0\u9614     font-size: 11px;\
+\
+    Edited styles.css +1\
+\
+    \uc0\u9614     padding: 0;\
+    \uc0\u9614     background: none;\
+    \uc0\u9614     border: 0;\
+    \uc0\u9614 +   border-radius: 0;\
+    \uc0\u9614     color: var(--muted);\
+    \uc0\u9614     font-size: 13px;\
+    \uc0\u9614     text-decoration: underline;\
+\
+    Edited styles.css +2\
+\
+    \uc0\u9614     margin-top: 10px;\
+    \uc0\u9614     background: #fff;\
+    \uc0\u9614     border: 1px solid var(--rule);\
+    \uc0\u9614 +   border-radius: var(--radius);\
+    \uc0\u9614 +   overflow: hidden;\
+    \uc0\u9614     font-size: 14.5px;\
+    \uc0\u9614     line-height: 1.45;\
+    \uc0\u9614     font-style: normal;\
+\
+    Edited styles.css +2 -2\
+\
+    \uc0\u9614   .dline.del \{ background: #f8e6e1; \}\
+    \uc0\u9614   .dline.ins \{ background: #e7f3ea; \}\
+    \uc0\u9614   .dline.ctx \{ color: var(--muted); \}\
+    \uc0\u9614 - .dline .del \{ background: #f0c2b8; \}\
+    \uc0\u9614 - .dline .ins \{ background: #b7dfc0; \}\
+    \uc0\u9614 + .dline .del \{ background: #f0c2b8; border-radius: 3px; \}\
+    \uc0\u9614 + .dline .ins \{ background: #b7dfc0; border-radius: 3px; \}\
+    \uc0\u9614   .gutter \{ color: var(--muted); text-align: center; user-select: none; \}\
+    \uc0\u9614   .empty \{ color: var(--muted); \}\
+    \uc0\u9614   details.fold \{ margin-top: 28px; border-top: 1px solid var(--rule); padding-top: 10px; \}\
+\
+    Edited styles.css +1\
+\
+    \uc0\u9614   .activity \{\
+    \uc0\u9614     background: var(--ink);\
+    \uc0\u9614     color: var(--paper);\
+    \uc0\u9614 +   border-radius: var(--radius);\
+    \uc0\u9614     max-height: 440px;\
+    \uc0\u9614     overflow: auto;\
+    \uc0\u9614     padding: 12px 14px;\
+\
+    Edited styles.css -1\
+\
+    \uc0\u9614     .side \{ align-items: flex-start; text-align: left; flex-direction: row; flex-wrap: wrap; gap: 8px\
+    \uc0\u9614   12px; align-sel ...\
+    \uc0\u9614     .sources \{ grid-template-columns: 1fr; \}\
+    \uc0\u9614     .detail \{ padding-left: 0; \}\
+    \uc0\u9614 -   .finding.open \{ margin: 0 -8px; padding: 0 8px 4px; \}\
+    \uc0\u9614     .mark \{ letter-spacing: 0.06em; font-size: 12px; white-space: nowrap; \}\
+    \uc0\u9614   \}\
+\
+  $ npm run ui:build 2.0s\
+    \'85 32 output lines hidden \'b7 ctrl+o to expand\
+    - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-opti\'85\
+    - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\
+\
+  $ node --input-type=module << 'EOF'\
+    import \{ chromium \} from "/Users/jason/.npm/_npx/9833c18b2d85bc59/node_modules/playwright/index.mjs"; 1.8s\
+    \'85 40 input + 12 output lines hidden \'b7 ctrl+o to expand\
+    \}\
+    mobile \{ listLeft: 20, openLeft: 20, listRight: 370, openRight: 370 \}\
+\
+    Read /tmp/style-open.png\
+\
+  An open card now stays on the same left and right edge as the rest of the list. The action labels, such as\
+  Send notice, are a warm grey with a soft corner, so they no longer match the white citation panel. Buttons,\
+  filters, inputs, the citation panel, and the diff use the same 8px corner.\
+\
+  Hard-refresh the page on port 8787 to load the new styles.\
+\
+\
+  see the diff should be see the chnage - diff is enginerring speak. Search for any toher uses and update\
+\
+\
+  "Diff" is the wrong word for counsel. I'll find every place it shows up in the interface and change it to\
+  "change."\
+\
+    Grepped, read 7 greps, 4 files\
+    \'85 8 earlier items hidden\
+    Grepped "...ive diff|label: \\"Diff\\"|see the diff" in .\
+    Read ui/src/App.tsx lines 440-479\
+    Grepped "no_substantive_diff|"diff"|label: .Diff" in test\
+\
+  The button is the one counsel reads. The same word also shows up as the review step name and in the \'93no\
+  substantive change\'94 note, so those get the same wording.\
+\
+    Edited ReportView.tsx +1 -1\
+\
+    \uc0\u9614                     \{row.reason && <span className="meta"> \'b7 \{row.reason\}</span>\}\
+    \uc0\u9614                     \{located && (\
+    \uc0\u9614                       <button className="more" type="button" onClick=\{() => openViewer(located.line)\}>\
+    \uc0\u9614 -                       see the diff\
+    \uc0\u9614 +                       see the change\
+    \uc0\u9614                       </button>\
+    \uc0\u9614                     )\}\
+    \uc0\u9614                   </li>\
+\
+    Edited App.tsx +1 -1\
+\
+    \uc0\u9614       for (const part of message.parts) \{\
+    \uc0\u9614         if (part.type !== "dynamic-tool" || part.toolName !== "review") continue;\
+    \uc0\u9614         if ((part.state === "input-streaming" || part.state === "input-available") && found === null) \{\
+    \uc0\u9614 -         found = \{ run_id: "", status: "running", steps: [\{ id: "diff", label: "Diff", state:\
+    \uc0\u9614   "running", detail: "Co ...\
+    \uc0\u9614 +         found = \{ run_id: "", status: "running", steps: [\{ id: "diff", label: "Change", state:\
+    \uc0\u9614   "running", detail: " ...\
+    \uc0\u9614         \} else if (part.state === "output-available") \{\
+    \uc0\u9614           const parsed = asReviewStream(part.output);\
+    \uc0\u9614           if (parsed) found = parsed;\
+\
+    Edited stage0.ts +1 -1\
+\
+    \uc0\u9614       new_chars: cpLength(next),\
+    \uc0\u9614     \};\
+    \uc0\u9614     if (prev !== null && prev === next) \{\
+    \uc0\u9614 -     return \{ ...base, exit: true, reason: "No substantive diff: snapshots match after encoding\
+    \uc0\u9614   normalisation.", pre ...\
+    \uc0\u9614 +     return \{ ...base, exit: true, reason: "The snapshots match after encoding normalisation.",\
+    \uc0\u9614   preview: "" \};\
+    \uc0\u9614     \}\
+    \uc0\u9614     if (prev !== null && cosmetic(prev) === cosmetic(next)) \{\
+    \uc0\u9614       return \{\
+\
+    Edited stage0.ts +1 -1\
+\
+    \uc0\u9614       return \{\
+    \uc0\u9614         ...base,\
+    \uc0\u9614         exit: true,\
+    \uc0\u9614 -       reason: "No substantive diff: snapshots match after whitespace and markup normalisation.",\
+    \uc0\u9614 +       reason: "The snapshots match after whitespace and markup normalisation.",\
+    \uc0\u9614         preview: "",\
+    \uc0\u9614       \};\
+    \uc0\u9614     \}\
+\
+    Edited pipeline.ts +3 -3\
+\
+    \uc0\u9614       state.raw = raw;\
+    \uc0\u9614       writeJson(path.join(state.runDir, "raw_change.json"), raw);\
+    \uc0\u9614       state.addStage("0", raw.exit ? "no_substantive_diff" : "diff", false);\
+    \uc0\u9614 -     if (raw.exit) return settle(state, "completed", \{ id: "diff", label: "Diff", state: "done",\
+    \uc0\u9614   detail: clip(raw.re ...\
+    \uc0\u9614 -     return progress(state, \{ id: "diff", label: "Diff", state: "done", detail: `Substantive change in\
+    \uc0\u9614   $\{raw.new_fil ...\
+    \uc0\u9614 +     if (raw.exit) return settle(state, "completed", \{ id: "diff", label: "Change", state: "done",\
+    \uc0\u9614   detail: clip(raw. ...\
+    \uc0\u9614 +     return progress(state, \{ id: "diff", label: "Change", state: "done", detail: `Substantive change\
+    \uc0\u9614   in $\{raw.new_f ...\
+    \uc0\u9614     \}\
+    \uc0\u9614 -   if (state.raw.exit) return settle(state, "completed", \{ id: "diff", label: "Diff", state: "done",\
+    \uc0\u9614   detail: clip(st ...\
+    \uc0\u9614 +   if (state.raw.exit) return settle(state, "completed", \{ id: "diff", label: "Change", state: "done",\
+    \uc0\u9614   detail: clip( ...\
+    \uc0\u9614     if (!state.change) \{\
+    \uc0\u9614       await ensureChange(state, false);\
+    \uc0\u9614  \'85 truncated (1 more line) \'b7 ctrl+r to review\
+\
+    Edited review.ts +1 -1\
+\
+    \uc0\u9614           run_id: "",\
+    \uc0\u9614           done: true,\
+    \uc0\u9614           status: "unchanged",\
+    \uc0\u9614 -         step: \{ id: "diff", label: "Diff", state: "done", detail: "That URL matches the last snapshot.\
+    \uc0\u9614   No new revie ...\
+    \uc0\u9614 +         step: \{ id: "diff", label: "Change", state: "done", detail: "That URL matches the last\
+    \uc0\u9614   snapshot. No new rev ...\
+    \uc0\u9614           next_id: null,\
+    \uc0\u9614           next_label: null,\
+    \uc0\u9614         \};\
+\
+    Edited review.ts +1 -1\
+\
+    \uc0\u9614         versions: input.versions,\
+    \uc0\u9614         scenario_id: input.scenario_id,\
+    \uc0\u9614       \};\
+    \uc0\u9614 -     let steps: ReviewStep[] = [\{ id: "diff", label: "Diff", state: "running", detail:\
+    \uc0\u9614   runningDetail("diff") \}];\
+    \uc0\u9614 +     let steps: ReviewStep[] = [\{ id: "diff", label: "Change", state: "running", detail:\
+    \uc0\u9614   runningDetail("diff") \}];\
+    \uc0\u9614       yield \{ run_id: "", status: "running", steps \} satisfies ReviewStream;\
+    \uc0\u9614       let result = await runReviewStep(\{ phase: "open", step: 0, request \});\
+    \uc0\u9614       steps = result.step ? [result.step] : [];\
+\
+    Grepped 2 greps\
+    Grepped "["'`][^"'`]*[Dd]iff" in ui/src\
+    Grepped "...\\"|see the change|The snapshots match" in src\
+\
+  $ npm run ui:build && node --input-type=module << 'EOF'\
+    import \{ chromium \} from "/Users/jason/.npm/_npx/9833c18b2d85bc59/node_modules/playwright/index.mjs"; 3.3s\
+    \'85 13 input + 33 output lines hidden \'b7 ctrl+o to expand\
+    - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\
+    true false\
+\
+  The button is updated in the built page. The review step still says \'93Diff\'94 in the running server, so I\'92ll\
+  restart it so that label matches.\
+\
+  $ lsof -ti tcp:8787 | xargs kill; sleep 0.4; npm run serve 5.2s (background)\
+\
+    Waited for shell regex: /harness serve|EADDRINUSE/\
+\
+  See the diff is now see the change. The same word was the only other counsel-facing use: the review step\
+  that used to be labeled Diff is now Change, and a formatting-only exit says the snapshots match rather than\
+  \'93no substantive diff.\'94\
+\
+  Hard-refresh the page to pick it up.\
+\
+  Finished Retest, rebuild UI, restart the report server\
+\
+  $ lsof -nP -iTCP:8787 -sTCP:LISTEN | awk 'NR==1 || /LISTEN/' 301ms\
+    COMMAND   PID  USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME\
+    node    25760 jason   21u  IPv6 0x749c5188b25f21b8      0t0  TCP *:8787 (LISTEN)\
+\
+  The earlier report server was stopped when a newer one took over port 8787. That server is up, so a hard\
+  refresh will load the latest page.}

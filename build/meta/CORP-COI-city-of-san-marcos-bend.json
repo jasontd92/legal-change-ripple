@@ -1,0 +1,15 @@
+{
+ "doc_id": "CORP-COI-city-of-san-marcos-bend",
+ "path": "documents/corporate/certificates-of-insurance/coi_city-of-san-marcos-bend_2026-07-01.md",
+ "chars": 1502,
+ "area": "corporate",
+ "cluster": null,
+ "source_class": "generated_structured",
+ "doc_type": "certificate_of_insurance",
+ "effective_date": "2026-07-01",
+ "roles": [
+  "insurance",
+  "l2_link"
+ ],
+ "status": "active"
+}

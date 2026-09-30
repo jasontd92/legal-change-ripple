@@ -1,0 +1,160 @@
+- id: B03
+  aliases: []
+  source_file: B-tariff-downstream.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  - LBL-urgency
+  - LBL-materiality
+  - S5-R1
+  - S5-R2
+  - S5-R3
+  - LBL-response_type
+  set: sentinel
+  slice:
+  - forfeitable-clock
+  confidence: high
+  status: done
+  gold_file: e2e/T1_TR01_2026-10-01.yaml
+  gold_ref: F1
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: ''
+- id: B05
+  aliases: []
+  source_file: B-tariff-downstream.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  - LBL-direction
+  - S5-link
+  set: e2e
+  slice:
+  - hop-complete
+  confidence: high
+  status: done
+  gold_file: e2e/T1_TR01_2026-10-01.yaml
+  gold_ref: F2
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Cross-document pass-through notice.
+- id: B15
+  aliases: []
+  source_file: B-tariff-downstream.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  - S5-link
+  - V13
+  set: e2e
+  slice: []
+  confidence: high
+  status: done
+  gold_file: e2e/T1_TR01_2026-10-01.yaml
+  gold_ref: F3
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: affected_or_needs_review. Certificate does not isolate this proclamation.
+- id: B02
+  aliases: []
+  source_file: B-tariff-downstream.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  - LBL-direction
+  set: sentinel
+  slice:
+  - expired-surviving
+  confidence: high
+  status: done
+  gold_file: e2e/T1_TR01_2026-10-01.yaml
+  gold_ref: F5
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: ''
+- id: B11
+  aliases: []
+  source_file: B-tariff-downstream.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  - LBL-urgency
+  set: sentinel
+  slice:
+  - forfeitable-clock
+  confidence: high
+  status: done
+  gold_file: e2e/T1_TR01_2026-10-01.yaml
+  gold_ref: F6
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Clock already ran. Urgency gold is no_clock.
+- id: B10
+  aliases: []
+  source_file: B-tariff-downstream.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  set: e2e
+  slice:
+  - absence
+  confidence: high
+  status: done
+  gold_file: e2e/T1_TR01_2026-10-01.yaml
+  gold_ref: F7
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: ''
+- id: B07
+  aliases: []
+  source_file: B-tariff-downstream.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  - LBL-materiality
+  - S5-R1
+  - S5-R2
+  - S5-R3
+  - LBL-response_type
+  set: e2e
+  slice: []
+  confidence: high
+  status: done
+  gold_file: e2e/T1_TR01_2026-10-01.yaml
+  gold_ref: F8
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: Tier 3 monitor.
+- id: B16
+  aliases: []
+  source_file: B-tariff-downstream.md
+  trigger: TR-01
+  eval_ids:
+  - S4
+  - S3
+  set: sentinel
+  slice:
+  - decoy
+  confidence: high
+  status: done
+  gold_file: e2e/T1_TR01_2026-10-01.yaml
+  gold_ref: F10
+  canonical: null
+  exclusion_reason: null
+  contradiction: null
+  tier_flag: null
+  notes: ''
