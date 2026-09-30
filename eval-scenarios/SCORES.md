@@ -17,6 +17,7 @@ Teacher-forced. Δ is percentage points on the same check.
 | Undated `forfeitable_clock_running` downgraded | 0% (0/4) | 100% (4/4) | +100 | Code, at commit. Dated 2026-11-01 unchanged. `no_clock` unchanged |
 | Harborview (tier 1, no date) above Cascade (tier 2, 2025-04-02) | 0% (0/3) | 100% (3/3) | +100 | Sort. R1–R3 stayed 100% (9/9) |
 | California form §6.1 cited | 60% (3/5) | 100% (5/5) | +40 | No lever. Later five draws |
+| Average | 11% | 84% | +73 | Mean of these 9. Where a row lists two afters, the later one |
 
 Controls on the date-tool run: 2026-11-01 absent after the sixty-day sentence was deleted 100% (3/3); the remaining date is 2026-12-02 on 100% (3/3). Lease `not_affected` 100% (3/3).
 
@@ -62,6 +63,9 @@ Same gold spans. `k=5` is step 2 (k=3) plus step 8 (k=4–5). Date-tool column i
 | California form §6.1 | 67% (2/3) | 60% (3/5) | — | 100% (5/5) | 0% (0/3) | 100% (5/5) |
 | Marchetti dates | 0% (0/3) | 0% (0/5) | — | 0% (0/5) | 0% (0/3) | 0% (0/5) |
 | California determination `affected` | 100% (3/3) | 100% (5/5) | — | 80% (4/5) | 0% (0/3) | 0% (0/5) |
+| Average score | 52% (23) | 54% (23) | 88% (6) | 48% (15) | 32% (23) | 39% (23) |
+
+Unweighted mean of the column. Exhibit B decoy cited and `forfeitable_clock_running` on 2025-04-02 enter as 100 minus the cell. A dash is left out, so Date tool and Confirm average only the rows those runs measured.
 
 ## Reverted levers
 
@@ -86,6 +90,7 @@ Same gold spans. `k=5` is step 2 (k=3) plus step 8 (k=4–5). Date-tool column i
 | TR-01 wiring: findings conserved, change items closed, quote misses | 146/146, 5/5, 0 |
 | T5 wiring: findings conserved, change items closed, quote misses | 107/107, 7/7, 0 |
 | Scope trace covers every stack | 131/131 |
+| Mean of the three rate rows | 89% (3) |
 
 ## Pooled
 
@@ -149,3 +154,6 @@ A trial is one gold finding or one gold gate/scope decision. Precision = TP / (T
 | C1 each negative control left in | 100% (10/10) |
 | C2 Wyoming exit | 80% (4/5) |
 | C2 Texas exit | 100% (4/4) |
+| Average score | 46% (23) |
+
+C1 traps left in count as 0 in that average. The stacks-finished row is left out.
